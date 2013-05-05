@@ -42,12 +42,16 @@ final class MadMimi_Official {
 	}
 
 	private function requirements() {
-		if ( is_admin() ) {
-			// the main widget
-			require_once MADMIMI_PLUGIN_DIR . 'includes/widget.php';
-			// settings page, creds validation
-			require_once MADMIMI_PLUGIN_DIR . 'includes/settings.php';
-		}
+		require_once MADMIMI_PLUGIN_DIR . 'includes/dispatcher.php';
+		// the shortcode
+		require_once MADMIMI_PLUGIN_DIR . 'includes/shortcode.php';
+		// the file renders the form
+		require_once MADMIMI_PLUGIN_DIR . 'includes/render.php';
+		// the main widget
+		require_once MADMIMI_PLUGIN_DIR . 'includes/widget.php';
+		// settings page, creds validation
+		require_once MADMIMI_PLUGIN_DIR . 'includes/settings.php';
+		
 	}
 
 	public function init() {
@@ -55,43 +59,17 @@ final class MadMimi_Official {
 		$this->debug = (bool) apply_filters( 'madmimi_debug', false );
 
 		// initialize settings
-		$this->settings = new AAL_Settings;
+		if ( is_admin() )
+			$this->settings = new AAL_Settings;
+
+		// register shortcode
+		add_shortcode( 'mimi', array( 'Mad_Mimi_Shortcode', 'render' ) );
 	}
 
 	public function register_widget() {
 		register_widget( 'Mad_Mimi_Form_Widget' );
 	}
-
-	public function fetch_forms( $username, $api_key = false ) {
-		if ( ! ( $username && $api_key ) ) {
-			$username = AAL_Settings_Controls::get_option( 'username' );
-			$api_key = AAL_Settings_Controls::get_option( 'api-key' );
-		}
-
-		// Prepare the URL that includes our credentials
-		$url = add_query_arg( array(
-			'username' => $username,
-			'api_key' => $api_key,
-		), 'http://api.madmimi.com/signups.json' );
-
-		$response = wp_remote_get( $url );
-
-		// credentials are incorrect
-		if ( 200 != wp_remote_retrieve_response_code( $response ) )
-			return false;
-
-		// cache results for 24hrs
-		set_transient( "mimi-{$username}-lists", $data = json_decode( wp_remote_retrieve_body( $response ) ), defined( DAY_IN_SECONDS ) ? DAY_IN_SECONDS : 60 * 60 * 24 );
-
-		return $data;
-	}
-
-	public function get_forms( $username = false ) {
-		if ( false === ( $data = get_transient( "mimi-{$username}-lists" ) ) ) {
-			$data = $this->fetch_forms( $username );
-		}
-		return $data;
-	}
+	
 }
 
 function madmimi() {

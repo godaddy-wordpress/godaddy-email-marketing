@@ -46,7 +46,15 @@ class AAL_Settings {
 					break;
 				case 'reset-transients':
 					if ( isset( $settings['username'] ) ) {
+						// remove all lists
 						delete_transient( "mimi-{$settings['username']}-lists" );
+						
+						// mass-removal of all forms
+						foreach ( Mad_Mimi_Dispatcher::get_forms()->signups as $form ) {
+							delete_transient( "mimi-form-{$form->id}" );
+						}
+
+						add_settings_error( $this->slug, 'mimi-reset', __( 'All transients were removed.', 'mimi' ), 'updated' );
 					}
 					break;
 			}
@@ -71,7 +79,6 @@ class AAL_Settings {
 			array( 'AAL_Settings_Controls', 'description' ),
 			$this->slug
 		);
-
 
 		add_settings_field(
 			'username',
@@ -121,7 +128,7 @@ class AAL_Settings {
 		<!-- Create a header in the default WordPress 'wrap' container -->
 		<div class="wrap">
 		
-			<div id="icon-themes" class="icon32"></div>
+			<?php screen_icon(); ?>
 			<h2><?php _e( 'Mad Mimi Settings', 'aryo-aal' ); ?></h2>
 			
 			<form method="post" action="options.php">
@@ -151,7 +158,7 @@ class AAL_Settings {
 					<tbody>
 					<?php
 
-					$forms = $this->mimi->get_forms();
+					$forms = Mad_Mimi_Dispatcher::get_forms();
 
 					if ( ! empty( $forms->signups ) ) :
 				 
@@ -160,7 +167,7 @@ class AAL_Settings {
 							<tr>
 								<td><?php echo esc_html( $form->name ); ?></td>
 								<td><?php echo absint( $form->id ); ?></td>
-								<td><input type="text" class="code" value="[madmimi id=<?php echo absint( $form->id ); ?>]" onclick="this.select()" /></td>
+								<td><input type="text" class="code" value="[madmimi id=<?php echo absint( $form->id ); ?>]" onclick="this.select()" readonly /></td>
 							</tr>
 
 							<?php
@@ -176,11 +183,13 @@ class AAL_Settings {
 				</table>
 
 				<?php if ( $this->mimi->debug ) : ?>
+
+				<h3><?php _e( 'Debugging', 'mimi' ); ?></h3>
 				<p>
-					<span>Debug options: &nbsp;</span>
 					<a href="<?php echo add_query_arg( 'debug', 'reset' ); ?>" class="button-secondary"><?php _e( 'Erase All Data', 'mimi' ); ?></a>
 					<a href="<?php echo add_query_arg( 'debug', 'reset-transients' ); ?>" class="button-secondary"><?php _e( 'Erase Transients', 'mimi' ); ?></a>
 				</p>
+
 				<?php endif; ?>
 
 			</form>
@@ -193,7 +202,7 @@ class AAL_Settings {
 		// validate creds against the API
 
 		if ( ! ( empty( $input['username'] ) || empty( $input['api-key'] ) ) ) {
-			$data = $this->mimi->fetch_forms( $input['username'], $input['api-key'] );
+			$data = Mad_Mimi_Dispatcher::fetch_forms( $input['username'], $input['api-key'] );
 
 			if ( ! $data ) {
 				// credentials are incorrect

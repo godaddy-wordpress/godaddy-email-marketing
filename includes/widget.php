@@ -21,26 +21,18 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 	function widget( $args, $instance ) {
 		extract( $args );
 
-		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Pages' ) : $instance['title'], $instance, $this->id_base);
-		$sortby = empty( $instance['sortby'] ) ? 'menu_order' : $instance['sortby'];
-		$exclude = empty( $instance['exclude'] ) ? '' : $instance['exclude'];
+		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Mad Mimi Form', 'mimi' ) : $instance['title'], $instance, $this->id_base );
+		$form_id = empty( $instance['form'] ) ? false : $instance['form'];
 
-		if ( $sortby == 'menu_order' )
-			$sortby = 'menu_order, post_title';
+		echo $before_widget;
 
-		$out = wp_list_pages( apply_filters('widget_pages_args', array('title_li' => '', 'echo' => 0, 'sort_column' => $sortby, 'exclude' => $exclude) ) );
+		if ( $title )
+			echo $before_title . $title . $after_title;
 
-		if ( !empty( $out ) ) {
-			echo $before_widget;
-			if ( $title)
-				echo $before_title . $title . $after_title;
-		?>
-		<ul>
-			<?php echo $out; ?>
-		</ul>
-		<?php
-			echo $after_widget;
-		}
+		Mad_Mimi_Form_Renderer::process( $form_id );
+
+
+		echo $after_widget;
 	}
 
 	function update( $new_instance, $old_instance ) {
@@ -62,7 +54,7 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 		$title = esc_attr( $instance['title'] );
 		$selected_form = absint( $instance['form'] );
 
-		$forms = $this->mimi->get_forms();
+		$forms = Mad_Mimi_Dispatcher::get_forms();
 	?>
 		<p>
 			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
@@ -79,17 +71,9 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 			</select>
 
 			<?php else : ?>
-			<span><?php printf( __( 'Please set up your Mad Mimi account in the <a href="%s">settings page</a>.', 'mimi' ), menu_page_url( $this->mimi->settings->slug, false ) ); ?>
+			<span><?php printf( __( 'Please set up your Mad Mimi account in the <a href="%s">settings page</a>.', 'mimi' ), admin_url( 'options-general.php?page=mad-mimi-settings' ) ); ?>
 			<?php endif; ?>
-			<?php var_dump( $this->mimi->settings ); ?>
 		</p>
 <?php
-	}
-}
-
-final class Mad_Mimi_Widget_Fields {
-
-	public static function text() {
-
 	}
 }
