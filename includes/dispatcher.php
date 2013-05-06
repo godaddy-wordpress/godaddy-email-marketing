@@ -13,7 +13,9 @@ class Mad_Mimi_Dispatcher {
 		}
 
 		// Prepare the URL that includes our credentials
-		$response = wp_remote_get( self::get_method_url( 'forms' ) );
+		$response = wp_remote_get( self::get_method_url( 'forms' ), array(
+			'timeout' => 10,
+		) );
 
 		// credentials are incorrect
 		if ( ! in_array( wp_remote_retrieve_response_code( $response ), self::$ok_codes ) )

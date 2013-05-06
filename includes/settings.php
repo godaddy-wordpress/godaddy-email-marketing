@@ -22,8 +22,8 @@ class AAL_Settings {
 	 */
 	public function action_admin_menu() {
 		$this->hook = add_options_page(
-			__( 'Mad Mimi Settings', 'aryo-aal' ), 	// <title> tag
-			__( 'Mad Mimi Settings', 'aryo-aal' ), 			// menu label
+			__( 'Mad Mimi Settings', 'mimi' ), 	// <title> tag
+			__( 'Mad Mimi Settings', 'mimi' ), 			// menu label
 			'manage_options', 								// required cap to view this page
 			$this->slug = 'mad-mimi-settings', 			// page slug
 			array( &$this, 'display_settings_page' )			// callback
@@ -33,18 +33,25 @@ class AAL_Settings {
 	}
 
 	public function page_load() {
-		if ( isset( $_GET['debug'] ) && $this->mimi->debug ) {
+		// main switch for some various maintenance processes
+		if ( isset( $_GET['action'] ) ) {
 			$settings = get_option( $this->slug );
 
-			switch ( $_GET['debug'] ) {
-				case 'reset':
+			switch ( $_GET['action'] ) {
+				case 'debug-reset':
+					if ( ! $this->mimi->debug )
+						return;
+
 					if ( isset( $settings['username'] ) ) {
 						delete_transient( "mimi-{$settings['username']}-lists" );
 					}
 					delete_option( $this->slug );
 
 					break;
-				case 'reset-transients':
+				case 'debug-reset-transients':
+					if ( ! $this->mimi->debug )
+						return;
+
 					if ( isset( $settings['username'] ) ) {
 						// remove all lists
 						delete_transient( "mimi-{$settings['username']}-lists" );
@@ -57,8 +64,42 @@ class AAL_Settings {
 						add_settings_error( $this->slug, 'mimi-reset', __( 'All transients were removed.', 'mimi' ), 'updated' );
 					}
 					break;
+
+				case 'refresh':
+					// remove only the lists for the current user
+					if ( isset( $settings['username'] ) ) {
+						if ( delete_transient( "mimi-{$settings['username']}-lists" ) )
+							add_settings_error( $this->slug, 'mimi-reset', __( 'Forms list was successfully updated.', 'mimi' ), 'updated' );
+					}
+					break;
 			}
 		}
+
+		// set up the help tabs
+		add_action( 'in_admin_header', array( $this, 'setup_help_tabs' ) );
+	}
+
+	public function setup_help_tabs() {
+		$screen = get_current_screen();
+
+		$screen->add_help_tab( array(
+			'title' => __( 'Overview', 'mimi' ),
+			'id' => 'mimi-overview',
+			'content' => __( '
+				<h3>Forms</h3>
+				<p>This screen provides access to the tickets (or ticket types) you have created. Each ticket is has various attributes like price and quantity. The total amount of available tickets determines the maximum capacity of the event. Please note that once the ticket has been published, editing things like price or questions can break data consistency, since attendees may have already bought the ticket with the old data. Also, once a ticket has been published, please keep it published. Do not revert to draft, pending or trash.</p>
+				<p>Use the <strong>Screen Options</strong> panel to show and hide the columns that matter most.</p>', 'mimi' ),
+		) );
+
+		$screen->add_help_tab( array(
+			'title' => __( 'Additional Help', 'mimi' ),
+			'id' => 'mimi-additionalhelp',
+			'content' => __( '
+				<h3>More Help</h3>
+				<p>OpenTracker runs several times faster than older tracker implementations and requires less memory. (For example, it runs fine with the limited resources of many embedded systems.) Several instances of the software may be run in a cluster, with all of them synchronizing with each other. Besides the Hypertext Transfer Protocol (HTTP) opentracker may also be connected to via User Datagram Protocol (UDP), which creates less than half of the tracker traffic HTTP creates.[1] It supports IPv6, gzip compression of full scrapes, and blacklists of torrents. Because there have already been cases of people being accused of copyright violation by the fact that their IP address was listed on a BitTorrent tracker,[2] opentracker may mix in random IP address numbers for the purpose of plausible deniability.</p>
+				<p>Amazing! screen provides access to the tickets (or ticket types) you have created. Each ticket is has various attributes like price and quantity. The total amount of available tickets determines the maximum capacity of the event. Please note that once the ticket has been published, editing things like price or questions can break data consistency, since attendees may have already bought the ticket with the old data. Also, once a ticket has been published, please keep it published. Do not revert to draft, pending or trash.</p>
+				<p>Use the <strong>Screen Options</strong> panel to show and hide the columns that matter most.</p>', 'mimi' ),
+		) );
 	}
 
 	public function register_settings() {
@@ -75,14 +116,14 @@ class AAL_Settings {
 		// First, we register a section. This is necessary since all future options must belong to a 
 		add_settings_section(
 			'general_settings_section',
-			__( 'Account Details', 'aryo-aal' ),
+			__( 'Account Details', 'mimi' ),
 			array( 'AAL_Settings_Controls', 'description' ),
 			$this->slug
 		);
 
 		add_settings_field(
 			'username',
-			__( 'Mad Mimi Username', 'aryo-aal' ),
+			__( 'Mad Mimi Username', 'mimi' ),
 			array( 'AAL_Settings_Controls', 'text' ),
 			$this->slug,
 			'general_settings_section',
@@ -95,7 +136,7 @@ class AAL_Settings {
 
 		add_settings_field(
 			'api-key',
-			__( 'Mad Mimi API Key', 'aryo-aal' ),
+			__( 'Mad Mimi API Key', 'mimi' ),
 			array( 'AAL_Settings_Controls', 'text' ),
 			$this->slug,
 			'general_settings_section',
@@ -108,7 +149,7 @@ class AAL_Settings {
 		
 		add_settings_field(
 			'display_powered_by',
-			__( 'Display "Powered by Mad Mimi"?', 'aryo-aal' ),
+			__( 'Display "Powered by Mad Mimi"?', 'mimi' ),
 			array( 'AAL_Settings_Controls', 'select' ),
 			$this->slug,
 			'general_settings_section',
@@ -116,11 +157,13 @@ class AAL_Settings {
 				'id' => 'display_powered_by',
 				'page' => $this->slug,
 				'options' => array(
-					'forever' => __( 'Yes', 'aryo-aal' ),
-					'365' => __( 'No', 'aryo-aal' ),
+					'forever' => __( 'Yes', 'mimi' ),
+					'365' => __( 'No', 'mimi' ),
 				),
 			)
 		);
+
+		do_action( 'mimi_setup_setting_fields' );
 	}
 
 	public function display_settings_page() {
@@ -129,7 +172,7 @@ class AAL_Settings {
 		<div class="wrap">
 		
 			<?php screen_icon(); ?>
-			<h2><?php _e( 'Mad Mimi Settings', 'aryo-aal' ); ?></h2>
+			<h2><?php _e( 'Mad Mimi Settings', 'mimi' ); ?></h2>
 			
 			<form method="post" action="options.php">
 				<?php
@@ -167,7 +210,7 @@ class AAL_Settings {
 							<tr>
 								<td><?php echo esc_html( $form->name ); ?></td>
 								<td><?php echo absint( $form->id ); ?></td>
-								<td><input type="text" class="code" value="[madmimi id=<?php echo absint( $form->id ); ?>]" onclick="this.select()" readonly /></td>
+								<td><input type="text" class="code" value="[mimi id=<?php echo absint( $form->id ); ?>]" onclick="this.select()" readonly /></td>
 							</tr>
 
 							<?php
@@ -182,12 +225,17 @@ class AAL_Settings {
 					</tbody>
 				</table>
 
+				<br />
+				<p class="description">
+					<?php _e( 'Cannot find your form? Is the list inaccurate?', 'mimi' ); ?> <a href="<?php echo add_query_arg( 'action', 'refresh' ); ?>" class="button"><?php _e( 'Refresh Forms', 'mimi' ); ?></a>
+				</p>
+
 				<?php if ( $this->mimi->debug ) : ?>
 
-				<h3><?php _e( 'Debugging', 'mimi' ); ?></h3>
+				<h3><?php _e( 'Debug', 'mimi' ); ?></h3>
 				<p>
-					<a href="<?php echo add_query_arg( 'debug', 'reset' ); ?>" class="button-secondary"><?php _e( 'Erase All Data', 'mimi' ); ?></a>
-					<a href="<?php echo add_query_arg( 'debug', 'reset-transients' ); ?>" class="button-secondary"><?php _e( 'Erase Transients', 'mimi' ); ?></a>
+					<a href="<?php echo add_query_arg( 'action', 'debug-reset' ); ?>" class="button-secondary"><?php _e( 'Erase All Data', 'mimi' ); ?></a>
+					<a href="<?php echo add_query_arg( 'action', 'debug-reset-transients' ); ?>" class="button-secondary"><?php _e( 'Erase Transients', 'mimi' ); ?></a>
 				</p>
 
 				<?php endif; ?>
@@ -229,7 +277,7 @@ final class AAL_Settings_Controls {
 
 	public static function description() {
 		?>
-		<p><?php _e( 'Please enter your Mad Mimi username and API Key in order to be able to create forms.', 'aryo-aal' ); ?></p>
+		<p><?php _e( 'Please enter your Mad Mimi username and API Key in order to be able to create forms.', 'mimi' ); ?></p>
 		<?php
 	}
 

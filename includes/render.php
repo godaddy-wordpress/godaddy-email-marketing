@@ -42,9 +42,15 @@ final class Mad_Mimi_Form_Fields {
 	}
 
 	public static function string( $args ) {
+		$required = apply_filters( 'mimi_required_field_class', $args->required ? 'mimi-required' : '', $field );
 		?>
-		<label for="<?php echo esc_attr( $args->name ); ?>"><?php echo esc_html( $args->display ); ?></label>
-		<input type="text" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo esc_attr( $args->name ); ?>" class="<?php echo $args->required ? 'required' : ''; ?>" />
+		<label for="<?php echo esc_attr( $args->name ); ?>">
+			<?php echo esc_html( $args->display ); ?>
+			<?php if ( $args->required && apply_filters( 'mimi_required_field_indicator', true, $field ) ) : ?>
+			<span class="required">*</span>
+			<?php endif; ?>
+		</label>
+		<input type="text" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo esc_attr( $args->name ); ?>" class="<?php echo esc_attr( $required ); ?>" />
 		<?php
 	}
 }
