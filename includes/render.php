@@ -6,26 +6,29 @@ class Mad_Mimi_Form_Renderer {
 		$form = Mad_Mimi_Dispatcher::get_fields( (int) $form_id );
 
 		if ( ! empty( $form->fields ) ) : ?>
-			<form action="<?php echo esc_url( $form->submit ); ?>" method="post" class="mimi-form">
-			
-				<?php
 
-				foreach ( $form->fields as $count => $field ) {
-					echo "\n<p>\n";
+			<div class="mimi-form-wrapper" id="form-<?php echo absint( $form_id ); ?>">
+				<form action="<?php echo esc_url( $form->submit ); ?>" method="post" class="mimi-form">
+				
+					<?php
 
-					Mad_Mimi_Form_Fields::dispatch_field( $field );
+					foreach ( $form->fields as $count => $field ) : ?>
 
-					echo "\n</p>\n";
-				}
+						<p><?php Mad_Mimi_Form_Fields::dispatch_field( $field ); ?></p><?php
 
-				?>
+					endforeach;
 
-				<p>
-					<a href="http://madmimi.com" target="_blank">Powered by Mad Mimi</a>
-				</p>
+					?>
 
-				<input type="submit" value="<?php _e( 'Submit', 'mimi' ); ?>" class="button mimi-submit" />
-			</form>
+					<p>
+						<?php // @todo should the mad mimi text be translatable? it can be manipulated. ?>
+						<a href="http://madmimi.com" target="_blank">Powered by Mad Mimi</a>
+					</p>
+
+					<input type="hidden" name="form_id" value="<?php echo absint( $form->id ); ?>" />
+					<input type="submit" value="<?php _e( 'Submit', 'mimi' ); ?>" class="button mimi-submit" />
+				</form>
+			</div>
 			<?php
 
 		endif;

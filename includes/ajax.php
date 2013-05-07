@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class Mad_Mimi_AJAX {
 
-	public function register_actions() {
+	public function register() {
 		$actions = array(
 			'mimi-submit-form' => 'submit_form',
 		);
@@ -16,6 +16,22 @@ class Mad_Mimi_AJAX {
 	}
 
 	public function submit_form() {
-		
+		$form_data = $_POST;
+
+		// @TODO: ADD NONCE!!!!!!!!!!!!!!!! SPECIFIC TO FORM ID
+
+		if ( ! empty( $form_data ) ) {
+			$response = wp_remote_post( sprintf( 'https://madmimi.com/signups/subscribe/%d.json', $form_data['form_id'] ), array(
+				'timeout' => 15,
+				'body' => $form_data,
+			) );
+
+			if ( is_wp_error( $response ) || ! isset( $response['body'] ) || 200 != wp_remote_retrieve_response_code( $response ) )
+				wp_send_json_error();
+
+			wp_send_json_success( json_decode( wp_remote_retrieve_body( $response ) ) );
+		}
+
+		die;
 	}
 }
