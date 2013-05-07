@@ -1,5 +1,7 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 class Mad_Mimi_Dispatcher {
 
 	const base_api = 'http://api.madmimi.com/';

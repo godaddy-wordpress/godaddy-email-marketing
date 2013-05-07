@@ -62,12 +62,19 @@ final class MadMimi_Official {
 		if ( is_admin() )
 			$this->settings = new AAL_Settings;
 
+		// enqueue scripts n styles
+		$this->enqueue();
+
 		// register shortcode
 		add_shortcode( 'mimi', array( 'Mad_Mimi_Shortcode', 'render' ) );
 	}
 
 	public function register_widget() {
 		register_widget( 'Mad_Mimi_Form_Widget' );
+	}
+
+	public function enqueue() {
+		wp_enqueue_script( 'mimi-main', plugins_url( "js/mimi.js", __FILE__ ), array( 'jquery' ), false, true );
 	}
 	
 }

@@ -205,11 +205,22 @@ class AAL_Settings {
 
 					if ( ! empty( $forms->signups ) ) :
 				 
-						foreach( $forms->signups as $form ) : ?>
-
+						foreach( $forms->signups as $form ) : 
+							$edit_link = sprintf( 'https://madmimi.com/signups/%d/edit', absint( $form->id ) );
+							?>
 							<tr>
-								<td><?php echo esc_html( $form->name ); ?></td>
-								<td><?php echo absint( $form->id ); ?></td>
+								<td>
+									<?php echo esc_html( $form->name ); ?>
+									<div class="row-actions">
+										<span class="edit">
+											<a href="<?php echo esc_url( $edit_link ); ?>" title="<?php _e( 'Edit this form', 'mimi' ); ?>">Edit</a> | 
+										</span>
+										<span class="view">
+											<a href="<?php echo esc_url( $form->url ); ?>" title="<?php _e( 'View this form on madmimi.com', 'mimi' ); ?>">View on Mad Mimi</a>
+										</span>
+									</div>
+								</td>
+								<td><code><?php echo absint( $form->id ); ?></code></td>
 								<td><input type="text" class="code" value="[mimi id=<?php echo absint( $form->id ); ?>]" onclick="this.select()" readonly /></td>
 							</tr>
 
