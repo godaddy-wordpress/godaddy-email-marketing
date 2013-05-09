@@ -64,6 +64,10 @@ class Mad_Mimi_Dispatcher {
 	public static function get_user_level() {
 		$username = AAL_Settings_Controls::get_option( 'username' );
 
+		// no username entered by user?
+		if ( ! $username )
+			return false;
+
 		if ( false === ( $data = get_transient( "mimi-{$username}-account" ) ) ) {
 			$data = wp_remote_get( self::get_method_url( 'account' ) );
 

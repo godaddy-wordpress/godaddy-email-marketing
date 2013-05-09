@@ -154,8 +154,11 @@ class AAL_Settings {
 			)
 		);
 
+		$user_info = Mad_Mimi_Dispatcher::get_user_level();
+
+
 		// don't register this setting on all pages
-		if ( 'options-general.php' == $pagenow && 'free' != Mad_Mimi_Dispatcher::get_user_level()->type ) {		
+		if ( 'options-general.php' == $pagenow && $user_info && isset( $user_info->type ) && 'free' != $user_info->type ) {		
 			
 			add_settings_field(
 				'display_powered_by',
