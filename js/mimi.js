@@ -7,28 +7,57 @@
 
 		$( '.mimi-form' ).submit( function( e ) {
 			e.preventDefault();
-
 			
 			var wrapper = $( this ),
 				payload = $.extend( {}, $( this ).mimiSerializeObject(), {
 					action: 'mimi-submit-form'
+				} ),
+				invalidElements = [];
+
+			$( this ).find( ':input' ).each( function( i ) {
+				if ( 
+					'signup[email]' == $( this ).attr( 'name' ) 
+					&& ! MadMimi.isEmail( $( this ).val() ) 
+				) {
+
+					// email not valid
+					invalidElements.push( $( this ) );
+				} else if ( $( this ).is( '.mimi-required' ) && '' == $( this ).val() ) {
+					invalidElements.push( $( this ) );
+				}
+			} );
+
+			// if there are no empty or invalid fields left...
+			if ( 0 == invalidElements.length ) {
+
+				$( this ).fadeOut( 'fast', function() {
+
+					$.post( wrapper.attr( 'action' ) + '.json', payload, function( response ) {
+
+						if ( response.success && response.result.new_member ) {
+							// user was successfully added
+							wrapper.html( MadMimi.addMessage( 'info', MadMimi.thankyou ) ).fadeIn( 'fast' );
+						} else {
+							wrapper.html( MadMimi.addMessage( 'info', MadMimi.oops ) ).fadeIn( 'fast' );
+						}
+
+					}, 'jsonp' );
+					
+				} );
+				
+			} else {
+				// there are invalid elements
+				$( invalidElements ).each( function( i, el ) {
+					$( this ).addClass( 'mimi-invalid' );
 				} );
 
-			$( this ).fadeOut( 'fast', function() {
+				var previousNotifications = wrapper.find( '.mimi-error, .mimi-info' );
 
+				if ( 0 != previousNotifications.length )
+					previousNotifications.remove();
 
-				$.post( MadMimi.ajaxurl, payload, function( response ) {
-
-					if ( response.success && response.data.new_member ) {
-						// user was successfully added
-						wrapper.html( MadMimi.thankyou ).fadeIn( 'fast' );
-					} else {
-						wrapper.html( MadMimi.oops ).fadeIn( 'fast' );
-					}
-
-				}, 'json' );
-
-			} );
+				wrapper.prepend( MadMimi.addMessage( 'error', MadMimi.fix ) );
+			}
 			
 
 			/*
@@ -61,7 +90,17 @@
 		} );
 	};
 
+	MadMimi.addMessage = function( type, message ) {
+		return '<p class="mimi-' + type + '"">' + message + '</p>';
+	}
 
+	MadMimi.isEmail = function ( email ) {
+		var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		return regex.test( email );
+	}
+
+
+	// constructor
 	$( function() {
 		$( MadMimi.init );
 	} );

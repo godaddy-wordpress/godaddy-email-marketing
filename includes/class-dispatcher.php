@@ -14,8 +14,13 @@ class Mad_Mimi_Dispatcher {
 			$api_key = AAL_Settings_Controls::get_option( 'api-key' );
 		}
 
+		$auth = array(
+			'username' => $username,
+			'api_key' => $api_key,
+		);
+
 		// Prepare the URL that includes our credentials
-		$response = wp_remote_get( self::get_method_url( 'forms' ), array(
+		$response = wp_remote_get( self::get_method_url( 'forms', false, $auth ), array(
 			'timeout' => 10,
 		) );
 
@@ -46,36 +51,66 @@ class Mad_Mimi_Dispatcher {
 			) ) );
 
 			// was there an error, connection is down? bail and try again later.
-			if ( is_wp_error( $fields ) || ! in_array( wp_remote_retrieve_response_code( $fields ), self::$ok_codes ) )
+			if ( ! self::is_request_ok( $fields ) )
 				return false;
 
-			// @TODO: should we cache results for longer than a day?
-			set_transient( "mimi-form-$form_id", $fields = json_decode( wp_remote_retrieve_body( $fields ) ), DAY_IN_SECONDS );
+			// @TODO: should we cache results for longer than a day? not expire at all?
+			set_transient( "mimi-form-$form_id", $fields = json_decode( wp_remote_retrieve_body( $fields ) ) );
 		}
 
 		return $fields;
 	}
 
-	public static function get_method_url( $method, $params = false ) {
-		$auth = array(
+	public static function get_user_level() {
+		$username = AAL_Settings_Controls::get_option( 'username' );
+
+		if ( false === ( $data = get_transient( "mimi-{$username}-account" ) ) ) {
+			$data = wp_remote_get( self::get_method_url( 'account' ) );
+
+			// if the request has failed for whatever reason
+			if ( ! self::is_request_ok( $data ) )
+				return false;
+			
+			$data = json_decode( wp_remote_retrieve_body( $data ) );
+			$data = $data->result;
+
+			// no need to expire at all
+			set_transient( "mimi-{$username}-account", $data );
+		}
+
+		return $data;
+	}
+
+	public static function get_method_url( $method, $params = false, $auth = false ) {
+		$auth = $auth ? $auth : array(
 			'username' => AAL_Settings_Controls::get_option( 'username' ),
 			'api_key' => AAL_Settings_Controls::get_option( 'api-key' ),
 		);
 
-		extract( (array) $params, EXTR_SKIP );
+		if ( $params )
+			extract( (array) $params, EXTR_SKIP );
 
-		$final = '';
+		$path = '';
 
 		switch ( $method ) {
 			case 'forms':
-				$final = add_query_arg( $auth, "signups.json" );
+				$path = add_query_arg( $auth, "signups.json" );
 				break;
-
 			case 'fields':
-				$final = add_query_arg( $auth, "signups/{$id}.json" );
+				$path = add_query_arg( $auth, "signups/{$id}.json" );
+				break;
+			case 'account':
+				$path = add_query_arg( $auth, "user/account_status" );
 				break;
 		}
 
-		return self::base_api . $final;
+		return self::base_api . $path;
+	}
+
+	public static function is_request_ok( &$request ) {
+		return (
+			! is_wp_error( $request )
+			&& in_array( wp_remote_retrieve_response_code( $request ), self::$ok_codes )
+		);
 	}
 }

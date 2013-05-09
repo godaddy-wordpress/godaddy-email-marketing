@@ -71,6 +71,11 @@ class AAL_Settings {
 						if ( delete_transient( "mimi-{$settings['username']}-lists" ) )
 							add_settings_error( $this->slug, 'mimi-reset', __( 'Forms list was successfully updated.', 'mimi' ), 'updated' );
 					}
+
+					foreach ( Mad_Mimi_Dispatcher::get_forms()->signups as $form ) {
+						delete_transient( "mimi-form-{$form->id}" );
+					}
+
 					break;
 			}
 		}
@@ -103,6 +108,8 @@ class AAL_Settings {
 	}
 
 	public function register_settings() {
+		global $pagenow;
+
 		// If no options exist, create them.
 		if ( ! get_option( $this->slug ) ) {
 			update_option( $this->slug, apply_filters( 'mimi_default_options', array(
@@ -146,24 +153,29 @@ class AAL_Settings {
 				'description' => __( 'You can find your API key at <a href="https://madmimi.com/user/edit">https://madmimi.com/user/edit</a>', 'mimi' ),
 			)
 		);
-		
-		add_settings_field(
-			'display_powered_by',
-			__( 'Display "Powered by Mad Mimi"?', 'mimi' ),
-			array( 'AAL_Settings_Controls', 'select' ),
-			$this->slug,
-			'general_settings_section',
-			array(
-				'id' => 'display_powered_by',
-				'page' => $this->slug,
-				'options' => array(
-					'forever' => __( 'Yes', 'mimi' ),
-					'365' => __( 'No', 'mimi' ),
-				),
-			)
-		);
 
-		do_action( 'mimi_setup_setting_fields' );
+		// don't register this setting on all pages
+		if ( 'options-general.php' == $pagenow && 'free' != Mad_Mimi_Dispatcher::get_user_level()->type ) {		
+			
+			add_settings_field(
+				'display_powered_by',
+				__( 'Display "Powered by Mad Mimi"?', 'mimi' ),
+				array( 'AAL_Settings_Controls', 'select' ),
+				$this->slug,
+				'general_settings_section',
+				array(
+					'id' => 'display_powered_by',
+					'page' => $this->slug,
+					'options' => array(
+						'yes' => __( 'Yes', 'mimi' ),
+						'no' => __( 'No', 'mimi' ),
+					),
+				)
+			);
+		}
+		
+
+		do_action( 'mimi_setup_settings_fields' );
 	}
 
 	public function display_settings_page() {
@@ -213,10 +225,10 @@ class AAL_Settings {
 									<?php echo esc_html( $form->name ); ?>
 									<div class="row-actions">
 										<span class="edit">
-											<a href="<?php echo esc_url( $edit_link ); ?>" title="<?php _e( 'Edit this form', 'mimi' ); ?>">Edit</a> | 
+											<a target="_blank" href="<?php echo esc_url( $edit_link ); ?>"><?php _e( 'Edit form in Mad Mimi', 'mimi' ); ?></a> | 
 										</span>
 										<span class="view">
-											<a href="<?php echo esc_url( $form->url ); ?>" title="<?php _e( 'View this form on madmimi.com', 'mimi' ); ?>">View on Mad Mimi</a>
+											<a target="_blank" href="<?php echo esc_url( $form->url ); ?>"><?php _e( 'Preview', 'mimi' ); ?></a>
 										</span>
 									</div>
 								</td>
@@ -238,7 +250,7 @@ class AAL_Settings {
 
 				<br />
 				<p class="description">
-					<?php _e( 'Cannot find your form? Is the list inaccurate?', 'mimi' ); ?> <a href="<?php echo add_query_arg( 'action', 'refresh' ); ?>" class="button"><?php _e( 'Refresh Forms', 'mimi' ); ?></a>
+					<?php _e( 'Not seeing your form? Is the list inaccurate?', 'mimi' ); ?> <a href="<?php echo add_query_arg( 'action', 'refresh' ); ?>" class="button"><?php _e( 'Refresh Forms', 'mimi' ); ?></a>
 				</p>
 
 				<?php if ( $this->mimi->debug ) : ?>

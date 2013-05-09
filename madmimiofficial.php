@@ -42,9 +42,9 @@ final class MadMimi_Official {
 	}
 
 	private function requirements() {
-		require_once MADMIMI_PLUGIN_DIR . 'includes/dispatcher.php';
+		require_once MADMIMI_PLUGIN_DIR . 'includes/class-dispatcher.php';
 		// the shortcode
-		require_once MADMIMI_PLUGIN_DIR . 'includes/shortcode.php';
+		require_once MADMIMI_PLUGIN_DIR . 'includes/class-shortcode.php';
 		// the file renders the form
 		require_once MADMIMI_PLUGIN_DIR . 'includes/render.php';
 		// the main widget
@@ -52,7 +52,7 @@ final class MadMimi_Official {
 		// settings page, creds validation
 		require_once MADMIMI_PLUGIN_DIR . 'includes/settings.php';
 		// AJAX
-		require_once MADMIMI_PLUGIN_DIR . 'includes/ajax.php';
+		require_once MADMIMI_PLUGIN_DIR . 'includes/class-ajax.php';
 		
 	}
 
@@ -79,11 +79,20 @@ final class MadMimi_Official {
 	}
 
 	public function enqueue() {
-		wp_enqueue_script( 'mimi-main', plugins_url( "js/mimi.js", __FILE__ ), array( 'jquery' ), false, true );
+		// main JavaScript file
+		wp_enqueue_script( 'mimi-main', plugins_url( 'js/mimi.js', __FILE__ ), array( 'jquery' ), false, true );
+		
+		// assistance CSS
+		if ( apply_filters( 'mimi_include_basic_css', true ) )
+			wp_enqueue_style( 'mimi-base', plugins_url( 'css/mimi.css', __FILE__ ) );
+
+		// help strings
 		wp_localize_script( 'mimi-main', 'MadMimi', array(
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+			
 			'thankyou' => _x( 'Thank you for signing up! Please check your email.', 'ajax response', 'mimi' ),
 			'oops' => _x( 'Oops! There was a problem. Please try again.', 'ajax response', 'mimi' ),
+			'fix' => _x( 'There was a problem. Please fix the highlighted fields.', 'ajax response', 'mimi' ),
 		) );
 	}
 	

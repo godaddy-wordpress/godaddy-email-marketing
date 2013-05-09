@@ -9,16 +9,12 @@ class Mad_Mimi_Form_Renderer {
 
 			<div class="mimi-form-wrapper" id="form-<?php echo absint( $form_id ); ?>">
 				<form action="<?php echo esc_url( $form->submit ); ?>" method="post" class="mimi-form">
-				
-					<?php
 
-					foreach ( $form->fields as $count => $field ) : ?>
+					<?php foreach ( $form->fields as $count => $field ) : ?>
 
-						<p><?php Mad_Mimi_Form_Fields::dispatch_field( $field ); ?></p><?php
+						<p><?php Mad_Mimi_Form_Fields::dispatch_field( $field ); ?></p>
 
-					endforeach;
-
-					?>
+					<?php endforeach; ?>
 
 					<p>
 						<?php // @todo should the mad mimi text be translatable? it can be manipulated. ?>
@@ -45,7 +41,13 @@ final class Mad_Mimi_Form_Fields {
 	}
 
 	public static function string( $args ) {
-		$required = apply_filters( 'mimi_required_field_class', $args->required ? 'mimi-required' : '', $args );
+		$field_classes = array( 'mimi-field' );
+		
+		// is this field required?
+		if ( $args->required )
+			$field_classes[] = 'mimi-required';
+
+		$field_classes = (array) apply_filters( 'mimi_required_field_class', $field_classes, $args );
 		?>
 		<label for="<?php echo esc_attr( $args->name ); ?>">
 			<?php echo esc_html( $args->display ); ?>
@@ -53,7 +55,7 @@ final class Mad_Mimi_Form_Fields {
 			<span class="required">*</span>
 			<?php endif; ?>
 		</label>
-		<input type="text" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo esc_attr( $args->name ); ?>" class="<?php echo esc_attr( $required ); ?>" />
+		<input type="text" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo esc_attr( $args->name ); ?>" class="<?php echo esc_attr( join( ' ', $field_classes ) ); ?>" />
 		<?php
 	}
 }
