@@ -10,8 +10,8 @@ class Mad_Mimi_Dispatcher {
 
 	public static function fetch_forms( $username, $api_key = false ) {
 		if ( ! ( $username && $api_key ) ) {
-			$username = AAL_Settings_Controls::get_option( 'username' );
-			$api_key = AAL_Settings_Controls::get_option( 'api-key' );
+			$username = Mad_Mimi_Settings_Controls::get_option( 'username' );
+			$api_key = Mad_Mimi_Settings_Controls::get_option( 'api-key' );
 		}
 
 		$auth = array(
@@ -35,7 +35,7 @@ class Mad_Mimi_Dispatcher {
 	}
 
 	public static function get_forms( $username = false ) {
-		$username = $username ? $username : AAL_Settings_Controls::get_option( 'username' );
+		$username = $username ? $username : Mad_Mimi_Settings_Controls::get_option( 'username' );
 
 		if ( false === ( $data = get_transient( "mimi-{$username}-lists" ) ) ) {
 			$data = self::fetch_forms( $username );
@@ -62,7 +62,7 @@ class Mad_Mimi_Dispatcher {
 	}
 
 	public static function get_user_level() {
-		$username = AAL_Settings_Controls::get_option( 'username' );
+		$username = Mad_Mimi_Settings_Controls::get_option( 'username' );
 
 		// no username entered by user?
 		if ( ! $username )
@@ -87,8 +87,8 @@ class Mad_Mimi_Dispatcher {
 
 	public static function get_method_url( $method, $params = false, $auth = false ) {
 		$auth = $auth ? $auth : array(
-			'username' => AAL_Settings_Controls::get_option( 'username' ),
-			'api_key' => AAL_Settings_Controls::get_option( 'api-key' ),
+			'username' => Mad_Mimi_Settings_Controls::get_option( 'username' ),
+			'api_key' => Mad_Mimi_Settings_Controls::get_option( 'api-key' ),
 		);
 
 		if ( $params )

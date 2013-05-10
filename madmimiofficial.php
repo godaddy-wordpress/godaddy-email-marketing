@@ -62,7 +62,7 @@ final class MadMimi_Official {
 
 		// initialize settings
 		if ( is_admin() )
-			$this->settings = new AAL_Settings;
+			$this->settings = new Mad_Mimi_Settings;
 
 		// enqueue scripts n styles
 		$this->enqueue();

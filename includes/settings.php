@@ -2,7 +2,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-class AAL_Settings {
+class Mad_Mimi_Settings {
 
 	public $slug;
 	private $hook;
@@ -124,14 +124,14 @@ class AAL_Settings {
 		add_settings_section(
 			'general_settings_section',
 			__( 'Account Details', 'mimi' ),
-			array( 'AAL_Settings_Controls', 'description' ),
+			array( 'Mad_Mimi_Settings_Controls', 'description' ),
 			$this->slug
 		);
 
 		add_settings_field(
 			'username',
 			__( 'Mad Mimi Username', 'mimi' ),
-			array( 'AAL_Settings_Controls', 'text' ),
+			array( 'Mad_Mimi_Settings_Controls', 'text' ),
 			$this->slug,
 			'general_settings_section',
 			array(
@@ -144,7 +144,7 @@ class AAL_Settings {
 		add_settings_field(
 			'api-key',
 			__( 'Mad Mimi API Key', 'mimi' ),
-			array( 'AAL_Settings_Controls', 'text' ),
+			array( 'Mad_Mimi_Settings_Controls', 'text' ),
 			$this->slug,
 			'general_settings_section',
 			array(
@@ -163,7 +163,7 @@ class AAL_Settings {
 			add_settings_field(
 				'display_powered_by',
 				__( 'Display "Powered by Mad Mimi"?', 'mimi' ),
-				array( 'AAL_Settings_Controls', 'select' ),
+				array( 'Mad_Mimi_Settings_Controls', 'select' ),
 				$this->slug,
 				'general_settings_section',
 				array(
@@ -299,7 +299,7 @@ class AAL_Settings {
 }
 
 
-final class AAL_Settings_Controls {
+final class Mad_Mimi_Settings_Controls {
 
 	public static function description() {
 		?>
