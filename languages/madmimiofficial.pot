@@ -1,0 +1,213 @@
+# Copyright (C) 2013 Mad Mimi Official
+# This file is distributed under the same license as the Mad Mimi Official package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mad Mimi Official 1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/madmimiofficial\n"
+"POT-Creation-Date: 2013-05-11 16:57:31+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: includes/render.php:25
+msgid "Submit"
+msgstr ""
+
+#: includes/settings.php:25 includes/settings.php:26 includes/settings.php:190
+msgid "Mad Mimi Settings"
+msgstr ""
+
+#: includes/settings.php:64
+msgid "All transients were removed."
+msgstr ""
+
+#: includes/settings.php:72
+msgid "Forms list was successfully updated."
+msgstr ""
+
+#: includes/settings.php:91
+msgid "Overview"
+msgstr ""
+
+#: includes/settings.php:93
+msgid ""
+"\n"
+"\t\t\t\t<h3>Forms</h3>\n"
+"\t\t\t\t<p>This screen provides access to the tickets (or ticket types) you have created. Each ticket is has various attributes like price and quantity. The total amount of available tickets determines the maximum capacity of the event. Please note that once the ticket has been published, editing things like price or questions can break data consistency, since attendees may have already bought the ticket with the old data. Also, once a ticket has been published, please keep it published. Do not revert to draft, pending or trash.</p>\n"
+"\t\t\t\t<p>Use the <strong>Screen Options</strong> panel to show and hide the columns that matter most.</p>"
+msgstr ""
+
+#: includes/settings.php:100
+msgid "Additional Help"
+msgstr ""
+
+#: includes/settings.php:102
+msgid ""
+"\n"
+"\t\t\t\t<h3>More Help</h3>\n"
+"\t\t\t\t<p>OpenTracker runs several times faster than older tracker implementations and requires less memory. (For example, it runs fine with the limited resources of many embedded systems.) Several instances of the software may be run in a cluster, with all of them synchronizing with each other. Besides the Hypertext Transfer Protocol (HTTP) opentracker may also be connected to via User Datagram Protocol (UDP), which creates less than half of the tracker traffic HTTP creates.[1] It supports IPv6, gzip compression of full scrapes, and blacklists of torrents. Because there have already been cases of people being accused of copyright violation by the fact that their IP address was listed on a BitTorrent tracker,[2] opentracker may mix in random IP address numbers for the purpose of plausible deniability.</p>\n"
+"\t\t\t\t<p>Amazing! screen provides access to the tickets (or ticket types) you have created. Each ticket is has various attributes like price and quantity. The total amount of available tickets determines the maximum capacity of the event. Please note that once the ticket has been published, editing things like price or questions can break data consistency, since attendees may have already bought the ticket with the old data. Also, once a ticket has been published, please keep it published. Do not revert to draft, pending or trash.</p>\n"
+"\t\t\t\t<p>Use the <strong>Screen Options</strong> panel to show and hide the columns that matter most.</p>"
+msgstr ""
+
+#: includes/settings.php:126
+msgid "Account Details"
+msgstr ""
+
+#: includes/settings.php:133
+msgid "Mad Mimi Username"
+msgstr ""
+
+#: includes/settings.php:140
+msgid "Your Mad Mimi username (email address)"
+msgstr ""
+
+#: includes/settings.php:146
+msgid "Mad Mimi API Key"
+msgstr ""
+
+#: includes/settings.php:153
+msgid "You can find your API key at <a href=\"https://madmimi.com/user/edit\">https://madmimi.com/user/edit</a>"
+msgstr ""
+
+#: includes/settings.php:165
+msgid "Display \"Powered by Mad Mimi\"?"
+msgstr ""
+
+#: includes/settings.php:173
+msgid "Yes"
+msgstr ""
+
+#: includes/settings.php:174
+msgid "No"
+msgstr ""
+
+#: includes/settings.php:196
+msgctxt "save settings button"
+msgid "Save Settings"
+msgstr ""
+
+#: includes/settings.php:199
+msgid "Available Forms"
+msgstr ""
+
+#: includes/settings.php:204 includes/settings.php:211
+msgid "Form Name"
+msgstr ""
+
+#: includes/settings.php:205 includes/settings.php:212
+msgid "Form ID"
+msgstr ""
+
+#: includes/settings.php:206 includes/settings.php:213
+msgid "Shortcode"
+msgstr ""
+
+#: includes/settings.php:231
+msgid "Edit form in Mad Mimi"
+msgstr ""
+
+#: includes/settings.php:234
+msgid "Preview"
+msgstr ""
+
+#: includes/settings.php:246
+msgid "No forms found"
+msgstr ""
+
+#: includes/settings.php:256
+msgid "Not seeing your form? Is the list inaccurate?"
+msgstr ""
+
+#: includes/settings.php:256
+msgid "Refresh Forms"
+msgstr ""
+
+#: includes/settings.php:261
+msgid "Debug"
+msgstr ""
+
+#: includes/settings.php:263
+msgid "Erase All Data"
+msgstr ""
+
+#: includes/settings.php:264
+msgid "Erase Transients"
+msgstr ""
+
+#: includes/settings.php:283
+msgid "The credentials are incorrect! Please verify that you have entered them correctly."
+msgstr ""
+
+#: includes/settings.php:289
+msgid "Connection with Mad Mimi has been established! You're all set!"
+msgstr ""
+
+#: includes/settings.php:294
+msgid "Please fill in the username and the API key first."
+msgstr ""
+
+#: includes/settings.php:306
+msgid "Please enter your Mad Mimi username and API Key in order to be able to create forms."
+msgstr ""
+
+#: includes/widget.php:15 includes/widget.php:26
+msgid "Mad Mimi Form"
+msgstr ""
+
+#: includes/widget.php:17
+msgid "The real Mad Mimi form widget"
+msgstr ""
+
+#: includes/widget.php:62
+msgid "Title:"
+msgstr ""
+
+#: includes/widget.php:68
+msgid "Form:"
+msgstr ""
+
+#: includes/widget.php:76
+msgid "Please set up your Mad Mimi account in the <a href=\"%s\">settings page</a>."
+msgstr ""
+
+#: madmimiofficial.php:108
+msgctxt "ajax response"
+msgid "Thank you for signing up! Please check your email."
+msgstr ""
+
+#: madmimiofficial.php:109
+msgctxt "ajax response"
+msgid "Oops! There was a problem. Please try again."
+msgstr ""
+
+#: madmimiofficial.php:110
+msgctxt "ajax response"
+msgid "There was a problem. Please fix the highlighted fields."
+msgstr ""
+
+#: madmimiofficial.php:115
+msgid "Settings"
+msgstr ""
+#. Plugin Name of the plugin/theme
+msgid "Mad Mimi Official"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/extend/plugins/mad-mimi-official/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "This is the official Mad Mimi plugin for WordPress."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Mad Mimi, LLC"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://madmimi.com/"
+msgstr ""
