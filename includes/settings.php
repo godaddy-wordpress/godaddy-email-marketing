@@ -193,7 +193,7 @@ class Mad_Mimi_Settings {
 				<?php
 				settings_fields( 'madmimi-options' );
 				do_settings_sections( $this->slug );
-				submit_button();
+				submit_button( _x( 'Save Settings', 'save settings button', 'mimi' ) );
 				?>
 
 				<h3><?php _e( 'Available Forms', 'mimi' ); ?></h3>
@@ -286,7 +286,7 @@ class Mad_Mimi_Settings {
 
 			} elseif ( ! empty( $data->total ) ) {
 				// test the returned data, and let the user know she's alright!
-				add_settings_error( $this->slug, 'valid-creds', __( 'Credentials are correct! You\'re all set!', 'mimi' ), 'updated' );
+				add_settings_error( $this->slug, 'valid-creds', __( 'Connection with Mad Mimi has been established! You\'re all set!', 'mimi' ), 'updated' );
 			}
 
 		} else {
