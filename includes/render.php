@@ -4,13 +4,17 @@ class Mad_Mimi_Form_Renderer {
 
 	private static $loops = 0;
 
-	public function process( $form_id ) {
+	public function process( $form_id, $echo = false ) {
 		$form = Mad_Mimi_Dispatcher::get_fields( (int) $form_id );
 
-		if ( ! empty( $form->fields ) ) : self::$loops++; ?>
+		if ( ! empty( $form->fields ) ) : 
+
+			self::$loops++; ob_start(); ?>
 
 			<div class="mimi-form-wrapper" id="form-<?php echo absint( $form_id ); ?>">
 				<form action="<?php echo esc_url( $form->submit ); ?>" method="post" class="mimi-form">
+
+					<?php do_action( 'mimi_before_fields', $form_id, $form->fields ); ?>
 
 					<?php foreach ( $form->fields as $count => $field ) : ?>
 
@@ -18,16 +22,35 @@ class Mad_Mimi_Form_Renderer {
 
 					<?php endforeach; ?>
 
+					<?php do_action( 'mimi_after_fields', $form_id, $form->fields ); ?>
+
+					<?php
+					$user_info 		 = Mad_Mimi_Dispatcher::get_user_level();
+					$show_powered_by = 'yes' == Mad_Mimi_Settings_Controls::get_option( 'display_powered_by' ) ? true : false;
+					?>
+
+					<?php if ( isset( $user_info->type ) && 'free' != $user_info->type && $show_powered_by ) : ?>
+					
 					<p>
 						<?php // @todo should the mad mimi text be translatable? it can be manipulated. ?>
-						<a href="http://madmimi.com" target="_blank">Powered by Mad Mimi</a>
+						<a href="http://madmimi.com" target="_blank"><?php _e( 'Powered by Mad Mimi', 'mimi' ); ?></a>
 					</p>
+
+					<?php endif; ?>
 
 					<input type="hidden" name="form_id" value="<?php echo absint( $form->id ); ?>" />
 					<input type="submit" value="<?php _e( 'Submit', 'mimi' ); ?>" class="button mimi-submit" />
+					<span class="mimi-spinner"></span>
 				</form>
 			</div>
 			<?php
+
+			$output = ob_get_clean();
+
+			if ( $echo )
+				echo $output;
+
+			return $output;
 
 		endif;
 	}

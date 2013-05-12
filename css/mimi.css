@@ -1,7 +1,9 @@
 /* basic CSS styles */
 
-/* === fields === */
-.mimi-invalid {
+/**
+ * Fields
+ */
+input.mimi-invalid {
 	border: 1px solid red;
 }
 
@@ -9,11 +11,35 @@
 	display: block;
 }
 
-/* === messages === */
+.mimi-spinner {
+	display: none;
+	background: url(../../../../wp-admin/images/wpspin_light.gif) no-repeat;
+	background-size: 16px 16px;
+	width: 16px;
+	height: 16px;
+}
+
+/**
+ * Messages
+ */
 .mimi-error {
 	background-color: #ffebe8;
 	border: 1px solid #c00;
 	padding: 0.5em 1em;
 	margin: 0.6em 0;
 	border-radius: 3px;
+}
+
+
+/**
+ * HiDPI Displays
+ */
+@media print,
+  (-o-min-device-pixel-ratio: 5/4),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+
+	.mimi-spinner {
+		background-image: url(../../../../wp-admin/images/wpspin_light-2x.gif);
+	}
 }

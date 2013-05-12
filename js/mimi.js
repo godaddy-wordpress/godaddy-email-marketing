@@ -4,7 +4,9 @@
 
 	var MadMimi = window.MadMimi || {};
 
-	// Constants
+	/**
+	 * Constants
+	 */
 	MadMimi.DEBUG_FLAG = true;
 
 	MadMimi.init = function() {
@@ -14,14 +16,14 @@
 			e.preventDefault();
 			
 			var $wrapper = $( this ),
+				$spinner = $( '.mimi-spinner', $wrapper ),
 				payload = $.extend( {}, $( this ).mimiSerializeObject(), {
 					action: 'mimi-submit-form'
 				} ),
 				invalidElements = [],
 				m = MadMimi;
 
-			// make sure to reset the invalid elements array before each check
-			invalidElements = [];
+			// make sure to clear all "invalid" elements before re-validating
 			$wrapper.find( 'input.mimi-invalid' ).removeClass( 'mimi-invalid' );
 
 			$( this ).find( ':input' ).each( function( i ) {
@@ -41,9 +43,12 @@
 
 			// if there are no empty or invalid fields left...
 			if ( 0 == invalidElements.length ) {
-				$( this ).fadeOut( 'fast', function() {
+				// we're good to go! start spinnin'
+				$spinner.css( 'display', 'inline-block' );
 
-					$.post( $wrapper.attr( 'action' ) + '.json', payload, function( response ) {
+				$.post( $wrapper.attr( 'action' ) + '.json', payload, function( response ) {
+					
+					$wrapper.fadeOut( 'fast', function() {
 
 						// was the user successfully added?
 						if ( response.success && response.result.new_member ) {
@@ -52,9 +57,10 @@
 							$wrapper.html( MadMimi.addMessage( 'info', MadMimi.oops ) ).fadeIn( 'fast' );
 						}
 
-					}, 'jsonp' );
+					} );
+
+				}, 'jsonp' );
 					
-				} );
 			} else {
 				// there are invalid elements
 				$( invalidElements ).each( function( i, el ) {
@@ -86,13 +92,9 @@
 			console.log( message );
 	}
 
-
-	// constructor
-	$( function() {
-		$( MadMimi.init );
-	} );
-
-	// Helpers
+	/**
+	 * ==== Helpers + Utilities ====
+	 */
 	$.fn.mimiSerializeObject = function() {
 		var o = {};
 		var a = this.serializeArray();
@@ -109,4 +111,8 @@
 		return o;
 	};
 
+	/**
+	 * Constructor
+	 */
+	$( document ).ready( MadMimi.init );
 } )( jQuery );

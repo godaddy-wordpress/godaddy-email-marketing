@@ -12,7 +12,6 @@ License: GPLv2 or later
 /**
  * 
  * @todo
- * 1. load textdomain
  * 2. uninstall hook
  */
 

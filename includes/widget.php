@@ -31,8 +31,7 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 		if ( $title )
 			echo $before_title . $title . $after_title;
 
-		Mad_Mimi_Form_Renderer::process( $form_id );
-
+		Mad_Mimi_Form_Renderer::process( $form_id, true );
 
 		echo $after_widget;
 	}

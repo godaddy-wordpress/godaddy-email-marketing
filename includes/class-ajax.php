@@ -18,8 +18,7 @@ class Mad_Mimi_AJAX {
 	public function submit_form() {
 		$form_data = $_POST;
 
-		// @TODO: ADD NONCE!!!!!!!!!!!!!!!! SPECIFIC TO FORM ID
-
+		// nonce?
 		if ( ! empty( $form_data ) && isset( $form_data['form_id'] ) ) {
 			$response = wp_remote_post( sprintf( 'https://madmimi.com/signups/subscribe/%d.json', $form_data['form_id'] ), array(
 				'timeout' => 15,

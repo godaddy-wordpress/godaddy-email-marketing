@@ -1,7 +1,7 @@
 <?php
 
 class Mad_Mimi_Shortcode {
-
+	
 	public function render( $atts ) {
 		extract( shortcode_atts( array(
 			'id' => false,
@@ -10,7 +10,7 @@ class Mad_Mimi_Shortcode {
 		if ( ! $id )
 			return;
 
-		Mad_Mimi_Form_Renderer::process( $id );
+		return Mad_Mimi_Form_Renderer::process( $id, false );
 	}
 }
 
@@ -25,5 +25,5 @@ function madmimi_form( $id ) {
 	if ( ! class_exists( 'Mad_Mimi_Form_Renderer' ) )
 		return;
 
-	Mad_Mimi_Form_Renderer::process( $id );
+	Mad_Mimi_Form_Renderer::process( $id, true );
 }
