@@ -2,17 +2,19 @@
 
 class Mad_Mimi_Form_Renderer {
 
-	function process( $form_id ) {
+	private static $loops = 0;
+
+	public function process( $form_id ) {
 		$form = Mad_Mimi_Dispatcher::get_fields( (int) $form_id );
 
-		if ( ! empty( $form->fields ) ) : ?>
+		if ( ! empty( $form->fields ) ) : self::$loops++; ?>
 
 			<div class="mimi-form-wrapper" id="form-<?php echo absint( $form_id ); ?>">
 				<form action="<?php echo esc_url( $form->submit ); ?>" method="post" class="mimi-form">
 
 					<?php foreach ( $form->fields as $count => $field ) : ?>
 
-						<p><?php Mad_Mimi_Form_Fields::dispatch_field( $field ); ?></p>
+						<p><?php Mad_Mimi_Form_Fields::dispatch_field( $field, self::$loops ); ?></p>
 
 					<?php endforeach; ?>
 
@@ -31,13 +33,22 @@ class Mad_Mimi_Form_Renderer {
 	}
 }
 
-final class Mad_Mimi_Form_Fields {
+class Mad_Mimi_Form_Fields {
 
-	public function dispatch_field( $field ) {
+	private static $cycle = 0;
+
+	public function dispatch_field( $field, $cycle = 1 ) {
 		if ( ! is_object( $field ) || ! method_exists( __CLASS__, $field->type ) )
-			return false;
+			return;
+
+		self::$cycle = absint( $cycle );
 
 		call_user_func( array( __CLASS__, $field->type ), $field );
+	}
+
+	public function get_form_id( $field_name ) {
+		// since HTML ID's can't exist in the same exact spelling more than once... make it special.
+		return esc_attr( sprintf( 'form_%s_%s', self::$cycle, $field_name ) );
 	}
 
 	public static function string( $args ) {
@@ -49,13 +60,13 @@ final class Mad_Mimi_Form_Fields {
 
 		$field_classes = (array) apply_filters( 'mimi_required_field_class', $field_classes, $args );
 		?>
-		<label for="<?php echo esc_attr( $args->name ); ?>">
+		<label for="<?php echo self::get_form_id( $args->name ); ?>">
 			<?php echo esc_html( $args->display ); ?>
 			<?php if ( $args->required && apply_filters( 'mimi_required_field_indicator', true, $args ) ) : ?>
 			<span class="required">*</span>
 			<?php endif; ?>
 		</label>
-		<input type="text" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo esc_attr( $args->name ); ?>" class="<?php echo esc_attr( join( ' ', $field_classes ) ); ?>" />
+		<input type="text" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo self::get_form_id( $args->name ); ?>" class="<?php echo esc_attr( join( ' ', $field_classes ) ); ?>" />
 		<?php
 	}
 }

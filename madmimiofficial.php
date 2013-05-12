@@ -34,8 +34,9 @@ class MadMimi_Official {
 	}
 
 	private function setup_actions() {
-		add_action( 'init', 		array( $this, 'init' 			) );
+		add_action( 'init', 		array( $this, 'init' ) );
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
+		add_action( 'init', 		array( $this, 'register_shortcode'	), 20 );
 		add_filter( 'plugin_action_links_' . self::$basename, array( $this, 'action_links' ), 10, 2 );
 	}
 
@@ -82,11 +83,14 @@ class MadMimi_Official {
 		// register AJAX actions
 		Mad_Mimi_AJAX::register();
 
-		// register shortcode
-		add_shortcode( 'mimi', array( 'Mad_Mimi_Shortcode', 'render' ) );
-
 		// Load our textdomain to allow multilingual translations
 		load_plugin_textdomain( 'mimi', false, dirname( self::$basename ) . '/languages/' );
+	}
+
+	public function register_shortcode() {
+		// register shortcode
+		add_shortcode( 'madmimi', array( 'Mad_Mimi_Shortcode', 'render' ) );		
+		add_shortcode( 'MadMimi', array( 'Mad_Mimi_Shortcode', 'render' ) );		
 	}
 
 	public function register_widget() {

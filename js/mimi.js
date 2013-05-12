@@ -1,91 +1,73 @@
+/* mimi.js */
 ;( function( $, undefined ) {
 	"use strict";
 
 	var MadMimi = window.MadMimi || {};
 
+	// Constants
+	MadMimi.DEBUG_FLAG = true;
+
 	MadMimi.init = function() {
 
-		$( '.mimi-form' ).submit( function( e ) {
+		// Handles form submissions
+		$( 'form.mimi-form' ).submit( function( e ) {
 			e.preventDefault();
 			
-			var wrapper = $( this ),
+			var $wrapper = $( this ),
 				payload = $.extend( {}, $( this ).mimiSerializeObject(), {
 					action: 'mimi-submit-form'
 				} ),
-				invalidElements = [];
+				invalidElements = [],
+				m = MadMimi;
+
+			// make sure to reset the invalid elements array before each check
+			invalidElements = [];
+			$wrapper.find( 'input.mimi-invalid' ).removeClass( 'mimi-invalid' );
 
 			$( this ).find( ':input' ).each( function( i ) {
 				if ( 
 					'signup[email]' == $( this ).attr( 'name' ) 
 					&& ! MadMimi.isEmail( $( this ).val() ) 
 				) {
-
 					// email not valid
 					invalidElements.push( $( this ) );
+					m.log( 'Email is NOT valid' );
+
 				} else if ( $( this ).is( '.mimi-required' ) && '' == $( this ).val() ) {
 					invalidElements.push( $( this ) );
+					m.log( 'A required filled was not filled' );
 				}
 			} );
 
 			// if there are no empty or invalid fields left...
 			if ( 0 == invalidElements.length ) {
-
 				$( this ).fadeOut( 'fast', function() {
 
-					$.post( wrapper.attr( 'action' ) + '.json', payload, function( response ) {
+					$.post( $wrapper.attr( 'action' ) + '.json', payload, function( response ) {
 
+						// was the user successfully added?
 						if ( response.success && response.result.new_member ) {
-							// user was successfully added
-							wrapper.html( MadMimi.addMessage( 'info', MadMimi.thankyou ) ).fadeIn( 'fast' );
+							$wrapper.html( MadMimi.addMessage( 'info', MadMimi.thankyou ) ).fadeIn( 'fast' );
 						} else {
-							wrapper.html( MadMimi.addMessage( 'info', MadMimi.oops ) ).fadeIn( 'fast' );
+							$wrapper.html( MadMimi.addMessage( 'info', MadMimi.oops ) ).fadeIn( 'fast' );
 						}
 
 					}, 'jsonp' );
 					
 				} );
-				
 			} else {
 				// there are invalid elements
 				$( invalidElements ).each( function( i, el ) {
 					$( this ).addClass( 'mimi-invalid' );
 				} );
 
-				var previousNotifications = wrapper.find( '.mimi-error, .mimi-info' );
+				var previousNotifications = $wrapper.find( '.mimi-error, .mimi-info' );
 
 				if ( 0 != previousNotifications.length )
 					previousNotifications.remove();
 
-				wrapper.prepend( MadMimi.addMessage( 'error', MadMimi.fix ) );
+				$wrapper.prepend( MadMimi.addMessage( 'error', MadMimi.fix ) );
 			}
-			
-
-			/*
-			$.getJSON( $( this ).attr( 'action' ) + '.json', $( this ).serialize(), function(data, textStatus, jqXHR) {
-
-				alert('yooo');
-
-			} );
-		*/
-/*
-
-
-			$.ajax( {
-				url: $( this ).attr( 'action' ) + '.json',
-				type: 'POST',
-				crossDomain: true,
-				//processData: false,
-				dataType: "jsonp",
-				data: $( this ).serialize(),
-				contentType: "application/json",
-				success:function( json ) {
-					alert("Success");
-				},
-			} ).always(function( json ) {
-				console.log(json);
-			});
-*/
-
 
 		} );
 	};
@@ -97,6 +79,11 @@
 	MadMimi.isEmail = function ( email ) {
 		var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 		return regex.test( email );
+	}
+
+	MadMimi.log = function( message ) {
+		if ( MadMimi.DEBUG_FLAG && window.console )
+			console.log( message );
 	}
 
 

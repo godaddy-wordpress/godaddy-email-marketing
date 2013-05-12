@@ -236,7 +236,7 @@ class Mad_Mimi_Settings {
 									</div>
 								</td>
 								<td><code><?php echo absint( $form->id ); ?></code></td>
-								<td><input type="text" class="code" value="[mimi id=<?php echo absint( $form->id ); ?>]" onclick="this.select()" readonly /></td>
+								<td><input type="text" class="code" value="[madmimi id=<?php echo absint( $form->id ); ?>]" onclick="this.select()" readonly /></td>
 							</tr>
 
 							<?php
