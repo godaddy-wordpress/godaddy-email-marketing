@@ -51,7 +51,7 @@ class Mad_Mimi_Dispatcher {
 			) ) );
 
 			// was there an error, connection is down? bail and try again later.
-			if ( ! self::is_request_ok( $fields ) )
+			if ( ! self::is_response_ok( $fields ) )
 				return false;
 
 			// @TODO: should we cache results for longer than a day? not expire at all?
@@ -72,7 +72,7 @@ class Mad_Mimi_Dispatcher {
 			$data = wp_remote_get( self::get_method_url( 'account' ) );
 
 			// if the request has failed for whatever reason
-			if ( ! self::is_request_ok( $data ) )
+			if ( ! self::is_response_ok( $data ) )
 				return false;
 			
 			$data = json_decode( wp_remote_retrieve_body( $data ) );
@@ -111,7 +111,7 @@ class Mad_Mimi_Dispatcher {
 		return self::base_api . $path;
 	}
 
-	public static function is_request_ok( &$request ) {
+	public static function is_response_ok( &$request ) {
 		return (
 			! is_wp_error( $request )
 			&& in_array( wp_remote_retrieve_response_code( $request ), self::$ok_codes )
