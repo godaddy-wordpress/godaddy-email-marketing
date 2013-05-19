@@ -37,6 +37,10 @@ class MadMimi_Official {
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
 		add_action( 'init', 		array( $this, 'register_shortcode'	), 20 );
 		add_filter( 'plugin_action_links_' . self::$basename, array( $this, 'action_links' ), 10, 2 );
+		add_action( 'admin_notices', array( $this, 'action_admin_notices' ) );
+
+		register_activation_hook( __FILE__, array( $this, 'activate' ) );
+		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
 	}
 
 	private function setup_constants() {
@@ -47,6 +51,10 @@ class MadMimi_Official {
 		// Absolute URL to plugin's dir
 		defined( 'MADMIMI_PLUGIN_URL' )
 			or define( 'MADMIMI_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+
+		// Plugin's main directory
+		defined( 'MADMIMI_VERSION' )
+			or define( 'MADMIMI_VERSION', '1.0' );
 
 		// Set up the base name
 		isset( self::$basename ) || self::$basename = plugin_basename( __FILE__ );
@@ -117,6 +125,35 @@ class MadMimi_Official {
 	public function action_links( $links, $file ) {
 		$links[] = sprintf( '<a href="%s">%s</a>', menu_page_url( 'mad-mimi-settings', false ), __( 'Settings' ) );
 		return $links;
+	}
+
+	public function activate() {
+
+	}
+
+	public function deactivate() {
+		delete_option( 'madmimi-version' );
+	}
+
+	public function action_admin_notices() {
+		$screen = get_current_screen();
+
+		if ( 'plugins' != $screen->id )
+			return;
+
+		$version = get_option( 'madmimi-version' );
+
+		if ( ! $version ) {
+			update_option( 'madmimi-version', MADMIMI_VERSION );
+			?>
+			<div class="updated fade">
+				<p>
+					<strong><?php _e( 'Mad Mimi is almost ready.', 'mimi' ); ?></strong> <?php _e( 'You must enter your Mad Mimi username &amp; API key for it to work.', 'mimi' ); ?> &nbsp;
+					<a class="button" href="<?php menu_page_url( 'mad-mimi-settings' ); ?>"><?php _e( 'Let\'s do it!', 'mimi' ); ?></a>
+				</p>
+			</div>
+			<?php
+		}
 	}
 }
 

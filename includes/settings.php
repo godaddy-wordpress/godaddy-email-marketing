@@ -77,6 +77,16 @@ class Mad_Mimi_Settings {
 					}
 
 					break;
+
+				case 'edit_form':
+					if ( ! isset( $_GET['form_id'] ) )
+						return;
+
+					$tokenized_url = add_query_arg( 'redirect', sprintf( '/signups/%d/edit', absint( $_GET['form_id'] ) ), Mad_Mimi_Dispatcher::user_sign_in() );
+
+					wp_redirect( $tokenized_url );
+					exit;
+					break;
 			}
 		}
 
@@ -212,17 +222,20 @@ class Mad_Mimi_Settings {
 
 					$forms = Mad_Mimi_Dispatcher::get_forms();
 
-					if ( ! empty( $forms->signups ) ) :
+					if ( $forms && ! empty( $forms->signups ) ) :
 
 						foreach( $forms->signups as $form ) :
-							$edit_link = sprintf( 'https://madmimi.com/signups/%d/edit', absint( $form->id ) );
+							$edit_link = add_query_arg( array(
+								'action' => 'edit_form',
+								'form_id' => $form->id,
+							) );
 							?>
 							<tr>
 								<td>
 									<?php echo esc_html( $form->name ); ?>
 									<div class="row-actions">
 										<span class="edit">
-											<a target="_blank" href="<?php echo esc_url( $edit_link ); ?>"><?php _e( 'Edit form in Mad Mimi', 'mimi' ); ?></a> | 
+											<a target="_blank" href="<?php echo esc_url( $edit_link ); ?>" title="<?php _e( 'Opens in a new window', 'mimi' ); ?>"><?php _e( 'Edit form in Mad Mimi', 'mimi' ); ?></a> |
 										</span>
 										<span class="view">
 											<a target="_blank" href="<?php echo esc_url( $form->url ); ?>"><?php _e( 'Preview', 'mimi' ); ?></a>
@@ -265,7 +278,7 @@ class Mad_Mimi_Settings {
 		</div><!-- /.wrap -->
 		<?php
 	}
-	
+
 	public function validate( $input ) {
 		// validate creds against the API
 

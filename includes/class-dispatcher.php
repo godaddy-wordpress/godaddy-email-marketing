@@ -4,7 +4,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class Mad_Mimi_Dispatcher {
 
-	const base_api = 'http://api.madmimi.com/';
+	/**
+	 * API's base URL
+	 */
+	const BASE_API = 'http://api.madmimi.com/';
 
 	private static $ok_codes = array( 200, 304 );
 
@@ -37,6 +40,10 @@ class Mad_Mimi_Dispatcher {
 
 	public static function get_forms( $username = false ) {
 		$username = $username ? $username : Mad_Mimi_Settings_Controls::get_option( 'username' );
+		$api_key = Mad_Mimi_Settings_Controls::get_option( 'api-key' );
+
+		if ( empty( $api_key ) )
+			return false;
 
 		if ( false === ( $data = get_transient( "mimi-{$username}-lists" ) ) ) {
 			$data = self::fetch_forms( $username );
@@ -86,30 +93,61 @@ class Mad_Mimi_Dispatcher {
 		return $data;
 	}
 
-	public static function get_method_url( $method, $params = false, $auth = false ) {
+	public static function user_sign_in() {
+		// Prepare the URL that includes our credentials
+		$response = wp_remote_get( self::get_method_url( 'signin', false ), array(
+			'timeout' => 10,
+		) );
+
+		// credentials are incorrect
+		if ( ! in_array( wp_remote_retrieve_response_code( $response ), self::$ok_codes ) )
+			return false;
+
+		// retrieve the token
+		return self::get_method_url( 'signin_redirect', array(
+			'token' => wp_remote_retrieve_body( $response ),
+		) );
+	}
+
+	/**
+	 * Utility function for getting a URL for various API methods
+	 *
+	 * @param      $method
+	 * @param bool $params
+	 * @param bool $auth
+	 *
+	 * @return string
+	 */
+	public static function get_method_url( $method, $params = array(), $auth = false ) {
 		$auth = $auth ? $auth : array(
 			'username' => Mad_Mimi_Settings_Controls::get_option( 'username' ),
 			'api_key' => Mad_Mimi_Settings_Controls::get_option( 'api-key' ),
 		);
 
-		if ( $params )
-			extract( (array) $params, EXTR_SKIP );
-
 		$path = '';
 
 		switch ( $method ) {
 			case 'forms':
-				$path = add_query_arg( $auth, "signups.json" );
+				$path = add_query_arg( $auth, 'signups.json' );
 				break;
 			case 'fields':
-				$path = add_query_arg( $auth, "signups/{$id}.json" );
+				$path = add_query_arg( $auth, "signups/{$params['id']}.json" );
 				break;
 			case 'account':
-				$path = add_query_arg( $auth, "user/account_status" );
+				$path = add_query_arg( $auth, 'user/account_status' );
+				break;
+			case 'signin':
+				$path = add_query_arg( $auth, 'sessions/single_signon_token' );
+				break;
+			case 'signin_redirect':
+				$path = add_query_arg( array(
+					'token' => $params['token'],
+					'username' => $auth['username'],
+				), 'sessions/single_signon' );
 				break;
 		}
 
-		return self::base_api . $path;
+		return self::BASE_API . $path;
 	}
 
 	public static function is_response_ok( &$request ) {
