@@ -25,17 +25,13 @@ class Mad_Mimi_Form_Renderer {
 					<?php do_action( 'mimi_after_fields', $form_id, $form->fields ); ?>
 
 					<?php
-					$user_info 		 = Mad_Mimi_Dispatcher::get_user_level();
-					$show_powered_by = 'yes' == Mad_Mimi_Settings_Controls::get_option( 'display_powered_by' ) ? true : false;
-					?>
+					$show_powered_by = Mad_Mimi_Settings_Controls::get_option( 'display_powered_by' ) ? true : false;
 
-					<?php if ( isset( $user_info->type ) && 'free' != $user_info->type && $show_powered_by ) : ?>
-					
+					if ( $show_powered_by ) : ?>
 					<p>
 						<?php // @todo should the mad mimi text be translatable? it can be manipulated. ?>
 						<a href="http://madmimi.com" target="_blank"><?php _e( 'Powered by Mad Mimi', 'mimi' ); ?></a>
 					</p>
-
 					<?php endif; ?>
 
 					<input type="hidden" name="form_id" value="<?php echo absint( $form->id ); ?>" />

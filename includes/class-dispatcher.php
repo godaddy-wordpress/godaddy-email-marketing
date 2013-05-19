@@ -28,7 +28,8 @@ class Mad_Mimi_Dispatcher {
 		if ( ! in_array( wp_remote_retrieve_response_code( $response ), self::$ok_codes ) )
 			return false;
 
-		// cache results for 24hrs
+		// @todo should we cache for *always* since we have a button to clear the cache?
+		// maybe having an expiration on such a thing can bloat wp_options?
 		set_transient( "mimi-{$username}-lists", $data = json_decode( wp_remote_retrieve_body( $response ) ), defined( DAY_IN_SECONDS ) ? DAY_IN_SECONDS : 60 * 60 * 24 );
 
 		return $data;

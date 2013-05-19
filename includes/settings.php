@@ -7,7 +7,7 @@ class Mad_Mimi_Settings {
 	public $slug;
 	private $hook;
 	private $mimi;
-	
+
 	public function __construct() {
 		$this->mimi = madmimi(); // main Mad Mimi instance
 
@@ -55,7 +55,7 @@ class Mad_Mimi_Settings {
 					if ( isset( $settings['username'] ) ) {
 						// remove all lists
 						delete_transient( "mimi-{$settings['username']}-lists" );
-						
+
 						// mass-removal of all forms
 						foreach ( Mad_Mimi_Dispatcher::get_forms()->signups as $form ) {
 							delete_transient( "mimi-form-{$form->id}" );
@@ -156,27 +156,21 @@ class Mad_Mimi_Settings {
 
 		$user_info = Mad_Mimi_Dispatcher::get_user_level();
 
-
 		// don't register this setting on all pages
-		if ( 'options-general.php' == $pagenow && $user_info && isset( $user_info->type ) && 'free' != $user_info->type ) {		
-			
-			add_settings_field(
-				'display_powered_by',
-				__( 'Display "Powered by Mad Mimi"?', 'mimi' ),
-				array( 'Mad_Mimi_Settings_Controls', 'select' ),
-				$this->slug,
-				'general_settings_section',
-				array(
-					'id' => 'display_powered_by',
-					'page' => $this->slug,
-					'options' => array(
-						'yes' => __( 'Yes', 'mimi' ),
-						'no' => __( 'No', 'mimi' ),
-					),
-				)
-			);
-		}
-		
+		/* if ( 'options-general.php' == $pagenow && $user_info && isset( $user_info->type ) && 'free' != $user_info->type ) {} */
+
+		add_settings_field(
+			'display_powered_by',
+			'',
+			array( 'Mad_Mimi_Settings_Controls', 'checkbox' ),
+			$this->slug,
+			'general_settings_section',
+			array(
+				'id' => 'display_powered_by',
+				'page' => $this->slug,
+				'label' => __( 'Display "Powered by Mad Mimi"?', 'mimi' )
+			)
+		);
 
 		do_action( 'mimi_setup_settings_fields' );
 	}
@@ -185,10 +179,10 @@ class Mad_Mimi_Settings {
 		?>
 		<!-- Create a header in the default WordPress 'wrap' container -->
 		<div class="wrap">
-		
+
 			<?php screen_icon(); ?>
 			<h2><?php _e( 'Mad Mimi Settings', 'mimi' ); ?></h2>
-			
+
 			<form method="post" action="options.php">
 				<?php
 				settings_fields( 'madmimi-options' );
@@ -219,8 +213,8 @@ class Mad_Mimi_Settings {
 					$forms = Mad_Mimi_Dispatcher::get_forms();
 
 					if ( ! empty( $forms->signups ) ) :
-				 
-						foreach( $forms->signups as $form ) : 
+
+						foreach( $forms->signups as $form ) :
 							$edit_link = sprintf( 'https://madmimi.com/signups/%d/edit', absint( $form->id ) );
 							?>
 							<tr>
@@ -245,9 +239,9 @@ class Mad_Mimi_Settings {
 						<tr>
 							<td colspan="3"><?php _e( 'No forms found', 'mimi' ); ?></td>
 						</tr>
-						<?php 
-					endif; 
-					?>	
+						<?php
+					endif;
+					?>
 					</tbody>
 				</table>
 
@@ -267,11 +261,11 @@ class Mad_Mimi_Settings {
 				<?php endif; ?>
 
 			</form>
-			
+
 		</div><!-- /.wrap -->
 		<?php
 	}
-
+	
 	public function validate( $input ) {
 		// validate creds against the API
 
@@ -281,7 +275,7 @@ class Mad_Mimi_Settings {
 			if ( ! $data ) {
 				// credentials are incorrect
 				add_settings_error( $this->slug, 'invalid-creds', __( 'The credentials are incorrect! Please verify that you have entered them correctly.', 'mimi' ) );
-				
+
 				return $input; // bail
 
 			} elseif ( ! empty( $data->total ) ) {
@@ -295,7 +289,7 @@ class Mad_Mimi_Settings {
 		}
 
 		return $input;
-	}	
+	}
 }
 
 
@@ -312,7 +306,7 @@ final class Mad_Mimi_Settings_Controls {
 
 		if ( empty( $options ) || empty( $id ) || empty( $page ) )
 			return;
-		
+
 		?>
 		<select id="<?php echo esc_attr( $id ); ?>" name="<?php printf( '%s[%s]', esc_attr( $page ), esc_attr( $id ) ); ?>">
 			<?php foreach ( $options as $name => $label ) : ?>
@@ -335,11 +329,32 @@ final class Mad_Mimi_Settings_Controls {
 
 		?>
 		<input type="text" name="<?php echo $name; ?>" value="<?php echo $value; ?>" class="regular-text code" />
-
-		<?php if ( isset( $description ) ) : ?>
-		<p class="description"><?php echo $description; ?></p>
-		<?php endif; ?>
 		<?php
+		self::show_description( $args );
+	}
+
+	public static function checkbox( $args ) {
+		extract( $args, EXTR_SKIP );
+
+		if ( empty( $id ) || empty( $page ) )
+			return;
+
+		$name = esc_attr( sprintf( '%s[%s]', esc_attr( $page ), esc_attr( $id ) ) );
+		$value = esc_attr( self::get_option( $id ) );
+		$label = esc_html( isset( $label ) ? $label : '' );
+		?>
+		<label for="<?php echo $name; ?>">
+			<input type="checkbox" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="1" <?php checked( $value ); ?> />
+			<?php echo $label; ?>
+		</label>
+		<?php
+		self::show_description( $args );
+	}
+
+	public function show_description( $field_args ) {
+		if ( isset( $field_args['description'] ) ) : ?>
+			<p class="description"><?php echo $field_args['description']; ?></p>
+		<?php endif;
 	}
 
 	public static function get_option( $key = '' ) {
