@@ -36,8 +36,8 @@ class MadMimi_Official {
 		add_action( 'init', 		array( $this, 'init' ) );
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
 		add_action( 'init', 		array( $this, 'register_shortcode'	), 20 );
-		add_filter( 'plugin_action_links_' . self::$basename, array( $this, 'action_links' ), 10, 2 );
 		add_action( 'admin_notices', array( $this, 'action_admin_notices' ) );
+		add_filter( 'plugin_action_links_' . self::$basename, array( $this, 'action_links' ), 10, 2 );
 
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
 		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
@@ -109,13 +109,12 @@ class MadMimi_Official {
 		wp_enqueue_script( 'mimi-main', plugins_url( 'js/mimi.js', __FILE__ ), array( 'jquery' ), false, true );
 		
 		// assistance CSS
-		if ( apply_filters( 'mimi_include_basic_css', true ) )
-			wp_enqueue_style( 'mimi-base', plugins_url( 'css/mimi.css', __FILE__ ) );
+		wp_enqueue_style( 'mimi-base', plugins_url( 'css/mimi.css', __FILE__ ) );
 
 		// help strings
 		wp_localize_script( 'mimi-main', 'MadMimi', array(
-			'ajaxurl' => admin_url( 'admin-ajax.php' ),
-			
+			'ajaxurl' => admin_url( 'admin-ajax.php' ), // AJAX URL
+			// translation strings
 			'thankyou' => _x( 'Thank you for signing up! Please check your email.', 'ajax response', 'mimi' ),
 			'oops' => _x( 'Oops! There was a problem. Please try again.', 'ajax response', 'mimi' ),
 			'fix' => _x( 'There was a problem. Please fix the highlighted fields.', 'ajax response', 'mimi' ),
@@ -128,7 +127,7 @@ class MadMimi_Official {
 	}
 
 	public function activate() {
-
+		// nothing to do here (for now)
 	}
 
 	public function deactivate() {

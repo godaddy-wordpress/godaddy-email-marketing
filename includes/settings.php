@@ -115,6 +115,12 @@ class Mad_Mimi_Settings {
 				<p>Amazing! screen provides access to the tickets (or ticket types) you have created. Each ticket is has various attributes like price and quantity. The total amount of available tickets determines the maximum capacity of the event. Please note that once the ticket has been published, editing things like price or questions can break data consistency, since attendees may have already bought the ticket with the old data. Also, once a ticket has been published, please keep it published. Do not revert to draft, pending or trash.</p>
 				<p>Use the <strong>Screen Options</strong> panel to show and hide the columns that matter most.</p>', 'mimi' ),
 		) );
+
+		$screen->set_help_sidebar( __( '
+			<p><strong>For more information:</strong></p>
+			<p><a href="http://help.madmimi.com" target="_blank">Documentation on MadMimi.com</a></p>
+			<p><a href="http://blog.madmimi.com" target="_blank">The official Mad Mimi blog</a></p>
+		', 'mimi' ) );
 	}
 
 	public function register_settings() {

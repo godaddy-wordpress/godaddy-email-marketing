@@ -112,11 +112,11 @@ class Mad_Mimi_Dispatcher {
 	/**
 	 * Utility function for getting a URL for various API methods
 	 *
-	 * @param      $method
-	 * @param bool $params
-	 * @param bool $auth
+	 * @param string $method The short of the API method
+	 * @param array $params Extra parameters to pass on with the request
+	 * @param bool $auth Autentication array including API key and username
 	 *
-	 * @return string
+	 * @return string The final URL to use for the request
 	 */
 	public static function get_method_url( $method, $params = array(), $auth = false ) {
 		$auth = $auth ? $auth : array(
