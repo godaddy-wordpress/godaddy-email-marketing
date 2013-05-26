@@ -27,6 +27,9 @@ class Mad_Mimi_Dispatcher {
 			'timeout' => 10,
 		) );
 
+		// delete all existing transients for this user
+		delete_transient( "mimi-{$username}-lists" );
+		
 		// credentials are incorrect
 		if ( ! in_array( wp_remote_retrieve_response_code( $response ), self::$ok_codes ) )
 			return false;

@@ -92,6 +92,9 @@ class Mad_Mimi_Settings {
 
 		// set up the help tabs
 		add_action( 'in_admin_header', array( $this, 'setup_help_tabs' ) );
+
+		// enqueue the CSS for the admin
+		wp_enqueue_style( 'mimi-admin', plugins_url( 'css/admin.css', MADMIMI_PLUGIN_BASE ) );
 	}
 
 	public function setup_help_tabs() {
@@ -100,12 +103,17 @@ class Mad_Mimi_Settings {
 		$screen->add_help_tab( array(
 			'title' => __( 'Overview', 'mimi' ),
 			'id' => 'mimi-overview',
-			'content' => __( '
-				<h3>Forms</h3>
-				<p>This screen provides access to the tickets (or ticket types) you have created. Each ticket is has various attributes like price and quantity. The total amount of available tickets determines the maximum capacity of the event. Please note that once the ticket has been published, editing things like price or questions can break data consistency, since attendees may have already bought the ticket with the old data. Also, once a ticket has been published, please keep it published. Do not revert to draft, pending or trash.</p>
-				<p>Use the <strong>Screen Options</strong> panel to show and hide the columns that matter most.</p>', 'mimi' ),
+			'content' => sprintf( __( '
+				<h3>Instructions</h3>
+				<p>Once the plugin is activated, you will be able to select and insert any of your Mad Mimi webforms right into your site. Setup is easy. Below, simply enter your account email address and API key (found in your Mad Mimi account [%1$s] area). Here are the 3 ways you can display a webform on your site:</p>
+				<ul>
+					<li><strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget called “Mad Mimi Form” and drag it into the widget area of your choice. You can then add a title and select a form!</li>
+					<li><strong>Shortcode:</strong> You can add a form to any post or page by adding the shortcode (ex. [madmimi id=80326])  in the page/post editor</li>
+					<li><strong>Template Tag:</strong> You can add the following template tag into any WordPress file: <code>%2$s</code>. Ex. <code>%3$s</code></li>
+				</ul>', 'mimi' ), '<a target="_blank" href="https://madmimi.com/user/edit">https://madmimi.com/user/edit</a>', '&lt;?php madmimi_form( $form_id ); ?&gt;', '&lt;?php madmimi_form( 91 ); ?&gt;' ),
 		) );
 
+		/*
 		$screen->add_help_tab( array(
 			'title' => __( 'Additional Help', 'mimi' ),
 			'id' => 'mimi-additionalhelp',
@@ -115,11 +123,14 @@ class Mad_Mimi_Settings {
 				<p>Amazing! screen provides access to the tickets (or ticket types) you have created. Each ticket is has various attributes like price and quantity. The total amount of available tickets determines the maximum capacity of the event. Please note that once the ticket has been published, editing things like price or questions can break data consistency, since attendees may have already bought the ticket with the old data. Also, once a ticket has been published, please keep it published. Do not revert to draft, pending or trash.</p>
 				<p>Use the <strong>Screen Options</strong> panel to show and hide the columns that matter most.</p>', 'mimi' ),
 		) );
+		*/
 
 		$screen->set_help_sidebar( __( '
 			<p><strong>For more information:</strong></p>
-			<p><a href="http://help.madmimi.com" target="_blank">Documentation on MadMimi.com</a></p>
-			<p><a href="http://blog.madmimi.com" target="_blank">The official Mad Mimi blog</a></p>
+			<p><a href="http://madmimi.com" target="_blank">Mad Mimi</a></p>
+			<p><a href="http://help.madmimi.com" target="_blank">Mad Mimi Help Docs</a></p>
+			<p><a href="http://blog.madmimi.com" target="_blank">Mad Mimi Blog</a></p>
+			<p><a href="mailto:support@madmimi.com" target="_blank" class="button">Contact Mad Mimi</a></p>
 		', 'mimi' ) );
 	}
 
@@ -166,7 +177,7 @@ class Mad_Mimi_Settings {
 			array(
 				'id' => 'api-key',
 				'page' => $this->slug,
-				'description' => __( 'You can find your API key at <a href="https://madmimi.com/user/edit">https://madmimi.com/user/edit</a>', 'mimi' ),
+				'description' => sprintf( '<a target="_blank" href="%s">%s</a>', 'http://help.madmimi.com/where-can-i-find-my-api-key/', _x( 'Where can I find my API key?', 'settings page', 'mimi' )  ),
 			)
 		);
 
@@ -198,6 +209,15 @@ class Mad_Mimi_Settings {
 
 			<?php screen_icon(); ?>
 			<h2><?php _e( 'Mad Mimi Settings', 'mimi' ); ?></h2>
+
+			<?php // @todo localize ?>
+			<div class="mimi-identity">
+				<a class="mimi-dismiss" href="#">Dismiss</a>
+<!--				<img src="--><?php //echo plugins_url( 'css/identity.png', dirname( __FILE__ ) ); ?><!--" alt="Mad Mimi" class="logo" />-->
+				<h3><strong>Welcome!</strong> Enjoy the Mad Mimi Experience, first hand.</h3>
+				<p>Add your Mad Mimi webform to your WordPress site! Easy to set up, the Mad Mimi plugin allows your site visitors to subscribe to your email list.</p>
+				<p class="mimi-muted">Don't have a Mad Mimi account? Get one in less than 2 minutes! &nbsp; <a href="#" class="mimi-button">Sign Up Now</a></p>
+			</div>
 
 			<form method="post" action="options.php">
 				<?php
@@ -266,7 +286,7 @@ class Mad_Mimi_Settings {
 
 				<br />
 				<p class="description">
-					<?php _e( 'Not seeing your form? Is the list inaccurate?', 'mimi' ); ?> <a href="<?php echo add_query_arg( 'action', 'refresh' ); ?>" class="button"><?php _e( 'Refresh Forms', 'mimi' ); ?></a>
+					<?php _e( 'Not seeing your form?', 'mimi' ); ?> <a href="<?php echo add_query_arg( 'action', 'refresh' ); ?>" class="button"><?php _e( 'Refresh Forms', 'mimi' ); ?></a>
 				</p>
 
 				<?php if ( $this->mimi->debug ) : ?>

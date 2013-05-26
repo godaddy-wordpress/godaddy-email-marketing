@@ -19,6 +19,10 @@ input.mimi-invalid {
 	height: 16px;
 }
 
+.mimi-submit {
+	cursor: pointer;
+}
+
 /**
  * Messages
  */

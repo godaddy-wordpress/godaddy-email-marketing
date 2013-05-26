@@ -1,19 +1,27 @@
 <?php
 /*
-Plugin Name: Mad Mimi Official
-Plugin URI: http://wordpress.org/extend/plugins/mad-mimi-official/
-Description: This is the official Mad Mimi plugin for WordPress.
+Plugin Name: MadMimi
+Plugin URI: http://wordpress.org/extend/plugins/madmimi/
+Description: Add your Mad Mimi webform to your WordPress site! Easy to set up, the Mad Mimi plugin allows your site visitors to subscribe to your email list.
 Author: Mad Mimi, LLC
 Version: 1.0
 Author URI: http://madmimi.com/
 License: GPLv2 or later
-*/
 
-/**
- * 
- * @todo
- * 2. uninstall hook
- */
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
 
 class MadMimi_Official {
 	private static $instance;
@@ -37,7 +45,7 @@ class MadMimi_Official {
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
 		add_action( 'init', 		array( $this, 'register_shortcode'	), 20 );
 		add_action( 'admin_notices', array( $this, 'action_admin_notices' ) );
-		add_filter( 'plugin_action_links_' . self::$basename, array( $this, 'action_links' ), 10, 2 );
+		add_filter( 'plugin_action_links_' . self::$basename, array( $this, 'action_links' ), 10 );
 
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
 		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
@@ -51,6 +59,10 @@ class MadMimi_Official {
 		// Absolute URL to plugin's dir
 		defined( 'MADMIMI_PLUGIN_URL' )
 			or define( 'MADMIMI_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+
+		// Absolute URL to plugin's dir
+		defined( 'MADMIMI_PLUGIN_BASE' )
+		or define( 'MADMIMI_PLUGIN_BASE', plugin_basename( __FILE__ ) );
 
 		// Plugin's main directory
 		defined( 'MADMIMI_VERSION' )
@@ -115,15 +127,20 @@ class MadMimi_Official {
 		wp_localize_script( 'mimi-main', 'MadMimi', array(
 			'ajaxurl' => admin_url( 'admin-ajax.php' ), // AJAX URL
 			// translation strings
-			'thankyou' => _x( 'Thank you for signing up! Please check your email.', 'ajax response', 'mimi' ),
-			'oops' => _x( 'Oops! There was a problem. Please try again.', 'ajax response', 'mimi' ),
-			'fix' => _x( 'There was a problem. Please fix the highlighted fields.', 'ajax response', 'mimi' ),
+			'thankyou' 				=> _x( 'Thank you for signing up!', 'ajax response', 'mimi' ),
+			'thankyou_suppressed' 	=> _x( 'Thank you for signing up! Please check your email to confirm your subscription.', 'ajax response', 'mimi' ),
+			'oops' 					=> _x( 'Oops! There was a problem. Please try again.', 'ajax response', 'mimi' ),
+			'fix' 					=> _x( 'There was a problem. Please fill all required fields.', 'ajax response', 'mimi' ),
 		) );
 	}
 
-	public function action_links( $links, $file ) {
-		$links[] = sprintf( '<a href="%s">%s</a>', menu_page_url( 'mad-mimi-settings', false ), __( 'Settings' ) );
-		return $links;
+	public function action_links( $actions ) {
+		return array_merge(
+			array( 
+				'settings' => sprintf( '<a href="%s">%s</a>', menu_page_url( 'mad-mimi-settings', false ), __( 'Settings' ) ) 
+			),
+			$actions
+		);
 	}
 
 	public function activate() {

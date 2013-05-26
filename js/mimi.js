@@ -51,8 +51,16 @@
 					$wrapper.fadeOut( 'fast', function() {
 
 						// was the user successfully added?
-						if ( response.success && response.result.new_member ) {
-							$wrapper.html( MadMimi.addMessage( 'info', MadMimi.thankyou ) ).fadeIn( 'fast' );
+						if ( response.success ) {
+
+							var d = response.result,
+								is_suppressed = d.audience_member.suppressed;
+
+							$wrapper.html( MadMimi.addMessage( 
+								is_suppressed ? [ 'suppressed', 'success' ] : [ 'info', 'success' ], 
+								is_suppressed ? MadMimi.thankyou_suppressed : MadMimi.thankyou ) 
+							).fadeIn( 'fast' );
+							
 						} else {
 							$wrapper.html( MadMimi.addMessage( 'info', MadMimi.oops ) ).fadeIn( 'fast' );
 						}
@@ -79,7 +87,17 @@
 	};
 
 	MadMimi.addMessage = function( type, message ) {
-		return '<p class="mimi-' + type + '"">' + message + '</p>';
+		var _class = [];
+
+		if ( $.isArray( type ) ) {
+			$.each( type, function( index, value ) {
+				_class.push( 'mimi-' + value );
+			} );
+		} else {
+			_class.push( 'mimi-' + type.toString() );
+		}
+
+		return $( '<p/>', { class: _class.join( ' ' ) } ).text( message );
 	}
 
 	MadMimi.isEmail = function ( email ) {
