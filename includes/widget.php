@@ -12,7 +12,7 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct( 'mimi-form', __( 'Mad Mimi Form' ), array(
 			'classname'   => 'mimi-form',
-			'description' => __( 'The real Mad Mimi form widget', 'mimi' )
+			'description' => _x( 'Embed any Mad Mimi webform in your sidebar', 'widget description', 'mimi' )
 		) );
 
 		foreach ( array( 'wpautop', 'wptexturize', 'convert_chars' ) as $filter ) {
