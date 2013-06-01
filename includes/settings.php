@@ -214,7 +214,7 @@ class Mad_Mimi_Settings {
 			<div class="mimi-identity">
 				<a class="mimi-dismiss" href="#">Dismiss</a>
 <!--				<img src="--><?php //echo plugins_url( 'css/identity.png', dirname( __FILE__ ) ); ?><!--" alt="Mad Mimi" class="logo" />-->
-				<h3><strong>Welcome!</strong> Enjoy the Mad Mimi Experience, first hand.</h3>
+				<h3>Enjoy the Mad Mimi Experience, first hand.</h3>
 				<p>Add your Mad Mimi webform to your WordPress site! Easy to set up, the Mad Mimi plugin allows your site visitors to subscribe to your email list.</p>
 				<p class="mimi-muted">Don't have a Mad Mimi account? Get one in less than 2 minutes! &nbsp; <a href="#" class="mimi-button">Sign Up Now</a></p>
 			</div>

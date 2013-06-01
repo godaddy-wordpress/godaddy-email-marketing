@@ -1,39 +1,39 @@
 /* admin.css */
-
 .mimi-identity {
+	text-shadow: letter-spacing: -1px;
+	text-shadow: 0 2px 0 #4FB3E1;
 	position: relative;
 	padding: 12px 12px 12px 200px;
-	border: 1px solid gray;
+	border: 1px solid #808080;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	margin-top: 1em;
-	background-image: url(../images/city.png), url(../images/mimi-voice.png), -moz-linear-gradient(top,  rgba(50,200,255,0.21) 0%, rgba(255,255,255,1) 100%);
-	background-image: url(../images/city.png), url(../images/mimi-voice.png), -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(50,200,255,0.21)), color-stop(100%,rgba(255,255,255,1)))];
-	background-image: url(../images/city.png), url(../images/mimi-voice.png), -webkit-linear-gradient(top,  rgba(50,200,255,0.21) 0%,rgba(255,255,255,1) 100%);
-	background-image: url(../images/city.png), url(../images/mimi-voice.png), -o-linear-gradient(top,  rgba(50,200,255,0.21) 0%,rgba(255,255,255,1) 100%);
-	background-image: url(../images/city.png), url(../images/mimi-voice.png), -ms-linear-gradient(top,  rgba(50,200,255,0.21) 0%,rgba(255,255,255,1) 100%);
-	background-image: url(../images/city.png), url(../images/mimi-voice.png), linear-gradient(to bottom,  rgba(50,200,255,0.21) 0%,rgba(255,255,255,1) 100%));
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3632c8ff', endColorstr='#ffffff',GradientType=0 );
+	background: #85C2F1 url(../images/wp_graphic_200_2000.png);
 	background-repeat: no-repeat;
 	background-position: 0 45%;
-	font-family: 'lucida grande', sans-serif;
+	font-family: 'Helvetica Neue', sans-serif;
+	text-shadow: 0 2px 0 #4FB3E1;
+	font-size: 16px;
+	color: #FFF;
 }
 
 .mimi-identity h3 {
-	font-size: 2em;
-	font-weight: normal;
-	line-height: 1.3em;
-	margin: 0.5em 0;
-}
-.mimi-identity h3 strong {
-	color: rgb(209, 24, 24)
+	font-size: 1.8em;
 }
 
 .mimi-muted {
-	color: #999;
+	color: #1B7DB9;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.mimi-button {
+	color:#FF4A4A;
+	background: rgba(255, 255, 255, 0.4);
+	padding: 3px;
 }
 
 .mimi-dismiss {
 	position: absolute;
 	right: 1em;
+	color: #fff
 }
