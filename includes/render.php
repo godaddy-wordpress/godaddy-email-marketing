@@ -29,7 +29,6 @@ class Mad_Mimi_Form_Renderer {
 
 					if ( $show_powered_by ) : ?>
 					<p>
-						<?php // @todo should the mad mimi text be translatable? it can be manipulated. ?>
 						<a href="http://madmimi.com" target="_blank"><?php _e( 'Powered by Mad Mimi', 'mimi' ); ?></a>
 					</p>
 					<?php endif; ?>
