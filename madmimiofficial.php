@@ -2,7 +2,7 @@
 /*
 Plugin Name: MadMimi
 Plugin URI: http://wordpress.org/extend/plugins/madmimi/
-Description: Add your Mad Mimi webform to your WordPress site! Easy to set up, the Mad Mimi plugin allows your site visitors to subscribe to your email list.
+Description: The Official Mad Mimi plugin allows your site visitors to subscribe to your email lists
 Author: Mad Mimi, LLC
 Version: 1.0
 Author URI: http://madmimi.com/

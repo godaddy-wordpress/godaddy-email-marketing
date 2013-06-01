@@ -87,6 +87,15 @@ class Mad_Mimi_Settings {
 					wp_redirect( $tokenized_url );
 					exit;
 					break;
+
+				case 'dismiss':
+					$user_id = get_current_user_id();
+
+					if ( ! $user_id )
+						return;
+
+					update_user_meta( $user_id, 'madmimi-dismiss', 'show' );
+					break;
 			}
 		}
 
@@ -210,14 +219,16 @@ class Mad_Mimi_Settings {
 			<?php screen_icon(); ?>
 			<h2><?php _e( 'Mad Mimi Settings', 'mimi' ); ?></h2>
 
-			<?php // @todo localize ?>
-			<div class="mimi-identity">
-				<a class="mimi-dismiss" href="#">Dismiss</a>
-<!--				<img src="--><?php //echo plugins_url( 'css/identity.png', dirname( __FILE__ ) ); ?><!--" alt="Mad Mimi" class="logo" />-->
-				<h3>Enjoy the Mad Mimi Experience, first hand.</h3>
-				<p>Add your Mad Mimi webform to your WordPress site! Easy to set up, the Mad Mimi plugin allows your site visitors to subscribe to your email list.</p>
-				<p class="mimi-muted">Don't have a Mad Mimi account? Get one in less than 2 minutes! &nbsp; <a href="#" class="mimi-button">Sign Up Now</a></p>
-			</div>
+			<?php if ( ! get_user_meta( get_current_user_id(), 'madmimi-dismiss', true ) ) : ?>
+		
+				<div class="mimi-identity">
+					<a class="mimi-dismiss" href="<?php echo esc_url( add_query_arg( 'action', 'dismiss' ) ); ?>"><?php _e( 'Dismiss', 'mimi' ); ?></a>
+					<h3><?php echo _x( 'Enjoy the Mad Mimi Experience, first hand.', 'madmimi header note', 'mimi' ); ?></h3>
+					<p><?php echo _x( 'Add your Mad Mimi webform to your WordPress site! Easy to set up, the Mad Mimi plugin allows your site visitors to subscribe to your email list.', 'header note', 'mimi' ); ?></p>
+					<p class="mimi-muted"><?php printf( _x( 'Don\'t have a Mad Mimi account? Get one in less than 2 minutes! &nbsp; %s', 'header note', 'mimi' ), sprintf( '<a target="_blank" href="http://madmimi.com" class="mimi-button">%s</a>', _x( 'Sign Up Now', 'header note', 'mimi' ) ) ); ?></p>
+				</div>
+
+			<?php endif; ?>
 
 			<form method="post" action="options.php">
 				<?php
