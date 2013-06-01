@@ -62,7 +62,7 @@ class MadMimi_Official {
 
 		// Absolute URL to plugin's dir
 		defined( 'MADMIMI_PLUGIN_BASE' )
-		or define( 'MADMIMI_PLUGIN_BASE', plugin_basename( __FILE__ ) );
+			or define( 'MADMIMI_PLUGIN_BASE', plugin_basename( __FILE__ ) );
 
 		// Plugin's main directory
 		defined( 'MADMIMI_VERSION' )
