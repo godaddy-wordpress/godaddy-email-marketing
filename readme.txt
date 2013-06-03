@@ -1,5 +1,5 @@
 === Official Mad Mimi Sign Up Forms ===
-Contributors: madmimi, illuminea, maor
+Contributors: madmimi, illuminea, maor, beccawitz
 Tags: newsletter, forms, opt-in
 Requires at least: 3.5
 Tested up to: 3.5.2
