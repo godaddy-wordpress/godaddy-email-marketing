@@ -87,4 +87,23 @@ class Mad_Mimi_Form_Fields {
 		<input type="text" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo self::get_form_id( $args->name ); ?>" class="<?php echo esc_attr( join( ' ', $field_classes ) ); ?>" />
 		<?php
 	}
+
+	public static function checkbox( $args ) {
+		$field_classes = array( 'mimi-checkbox' );
+		
+		// is this field required?
+		if ( $args->required )
+			$field_classes[] = 'mimi-required';
+
+		$field_classes = (array) apply_filters( 'mimi_required_field_class', $field_classes, $args );
+		?>
+		<label for="<?php echo self::get_form_id( $args->name ) . esc_attr( $args->value ); ?>">
+			<input type="checkbox" value="<?php echo esc_attr( $args->value ); ?>" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo self::get_form_id( $args->name ) . esc_attr( $args->value ); ?>" class="<?php echo esc_attr( join( ' ', $field_classes ) ); ?>" />
+			<?php echo esc_html( $args->display ); ?>
+			<?php if ( $args->required && apply_filters( 'mimi_required_field_indicator', true, $args ) ) : ?>
+			<span class="required">*</span>
+			<?php endif; ?>
+		</label>
+		<?php
+	}
 }

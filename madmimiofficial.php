@@ -32,7 +32,7 @@ class MadMimi_Official {
 
 	public function instance() {
 		if ( ! isset( self::$instance ) ) {
-			self::$instance = new MadMimi_Official;
+			self::$instance = new self;
 			self::$instance->setup_constants();
 			self::$instance->requirements();
 			self::$instance->setup_actions();

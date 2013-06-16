@@ -17,9 +17,12 @@
 			
 			var $wrapper = $( this ),
 				$spinner = $( '.mimi-spinner', $wrapper ),
+				/* needed only when using WP as a proxy.
 				payload = $.extend( {}, $( this ).mimiSerializeObject(), {
 					action: 'mimi-submit-form'
 				} ),
+				*/
+				payload = $( this ).serialize(),
 				invalidElements = [],
 				m = MadMimi;
 
