@@ -1,5 +1,5 @@
 /* mimi.js */
-;(function($, undefined) {
+;( function( $, undefined ) {
 	"use strict";
 
 	var MadMimi = window.MadMimi || {};
@@ -59,9 +59,7 @@
 							var d = response.result,
 								is_suppressed = d.audience_member.suppressed;
 
-							if(d.has_redirect) {
-								window.location.href = d.redirect;
-							}
+							if(d.has_redirect) window.location.href = d.redirect;
 
 							$wrapper.html( MadMimi.addMessage( 
 								is_suppressed ? [ 'suppressed', 'success' ] : [ 'info', 'success' ], 
