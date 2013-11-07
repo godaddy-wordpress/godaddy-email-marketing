@@ -4,7 +4,7 @@ Plugin Name: Mad Mimi Sign Up Forms
 Plugin URI: http://wordpress.org/extend/plugins/madmimi/
 Description: The Official Mad Mimi plugin allows your site visitors to subscribe to your email lists
 Author: Mad Mimi, LLC
-Version: 1.0
+Version: 1.1
 Author URI: http://madmimi.com/
 License: GPLv2 or later
 
@@ -66,7 +66,7 @@ class MadMimi_Official {
 
 		// Plugin's main directory
 		defined( 'MADMIMI_VERSION' )
-			or define( 'MADMIMI_VERSION', '1.0' );
+			or define( 'MADMIMI_VERSION', '1.1' );
 
 		// Set up the base name
 		isset( self::$basename ) || self::$basename = plugin_basename( __FILE__ );
@@ -118,10 +118,10 @@ class MadMimi_Official {
 
 	public function enqueue() {
 		// main JavaScript file
-		wp_enqueue_script( 'mimi-main', plugins_url( 'js/mimi.js', __FILE__ ), array( 'jquery' ), false, true );
+		wp_enqueue_script( 'mimi-main', plugins_url( 'js/mimi.js', __FILE__ ), array( 'jquery' ), MADMIMI_VERSION, true );
 		
 		// assistance CSS
-		wp_enqueue_style( 'mimi-base', plugins_url( 'css/mimi.css', __FILE__ ) );
+		wp_enqueue_style( 'mimi-base', plugins_url( 'css/mimi.css', __FILE__ ), false, MADMIMI_VERSION );
 
 		// help strings
 		wp_localize_script( 'mimi-main', 'MadMimi', array(

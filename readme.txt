@@ -3,7 +3,7 @@ Contributors: madmimi, illuminea, maor, beccawitz
 Tags: newsletter, forms, opt-in
 Requires at least: 3.5
 Tested up to: 3.5.2
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,10 @@ The API key is in your Mad Mimi account area. For more details see: http://help.
 
 == Changelog ==
 
-= 1.0 =
+= 1.1 =
+* New! Upon form submit, the plugin checks to see if the Mad Mimi user has specified that the new subscriber should be redirected to a specific webpage after subscribing (Confirmation Landing Page). If the user has specified a Confirmation Landing Page for their webform, the new subscriber will be redirected to that page after subscribing.
+* Better cache handling for the provided CSS and JS core files
+* Bug fixes
 
+= 1.0 =
 * Initial version. Hoozah!
