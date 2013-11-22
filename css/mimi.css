@@ -3,6 +3,11 @@
 /**
  * Fields
  */
+
+form.mimi-form p {
+	padding: 0;
+}
+
 input.mimi-invalid {
 	border: 1px solid red;
 }
