@@ -30,7 +30,7 @@ class MadMimi_Official {
 	public $settings;
 	public $debug;
 
-	public function instance() {
+	public static function instance() {
 		if ( ! isset( self::$instance ) ) {
 			self::$instance = new self;
 			self::$instance->setup_constants();

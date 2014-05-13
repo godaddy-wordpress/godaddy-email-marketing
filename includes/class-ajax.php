@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class Mad_Mimi_AJAX {
 
-	public function register() {
+	public static function register() {
 		$actions = array(
 			'mimi-submit-form' => 'submit_form',
 		);
@@ -15,7 +15,7 @@ class Mad_Mimi_AJAX {
 		}
 	}
 
-	public function submit_form() {
+	public static function submit_form() {
 		$form_data = $_POST;
 
 		// nonce?
