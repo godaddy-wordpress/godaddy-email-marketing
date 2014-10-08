@@ -29,7 +29,7 @@ class Mad_Mimi_Dispatcher {
 
 		// delete all existing transients for this user
 		delete_transient( "mimi-{$username}-lists" );
-		
+
 		// credentials are incorrect
 		if ( ! in_array( wp_remote_retrieve_response_code( $response ), self::$ok_codes ) )
 			return false;
@@ -85,7 +85,7 @@ class Mad_Mimi_Dispatcher {
 			// if the request has failed for whatever reason
 			if ( ! self::is_response_ok( $data ) )
 				return false;
-			
+
 			$data = json_decode( wp_remote_retrieve_body( $data ) );
 			$data = $data->result;
 

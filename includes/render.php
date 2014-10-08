@@ -7,7 +7,7 @@ class Mad_Mimi_Form_Renderer {
 	public function process( $form_id, $echo = false ) {
 		$form = Mad_Mimi_Dispatcher::get_fields( (int) $form_id );
 
-		if ( ! empty( $form->fields ) ) : 
+		if ( ! empty( $form->fields ) ) :
 
 			self::$loops++; ob_start(); ?>
 
@@ -34,7 +34,7 @@ class Mad_Mimi_Form_Renderer {
 					<?php endif; ?>
 
 					<input type="hidden" name="form_id" value="<?php echo absint( $form->id ); ?>" />
-					<input type="submit" value="<?php _e( 'Sign Up', 'mimi' ); ?>" class="button mimi-submit" />
+					<input type="submit" value="<?php echo esc_html( $form->button_text ); ?>" class="button mimi-submit" />
 					<span class="mimi-spinner"></span>
 				</form>
 			</div>
@@ -71,7 +71,7 @@ class Mad_Mimi_Form_Fields {
 
 	public static function string( $args ) {
 		$field_classes = array( 'mimi-field' );
-		
+
 		// is this field required?
 		if ( $args->required )
 			$field_classes[] = 'mimi-required';
@@ -90,7 +90,7 @@ class Mad_Mimi_Form_Fields {
 
 	public static function checkbox( $args ) {
 		$field_classes = array( 'mimi-checkbox' );
-		
+
 		// is this field required?
 		if ( $args->required )
 			$field_classes[] = 'mimi-required';
