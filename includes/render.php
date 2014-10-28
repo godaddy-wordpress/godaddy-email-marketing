@@ -34,7 +34,7 @@ class Mad_Mimi_Form_Renderer {
 					<?php endif; ?>
 
 					<input type="hidden" name="form_id" value="<?php echo absint( $form->id ); ?>" />
-					<input type="submit" value="<?php echo esc_html( $form->button_text ); ?>" class="button mimi-submit" />
+					<input type="submit" value="<?php echo esc_attr( $form->button_text ); ?>" class="button mimi-submit" />
 					<span class="mimi-spinner"></span>
 				</form>
 			</div>
