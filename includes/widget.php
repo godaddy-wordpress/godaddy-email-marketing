@@ -9,7 +9,7 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 
 	function __construct() {
 
-		parent::__construct( 'mimi-form', __( 'Mad Mimi Form' ), array(
+		parent::__construct( 'mimi-form', __( 'Mad Mimi Form', 'mimi' ), array(
 			'classname'   => 'mimi-form',
 			'description' => _x( 'Embed any Mad Mimi webform in your sidebar', 'widget description', 'mimi' )
 		) );
@@ -28,19 +28,19 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 		$text    = empty( $instance['text'] ) ? '' : $instance['text'];
 		$form_id = empty( $instance['form'] ) ? false : $instance['form'];
 
-		echo $before_widget;
+		echo $args['before_widget'];
 
 		if ( $title ) {
-			echo $before_title . $title . $after_title;
+			echo $args['before_title'] . $title . $args['after_title'];
 		}
 
 		if ( $text ) {
-			echo apply_filters( 'mimi_widget_text', $text );
+			echo wp_kses_post( apply_filters( 'mimi_widget_text', $text ) );
 		}
 
 		Mad_Mimi_Form_Renderer::process( $form_id, true );
 
-		echo $after_widget;
+		echo $args['after_widget'];
 
 	}
 
@@ -65,20 +65,16 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 			'form'  => 0,
 		) );
 
-		$title         = esc_attr( $instance['title'] );
-		$selected_form = absint( $instance['form'] );
-		$text          = esc_textarea( $instance['text'] );
-
 		$forms = Mad_Mimi_Dispatcher::get_forms(); ?>
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ) ?>" />
 		</p>
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Additional Text:' ); ?></label>
-			<textarea class="widefat" rows="3" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo $text; ?></textarea>
+			<textarea class="widefat" rows="3" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo esc_textarea( $instance['text'] ); ?></textarea>
 		</p>
 
 		<p>
@@ -88,7 +84,7 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 				<label for="<?php echo $this->get_field_id( 'form' ); ?>"><?php _e( 'Form:' ); ?></label>
 				<select name="<?php echo $this->get_field_name( 'form' ); ?>" id="<?php echo $this->get_field_id( 'form' ); ?>" class="widefat">
 					<?php foreach ( $forms->signups as $f ) : ?>
-						<option value="<?php echo esc_attr( $f->id ); ?>" <?php selected( $selected_form, $f->id ); ?>><?php echo esc_html( $f->name ); ?></option>
+						<option value="<?php echo esc_attr( $f->id ); ?>" <?php selected( absint( $instance['form'] ), $f->id ); ?>><?php echo esc_html( $f->name ); ?></option>
 					<?php endforeach; ?>
 				</select>
 
