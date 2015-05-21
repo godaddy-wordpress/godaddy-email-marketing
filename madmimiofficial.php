@@ -85,14 +85,19 @@ class MadMimi_Official {
 	private function requirements() {
 
 		require_once MADMIMI_PLUGIN_DIR . 'includes/class-dispatcher.php';
+
 		// the shortcode
 		require_once MADMIMI_PLUGIN_DIR . 'includes/class-shortcode.php';
+
 		// the file renders the form
 		require_once MADMIMI_PLUGIN_DIR . 'includes/render.php';
+
 		// the main widget
 		require_once MADMIMI_PLUGIN_DIR . 'includes/widget.php';
+
 		// settings page, creds validation
 		require_once MADMIMI_PLUGIN_DIR . 'includes/settings.php';
+
 		// AJAX
 		require_once MADMIMI_PLUGIN_DIR . 'includes/class-ajax.php';
 
