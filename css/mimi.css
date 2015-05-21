@@ -18,7 +18,7 @@ input.mimi-invalid {
 
 .mimi-spinner {
 	display: none;
-	background: url(../../../../wp-admin/images/wpspin_light.gif) no-repeat;
+	background: url( '../../../../wp-admin/images/wpspin_light.gif' ) no-repeat;
 	background-size: 16px 16px;
 	width: 16px;
 	height: 16px;
@@ -49,6 +49,6 @@ input.mimi-invalid {
   (min-resolution: 120dpi) {
 
 	.mimi-spinner {
-		background-image: url(../../../../wp-admin/images/wpspin_light-2x.gif);
+		background-image: url( '../../../../wp-admin/images/wpspin_light-2x.gif' );
 	}
 }

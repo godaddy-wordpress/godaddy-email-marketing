@@ -8,7 +8,7 @@
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	margin-top: 1em;
-	background: #85C2F1 url(../images/wp_graphic_200_2000.png);
+	background: #85C2F1 url( '../images/wp_graphic_200_2000.png' );
 	background-repeat: no-repeat;
 	background-position: 0 45%;
 	font-family: 'Helvetica Neue', sans-serif;
