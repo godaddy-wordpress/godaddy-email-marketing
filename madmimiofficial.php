@@ -148,6 +148,7 @@ class MadMimi_Official {
 		// help strings
 		wp_localize_script( 'mimi-main', 'MadMimi', array(
 			'ajaxurl' => admin_url( 'admin-ajax.php' ), // AJAX URL
+
 			// translation strings
 			'thankyou' 				=> _x( 'Thank you for signing up!', 'ajax response', 'mimi' ),
 			'thankyou_suppressed' 	=> _x( 'Thank you for signing up! Please check your email to confirm your subscription.', 'ajax response', 'mimi' ),
@@ -180,8 +181,9 @@ class MadMimi_Official {
 
 		$screen = get_current_screen();
 
-		if ( 'plugins' != $screen->id )
+		if ( 'plugins' != $screen->id ) {
 			return;
+		}
 
 		$version = get_option( 'madmimi-version' );
 
