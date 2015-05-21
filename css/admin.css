@@ -22,12 +22,12 @@
 
 .mimi-muted {
 	color: #1B7DB9;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	text-shadow: 0 1px 0 rgba( 255, 255, 255, 0.5 );
 }
 
 .mimi-button {
 	color:#FF4A4A;
-	background: rgba(255, 255, 255, 0.4);
+	background: rgba( 255, 255, 255, 0.4 );
 	padding: 3px;
 }
 
