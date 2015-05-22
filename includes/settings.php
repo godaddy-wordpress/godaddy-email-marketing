@@ -150,18 +150,6 @@ class Mad_Mimi_Settings {
 				</ul>', 'mimi' ), '<a target="_blank" href="https://madmimi.com/user/edit">https://madmimi.com/user/edit</a>', '&lt;?php madmimi_form( $form_id ); ?&gt;', '&lt;?php madmimi_form( 91 ); ?&gt;' ),
 		) );
 
-/*
-$screen->add_help_tab( array(
-	'title' => __( 'Additional Help', 'mimi' ),
-	'id' => 'mimi-additionalhelp',
-	'content' => __( '
-		<h3>More Help</h3>
-		<p>OpenTracker runs several times faster than older tracker implementations and requires less memory. (For example, it runs fine with the limited resources of many embedded systems.) Several instances of the software may be run in a cluster, with all of them synchronizing with each other. Besides the Hypertext Transfer Protocol (HTTP) opentracker may also be connected to via User Datagram Protocol (UDP), which creates less than half of the tracker traffic HTTP creates.[1] It supports IPv6, gzip compression of full scrapes, and blacklists of torrents. Because there have already been cases of people being accused of copyright violation by the fact that their IP address was listed on a BitTorrent tracker,[2] opentracker may mix in random IP address numbers for the purpose of plausible deniability.</p>
-		<p>Amazing! screen provides access to the tickets (or ticket types) you have created. Each ticket is has various attributes like price and quantity. The total amount of available tickets determines the maximum capacity of the event. Please note that once the ticket has been published, editing things like price or questions can break data consistency, since attendees may have already bought the ticket with the old data. Also, once a ticket has been published, please keep it published. Do not revert to draft, pending or trash.</p>
-		<p>Use the <strong>Screen Options</strong> panel to show and hide the columns that matter most.</p>', 'mimi' ),
-) );
-*/
-
 		$screen->set_help_sidebar( __( '
 			<p><strong>For more information:</strong></p>
 			<p><a href="http://madmimi.com" target="_blank">Mad Mimi</a></p>
