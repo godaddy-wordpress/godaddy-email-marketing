@@ -74,7 +74,7 @@ class Mad_Mimi_Form_Fields {
 	public function get_form_id( $field_name ) {
 
 		// since HTML ID's can't exist in the same exact spelling more than once... make it special.
-		return esc_attr( sprintf( 'form_%s_%s', self::$cycle, $field_name ) );
+		return sprintf( 'form_%s_%s', self::$cycle, $field_name );
 
 	}
 
@@ -89,7 +89,7 @@ class Mad_Mimi_Form_Fields {
 
 		$field_classes = (array) apply_filters( 'mimi_required_field_class', $field_classes, $args ); ?>
 
-		<label for="<?php echo self::get_form_id( $args->name ); ?>">
+		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
 
 			<?php echo esc_html( $args->display ); ?>
 
@@ -99,7 +99,7 @@ class Mad_Mimi_Form_Fields {
 
 		</label>
 
-		<input type="text" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo self::get_form_id( $args->name ); ?>" class="<?php echo esc_attr( join( ' ', $field_classes ) ); ?>" />
+		<input type="text" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" class="<?php echo esc_attr( join( ' ', $field_classes ) ); ?>" />
 
 	<?php }
 
@@ -114,9 +114,9 @@ class Mad_Mimi_Form_Fields {
 
 		$field_classes = (array) apply_filters( 'mimi_required_field_class', $field_classes, $args ); ?>
 
-		<label for="<?php echo self::get_form_id( $args->name ) . esc_attr( $args->value ); ?>">
+		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) . $args->value ); ?>">
 
-			<input type="checkbox" value="<?php echo esc_attr( $args->value ); ?>" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo self::get_form_id( $args->name ) . esc_attr( $args->value ); ?>" class="<?php echo esc_attr( join( ' ', $field_classes ) ); ?>" />
+			<input type="checkbox" value="<?php echo esc_attr( $args->value ); ?>" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo esc_attr( self::get_form_id( $args->name ) . $args->value ); ?>" class="<?php echo esc_attr( join( ' ', $field_classes ) ); ?>" />
 
 			<?php echo esc_html( $args->display ); ?>
 
