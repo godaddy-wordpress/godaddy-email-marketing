@@ -51,7 +51,7 @@ class Mad_Mimi_Dispatcher {
 			return false;
 		}
 
-		if ( false === ( $data = get_transient( "mimi-{$username}-lists" ) ) ) {
+		if ( false === ( $data = get_transient( 'mimi-' . $username . '-lists' ) ) ) {
 			$data = self::fetch_forms( $username );
 		}
 
@@ -61,7 +61,7 @@ class Mad_Mimi_Dispatcher {
 
 	public static function get_fields( $form_id ) {
 
-		if ( false === ( $fields = get_transient( "mimi-form-$form_id" ) ) ) {
+		if ( false === ( $fields = get_transient( 'mimi-form-' . $form_id ) ) ) {
 
 			// fields are not cached. fetch and cache.
 			$fields = wp_remote_get( self::get_method_url( 'fields', array(
@@ -69,17 +69,19 @@ class Mad_Mimi_Dispatcher {
 			) ) );
 
 			// was there an error, connection is down? bail and try again later.
-			if ( ! self::is_response_ok( $fields ) )
+			if ( ! self::is_response_ok( $fields ) ) {
 				return false;
+			}
 
 			// @TODO: should we cache results for longer than a day? not expire at all?
-			set_transient( "mimi-form-$form_id", $fields = json_decode( wp_remote_retrieve_body( $fields ) ) );
+			set_transient( 'mimi-form-' . $form_id, $fields = json_decode( wp_remote_retrieve_body( $fields ) ) );
 		}
 
 		return $fields;
 	}
 
 	public static function get_user_level() {
+
 		$username = Mad_Mimi_Settings_Controls::get_option( 'username' );
 
 		// no username entered by user?
@@ -147,26 +149,31 @@ class Mad_Mimi_Dispatcher {
 		switch ( $method ) {
 
 			case 'forms' :
+
 				$path = add_query_arg( $auth, 'signups.json' );
 
 				break;
 
 			case 'fields' :
+
 				$path = add_query_arg( $auth, 'signups/' . $params['id'] . '.json' );
 
 				break;
 
 			case 'account' :
+
 				$path = add_query_arg( $auth, 'user/account_status' );
 
 				break;
 
 			case 'signin' :
+
 				$path = add_query_arg( $auth, 'sessions/single_signon_token' );
 
 				break;
 
 			case 'signin_redirect' :
+
 				$path = add_query_arg( array(
 					'token'    => $params['token'],
 					'username' => $auth['username'],

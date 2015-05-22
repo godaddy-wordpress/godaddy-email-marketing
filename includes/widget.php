@@ -31,7 +31,7 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 		echo $args['before_widget'];
 
 		if ( $title ) {
-			echo $args['before_title'] . $title . $args['after_title'];
+			echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 		}
 
 		if ( $text ) {
@@ -68,33 +68,37 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 		$forms = Mad_Mimi_Dispatcher::get_forms(); ?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ) ?>" />
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:' ); ?></label>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ) ?>" />
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Additional Text:' ); ?></label>
-			<textarea class="widefat" rows="3" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo esc_textarea( $instance['text'] ); ?></textarea>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php _e( 'Additional Text:' ); ?></label>
+			<textarea class="widefat" rows="3" id="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'text' ) ); ?>"><?php echo esc_textarea( $instance['text'] ); ?></textarea>
 		</p>
 
 		<p>
 
 			<?php if ( ! empty( $forms->signups ) ) : ?>
 
-				<label for="<?php echo $this->get_field_id( 'form' ); ?>"><?php _e( 'Form:' ); ?></label>
-				<select name="<?php echo $this->get_field_name( 'form' ); ?>" id="<?php echo $this->get_field_id( 'form' ); ?>" class="widefat">
+				<label for="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>"><?php _e( 'Form:' ); ?></label>
+
+				<select name="<?php echo esc_attr( $this->get_field_name( 'form' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>" class="widefat">
+
 					<?php foreach ( $forms->signups as $f ) : ?>
-						<option value="<?php echo esc_attr( $f->id ); ?>" <?php selected( absint( $instance['form'] ), $f->id ); ?>><?php echo esc_html( $f->name ); ?></option>
+						<option value="<?php echo esc_attr( $f->id ); ?>" <?php selected( $instance['form'], $f->id ); ?>><?php echo esc_html( $f->name ); ?></option>
 					<?php endforeach; ?>
+
 				</select>
 
 			<?php else : ?>
 
-			<span><?php printf( __( 'Please set up your Mad Mimi account in the <a href="%s">settings page</a>.', 'mimi' ), admin_url( 'options-general.php?page=mad-mimi-settings' ) ); ?>
+			<span><?php printf( __( 'Please set up your Mad Mimi account in the <a href="%s">settings page</a>.', 'mimi' ), esc_url( admin_url( 'options-general.php?page=mad-mimi-settings' ) ) ); ?>
 
 			<?php endif; ?>
 
 		</p>
 
 	<?php }
+
 }

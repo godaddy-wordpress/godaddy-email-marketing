@@ -30,7 +30,7 @@ class Mad_Mimi_Settings {
 			array( &$this, 'display_settings_page' )  // callback
 		);
 
-		add_action( "load-$this->hook", array( $this, 'page_load' ) );
+		add_action( 'load-' . $this->hook, array( $this, 'page_load' ) );
 
 	}
 
@@ -89,7 +89,7 @@ class Mad_Mimi_Settings {
 
 					}
 
-					foreach ( Mad_Mimi_Dispatcher::get_forms()->signups as $form ) {
+					foreach ( (array) Mad_Mimi_Dispatcher::get_forms()->signups as $form ) {
 						delete_transient( 'mimi-form-' . $form->id );
 					}
 
@@ -103,6 +103,7 @@ class Mad_Mimi_Settings {
 
 					$tokenized_url = add_query_arg( 'redirect', sprintf( '/signups/%d/edit', absint( $_GET['form_id'] ) ), Mad_Mimi_Dispatcher::user_sign_in() );
 
+					// Not wp_safe_redirect as it's an external site
 					wp_redirect( $tokenized_url );
 					exit;
 
@@ -335,15 +336,15 @@ $screen->add_help_tab( array(
 				<br />
 
 				<p class="description">
-					<?php _e( 'Not seeing your form?', 'mimi' ); ?> <a href="<?php echo add_query_arg( 'action', 'refresh' ); ?>" class="button"><?php _e( 'Refresh Forms', 'mimi' ); ?></a>
+					<?php _e( 'Not seeing your form?', 'mimi' ); ?> <a href="<?php echo esc_url( add_query_arg( 'action', 'refresh' ) ); ?>" class="button"><?php _e( 'Refresh Forms', 'mimi' ); ?></a>
 				</p>
 
 				<?php if ( $this->mimi->debug ) : ?>
 
 					<h3><?php _e( 'Debug', 'mimi' ); ?></h3>
 					<p>
-						<a href="<?php echo add_query_arg( 'action', 'debug-reset' ); ?>" class="button-secondary"><?php _e( 'Erase All Data', 'mimi' ); ?></a>
-						<a href="<?php echo add_query_arg( 'action', 'debug-reset-transients' ); ?>" class="button-secondary"><?php _e( 'Erase Transients', 'mimi' ); ?></a>
+						<a href="<?php echo esc_url( add_query_arg( 'action', 'debug-reset' ) ); ?>" class="button-secondary"><?php _e( 'Erase All Data', 'mimi' ); ?></a>
+						<a href="<?php echo esc_url( add_query_arg( 'action', 'debug-reset-transients' ) ); ?>" class="button-secondary"><?php _e( 'Erase Transients', 'mimi' ); ?></a>
 					</p>
 
 				<?php endif; ?>
@@ -398,17 +399,15 @@ final class Mad_Mimi_Settings_Controls {
 
 	public static function select( $args ) {
 
-		extract( $args, EXTR_SKIP );
-
-		if ( empty( $options ) || empty( $id ) || empty( $page ) ) {
+		if ( empty( $args['options'] ) || empty( $args['id'] ) || empty( $args['page'] ) ) {
 			return;
 		} ?>
 
-		<select id="<?php echo esc_attr( $id ); ?>" name="<?php printf( '%s[%s]', esc_attr( $page ), esc_attr( $id ) ); ?>">
+		<select id="<?php echo esc_attr( $args['id'] ); ?>" name="<?php echo esc_attr( sprintf( '%s[%s]', $args['page'], $args['id'] ) ); ?>">
 
-			<?php foreach ( $options as $name => $label ) : ?>
+			<?php foreach ( $args['options'] as $name => $label ) : ?>
 
-				<option value="<?php echo esc_attr( $name ); ?>" <?php selected( $name, (string) self::get_option( $id ) ); ?>>
+				<option value="<?php echo esc_attr( $name ); ?>" <?php selected( $name, (string) self::get_option( $args['id'] ) ); ?>>
 					<?php echo esc_html( $label ); ?>
 				</option>
 
@@ -420,16 +419,11 @@ final class Mad_Mimi_Settings_Controls {
 
 	public static function text( $args ) {
 
-		extract( $args, EXTR_SKIP );
-
-		if ( empty( $id ) || empty( $page ) ) {
+		if ( empty( $args['id'] ) || empty( $args['page'] ) ) {
 			return;
-		}
+		} ?>
 
-		$name = esc_attr( sprintf( '%s[%s]', esc_attr( $page ), esc_attr( $id ) ) );
-		$value = esc_attr( self::get_option( $id ) ); ?>
-
-		<input type="text" name="<?php echo $name; ?>" value="<?php echo $value; ?>" class="regular-text code" />
+		<input type="text" name="<?php echo esc_attr( sprintf( '%s[%s]', $args['page'], $args['id'] ) ); ?>" value="<?php echo esc_attr( self::get_option( $args['id'] ) ); ?>" class="regular-text code" />
 
 		<?php self::show_description( $args );
 
@@ -437,19 +431,16 @@ final class Mad_Mimi_Settings_Controls {
 
 	public static function checkbox( $args ) {
 
-		extract( $args, EXTR_SKIP );
-
-		if ( empty( $id ) || empty( $page ) ) {
+		if ( empty( $args['id'] ) || empty( $args['page'] ) ) {
 			return;
 		}
 
-		$name  = esc_attr( sprintf( '%s[%s]', esc_attr( $page ), esc_attr( $id ) ) );
-		$value = esc_attr( self::get_option( $id ) );
-		$label = esc_html( isset( $label ) ? $label : '' ); ?>
+		$name = sprintf( '%s[%s]', $args['page'], $args['id'] );
+		$label = isset( $args['label'] ) ? $args['label'] : ''; ?>
 
-		<label for="<?php echo $name; ?>">
-			<input type="checkbox" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="1" <?php checked( $value ); ?> />
-			<?php echo $label; ?>
+		<label for="<?php echo esc_attr( $name ); ?>">
+			<input type="checkbox" name="<?php echo esc_attr( $name ); ?>" id="<?php echo esc_attr( $name ); ?>" value="1" <?php checked( self::get_option( $args['id'] ) ); ?> />
+			<?php echo esc_html( $label ); ?>
 		</label>
 
 		<?php self::show_description( $args );
@@ -460,7 +451,7 @@ final class Mad_Mimi_Settings_Controls {
 
 		if ( isset( $field_args['description'] ) ) : ?>
 
-			<p class="description"><?php echo $field_args['description']; ?></p>
+			<p class="description"><?php echo wp_kses_post( $field_args['description'] ); ?></p>
 
 		<?php endif;
 
