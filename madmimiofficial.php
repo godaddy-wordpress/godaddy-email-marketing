@@ -111,7 +111,6 @@ class MadMimi_Official {
 		}
 
 		// enqueue scripts n styles
-		// @todo not on admin
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ) );
 
 		// Load our textdomain to allow multilingual translations
@@ -153,7 +152,7 @@ class MadMimi_Official {
 
 		return array_merge(
 			array(
-				'settings' => sprintf( '<a href="%s">%s</a>', menu_page_url( 'mad-mimi-settings', false ), __( 'Settings' ) )
+				'settings' => sprintf( '<a href="%s">%s</a>', menu_page_url( 'mad-mimi-settings', false ), __( 'Settings', 'mimi' ) )
 			),
 			$actions
 		);

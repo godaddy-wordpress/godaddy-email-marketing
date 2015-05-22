@@ -11,7 +11,7 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 
 		parent::__construct( 'mimi-form', __( 'Mad Mimi Form', 'mimi' ), array(
 			'classname'   => 'mimi-form',
-			'description' => _x( 'Embed any Mad Mimi webform in your sidebar', 'widget description', 'mimi' )
+			'description' => _x( 'Embed any Mad Mimi webform in your sidebar.', 'widget description', 'mimi' )
 		) );
 
 		foreach ( array( 'wpautop', 'wptexturize', 'convert_chars' ) as $filter ) {
@@ -68,12 +68,12 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 		$forms = Mad_Mimi_Dispatcher::get_forms(); ?>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'mimi' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ) ?>" />
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php _e( 'Additional Text:' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php _e( 'Additional Text:', 'mimi' ); ?></label>
 			<textarea class="widefat" rows="3" id="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'text' ) ); ?>"><?php echo esc_textarea( $instance['text'] ); ?></textarea>
 		</p>
 
@@ -81,7 +81,7 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 
 			<?php if ( ! empty( $forms->signups ) ) : ?>
 
-				<label for="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>"><?php _e( 'Form:' ); ?></label>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>"><?php _e( 'Form:', 'mimi' ); ?></label>
 
 				<select name="<?php echo esc_attr( $this->get_field_name( 'form' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>" class="widefat">
 
