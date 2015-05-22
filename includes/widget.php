@@ -93,7 +93,7 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 
 			<?php else : ?>
 
-			<span><?php printf( __( 'Please set up your Mad Mimi account in the <a href="%s">settings page</a>.', 'mimi' ), esc_url( admin_url( 'options-general.php?page=mad-mimi-settings' ) ) ); ?>
+			<span><?php echo wp_kses( sprintf( __( 'Please set up your Mad Mimi account in the <a href="%s">settings page</a>.', 'mimi' ), esc_url_raw( admin_url( 'options-general.php?page=mad-mimi-settings' ) ) ), array( 'a' => array( 'href' => array() ) ) ); ?>
 
 			<?php endif; ?>
 
