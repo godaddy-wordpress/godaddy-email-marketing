@@ -268,7 +268,7 @@ $screen->add_help_tab( array(
 
 				<h3><?php esc_html_e( 'Available Forms', 'mimi' ); ?></h3>
 
-				<table class="wp-list-table widefat fixed posts" style="width: 60%;">
+				<table class="wp-list-table widefat fixed posts">
 
 					<thead>
 						<tr>
