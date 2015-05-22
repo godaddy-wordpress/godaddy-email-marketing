@@ -2,10 +2,10 @@
 
 /*
 Plugin Name: Mad Mimi Sign Up Forms
-Plugin URI: http://wordpress.org/extend/plugins/madmimi/
+Plugin URI: https://wordpress.org/plugins/mad-mimi-sign-up-forms/
 Description: The Official Mad Mimi plugin allows your site visitors to subscribe to your email lists
 Author: Mad Mimi, LLC
-Version: 1.1
+Version: 1.2
 Author URI: http://madmimi.com/
 License: GPLv2 or later
 
@@ -85,16 +85,18 @@ class MadMimi_Official {
 	private function requirements() {
 
 		require_once MADMIMI_PLUGIN_DIR . 'includes/class-dispatcher.php';
+
 		// the shortcode
 		require_once MADMIMI_PLUGIN_DIR . 'includes/class-shortcode.php';
+
 		// the file renders the form
 		require_once MADMIMI_PLUGIN_DIR . 'includes/render.php';
+
 		// the main widget
 		require_once MADMIMI_PLUGIN_DIR . 'includes/widget.php';
+
 		// settings page, creds validation
 		require_once MADMIMI_PLUGIN_DIR . 'includes/settings.php';
-		// AJAX
-		require_once MADMIMI_PLUGIN_DIR . 'includes/class-ajax.php';
 
 	}
 
@@ -109,11 +111,7 @@ class MadMimi_Official {
 		}
 
 		// enqueue scripts n styles
-		// @todo not on admin
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ) );
-
-		// register AJAX actions
-		Mad_Mimi_AJAX::register();
 
 		// Load our textdomain to allow multilingual translations
 		load_plugin_textdomain( 'mimi', false, dirname( self::$basename ) . '/languages/' );
@@ -142,8 +140,6 @@ class MadMimi_Official {
 
 		// help strings
 		wp_localize_script( 'mimi-main', 'MadMimi', array(
-			'ajaxurl' => admin_url( 'admin-ajax.php' ), // AJAX URL
-			// translation strings
 			'thankyou' 				=> _x( 'Thank you for signing up!', 'ajax response', 'mimi' ),
 			'thankyou_suppressed' 	=> _x( 'Thank you for signing up! Please check your email to confirm your subscription.', 'ajax response', 'mimi' ),
 			'oops' 					=> _x( 'Oops! There was a problem. Please try again.', 'ajax response', 'mimi' ),
@@ -156,7 +152,7 @@ class MadMimi_Official {
 
 		return array_merge(
 			array(
-				'settings' => sprintf( '<a href="%s">%s</a>', menu_page_url( 'mad-mimi-settings', false ), __( 'Settings' ) )
+				'settings' => sprintf( '<a href="%s">%s</a>', menu_page_url( 'mad-mimi-settings', false ), __( 'Settings', 'mimi' ) )
 			),
 			$actions
 		);
@@ -175,8 +171,9 @@ class MadMimi_Official {
 
 		$screen = get_current_screen();
 
-		if ( 'plugins' != $screen->id )
+		if ( 'plugins' != $screen->id ) {
 			return;
+		}
 
 		$version = get_option( 'madmimi-version' );
 
@@ -186,8 +183,8 @@ class MadMimi_Official {
 
 			<div class="updated fade">
 				<p>
-					<strong><?php _e( 'Mad Mimi is almost ready.', 'mimi' ); ?></strong> <?php _e( 'You must enter your Mad Mimi username &amp; API key for it to work.', 'mimi' ); ?> &nbsp;
-					<a class="button" href="<?php menu_page_url( 'mad-mimi-settings' ); ?>"><?php _e( 'Let\'s do it!', 'mimi' ); ?></a>
+					<strong><?php esc_html_e( 'Mad Mimi is almost ready.', 'mimi' ); ?></strong> <?php esc_html_e( 'You must enter your Mad Mimi username &amp; API key for it to work.', 'mimi' ); ?> &nbsp;
+					<a class="button" href="<?php menu_page_url( 'mad-mimi-settings' ); ?>"><?php esc_html_e( 'Let\'s do it!', 'mimi' ); ?></a>
 				</p>
 			</div>
 

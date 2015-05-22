@@ -1,14 +1,13 @@
 /* admin.css */
 .mimi-identity {
-	text-shadow: letter-spacing: -1px;
+	letter-spacing: -1px;
 	text-shadow: 0 2px 0 #4FB3E1;
 	position: relative;
 	padding: 12px 12px 12px 200px;
 	border: 1px solid #808080;
-	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	margin-top: 1em;
-	background: #85C2F1 url(../images/wp_graphic_200_2000.png);
+	background: #85C2F1 url( '../images/wp_graphic_200_2000.png' );
 	background-repeat: no-repeat;
 	background-position: 0 45%;
 	font-family: 'Helvetica Neue', sans-serif;
@@ -23,12 +22,12 @@
 
 .mimi-muted {
 	color: #1B7DB9;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	text-shadow: 0 1px 0 rgba( 255, 255, 255, 0.5 );
 }
 
 .mimi-button {
 	color:#FF4A4A;
-	background: rgba(255, 255, 255, 0.4);
+	background: rgba( 255, 255, 255, 0.4 );
 	padding: 3px;
 }
 
