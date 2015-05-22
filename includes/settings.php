@@ -245,15 +245,15 @@ $screen->add_help_tab( array(
 
 			<?php screen_icon(); ?>
 
-			<h2><?php _e( 'Mad Mimi Settings', 'mimi' ); ?></h2>
+			<h2><?php esc_html_e( 'Mad Mimi Settings', 'mimi' ); ?></h2>
 
 			<?php if ( ! get_user_meta( get_current_user_id(), 'madmimi-dismiss', true ) ) : ?>
 
 				<div class="mimi-identity">
-					<a class="mimi-dismiss" href="<?php echo esc_url( add_query_arg( 'action', 'dismiss' ) ); ?>"><?php _e( 'Dismiss', 'mimi' ); ?></a>
-					<h3><?php echo _x( 'Enjoy the Mad Mimi Experience, first hand.', 'madmimi header note', 'mimi' ); ?></h3>
-					<p><?php echo _x( 'Add your Mad Mimi webform to your WordPress site! Easy to set up, the Mad Mimi plugin allows your site visitors to subscribe to your email list.', 'header note', 'mimi' ); ?></p>
-					<p class="mimi-muted"><?php printf( _x( 'Don\'t have a Mad Mimi account? Get one in less than 2 minutes! &nbsp; %s', 'header note', 'mimi' ), sprintf( '<a target="_blank" href="http://madmimi.com" class="mimi-button">%s</a>', _x( 'Sign Up Now', 'header note', 'mimi' ) ) ); ?></p>
+					<a class="mimi-dismiss" href="<?php echo esc_url( add_query_arg( 'action', 'dismiss' ) ); ?>"><?php esc_html_e( 'Dismiss', 'mimi' ); ?></a>
+					<h3><?php echo esc_html_x( 'Enjoy the Mad Mimi Experience, first hand.', 'madmimi header note', 'mimi' ); ?></h3>
+					<p><?php echo esc_html_x( 'Add your Mad Mimi webform to your WordPress site! Easy to set up, the Mad Mimi plugin allows your site visitors to subscribe to your email list.', 'header note', 'mimi' ); ?></p>
+					<p class="mimi-muted"><?php esc_html( sprintf( _x( 'Don\'t have a Mad Mimi account? Get one in less than 2 minutes! &nbsp; %s', 'header note', 'mimi' ), sprintf( '<a target="_blank" href="http://madmimi.com" class="mimi-button">%s</a>', _x( 'Sign Up Now', 'header note', 'mimi' ) ) ) ); ?></p>
 				</div>
 
 			<?php endif; ?>
@@ -266,23 +266,23 @@ $screen->add_help_tab( array(
 
 				submit_button( _x( 'Save Settings', 'save settings button', 'mimi' ) ); ?>
 
-				<h3><?php _e( 'Available Forms', 'mimi' ); ?></h3>
+				<h3><?php esc_html_e( 'Available Forms', 'mimi' ); ?></h3>
 
 				<table class="wp-list-table widefat fixed posts" style="width: 60%;">
 
 					<thead>
 						<tr>
-							<th><?php _e( 'Form Name', 'mimi' ); ?></th>
-							<th><?php _e( 'Form ID', 'mimi' ); ?></th>
-							<th><?php _e( 'Shortcode', 'mimi' ); ?></th>
+							<th><?php esc_html_e( 'Form Name', 'mimi' ); ?></th>
+							<th><?php esc_html_e( 'Form ID', 'mimi' ); ?></th>
+							<th><?php esc_html_e( 'Shortcode', 'mimi' ); ?></th>
 						</tr>
 					</thead>
 
 					<tfoot>
 						<tr>
-							<th><?php _e( 'Form Name', 'mimi' ); ?></th>
-							<th><?php _e( 'Form ID', 'mimi' ); ?></th>
-							<th><?php _e( 'Shortcode', 'mimi' ); ?></th>
+							<th><?php esc_html_e( 'Form Name', 'mimi' ); ?></th>
+							<th><?php esc_html_e( 'Form ID', 'mimi' ); ?></th>
+							<th><?php esc_html_e( 'Shortcode', 'mimi' ); ?></th>
 						</tr>
 					</tfoot>
 
@@ -308,10 +308,10 @@ $screen->add_help_tab( array(
 
 									<div class="row-actions">
 										<span class="edit">
-											<a target="_blank" href="<?php echo esc_url( $edit_link ); ?>" title="<?php _e( 'Opens in a new window', 'mimi' ); ?>"><?php _e( 'Edit form in Mad Mimi', 'mimi' ); ?></a> |
+											<a target="_blank" href="<?php echo esc_url( $edit_link ); ?>" title="<?php esc_attr_e( 'Opens in a new window', 'mimi' ); ?>"><?php esc_html_e( 'Edit form in Mad Mimi', 'mimi' ); ?></a> |
 										</span>
 										<span class="view">
-											<a target="_blank" href="<?php echo esc_url( $form->url ); ?>"><?php _e( 'Preview', 'mimi' ); ?></a>
+											<a target="_blank" href="<?php echo esc_url( $form->url ); ?>"><?php esc_html_e( 'Preview', 'mimi' ); ?></a>
 										</span>
 									</div>
 								</td>
@@ -325,7 +325,7 @@ $screen->add_help_tab( array(
 					else : ?>
 
 						<tr>
-							<td colspan="3"><?php _e( 'No forms found', 'mimi' ); ?></td>
+							<td colspan="3"><?php esc_html_e( 'No forms found', 'mimi' ); ?></td>
 						</tr>
 
 					<?php endif; ?>
@@ -336,15 +336,15 @@ $screen->add_help_tab( array(
 				<br />
 
 				<p class="description">
-					<?php _e( 'Not seeing your form?', 'mimi' ); ?> <a href="<?php echo esc_url( add_query_arg( 'action', 'refresh' ) ); ?>" class="button"><?php _e( 'Refresh Forms', 'mimi' ); ?></a>
+					<?php esc_html_e( 'Not seeing your form?', 'mimi' ); ?> <a href="<?php echo esc_url( add_query_arg( 'action', 'refresh' ) ); ?>" class="button"><?php esc_html_e( 'Refresh Forms', 'mimi' ); ?></a>
 				</p>
 
 				<?php if ( $this->mimi->debug ) : ?>
 
-					<h3><?php _e( 'Debug', 'mimi' ); ?></h3>
+					<h3><?php esc_html_e( 'Debug', 'mimi' ); ?></h3>
 					<p>
-						<a href="<?php echo esc_url( add_query_arg( 'action', 'debug-reset' ) ); ?>" class="button-secondary"><?php _e( 'Erase All Data', 'mimi' ); ?></a>
-						<a href="<?php echo esc_url( add_query_arg( 'action', 'debug-reset-transients' ) ); ?>" class="button-secondary"><?php _e( 'Erase Transients', 'mimi' ); ?></a>
+						<a href="<?php echo esc_url( add_query_arg( 'action', 'debug-reset' ) ); ?>" class="button-secondary"><?php esc_html_e( 'Erase All Data', 'mimi' ); ?></a>
+						<a href="<?php echo esc_url( add_query_arg( 'action', 'debug-reset-transients' ) ); ?>" class="button-secondary"><?php esc_html_e( 'Erase Transients', 'mimi' ); ?></a>
 					</p>
 
 				<?php endif; ?>
@@ -393,7 +393,7 @@ final class Mad_Mimi_Settings_Controls {
 
 	public static function description() { ?>
 
-		<p><?php _e( 'Please enter your Mad Mimi username and API Key in order to be able to create forms.', 'mimi' ); ?></p>
+		<p><?php esc_html_e( 'Please enter your Mad Mimi username and API Key in order to be able to create forms.', 'mimi' ); ?></p>
 
 	<?php }
 

@@ -183,8 +183,8 @@ class MadMimi_Official {
 
 			<div class="updated fade">
 				<p>
-					<strong><?php _e( 'Mad Mimi is almost ready.', 'mimi' ); ?></strong> <?php _e( 'You must enter your Mad Mimi username &amp; API key for it to work.', 'mimi' ); ?> &nbsp;
-					<a class="button" href="<?php menu_page_url( 'mad-mimi-settings' ); ?>"><?php _e( 'Let\'s do it!', 'mimi' ); ?></a>
+					<strong><?php esc_html_e( 'Mad Mimi is almost ready.', 'mimi' ); ?></strong> <?php esc_html_e( 'You must enter your Mad Mimi username &amp; API key for it to work.', 'mimi' ); ?> &nbsp;
+					<a class="button" href="<?php menu_page_url( 'mad-mimi-settings' ); ?>"><?php esc_html_e( 'Let\'s do it!', 'mimi' ); ?></a>
 				</p>
 			</div>
 

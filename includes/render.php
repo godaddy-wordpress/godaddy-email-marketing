@@ -30,7 +30,7 @@ class Mad_Mimi_Form_Renderer {
 					if ( $show_powered_by ) : ?>
 
 						<p>
-							<a href="http://madmimi.com" target="_blank"><?php _e( 'Powered by Mad Mimi', 'mimi' ); ?></a>
+							<a href="http://madmimi.com" target="_blank"><?php esc_html_e( 'Powered by Mad Mimi', 'mimi' ); ?></a>
 						</p>
 
 					<?php endif; ?>
