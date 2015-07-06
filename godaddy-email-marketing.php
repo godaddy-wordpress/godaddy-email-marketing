@@ -1,12 +1,12 @@
 <?php
 
 /*
-Plugin Name: Mad Mimi Sign Up Forms
-Plugin URI: https://wordpress.org/plugins/mad-mimi-sign-up-forms/
-Description: The Official Mad Mimi plugin allows your site visitors to subscribe to your email lists
-Author: Mad Mimi, LLC
-Version: 1.2
-Author URI: http://madmimi.com/
+Plugin Name: GoDaddy Email Marketing Signup Forms
+Plugin URI: https://wordpress.org/plugins/goaddy-email-marketing-sign-up-forms/
+Description: Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to set up, the plugin allows your site visitors to subscribe to your email lists.
+Author: GoDaddy, LLC
+Version: 1.0
+Author URI: https://godaddy.com/business/email-marketing
 License: GPLv2 or later
 
 This program is free software; you can redistribute it and/or
@@ -24,7 +24,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-class MadMimi_Official {
+class GEM_Official {
 
 	private static $instance;
 	private static $basename;
@@ -61,20 +61,20 @@ class MadMimi_Official {
 	private function setup_constants() {
 
 		// Plugin's main directory
-		defined( 'MADMIMI_PLUGIN_DIR' )
-			or define( 'MADMIMI_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+		defined( 'GEM_PLUGIN_DIR' )
+			or define( 'GEM_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 		// Absolute URL to plugin's dir
-		defined( 'MADMIMI_PLUGIN_URL' )
-			or define( 'MADMIMI_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+		defined( 'GEM_PLUGIN_URL' )
+			or define( 'GEM_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 		// Absolute URL to plugin's dir
-		defined( 'MADMIMI_PLUGIN_BASE' )
-			or define( 'MADMIMI_PLUGIN_BASE', plugin_basename( __FILE__ ) );
+		defined( 'GEM_PLUGIN_BASE' )
+			or define( 'GEM_PLUGIN_BASE', plugin_basename( __FILE__ ) );
 
 		// Plugin's main directory
-		defined( 'MADMIMI_VERSION' )
-			or define( 'MADMIMI_VERSION', '1.1' );
+		defined( 'GEM_VERSION' )
+			or define( 'GEM_VERSION', '1.1' );
 
 		// Set up the base name
 		isset( self::$basename ) || self::$basename = plugin_basename( __FILE__ );
@@ -84,66 +84,66 @@ class MadMimi_Official {
 	// @todo include only some on is_admin()
 	private function requirements() {
 
-		require_once MADMIMI_PLUGIN_DIR . 'includes/class-dispatcher.php';
+		require_once GEM_PLUGIN_DIR . 'includes/class-dispatcher.php';
 
 		// the shortcode
-		require_once MADMIMI_PLUGIN_DIR . 'includes/class-shortcode.php';
+		require_once GEM_PLUGIN_DIR . 'includes/class-shortcode.php';
 
 		// the file renders the form
-		require_once MADMIMI_PLUGIN_DIR . 'includes/render.php';
+		require_once GEM_PLUGIN_DIR . 'includes/render.php';
 
 		// the main widget
-		require_once MADMIMI_PLUGIN_DIR . 'includes/widget.php';
+		require_once GEM_PLUGIN_DIR . 'includes/widget.php';
 
 		// settings page, creds validation
-		require_once MADMIMI_PLUGIN_DIR . 'includes/settings.php';
+		require_once GEM_PLUGIN_DIR . 'includes/settings.php';
 
 	}
 
 	public function init() {
 
 		// enable debug mode?
-		$this->debug = (bool) apply_filters( 'madmimi_debug', false );
+		$this->debug = (bool) apply_filters( 'gem_debug', false );
 
 		// initialize settings
 		if ( is_admin() ) {
-			$this->settings = new Mad_Mimi_Settings;
+			$this->settings = new GEM_Settings;
 		}
 
 		// enqueue scripts n styles
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ) );
 
 		// Load our textdomain to allow multilingual translations
-		load_plugin_textdomain( 'mimi', false, dirname( self::$basename ) . '/languages/' );
+		load_plugin_textdomain( 'gem', false, dirname( self::$basename ) . '/languages/' );
 
 	}
 
 	public function register_shortcode() {
 
 		// register shortcode
-		add_shortcode( 'madmimi', array( 'Mad_Mimi_Shortcode', 'render' ) );
-		add_shortcode( 'MadMimi', array( 'Mad_Mimi_Shortcode', 'render' ) );
+		add_shortcode( 'gem', array( 'GEM_Shortcode', 'render' ) );
+		add_shortcode( 'GEM', array( 'GEM_Shortcode', 'render' ) );
 
 	}
 
 	public function register_widget() {
-		register_widget( 'Mad_Mimi_Form_Widget' );
+		register_widget( 'GEM_Form_Widget' );
 	}
 
 	public function enqueue() {
 
 		// main JavaScript file
-		wp_enqueue_script( 'mimi-main', plugins_url( 'js/mimi.js', __FILE__ ), array( 'jquery' ), MADMIMI_VERSION, true );
+		wp_enqueue_script( 'gem-main', plugins_url( 'js/gem.js', __FILE__ ), array( 'jquery' ), GEM_VERSION, true );
 
 		// assistance CSS
-		wp_enqueue_style( 'mimi-base', plugins_url( 'css/mimi.css', __FILE__ ), false, MADMIMI_VERSION );
+		wp_enqueue_style( 'gem-base', plugins_url( 'css/gem.css', __FILE__ ), false, GEM_VERSION );
 
 		// help strings
-		wp_localize_script( 'mimi-main', 'MadMimi', array(
-			'thankyou' 				=> _x( 'Thank you for signing up!', 'ajax response', 'mimi' ),
-			'thankyou_suppressed' 	=> _x( 'Thank you for signing up! Please check your email to confirm your subscription.', 'ajax response', 'mimi' ),
-			'oops' 					=> _x( 'Oops! There was a problem. Please try again.', 'ajax response', 'mimi' ),
-			'fix' 					=> _x( 'There was a problem. Please fill all required fields.', 'ajax response', 'mimi' ),
+		wp_localize_script( 'gem-main', 'GEM', array(
+			'thankyou' 				=> _x( 'Thank you for signing up!', 'ajax response', 'gem' ),
+			'thankyou_suppressed' 	=> _x( 'Thank you for signing up! Please check your email to confirm your subscription.', 'ajax response', 'gem' ),
+			'oops' 					=> _x( 'Oops! There was a problem. Please try again.', 'ajax response', 'gem' ),
+			'fix' 					=> _x( 'There was a problem. Please fill all required fields.', 'ajax response', 'gem' ),
 		) );
 
 	}
@@ -152,7 +152,7 @@ class MadMimi_Official {
 
 		return array_merge(
 			array(
-				'settings' => sprintf( '<a href="%s">%s</a>', menu_page_url( 'mad-mimi-settings', false ), __( 'Settings', 'mimi' ) )
+				'settings' => sprintf( '<a href="%s">%s</a>', menu_page_url( 'gem-settings', false ), __( 'Settings', 'gem' ) )
 			),
 			$actions
 		);
@@ -164,7 +164,7 @@ class MadMimi_Official {
 	}
 
 	public function deactivate() {
-		delete_option( 'madmimi-version' );
+		delete_option( 'gem-version' );
 	}
 
 	public function action_admin_notices() {
@@ -175,16 +175,16 @@ class MadMimi_Official {
 			return;
 		}
 
-		$version = get_option( 'madmimi-version' );
+		$version = get_option( 'gem-version' );
 
 		if ( ! $version ) {
 
-			update_option( 'madmimi-version', MADMIMI_VERSION ); ?>
+			update_option( 'gem-version', GEM_VERSION ); ?>
 
 			<div class="updated fade">
 				<p>
-					<strong><?php esc_html_e( 'Mad Mimi is almost ready.', 'mimi' ); ?></strong> <?php esc_html_e( 'You must enter your Mad Mimi username &amp; API key for it to work.', 'mimi' ); ?> &nbsp;
-					<a class="button" href="<?php menu_page_url( 'mad-mimi-settings' ); ?>"><?php esc_html_e( 'Let\'s do it!', 'mimi' ); ?></a>
+					<strong><?php esc_html_e( 'GoDaddy Email Marketing is almost ready.', 'gem' ); ?></strong> <?php esc_html_e( 'You must enter your username &amp; API key for it to work.', 'gem' ); ?> &nbsp;
+					<a class="button" href="<?php menu_page_url( 'gem-settings' ); ?>"><?php esc_html_e( 'Let\'s do it!', 'gem' ); ?></a>
 				</p>
 			</div>
 
@@ -193,7 +193,7 @@ class MadMimi_Official {
 	}
 }
 
-function madmimi() {
-	return MadMimi_Official::instance();
+function gem() {
+	return GEM_Official::instance();
 }
-add_action( 'plugins_loaded', 'madmimi' );
+add_action( 'plugins_loaded', 'gem' );

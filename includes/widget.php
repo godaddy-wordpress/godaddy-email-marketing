@@ -1,21 +1,21 @@
 <?php
 
 /**
- * Mad Mimi widget
+ * GoDaddy Email Marketing widget
  *
  * @since 2.8.0
  */
-class Mad_Mimi_Form_Widget extends WP_Widget {
+class GEM_Form_Widget extends WP_Widget {
 
 	function __construct() {
 
-		parent::__construct( 'mimi-form', __( 'Mad Mimi Form', 'mimi' ), array(
-			'classname'   => 'mimi-form',
-			'description' => _x( 'Embed any Mad Mimi webform in your sidebar.', 'widget description', 'mimi' )
+		parent::__construct( 'gem-form', __( 'GoDaddy Email Marketing Form', 'gem' ), array(
+			'classname'   => 'gem-form',
+			'description' => _x( 'Embed any GoDaddy Email Marketing webform in your sidebar.', 'widget description', 'gem' )
 		) );
 
 		foreach ( array( 'wpautop', 'wptexturize', 'convert_chars' ) as $filter ) {
-			add_filter( 'mimi_widget_text', $filter );
+			add_filter( 'gem_widget_text', $filter );
 		}
 
 	}
@@ -24,7 +24,7 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 
 		extract( $args );
 
-		$title   = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Mad Mimi Form', 'mimi' ) : $instance['title'], $instance, $this->id_base );
+		$title   = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'GoDaddy Email Marketing Form', 'gem' ) : $instance['title'], $instance, $this->id_base );
 		$text    = empty( $instance['text'] ) ? '' : $instance['text'];
 		$form_id = empty( $instance['form'] ) ? false : $instance['form'];
 
@@ -35,10 +35,10 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 		}
 
 		if ( $text ) {
-			echo wp_kses_post( apply_filters( 'mimi_widget_text', $text ) );
+			echo wp_kses_post( apply_filters( 'gem_widget_text', $text ) );
 		}
 
-		Mad_Mimi_Form_Renderer::process( $form_id, true );
+		GEM_Form_Renderer::process( $form_id, true );
 
 		echo $args['after_widget'];
 
@@ -65,15 +65,15 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 			'form'  => 0,
 		) );
 
-		$forms = Mad_Mimi_Dispatcher::get_forms(); ?>
+		$forms = GEM_Dispatcher::get_forms(); ?>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'mimi' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'gem' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ) ?>" />
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php esc_html_e( 'Additional Text:', 'mimi' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php esc_html_e( 'Additional Text:', 'gem' ); ?></label>
 			<textarea class="widefat" rows="3" id="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'text' ) ); ?>"><?php echo esc_textarea( $instance['text'] ); ?></textarea>
 		</p>
 
@@ -81,7 +81,7 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 
 			<?php if ( ! empty( $forms->signups ) ) : ?>
 
-				<label for="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>"><?php esc_html_e( 'Form:', 'mimi' ); ?></label>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>"><?php esc_html_e( 'Form:', 'gem' ); ?></label>
 
 				<select name="<?php echo esc_attr( $this->get_field_name( 'form' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>" class="widefat">
 
@@ -93,7 +93,7 @@ class Mad_Mimi_Form_Widget extends WP_Widget {
 
 			<?php else : ?>
 
-			<span><?php echo wp_kses( sprintf( __( 'Please set up your Mad Mimi account in the <a href="%s">settings page</a>.', 'mimi' ), esc_url_raw( admin_url( 'options-general.php?page=mad-mimi-settings' ) ) ), array( 'a' => array( 'href' => array() ) ) ); ?>
+			<span><?php echo wp_kses( sprintf( __( 'Please set up your GoDaddy Email Marketing account in the %ssettings page%s.', 'gem' ), esc_url_raw( admin_url( 'options-general.php?page=gem-settings' ) ) ), array( 'a' => array( 'href' => array() ) ) ); ?>
 
 			<?php endif; ?>
 

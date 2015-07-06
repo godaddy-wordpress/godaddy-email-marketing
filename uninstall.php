@@ -5,4 +5,6 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	die;
 }
 
-// silence is golden.
+// delete all options and transients that contain gem
+delete_option( 'gem-version' );
+delete_option( 'gem-settings' );

@@ -1,4 +1,4 @@
-madmimi-wp
+madgem-wp
 ==========
 
-Mad Mimi's official WordPress plugin
+GoDaddy Email Marketing's official WordPress plugin

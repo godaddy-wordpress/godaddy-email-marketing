@@ -1,84 +1,76 @@
 === Official Mad Mimi Sign Up Forms ===
-Contributors: madmimi, illuminea, maor, beccawitz
-Tags: newsletter, forms, opt-in
+Contributors: madmimi, humanmade, illuminea, maor, beccawitz
+Tags: forms, newsletter, opt-in, email marketing, signup, subscribe
 Requires at least: 3.5
-Tested up to: 3.7.1
-Stable tag: 1.2
+Tested up to: 4.3
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-
-Add your Mad Mimi webform to your WordPress site! Easy to set up, the Mad Mimi plugin allows your site visitors to subscribe to your email lists.
+Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to set up, the plugin allows your site visitors to subscribe to your email lists.
 
 == Description ==
 
-The Official Mad Mimi Sign Up Form plugin makes it easy to grow your subscribers! Use this plugin to integrate your email newsletter sign up forms into your WordPress site.
-If you'd like to learn more about Mad Mimi, grab a [FREE forever account](http://madmimi.com) and explore.
+The GoDaddy Email Marketing signup form plugin makes it easy to grow your subscribers! Use this plugin to integrate your signup forms into your WordPress site. To learn more, [pick up a GoDaddy Email Marketing account](https://www.godaddy.com/business/email-marketing) and explore.
 
-Once the plugin is activated, you'll be able to select and insert any of your Mad Mimi webforms right into your site by using a widget, shortcode, or template tag. Setup is easy. In Settings, simply enter your account email address and API key (found in your [Mad Mimi account](http://help.madmimi.com/where-can-i-find-my-api-key/) area) and you're all set.
+Once the plugin is activated, you can select and insert any of your GoDaddy Email Marketing signup forms right into your site by using a widget, shortcode, or template tag. Setup is easy; in the plugin Settings, simply enter your account email address and API key (found in the Settings section of your GoDaddy Email Marketing account), and you're all set.
 
-Official Mad Mimi Forms Plugin Features:
+**Official GoDaddy Email Marketing Signup Forms plugin features:**
 
 * Automatically add new forms for users to sign up to an email list of your choice
-* Unlimited signup forms by using the widget, shortcode, or template tag
-* Quick links to preview your form in Mad Mimi
-* Quick links to edit your form in Mad Mimi
-
+* Insert unlimited signup forms using the widget, shortcode, or template tag
+* Use quick links to edit and preview your form in GoDaddy Email Marketing
 
 == Installation ==
 
-1. Upload plugin files to your plugins folder, or install using WordPress' built-in Add New Plugin installer
-2. Activate the plugin
-3. Go to the plugin settings page (under Settings > Mad Mimi Settings)
-4. Simply enter your account email address and API key (found in your [Mad Mimi account](http://help.madmimi.com/where-can-i-find-my-api-key/) area).  
-5. Click Save Changes.
+* Upload plugin files to your plugins folder, or install using WordPress' built-in Add New Plugin installer.
+* Activate the plugin.
+* Go to the plugin Settings page (under Settings > GoDaddy Email Marketing Settings).
+* Enter your account email address and API key (found in the Settings section of your GoDaddy Email Marketing account).
+* Click **Save Changes**.
 
-Once your account is verified, you can insert a form into your site by using a widget, shortcode, or template tag:
-* Widget: Go to Appearance > Widgets and find the widget called “Mad Mimi Form” and drag it into the widget area of your choice. You can then add a title and select a form!
-* Shortcode: You can add a form to any post or page by adding the shortcode (ex. `[madmimi id=80326]`) in the page/post editor. You can find a form’s ID on the Mad Mimi Settings page.
-* Template tag: You can add the following template tag into any WordPress file: `<?php madmimi_form( $form_id ); ?>`. Ex. `<?php madmimi_form( 91 ); ?>` You can find a form’s ID on the Mad Mimi Settings page.
+After your account is verified, you can insert a form into your site by using a widget, shortcode, or template tag:
 
-That's it.  You're ready to go!
+* **Widget** Go to Appearance > Widgets, find the GoDaddy Email Marketing widget, and drag it into the widget area of your choice. You can then add a title and select a form!
+* **Shortcode** Add a form to any post or page by adding the shortcode (e.g., `[gem id=80326 ]`) in the page/post editor. You can find a form's ID on the GoDaddy Email Marketing Settings page.
+* **Template** tag Add the following template tag into any WordPress file: `<?php gem_form; ?>`. For example: `<?php gem_form( 91 ); ?>` You can find a form's ID on the GoDaddy Email Marketing Settings page.
 
+That's it. You're ready to go!
 
 == Frequently Asked Questions ==
 
-= What is Mad Mimi? =
-[Mad Mimi](https://madmimi.com) is the easiest way to create, send, share and track email newsletters online. Mad Mimi is for people who want email marketing to be simple.
+= What is GoDaddy Email Marketing? =
 
+GoDaddy Email Marketing is the easiest way to create, send, share, and track email newsletters online. It's for people who want email marketing to be simple.
 
-= Do I need a Mad Mimi account to use this plugin? =
-Yes, this plugin requires a [Mad Mimi](https://madmimi.com) account.
+= Do I need a GoDaddy Email Marketing account to use this plugin? =
+
+Yes, this plugin requires a [GoDaddy Email Marketing](https://www.godaddy.com/business/email-marketing) account.
 
 = Is there a widget? =
-Absolutely.  You can use it by finding the widget called “Mad Mimi Form” under Appearance >Widgets in the WordPress Dashboard and drag it into the widget area of your choice. You can then add a title and select a form!
+
+Absolutely. Use it by finding the GoDaddy Email Marketing widget under Appearance >Widgets in the WordPress Dashboard and dragging it into the widget area of your choice. You can then add a title and select a form!
 
 = Is there a shortcode? =
-Yes! You can add a form to any post or page by adding the shortcode with the form ID (ex. `[madmimi id=80326]`)  in the page/post editor. You can find a form’s ID on the Mad Mimi Settings page.
+
+Yes! You can add a form to any post or page by adding the shortcode with the form ID (e.g., `[gem id=80326 ]`) in the page/post editor. Form IDs are listed on the Mad Mimi Settings page.
 
 = Is there a template tag? =
-Yup! You can add the following template tag into any WordPress file: `<?php madmimi_form( $form_id ); ?>`. Ex. `<?php madmimi_form( 91 ); ?>` You can find a form’s ID on the Mad Mimi Settings page.
+
+Yup! Add the following template tag into any WordPress file: `<?php gem_form( $form_id ); ?>`. For example: `<?php gem_form( 91 ); ?>`. Form IDs are listed on the Mad Mimi Settings page.
 
 = Where can I find the API Key? =
-The API key is in your Mad Mimi account area. For more details see: http://help.madmimi.com/where-can-i-find-my-api-key/
 
+You can find your API key in the Settings section of your GoDaddy Email Marketing account.
 
 == Screenshots ==
 
 1. Settings screen.
-2. A full list of your Mad Mimi Webforms, with ready shortcodes
+2. A full list of your GoDaddy Email Marketing Webforms, with ready shortcodes
 3. The widget, on the front-end
 4. The widget, on the widgets page
 
-
 == Changelog ==
-= 1.2 =
-* Fixed the padding for p tags in the mad mimi signup form
-
-= 1.1 =
-* New! Upon form submit, the plugin checks to see if the Mad Mimi user has specified that the new subscriber should be redirected to a specific webpage after subscribing (Confirmation Landing Page). If the user has specified a Confirmation Landing Page for their webform, the new subscriber will be redirected to that page after subscribing.
-* Better cache handling for the provided CSS and JS core files
-* Bug fixes
 
 = 1.0 =
-* Initial version. Hoozah!
+* Initial version. forked from the Mad Mimi Sign Up Forms WordPress Plugin: https://wordpress.org/plugins/mad-mimi-sign-up-forms/

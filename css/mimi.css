@@ -4,19 +4,19 @@
  * Fields
  */
 
-form.mimi-form p {
+form.gem-form p {
 	padding: 0;
 }
 
-input.mimi-invalid {
+input.gem-invalid {
 	border: 1px solid red;
 }
 
-.mimi-field {
+.gem-field {
 	display: block;
 }
 
-.mimi-spinner {
+.gem-spinner {
 	display: none;
 	background: url( '../images/spinner.gif' ) no-repeat;
 	background-size: 20px 20px;
@@ -24,14 +24,14 @@ input.mimi-invalid {
 	height: 20px;
 }
 
-.mimi-submit {
+.gem-submit {
 	cursor: pointer;
 }
 
 /**
  * Messages
  */
-.mimi-error {
+.gem-error {
 	background-color: #ffebe8;
 	border: 1px solid #c00;
 	padding: 0.5em 1em;
@@ -48,7 +48,7 @@ input.mimi-invalid {
   (-webkit-min-device-pixel-ratio: 1.25),
   (min-resolution: 120dpi) {
 
-	.mimi-spinner {
+	.gem-spinner {
 		background-image: url( '../images/spinner-2x.gif' );
 	}
 }

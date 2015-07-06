@@ -2,45 +2,45 @@
 
 	"use strict";
 
-	var MadMimi = window.MadMimi || {};
+	var GEM = window.GEM || {};
 
 	/**
 	 * Constants
 	 */
-	MadMimi.DEBUG_FLAG = true;
+	GEM.DEBUG_FLAG = true;
 
-	MadMimi.init = function() {
+	GEM.init = function() {
 
 		// Handles form submissions
-		$( 'form.mimi-form' ).submit( function( e ) {
+		$( 'form.gem-form' ).submit( function( e ) {
 
 			e.preventDefault();
 
 			var $wrapper = $( this ),
-				$spinner = $( '.mimi-spinner', $wrapper ),
+				$spinner = $( '.gem-spinner', $wrapper ),
 
 				/* needed only when using WP as a proxy.
-				payload = $.extend( {}, $( this ).mimiSerializeObject(), {
-					action: 'mimi-submit-form'
+				payload = $.extend( {}, $( this ).gemSerializeObject(), {
+					action: 'gem-submit-form'
 				} ),
 				*/
 
 				payload = $( this ).serialize(),
 				invalidElements = [],
-				m = MadMimi;
+				m = GEM;
 
 			// make sure to clear all "invalid" elements before re-validating
-			$wrapper.find( 'input.mimi-invalid' ).removeClass( 'mimi-invalid' );
+			$wrapper.find( 'input.gem-invalid' ).removeClass( 'gem-invalid' );
 
 			$( this ).find( ':input' ).each( function( i ) {
 
-			 	if ( 'signup[email]' == $( this ).attr( 'name' ) && ! MadMimi.isEmail( $( this ).val() ) ) {
+			 	if ( 'signup[email]' == $( this ).attr( 'name' ) && ! GEM.isEmail( $( this ).val() ) ) {
 
 					// email not valid
 					invalidElements.push( $( this ) );
 					m.log( 'Email is NOT valid' );
 
-				} else if ( $( this ).is( '.mimi-required' ) && '' == $( this ).val() ) {
+				} else if ( $( this ).is( '.gem-required' ) && '' == $( this ).val() ) {
 					invalidElements.push( $( this ) );
 					m.log( 'A required filled was not filled' );
 				}
@@ -67,13 +67,13 @@
 								window.location.href = d.redirect;
 							}
 
-							$wrapper.html( MadMimi.addMessage(
+							$wrapper.html( GEM.addMessage(
 								is_suppressed ? [ 'suppressed', 'success' ] : [ 'info', 'success' ],
-								is_suppressed ? MadMimi.thankyou_suppressed : MadMimi.thankyou )
+								is_suppressed ? GEM.thankyou_suppressed : GEM.thankyou )
 							).fadeIn( 'fast' );
 
 						} else {
-							$wrapper.html( MadMimi.addMessage( 'info', MadMimi.oops ) ).fadeIn( 'fast' );
+							$wrapper.html( GEM.addMessage( 'info', GEM.oops ) ).fadeIn( 'fast' );
 						}
 
 					} );
@@ -84,48 +84,48 @@
 
 				// there are invalid elements
 				$( invalidElements ).each( function( i, el ) {
-					$( this ).addClass( 'mimi-invalid' );
+					$( this ).addClass( 'gem-invalid' );
 				} );
 
-				var previousNotifications = $wrapper.find( '.mimi-error, .mimi-info' );
+				var previousNotifications = $wrapper.find( '.gem-error, .gem-info' );
 
 				if ( 0 != previousNotifications.length ) {
 					previousNotifications.remove();
 				}
 
-				$wrapper.prepend( MadMimi.addMessage( 'error', MadMimi.fix ) );
+				$wrapper.prepend( GEM.addMessage( 'error', GEM.fix ) );
 
 			}
 
 		} );
 	};
 
-	MadMimi.addMessage = function( type, message ) {
+	GEM.addMessage = function( type, message ) {
 
 		var _class = [];
 
 		if ( $.isArray( type ) ) {
 
 			$.each( type, function( index, value ) {
-				_class.push( 'mimi-' + value );
+				_class.push( 'gem-' + value );
 			} );
 
 		} else {
-			_class.push( 'mimi-' + type.toString() );
+			_class.push( 'gem-' + type.toString() );
 		}
 
 		return $( '<p/>', { class: _class.join( ' ' ) } ).text( message );
 
 	}
 
-	MadMimi.isEmail = function ( email ) {
+	GEM.isEmail = function ( email ) {
 		var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 		return regex.test( email );
 	}
 
-	MadMimi.log = function( message ) {
+	GEM.log = function( message ) {
 
-		if ( MadMimi.DEBUG_FLAG && window.console ) {
+		if ( GEM.DEBUG_FLAG && window.console ) {
 			console.log( message );
 		}
 
@@ -134,7 +134,7 @@
 	/**
 	 * ==== Helpers + Utilities ====
 	 */
-	$.fn.mimiSerializeObject = function() {
+	$.fn.gemSerializeObject = function() {
 
 		var o = {};
 		var a = this.serializeArray();
@@ -161,6 +161,6 @@
 	/**
 	 * Constructor
 	 */
-	$( document ).ready( MadMimi.init );
+	$( document ).ready( GEM.init );
 
 } )( jQuery );

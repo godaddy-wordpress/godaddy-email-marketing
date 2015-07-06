@@ -1,6 +1,6 @@
 <?php
 
-class Mad_Mimi_Shortcode {
+class GEM_Shortcode {
 
 	public function render( $atts ) {
 
@@ -12,7 +12,7 @@ class Mad_Mimi_Shortcode {
 			return;
 		}
 
-		return Mad_Mimi_Form_Renderer::process( $id, false );
+		return GEM_Form_Renderer::process( $id, false );
 
 	}
 }
@@ -21,15 +21,15 @@ class Mad_Mimi_Shortcode {
  * The main template tag. Pass on the ID and watch the magic happen.
  *
  * @since 1.0
- * @see Mad_Mimi_Form_Renderer
+ * @see GEM_Form_Renderer
  * @param int $id The ID of the form you wish to output
  */
-function madmimi_form( $id ) {
+function gem_form( $id ) {
 
-	if ( ! class_exists( 'Mad_Mimi_Form_Renderer' ) ) {
+	if ( ! class_exists( 'GEM_Form_Renderer' ) ) {
 		return;
 	}
 
-	Mad_Mimi_Form_Renderer::process( $id, true );
+	GEM_Form_Renderer::process( $id, true );
 
 }
