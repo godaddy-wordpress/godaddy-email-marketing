@@ -24,7 +24,7 @@ class GEM_Settings {
 
 		$this->hook = add_options_page(
 			__( 'GoDaddy Email Marketing Settings', 'gem' ),        // <title> tag
-			__( 'GoDaddy Email Marketing Settings', 'gem' ),        // menu label
+			__( 'GoDaddy Signup Forms', 'gem' ),        // menu label
 			'manage_options',                         // required cap to view this page
 			$this->slug = 'gem-settings',        // page slug
 			array( &$this, 'display_settings_page' )  // callback
