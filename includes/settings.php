@@ -205,7 +205,7 @@ class GEM_Settings {
 			array(
 				'id' => 'api-key',
 				'page' => $this->slug,
-				'description' => sprintf( '<a target="_blank" href="%s">%s</a>', 'https://gdhelp.godaddy.com/article/15909', _x( 'Where can I find my API key?', 'settings page', 'gem' )  ),
+				'description' => sprintf( '<a target="_blank" href="%s">%s</a>', 'https://support.godaddy.com/help/article/15909/find-api-key', _x( 'Where can I find my API key?', 'settings page', 'gem' )  ),
 				'label_for' => $this->slug . '-api-key',
 			)
 		);
