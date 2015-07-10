@@ -147,15 +147,14 @@ class GEM_Settings {
 					<li><strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget called “GoDaddy Email Marketing Form” and drag it into the widget area of your choice. You can then add a title and select a form!</li>
 					<li><strong>Shortcode:</strong> You can add a form to any post or page by adding the shortcode (ex. <code>[gem id=80326]</code>)  in the page/post editor</li>
 					<li><strong>Template Tag:</strong> You can add the following template tag into any WordPress file: <code>%2$s</code>. Ex. <code>%3$s</code></li>
-				</ul>', 'gem' ), '<a target="_blank" href="https://madmimi.com/user/edit">https://madmimi.com/user/edit</a>', '&lt;?php gem_form( $form_id ); ?&gt;', '&lt;?php gem_form( 91 ); ?&gt;' ),
+				</ul>', 'gem' ), '<a target="_blank" href="https://gem.godaddy.com/user/edit">https://gem.godaddy.com/user/edit</a>', '&lt;?php gem_form( $form_id ); ?&gt;', '&lt;?php gem_form( 91 ); ?&gt;' ),
 		) );
 
 		$screen->set_help_sidebar( __( '
 			<p><strong>For more information:</strong></p>
-			<p><a href="http://madmimi.com" target="_blank">Mad Mimi</a></p>
-			<p><a href="http://help.madmimi.com" target="_blank">Mad Mimi Help Docs</a></p>
-			<p><a href="http://blog.madmimi.com" target="_blank">Mad Mimi Blog</a></p>
-			<p><a href="mailto:support@madmimi.com" target="_blank" class="button">Contact Mad Mimi</a></p>
+			<p><a href="https://godaddy.com" target="_blank">GoDaddy</a></p>
+			<p><a href="https://support.godaddy.com/" target="_blank">GoDaddy Help</a></p>
+			<p><a href="https://support.godaddy.com/" target="_blank" class="button">Contact GoDaddy</a></p>
 		', 'gem' ) );
 
 	}
@@ -205,7 +204,7 @@ class GEM_Settings {
 			array(
 				'id' => 'api-key',
 				'page' => $this->slug,
-				'description' => sprintf( '<a target="_blank" href="%s">%s</a>', 'https://support.godaddy.com/help/article/15909/find-api-key', _x( 'Where can I find my API key?', 'settings page', 'gem' )  ),
+				'description' => sprintf( '<a target="_blank" href="%s">%s</a>', 'https://www.godaddy.com/help/find-api-key-15909', _x( 'Where can I find my API key?', 'settings page', 'gem' )  ),
 				'label_for' => $this->slug . '-api-key',
 			)
 		);

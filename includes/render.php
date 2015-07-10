@@ -30,7 +30,7 @@ class GEM_Form_Renderer {
 					if ( $show_powered_by ) : ?>
 
 						<p>
-							<a href="http://madmimi.com" target="_blank"><?php esc_html_e( 'Powered by GoDaddy', 'gem' ); ?></a>
+							<a href="http://godaddy.com" target="_blank"><?php esc_html_e( 'Powered by GoDaddy', 'gem' ); ?></a>
 						</p>
 
 					<?php endif; ?>
