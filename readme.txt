@@ -1,5 +1,5 @@
-=== Official Mad Mimi Sign Up Forms ===
-Contributors: madmimi, humanmade, illuminea, maor, beccawitz
+=== GoDaddy Email Marketing ===
+Contributors: godaddy, madmimi, humanmade
 Tags: forms, newsletter, opt-in, email marketing, signup, subscribe
 Requires at least: 3.5
 Tested up to: 4.3
@@ -53,11 +53,11 @@ Absolutely. Use it by finding the GoDaddy Email Marketing widget under Appearanc
 
 = Is there a shortcode? =
 
-Yes! You can add a form to any post or page by adding the shortcode with the form ID (e.g., `[gem id=80326 ]`) in the page/post editor. Form IDs are listed on the Mad Mimi Settings page.
+Yes! You can add a form to any post or page by adding the shortcode with the form ID (e.g., `[gem id=80326 ]`) in the page/post editor. Form IDs are listed on the GoDaddy Signup Forms Settings page.
 
 = Is there a template tag? =
 
-Yup! Add the following template tag into any WordPress file: `<?php gem_form( $form_id ); ?>`. For example: `<?php gem_form( 91 ); ?>`. Form IDs are listed on the Mad Mimi Settings page.
+Yup! Add the following template tag into any WordPress file: `<?php gem_form( $form_id ); ?>`. For example: `<?php gem_form( 91 ); ?>`. Form IDs are listed on the GoDaddy Signup Forms Settings page.
 
 = Where can I find the API Key? =
 
