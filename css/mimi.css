@@ -8,6 +8,10 @@ form.gem-form p {
 	padding: 0;
 }
 
+form.gem-form label {
+	display: block;
+}
+
 input.gem-invalid {
 	border: 1px solid red;
 }
