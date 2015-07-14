@@ -25,6 +25,10 @@ class GEM_Form_Renderer {
 
 					<?php do_action( 'gem_after_fields', $form_id, $form->fields ); ?>
 
+					<input type="hidden" name="form_id" value="<?php echo absint( $form->id ); ?>" />
+					<input type="submit" value="<?php echo esc_attr( $form->button_text ); ?>" class="button gem-submit" />
+					<span class="gem-spinner"></span>
+
 					<?php $show_powered_by = GEM_Settings_Controls::get_option( 'display_powered_by' ) ? true : false;
 
 					if ( $show_powered_by ) : ?>
@@ -34,10 +38,6 @@ class GEM_Form_Renderer {
 						</p>
 
 					<?php endif; ?>
-
-					<input type="hidden" name="form_id" value="<?php echo absint( $form->id ); ?>" />
-					<input type="submit" value="<?php echo esc_attr( $form->button_text ); ?>" class="button gem-submit" />
-					<span class="gem-spinner"></span>
 
 				</form>
 			</div>
