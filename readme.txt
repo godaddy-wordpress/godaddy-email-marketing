@@ -1,5 +1,5 @@
 === GoDaddy Email Marketing ===
-Contributors: godaddy, madmimi, humanmade
+Contributors: godaddy, humanmade
 Tags: forms, newsletter, opt-in, email marketing, signup, subscribe
 Requires at least: 3.5
 Tested up to: 4.3
