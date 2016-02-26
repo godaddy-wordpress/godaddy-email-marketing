@@ -16,6 +16,10 @@ input.gem-invalid {
 	display: block;
 }
 
+form.gem-form label {
+	display: inline !important;
+}
+
 .gem-spinner {
 	display: none;
 	background: url( '../images/spinner.gif' ) no-repeat;

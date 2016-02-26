@@ -1,13 +1,13 @@
 === GoDaddy Email Marketing ===
-Contributors: godaddy, humanmade
+Contributors: godaddy, madmimi, humanmade
 Tags: forms, newsletter, opt-in, email marketing, signup, subscribe
 Requires at least: 3.5
 Tested up to: 4.3
-Stable tag: 1.0
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to set up, the plugin allows your site visitors to subscribe to your email lists.
+Add the GoDaddy Email Marketing plugin to your WordPress site! Easy to set up, the plugin allows your site visitors to subscribe to your email lists.
 
 == Description ==
 
@@ -67,10 +67,23 @@ You can find your API key in the Settings section of your GoDaddy Email Marketin
 
 1. Settings screen.
 2. A full list of your GoDaddy Email Marketing Webforms, with ready shortcodes
-3. The widget, on the front-end
-4. The widget, on the widgets page
+3. The widget, on the widgets page
+4. The widget, on the front-end
 
 == Changelog ==
+
+= 1.0.3 =
+* Added support for web form fancy fields
+* Made some styling changes to mobile view
+
+= 1.0.2 =
+
+* Fixed incorrectly loaded stylesheet
+* Minor style improvements to front-end form output
+
+= 1.0.1 = 
+
+* Move the "Powered by GoDaddy Link" below the submit button and link it up to the correct place
 
 = 1.0 =
 * Initial version. forked from the Mad Mimi Sign Up Forms WordPress Plugin: https://wordpress.org/plugins/mad-mimi-sign-up-forms/
