@@ -1,7 +1,7 @@
 <?php
 namespace GEM;
 
-require( 'testcase.php' );
+require_once( 'testcase.php' );
 
 class Test_GEM_Official extends WP_GEMTestCase {
 
