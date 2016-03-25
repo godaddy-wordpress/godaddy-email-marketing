@@ -22,6 +22,7 @@ class Test_GEM_Dispatcher extends WP_GEMTestCase {
 		parent::tearDown();
 
 		remove_action( 'http_api_transports', array( $this, 'get_transports' ) );
+		\WP_Http_Mock_Transport::$test_class = null;
 	}
 
 	public function get_transports() {
