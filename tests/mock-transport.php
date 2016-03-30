@@ -6,6 +6,11 @@ class WP_Http_Mock_Transport {
 	public static $test_class;
 	public static $expected_url;
 
+	/**
+	 * The method is called in order to determine if the transport is enabled and ready to operate.
+	 *
+	 * @return boolean
+	 */
 	public static function test() {
 		return true;
 	}

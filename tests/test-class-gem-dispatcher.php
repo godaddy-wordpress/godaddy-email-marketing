@@ -124,7 +124,7 @@ class Test_GEM_Dispatcher extends WP_GEMTestCase {
 
 		update_option( 'gem-settings', array( 'username' => $user_name ) );
 		set_transient( 'gem-' . $user_name . '-account', $sample_data );
-		$this->assertEquals( $sample_data, \GEM_Dispatcher::get_user_level( ) );
+		$this->assertEquals( $sample_data, \GEM_Dispatcher::get_user_level() );
 		delete_transient( 'gem-' . $user_name . '-account' );
 
 		\WP_Http_Mock_Transport::$expected_url = "http://api.madmimi.com/user/account_status?username=$user_name";
@@ -133,7 +133,7 @@ class Test_GEM_Dispatcher extends WP_GEMTestCase {
 				'code' => 401,
 			),
 		);
-		$this->assertFalse( \GEM_Dispatcher::get_user_level( ) );
+		$this->assertFalse( \GEM_Dispatcher::get_user_level() );
 
 		\WP_Http_Mock_Transport::$expected_url = "http://api.madmimi.com/user/account_status?username=$user_name";
 		\WP_Http_Mock_Transport::$response = array(
@@ -142,7 +142,7 @@ class Test_GEM_Dispatcher extends WP_GEMTestCase {
 			),
 			'body' => $sample_response,
 		);
-		$this->assertEquals( 'OK', \GEM_Dispatcher::get_user_level( ) );
+		$this->assertEquals( 'OK', \GEM_Dispatcher::get_user_level() );
 		$this->assertEquals( 'OK', get_transient( 'gem-' . $user_name . '-account' ) );
 		delete_transient( 'gem-' . $user_name . '-account' );
 	}
@@ -156,7 +156,7 @@ class Test_GEM_Dispatcher extends WP_GEMTestCase {
 				'code' => 401,
 			),
 		);
-		$this->assertFalse( \GEM_Dispatcher::user_sign_in( ) );
+		$this->assertFalse( \GEM_Dispatcher::user_sign_in() );
 
 		\WP_Http_Mock_Transport::$expected_url = 'http://api.madmimi.com/sessions/single_signon_token';
 		\WP_Http_Mock_Transport::$response = array(
@@ -165,7 +165,7 @@ class Test_GEM_Dispatcher extends WP_GEMTestCase {
 			),
 			'body' => $sample_response,
 		);
-		$this->assertEquals( 'http://api.madmimi.com/sessions/single_signon?token=' . $sample_response, \GEM_Dispatcher::user_sign_in( ) );
+		$this->assertEquals( 'http://api.madmimi.com/sessions/single_signon?token=' . $sample_response, \GEM_Dispatcher::user_sign_in() );
 	}
 
 	public function test_get_method_url() {
