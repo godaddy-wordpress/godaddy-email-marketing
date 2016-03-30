@@ -28,9 +28,6 @@ script:
 after_script:
     - source $DEV_LIB_PATH/travis.after_script.sh
 
-after_success:
-    - bash <(curl -s https://codecov.io/bash)
-
 notifications:
     slack:
         secure: "e/7dqZ9RIa7piLMSw7OAUH5/CSXeBg4I0LrbBSW57rdnrwjJVZGXXSKKVvB32PhCQDhzO6JyMzZUpTSx+iBsNur/qi+edIb9JFb5WSIhdpEanKUnR/mL7ujdwzEduJql/dzcst8OffNQXK7nwQ1KqE/P0Jo1W7MMW3p136k2FYSH6S6sPfF25JoEeaIbVYb7+GZM6mQ4lJxgZf74vdVgUYIvQPFGzyabZm22FKTQtjsxBBv4M7dj7Ze5ZcK+5R3Eop/z8NbzJDxchE1zSArC3YGzQcMIsLRFrcOlmqtXIjZI8JyvQK3YBHGxgz6zjvayshahAt04D7soAYKoWg1QSsK6m+ix1XCo7T7vN91nZaAZ2HCzHnzViMEZmv9c7t9lYKBNP+ATMrmU53jNgs5tRJLYnIC9zB6uXt8SSGhFYpy6w04KpUSCHm7x3L95zMPRphQKVDX+SCk6M+eE9uCY7mFGj16jsH3WIoEjSkCWI/8vMS/67kIdD9pNsSj56ACgad8GnVunBvYFwZvMEyNOeQLgPQwUl0j5OF8IaIOR9ziHoAdNWoRcpoqwpTAuyBSkYk2sHnclrWBWbLNnwwp6/Eq3yrsNqjTMKeKREN4MwBOi6+/b9NeIqyK3HQANmf8Gv4OHOWGN60MzIi+taN68jmMg4+S/Ys0DfHESI8wLaJY="
