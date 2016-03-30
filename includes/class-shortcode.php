@@ -30,6 +30,7 @@ function gem_form( $id ) {
 		return;
 	}
 
-	GEM_Form_Renderer::process( $id, true );
+	$renderer = new GEM_Form_Renderer();
+	$renderer->process( $id, true );
 
 }
