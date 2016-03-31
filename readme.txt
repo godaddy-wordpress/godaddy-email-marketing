@@ -2,7 +2,7 @@
 Contributors: godaddy, madmimi, humanmade, lukecarbis, marcin.lawrowski, xwp
 Tags: forms, newsletter, opt-in, email marketing, signup, subscribe
 Requires at least: 3.5
-Tested up to: 4.4.2
+Tested up to: 4.5
 Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
