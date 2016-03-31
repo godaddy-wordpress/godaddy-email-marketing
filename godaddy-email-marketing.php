@@ -49,7 +49,7 @@ class GEM_Official {
 
 		add_action( 'init', 		 array( $this, 'init' ) );
 		add_action( 'widgets_init',  array( $this, 'register_widget' ) );
-		add_action( 'init', 		 array( $this, 'register_shortcode'	), 20 );
+		add_action( 'init', 		 array( $this, 'register_shortcode' ), 20 );
 		add_action( 'admin_notices', array( $this, 'action_admin_notices' ) );
 		add_filter( 'plugin_action_links_' . self::$basename, array( $this, 'action_links' ), 10 );
 
@@ -139,7 +139,7 @@ class GEM_Official {
 		wp_enqueue_script( 'function', plugins_url( 'js/function.js', __FILE__ ), array( 'jquery' ), GEM_VERSION, true );
 
 		// JQuery-ui
-		wp_enqueue_script('jquery-ui', 'http://code.jquery.com/ui/1.11.4/jquery-ui.js', array('jquery'), '1.11.4');
+		wp_enqueue_script( 'jquery-ui', 'http://code.jquery.com/ui/1.11.4/jquery-ui.js', array( 'jquery' ), '1.11.4' );
 
 		// assistance CSS
 		wp_enqueue_style( 'gem-base', plugins_url( 'css/gem.css', __FILE__ ), false, GEM_VERSION );
@@ -161,7 +161,7 @@ class GEM_Official {
 
 		return array_merge(
 			array(
-				'settings' => sprintf( '<a href="%s">%s</a>', menu_page_url( 'gem-settings', false ), __( 'Settings', 'gem' ) )
+				'settings' => sprintf( '<a href="%s">%s</a>', menu_page_url( 'gem-settings', false ), __( 'Settings', 'gem' ) ),
 			),
 			$actions
 		);
