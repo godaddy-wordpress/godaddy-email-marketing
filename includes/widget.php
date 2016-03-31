@@ -38,7 +38,8 @@ class GEM_Form_Widget extends WP_Widget {
 			echo wp_kses_post( apply_filters( 'gem_widget_text', $text ) );
 		}
 
-		GEM_Form_Renderer::process( $form_id, true );
+		$renderer = new GEM_Form_Renderer();
+		$renderer->process( $form_id, true );
 
 		echo $args['after_widget'];
 
