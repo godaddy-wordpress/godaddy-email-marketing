@@ -3,11 +3,11 @@
 
 Add the GoDaddy Email Marketing plugin to your WordPress site! Easy to set up, the plugin allows your site visitors to subscribe to your email lists.
 
-**Contributors:** [godaddy](https://profiles.wordpress.org/godaddy), [madmimi](https://profiles.wordpress.org/madmimi), [humanmade](https://profiles.wordpress.org/humanmade)  
+**Contributors:** [godaddy](https://profiles.wordpress.org/godaddy), [madmimi](https://profiles.wordpress.org/madmimi), [humanmade](https://profiles.wordpress.org/humanmade), [valendesigns](https://profiles.wordpress.org/valendesigns), [lukecarbis](https://profiles.wordpress.org/lukecarbis), [marcin.lawrowski](https://profiles.wordpress.org/marcin.lawrowski), [xwp](https://profiles.wordpress.org/xwp)  
 **Tags:** [forms](https://wordpress.org/plugins/tags/forms), [newsletter](https://wordpress.org/plugins/tags/newsletter), [opt-in](https://wordpress.org/plugins/tags/opt-in), [email marketing](https://wordpress.org/plugins/tags/email marketing), [signup](https://wordpress.org/plugins/tags/signup), [subscribe](https://wordpress.org/plugins/tags/subscribe)  
 **Requires at least:** 3.5  
-**Tested up to:** 4.3  
-**Stable tag:** 1.0.3  
+**Tested up to:** 4.5  
+**Stable tag:** 1.0.4  
 **License:** [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)  
 
 [![Build Status](https://travis-ci.org/godaddy/wp-godaddy-email-marketing.svg?branch=master)](https://travis-ci.org/godaddy/wp-godaddy-email-marketing) [![Coverage Status](https://coveralls.io/repos/godaddy/wp-godaddy-email-marketing/badge.svg?branch=master)](https://coveralls.io/github/godaddy/wp-godaddy-email-marketing) 
@@ -65,6 +65,10 @@ You can find your API key in the Settings section of your GoDaddy Email Marketin
 
 
 ## Changelog ##
+
+### 1.0.4 ###
+* Code style improvements
+* Added unit tests
 
 ### 1.0.3 ###
 * Added support for web form fancy fields
