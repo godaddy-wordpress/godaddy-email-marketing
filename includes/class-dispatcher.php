@@ -85,8 +85,9 @@ class GEM_Dispatcher {
 		$username = GEM_Settings_Controls::get_option( 'username' );
 
 		// no username entered by user?
-		if ( ! $username )
+		if ( ! $username ) {
 			return false;
+		}
 
 		if ( false === ( $data = get_transient( 'gem-' . $username . '-account' ) ) ) {
 
@@ -188,5 +189,4 @@ class GEM_Dispatcher {
 	public static function is_response_ok( &$request ) {
 		return ( ! is_wp_error( $request ) && in_array( wp_remote_retrieve_response_code( $request ), self::$ok_codes ) );
 	}
-
 }
