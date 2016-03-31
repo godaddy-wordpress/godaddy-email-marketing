@@ -1,9 +1,9 @@
 === GoDaddy Email Marketing ===
-Contributors: godaddy, madmimi, humanmade
+Contributors: godaddy, madmimi, humanmade, lukecarbis, marcin.lawrowski, xwp
 Tags: forms, newsletter, opt-in, email marketing, signup, subscribe
 Requires at least: 3.5
-Tested up to: 4.3
-Stable tag: 1.0.3
+Tested up to: 4.4.2
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,10 @@ You can find your API key in the Settings section of your GoDaddy Email Marketin
 4. The widget, on the front-end
 
 == Changelog ==
+
+= 1.0.4 =
+* Code style improvements
+* Added unit tests
 
 = 1.0.3 =
 * Added support for web form fancy fields
