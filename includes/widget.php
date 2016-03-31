@@ -11,7 +11,7 @@ class GEM_Form_Widget extends WP_Widget {
 
 		parent::__construct( 'gem-form', __( 'GoDaddy Email Marketing Form', 'gem' ), array(
 			'classname'   => 'gem-form',
-			'description' => _x( 'Embed any GoDaddy Email Marketing webform in your sidebar.', 'widget description', 'gem' )
+			'description' => _x( 'Embed any GoDaddy Email Marketing webform in your sidebar.', 'widget description', 'gem' ),
 		) );
 
 		foreach ( array( 'wpautop', 'wptexturize', 'convert_chars' ) as $filter ) {
@@ -103,5 +103,4 @@ class GEM_Form_Widget extends WP_Widget {
 		</p>
 
 	<?php }
-
 }
