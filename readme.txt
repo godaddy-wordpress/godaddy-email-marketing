@@ -81,12 +81,10 @@ You can find your API key in the Settings section of your GoDaddy Email Marketin
 * Made some styling changes to mobile view
 
 = 1.0.2 =
-
 * Fixed incorrectly loaded stylesheet
 * Minor style improvements to front-end form output
 
-= 1.0.1 = 
-
+= 1.0.1 =
 * Move the "Powered by GoDaddy Link" below the submit button and link it up to the correct place
 
 = 1.0 =

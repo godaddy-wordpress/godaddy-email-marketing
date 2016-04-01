@@ -78,11 +78,10 @@ You can find your API key in the Settings section of your GoDaddy Email Marketin
 * Fixed incorrectly loaded stylesheet
 * Minor style improvements to front-end form output
 
-### 1.0.1 = 
-
+### 1.0.1 ###
 * Move the "Powered by GoDaddy Link" below the submit button and link it up to the correct place
 
-= 1.0 ###
+### 1.0 ###
 * Initial version. forked from the Mad Mimi Sign Up Forms WordPress Plugin: https://wordpress.org/plugins/mad-mimi-sign-up-forms/
 
 
