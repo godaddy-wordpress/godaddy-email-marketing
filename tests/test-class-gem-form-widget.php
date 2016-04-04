@@ -1,5 +1,4 @@
 <?php
-namespace GEM;
 
 require_once( 'testcase.php' );
 
@@ -13,8 +12,8 @@ class Test_GEM_Form_Widget extends WP_GEMTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		\WP_Http_Mock_Transport::$test_class = $this;
-		\WP_Http_Mock_Transport::$expected_url = null;
+		WP_Http_Mock_Transport::$test_class = $this;
+		WP_Http_Mock_Transport::$expected_url = null;
 		add_action( 'http_api_transports', array( $this, 'get_transports' ) );
 	}
 
@@ -22,7 +21,7 @@ class Test_GEM_Form_Widget extends WP_GEMTestCase {
 		parent::tearDown();
 
 		remove_action( 'http_api_transports', array( $this, 'get_transports' ) );
-		\WP_Http_Mock_Transport::$test_class = null;
+		WP_Http_Mock_Transport::$test_class = null;
 	}
 
 	public function get_transports() {
@@ -34,7 +33,7 @@ class Test_GEM_Form_Widget extends WP_GEMTestCase {
 	}
 
 	public function test_construct() {
-		$instance = new \GEM_Form_Widget();
+		$instance = new GEM_Form_Widget();
 		$this->assertIsDefinedAction( 'gem_widget_text', 'wpautop' );
 		$this->assertIsDefinedAction( 'gem_widget_text', 'wptexturize' );
 		$this->assertIsDefinedAction( 'gem_widget_text', 'convert_chars' );
@@ -67,14 +66,14 @@ class Test_GEM_Form_Widget extends WP_GEMTestCase {
 			'id' => 'the_id',
 			'button_text' => 'button_text',
 		);
-		\WP_Http_Mock_Transport::$response = array(
+		WP_Http_Mock_Transport::$response = array(
 			'response' => array(
 				'code' => 200,
 			),
 			'body' => json_encode( $sample_data ),
 		);
 
-		$widget = new \GEM_Form_Widget();
+		$widget = new GEM_Form_Widget();
 		$args = array(
 			'before_widget' => 'before_text',
 			'after_widget' => 'after_text',
@@ -106,7 +105,7 @@ class Test_GEM_Form_Widget extends WP_GEMTestCase {
 	}
 
 	public function test_update() {
-		$widget = new \GEM_Form_Widget();
+		$widget = new GEM_Form_Widget();
 
 		$new_instance = array(
 			'title' => '<b>the_title</b>',
@@ -131,11 +130,11 @@ class Test_GEM_Form_Widget extends WP_GEMTestCase {
 	}
 
 	public function test_form() {
-		$widget = new \GEM_Form_Widget();
+		$widget = new GEM_Form_Widget();
 		$user_name = 'the_user';
 		$api_key = 'the_api_key';
-		$sample_data = new \stdClass();
-		$sample_field = new \stdClass();
+		$sample_data = new stdClass();
+		$sample_field = new stdClass();
 		$sample_field->id = 'the_field_id';
 		$sample_field->name = 'the_field_name';
 		$sample_data->signups = array( $sample_field );
