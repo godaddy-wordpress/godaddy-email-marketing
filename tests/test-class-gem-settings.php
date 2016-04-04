@@ -100,10 +100,11 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 			'body' => $sample_response,
 		);
 		$instance->page_load();
+		$errors = get_settings_errors( $instance->slug );
 		$this->assertEquals( $sample_response, json_encode( get_transient( 'gem-user_name-lists' ) ) );
 		$this->assertFalse( get_transient( 'gem-form-the_id' ) );
-		$this->assertNotEmpty( get_settings_errors( $instance->slug ) );
-		$this->assertEquals( 'gem-reset', get_settings_errors( $instance->slug )[0]['code'] );
+		$this->assertNotEmpty( $errors );
+		$this->assertEquals( 'gem-reset', $errors[0]['code'] );
 
 		// refresh action:
 		$_GET['action'] = 'refresh';
@@ -203,9 +204,10 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 
 		$wp_settings_errors = array();
 		$actual_output = $instance->validate( array() );
+		$errors = get_settings_errors( $instance->slug );
 		$this->assertEmpty( $actual_output );
-		$this->assertNotEmpty( get_settings_errors( $instance->slug ) );
-		$this->assertEquals( 'invalid-creds', get_settings_errors( $instance->slug )[0]['code'] );
+		$this->assertNotEmpty( $errors );
+		$this->assertEquals( 'invalid-creds', $errors[0]['code'] );
 
 		WP_Http_Mock_Transport::$expected_url = null;
 		WP_Http_Mock_Transport::$response = array(
@@ -229,9 +231,10 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 		$wp_settings_errors = array();
 		$creds = array( 'username' => 'user_name', 'api-key' => '1234' );
 		$actual_output = $instance->validate( $creds );
+		$errors = get_settings_errors( $instance->slug );
 		$this->assertEquals( $creds, $actual_output );
-		$this->assertNotEmpty( get_settings_errors( $instance->slug ) );
-		$this->assertEquals( 'invalid-creds', get_settings_errors( $instance->slug )[0]['code'] );
+		$this->assertNotEmpty( $errors );
+		$this->assertEquals( 'invalid-creds', $errors[0]['code'] );
 
 		WP_Http_Mock_Transport::$expected_url = null;
 		WP_Http_Mock_Transport::$response = array(
@@ -243,8 +246,9 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 		$wp_settings_errors = array();
 		$creds = array( 'username' => 'user_name', 'api-key' => '1234' );
 		$actual_output = $instance->validate( $creds );
+		$errors = get_settings_errors( $instance->slug );
 		$this->assertEquals( $creds, $actual_output );
-		$this->assertNotEmpty( get_settings_errors( $instance->slug ) );
-		$this->assertEquals( 'valid-creds', get_settings_errors( $instance->slug )[0]['code'] );
+		$this->assertNotEmpty( $errors );
+		$this->assertEquals( 'valid-creds', $errors[0]['code'] );
 	}
 }
