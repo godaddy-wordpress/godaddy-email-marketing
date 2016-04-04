@@ -62,7 +62,7 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 		$instance->action_admin_menu();
 
 		$this->assertIsDefinedAction( 'in_admin_header', array( $instance, 'setup_help_tabs' ) );
-		$this->assertArrayHasKey( 'gem-admin', wp_styles()->registered );
+		$this->assertTrue( wp_style_is( 'gem-admin', 'registered' ) );
 
 		// debug-reset action:
 		$_GET['action'] = 'debug-reset';
