@@ -128,7 +128,8 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 		$current_user_object->ID = 12345;
 		$current_user = $current_user_object;
 		$instance->page_load();
-		$this->assertEquals( 'show', get_user_meta( 12345, 'gem-dismiss' )[0] );
+		$meta = get_user_meta( 12345, 'gem-dismiss' );
+		$this->assertEquals( 'show', $meta[0] );
 	}
 
 	public function test_setup_help_tabs() {
