@@ -86,7 +86,6 @@ class GEM_Settings {
 						if ( delete_transient( 'gem-' . $settings['username'] . '-lists' ) ) {
 							add_settings_error( $this->slug, 'gem-reset', __( 'Forms list was successfully updated.', 'gem' ), 'updated' );
 						}
-
 					}
 
 					foreach ( (array) GEM_Dispatcher::get_forms()->signups as $form ) {
@@ -122,7 +121,6 @@ class GEM_Settings {
 					break;
 
 			}
-
 		}
 
 		// set up the help tabs
@@ -204,7 +202,7 @@ class GEM_Settings {
 			array(
 				'id' => 'api-key',
 				'page' => $this->slug,
-				'description' => sprintf( '<a target="_blank" href="%s">%s</a>', 'https://www.godaddy.com/help/find-api-key-15909', _x( 'Where can I find my API key?', 'settings page', 'gem' )  ),
+				'description' => sprintf( '<a target="_blank" href="%s">%s</a>', 'https://www.godaddy.com/help/find-api-key-15909', _x( 'Where can I find my API key?', 'settings page', 'gem' ) ),
 				'label_for' => $this->slug . '-api-key',
 			)
 		);
@@ -220,7 +218,7 @@ class GEM_Settings {
 			array(
 				'id' => 'display_powered_by',
 				'page' => $this->slug,
-				'label' => __( 'Display "Powered by GoDaddy"?', 'gem' )
+				'label' => __( 'Display "Powered by GoDaddy"?', 'gem' ),
 			)
 		);
 
@@ -228,8 +226,8 @@ class GEM_Settings {
 
 	}
 
-	public function display_settings_page() { ?>
-
+	public function display_settings_page() {
+	?>
 		<div class="wrap">
 
 			<?php screen_icon(); ?>
@@ -285,7 +283,7 @@ class GEM_Settings {
 
 					if ( $forms && ! empty( $forms->signups ) ) :
 
-						foreach( $forms->signups as $form ) :
+						foreach ( $forms->signups as $form ) :
 
 							$edit_link = add_query_arg( array(
 								'action' => 'edit_form',
@@ -366,7 +364,6 @@ class GEM_Settings {
 				add_settings_error( $this->slug, 'valid-creds', __( 'Connection with GoDaddy Email Marketing has been established! You\'re all set!', 'gem' ), 'updated' );
 
 			}
-
 		} else {
 
 			// empty
@@ -382,7 +379,8 @@ class GEM_Settings {
 
 final class GEM_Settings_Controls {
 
-	public static function description() { ?>
+	public static function description() {
+	?>
 
 		<p><?php esc_html_e( 'Please enter your GoDaddy Email Marketing username and API Key in order to be able to create forms.', 'gem' ); ?></p>
 
@@ -440,7 +438,7 @@ final class GEM_Settings_Controls {
 
 	}
 
-	public function show_description( $field_args ) {
+	public static function show_description( $field_args ) {
 
 		if ( isset( $field_args['description'] ) ) : ?>
 
