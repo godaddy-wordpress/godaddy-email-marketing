@@ -1,7 +1,7 @@
 === GoDaddy Email Marketing ===
 Contributors: godaddy, madmimi, humanmade, valendesigns, lukecarbis, marcin.lawrowski, xwp
 Tags: forms, newsletter, opt-in, email marketing, signup, subscribe
-Requires at least: 3.5
+Requires at least: 3.8
 Tested up to: 4.5
 Stable tag: 1.0.4
 License: GPLv2 or later
