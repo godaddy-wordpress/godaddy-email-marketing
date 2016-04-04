@@ -97,11 +97,11 @@ class Test_GEM_Official extends WP_GEMTestCase {
 
 	public function test_enqueue() {
 		$this->instance->enqueue();
-		$this->assertContains( 'gem-main', wp_scripts()->queue );
-		$this->assertContains( 'function', wp_scripts()->queue );
-		$this->assertContains( 'jquery-ui', wp_scripts()->queue );
-		$this->assertArrayHasKey( 'gem-base', wp_styles()->registered );
-		$this->assertArrayHasKey( 'jquery-ui', wp_styles()->registered );
+		$this->assertTrue( wp_script_is( 'gem-main','queue' ) );
+		$this->assertTrue( wp_script_is( 'function', 'queue' ) );
+		$this->assertTrue( wp_script_is( 'jquery-ui', 'queue' ) );
+		$this->assertTrue( wp_style_is( 'gem-base', 'registered' ) );
+		$this->assertTrue( wp_style_is( 'jquery-ui', 'registered' ) );
 	}
 
 	public function test_action_links() {
