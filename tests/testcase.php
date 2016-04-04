@@ -1,7 +1,6 @@
 <?php
-namespace GEM;
 
-class WP_GEMTestCase extends \WP_UnitTestCase {
+class WP_GEMTestCase extends WP_UnitTestCase {
 	/**
 	 * Holds the plugin base class
 	 *

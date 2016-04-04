@@ -1,7 +1,5 @@
 <?php
 
-namespace GEM;
-
 require_once( 'mock-transport.php' );
 require_once( 'testcase.php' );
 
@@ -19,7 +17,7 @@ class Test_GEM_Form_Renderer extends WP_GEMTestCase {
 	 */
 	function setUp() {
 		parent::setUp();
-		$this->instance = new \GEM_Form_Renderer();
+		$this->instance = new GEM_Form_Renderer();
 		add_action( 'http_api_transports', array( $this, 'get_transports' ) );
 	}
 
@@ -38,7 +36,7 @@ class Test_GEM_Form_Renderer extends WP_GEMTestCase {
 	}
 
 	public function test_process() {
-		\WP_Http_Mock_Transport::$response = array(
+		WP_Http_Mock_Transport::$response = array(
 			'response' => array(
 				'code' => 401,
 			),
@@ -68,7 +66,7 @@ class Test_GEM_Form_Renderer extends WP_GEMTestCase {
 			'id' => 'the_id',
 			'button_text' => 'button_text',
 		);
-		\WP_Http_Mock_Transport::$response = array(
+		WP_Http_Mock_Transport::$response = array(
 			'response' => array(
 				'code' => 200,
 			),

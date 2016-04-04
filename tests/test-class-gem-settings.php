@@ -1,5 +1,4 @@
 <?php
-namespace GEM;
 
 require_once( 'testcase.php' );
 
@@ -13,7 +12,7 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		\WP_Http_Mock_Transport::$test_class = $this;
+		WP_Http_Mock_Transport::$test_class = $this;
 		add_action( 'http_api_transports', array( $this, 'get_transports' ) );
 	}
 
@@ -21,7 +20,7 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 		parent::tearDown();
 
 		remove_action( 'http_api_transports', array( $this, 'get_transports' ) );
-		\WP_Http_Mock_Transport::$test_class = null;
+		WP_Http_Mock_Transport::$test_class = null;
 	}
 
 	public function get_transports() {
@@ -33,13 +32,13 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 	}
 
 	public function test_construct() {
-		$instance = new \GEM_Settings();
+		$instance = new GEM_Settings();
 		$this->assertIsDefinedAction( 'admin_menu', array( $instance, 'action_admin_menu' ) );
 		$this->assertIsDefinedAction( 'admin_init', array( $instance, 'register_settings' ) );
 	}
 
 	public function test_action_admin_menu() {
-		$instance = new \GEM_Settings();
+		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
 
 		$this->assertIsDefinedAction( 'load-', array( $instance, 'page_load' ) );
@@ -58,7 +57,7 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 				'signups' => array( array( 'id' => 'the_id' ) ),
 			)
 		);
-		$instance = new \GEM_Settings();
+		$instance = new GEM_Settings();
 		$instance->page_load();
 		$instance->action_admin_menu();
 
@@ -93,8 +92,8 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 		update_option( $instance->slug, array( 'username' => 'user_name', 'api-key' => '1234' ) );
 		set_transient( 'gem-user_name-lists', $sample_data );
 		set_transient( 'gem-form-the_id', $sample_data_2 );
-		\WP_Http_Mock_Transport::$expected_url = null;
-		\WP_Http_Mock_Transport::$response = array(
+		WP_Http_Mock_Transport::$expected_url = null;
+		WP_Http_Mock_Transport::$response = array(
 			'response' => array(
 				'code' => 200,
 			),
@@ -111,8 +110,8 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 		update_option( $instance->slug, array( 'username' => 'user_name', 'api-key' => '1234' ) );
 		set_transient( 'gem-user_name-lists', $sample_data );
 		set_transient( 'gem-form-the_id', $sample_data_2 );
-		\WP_Http_Mock_Transport::$expected_url = null;
-		\WP_Http_Mock_Transport::$response = array(
+		WP_Http_Mock_Transport::$expected_url = null;
+		WP_Http_Mock_Transport::$response = array(
 			'response' => array(
 				'code' => 200,
 			),
@@ -124,7 +123,7 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 
 		// dismiss action:
 		$_GET['action'] = 'dismiss';
-		$current_user_object = new \WP_User();
+		$current_user_object = new WP_User();
 		$current_user_object->ID = 12345;
 		$current_user = $current_user_object;
 		$instance->page_load();
@@ -134,9 +133,9 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 	public function test_setup_help_tabs() {
 		global $current_screen;
 
-		$current_screen = \WP_Screen::get( 'test_gem' );
+		$current_screen = WP_Screen::get( 'test_gem' );
 
-		$instance = new \GEM_Settings();
+		$instance = new GEM_Settings();
 		$instance->setup_help_tabs();
 
 		$tabs = $current_screen->get_help_tabs();
@@ -149,7 +148,7 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 		global $wp_settings_sections;
 		global $wp_settings_fields;
 
-		$instance = new \GEM_Settings();
+		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
 		$instance->register_settings();
 
@@ -169,7 +168,7 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 	}
 
 	public function test_display_settings_page() {
-		$instance = new \GEM_Settings();
+		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
 
 		ob_start();
@@ -199,7 +198,7 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 				'total' => 2,
 			)
 		);
-		$instance = new \GEM_Settings();
+		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
 
 		$wp_settings_errors = array();
@@ -208,8 +207,8 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 		$this->assertNotEmpty( get_settings_errors( $instance->slug ) );
 		$this->assertEquals( 'invalid-creds', get_settings_errors( $instance->slug )[0]['code'] );
 
-		\WP_Http_Mock_Transport::$expected_url = null;
-		\WP_Http_Mock_Transport::$response = array(
+		WP_Http_Mock_Transport::$expected_url = null;
+		WP_Http_Mock_Transport::$response = array(
 			'response' => array(
 				'code' => 200,
 			),
@@ -221,8 +220,8 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 		$this->assertEquals( $creds, $actual_output );
 		$this->assertEmpty( get_settings_errors( $instance->slug ) );
 
-		\WP_Http_Mock_Transport::$expected_url = null;
-		\WP_Http_Mock_Transport::$response = array(
+		WP_Http_Mock_Transport::$expected_url = null;
+		WP_Http_Mock_Transport::$response = array(
 			'response' => array(
 				'code' => 500,
 			),
@@ -234,8 +233,8 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 		$this->assertNotEmpty( get_settings_errors( $instance->slug ) );
 		$this->assertEquals( 'invalid-creds', get_settings_errors( $instance->slug )[0]['code'] );
 
-		\WP_Http_Mock_Transport::$expected_url = null;
-		\WP_Http_Mock_Transport::$response = array(
+		WP_Http_Mock_Transport::$expected_url = null;
+		WP_Http_Mock_Transport::$response = array(
 			'response' => array(
 				'code' => 200,
 			),
