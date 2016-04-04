@@ -1,12 +1,11 @@
 <?php
-namespace GEM;
 
 require_once( 'testcase.php' );
 
 class Test_GEM_Official extends WP_GEMTestCase {
 
 	/**
-	 * @var \GEM_Official
+	 * @var GEM_Official
 	 */
 	private $instance;
 
@@ -17,7 +16,7 @@ class Test_GEM_Official extends WP_GEMTestCase {
 	 */
 	function setUp() {
 		parent::setUp();
-		$this->instance = \GEM_Official::instance();
+		$this->instance = GEM_Official::instance();
 	}
 
 	public function test_basics() {
@@ -27,7 +26,7 @@ class Test_GEM_Official extends WP_GEMTestCase {
 
 	public function test_instance() {
 		$this->assertInstanceOf( 'GEM_Official', $this->instance );
-		$instance_second = \GEM_Official::instance();
+		$instance_second = GEM_Official::instance();
 		$this->assertSame( $this->instance, $instance_second );
 	}
 
@@ -74,7 +73,7 @@ class Test_GEM_Official extends WP_GEMTestCase {
 
 		// test in admin case:
 		define( 'WP_ADMIN', true );
-		$second_instance = new \GEM_Official();
+		$second_instance = new GEM_Official();
 		$second_instance->init();
 		$this->assertInstanceOf( 'GEM_Settings', $second_instance->settings );
 	}
@@ -133,7 +132,7 @@ class Test_GEM_Official extends WP_GEMTestCase {
 	public function test_action_admin_notices() {
 		global $current_screen;
 
-		$current_screen = new \stdClass();
+		$current_screen = new stdClass();
 		$current_screen->id = 'test';
 
 		ob_start();

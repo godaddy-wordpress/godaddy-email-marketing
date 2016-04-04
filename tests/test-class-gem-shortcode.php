@@ -1,13 +1,11 @@
 <?php
 
-namespace GEM;
-
 require_once( 'testcase.php' );
 
 class Test_GEM_Shortcode extends WP_GEMTestCase {
 
 	/**
-	 * @var \GEM_Shortcode
+	 * @var GEM_Shortcode
 	 */
 	private $instance;
 
@@ -18,7 +16,7 @@ class Test_GEM_Shortcode extends WP_GEMTestCase {
 	 */
 	function setUp() {
 		parent::setUp();
-		$this->instance = new \GEM_Shortcode();
+		$this->instance = new GEM_Shortcode();
 		add_action( 'http_api_transports', array( $this, 'get_transports' ) );
 	}
 
@@ -67,7 +65,7 @@ class Test_GEM_Shortcode extends WP_GEMTestCase {
 			'id' => 'the_id',
 			'button_text' => 'button_text',
 		);
-		\WP_Http_Mock_Transport::$response = array(
+		WP_Http_Mock_Transport::$response = array(
 			'response' => array(
 				'code' => 200,
 			),

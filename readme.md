@@ -5,7 +5,7 @@ Add the GoDaddy Email Marketing plugin to your WordPress site! Easy to set up, t
 
 **Contributors:** [godaddy](https://profiles.wordpress.org/godaddy), [madmimi](https://profiles.wordpress.org/madmimi), [humanmade](https://profiles.wordpress.org/humanmade), [valendesigns](https://profiles.wordpress.org/valendesigns), [lukecarbis](https://profiles.wordpress.org/lukecarbis), [marcin.lawrowski](https://profiles.wordpress.org/marcin.lawrowski), [xwp](https://profiles.wordpress.org/xwp)  
 **Tags:** [forms](https://wordpress.org/plugins/tags/forms), [newsletter](https://wordpress.org/plugins/tags/newsletter), [opt-in](https://wordpress.org/plugins/tags/opt-in), [email marketing](https://wordpress.org/plugins/tags/email marketing), [signup](https://wordpress.org/plugins/tags/signup), [subscribe](https://wordpress.org/plugins/tags/subscribe)  
-**Requires at least:** 3.5  
+**Requires at least:** 3.8  
 **Tested up to:** 4.5  
 **Stable tag:** 1.0.4  
 **License:** [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)  
