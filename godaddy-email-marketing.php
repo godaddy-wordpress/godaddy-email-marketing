@@ -35,10 +35,11 @@ class GEM_Official {
 
 	private function setup_actions() {
 
-		add_action( 'init', 		 array( $this, 'init' ) );
-		add_action( 'widgets_init',  array( $this, 'register_widget' ) );
-		add_action( 'init', 		 array( $this, 'register_shortcode' ), 20 );
-		add_action( 'admin_notices', array( $this, 'action_admin_notices' ) );
+		add_action( 'plugins_loaded', array( $this, 'i18n' ) );
+		add_action( 'init',           array( $this, 'init' ) );
+		add_action( 'widgets_init',   array( $this, 'register_widget' ) );
+		add_action( 'init',           array( $this, 'register_shortcode' ), 20 );
+		add_action( 'admin_notices',  array( $this, 'action_admin_notices' ) );
 		add_filter( 'plugin_action_links_' . self::$basename, array( $this, 'action_links' ), 10 );
 
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
@@ -88,6 +89,12 @@ class GEM_Official {
 
 	}
 
+	public function i18n() {
+
+		load_plugin_textdomain( 'godaddy-email-marketing', false, dirname( self::$basename ) . '/languages' );
+
+	}
+
 	public function init() {
 
 		// enable debug mode?
@@ -100,9 +107,6 @@ class GEM_Official {
 
 		// enqueue scripts n styles
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ) );
-
-		// Load our textdomain to allow multilingual translations
-		load_plugin_textdomain( 'godaddy-email-marketing', false, dirname( self::$basename ) . '/languages/' );
 
 	}
 
