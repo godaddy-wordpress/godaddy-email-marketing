@@ -1,9 +1,23 @@
 <?php
+/**
+ * Shortcode class & template tag
+ *
+ * @package GEM
+ */
 
+/**
+ * GoDaddy Email Marketing shortcode.
+ *
+ * @since 1.0
+ */
 class GEM_Shortcode {
 
+	/**
+	 * Renders the shortcode.
+	 *
+	 * @param array $atts An array of shortcode attributes.
+	 */
 	public function render( $atts ) {
-
 		extract( shortcode_atts( array(
 			'id' => false,
 		), $atts ) );
@@ -12,8 +26,7 @@ class GEM_Shortcode {
 			return;
 		}
 
-		return GEM_Form_Renderer::process( $id, false );
-
+		return gem_form( $id, false );
 	}
 }
 
@@ -22,15 +35,15 @@ class GEM_Shortcode {
  *
  * @since 1.0
  * @see GEM_Form_Renderer
- * @param int $id The ID of the form you wish to output
+ *
+ * @param int  $id The ID of the form you wish to output.
+ * @param bool $echo Wether to echo the form field. Default true.
  */
-function gem_form( $id ) {
-
+function gem_form( $id, $echo = true ) {
 	if ( ! class_exists( 'GEM_Form_Renderer' ) ) {
 		return;
 	}
 
 	$renderer = new GEM_Form_Renderer();
-	$renderer->process( $id, true );
-
+	$renderer->process( $id, $echo );
 }
