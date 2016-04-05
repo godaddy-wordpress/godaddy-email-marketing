@@ -23,7 +23,7 @@ class GEM_Form_Renderer {
 	 * Generates the form.
 	 *
 	 * @param string $form_id Form ID.
-	 * @param bool   $echo Wether to echo the form field.
+	 * @param bool   $echo Wether to echo the form field. Default false.
 	 */
 	public function process( $form_id, $echo = false ) {
 		$form = GEM_Dispatcher::get_fields( (int) $form_id );
