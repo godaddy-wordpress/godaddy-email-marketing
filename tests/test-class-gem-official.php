@@ -51,7 +51,8 @@ class Test_GEM_Official extends WP_GEMTestCase {
 		$this->assertEquals( GEM_PLUGIN_DIR, plugin_dir_path( $this->plugin_file_path ) );
 		$this->assertEquals( GEM_PLUGIN_URL, plugin_dir_url( $this->plugin_file_path ) );
 		$this->assertEquals( GEM_PLUGIN_BASE, plugin_basename( $this->plugin_file_path ) );
-		$this->assertEquals( GEM_VERSION, '1.1' );
+		$plugin_data = get_plugin_data( $this->plugin_file_path );
+		$this->assertEquals( GEM_VERSION, $plugin_data['Version'] );
 	}
 
 	public function test_requirements() {
