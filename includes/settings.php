@@ -136,24 +136,34 @@ class GEM_Settings {
 		$screen = get_current_screen();
 
 		$screen->add_help_tab( array(
-			'title' => __( 'Overview', 'godaddy-email-marketing' ),
-			'id'    => 'gem-overview',
-			'content' => sprintf( __( '
-				<h3>Instructions</h3>
-				<p>Once the plugin is activated, you will be able to select and insert any of your GoDaddy Email Marketing webforms right into your site. Setup is easy. Below, simply enter your account email address and API key (found in your GoDaddy Email Marketing account [%1$s] area). Here are the 3 ways you can display a webform on your site:</p>
-				<ul>
-					<li><strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget called “GoDaddy Email Marketing Form” and drag it into the widget area of your choice. You can then add a title and select a form!</li>
-					<li><strong>Shortcode:</strong> You can add a form to any post or page by adding the shortcode (ex. <code>[gem id=80326]</code>)  in the page/post editor</li>
-					<li><strong>Template Tag:</strong> You can add the following template tag into any WordPress file: <code>%2$s</code>. Ex. <code>%3$s</code></li>
-				</ul>', 'godaddy-email-marketing' ), '<a target="_blank" href="https://gem.godaddy.com/user/edit">https://gem.godaddy.com/user/edit</a>', '&lt;?php gem_form( $form_id ); ?&gt;', '&lt;?php gem_form( 91 ); ?&gt;' ),
+			'title'   => __( 'Overview', 'godaddy-email-marketing' ),
+			'id'      => 'gem-overview',
+			'content' => sprintf(
+				'<h3>%s</h3><p>%s</p><ul><li>%s</li><li>%s</li><li>%s</li></ul>',
+				esc_html__( 'Instructions', 'godaddy-email-marketing' ),
+				sprintf(
+					esc_html__( 'Once the plugin is activated, you will be able to select and insert any of your GoDaddy Email Marketing webforms right into your site. Setup is easy. Below, simply enter your account email address and API key (found in your GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can display a webform on your site:', 'godaddy-email-marketing' ),
+					'<a href="https://gem.godaddy.com/user/edit" target="_blank">https://gem.godaddy.com/user/edit</a>'
+				),
+				__( '<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget called “GoDaddy Email Marketing Form” and drag it into the widget area of your choice. You can then add a title and select a form!', 'godaddy-email-marketing' ),
+				__( '<strong>Shortcode:</strong> You can add a form to any post or page by adding the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor.', 'godaddy-email-marketing' ),
+				sprintf(
+					__( '<strong>Template Tag:</strong> You can add the following template tag into any WordPress file: <code>%s</code>. Ex. <code>%s</code>', 'godaddy-email-marketing' ),
+					'&lt;?php gem_form( $form_id ); ?&gt;',
+					'&lt;?php gem_form( 91 ); ?&gt;'
+				)
+			),
 		) );
 
-		$screen->set_help_sidebar( __( '
-			<p><strong>For more information:</strong></p>
-			<p><a href="https://godaddy.com" target="_blank">GoDaddy</a></p>
-			<p><a href="https://support.godaddy.com/" target="_blank">GoDaddy Help</a></p>
-			<p><a href="https://support.godaddy.com/" target="_blank" class="button">Contact GoDaddy</a></p>
-		', 'godaddy-email-marketing' ) );
+		$screen->set_help_sidebar(
+			sprintf(
+				'<p><strong>%s</strong></p><p><a href="https://godaddy.com" target="_blank">%s</a></p><p><a href="https://support.godaddy.com/" target="_blank">%s</a></p><p><a href="https://support.godaddy.com/" target="_blank" class="button">%s</a></p>',
+				esc_html__( 'For more information:', 'godaddy-email-marketing' ),
+				esc_html__( 'GoDaddy', 'godaddy-email-marketing' ),
+				esc_html__( 'GoDaddy Help', 'godaddy-email-marketing' ),
+				esc_html__( 'Contact GoDaddy', 'godaddy-email-marketing' )
+			)
+		);
 
 	}
 
