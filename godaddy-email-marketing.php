@@ -185,7 +185,7 @@ class GEM_Official {
 			<div class="updated fade">
 				<p>
 					<strong><?php esc_html_e( 'GoDaddy Email Marketing is almost ready.', 'godaddy-email-marketing' ); ?></strong> <?php esc_html_e( 'You must enter your username &amp; API key for it to work.', 'godaddy-email-marketing' ); ?> &nbsp;
-					<a class="button" href="<?php menu_page_url( 'gem-settings' ); ?>"><?php esc_html_e( 'Let\'s do it!', 'godaddy-email-marketing' ); ?></a>
+					<a class="button" href="<?php menu_page_url( 'gem-settings' ); ?>"><?php esc_html_e( "Let's do it!", 'godaddy-email-marketing' ); ?></a>
 				</p>
 			</div>
 
@@ -197,4 +197,4 @@ class GEM_Official {
 function gem() {
 	return GEM_Official::instance();
 }
-add_action( 'plugins_loaded', 'godaddy-email-marketing' );
+add_action( 'plugins_loaded', 'gem' );
