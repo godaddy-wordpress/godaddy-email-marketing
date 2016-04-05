@@ -36,7 +36,7 @@ class GEM_Form_Renderer {
 					if ( $show_powered_by ) : ?>
 
 						<p>
-							<a href="https://www.godaddy.com/business/email-marketing/" target="_blank"><?php esc_html_e( 'Powered by GoDaddy', 'gem' ); ?></a>
+							<a href="https://www.godaddy.com/business/email-marketing/" target="_blank"><?php esc_html_e( 'Powered by GoDaddy', 'godaddy-email-marketing' ); ?></a>
 						</p>
 
 					<?php endif; ?>
@@ -145,7 +145,7 @@ class GEM_Form_Fields {
 			$field_classes[] = 'gem-required';
 		}
 
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?> 
+		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
 
@@ -155,7 +155,7 @@ class GEM_Form_Fields {
 			<?php endif; ?>
 		</label>
 		</br>
-		
+
 		<?php $trim_values = array( '[', ']' );
 		$options = $args->options;
 		foreach ( $trim_values as $trim ) {
@@ -169,7 +169,7 @@ class GEM_Form_Fields {
 		foreach ( $trimmed_options as $key => $value ) { ?>
 			<input type="checkbox" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name; ?>" value="<?php echo $value; ?>"> <?php echo $value; ?><br>
 		<?php	} ?>
-		
+
 	<?php }
 
 	public static function dropdown( $args ) {
@@ -179,7 +179,7 @@ class GEM_Form_Fields {
 			$field_classes[] = 'gem-required';
 		}
 
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?> 
+		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
 
@@ -190,7 +190,7 @@ class GEM_Form_Fields {
 		</label>
 		</br>
 		<select id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name;?>">
-		
+
 		<?php $trim_values = array( '[', ']' );
 		$options = $args->options;
 		foreach ( $trim_values as $trim ) {
@@ -218,7 +218,7 @@ class GEM_Form_Fields {
 			$field_classes[] = 'gem-required';
 		}
 
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?> 
+		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
 
@@ -228,8 +228,8 @@ class GEM_Form_Fields {
 			<?php endif; ?>
 		</label>
 		</br>
-		
-		
+
+
 		<?php $trim_values = array( '[', ']' );
 		$options = $args->options;
 		foreach ( $trim_values as $trim ) {
@@ -243,7 +243,7 @@ class GEM_Form_Fields {
 		?>
 				<input type="radio" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name; ?>" value="<?php echo $radio_options; ?>"> <?php echo $radio_options; ?><br>
 		<?php	} ?>
-		
+
 	<?php }
 
 	public static function date( $args ) {
@@ -254,7 +254,7 @@ class GEM_Form_Fields {
 			$field_classes[] = 'gem-required';
 		}
 
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?> 
+		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
 
@@ -264,7 +264,7 @@ class GEM_Form_Fields {
 			<?php endif; ?>
 		</label>
 		</br>
-		
+
 
 		<?php $current_year = date( 'Y' ); ?>
 
@@ -302,9 +302,9 @@ class GEM_Form_Fields {
 		 			<?php } ?>
 		 		</select>
 		 	</span>
-		
+
 		<input type="hidden" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name; ?>" value="">
-		
+
 	<?php }
 
 	public static function text_field( $args ) {

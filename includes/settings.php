@@ -23,8 +23,8 @@ class GEM_Settings {
 	public function action_admin_menu() {
 
 		$this->hook = add_options_page(
-			__( 'GoDaddy Email Marketing Settings', 'gem' ),        // <title> tag
-			__( 'GoDaddy Signup Forms', 'gem' ),        // menu label
+			__( 'GoDaddy Email Marketing Settings', 'godaddy-email-marketing' ),        // <title> tag
+			__( 'GoDaddy Signup Forms', 'godaddy-email-marketing' ),        // menu label
 			'manage_options',                         // required cap to view this page
 			$this->slug = 'gem-settings',        // page slug
 			array( &$this, 'display_settings_page' )  // callback
@@ -73,7 +73,7 @@ class GEM_Settings {
 							delete_transient( 'gem-form-' . $form->id );
 						}
 
-						add_settings_error( $this->slug, 'gem-reset', __( 'All transients were removed.', 'gem' ), 'updated' );
+						add_settings_error( $this->slug, 'gem-reset', __( 'All transients were removed.', 'godaddy-email-marketing' ), 'updated' );
 					}
 
 					break;
@@ -84,7 +84,7 @@ class GEM_Settings {
 					if ( isset( $settings['username'] ) ) {
 
 						if ( delete_transient( 'gem-' . $settings['username'] . '-lists' ) ) {
-							add_settings_error( $this->slug, 'gem-reset', __( 'Forms list was successfully updated.', 'gem' ), 'updated' );
+							add_settings_error( $this->slug, 'gem-reset', __( 'Forms list was successfully updated.', 'godaddy-email-marketing' ), 'updated' );
 						}
 					}
 
@@ -136,7 +136,7 @@ class GEM_Settings {
 		$screen = get_current_screen();
 
 		$screen->add_help_tab( array(
-			'title' => __( 'Overview', 'gem' ),
+			'title' => __( 'Overview', 'godaddy-email-marketing' ),
 			'id'    => 'gem-overview',
 			'content' => sprintf( __( '
 				<h3>Instructions</h3>
@@ -145,7 +145,7 @@ class GEM_Settings {
 					<li><strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget called “GoDaddy Email Marketing Form” and drag it into the widget area of your choice. You can then add a title and select a form!</li>
 					<li><strong>Shortcode:</strong> You can add a form to any post or page by adding the shortcode (ex. <code>[gem id=80326]</code>)  in the page/post editor</li>
 					<li><strong>Template Tag:</strong> You can add the following template tag into any WordPress file: <code>%2$s</code>. Ex. <code>%3$s</code></li>
-				</ul>', 'gem' ), '<a target="_blank" href="https://gem.godaddy.com/user/edit">https://gem.godaddy.com/user/edit</a>', '&lt;?php gem_form( $form_id ); ?&gt;', '&lt;?php gem_form( 91 ); ?&gt;' ),
+				</ul>', 'godaddy-email-marketing' ), '<a target="_blank" href="https://gem.godaddy.com/user/edit">https://gem.godaddy.com/user/edit</a>', '&lt;?php gem_form( $form_id ); ?&gt;', '&lt;?php gem_form( 91 ); ?&gt;' ),
 		) );
 
 		$screen->set_help_sidebar( __( '
@@ -153,7 +153,7 @@ class GEM_Settings {
 			<p><a href="https://godaddy.com" target="_blank">GoDaddy</a></p>
 			<p><a href="https://support.godaddy.com/" target="_blank">GoDaddy Help</a></p>
 			<p><a href="https://support.godaddy.com/" target="_blank" class="button">Contact GoDaddy</a></p>
-		', 'gem' ) );
+		', 'godaddy-email-marketing' ) );
 
 	}
 
@@ -174,35 +174,35 @@ class GEM_Settings {
 		// First, we register a section. This is necessary since all future options must belong to a
 		add_settings_section(
 			'general_settings_section',
-			__( 'Account Details', 'gem' ),
+			__( 'Account Details', 'godaddy-email-marketing' ),
 			array( 'GEM_Settings_Controls', 'description' ),
 			$this->slug
 		);
 
 		add_settings_field(
 			'username',
-			__( 'GoDaddy Email Marketing Username', 'gem' ),
+			__( 'GoDaddy Email Marketing Username', 'godaddy-email-marketing' ),
 			array( 'GEM_Settings_Controls', 'text' ),
 			$this->slug,
 			'general_settings_section',
 			array(
 				'id' => 'username',
 				'page' => $this->slug,
-				'description' => __( 'Your GoDaddy Email Marketing username (email address)', 'gem' ),
+				'description' => __( 'Your GoDaddy Email Marketing username (email address)', 'godaddy-email-marketing' ),
 				'label_for' => $this->slug . '-username',
 			)
 		);
 
 		add_settings_field(
 			'api-key',
-			__( 'GoDaddy Email Marketing API Key', 'gem' ),
+			__( 'GoDaddy Email Marketing API Key', 'godaddy-email-marketing' ),
 			array( 'GEM_Settings_Controls', 'text' ),
 			$this->slug,
 			'general_settings_section',
 			array(
 				'id' => 'api-key',
 				'page' => $this->slug,
-				'description' => sprintf( '<a target="_blank" href="%s">%s</a>', 'https://www.godaddy.com/help/find-api-key-15909', _x( 'Where can I find my API key?', 'settings page', 'gem' ) ),
+				'description' => sprintf( '<a target="_blank" href="%s">%s</a>', 'https://www.godaddy.com/help/find-api-key-15909', _x( 'Where can I find my API key?', 'settings page', 'godaddy-email-marketing' ) ),
 				'label_for' => $this->slug . '-api-key',
 			)
 		);
@@ -218,7 +218,7 @@ class GEM_Settings {
 			array(
 				'id' => 'display_powered_by',
 				'page' => $this->slug,
-				'label' => __( 'Display "Powered by GoDaddy"?', 'gem' ),
+				'label' => __( 'Display "Powered by GoDaddy"?', 'godaddy-email-marketing' ),
 			)
 		);
 
@@ -232,16 +232,16 @@ class GEM_Settings {
 
 			<?php screen_icon(); ?>
 
-			<h2><?php esc_html_e( 'GoDaddy Email Marketing Settings', 'gem' ); ?></h2>
+			<h2><?php esc_html_e( 'GoDaddy Email Marketing Settings', 'godaddy-email-marketing' ); ?></h2>
 
 			<?php if ( ! GEM_Settings_Controls::get_option( 'username' ) ) : ?>
 
 				<div class="gem-identity updated notice">
 
-					<h3><?php echo esc_html_x( 'Enjoy the GoDaddy Email Marketing Experience, first hand.', 'gem header note', 'gem' ); ?></h3>
+					<h3><?php echo esc_html_x( 'Enjoy the GoDaddy Email Marketing Experience, first hand.', 'gem header note', 'godaddy-email-marketing' ); ?></h3>
 
-					<p><?php echo esc_html_x( 'Add your GoDaddy Email Marketing webform to your WordPress site! Easy to set up, the GoDaddy Email Marketing plugin allows your site visitors to subscribe to your email list.', 'header note', 'gem' ); ?></p>
-					<p class="description"><?php echo sprintf( esc_html_x( 'Don\'t have a GoDaddy Email Marketing account? Get one in less than 2 minutes! %s', 'header note', 'gem' ), sprintf( '<a target="_blank" href="https://godaddy.com/business/email-marketing" class="button">%s</a>', esc_html_x( 'Sign Up Now', 'header note', 'gem' ) ) ); ?></p>
+					<p><?php echo esc_html_x( 'Add your GoDaddy Email Marketing webform to your WordPress site! Easy to set up, the GoDaddy Email Marketing plugin allows your site visitors to subscribe to your email list.', 'header note', 'godaddy-email-marketing' ); ?></p>
+					<p class="description"><?php echo sprintf( esc_html_x( 'Don\'t have a GoDaddy Email Marketing account? Get one in less than 2 minutes! %s', 'header note', 'godaddy-email-marketing' ), sprintf( '<a target="_blank" href="https://godaddy.com/business/email-marketing" class="button">%s</a>', esc_html_x( 'Sign Up Now', 'header note', 'godaddy-email-marketing' ) ) ); ?></p>
 
 				</div>
 
@@ -253,25 +253,25 @@ class GEM_Settings {
 
 				do_settings_sections( $this->slug );
 
-				submit_button( _x( 'Save Settings', 'save settings button', 'gem' ) ); ?>
+				submit_button( _x( 'Save Settings', 'save settings button', 'godaddy-email-marketing' ) ); ?>
 
-				<h3><?php esc_html_e( 'Available Forms', 'gem' ); ?></h3>
+				<h3><?php esc_html_e( 'Available Forms', 'godaddy-email-marketing' ); ?></h3>
 
 				<table class="wp-list-table widefat">
 
 					<thead>
 						<tr>
-							<th><?php esc_html_e( 'Form Name', 'gem' ); ?></th>
-							<th><?php esc_html_e( 'Form ID', 'gem' ); ?></th>
-							<th><?php esc_html_e( 'Shortcode', 'gem' ); ?></th>
+							<th><?php esc_html_e( 'Form Name', 'godaddy-email-marketing' ); ?></th>
+							<th><?php esc_html_e( 'Form ID', 'godaddy-email-marketing' ); ?></th>
+							<th><?php esc_html_e( 'Shortcode', 'godaddy-email-marketing' ); ?></th>
 						</tr>
 					</thead>
 
 					<tfoot>
 						<tr>
-							<th><?php esc_html_e( 'Form Name', 'gem' ); ?></th>
-							<th><?php esc_html_e( 'Form ID', 'gem' ); ?></th>
-							<th><?php esc_html_e( 'Shortcode', 'gem' ); ?></th>
+							<th><?php esc_html_e( 'Form Name', 'godaddy-email-marketing' ); ?></th>
+							<th><?php esc_html_e( 'Form ID', 'godaddy-email-marketing' ); ?></th>
+							<th><?php esc_html_e( 'Shortcode', 'godaddy-email-marketing' ); ?></th>
 						</tr>
 					</tfoot>
 
@@ -297,10 +297,10 @@ class GEM_Settings {
 
 									<div class="row-actions">
 										<span class="edit">
-											<a target="_blank" href="<?php echo esc_url( $edit_link ); ?>" title="<?php esc_attr_e( 'Opens in a new window', 'gem' ); ?>"><?php esc_html_e( 'Edit form in GoDaddy Email Marketing', 'gem' ); ?></a> |
+											<a target="_blank" href="<?php echo esc_url( $edit_link ); ?>" title="<?php esc_attr_e( 'Opens in a new window', 'godaddy-email-marketing' ); ?>"><?php esc_html_e( 'Edit form in GoDaddy Email Marketing', 'godaddy-email-marketing' ); ?></a> |
 										</span>
 										<span class="view">
-											<a target="_blank" href="<?php echo esc_url( $form->url ); ?>"><?php esc_html_e( 'Preview', 'gem' ); ?></a>
+											<a target="_blank" href="<?php echo esc_url( $form->url ); ?>"><?php esc_html_e( 'Preview', 'godaddy-email-marketing' ); ?></a>
 										</span>
 									</div>
 								</td>
@@ -314,7 +314,7 @@ class GEM_Settings {
 					else : ?>
 
 						<tr>
-							<td colspan="3"><?php esc_html_e( 'No forms found', 'gem' ); ?></td>
+							<td colspan="3"><?php esc_html_e( 'No forms found', 'godaddy-email-marketing' ); ?></td>
 						</tr>
 
 					<?php endif; ?>
@@ -325,15 +325,15 @@ class GEM_Settings {
 				<br />
 
 				<p class="description">
-					<?php esc_html_e( 'Not seeing your form?', 'gem' ); ?> <a href="<?php echo esc_url( add_query_arg( 'action', 'refresh' ) ); ?>" class="button"><?php esc_html_e( 'Refresh Forms', 'gem' ); ?></a>
+					<?php esc_html_e( 'Not seeing your form?', 'godaddy-email-marketing' ); ?> <a href="<?php echo esc_url( add_query_arg( 'action', 'refresh' ) ); ?>" class="button"><?php esc_html_e( 'Refresh Forms', 'godaddy-email-marketing' ); ?></a>
 				</p>
 
 				<?php if ( $this->gem->debug ) : ?>
 
-					<h3><?php esc_html_e( 'Debug', 'gem' ); ?></h3>
+					<h3><?php esc_html_e( 'Debug', 'godaddy-email-marketing' ); ?></h3>
 					<p>
-						<a href="<?php echo esc_url( add_query_arg( 'action', 'debug-reset' ) ); ?>" class="button-secondary"><?php esc_html_e( 'Erase All Data', 'gem' ); ?></a>
-						<a href="<?php echo esc_url( add_query_arg( 'action', 'debug-reset-transients' ) ); ?>" class="button-secondary"><?php esc_html_e( 'Erase Transients', 'gem' ); ?></a>
+						<a href="<?php echo esc_url( add_query_arg( 'action', 'debug-reset' ) ); ?>" class="button-secondary"><?php esc_html_e( 'Erase All Data', 'godaddy-email-marketing' ); ?></a>
+						<a href="<?php echo esc_url( add_query_arg( 'action', 'debug-reset-transients' ) ); ?>" class="button-secondary"><?php esc_html_e( 'Erase Transients', 'godaddy-email-marketing' ); ?></a>
 					</p>
 
 				<?php endif; ?>
@@ -354,20 +354,20 @@ class GEM_Settings {
 			if ( ! $data ) {
 
 				// credentials are incorrect
-				add_settings_error( $this->slug, 'invalid-creds', __( 'The credentials are incorrect! Please verify that you have entered them correctly.', 'gem' ) );
+				add_settings_error( $this->slug, 'invalid-creds', __( 'The credentials are incorrect! Please verify that you have entered them correctly.', 'godaddy-email-marketing' ) );
 
 				return $input; // bail
 
 			} elseif ( ! empty( $data->total ) ) {
 
 				// test the returned data, and let the user know she's alright!
-				add_settings_error( $this->slug, 'valid-creds', __( 'Connection with GoDaddy Email Marketing has been established! You\'re all set!', 'gem' ), 'updated' );
+				add_settings_error( $this->slug, 'valid-creds', __( "Connection with GoDaddy Email Marketing has been established! You're all set!", 'godaddy-email-marketing' ), 'updated' );
 
 			}
 		} else {
 
 			// empty
-			add_settings_error( $this->slug, 'invalid-creds', __( 'Please fill in the username and the API key first.', 'gem' ) );
+			add_settings_error( $this->slug, 'invalid-creds', __( 'Please fill in the username and the API key first.', 'godaddy-email-marketing' ) );
 
 		}
 
@@ -382,7 +382,7 @@ final class GEM_Settings_Controls {
 	public static function description() {
 	?>
 
-		<p><?php esc_html_e( 'Please enter your GoDaddy Email Marketing username and API Key in order to be able to create forms.', 'gem' ); ?></p>
+		<p><?php esc_html_e( 'Please enter your GoDaddy Email Marketing username and API Key in order to be able to create forms.', 'godaddy-email-marketing' ); ?></p>
 
 	<?php }
 
