@@ -88,8 +88,12 @@ class GEM_Settings {
 						}
 					}
 
-					foreach ( (array) GEM_Dispatcher::get_forms()->signups as $form ) {
-						delete_transient( 'gem-form-' . $form->id );
+					$forms = GEM_Dispatcher::get_forms();
+
+					if ( isset( $forms->signups ) ) {
+						foreach ( (array) $forms->signups as $form ) {
+							delete_transient( 'gem-form-' . $form->id );
+						}
 					}
 
 					break;
