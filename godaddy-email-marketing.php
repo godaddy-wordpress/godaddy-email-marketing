@@ -62,6 +62,8 @@ class GEM_Official {
 
 	/**
 	 * Class instance.
+	 *
+	 * @codeCoverageIgnore
 	 */
 	public static function instance() {
 		if ( ! isset( self::$instance ) ) {
@@ -75,6 +77,8 @@ class GEM_Official {
 
 	/**
 	 * Adds actions and filters.
+	 *
+	 * @codeCoverageIgnore
 	 */
 	private function setup_actions() {
 		add_action( 'init',          array( $this, 'init' ) );
@@ -89,6 +93,8 @@ class GEM_Official {
 
 	/**
 	 * Creates the constants.
+	 *
+	 * @codeCoverageIgnore
 	 */
 	private function setup_constants() {
 
@@ -116,6 +122,7 @@ class GEM_Official {
 	 * Loads the PHP files.
 	 *
 	 * @todo include only some on is_admin()
+	 * @codeCoverageIgnore
 	 */
 	private function requirements() {
 

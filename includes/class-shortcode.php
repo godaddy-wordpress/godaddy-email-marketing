@@ -40,10 +40,8 @@ class GEM_Shortcode {
  * @param bool $echo Wether to echo the form field. Default true.
  */
 function gem_form( $id, $echo = true ) {
-	if ( ! class_exists( 'GEM_Form_Renderer' ) ) {
-		return;
+	if ( class_exists( 'GEM_Form_Renderer', false ) ) {
+		$renderer = new GEM_Form_Renderer();
+		$renderer->process( $id, $echo );
 	}
-
-	$renderer = new GEM_Form_Renderer();
-	$renderer->process( $id, $echo );
 }

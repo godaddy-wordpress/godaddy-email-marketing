@@ -24,7 +24,7 @@ class GEM_Settings {
 	 *
 	 * @var string
 	 */
-	private $hook;
+	public $hook;
 
 	/**
 	 * GEM_Official instance.
@@ -54,7 +54,7 @@ class GEM_Settings {
 			__( 'GoDaddy Signup Forms', 'gem' ),             // menu label
 			'manage_options',                                // required cap to view this page
 			$this->slug = 'gem-settings',                    // page slug
-			array( &$this, 'display_settings_page' )         // callback
+			array( $this, 'display_settings_page' )          // callback
 		);
 
 		add_action( 'load-' . $this->hook, array( $this, 'page_load' ) );
@@ -123,11 +123,13 @@ class GEM_Settings {
 						return;
 					}
 
+					// @codeCoverageIgnoreStart
 					$tokenized_url = add_query_arg( 'redirect', sprintf( '/signups/%d/edit', absint( $_GET['form_id'] ) ), GEM_Dispatcher::user_sign_in() );
 
 					// Not wp_safe_redirect as it's an external site.
 					wp_redirect( $tokenized_url );
 					exit;
+					// @codeCoverageIgnoreEnd
 
 					break;
 				case 'dismiss' :

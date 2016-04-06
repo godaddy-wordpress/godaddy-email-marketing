@@ -1,8 +1,12 @@
 <?php
+class Test_GEM_Form_Widget extends WP_UnitTestCase {
 
-require_once( 'testcase.php' );
-
-class Test_GEM_Form_Widget extends WP_GEMTestCase {
+	/**
+	 * Load WP_Http_Mock_Transport
+	 */
+	public static function setUpBeforeClass() {
+		require_once( 'mock-transport.php' );
+	}
 
 	/**
 	 * PHP unit setup function
@@ -34,9 +38,9 @@ class Test_GEM_Form_Widget extends WP_GEMTestCase {
 
 	public function test_construct() {
 		$instance = new GEM_Form_Widget();
-		$this->assertIsDefinedAction( 'gem_widget_text', 'wpautop' );
-		$this->assertIsDefinedAction( 'gem_widget_text', 'wptexturize' );
-		$this->assertIsDefinedAction( 'gem_widget_text', 'convert_chars' );
+		$this->assertEquals( 10, has_action( 'gem_widget_text', 'wpautop' ) );
+		$this->assertEquals( 10, has_action( 'gem_widget_text', 'wptexturize' ) );
+		$this->assertEquals( 10, has_action( 'gem_widget_text', 'convert_chars' ) );
 
 		$this->assertEquals( 'gem-form', $instance->id_base );
 		$this->assertEquals( 'GoDaddy Email Marketing Form', $instance->name );
