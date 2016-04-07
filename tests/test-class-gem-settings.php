@@ -1,8 +1,12 @@
 <?php
+class Test_GEM_Settings extends WP_UnitTestCase {
 
-require_once( 'testcase.php' );
-
-class Test_GEM_Settings extends WP_GEMTestCase {
+	/**
+	 * Load WP_Http_Mock_Transport
+	 */
+	public static function setUpBeforeClass() {
+		require_once( 'mock-transport.php' );
+	}
 
 	/**
 	 * PHP unit setup function
@@ -33,15 +37,15 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 
 	public function test_construct() {
 		$instance = new GEM_Settings();
-		$this->assertIsDefinedAction( 'admin_menu', array( $instance, 'action_admin_menu' ) );
-		$this->assertIsDefinedAction( 'admin_init', array( $instance, 'register_settings' ) );
+		$this->assertEquals( 10, has_action( 'admin_menu', array( $instance, 'action_admin_menu' ) ) );
+		$this->assertEquals( 10, has_action( 'admin_init', array( $instance, 'register_settings' ) ) );
 	}
 
 	public function test_action_admin_menu() {
 		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
 
-		$this->assertIsDefinedAction( 'load-', array( $instance, 'page_load' ) );
+		$this->assertEquals( 10, has_action( 'load-' . $instance->hook, array( $instance, 'page_load' ) ) );
 		$this->assertEquals( 'gem-settings', $instance->slug );
 	}
 
@@ -61,7 +65,7 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 		$instance->page_load();
 		$instance->action_admin_menu();
 
-		$this->assertIsDefinedAction( 'in_admin_header', array( $instance, 'setup_help_tabs' ) );
+		$this->assertEquals( 10, has_action( 'in_admin_header', array( $instance, 'setup_help_tabs' ) ) );
 		$this->assertTrue( wp_style_is( 'gem-admin', 'registered' ) );
 
 		// debug-reset action:
@@ -130,6 +134,15 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 		$instance->page_load();
 		$meta = get_user_meta( 12345, 'gem-dismiss' );
 		$this->assertEquals( 'show', $meta[0] );
+
+		// dismiss action missing user ID: forces coverage.
+		$_GET['action'] = 'dismiss';
+		wp_set_current_user( 0 );
+		$instance->page_load();
+
+		// edit_form action missing form ID: forces coverage.
+		$_GET['action'] = 'edit_form';
+		$instance->page_load();
 	}
 
 	public function test_setup_help_tabs() {
@@ -185,6 +198,41 @@ class Test_GEM_Settings extends WP_GEMTestCase {
 		$this->assertContains( '<input type="checkbox" name="gem-settings[display_powered_by]" id="gem-settings[display_powered_by]" value="1"  />', $actual_output );
 		$this->assertContains( '<a href="?action=debug-reset" class="button-secondary">Erase All Data</a>', $actual_output );
 		$this->assertContains( '<a href="?action=debug-reset-transients" class="button-secondary">Erase Transients</a>', $actual_output );
+	}
+
+	public function test_display_settings_page_forms() {
+		add_filter( 'pre_http_request', array( $this, 'pre_http_request' ) );
+		update_option( 'gem-settings', array(
+			'username' => 'tester',
+			'api-key'  => '12345',
+		) );
+		$instance = new GEM_Settings();
+		$instance->action_admin_menu();
+
+		ob_start();
+		$instance->display_settings_page();
+		$actual_output = ob_get_contents();
+		ob_end_clean();
+
+		$this->assertContains( '54321', $actual_output );
+		$this->assertContains( 'Test Form', $actual_output );
+		$this->assertContains( 'http://sample.org', $actual_output );
+
+		remove_filter( 'pre_http_request', array( $this, 'pre_http_request' ) );
+		delete_option( 'gem-settings' );
+		delete_transient( 'gem-tester-account' );
+		delete_transient( 'gem-tester-lists' );
+		delete_transient( 'gem-form-54321' );
+	}
+
+	/**
+	 * Filter the HTTP request.
+	 */
+	public function pre_http_request( $pre ) {
+		$response = array();
+		$response['response']['code'] = 200;
+		$response['body'] = '{"signups":[{"id":"54321", "name":"Test Form", "url":"http://sample.org"}]}';
+		return $response;
 	}
 
 	public function test_validate() {
