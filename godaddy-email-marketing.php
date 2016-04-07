@@ -179,27 +179,29 @@ class GEM_Official {
 	 */
 	public function enqueue() {
 
+		$suffix = SCRIPT_DEBUG ? '' : '.min';
+
 		// Main JavaScript file.
-		wp_enqueue_script( 'gem-main', plugins_url( 'js/gem.js', __FILE__ ), array( 'jquery' ), GEM_VERSION, true );
+		wp_enqueue_script( 'gem-main', plugins_url( "js/gem{$suffix}.js", __FILE__ ), array( 'jquery' ), GEM_VERSION, true );
 
 		// Datepicker JavaScript file.
-		wp_enqueue_script( 'function', plugins_url( 'js/function.js', __FILE__ ), array( 'jquery' ), GEM_VERSION, true );
+		wp_enqueue_script( 'function', plugins_url( "js/function{$suffix}.js", __FILE__ ), array( 'jquery' ), GEM_VERSION, true );
 
 		// JQuery-ui.
-		wp_enqueue_script( 'jquery-ui', 'http://code.jquery.com/ui/1.11.4/jquery-ui.js', array( 'jquery' ), '1.11.4' );
+		wp_enqueue_script( 'jquery-ui', '//code.jquery.com/ui/1.11.4/jquery-ui.js', array( 'jquery' ), '1.11.4' );
 
 		// Assistance CSS.
-		wp_enqueue_style( 'gem-base', plugins_url( 'css/gem.css', __FILE__ ), false, GEM_VERSION );
+		wp_enqueue_style( 'gem-base', plugins_url( "css/gem{$suffix}.css", __FILE__ ), false, GEM_VERSION );
 
 		// Datepicker CSS.
-		wp_enqueue_style( 'jquery-ui', plugins_url( 'css/jquery-ui.css', __FILE__ ), true, GEM_VERSION );
+		wp_enqueue_style( 'jquery-ui', plugins_url( "css/jquery-ui{$suffix}.css", __FILE__ ), true, GEM_VERSION );
 
 		// Help strings.
 		wp_localize_script( 'gem-main', 'GEM', array(
-			'thankyou' 				=> _x( 'Thank you for signing up!', 'ajax response', 'godaddy-email-marketing' ),
-			'thankyou_suppressed' 	=> _x( 'Thank you for signing up! Please check your email to confirm your subscription.', 'ajax response', 'godaddy-email-marketing' ),
-			'oops' 					=> _x( 'Oops! There was a problem. Please try again.', 'ajax response', 'godaddy-email-marketing' ),
-			'fix' 					=> _x( 'There was a problem. Please fill all required fields.', 'ajax response', 'godaddy-email-marketing' ),
+			'thankyou'            => _x( 'Thank you for signing up!', 'ajax response', 'godaddy-email-marketing' ),
+			'thankyou_suppressed' => _x( 'Thank you for signing up! Please check your email to confirm your subscription.', 'ajax response', 'godaddy-email-marketing' ),
+			'oops'                => _x( 'Oops! There was a problem. Please try again.', 'ajax response', 'godaddy-email-marketing' ),
+			'fix'                 => _x( 'There was a problem. Please fill all required fields.', 'ajax response', 'godaddy-email-marketing' ),
 		) );
 	}
 
