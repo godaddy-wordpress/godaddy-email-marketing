@@ -427,7 +427,6 @@ class GEM_Settings {
 
 		return $input;
 	}
-
 }
 
 /**

@@ -42,10 +42,10 @@ class GEM_Form_Widget extends WP_Widget {
 		$text    = empty( $instance['text'] ) ? '' : $instance['text'];
 		$form_id = empty( $instance['form'] ) ? false : $instance['form'];
 
-		echo $args['before_widget'];
+		echo $args['before_widget']; // xss ok
 
 		if ( $title ) {
-			echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
+			echo $args['before_title'] . esc_html( $title ) . $args['after_title']; // xss ok
 		}
 
 		if ( $text ) {
@@ -55,7 +55,7 @@ class GEM_Form_Widget extends WP_Widget {
 		$renderer = new GEM_Form_Renderer();
 		$renderer->process( $form_id, true );
 
-		echo $args['after_widget'];
+		echo $args['after_widget']; // xss ok
 	}
 
 	/**
@@ -135,5 +135,4 @@ class GEM_Form_Widget extends WP_Widget {
 		</p>
 		<?php
 	}
-
 }
