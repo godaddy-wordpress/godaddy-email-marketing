@@ -208,7 +208,8 @@ class GEM_Form_Fields {
 		</label>
 		</br>
 
-		<?php $trim_values = array( '[', ']' );
+		<?php
+		$trim_values = array( '[', ']' );
 		$options = $args->options;
 		foreach ( $trim_values as $trim ) {
 			$options = trim( $options, $trim );
@@ -220,14 +221,8 @@ class GEM_Form_Fields {
 
 		foreach ( $trimmed_options as $key => $value ) : ?>
 			<input type="checkbox" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name; ?>" value="<?php echo $value; ?>"> <?php echo $value; ?><br>
-<<<<<<< HEAD
 		<?php endforeach;
 	}
-=======
-		<?php	} ?>
-
-	<?php }
->>>>>>> develop
 
 	/**
 	 * Displays the select dropdown field.
@@ -263,7 +258,7 @@ class GEM_Form_Fields {
 
 		foreach ( $trimmed_options as $dropdown_options ) : ?>
 			<option value="<?php echo $dropdown_options; ?>"> <?php echo $dropdown_options; ?><br>
-		<?php	endforeach; ?>
+		<?php endforeach; ?>
 		</select>
 
 		<?php
@@ -291,32 +286,20 @@ class GEM_Form_Fields {
 		</label>
 		</br>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
 		<?php $trim_values = array( '[', ']' );
 		$options = $args->options;
 		foreach ( $trim_values as $trim ) {
 			$options = trim( $options, $trim );
 		}
+
 		$trimmed_options = array();
 		$options = str_replace( '"', '', $options );
 		$trimmed_options = explode( ',', $options );
 
-<<<<<<< HEAD
-		foreach ( $trimmed_options as $radio_options ) : ?>
-			<input type="radio" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name; ?>" value="<?php echo $radio_options; ?>"> <?php echo $radio_options; ?><br>
-		<?php	endforeach;
+		foreach ( $trimmed_options as $key => $value ) : ?>
+			<input type="checkbox" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name; ?>" value="<?php echo $value; ?>"> <?php echo $value; ?><br>
+		<?php endforeach;
 	}
-=======
-		foreach ( $trimmed_options as $radio_options ) {
-		?>
-				<input type="radio" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name; ?>" value="<?php echo $radio_options; ?>"> <?php echo $radio_options; ?><br>
-		<?php	} ?>
-
-	<?php }
->>>>>>> develop
 
 	/**
 	 * Displays the date field.
@@ -333,17 +316,12 @@ class GEM_Form_Fields {
 		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
-
 			<?php echo esc_html( $args->display ); ?>
 			<?php if ( $args->required && apply_filters( 'gem_required_field_indicator', true, $args ) ) : ?>
 				<span class="required">*</span>
 			<?php endif; ?>
 		</label>
 		</br>
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
 
 		<?php $current_year = date( 'Y' ); ?>
 
@@ -372,22 +350,17 @@ class GEM_Form_Fields {
 						<option value="<?php echo strlen( $i ) < 2 ? '0'.$i : $i; ?>"> <?php echo $i; ?> </option>
 					<?php } ?>
 				</select>
-		 	</span>
-		 	<span class="third">
-		 		<select fingerprint="date" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name;?>">
-		 			<option value="00"> Year </option>
-					<?php for ( $x = $current_year + 5 ; $x > $current_year - 81 ; $x-- ) {?>
-		 				<option value="<?php echo $x; ?>"> <?php echo $x; ?> </option>
-		 			<?php } ?>
-		 		</select>
-		 	</span>
+			</span>
+			<span class="third">
+				<select fingerprint="date" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name;?>">
+					<option value="00"> Year </option>
+				<?php for ( $x = $current_year + 5 ; $x > $current_year - 81 ; $x-- ) {?>
+						<option value="<?php echo $x; ?>"> <?php echo $x; ?> </option>
+					<?php } ?>
+				</select>
+			</span>
 
 		<input type="hidden" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name; ?>" value="">
-<<<<<<< HEAD
-=======
-
-	<?php }
->>>>>>> develop
 
 		<?php
 	}
