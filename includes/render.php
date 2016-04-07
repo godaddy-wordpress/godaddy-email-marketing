@@ -393,5 +393,4 @@ class GEM_Form_Fields {
 
 		<?php
 	}
-
 }
