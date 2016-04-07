@@ -1,13 +1,17 @@
 <?php
-
-require_once( 'testcase.php' );
-
-class Test_GEM_Official extends WP_GEMTestCase {
+class Test_GEM_Official extends WP_UnitTestCase {
 
 	/**
 	 * @var GEM_Official
 	 */
 	private $instance;
+
+	/**
+	 * Holds the plugin file path
+	 *
+	 * @var Plugin
+	 */
+	protected $plugin_file_path;
 
 	/**
 	 * PHP unit setup function
@@ -16,6 +20,7 @@ class Test_GEM_Official extends WP_GEMTestCase {
 	 */
 	function setUp() {
 		parent::setUp();
+		$this->plugin_file_path = $GLOBALS['_plugin_file'];
 		$this->instance = GEM_Official::instance();
 	}
 
@@ -51,7 +56,8 @@ class Test_GEM_Official extends WP_GEMTestCase {
 		$this->assertEquals( GEM_PLUGIN_DIR, plugin_dir_path( $this->plugin_file_path ) );
 		$this->assertEquals( GEM_PLUGIN_URL, plugin_dir_url( $this->plugin_file_path ) );
 		$this->assertEquals( GEM_PLUGIN_BASE, plugin_basename( $this->plugin_file_path ) );
-		$this->assertEquals( GEM_VERSION, '1.1' );
+		$plugin_data = get_plugin_data( $this->plugin_file_path );
+		$this->assertEquals( GEM_VERSION, $plugin_data['Version'] );
 	}
 
 	public function test_requirements() {
@@ -81,16 +87,20 @@ class Test_GEM_Official extends WP_GEMTestCase {
 	public function test_register_shortcode() {
 		global $shortcode_tags;
 
+		$this->instance->register_shortcode();
 		$this->assertArrayHasKey( 'gem', $shortcode_tags );
 		$this->assertArrayHasKey( 'GEM', $shortcode_tags );
 
 		$this->assertEquals( $shortcode_tags['gem'], array( 'GEM_Shortcode', 'render' ) );
 		$this->assertEquals( $shortcode_tags['GEM'], array( 'GEM_Shortcode', 'render' ) );
+		$this->assertTrue( has_shortcode( 'This is a blob with [gem id=123] in it', 'gem' ) );
+		$this->assertTrue( has_shortcode( 'This is a blob with [GEM] in it', 'GEM' ) );
 	}
 
 	public function test_register_widget() {
 		global $wp_widget_factory;
 
+		$this->instance->register_widget();
 		$this->assertArrayHasKey( 'GEM_Form_Widget', $wp_widget_factory->widgets );
 		$this->assertInstanceOf( 'GEM_Form_Widget', $wp_widget_factory->widgets['GEM_Form_Widget'] );
 	}

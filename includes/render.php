@@ -1,11 +1,31 @@
 <?php
+/**
+ * Render classes
+ *
+ * @package GEM
+ */
 
+/**
+ * GoDaddy Email Marketing form.
+ *
+ * @since 1.0
+ */
 class GEM_Form_Renderer {
 
+	/**
+	 * Form instance number.
+	 *
+	 * @var int
+	 */
 	private static $loops = 0;
 
+	/**
+	 * Generates the form.
+	 *
+	 * @param string $form_id Form ID.
+	 * @param bool   $echo Wether to echo the form field. Default false.
+	 */
 	public function process( $form_id, $echo = false ) {
-
 		$form = GEM_Dispatcher::get_fields( (int) $form_id );
 
 		if ( ! empty( $form->fields ) ) :
@@ -47,22 +67,36 @@ class GEM_Form_Renderer {
 			<?php $output = ob_get_clean();
 
 			if ( $echo ) {
-				echo $output;
+				echo $output; // xss ok
 			}
 
 			return $output;
 
 		endif;
-
 	}
 }
 
+/**
+ * GoDaddy Email Marketing form fields.
+ *
+ * @since 1.0
+ */
 class GEM_Form_Fields {
 
+	/**
+	 * Form instance number.
+	 *
+	 * @var int
+	 */
 	private static $cycle = 0;
 
+	/**
+	 * Dispatches the method used to display fields.
+	 *
+	 * @param object $field Form field.
+	 * @param int    $cycle Form instance number.
+	 */
 	public static function dispatch_field( $field, $cycle = 1 ) {
-
 		if ( ! is_object( $field ) || ! method_exists( __CLASS__, $field->type ) ) {
 			return;
 		}
@@ -71,30 +105,40 @@ class GEM_Form_Fields {
 
 		if ( ! is_null( $field->field_type ) ) {
 			call_user_func( array( __CLASS__, $field->field_type ), $field );
-
 		} else {
 			call_user_func( array( __CLASS__, $field->type ), $field );
 		}
-
 	}
 
+	/**
+	 * Generates the ID form the form name.
+	 *
+	 * @param string $field_name Form name.
+	 * @return string The form ID.
+	 */
 	public static function get_form_id( $field_name ) {
 
-		// since HTML ID's can't exist in the same exact spelling more than once... make it special.
+		// Since HTML ID's can't exist in the same exact spelling more than once... make it special.
 		return sprintf( 'form_%s_%s', self::$cycle, $field_name );
-
 	}
 
+	/**
+	 * Displays the string field.
+	 *
+	 * @todo How is this differnt from the GEM_Form_Fields::text_field method?
+	 *
+	 * @param array $args Settings field arguments.
+	 */
 	public static function string( $args ) {
-
 		$field_classes = array( 'gem-field' );
 
-		// is this field required?
+		// Is this field required?
 		if ( $args->required ) {
 			$field_classes[] = 'gem-required';
 		}
 
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
+		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args );
+		?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
 
@@ -109,18 +153,24 @@ class GEM_Form_Fields {
 
 		<input type="text" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" class="<?php echo esc_attr( join( ' ', $field_classes ) ); ?>" />
 
-	<?php }
+		<?php
+	}
 
+	/**
+	 * Displays the checkbox field.
+	 *
+	 * @param array $args Settings field arguments.
+	 */
 	public static function checkbox( $args ) {
-
 		$field_classes = array( 'gem-checkbox' );
 
-		// is this field required?
+		// Is this field required?
 		if ( $args->required ) {
 			$field_classes[] = 'gem-required';
 		}
 
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
+		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args );
+		?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) . $args->value ); ?>">
 
@@ -135,188 +185,178 @@ class GEM_Form_Fields {
 		</label>
 		<br/>
 
-	<?php }
+		<?php
+	}
 
+	/**
+	 * Displays the checkboxes field.
+	 *
+	 * @param array $args Settings field arguments.
+	 */
 	public static function checkboxes( $args ) {
-
-		$field_classes = array( 'gem-checkbox' );
-
-		if ( $args->required ) {
-			$field_classes[] = 'gem-required';
-		}
-
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
-
-		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
-
-			<?php echo esc_html( $args->display ); ?>
-			<?php if ( $args->required && apply_filters( 'gem_required_field_indicator', true, $args ) ) : ?>
-				<span class="required">*</span>
-			<?php endif; ?>
-		</label>
-		</br>
-
-		<?php $trim_values = array( '[', ']' );
-		$options = $args->options;
-		foreach ( $trim_values as $trim ) {
-			$options = trim( $options, $trim );
-		}
-
-		$trimmed_options = array();
-		$options = str_replace( '"', '', $options );
-		$trimmed_options = explode( ',', $options );
-
-		foreach ( $trimmed_options as $key => $value ) { ?>
-			<input type="checkbox" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name; ?>" value="<?php echo $value; ?>"> <?php echo $value; ?><br>
-		<?php	} ?>
-
-	<?php }
-
-	public static function dropdown( $args ) {
-		$field_classes = array( 'gem-checkbox' );
-
-		if ( $args->required ) {
-			$field_classes[] = 'gem-required';
-		}
-
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
-
-		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
-
-			<?php echo esc_html( $args->display ); ?>
-			<?php if ( $args->required && apply_filters( 'gem_required_field_indicator', true, $args ) ) : ?>
-				<span class="required">*</span>
-			<?php endif; ?>
-		</label>
-		</br>
-		<select id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name;?>">
-
-		<?php $trim_values = array( '[', ']' );
-		$options = $args->options;
-		foreach ( $trim_values as $trim ) {
-			$options = trim( $options, $trim );
-		}
-		$trimmed_options = array();
-		$options = str_replace( '"', '', $options );
-		$trimmed_options = explode( ',', $options );
-
-		foreach ( $trimmed_options as $dropdown_options ) {
 		?>
-			<option value="<?php echo $dropdown_options; ?>"> <?php echo $dropdown_options; ?><br>
-		<?php	} ?>
+
+		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
+			<?php echo esc_html( $args->display ); ?>
+			<?php if ( $args->required && apply_filters( 'gem_required_field_indicator', true, $args ) ) : ?>
+				<span class="required">*</span>
+			<?php endif; ?>
+		</label>
+		</br>
+
+		<?php
+		$trim_values = array( '[', ']' );
+		$options = $args->options;
+		foreach ( $trim_values as $trim ) {
+			$options = trim( $options, $trim );
+		}
+
+		$trimmed_options = array();
+		$options = str_replace( '"', '', $options );
+		$trimmed_options = explode( ',', $options );
+
+		foreach ( $trimmed_options as $key => $value ) : ?>
+			<input type="checkbox" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo esc_attr( $args->name ); ?>" value="<?php echo esc_attr( $value ); ?>"> <?php echo esc_attr( $value ); ?><br>
+		<?php endforeach;
+	}
+
+	/**
+	 * Displays the select dropdown field.
+	 *
+	 * @param array $args Settings field arguments.
+	 */
+	public static function dropdown( $args ) {
+		?>
+
+		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
+			<?php echo esc_html( $args->display ); ?>
+			<?php if ( $args->required && apply_filters( 'gem_required_field_indicator', true, $args ) ) : ?>
+				<span class="required">*</span>
+			<?php endif; ?>
+		</label>
+		</br>
+		<select id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo esc_attr( $args->name ); ?>">
+
+		<?php $trim_values = array( '[', ']' );
+		$options = $args->options;
+		foreach ( $trim_values as $trim ) {
+			$options = trim( $options, $trim );
+		}
+		$trimmed_options = array();
+		$options = str_replace( '"', '', $options );
+		$trimmed_options = explode( ',', $options );
+
+		foreach ( $trimmed_options as $dropdown_options ) : ?>
+			<option value="<?php echo esc_attr( $dropdown_options ); ?>"> <?php echo esc_html( $dropdown_options ); ?><br>
+		<?php endforeach; ?>
 		</select>
 
+		<?php
+	}
 
-
-    <?php }
-
+	/**
+	 * Displays the radio buttons field.
+	 *
+	 * @param array $args Settings field arguments.
+	 */
 	public static function radio_buttons( $args ) {
-
-		$field_classes = array( 'gem-checkbox' );
-
-		if ( $args->required ) {
-			$field_classes[] = 'gem-required';
-		}
-
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
+		?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
-
 			<?php echo esc_html( $args->display ); ?>
 			<?php if ( $args->required && apply_filters( 'gem_required_field_indicator', true, $args ) ) : ?>
 				<span class="required">*</span>
 			<?php endif; ?>
 		</label>
 		</br>
-
 
 		<?php $trim_values = array( '[', ']' );
 		$options = $args->options;
 		foreach ( $trim_values as $trim ) {
 			$options = trim( $options, $trim );
 		}
+
 		$trimmed_options = array();
 		$options = str_replace( '"', '', $options );
 		$trimmed_options = explode( ',', $options );
 
-		foreach ( $trimmed_options as $radio_options ) {
-		?>
-				<input type="radio" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name; ?>" value="<?php echo $radio_options; ?>"> <?php echo $radio_options; ?><br>
-		<?php	} ?>
+		foreach ( $trimmed_options as $key => $value ) : ?>
+			<input type="radio" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo esc_attr( $args->name ); ?>" value="<?php echo esc_attr( $value ); ?>"> <?php echo esc_html( $value ); ?><br>
+		<?php endforeach;
+	}
 
-	<?php }
-
+	/**
+	 * Displays the date field.
+	 *
+	 * @param array $args Settings field arguments.
+	 */
 	public static function date( $args ) {
-
-		$field_classes = array( 'gem-checkbox' );
-
-		if ( $args->required ) {
-			$field_classes[] = 'gem-required';
-		}
-
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
+		?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
-
 			<?php echo esc_html( $args->display ); ?>
 			<?php if ( $args->required && apply_filters( 'gem_required_field_indicator', true, $args ) ) : ?>
 				<span class="required">*</span>
 			<?php endif; ?>
 		</label>
 		</br>
-
 
 		<?php $current_year = date( 'Y' ); ?>
 
 			<span class="third">
-				<select fingerprint="date" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name;?>">
-					<option value="00"> Month </option>
-					<option value="January"> January </option>
-					<option value="February"> Febuary </option>
-					<option value="March"> March </option>
-					<option value="April"> April </option>
-					<option value="May"> May </option>
-					<option value="June"> June </option>
-					<option value="July"> July </option>
-					<option value="August"> August </option>
-					<option value="September"> September </option>
-					<option value="October"> October </option>
-					<option value="November"> November </option>
-					<option value="December"> December </option>
+				<select fingerprint="date" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo esc_attr( $args->name ); ?>">
+					<option value="00"> <?php esc_html_e( 'Month', 'godaddy-email-marketing' ) ?> </option>
+					<option value="<?php esc_attr_e( 'January', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'January', 'godaddy-email-marketing' ) ?> </option>
+					<option value="<?php esc_attr_e( 'Febuary', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'Febuary', 'godaddy-email-marketing' ) ?> </option>
+					<option value="<?php esc_attr_e( 'March', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'March', 'godaddy-email-marketing' ) ?> </option>
+					<option value="<?php esc_attr_e( 'April', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'April', 'godaddy-email-marketing' ) ?> </option>
+					<option value="<?php esc_attr_e( 'May', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'May', 'godaddy-email-marketing' ) ?> </option>
+					<option value="<?php esc_attr_e( 'June', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'June', 'godaddy-email-marketing' ) ?> </option>
+					<option value="<?php esc_attr_e( 'July', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'July', 'godaddy-email-marketing' ) ?> </option>
+					<option value="<?php esc_attr_e( 'August', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'August', 'godaddy-email-marketing' ) ?> </option>
+					<option value="<?php esc_attr_e( 'September', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'September', 'godaddy-email-marketing' ) ?> </option>
+					<option value="<?php esc_attr_e( 'October', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'October', 'godaddy-email-marketing' ) ?> </option>
+					<option value="<?php esc_attr_e( 'November', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'November', 'godaddy-email-marketing' ) ?> </option>
+					<option value="<?php esc_attr_e( 'December', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'December', 'godaddy-email-marketing' ) ?> </option>
 				</select>
 			</span>
 			<span class="third">
-				<select fingerprint="date" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name;?>">
-					<option value="00"> Day </option>
-					<?php for ( $i = 1; $i < 32; $i++ ) { ?>
-
-						<option value="<?php echo strlen( $i ) < 2 ? '0'.$i : $i; ?>"> <?php echo $i; ?> </option>
-					<?php } ?>
+				<select fingerprint="date" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo esc_attr( $args->name ); ?>">
+					<option value="00"> <?php esc_html_e( 'Day', 'godaddy-email-marketing' ) ?> </option>
+					<?php for ( $i = 1; $i < 32; $i++ ) : ?>
+						<option value="<?php echo strlen( $i ) < 2 ? '0'.$i : $i; ?>"> <?php echo esc_attr( $i ); ?> </option>
+					<?php endfor; ?>
 				</select>
-		 	</span>
-		 	<span class="third">
-		 		<select fingerprint="date" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name;?>">
-		 			<option value="00"> Year </option>
-					<?php for ( $x = $current_year + 5 ; $x > $current_year - 81 ; $x-- ) {?>
-		 				<option value="<?php echo $x; ?>"> <?php echo $x; ?> </option>
-		 			<?php } ?>
-		 		</select>
-		 	</span>
+			</span>
+			<span class="third">
+				<select fingerprint="date" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo esc_attr( $args->name ); ?>">
+					<option value="00"> <?php esc_html_e( 'Year', 'godaddy-email-marketing' ) ?> </option>
+					<?php for ( $x = $current_year + 5 ; $x > $current_year - 81 ; $x-- ) : ?>
+						<option value="<?php echo absint( $x ); ?>"> <?php echo absint( $x ); ?> </option>
+					<?php endfor; ?>
+				</select>
+			</span>
 
-		<input type="hidden" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo $args->name; ?>" value="">
+		<input type="hidden" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo esc_attr( $args->name ); ?>" value="">
 
-	<?php }
+		<?php
+	}
 
+	/**
+	 * Displays the text field.
+	 *
+	 * @param array $args Settings field arguments.
+	 */
 	public static function text_field( $args ) {
-
 		$field_classes = array( 'gem-field' );
 
-		// is this field required?
+		// Is this field required?
 		if ( $args->required ) {
 			$field_classes[] = 'gem-required';
 		}
 
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
+		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args );
+		?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
 
@@ -330,6 +370,6 @@ class GEM_Form_Fields {
 
 		<input type="text" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" class="<?php echo esc_attr( join( ' ', $field_classes ) ); ?>" />
 
-	<?php }
+		<?php
+	}
 }
-?>

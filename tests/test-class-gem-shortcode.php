@@ -1,8 +1,12 @@
 <?php
+class Test_GEM_Shortcode extends WP_UnitTestCase {
 
-require_once( 'testcase.php' );
-
-class Test_GEM_Shortcode extends WP_GEMTestCase {
+	/**
+	 * Load WP_Http_Mock_Transport
+	 */
+	public static function setUpBeforeClass() {
+		require_once( 'mock-transport.php' );
+	}
 
 	/**
 	 * @var GEM_Shortcode
@@ -36,6 +40,17 @@ class Test_GEM_Shortcode extends WP_GEMTestCase {
 
 	public function test_render() {
 		$this->assertNull( $this->instance->render( array( 'id' => null ) ) );
+		$this->assertNull( $this->instance->render( array( 'id' => 123 ) ) );
+	}
+
+	/**
+	 * Filter the HTTP request.
+	 */
+	public function pre_http_request( $pre ) {
+		$response = array();
+		$response['response']['code'] = 200;
+		$response['body'] = '{"result":[{"id":"54321", "name":"Test Form", "url":"http://sample.org"}]}';
+		return $response;
 	}
 
 	public function test_gem_form() {

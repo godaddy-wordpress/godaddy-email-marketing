@@ -1,8 +1,5 @@
 <?php
-
-require_once( 'testcase.php' );
-
-class Test_GEM_Settings_Controls extends WP_GEMTestCase {
+class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 
 	/**
 	 * PHP unit setup function
@@ -27,7 +24,7 @@ class Test_GEM_Settings_Controls extends WP_GEMTestCase {
 
 	public function test_select() {
 		ob_start();
-		GEM_Settings_Controls::select(array(
+		GEM_Settings_Controls::select( array(
 			'options' => array( 'key' => 'the_value' ),
 			'id' => 'the_id',
 			'page' => 'the_page',
@@ -37,6 +34,16 @@ class Test_GEM_Settings_Controls extends WP_GEMTestCase {
 		$this->assertContains( '<select id="the_id" name="the_page[the_id]">', $actual_output );
 		$this->assertContains( '<option value="key" >', $actual_output );
 		$this->assertContains( 'the_value', $actual_output );
+	}
+
+	public function test_select_is_empty() {
+		ob_start();
+		GEM_Settings_Controls::select( array(
+			'id' => null,
+		) );
+		$actual_output = ob_get_contents();
+		ob_end_clean();
+		$this->assertEmpty( $actual_output );
 	}
 
 	public function test_text() {
@@ -52,9 +59,19 @@ class Test_GEM_Settings_Controls extends WP_GEMTestCase {
 		$this->assertContains( 'value="" class="regular-text code" />', $actual_output );
 	}
 
+	public function test_text_is_empty() {
+		ob_start();
+		GEM_Settings_Controls::text( array(
+			'id' => null,
+		) );
+		$actual_output = ob_get_contents();
+		ob_end_clean();
+		$this->assertEmpty( $actual_output );
+	}
+
 	public function test_checkbox() {
 		ob_start();
-		GEM_Settings_Controls::checkbox(array(
+		GEM_Settings_Controls::checkbox( array(
 			'id' => 'the_id',
 			'page' => 'the_page',
 		) );
@@ -65,9 +82,19 @@ class Test_GEM_Settings_Controls extends WP_GEMTestCase {
 		$this->assertContains( '</label>', $actual_output );
 	}
 
+	public function test_checkbox_is_empty() {
+		ob_start();
+		GEM_Settings_Controls::checkbox( array(
+			'id' => null,
+		) );
+		$actual_output = ob_get_contents();
+		ob_end_clean();
+		$this->assertEmpty( $actual_output );
+	}
+
 	public function test_show_description() {
 		ob_start();
-		GEM_Settings_Controls::show_description(array(
+		GEM_Settings_Controls::show_description( array(
 			'description' => 'the_description',
 		) );
 		$actual_output = ob_get_contents();

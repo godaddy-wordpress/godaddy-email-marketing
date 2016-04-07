@@ -1,14 +1,17 @@
 <?php
-
-require_once( 'mock-transport.php' );
-require_once( 'testcase.php' );
-
-class Test_GEM_Form_Renderer extends WP_GEMTestCase {
+class Test_GEM_Form_Renderer extends WP_UnitTestCase {
 
 	/**
 	 * @var GEM_Form_Renderer
 	 */
 	private $instance;
+
+	/**
+	 * Load WP_Http_Mock_Transport
+	 */
+	public static function setUpBeforeClass() {
+		require_once( 'mock-transport.php' );
+	}
 
 	/**
 	 * PHP unit setup function

@@ -1,37 +1,51 @@
 <?php
+/**
+ * Widget class
+ *
+ * @package GEM
+ */
 
 /**
- * GoDaddy Email Marketing widget
+ * GoDaddy Email Marketing widget.
  *
- * @since 2.8.0
+ * @since 1.0
  */
 class GEM_Form_Widget extends WP_Widget {
 
+	/**
+	 * Sets up a new GoDaddy Email Marketing widget instance.
+	 */
 	function __construct() {
-
-		parent::__construct( 'gem-form', __( 'GoDaddy Email Marketing Form', 'godaddy-email-marketing' ), array(
-			'classname'   => 'gem-form',
-			'description' => _x( 'Embed any GoDaddy Email Marketing webform in your sidebar.', 'widget description', 'godaddy-email-marketing' ),
-		) );
+		parent::__construct(
+			'gem-form',
+			__( 'GoDaddy Email Marketing Form', 'godaddy-email-marketing' ),
+			array(
+				'classname'   => 'gem-form',
+				'description' => _x( 'Embed any GoDaddy Email Marketing webform in your sidebar.', 'widget description', 'godaddy-email-marketing' ),
+			)
+		);
 
 		foreach ( array( 'wpautop', 'wptexturize', 'convert_chars' ) as $filter ) {
 			add_filter( 'gem_widget_text', $filter );
 		}
-
 	}
 
+	/**
+	 * Outputs the content for the current widget instance.
+	 *
+	 * @param array $args     Display arguments including 'before_title', 'after_title',
+	 *                        'before_widget', and 'after_widget'.
+	 * @param array $instance Settings for the current Custom Menu widget instance.
+	 */
 	function widget( $args, $instance ) {
-
-		extract( $args );
-
 		$title   = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'GoDaddy Email Marketing Form', 'godaddy-email-marketing' ) : $instance['title'], $instance, $this->id_base );
 		$text    = empty( $instance['text'] ) ? '' : $instance['text'];
 		$form_id = empty( $instance['form'] ) ? false : $instance['form'];
 
-		echo $args['before_widget'];
+		echo $args['before_widget']; // xss ok
 
 		if ( $title ) {
-			echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
+			echo $args['before_title'] . esc_html( $title ) . $args['after_title']; // xss ok
 		}
 
 		if ( $text ) {
@@ -41,12 +55,18 @@ class GEM_Form_Widget extends WP_Widget {
 		$renderer = new GEM_Form_Renderer();
 		$renderer->process( $form_id, true );
 
-		echo $args['after_widget'];
-
+		echo $args['after_widget']; // xss ok
 	}
 
+	/**
+	 * Handles updating settings for the current widget instance.
+	 *
+	 * @param array $new_instance New settings for this instance as input by the user via
+	 *                            WP_Widget::form().
+	 * @param array $old_instance Old settings for this instance.
+	 * @return array Updated settings to save.
+	 */
 	function update( $new_instance, $old_instance ) {
-
 		$instance = $old_instance;
 
 		$instance['title'] = strip_tags( $new_instance['title'] );
@@ -54,19 +74,24 @@ class GEM_Form_Widget extends WP_Widget {
 		$instance['form']  = absint( $new_instance['form'] );
 
 		return $instance;
-
 	}
 
+	/**
+	 * Outputs the widget settings form.
+	 *
+	 * @param array $instance Current settings.
+	 */
 	function form( $instance ) {
 
-		// set defaults
+		// Set defaults.
 		$instance = wp_parse_args( (array) $instance, array(
 			'title' => '',
 			'text'  => '',
 			'form'  => 0,
 		) );
 
-		$forms = GEM_Dispatcher::get_forms(); ?>
+		$forms = GEM_Dispatcher::get_forms();
+		?>
 
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'godaddy-email-marketing' ); ?></label>
@@ -108,6 +133,6 @@ class GEM_Form_Widget extends WP_Widget {
 			<?php endif; ?>
 
 		</p>
-
-	<?php }
+		<?php
+	}
 }

@@ -1,50 +1,78 @@
 <?php
+/**
+ * Settings classes
+ *
+ * @package GEM
+ */
 
+/**
+ * GoDaddy Email Marketing settings.
+ *
+ * @since 1.0
+ */
 class GEM_Settings {
 
+	/**
+	 * The page slug.
+	 *
+	 * @var string
+	 */
 	public $slug;
-	private $hook;
+
+	/**
+	 * The settings page's hook_suffix.
+	 *
+	 * @var string
+	 */
+	public $hook;
+
+	/**
+	 * GEM_Official instance.
+	 *
+	 * @var GEM_Official
+	 */
 	private $gem;
 
+	/**
+	 * Class constructor.
+	 */
 	public function __construct() {
-
 		$this->gem = gem();
 
 		add_action( 'admin_menu', array( $this, 'action_admin_menu' ) );
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
-
 	}
 
 	/**
-	 * Register the settings page
+	 * Register the settings page.
 	 *
-	 * @since 1.0
+	 * @action admin_menu
 	 */
 	public function action_admin_menu() {
-
 		$this->hook = add_options_page(
-			__( 'GoDaddy Email Marketing Settings', 'godaddy-email-marketing' ),        // <title> tag
-			__( 'GoDaddy Signup Forms', 'godaddy-email-marketing' ),        // menu label
-			'manage_options',                         // required cap to view this page
-			$this->slug = 'gem-settings',        // page slug
-			array( &$this, 'display_settings_page' )  // callback
+			__( 'GoDaddy Email Marketing Settings', 'godaddy-email-marketing' ),
+			__( 'GoDaddy Signup Forms', 'godaddy-email-marketing' ),
+			'manage_options',
+			$this->slug = 'gem-settings',
+			array( $this, 'display_settings_page' )
 		);
 
 		add_action( 'load-' . $this->hook, array( $this, 'page_load' ) );
-
 	}
 
+	/**
+	 * Executes during page load.
+	 *
+	 * Listens for several user initiated actions, adds a help tab, and enqueues resources.
+	 */
 	public function page_load() {
 
-		// main switch for some various maintenance processes
+		// Main switch for various maintenance processes.
 		if ( isset( $_GET['action'] ) ) {
-
 			$settings = get_option( $this->slug );
 
 			switch ( $_GET['action'] ) {
-
 				case 'debug-reset' :
-
 					if ( ! $this->gem->debug ) {
 						return;
 					}
@@ -56,19 +84,17 @@ class GEM_Settings {
 					delete_option( $this->slug );
 
 					break;
-
 				case 'debug-reset-transients' :
-
 					if ( ! $this->gem->debug ) {
 						return;
 					}
 
 					if ( isset( $settings['username'] ) ) {
 
-						// remove all lists
+						// Remove all lists.
 						delete_transient( 'gem-' . $settings['username'] . '-lists' );
 
-						// mass-removal of all forms
+						// Mass-removal of all forms.
 						foreach ( GEM_Dispatcher::get_forms()->signups as $form ) {
 							delete_transient( 'gem-form-' . $form->id );
 						}
@@ -77,10 +103,9 @@ class GEM_Settings {
 					}
 
 					break;
-
 				case 'refresh' :
 
-					// remove only the lists for the current user
+					// Remove only the lists for the current user.
 					if ( isset( $settings['username'] ) ) {
 
 						if ( delete_transient( 'gem-' . $settings['username'] . '-lists' ) ) {
@@ -97,23 +122,21 @@ class GEM_Settings {
 					}
 
 					break;
-
 				case 'edit_form' :
-
 					if ( ! isset( $_GET['form_id'] ) ) {
 						return;
 					}
 
+					// @codeCoverageIgnoreStart
 					$tokenized_url = add_query_arg( 'redirect', sprintf( '/signups/%d/edit', absint( $_GET['form_id'] ) ), GEM_Dispatcher::user_sign_in() );
 
-					// Not wp_safe_redirect as it's an external site
+					// Not wp_safe_redirect as it's an external site.
 					wp_redirect( $tokenized_url );
 					exit;
+					// @codeCoverageIgnoreEnd
 
 					break;
-
 				case 'dismiss' :
-
 					$user_id = get_current_user_id();
 
 					if ( ! $user_id ) {
@@ -123,22 +146,25 @@ class GEM_Settings {
 					update_user_meta( $user_id, 'gem-dismiss', 'show' );
 
 					break;
-
 			}
 		}
 
-		// set up the help tabs
+		// Set up the help tabs.
 		add_action( 'in_admin_header', array( $this, 'setup_help_tabs' ) );
 
-		// enqueue the CSS for the admin
+		// Enqueue the CSS for the admin.
 		wp_enqueue_style( 'gem-admin', plugins_url( 'css/admin.css', GEM_PLUGIN_BASE ) );
-
 	}
 
+	/**
+	 * Registers the help tab.
+	 *
+	 * @action in_admin_header
+	 */
 	public function setup_help_tabs() {
-
 		$screen = get_current_screen();
 
+		// @todo Remove HTML from the translation strings.
 		$screen->add_help_tab( array(
 			'title'   => __( 'Overview', 'godaddy-email-marketing' ),
 			'id'      => 'gem-overview',
@@ -168,11 +194,14 @@ class GEM_Settings {
 				esc_html__( 'Contact GoDaddy', 'godaddy-email-marketing' )
 			)
 		);
-
 	}
 
+	/**
+	 * Registers the settings.
+	 *
+	 * @action admin_init
+	 */
 	public function register_settings() {
-
 		global $pagenow;
 
 		// If no options exist, create them.
@@ -185,7 +214,7 @@ class GEM_Settings {
 
 		register_setting( 'gem-options', $this->slug, array( $this, 'validate' ) );
 
-		// First, we register a section. This is necessary since all future options must belong to a
+		// First, we register a section. This is necessary since all future options must belong to one.
 		add_settings_section(
 			'general_settings_section',
 			__( 'Account Details', 'godaddy-email-marketing' ),
@@ -237,11 +266,15 @@ class GEM_Settings {
 		);
 
 		do_action( 'gem_setup_settings_fields' );
-
 	}
 
+	/**
+	 * Displays the settings page.
+	 *
+	 * @todo Move this into a view file and include.
+	 */
 	public function display_settings_page() {
-	?>
+		?>
 		<div class="wrap">
 
 			<?php screen_icon(); ?>
@@ -355,53 +388,70 @@ class GEM_Settings {
 			</form>
 
 		</div>
+		<?php
+	}
 
-	<?php }
-
+	/**
+	 * Validate the API credentials by fetching the form.
+	 *
+	 * @todo This method is not being used.
+	 *
+	 * @param array $input An array of user input values.
+	 */
 	public function validate( $input ) {
 
-		// validate creds against the API
+		// Validate creds against the API.
 		if ( ! ( empty( $input['username'] ) || empty( $input['api-key'] ) ) ) {
 
 			$data = GEM_Dispatcher::fetch_forms( $input['username'], $input['api-key'] );
 
 			if ( ! $data ) {
 
-				// credentials are incorrect
+				// Credentials are incorrect.
 				add_settings_error( $this->slug, 'invalid-creds', __( 'The credentials are incorrect! Please verify that you have entered them correctly.', 'godaddy-email-marketing' ) );
 
-				return $input; // bail
+				return $input; // Bail!
 
 			} elseif ( ! empty( $data->total ) ) {
 
-				// test the returned data, and let the user know she's alright!
+				// Test the returned data, and let the user know she's alright!
 				add_settings_error( $this->slug, 'valid-creds', __( "Connection with GoDaddy Email Marketing has been established! You're all set!", 'godaddy-email-marketing' ), 'updated' );
 
 			}
 		} else {
 
-			// empty
+			// Credentials are empty.
 			add_settings_error( $this->slug, 'invalid-creds', __( 'Please fill in the username and the API key first.', 'godaddy-email-marketing' ) );
 
 		}
 
 		return $input;
-
 	}
 }
 
-
+/**
+ * GoDaddy Email Marketing settings controls.
+ *
+ * @since 1.0
+ */
 final class GEM_Settings_Controls {
 
+	/**
+	 * Displays the unauthenticated description.
+	 */
 	public static function description() {
-	?>
+		printf(
+			'<p>%s</p>',
+			esc_html__( 'Please enter your GoDaddy Email Marketing username and API Key in order to be able to create forms.', 'godaddy-email-marketing' )
+		);
+	}
 
-		<p><?php esc_html_e( 'Please enter your GoDaddy Email Marketing username and API Key in order to be able to create forms.', 'godaddy-email-marketing' ); ?></p>
-
-	<?php }
-
+	/**
+	 * Displays the select option.
+	 *
+	 * @param array $args Settings field arguments.
+	 */
 	public static function select( $args ) {
-
 		if ( empty( $args['options'] ) || empty( $args['id'] ) || empty( $args['page'] ) ) {
 			return;
 		} ?>
@@ -417,25 +467,35 @@ final class GEM_Settings_Controls {
 			<?php endforeach; ?>
 
 		</select>
-
-	<?php }
-
-	public static function text( $args ) {
-
-		if ( empty( $args['id'] ) || empty( $args['page'] ) ) {
-			return;
-		} ?>
-
-		<input type="text" name="<?php echo esc_attr( sprintf( '%s[%s]', $args['page'], $args['id'] ) ); ?>"
-			id="<?php echo esc_attr( sprintf( '%s-%s', $args['page'], $args['id'] ) ) ?>"
-			value="<?php echo esc_attr( self::get_option( $args['id'] ) ); ?>" class="regular-text code" />
-
-		<?php self::show_description( $args );
-
+		<?php
 	}
 
-	public static function checkbox( $args ) {
+	/**
+	 * Displays the text input & description.
+	 *
+	 * @param array $args Settings field arguments.
+	 */
+	public static function text( $args ) {
+		if ( empty( $args['id'] ) || empty( $args['page'] ) ) {
+			return;
+		}
 
+		$name  = sprintf( '%s[%s]', $args['page'], $args['id'] );
+		$id    = sprintf( '%s-%s', $args['page'], $args['id'] );
+		$value = self::get_option( $args['id'] );
+		?>
+
+		<input type="text" name="<?php echo esc_attr( $name ); ?>" id="<?php echo esc_attr( $id ) ?>" value="<?php echo esc_attr( $value ); ?>" class="regular-text code" />
+
+		<?php self::show_description( $args );
+	}
+
+	/**
+	 * Displays the checkbox input & description.
+	 *
+	 * @param array $args Settings field arguments.
+	 */
+	public static function checkbox( $args ) {
 		if ( empty( $args['id'] ) || empty( $args['page'] ) ) {
 			return;
 		}
@@ -449,24 +509,30 @@ final class GEM_Settings_Controls {
 		</label>
 
 		<?php self::show_description( $args );
-
 	}
 
-	public static function show_description( $field_args ) {
+	/**
+	 * Displays the description.
+	 *
+	 * @param array $args Settings field arguments.
+	 */
+	public static function show_description( $args ) {
+		if ( isset( $args['description'] ) ) : ?>
 
-		if ( isset( $field_args['description'] ) ) : ?>
-
-			<p class="description"><?php echo wp_kses_post( $field_args['description'] ); ?></p>
+			<p class="description"><?php echo wp_kses_post( $args['description'] ); ?></p>
 
 		<?php endif;
-
 	}
 
+	/**
+	 * Get the settings value.
+	 *
+	 * @param string $key Settings key.
+	 * @return false|mixed Returns the settings value or false.
+	 */
 	public static function get_option( $key = '' ) {
-
 		$settings = get_option( 'gem-settings' );
 
 		return ( ! empty( $settings[ $key ] ) ) ? $settings[ $key ] : false;
-
 	}
 }
