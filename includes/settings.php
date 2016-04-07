@@ -152,8 +152,10 @@ class GEM_Settings {
 		// Set up the help tabs.
 		add_action( 'in_admin_header', array( $this, 'setup_help_tabs' ) );
 
+		$suffix = SCRIPT_DEBUG ? '' : '.min';
+
 		// Enqueue the CSS for the admin.
-		wp_enqueue_style( 'gem-admin', plugins_url( 'css/admin.css', GEM_PLUGIN_BASE ) );
+		wp_enqueue_style( 'gem-admin', plugins_url( "css/admin{$suffix}.css", GEM_PLUGIN_BASE ) );
 	}
 
 	/**
