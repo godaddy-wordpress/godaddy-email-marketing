@@ -9,9 +9,9 @@ class GEM_Form_Widget extends WP_Widget {
 
 	function __construct() {
 
-		parent::__construct( 'gem-form', __( 'GoDaddy Email Marketing Form', 'gem' ), array(
+		parent::__construct( 'gem-form', __( 'GoDaddy Email Marketing Form', 'godaddy-email-marketing' ), array(
 			'classname'   => 'gem-form',
-			'description' => _x( 'Embed any GoDaddy Email Marketing webform in your sidebar.', 'widget description', 'gem' ),
+			'description' => _x( 'Embed any GoDaddy Email Marketing webform in your sidebar.', 'widget description', 'godaddy-email-marketing' ),
 		) );
 
 		foreach ( array( 'wpautop', 'wptexturize', 'convert_chars' ) as $filter ) {
@@ -24,7 +24,7 @@ class GEM_Form_Widget extends WP_Widget {
 
 		extract( $args );
 
-		$title   = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'GoDaddy Email Marketing Form', 'gem' ) : $instance['title'], $instance, $this->id_base );
+		$title   = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'GoDaddy Email Marketing Form', 'godaddy-email-marketing' ) : $instance['title'], $instance, $this->id_base );
 		$text    = empty( $instance['text'] ) ? '' : $instance['text'];
 		$form_id = empty( $instance['form'] ) ? false : $instance['form'];
 
@@ -69,13 +69,13 @@ class GEM_Form_Widget extends WP_Widget {
 		$forms = GEM_Dispatcher::get_forms(); ?>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'gem' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'godaddy-email-marketing' ); ?></label>
 			<br/>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ) ?>" />
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php esc_html_e( 'Additional Text:', 'gem' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php esc_html_e( 'Additional Text:', 'godaddy-email-marketing' ); ?></label>
 			<br/>
 			<textarea class="widefat" rows="3" id="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'text' ) ); ?>"><?php echo esc_textarea( $instance['text'] ); ?></textarea>
 		</p>
@@ -84,7 +84,7 @@ class GEM_Form_Widget extends WP_Widget {
 
 			<?php if ( ! empty( $forms->signups ) ) : ?>
 
-				<label for="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>"><?php esc_html_e( 'Form:', 'gem' ); ?></label>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>"><?php esc_html_e( 'Form:', 'godaddy-email-marketing' ); ?></label>
 				<br/>
 				<select name="<?php echo esc_attr( $this->get_field_name( 'form' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>" class="widefat">
 
@@ -96,7 +96,14 @@ class GEM_Form_Widget extends WP_Widget {
 
 			<?php else : ?>
 
-			<span><?php echo wp_kses( sprintf( __( 'Please set up your GoDaddy Email Marketing account in the %ssettings page%s.', 'gem' ), esc_url_raw( admin_url( 'options-general.php?page=gem-settings' ) ) ), array( 'a' => array( 'href' => array() ) ) ); ?>
+			<span><?php printf(
+				_x( 'Please set up your GoDaddy Email Marketing account in the %s.', 'link to settings page', 'godaddy-email-marketing' ),
+				sprintf(
+					'<a href="%s">%s</a>',
+					esc_url( admin_url( 'options-general.php?page=gem-settings' ) ),
+					esc_html__( 'settings page', 'godaddy-email-marketing' )
+				)
+			); ?></span>
 
 			<?php endif; ?>
 

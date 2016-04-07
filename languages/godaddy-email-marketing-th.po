@@ -1,0 +1,309 @@
+#: godaddy-email-marketing.php:144
+#. "ajax response"
+msgid "Thank you for signing up!"
+msgstr "Thank you for signing up!"
+
+#: godaddy-email-marketing.php:145
+#. "ajax response"
+msgid ""
+"Thank you for signing up! Please check your email to confirm your "
+"subscription."
+msgstr ""
+"Thank you for signing up! Please check your email to confirm your subscription."
+
+#: godaddy-email-marketing.php:146
+#. "ajax response"
+msgid "Oops! There was a problem. Please try again."
+msgstr "Oops! There was a problem. Please try again."
+
+#: godaddy-email-marketing.php:147
+#. "ajax response"
+msgid "There was a problem. Please fill all required fields."
+msgstr "There was a problem. Please fill all required fields."
+
+#: godaddy-email-marketing.php:156
+msgid "Settings"
+msgstr "การตั้งค่า"
+
+#: godaddy-email-marketing.php:187
+msgid "GoDaddy Email Marketing is almost ready."
+msgstr "GoDaddy Email Marketing is almost ready."
+
+#: godaddy-email-marketing.php:187
+msgid "You must enter your username &amp; API key for it to work."
+msgstr "You must enter your username &amp; API key for it to work."
+
+#: godaddy-email-marketing.php:188
+msgid "Let's do it!"
+msgstr "Let's do it!"
+
+#: includes/render.php:39
+msgid "Powered by GoDaddy"
+msgstr "Powered by GoDaddy"
+
+#: includes/settings.php:26 includes/settings.php:245
+msgid "GoDaddy Email Marketing Settings"
+msgstr "GoDaddy Email Marketing Settings"
+
+#: includes/settings.php:27
+msgid "GoDaddy Signup Forms"
+msgstr "GoDaddy Signup Forms"
+
+#: includes/settings.php:76
+msgid "All transients were removed."
+msgstr "All transients were removed."
+
+#: includes/settings.php:87
+msgid "Forms list was successfully updated."
+msgstr "Forms list was successfully updated."
+
+#: includes/settings.php:139
+msgid "Overview"
+msgstr "ภาพรวม"
+
+#: includes/settings.php:143
+msgid "Instructions"
+msgstr "ขั้นตอน"
+
+#: includes/settings.php:145
+#, php-format
+msgid ""
+"Once the plugin is activated, you will be able to select and insert any of "
+"your GoDaddy Email Marketing webforms right into your site. Setup is easy. "
+"Below, simply enter your account email address and API key (found in your "
+"GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
+"display a webform on your site:"
+msgstr ""
+"Once the plugin is activated, you will be able to select and insert any of "
+"your GoDaddy Email Marketing webforms right into your site. Setup is easy. "
+"Below, simply enter your account email address and API key (found in your "
+"GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
+"display a webform on your site:"
+
+#: includes/settings.php:148
+msgid ""
+"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
+"called “GoDaddy Email Marketing Form” and drag it into the widget area of "
+"your choice. You can then add a title and select a form!"
+msgstr ""
+"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
+"called “GoDaddy Email Marketing Form” and drag it into the widget area of "
+"your choice. You can then add a title and select a form!"
+
+#: includes/settings.php:149
+msgid ""
+"<strong>Shortcode:</strong> You can add a form to any post or page by adding "
+"the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
+msgstr ""
+"<strong>Shortcode:</strong> You can add a form to any post or page by adding "
+"the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
+
+#: includes/settings.php:151
+#, php-format
+msgid ""
+"<strong>Template Tag:</strong> You can add the following template tag into "
+"any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
+msgstr ""
+"<strong>Template Tag:</strong> You can add the following template tag into "
+"any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
+
+#: includes/settings.php:161
+msgid "For more information:"
+msgstr "For more information:"
+
+#. Author of the plugin/theme
+#: includes/settings.php:162
+msgid "GoDaddy"
+msgstr "GoDaddy"
+
+#: includes/settings.php:163
+msgid "GoDaddy Help"
+msgstr "ความช่วยเหลือของ GoDaddy"
+
+#: includes/settings.php:164
+msgid "Contact GoDaddy"
+msgstr "ติดต่อ GoDaddy"
+
+#: includes/settings.php:187
+msgid "Account Details"
+msgstr "Account Details"
+
+#: includes/settings.php:194
+msgid "GoDaddy Email Marketing Username"
+msgstr "GoDaddy Email Marketing Username"
+
+#: includes/settings.php:201
+msgid "Your GoDaddy Email Marketing username (email address)"
+msgstr "Your GoDaddy Email Marketing username (email address)"
+
+#: includes/settings.php:208
+msgid "GoDaddy Email Marketing API Key"
+msgstr "GoDaddy Email Marketing API Key"
+
+#: includes/settings.php:215
+#. "settings page"
+msgid "Where can I find my API key?"
+msgstr "Where can I find my API key?"
+
+#: includes/settings.php:231
+msgid "Display \"Powered by GoDaddy\"?"
+msgstr "Display \"Powered by GoDaddy\"?"
+
+#: includes/settings.php:251
+#. "gem header note"
+msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
+msgstr "Enjoy the GoDaddy Email Marketing Experience, first hand."
+
+#: includes/settings.php:253
+#. "header note"
+msgid ""
+"Add your GoDaddy Email Marketing webform to your WordPress site! Easy to set "
+"up, the GoDaddy Email Marketing plugin allows your site visitors to "
+"subscribe to your email list."
+msgstr ""
+"Add your GoDaddy Email Marketing webform to your WordPress site! Easy to set "
+"up, the GoDaddy Email Marketing plugin allows your site visitors to subscribe "
+"to your email list."
+
+#: includes/settings.php:254
+#. "header note"
+msgid ""
+"Don't have a GoDaddy Email Marketing account? Get one in less than 2 "
+"minutes! %s"
+msgstr ""
+"Don't have a GoDaddy Email Marketing account? Get one in less than 2 minutes! %s"
+
+#: includes/settings.php:254
+#. "header note"
+msgid "Sign Up Now"
+msgstr "ลงทะเบียนเดี็ยวนี้เลย"
+
+#: includes/settings.php:266
+#. "save settings button"
+msgid "Save Settings"
+msgstr "Save Settings"
+
+#: includes/settings.php:268
+msgid "Available Forms"
+msgstr "Available Forms"
+
+#: includes/settings.php:274 includes/settings.php:282
+msgid "Form Name"
+msgstr "ชื่อแบบฟอร์ม"
+
+#: includes/settings.php:275 includes/settings.php:283
+msgid "Form ID"
+msgstr "Form ID"
+
+#: includes/settings.php:276 includes/settings.php:284
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: includes/settings.php:310
+msgid "Opens in a new window"
+msgstr "Opens in a new window"
+
+#: includes/settings.php:310
+msgid "Edit form in GoDaddy Email Marketing"
+msgstr "Edit form in GoDaddy Email Marketing"
+
+#: includes/settings.php:313
+msgid "Preview"
+msgstr "ดูตัวอย่าง"
+
+#: includes/settings.php:327
+msgid "No forms found"
+msgstr "No forms found"
+
+#: includes/settings.php:338
+msgid "Not seeing your form?"
+msgstr "Not seeing your form?"
+
+#: includes/settings.php:338
+msgid "Refresh Forms"
+msgstr "Refresh Forms"
+
+#: includes/settings.php:343
+msgid "Debug"
+msgstr "Debug"
+
+#: includes/settings.php:345
+msgid "Erase All Data"
+msgstr "Erase All Data"
+
+#: includes/settings.php:346
+msgid "Erase Transients"
+msgstr "Erase Transients"
+
+#: includes/settings.php:367
+msgid ""
+"The credentials are incorrect! Please verify that you have entered them "
+"correctly."
+msgstr ""
+"The credentials are incorrect! Please verify that you have entered them correctly."
+
+#: includes/settings.php:374
+msgid ""
+"Connection with GoDaddy Email Marketing has been established! You're all set!"
+msgstr ""
+"Connection with GoDaddy Email Marketing has been established! You're all set!"
+
+#: includes/settings.php:380
+msgid "Please fill in the username and the API key first."
+msgstr "Please fill in the username and the API key first."
+
+#: includes/settings.php:395
+msgid ""
+"Please enter your GoDaddy Email Marketing username and API Key in order to "
+"be able to create forms."
+msgstr ""
+"Please enter your GoDaddy Email Marketing username and API Key in order to be "
+"able to create forms."
+
+#: includes/widget.php:12 includes/widget.php:27
+msgid "GoDaddy Email Marketing Form"
+msgstr "GoDaddy Email Marketing Form"
+
+#: includes/widget.php:14
+#. "widget description"
+msgid "Embed any GoDaddy Email Marketing webform in your sidebar."
+msgstr "Embed any GoDaddy Email Marketing webform in your sidebar."
+
+#: includes/widget.php:72
+msgid "Title:"
+msgstr "ชื่อเรื่อง:"
+
+#: includes/widget.php:78
+msgid "Additional Text:"
+msgstr "Additional Text:"
+
+#: includes/widget.php:87
+msgid "Form:"
+msgstr "Form:"
+
+#: includes/widget.php:100
+#. "link to settings page"
+msgid "Please set up your GoDaddy Email Marketing account in the %s."
+msgstr "Please set up your GoDaddy Email Marketing account in the %s."
+
+#: includes/widget.php:104
+msgid "settings page"
+msgstr "settings page"
+
+#. Plugin Name of the plugin/theme
+msgid "GoDaddy Email Marketing Signup Forms"
+msgstr "GoDaddy Email Marketing Signup Forms"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://gem.godaddy.com/"
+msgstr "https://gem.godaddy.com/"
+
+#. Description of the plugin/theme
+msgid ""
+"Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to "
+"set up, the plugin allows your site visitors to subscribe to your email "
+"lists."
+msgstr ""
+"Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to "
+"set up, the plugin allows your site visitors to subscribe to your email lists."
