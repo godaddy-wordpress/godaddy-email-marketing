@@ -179,7 +179,7 @@ class GEM_Official {
 	 */
 	public function enqueue() {
 
-		$suffix = SCRIPT_DEBUG ? '' : '.min';
+		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 		// Main JavaScript file.
 		wp_enqueue_script( 'gem-main', plugins_url( "js/gem{$suffix}.js", __FILE__ ), array( 'jquery' ), GEM_VERSION, true );
