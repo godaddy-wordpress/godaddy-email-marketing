@@ -29,8 +29,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->display = 'text_a';
 		ob_start();
 		GEM_Form_Fields::dispatch_field( $field );
-		$actual_output = ob_get_contents();
-		ob_end_clean();
+		$actual_output = ob_get_clean();
 		$this->assertContains( '<input type="text" name="the_name_a" id="form_1_the_name_a" class="gem-field" />', $actual_output );
 
 		$field = new stdClass();
@@ -42,8 +41,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->value = 1;
 		ob_start();
 		GEM_Form_Fields::dispatch_field( $field );
-		$actual_output = ob_get_contents();
-		ob_end_clean();
+		$actual_output = ob_get_clean();
 		$this->assertContains( '<input type="checkbox" value="1" name="the_name_a" id="form_1_the_name_a1" class="gem-checkbox" />', $actual_output );
 	}
 
@@ -55,8 +53,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->display = 'text_a';
 		ob_start();
 		GEM_Form_Fields::string( $field );
-		$actual_output = ob_get_contents();
-		ob_end_clean();
+		$actual_output = ob_get_clean();
 		$this->assertContains( '<label for="form_1_the_name_a">', $actual_output );
 		$this->assertContains( '<input type="text" name="the_name_a" id="form_1_the_name_a" class="gem-field a_sample_class" />', $actual_output );
 		remove_action( 'gem_required_field_class', array( $this, 'gem_required_field_class_callback' ) );
@@ -64,8 +61,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->required = true;
 		ob_start();
 		GEM_Form_Fields::string( $field );
-		$actual_output = ob_get_contents();
-		ob_end_clean();
+		$actual_output = ob_get_clean();
 		$this->assertContains( '<label for="form_1_the_name_a">', $actual_output );
 		$this->assertContains( '<span class="required">*</span>', $actual_output );
 		$this->assertContains( '<input type="text" name="the_name_a" id="form_1_the_name_a" class="gem-field gem-required" />', $actual_output );
@@ -80,8 +76,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->value = 'the_value';
 		ob_start();
 		GEM_Form_Fields::checkbox( $field );
-		$actual_output = ob_get_contents();
-		ob_end_clean();
+		$actual_output = ob_get_clean();
 		$this->assertContains( '<label for="form_1_the_name_athe_value">', $actual_output );
 		$this->assertContains( '<input type="checkbox" value="the_value" name="the_name_a" id="form_1_the_name_athe_value" class="gem-checkbox a_sample_class" />', $actual_output );
 		$this->assertContains( 'text_a', $actual_output );
@@ -90,8 +85,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->required = true;
 		ob_start();
 		GEM_Form_Fields::checkbox( $field );
-		$actual_output = ob_get_contents();
-		ob_end_clean();
+		$actual_output = ob_get_clean();
 		$this->assertContains( '<span class="required">*</span>', $actual_output );
 		$this->assertContains( '<label for="form_1_the_name_athe_value">', $actual_output );
 		$this->assertContains( '<input type="checkbox" value="the_value" name="the_name_a" id="form_1_the_name_athe_value" class="gem-checkbox gem-required" />', $actual_output );
@@ -108,8 +102,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->options = '["Option 1","Option 2"]';
 		ob_start();
 		GEM_Form_Fields::checkboxes( $field );
-		$actual_output = ob_get_contents();
-		ob_end_clean();
+		$actual_output = ob_get_clean();
 		$this->assertContains( '<label for="form_1_the_name_a">', $actual_output );
 		$this->assertContains( 'text_a', $actual_output );
 		$this->assertContains( '<input type="checkbox" id="form_1_the_name_a" name="the_name_a" value="Option 1"> Option 1<br>', $actual_output );
@@ -119,8 +112,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->required = true;
 		ob_start();
 		GEM_Form_Fields::checkboxes( $field );
-		$actual_output = ob_get_contents();
-		ob_end_clean();
+		$actual_output = ob_get_clean();
 		$this->assertContains( '<span class="required">*</span>', $actual_output );
 		$this->assertContains( '<label for="form_1_the_name_a">', $actual_output );
 		$this->assertContains( 'text_a', $actual_output );
@@ -138,8 +130,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->options = '["Option 1","Option 2"]';
 		ob_start();
 		GEM_Form_Fields::dropdown( $field );
-		$actual_output = ob_get_contents();
-		ob_end_clean();
+		$actual_output = ob_get_clean();
 		$this->assertContains( '<label for="form_1_the_name_a">', $actual_output );
 		$this->assertContains( 'text_a', $actual_output );
 		$this->assertContains( '<select id="form_1_the_name_a" name="the_name_a">', $actual_output );
@@ -150,8 +141,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->required = true;
 		ob_start();
 		GEM_Form_Fields::dropdown( $field );
-		$actual_output = ob_get_contents();
-		ob_end_clean();
+		$actual_output = ob_get_clean();
 		$this->assertContains( '<span class="required">*</span>', $actual_output );
 		$this->assertContains( '<label for="form_1_the_name_a">', $actual_output );
 		$this->assertContains( 'text_a', $actual_output );
@@ -170,8 +160,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->options = '["Option 1","Option 2"]';
 		ob_start();
 		GEM_Form_Fields::radio_buttons( $field );
-		$actual_output = ob_get_contents();
-		ob_end_clean();
+		$actual_output = ob_get_clean();
 		$this->assertContains( '<label for="form_1_the_name_a">', $actual_output );
 		$this->assertContains( 'text_a', $actual_output );
 		$this->assertContains( '<input type="radio" id="form_1_the_name_a" name="the_name_a" value="Option 1"> Option 1<br>', $actual_output );
@@ -181,8 +170,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->required = true;
 		ob_start();
 		GEM_Form_Fields::radio_buttons( $field );
-		$actual_output = ob_get_contents();
-		ob_end_clean();
+		$actual_output = ob_get_clean();
 		$this->assertContains( '<span class="required">*</span>', $actual_output );
 		$this->assertContains( '<label for="form_1_the_name_a">', $actual_output );
 		$this->assertContains( 'text_a', $actual_output );
@@ -199,8 +187,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->value = 'the_value';
 		ob_start();
 		GEM_Form_Fields::date( $field );
-		$actual_output = ob_get_contents();
-		ob_end_clean();
+		$actual_output = ob_get_clean();
 		$this->assertContains( '<label for="form_1_the_name_a">', $actual_output );
 		$this->assertContains( 'text_a', $actual_output );
 		$this->assertContains( '<select fingerprint="date" id="form_1_the_name_a" name="the_name_a">', $actual_output );
@@ -218,8 +205,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->required = true;
 		ob_start();
 		GEM_Form_Fields::date( $field );
-		$actual_output = ob_get_contents();
-		ob_end_clean();
+		$actual_output = ob_get_clean();
 		$this->assertContains( '<span class="required">*</span>', $actual_output );
 	}
 
@@ -232,8 +218,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->value = 'the_value';
 		ob_start();
 		GEM_Form_Fields::text_field( $field );
-		$actual_output = ob_get_contents();
-		ob_end_clean();
+		$actual_output = ob_get_clean();
 		$this->assertContains( '<label for="form_1_the_name_a">', $actual_output );
 		$this->assertContains( 'text_a', $actual_output );
 		$this->assertContains( '<input type="text" name="the_name_a" id="form_1_the_name_a" class="gem-field a_sample_class" />', $actual_output );
@@ -242,8 +227,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->required = true;
 		ob_start();
 		GEM_Form_Fields::text_field( $field );
-		$actual_output = ob_get_contents();
-		ob_end_clean();
+		$actual_output = ob_get_clean();
 		$this->assertContains( '<label for="form_1_the_name_a">', $actual_output );
 		$this->assertContains( 'text_a', $actual_output );
 		$this->assertContains( '<span class="required">*</span>', $actual_output );
