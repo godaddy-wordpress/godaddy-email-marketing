@@ -137,7 +137,8 @@ class GEM_Form_Fields {
 			$field_classes[] = 'gem-required';
 		}
 
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
+		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args );
+		?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
 
@@ -168,7 +169,8 @@ class GEM_Form_Fields {
 			$field_classes[] = 'gem-required';
 		}
 
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
+		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args );
+		?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) . $args->value ); ?>">
 
@@ -192,13 +194,7 @@ class GEM_Form_Fields {
 	 * @param array $args Settings field arguments.
 	 */
 	public static function checkboxes( $args ) {
-		$field_classes = array( 'gem-checkbox' );
-
-		if ( $args->required ) {
-			$field_classes[] = 'gem-required';
-		}
-
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
+		?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
 			<?php echo esc_html( $args->display ); ?>
@@ -230,13 +226,7 @@ class GEM_Form_Fields {
 	 * @param array $args Settings field arguments.
 	 */
 	public static function dropdown( $args ) {
-		$field_classes = array( 'gem-checkbox' );
-
-		if ( $args->required ) {
-			$field_classes[] = 'gem-required';
-		}
-
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
+		?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
 			<?php echo esc_html( $args->display ); ?>
@@ -270,13 +260,7 @@ class GEM_Form_Fields {
 	 * @param array $args Settings field arguments.
 	 */
 	public static function radio_buttons( $args ) {
-		$field_classes = array( 'gem-checkbox' );
-
-		if ( $args->required ) {
-			$field_classes[] = 'gem-required';
-		}
-
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
+		?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
 			<?php echo esc_html( $args->display ); ?>
@@ -297,7 +281,7 @@ class GEM_Form_Fields {
 		$trimmed_options = explode( ',', $options );
 
 		foreach ( $trimmed_options as $key => $value ) : ?>
-			<input type="checkbox" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo esc_attr( $args->name ); ?>" value="<?php echo esc_attr( $value ); ?>"> <?php echo esc_html( $value ); ?><br>
+			<input type="radio" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo esc_attr( $args->name ); ?>" value="<?php echo esc_attr( $value ); ?>"> <?php echo esc_html( $value ); ?><br>
 		<?php endforeach;
 	}
 
@@ -307,13 +291,7 @@ class GEM_Form_Fields {
 	 * @param array $args Settings field arguments.
 	 */
 	public static function date( $args ) {
-		$field_classes = array( 'gem-checkbox' );
-
-		if ( $args->required ) {
-			$field_classes[] = 'gem-required';
-		}
-
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
+		?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
 			<?php echo esc_html( $args->display ); ?>
@@ -377,7 +355,8 @@ class GEM_Form_Fields {
 			$field_classes[] = 'gem-required';
 		}
 
-		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args ); ?>
+		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args );
+		?>
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
 
