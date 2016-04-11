@@ -1,30 +1,26 @@
 #: godaddy-email-marketing.php:201
-#, fuzzy
 msgctxt "ajax response"
 msgid "Thank you for signing up!"
-msgstr "Thank you for signing up!"
+msgstr "Terima kasih sudah mendaftar!"
 
 #: godaddy-email-marketing.php:202
-#, fuzzy
 msgctxt "ajax response"
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr ""
-"Thank you for signing up! Please check your email to confirm your "
-"subscription."
+"Terima kasih sudah mendaftar! Harap periksa email Anda untuk mengonfirmasi "
+"langganan Anda."
 
 #: godaddy-email-marketing.php:203
-#, fuzzy
 msgctxt "ajax response"
 msgid "Oops! There was a problem. Please try again."
-msgstr "Oops! There was a problem. Please try again."
+msgstr "Ups! Ada masalah. Harap coba lagi."
 
 #: godaddy-email-marketing.php:204
-#, fuzzy
 msgctxt "ajax response"
 msgid "There was a problem. Please fill all required fields."
-msgstr "There was a problem. Please fill all required fields."
+msgstr "Ada masalah. Isi semua bidang yang wajib diisi."
 
 #: godaddy-email-marketing.php:216
 msgid "Settings"
@@ -32,96 +28,95 @@ msgstr "Pengaturan"
 
 #: godaddy-email-marketing.php:251
 msgid "GoDaddy Email Marketing is almost ready."
-msgstr "GoDaddy Email Marketing is almost ready."
+msgstr "GoDaddy Email Marketing hampir siap."
 
 #: godaddy-email-marketing.php:251
 msgid "You must enter your username &amp; API key for it to work."
-msgstr "You must enter your username &amp; API key for it to work."
+msgstr "Anda harus memasukkan nama pengguna &amp; kunci API agar akun dapat berfungsi."
 
 #: godaddy-email-marketing.php:252
 msgid "Let's do it!"
-msgstr "Let's do it!"
+msgstr "Mari kerjakan!"
 
 #: includes/render.php:59
 msgid "Powered by GoDaddy"
-msgstr "Powered by GoDaddy"
+msgstr "Didukung oleh GoDaddy"
 
 #: includes/render.php:308
 msgid "Month"
-msgstr ""
+msgstr "Month"
 
 #: includes/render.php:309
 msgid "January"
-msgstr ""
+msgstr "January"
 
 #: includes/render.php:310
 msgid "Febuary"
-msgstr ""
+msgstr "Febuary"
 
 #: includes/render.php:311
 msgid "March"
-msgstr ""
+msgstr "March"
 
 #: includes/render.php:312
 msgid "April"
-msgstr ""
+msgstr "April"
 
 #: includes/render.php:313
 msgid "May"
-msgstr ""
+msgstr "May"
 
 #: includes/render.php:314
 msgid "June"
-msgstr ""
+msgstr "June"
 
 #: includes/render.php:315
 msgid "July"
-msgstr ""
+msgstr "July"
 
 #: includes/render.php:316
 msgid "August"
-msgstr ""
+msgstr "August"
 
 #: includes/render.php:317
 msgid "September"
-msgstr ""
+msgstr "September"
 
 #: includes/render.php:318
 msgid "October"
-msgstr ""
+msgstr "October"
 
 #: includes/render.php:319
 msgid "November"
-msgstr ""
+msgstr "November"
 
 #: includes/render.php:320
 msgid "December"
-msgstr ""
+msgstr "December"
 
 #: includes/render.php:325
-#, fuzzy
 msgid "Day"
-msgstr "GoDaddy"
+msgstr "Day"
 
 #: includes/render.php:333
 msgid "Year"
-msgstr ""
+msgstr "Year"
 
 #: includes/settings.php:53 includes/settings.php:284
 msgid "GoDaddy Email Marketing Settings"
-msgstr "GoDaddy Email Marketing Settings"
+msgstr "Pengaturan GoDaddy Email Marketing"
 
 #: includes/settings.php:54
 msgid "GoDaddy Signup Forms"
-msgstr "GoDaddy Signup Forms"
+msgstr "Formulir Pendaftaran GoDaddy"
 
 #: includes/settings.php:102
 msgid "All transients were removed."
-msgstr "All transients were removed."
+msgstr "Semua data transien dihapus."
 
 #: includes/settings.php:112
 msgid "Forms list was successfully updated."
-msgstr "Forms list was successfully updated."
+msgstr "Daftar formulir berhasil diperbarui."
 
 #: includes/settings.php:171
 msgid "Overview"
@@ -140,30 +135,30 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"Once the plugin is activated, you will be able to select and insert any of "
-"your GoDaddy Email Marketing webforms right into your site. Setup is easy. "
-"Below, simply enter your account email address and API key (found in your "
-"GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
-"display a webform on your site:"
+"Setelah plugin diaktifkan, Anda dapat memilih dan memasukkan formulir web "
+"GoDaddy Email Marketing yang mana saja langsung ke situs Anda. Persiapannya "
+"mudah. Di bawah ini, masukkan saja alamat email dan kunci API akun Anda "
+"(ditemukan di area [%s] akun GoDaddy Email Marketing Anda). Berikut ini "
+"terdapat 3 macam cara untuk menampilkan formulir web pada situs Anda:"
 
 #: includes/settings.php:180
-#, fuzzy
 msgid ""
 "<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
 "called GoDaddy Email Marketing Form and drag it into the widget area of your "
 "choice. You can then add a title and select a form!"
 msgstr ""
 "<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
-"called “GoDaddy Email Marketing Form” and drag it into the widget area of "
-"your choice. You can then add a title and select a form!"
+"called GoDaddy Email Marketing Form and drag it into the widget area of your "
+"choice. You can then add a title and select a form!"
 
 #: includes/settings.php:181
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
-"<strong>Shortcode:</strong> You can add a form to any post or page by adding "
-"the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
+"<strong>Shortcode:</strong> Anda dapat menambahkan formulir ke posting atau "
+"halaman mana saja dengan menambahkan shortcode (msl. <code>[gem "
+"id=80326]</code>) di editor halaman/posting."
 
 #: includes/settings.php:183
 #, php-format
@@ -171,12 +166,12 @@ msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
 msgstr ""
-"<strong>Template Tag:</strong> You can add the following template tag into "
-"any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
+"<strong>Tag Templat:</strong> Anda dapat menambahkan tag templat berikut ini "
+"ke sembarang file Wordpress: <code>%s</code>. Msl. <code>%s</code>"
 
 #: includes/settings.php:193
 msgid "For more information:"
-msgstr "For more information:"
+msgstr "Untuk informasi lebih lengkap:"
 
 #: includes/settings.php:194
 msgid "GoDaddy"
@@ -188,77 +183,72 @@ msgstr "Bantuan GoDaddy"
 
 #: includes/settings.php:196
 msgid "Contact GoDaddy"
-msgstr "Contact GoDaddy"
+msgstr "Hubungi GoDaddy"
 
 #: includes/settings.php:222
 msgid "Account Details"
-msgstr "Account Details"
+msgstr "Detail Akun"
 
 #: includes/settings.php:229
 msgid "GoDaddy Email Marketing Username"
-msgstr "GoDaddy Email Marketing Username"
+msgstr "Nama Pengguna GoDaddy Email Marketing"
 
 #: includes/settings.php:236
 msgid "Your GoDaddy Email Marketing username (email address)"
-msgstr "Your GoDaddy Email Marketing username (email address)"
+msgstr "Nama pengguna (alamat email) GoDaddy Email Marketing"
 
 #: includes/settings.php:243
 msgid "GoDaddy Email Marketing API Key"
-msgstr "GoDaddy Email Marketing API Key"
+msgstr "Kunci API GoDaddy Email Marketing"
 
 #: includes/settings.php:250
-#, fuzzy
 msgctxt "settings page"
 msgid "Where can I find my API key?"
-msgstr "Where can I find my API key?"
+msgstr "Di mana saya dapat menemukan kunci API saya?"
 
 #: includes/settings.php:266
 msgid "Display \"Powered by GoDaddy\"?"
-msgstr "Display \"Powered by GoDaddy\"?"
+msgstr "Tampilkan \"Didukung oleh GoDaddy\"?"
 
 #: includes/settings.php:290
-#, fuzzy
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
-msgstr "Enjoy the GoDaddy Email Marketing Experience, first hand."
+msgstr "Nikmati Pengalaman GoDaddy Email Marketing, langsung."
 
 #: includes/settings.php:292
-#, fuzzy
 msgctxt "header note"
 msgid ""
 "Add your GoDaddy Email Marketing webform to your WordPress site! Easy to set "
 "up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
 msgstr ""
-"Add your GoDaddy Email Marketing webform to your WordPress site! Easy to set "
-"up, the GoDaddy Email Marketing plugin allows your site visitors to "
-"subscribe to your email list."
+"Tambahkan formulir web GoDaddy Email Marketing ke situs WordPress Anda! "
+"Plugin GoDaddy Email Marketing mudah disiapkan dan memungkinkan pengunjung "
+"situs Anda berlangganan dengan daftar email Anda."
 
 #: includes/settings.php:293
-#, fuzzy, php-format
+#, php-format
 msgctxt "header note"
 msgid ""
 "Don't have a GoDaddy Email Marketing account? Get one in less than 2 "
 "minutes! %s"
 msgstr ""
-"Don't have a GoDaddy Email Marketing account? Get one in less than 2 "
-"minutes! %s"
+"Tidak punya akun GoDaddy Email Marketing? Dapatkan satu akun kurang dari 2 "
+"menit! %s"
 
 #: includes/settings.php:293
-#, fuzzy
 msgctxt "header note"
 msgid "Sign Up Now"
 msgstr "Daftar Sekarang"
 
 #: includes/settings.php:305
-#, fuzzy
 msgctxt "save settings button"
 msgid "Save Settings"
-msgstr "Save Settings"
+msgstr "Simpan Pengaturan"
 
 #: includes/settings.php:307
 msgid "Available Forms"
-msgstr "Available Forms"
+msgstr "Formulir yang Tersedia"
 
 #: includes/settings.php:313 includes/settings.php:321
 msgid "Form Name"
@@ -266,7 +256,7 @@ msgstr "Nama Formulir"
 
 #: includes/settings.php:314 includes/settings.php:322
 msgid "Form ID"
-msgstr "Form ID"
+msgstr "ID Formulir"
 
 #: includes/settings.php:315 includes/settings.php:323
 msgid "Shortcode"
@@ -274,11 +264,11 @@ msgstr "Shortcode"
 
 #: includes/settings.php:349
 msgid "Opens in a new window"
-msgstr "Opens in a new window"
+msgstr "Terbuka di jendela baru"
 
 #: includes/settings.php:349
 msgid "Edit form in GoDaddy Email Marketing"
-msgstr "Edit form in GoDaddy Email Marketing"
+msgstr "Edit formulir di GoDaddy Email Marketing"
 
 #: includes/settings.php:352
 msgid "Preview"
@@ -286,15 +276,15 @@ msgstr "Pratinjau"
 
 #: includes/settings.php:366
 msgid "No forms found"
-msgstr "No forms found"
+msgstr "Tidak ada formulir yang ditemukan"
 
 #: includes/settings.php:377
 msgid "Not seeing your form?"
-msgstr "Not seeing your form?"
+msgstr "Tidak bisa melihat formulir Anda?"
 
 #: includes/settings.php:377
 msgid "Refresh Forms"
-msgstr "Refresh Forms"
+msgstr "Segarkan Formulir"
 
 #: includes/settings.php:382
 msgid "Debug"
@@ -302,47 +292,44 @@ msgstr "Debug"
 
 #: includes/settings.php:384
 msgid "Erase All Data"
-msgstr "Erase All Data"
+msgstr "Hapus Semua Data"
 
 #: includes/settings.php:385
 msgid "Erase Transients"
-msgstr "Erase Transients"
+msgstr "Hapus Data Transien"
 
 #: includes/settings.php:413
 msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr ""
-"The credentials are incorrect! Please verify that you have entered them "
-"correctly."
+"Kredensial salah! Harap verifikasi bahwa Anda telah memasukkannya dengan benar."
 
 #: includes/settings.php:420
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
-msgstr ""
-"Connection with GoDaddy Email Marketing has been established! You're all set!"
+msgstr "Koneksi dengan GoDaddy Email Marketing telah dibuat! Anda sudah siap!"
 
 #: includes/settings.php:426
 msgid "Please fill in the username and the API key first."
-msgstr "Please fill in the username and the API key first."
+msgstr "Harap isi nama pengguna dan kunci API terlebih dahulu."
 
 #: includes/settings.php:447
 msgid ""
 "Please enter your GoDaddy Email Marketing username and API Key in order to "
 "be able to create forms."
 msgstr ""
-"Please enter your GoDaddy Email Marketing username and API Key in order to "
-"be able to create forms."
+"Harap masukkan nama pengguna dan Kunci API GoDaddy Email Marketing Anda agar "
+"dapat membuat formulir."
 
 #: includes/widget.php:21 includes/widget.php:41
 msgid "GoDaddy Email Marketing Form"
-msgstr "GoDaddy Email Marketing Form"
+msgstr "Formulir GoDaddy Email Marketing"
 
 #: includes/widget.php:24
-#, fuzzy
 msgctxt "widget description"
 msgid "Embed any GoDaddy Email Marketing webform in your sidebar."
-msgstr "Embed any GoDaddy Email Marketing webform in your sidebar."
+msgstr "Sematkan sembarang formulir web GoDaddy Email Marketing di bilah samping Anda."
 
 #: includes/widget.php:97
 msgid "Title:"
@@ -350,33 +337,18 @@ msgstr "Judul:"
 
 #: includes/widget.php:103
 msgid "Additional Text:"
-msgstr "Additional Text:"
+msgstr "Teks Tambahan:"
 
 #: includes/widget.php:112
 msgid "Form:"
-msgstr "Form:"
+msgstr "Formulir:"
 
 #: includes/widget.php:125
-#, fuzzy, php-format
+#, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
-msgstr "Please set up your GoDaddy Email Marketing account in the %s."
+msgstr "Harap buat akun GoDaddy Email Marketing Anda di %s."
 
 #: includes/widget.php:129
 msgid "settings page"
-msgstr "settings page"
-
-#~ msgid "GoDaddy Email Marketing Signup Forms"
-#~ msgstr "GoDaddy Email Marketing Signup Forms"
-
-#~ msgid "https://gem.godaddy.com/"
-#~ msgstr "https://gem.godaddy.com/"
-
-#~ msgid ""
-#~ "Add the GoDaddy Email Marketing signup form to your WordPress site! Easy "
-#~ "to set up, the plugin allows your site visitors to subscribe to your "
-#~ "email lists."
-#~ msgstr ""
-#~ "Add the GoDaddy Email Marketing signup form to your WordPress site! Easy "
-#~ "to set up, the plugin allows your site visitors to subscribe to your "
-#~ "email lists."
+msgstr "halaman pengaturan"
