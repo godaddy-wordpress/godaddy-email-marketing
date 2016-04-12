@@ -81,8 +81,9 @@ You can find your API key in the Settings section of your GoDaddy Email Marketin
 ## Changelog ##
 
 ### 1.0.4 ###
+* Localization
 * Code style improvements
-* Added unit tests
+* Unit tests
 
 ### 1.0.3 ###
 * Added support for web form fancy fields

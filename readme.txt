@@ -80,15 +80,16 @@ You can find your API key in the Settings section of your GoDaddy Email Marketin
 == Screenshots ==
 
 1. Settings screen.
-2. A full list of your GoDaddy Email Marketing Webforms, with ready shortcodes
-3. The widget, on the widgets page
-4. The widget, on the front-end
+2. A full list of your GoDaddy Email Marketing Webforms, with ready shortcodes.
+3. The widget, on the widgets page.
+4. The widget, on the front-end.
 
 == Changelog ==
 
 = 1.0.4 =
+* Localization
 * Code style improvements
-* Added unit tests
+* Unit tests
 
 = 1.0.3 =
 * Added support for web form fancy fields
