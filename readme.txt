@@ -1,6 +1,6 @@
 === GoDaddy Email Marketing ===
-Contributors: godaddy, madmimi, humanmade, valendesigns, lukecarbis, marcin.lawrowski, xwp
-Tags: forms, newsletter, opt-in, email marketing, signup, subscribe
+Contributors: godaddy, humanmade, xwp, fjarrett, jonathanbardo
+Tags: godaddy, forms, newsletter, opt-in, email, marketing, mailing list, signup, subscribe, widget
 Requires at least: 3.8
 Tested up to: 4.5
 Stable tag: 1.0.4
@@ -20,6 +20,20 @@ Once the plugin is activated, you can select and insert any of your GoDaddy Emai
 * Automatically add new forms for users to sign up to an email list of your choice
 * Insert unlimited signup forms using the widget, shortcode, or template tag
 * Use quick links to edit and preview your form in GoDaddy Email Marketing
+
+**Languages Supported:**
+
+* English
+* Deutsch
+* Español
+* Español de México
+* Français
+* Português do Brasil
+* Português
+
+**Find a bug?**
+
+Please fill out an issue [here](https://github.com/godaddy/wp-godaddy-email-marketing/issues).
 
 == Installation ==
 

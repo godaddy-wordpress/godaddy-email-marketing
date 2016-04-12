@@ -3,14 +3,14 @@
 
 Add the GoDaddy Email Marketing plugin to your WordPress site! Easy to set up, the plugin allows your site visitors to subscribe to your email lists.
 
-**Contributors:** [godaddy](https://profiles.wordpress.org/godaddy), [madmimi](https://profiles.wordpress.org/madmimi), [humanmade](https://profiles.wordpress.org/humanmade), [valendesigns](https://profiles.wordpress.org/valendesigns), [lukecarbis](https://profiles.wordpress.org/lukecarbis), [marcin.lawrowski](https://profiles.wordpress.org/marcin.lawrowski), [xwp](https://profiles.wordpress.org/xwp)  
-**Tags:** [forms](https://wordpress.org/plugins/tags/forms), [newsletter](https://wordpress.org/plugins/tags/newsletter), [opt-in](https://wordpress.org/plugins/tags/opt-in), [email marketing](https://wordpress.org/plugins/tags/email marketing), [signup](https://wordpress.org/plugins/tags/signup), [subscribe](https://wordpress.org/plugins/tags/subscribe)  
+**Contributors:** [godaddy](https://profiles.wordpress.org/godaddy), [humanmade](https://profiles.wordpress.org/humanmade), [xwp](https://profiles.wordpress.org/xwp), [fjarrett](https://profiles.wordpress.org/fjarrett), [jonathanbardo](https://profiles.wordpress.org/jonathanbardo)  
+**Tags:** [godaddy](https://wordpress.org/plugins/tags/godaddy), [forms](https://wordpress.org/plugins/tags/forms), [newsletter](https://wordpress.org/plugins/tags/newsletter), [opt-in](https://wordpress.org/plugins/tags/opt-in), [email](https://wordpress.org/plugins/tags/email), [marketing](https://wordpress.org/plugins/tags/marketing), [mailing list](https://wordpress.org/plugins/tags/mailing list), [signup](https://wordpress.org/plugins/tags/signup), [subscribe](https://wordpress.org/plugins/tags/subscribe), [widget](https://wordpress.org/plugins/tags/widget)  
 **Requires at least:** 3.8  
 **Tested up to:** 4.5  
 **Stable tag:** 1.0.4  
 **License:** [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)  
 
-[![Build Status](https://travis-ci.org/godaddy/wp-godaddy-email-marketing.svg?branch=master)](https://travis-ci.org/godaddy/wp-godaddy-email-marketing) [![Coverage Status](https://coveralls.io/repos/godaddy/wp-godaddy-email-marketing/badge.svg?branch=master)](https://coveralls.io/github/godaddy/wp-godaddy-email-marketing) 
+[![Build Status](https://travis-ci.org/godaddy/wp-godaddy-email-marketing.svg?branch=master)](https://travis-ci.org/godaddy/wp-godaddy-email-marketing) [![Coverage Status](https://coveralls.io/repos/godaddy/wp-godaddy-email-marketing/badge.svg?branch=master)](https://coveralls.io/github/godaddy/wp-godaddy-email-marketing) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com) 
 
 ## Description ##
 
@@ -23,6 +23,20 @@ Once the plugin is activated, you can select and insert any of your GoDaddy Emai
 * Automatically add new forms for users to sign up to an email list of your choice
 * Insert unlimited signup forms using the widget, shortcode, or template tag
 * Use quick links to edit and preview your form in GoDaddy Email Marketing
+
+**Languages Supported:**
+
+* English
+* Deutsch
+* Español
+* Español de México
+* Français
+* Português do Brasil
+* Português
+
+**Find a bug?**
+
+Please fill out an issue [here](https://github.com/godaddy/wp-godaddy-email-marketing/issues).
 
 ## Installation ##
 
