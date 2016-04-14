@@ -42,11 +42,11 @@ msgstr "GoDaddy 제공"
 
 #: includes/render.php:308
 msgid "Month"
-msgstr "Month"
+msgstr "월"
 
 #: includes/render.php:309
 msgid "January"
-msgstr "January"
+msgstr "1월"
 
 #: includes/render.php:310
 msgid "Febuary"
@@ -54,51 +54,51 @@ msgstr "Febuary"
 
 #: includes/render.php:311
 msgid "March"
-msgstr "March"
+msgstr "3월"
 
 #: includes/render.php:312
 msgid "April"
-msgstr "April"
+msgstr "4월"
 
 #: includes/render.php:313
 msgid "May"
-msgstr "May"
+msgstr "5월"
 
 #: includes/render.php:314
 msgid "June"
-msgstr "June"
+msgstr "6월"
 
 #: includes/render.php:315
 msgid "July"
-msgstr "July"
+msgstr "7월"
 
 #: includes/render.php:316
 msgid "August"
-msgstr "August"
+msgstr "8월"
 
 #: includes/render.php:317
 msgid "September"
-msgstr "September"
+msgstr "9월"
 
 #: includes/render.php:318
 msgid "October"
-msgstr "October"
+msgstr "10월"
 
 #: includes/render.php:319
 msgid "November"
-msgstr "November"
+msgstr "11월"
 
 #: includes/render.php:320
 msgid "December"
-msgstr "December"
+msgstr "12월"
 
 #: includes/render.php:325
 msgid "Day"
-msgstr "Day"
+msgstr "일"
 
 #: includes/render.php:333
 msgid "Year"
-msgstr "Year"
+msgstr "년"
 
 #: includes/settings.php:53 includes/settings.php:284
 msgid "GoDaddy Email Marketing Settings"

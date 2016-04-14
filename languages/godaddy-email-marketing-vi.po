@@ -43,11 +43,11 @@ msgstr "Được GoDaddy cung cấp"
 
 #: includes/render.php:308
 msgid "Month"
-msgstr "Month"
+msgstr "tháng"
 
 #: includes/render.php:309
 msgid "January"
-msgstr "January"
+msgstr "Tháng 1"
 
 #: includes/render.php:310
 msgid "Febuary"
@@ -55,51 +55,51 @@ msgstr "Febuary"
 
 #: includes/render.php:311
 msgid "March"
-msgstr "March"
+msgstr "Tháng 3"
 
 #: includes/render.php:312
 msgid "April"
-msgstr "April"
+msgstr "Tháng 4"
 
 #: includes/render.php:313
 msgid "May"
-msgstr "May"
+msgstr "Tháng 5"
 
 #: includes/render.php:314
 msgid "June"
-msgstr "June"
+msgstr "Tháng 6"
 
 #: includes/render.php:315
 msgid "July"
-msgstr "July"
+msgstr "Tháng 7"
 
 #: includes/render.php:316
 msgid "August"
-msgstr "August"
+msgstr "Tháng 8"
 
 #: includes/render.php:317
 msgid "September"
-msgstr "September"
+msgstr "Tháng 9"
 
 #: includes/render.php:318
 msgid "October"
-msgstr "October"
+msgstr "Tháng 10"
 
 #: includes/render.php:319
 msgid "November"
-msgstr "November"
+msgstr "Tháng 11"
 
 #: includes/render.php:320
 msgid "December"
-msgstr "December"
+msgstr "Tháng 12"
 
 #: includes/render.php:325
 msgid "Day"
-msgstr "Day"
+msgstr "Ngày"
 
 #: includes/render.php:333
 msgid "Year"
-msgstr "Year"
+msgstr "năm"
 
 #: includes/settings.php:53 includes/settings.php:284
 msgid "GoDaddy Email Marketing Settings"

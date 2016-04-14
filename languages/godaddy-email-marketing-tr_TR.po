@@ -44,11 +44,11 @@ msgstr "GoDaddy Destekli"
 
 #: includes/render.php:308
 msgid "Month"
-msgstr "Month"
+msgstr "Ay"
 
 #: includes/render.php:309
 msgid "January"
-msgstr "January"
+msgstr "Ocak"
 
 #: includes/render.php:310
 msgid "Febuary"
@@ -56,51 +56,51 @@ msgstr "Febuary"
 
 #: includes/render.php:311
 msgid "March"
-msgstr "March"
+msgstr "Mart"
 
 #: includes/render.php:312
 msgid "April"
-msgstr "April"
+msgstr "Nisan"
 
 #: includes/render.php:313
 msgid "May"
-msgstr "May"
+msgstr "Mayıs"
 
 #: includes/render.php:314
 msgid "June"
-msgstr "June"
+msgstr "Haziran"
 
 #: includes/render.php:315
 msgid "July"
-msgstr "July"
+msgstr "Temmuz"
 
 #: includes/render.php:316
 msgid "August"
-msgstr "August"
+msgstr "Ağustos"
 
 #: includes/render.php:317
 msgid "September"
-msgstr "September"
+msgstr "Eylül"
 
 #: includes/render.php:318
 msgid "October"
-msgstr "October"
+msgstr "Ekim"
 
 #: includes/render.php:319
 msgid "November"
-msgstr "November"
+msgstr "Kasım"
 
 #: includes/render.php:320
 msgid "December"
-msgstr "December"
+msgstr "Aralık"
 
 #: includes/render.php:325
 msgid "Day"
-msgstr "Day"
+msgstr "Gün"
 
 #: includes/render.php:333
 msgid "Year"
-msgstr "Year"
+msgstr "Yıl"
 
 #: includes/settings.php:53 includes/settings.php:284
 msgid "GoDaddy Email Marketing Settings"
