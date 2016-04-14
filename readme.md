@@ -8,7 +8,7 @@ Add the GoDaddy Email Marketing plugin to your WordPress site! Easy to set up, t
 **Tags:** [godaddy](https://wordpress.org/plugins/tags/godaddy), [forms](https://wordpress.org/plugins/tags/forms), [newsletter](https://wordpress.org/plugins/tags/newsletter), [opt-in](https://wordpress.org/plugins/tags/opt-in), [email](https://wordpress.org/plugins/tags/email), [marketing](https://wordpress.org/plugins/tags/marketing), [mailing list](https://wordpress.org/plugins/tags/mailing list), [signup](https://wordpress.org/plugins/tags/signup), [subscribe](https://wordpress.org/plugins/tags/subscribe), [widget](https://wordpress.org/plugins/tags/widget)  
 **Requires at least:** 3.8  
 **Tested up to:** 4.5  
-**Stable tag:** 1.0.4  
+**Stable tag:** 1.0.5  
 **License:** [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)  
 
 [![Build Status](https://travis-ci.org/godaddy/wp-godaddy-email-marketing.svg?branch=master)](https://travis-ci.org/godaddy/wp-godaddy-email-marketing) [![Coverage Status](https://coveralls.io/repos/godaddy/wp-godaddy-email-marketing/badge.svg?branch=master)](https://coveralls.io/github/godaddy/wp-godaddy-email-marketing) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com) 
@@ -99,6 +99,9 @@ You can find your API key in the Settings section of your GoDaddy Email Marketin
 ![The widget, on the front-end.](assets/screenshot-4.png)
 
 ## Changelog ##
+
+### 1.0.5 ###
+* Refresh branding
 
 ### 1.0.4 ###
 * Localization
