@@ -50,7 +50,7 @@ msgstr "1월"
 
 #: includes/render.php:310
 msgid "Febuary"
-msgstr "Febuary"
+msgstr "2월"
 
 #: includes/render.php:311
 msgid "March"
@@ -143,9 +143,8 @@ msgid ""
 "called GoDaddy Email Marketing Form and drag it into the widget area of your "
 "choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
-"called GoDaddy Email Marketing Form and drag it into the widget area of your "
-"choice. You can then add a title and select a form!"
+"<strong>위젯:</strong> 모양 &rarr; 위젯으로 이동하여 “GoDaddy 이메일 마케팅 폼\" 위젯을 찾아, 원하는 위젯 "
+"영역으로 끌어 넣습니다. 제목을 추가하고 폼을 선택합니다!"
 
 #: includes/settings.php:181
 msgid ""

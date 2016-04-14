@@ -52,7 +52,7 @@ msgstr "Enero"
 
 #: includes/render.php:310
 msgid "Febuary"
-msgstr "Febuary"
+msgstr "Pebrero"
 
 #: includes/render.php:311
 msgid "March"
@@ -140,7 +140,7 @@ msgstr ""
 "iyong site. Madali ang pagse-setup. Sa ibaba, basta't ilagay mo lang ang "
 "email address ng iyong account at API key (makikita sa iyong Email sa "
 "Marketing ng GoDaddy na account [%s] area). Heto ang 3 paraan kung paano mo "
-"mapapakita ang isang webform sa iyong site:"
+"mapapakita ang isang webform sa iyong site:\n"
 
 #: includes/settings.php:180
 msgid ""
@@ -148,9 +148,9 @@ msgid ""
 "called GoDaddy Email Marketing Form and drag it into the widget area of your "
 "choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
-"called GoDaddy Email Marketing Form and drag it into the widget area of your "
-"choice. You can then add a title and select a form!"
+"<strong>Widget:</strong> Pumunta sa Appearance &rarr; widgets at hanapin ang "
+"widget na tinatawag na Form ng Marketing sa Email ng GoDaddy at i-drag ito sa "
+"lugar ng widget na gusto mo. Maaari ka nang magdagdag ng pamagat at pumili ng form!"
 
 #: includes/settings.php:181
 msgid ""

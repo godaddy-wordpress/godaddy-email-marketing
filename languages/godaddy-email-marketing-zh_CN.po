@@ -50,7 +50,7 @@ msgstr "1 月"
 
 #: includes/render.php:310
 msgid "Febuary"
-msgstr "Febuary"
+msgstr "二月"
 
 #: includes/render.php:311
 msgid "March"
@@ -142,9 +142,8 @@ msgid ""
 "called GoDaddy Email Marketing Form and drag it into the widget area of your "
 "choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
-"called GoDaddy Email Marketing Form and drag it into the widget area of your "
-"choice. You can then add a title and select a form!"
+"<strong>小组件：</strong> 转到“外观” &rarr; 小组件，找到名为“GoDaddy "
+"电邮营销表单”的小组件，然后拖动到您选择的小组件区域中。 然后您就能添加标题和选择表单了！"
 
 #: includes/settings.php:181
 msgid ""
