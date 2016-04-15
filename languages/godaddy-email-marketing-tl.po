@@ -149,7 +149,7 @@ msgid ""
 "choice. You can then add a title and select a form!"
 msgstr ""
 "<strong>Widget:</strong> Pumunta sa Appearance &rarr; widgets at hanapin ang "
-"widget na tinatawag na Form ng Marketing sa Email ng GoDaddy at i-drag ito sa "
+"widget na tinatawag na Form ng Email sa Marketing ng GoDaddy at i-drag ito sa "
 "lugar ng widget na gusto mo. Maaari ka nang magdagdag ng pamagat at pumili ng form!"
 
 #: includes/settings.php:181
