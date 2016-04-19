@@ -91,7 +91,7 @@ You can find your API key in the Settings section of your GoDaddy Email Marketin
 == Changelog ==
 
 = 1.0.6 =
-* Fixed an issue with `gem_form()` not returning when `$echo` is `false`, which effected rendering the `gem` shortcode.
+* Fixed shortcode display and localization bugs [#12](https://github.com/godaddy/wp-godaddy-email-marketing/pull/12)
 
 = 1.0.5 =
 * Refresh branding
