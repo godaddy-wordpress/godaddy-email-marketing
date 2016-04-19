@@ -163,4 +163,28 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$this->assertContains( '<select name="widget-gem-form[][form]" id="widget-gem-form--form" class="widefat">', $actual_output );
 		$this->assertContains( '<option value="the_field_id" >the_field_name</option>', $actual_output );
 	}
+
+	public function test_form_fails_message() {
+		$widget = new GEM_Form_Widget();
+		$user_name = 'the_user';
+		$api_key = 'the_api_key';
+		$sample_data = new stdClass();
+		$sample_data->signups = array();
+
+		update_option( 'gem-settings', array( 'api-key' => $api_key, 'username' => $user_name ) );
+		set_transient( 'gem-' . $user_name . '-lists', $sample_data );
+
+		$instance = array(
+			'title' => 'the_title',
+			'text' => 'the_text',
+			'form' => 123,
+		);
+		ob_start();
+		$widget->form( $instance );
+		$actual_output = ob_get_contents();
+		ob_end_clean();
+		delete_transient( 'gem-' . $user_name . '-lists' );
+
+		$this->assertContains( 'Please set up your GoDaddy Email Marketing account in the', $actual_output );
+	}
 }

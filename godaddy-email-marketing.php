@@ -266,4 +266,4 @@ class GEM_Official {
 function gem() {
 	return GEM_Official::instance();
 }
-add_action( 'plugins_loaded', 'gem' );
+add_action( 'plugins_loaded', 'gem', 1 );
