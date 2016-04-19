@@ -198,6 +198,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertContains( '<input type="checkbox" name="gem-settings[display_powered_by]" id="gem-settings[display_powered_by]" value="1"  />', $actual_output );
 		$this->assertContains( '<a href="?action=debug-reset" class="button-secondary">Erase All Data</a>', $actual_output );
 		$this->assertContains( '<a href="?action=debug-reset-transients" class="button-secondary">Erase Transients</a>', $actual_output );
+		$this->assertContains( '<a target="_blank" href="https://gem.godaddy.com/promotions" class="button-secondary">Create a New Campaign</a>', $actual_output );
 	}
 
 	public function test_display_settings_page_forms() {

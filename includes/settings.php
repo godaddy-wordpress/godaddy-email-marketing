@@ -375,6 +375,9 @@ class GEM_Settings {
 
 				<p class="description">
 					<?php esc_html_e( 'Not seeing your form?', 'godaddy-email-marketing' ); ?> <a href="<?php echo esc_url( add_query_arg( 'action', 'refresh' ) ); ?>" class="button"><?php esc_html_e( 'Refresh Forms', 'godaddy-email-marketing' ); ?></a>
+					
+					<?php echo sprintf( '<a target="_blank" href="https://gem.godaddy.com/promotions" class="button-secondary">%s</a>', esc_html_x( 'Create a New Campaign', 'new campaign button', 'godaddy-email-marketing' ) ); ?>
+					
 				</p>
 
 				<?php if ( $this->gem->debug ) : ?>
