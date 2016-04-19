@@ -42,6 +42,12 @@ class GEM_Shortcode {
 function gem_form( $id, $echo = true ) {
 	if ( class_exists( 'GEM_Form_Renderer', false ) ) {
 		$renderer = new GEM_Form_Renderer();
-		$renderer->process( $id, $echo );
+		$form = $renderer->process( $id, false );
+
+		if ( ! $echo ) {
+			return $form;
+		}
+
+		echo $form;
 	}
 }
