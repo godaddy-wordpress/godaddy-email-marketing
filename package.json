@@ -1,8 +1,12 @@
 {
   "name": "GoDaddy-Email-Marketing-Signup-Forms",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "GoDaddy",
   "license": "GPL-2.0+",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/godaddy/wp-godaddy-email-marketing.git"
+  },
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-cssmin": "~0.14.0",
