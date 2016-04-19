@@ -92,6 +92,7 @@ You can find your API key in the Settings section of your GoDaddy Email Marketin
 
 = 1.0.6 =
 * Fixed shortcode display and localization bugs [#12](https://github.com/godaddy/wp-godaddy-email-marketing/pull/12)
+* Localization updates
 
 = 1.0.5 =
 * Refresh branding
