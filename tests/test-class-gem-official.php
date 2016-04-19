@@ -85,13 +85,13 @@ class Test_GEM_Official extends WP_UnitTestCase {
 	}
 
 	public function test_i18n() {
+		unload_textdomain( 'godaddy-email-marketing' );
 		$this->assertFalse( is_textdomain_loaded( 'godaddy-email-marketing' ) );
-		$this->assertFalse( unload_textdomain( 'godaddy-email-marketing' ) );
 
-		add_filter( 'locale', array( $this, 'locale' ) );
+		add_filter( 'plugin_locale', array( $this, 'locale' ) );
 		$this->instance->i18n();
 		$this->assertTrue( is_textdomain_loaded( 'godaddy-email-marketing' ) );
-		remove_filter( 'locale', array( $this, 'locale' ) );
+		remove_filter( 'plugin_locale', array( $this, 'locale' ) );
 
 		$this->assertTrue( unload_textdomain( 'godaddy-email-marketing' ) );
 		$this->assertFalse( is_textdomain_loaded( 'godaddy-email-marketing' ) );
