@@ -50,7 +50,7 @@ msgstr "1月"
 
 #: includes/render.php:310
 msgid "Febuary"
-msgstr "Febuary"
+msgstr "2月"
 
 #: includes/render.php:311
 msgid "March"
@@ -143,9 +143,8 @@ msgid ""
 "called GoDaddy Email Marketing Form and drag it into the widget area of your "
 "choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
-"called GoDaddy Email Marketing Form and drag it into the widget area of your "
-"choice. You can then add a title and select a form!"
+"<strong>ウィジェット：</strong> 外観 &rarr; "
+"ウィジェットへ進んで「GoDaddyメールマーケティングフォーム」というウィジェットを見つけ、任意のウィジェットエリアへドラッグしてください。 次にタイトルを追加してフォームを選択します。"
 
 #: includes/settings.php:181
 msgid ""

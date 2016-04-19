@@ -50,7 +50,7 @@ msgstr "มกราคม"
 
 #: includes/render.php:310
 msgid "Febuary"
-msgstr "Febuary"
+msgstr "กุมภาพันธ์"
 
 #: includes/render.php:311
 msgid "March"
@@ -145,9 +145,9 @@ msgid ""
 "called GoDaddy Email Marketing Form and drag it into the widget area of your "
 "choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
-"called GoDaddy Email Marketing Form and drag it into the widget area of your "
-"choice. You can then add a title and select a form!"
+"<strong>วิดเจ็ท:</strong> ไปที่ Appearance &rarr; widgets แล้วหาวิดเจ็ทชื่อ "
+"“แบบฟอร์มการตลาดทางอีเมลของ GoDaddy” แล้วลากลงในส่วนวิดเจ็ทที่คุณต้องการ "
+"จากนั้น คุณสามารถเพิ่มชื่อและเลือกแบบฟอร์ม!"
 
 #: includes/settings.php:181
 msgid ""

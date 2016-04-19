@@ -50,7 +50,7 @@ msgstr "Tammikuu"
 
 #: includes/render.php:310
 msgid "Febuary"
-msgstr "Febuary"
+msgstr "Helmikuu"
 
 #: includes/render.php:311
 msgid "March"
@@ -145,9 +145,9 @@ msgid ""
 "called GoDaddy Email Marketing Form and drag it into the widget area of your "
 "choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
-"called GoDaddy Email Marketing Form and drag it into the widget area of your "
-"choice. You can then add a title and select a form!"
+"<strong>Widget (pienoissovellus):</strong> Siirry kohtaan Ulkoasu &rarr; "
+"Widgetit, etsi widget nimeltä “GoDaddy-sähköpostimarkkinointilomake” ja vedä "
+"se haluamaasi widget-osioon. Tämän jälkeen voit lisätä nimen ja valita lomakkeen!"
 
 #: includes/settings.php:181
 msgid ""

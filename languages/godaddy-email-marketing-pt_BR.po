@@ -51,7 +51,7 @@ msgstr "Janeiro"
 
 #: includes/render.php:310
 msgid "Febuary"
-msgstr "Febuary"
+msgstr "Fevereiro"
 
 #: includes/render.php:311
 msgid "March"
@@ -146,9 +146,9 @@ msgid ""
 "called GoDaddy Email Marketing Form and drag it into the widget area of your "
 "choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
-"called GoDaddy Email Marketing Form and drag it into the widget area of your "
-"choice. You can then add a title and select a form!"
+"<strong>Widget:</strong> Acesse Aparência &rarr; Widgets e encontre o widget "
+"denominado \"Formulário do GoDaddy Email Marketing\". Arraste-o para a área "
+"de widgets de sua preferência. Em seguida, adicione um título e selecione um formulário."
 
 #: includes/settings.php:181
 msgid ""
