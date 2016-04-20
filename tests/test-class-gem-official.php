@@ -84,6 +84,26 @@ class Test_GEM_Official extends WP_UnitTestCase {
 		$this->assertInstanceOf( 'GEM_Settings', $second_instance->settings );
 	}
 
+	public function test_i18n() {
+		unload_textdomain( 'godaddy-email-marketing' );
+		$this->assertFalse( is_textdomain_loaded( 'godaddy-email-marketing' ) );
+
+		add_filter( 'plugin_locale', array( $this, 'locale' ) );
+		$this->instance->i18n();
+		$this->assertTrue( is_textdomain_loaded( 'godaddy-email-marketing' ) );
+		remove_filter( 'plugin_locale', array( $this, 'locale' ) );
+
+		$this->assertTrue( unload_textdomain( 'godaddy-email-marketing' ) );
+		$this->assertFalse( is_textdomain_loaded( 'godaddy-email-marketing' ) );
+	}
+
+	/**
+	 * Filter to set the locale manually.
+	 */
+	public function locale( $locale ) {
+		return 'es_ES';
+	}
+
 	public function test_register_shortcode() {
 		global $shortcode_tags;
 

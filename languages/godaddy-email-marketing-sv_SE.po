@@ -27,7 +27,7 @@ msgstr "Inställningar"
 
 #: godaddy-email-marketing.php:251
 msgid "GoDaddy Email Marketing is almost ready."
-msgstr "E-postbaserad marknadsföring från GoDaddy är nästan redo."
+msgstr "GoDaddy e-postmarknadsföring är nästan redo."
 
 #: godaddy-email-marketing.php:251
 msgid "You must enter your username &amp; API key for it to work."
@@ -51,7 +51,7 @@ msgstr "Januari"
 
 #: includes/render.php:310
 msgid "Febuary"
-msgstr "Febuary"
+msgstr "Febuari"
 
 #: includes/render.php:311
 msgid "March"
@@ -103,7 +103,7 @@ msgstr "År"
 
 #: includes/settings.php:53 includes/settings.php:284
 msgid "GoDaddy Email Marketing Settings"
-msgstr "Inställningar för e-postbaserad marknadsföring från GoDaddy"
+msgstr "Inställningar för GoDaddy e-postmarknadsföring"
 
 #: includes/settings.php:54
 msgid "GoDaddy Signup Forms"
@@ -135,11 +135,11 @@ msgid ""
 "display a webform on your site:"
 msgstr ""
 "När insticksprogrammet aktiveras kommer du att kunna välja och infoga vilket "
-"webbformulär som helst i din e-postbaserade marknadsföring från GoDaddy "
-"direkt in i webbplatsen. Konfigurationen är enkel. Ange e-postadressen och "
-"API-nyckeln för ditt konto (finns i området för ditt konto för e-postbaserad "
-"marknadsföring från GoDaddy [%s]). Det finns tre sätt att visa ett "
-"webbformulär på din webbplats:"
+"som helst av dina webbformulär för GoDaddy e-postmarknadsföring direkt i "
+"webbplatsen. Konfigurationen är enkel. Ange e-postadressen och API-nyckeln "
+"för ditt konto (finns i området för ditt konto för GoDaddy "
+"e-postmarknadsföring [%s]). Det finns tre sätt att visa ett webbformulär på "
+"din webbplats:"
 
 #: includes/settings.php:180
 msgid ""
@@ -147,9 +147,9 @@ msgid ""
 "called GoDaddy Email Marketing Form and drag it into the widget area of your "
 "choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
-"called GoDaddy Email Marketing Form and drag it into the widget area of your "
-"choice. You can then add a title and select a form!"
+"<strong>Widget:</strong> Gå till Utseende &rarr; widgetar och hitta widgeten "
+"som heter Formulär för GoDaddy e-postmarknadsföring och dra det in i valfritt "
+"widgetområde. Sedan kan du lägga till en titel och välja ett formulär!"
 
 #: includes/settings.php:181
 msgid ""
@@ -171,7 +171,7 @@ msgstr ""
 
 #: includes/settings.php:193
 msgid "For more information:"
-msgstr "För mer information: "
+msgstr "För mer information:"
 
 #: includes/settings.php:194
 msgid "GoDaddy"
@@ -191,15 +191,15 @@ msgstr "Kontouppgifter"
 
 #: includes/settings.php:229
 msgid "GoDaddy Email Marketing Username"
-msgstr "Användarnamn för e-postbaserad marknadsföring från GoDaddy"
+msgstr "Användarnamn för GoDaddy Email Marketing"
 
 #: includes/settings.php:236
 msgid "Your GoDaddy Email Marketing username (email address)"
-msgstr "Ditt användarnamn för e-postbaserad marknadsföring från GoDaddy (e-postadress)"
+msgstr "Ditt användarnamn (e-postadress) för GoDaddy e-postmarknadsföring"
 
 #: includes/settings.php:243
 msgid "GoDaddy Email Marketing API Key"
-msgstr "API-nyckel för e-postbaserad marknadsföring från GoDaddy"
+msgstr "API-nyckel för GoDaddy e-postmarknadsföring"
 
 #: includes/settings.php:250
 msgctxt "settings page"
@@ -213,7 +213,7 @@ msgstr "Visa \"Drivs av GoDaddy\"?"
 #: includes/settings.php:290
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
-msgstr "Dra nytta av e-postbaserad marknadsföring från GoDaddy."
+msgstr "Dra nytta av GoDaddy e-postmarknadsföring."
 
 #: includes/settings.php:292
 msgctxt "header note"
@@ -222,10 +222,10 @@ msgid ""
 "up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
 msgstr ""
-"Lägg till ditt webbformulär för e-postbaserad marknadsföring från GoDaddy på "
-"din WordPress-webbplats! Insticksprogrammet för e-postbaserad marknadsföring "
-"från GoDaddy är enkelt att konfigurera och gör det möjligt för dina besökare "
-"att prenumerera på din e-postlista."
+"Lägg till ditt webbformulär för GoDaddy e-postmarknadsföring på din "
+"WordPress-webbplats! Insticksprogrammet för GoDaddy e-postmarknadsföring är "
+"enkelt att konfigurera och gör det möjligt för dina besökare att prenumerera "
+"på din e-postlista."
 
 #: includes/settings.php:293
 #, php-format
@@ -234,8 +234,8 @@ msgid ""
 "Don't have a GoDaddy Email Marketing account? Get one in less than 2 "
 "minutes! %s"
 msgstr ""
-"Saknar du ett konto för e-postbaserad marknadsföring från GoDaddy? Skaffa ett "
-"konto på mindre än 2 minuter! %s"
+"Saknar du ett konto för GoDaddy e-postmarknadsföring? Skaffa ett konto på "
+"mindre än 2 minuter! %s"
 
 #: includes/settings.php:293
 msgctxt "header note"
@@ -269,7 +269,7 @@ msgstr "Öppnas i ett nytt fönster"
 
 #: includes/settings.php:349
 msgid "Edit form in GoDaddy Email Marketing"
-msgstr "Redigera formuläret i e-postbaserad marknadsföring från GoDaddy"
+msgstr "Redigera formuläret i GoDaddy e-postmarknadsföring"
 
 #: includes/settings.php:352
 msgid "Preview"
@@ -309,8 +309,7 @@ msgstr "Uppgifterna är fel! Kontrollera att du har angivit rätt uppgifter."
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr ""
-"Förbindelsen med e-postbaserad marknadsföring från GoDaddy har upprättats! Du "
-"är klar!"
+"Förbindelsen med GoDaddy e-postmarknadsföring har upprättats! Du är klar!"
 
 #: includes/settings.php:426
 msgid "Please fill in the username and the API key first."
@@ -321,17 +320,17 @@ msgid ""
 "Please enter your GoDaddy Email Marketing username and API Key in order to "
 "be able to create forms."
 msgstr ""
-"Ange användarnamnet och API-nyckeln för ditt konto med e-postbaserad "
-"marknadsföring från GoDaddy så att du kan skapa formulär."
+"Ange användarnamnet och API-nyckeln för ditt konto för GoDaddy "
+"e-postmarknadsföring så att du kan skapa formulär."
 
 #: includes/widget.php:21 includes/widget.php:41
 msgid "GoDaddy Email Marketing Form"
-msgstr "Formulär för e-postbaserad marknadsföring från GoDaddy"
+msgstr "Formulär för GoDaddy e-postmarknadsföring"
 
 #: includes/widget.php:24
 msgctxt "widget description"
 msgid "Embed any GoDaddy Email Marketing webform in your sidebar."
-msgstr "Bädda in ett webbformulär för e-postbaserad marknadsföring från GoDaddy i sidopanelen."
+msgstr "Bädda in ett webbformulär för GoDaddy e-postmarknadsföring i sidopanelen."
 
 #: includes/widget.php:97
 msgid "Title:"
@@ -349,7 +348,7 @@ msgstr "Formulär:"
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
-msgstr "Konfigurera ditt konto för e-postbaserad marknadsföring från GoDaddy i %s."
+msgstr "Konfigurera ditt konto för GoDaddy e-postmarknadsföring i %s."
 
 #: includes/widget.php:129
 msgid "settings page"
