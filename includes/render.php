@@ -27,8 +27,16 @@ class GEM_Form_Renderer {
 	 */
 	public function process( $form_id, $echo = false ) {
 		$form = GEM_Dispatcher::get_fields( (int) $form_id );
+		$forms = GEM_Dispatcher::get_forms();
+		$form_ids = array();
 
-		if ( ! empty( $form->fields ) ) :
+		if ( ! empty( $forms->signups ) ) {
+			foreach ( $forms->signups as $signup_form ) {
+				$form_ids[] = $signup_form->id;
+			}
+		}
+
+		if ( ! empty( $form->fields ) && in_array( (int) $form_id, $form_ids, true ) ) :
 
 			self::$loops++; ob_start(); ?>
 

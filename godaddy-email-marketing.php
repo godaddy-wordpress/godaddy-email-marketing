@@ -146,7 +146,7 @@ class GEM_Official {
 	public function init() {
 
 		// Enable debug mode?
-		$this->debug = (bool) apply_filters( 'gem_debug', false );
+		$this->debug = GEM_Settings_Controls::get_option( 'debug' );
 
 		// Initialize settings.
 		if ( is_admin() ) {
@@ -161,10 +161,14 @@ class GEM_Official {
 	 * Registers the shortcode.
 	 */
 	public function register_shortcode() {
+		$shortcode = new GEM_Shortcode();
 
 		// Register shortcode.
-		add_shortcode( 'gem', array( 'GEM_Shortcode', 'render' ) );
-		add_shortcode( 'GEM', array( 'GEM_Shortcode', 'render' ) );
+		add_shortcode( 'gem', array( $shortcode, 'render' ) );
+		add_shortcode( 'GEM', array( $shortcode, 'render' ) );
+
+		// Register the Shortcake UI.
+		add_action( 'register_shortcode_ui', array( $shortcode, 'shortcode_ui' ) );
 	}
 
 	/**

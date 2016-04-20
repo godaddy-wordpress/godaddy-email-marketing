@@ -39,47 +39,14 @@ class Test_GEM_Form_Renderer extends WP_UnitTestCase {
 	}
 
 	public function test_process() {
-		WP_Http_Mock_Transport::$response = array(
-			'response' => array(
-				'code' => 401,
-			),
-			'body' => '',
-		);
-		$this->assertNull( $this->instance->process( 0 ) );
-
-		$sample_data = array(
-			'fields' => array(
-				'field_a' => array(
-					'type' => 'string',
-					'field_type' => 'string',
-					'name' => 'the_name_a',
-					'required' => false,
-					'display' => 'text_a',
-				),
-				'field_b' => array(
-					'type' => 'checkbox',
-					'field_type' => 'checkbox',
-					'required' => true,
-					'name' => 'the_name_b',
-					'value' => 'the_value',
-					'display' => 'text_b',
-				),
-			),
-			'submit' => 'the_url',
-			'id' => 'the_id',
-			'button_text' => 'button_text',
-		);
-		WP_Http_Mock_Transport::$response = array(
-			'response' => array(
-				'code' => 200,
-			),
-			'body' => json_encode( $sample_data ),
-		);
+		update_option( 'gem-settings', array( 'username' => 'user_name', 'api-key' => '1234' ) );
+		set_transient( 'gem-form-123', json_decode( '{"id":123,"name":"Signup Form","fields":{"field_a":{"type":"string","field_type":"string","name":"the_name_a","required":false,"display":"text_a"},"field_b":{"type":"checkbox","field_type":"checkbox","required":true,"name":"the_name_b","value":"the_value","display":"text_b"}},"submit":"the_url","button_text":"button_text"}' ), 60 );
+		set_transient( 'gem-user_name-lists', json_decode( '{"total":1,"signups":[{"id":123,"name":"Signup Form","thumbnail":"the_url","url":"the_url"}]}' ), 60 );
 		$actual_result = $this->instance->process( 123 );
 
 		$this->assertContains( '<div class="gem-form-wrapper" id="form-123">', $actual_result );
 		$this->assertContains( '<form action="http://the_url" method="post" class="gem-form">', $actual_result );
-		$this->assertContains( '<input type="hidden" name="form_id" value="0" />', $actual_result );
+		$this->assertContains( '<input type="hidden" name="form_id" value="123" />', $actual_result );
 		$this->assertContains( '<input type="submit" value="button_text" class="button gem-submit" />', $actual_result );
 		$this->assertContains( 'text_a', $actual_result );
 		$this->assertContains( 'text_b', $actual_result );
@@ -93,5 +60,9 @@ class Test_GEM_Form_Renderer extends WP_UnitTestCase {
 		$actual_output = ob_get_contents();
 		ob_end_clean();
 		$this->assertNotEmpty( $actual_output );
+
+		delete_option( 'gem-settings' );
+		delete_transient( 'gem-form-123' );
+		delete_transient( 'gem-user_name-lists' );
 	}
 }

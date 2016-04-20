@@ -1,10 +1,10 @@
-module.exports = function(grunt) {
+module.exports = function( grunt ) {
 
-	require('matchdep').filterDev('grunt-*').forEach( grunt.loadNpmTasks );
+	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 
 	// Project configuration.
-	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
+	grunt.initConfig( {
+		pkg: grunt.file.readJSON( 'package.json' ),
 
 		cssmin: {
 			options: {
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
 				msgmerge: true
 			},
 			files: {
-				src: [ 'godaddy-email-marketing.php', 'includes/*.php', ],
+				src: [ 'godaddy-email-marketing.php', 'includes/*.php' ],
 				expand: true
 			}
 		},
@@ -77,10 +77,10 @@ module.exports = function(grunt) {
 			}
 		}
 
-	});
+	} );
 
 	// Default task(s).
-	grunt.registerTask('default', ['cssmin', 'uglify']);
-	grunt.registerTask('update_translation', ['pot','po2mo']);
+	grunt.registerTask( 'default', [ 'cssmin', 'uglify' ] );
+	grunt.registerTask( 'update_translation', [ 'pot', 'po2mo' ] );
 
 };

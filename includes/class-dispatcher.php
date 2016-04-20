@@ -74,7 +74,7 @@ class GEM_Dispatcher {
 		$username = $username ? $username : GEM_Settings_Controls::get_option( 'username' );
 		$api_key = GEM_Settings_Controls::get_option( 'api-key' );
 
-		if ( empty( $api_key ) ) {
+		if ( ! ( $username && $api_key ) ) {
 			return false;
 		}
 
