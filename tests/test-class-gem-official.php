@@ -111,8 +111,9 @@ class Test_GEM_Official extends WP_UnitTestCase {
 		$this->assertArrayHasKey( 'gem', $shortcode_tags );
 		$this->assertArrayHasKey( 'GEM', $shortcode_tags );
 
-		$this->assertEquals( $shortcode_tags['gem'], array( 'GEM_Shortcode', 'render' ) );
-		$this->assertEquals( $shortcode_tags['GEM'], array( 'GEM_Shortcode', 'render' ) );
+		$shortcode = new GEM_Shortcode();
+		$this->assertEquals( $shortcode_tags['gem'], array( $shortcode, 'render' ) );
+		$this->assertEquals( $shortcode_tags['GEM'], array( $shortcode, 'render' ) );
 		$this->assertTrue( has_shortcode( 'This is a blob with [gem id=123] in it', 'gem' ) );
 		$this->assertTrue( has_shortcode( 'This is a blob with [GEM] in it', 'GEM' ) );
 	}

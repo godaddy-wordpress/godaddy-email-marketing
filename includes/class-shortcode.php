@@ -28,6 +28,40 @@ class GEM_Shortcode {
 
 		return gem_form( $id, false );
 	}
+
+	/**
+	 * Registers the shortcode UI with Shortcake.
+	 *
+	 * @codeCoverageIgnore
+	 */
+	public function shortcode_ui() {
+		$forms = GEM_Dispatcher::get_forms();
+
+		if ( ! empty( $forms->signups ) ) {
+			$options = array();
+			foreach ( $forms->signups as $form ) {
+				$options[ $form->id ] = esc_html( $form->name );
+			}
+
+			$args = array(
+				'label' => esc_html__( 'GoDaddy Email Marketing', 'godaddy-email-marketing' ),
+				'listItemImage' => 'dashicons-feedback',
+				'attrs' => array(
+					array(
+						'label'       => esc_html__( 'Signup Forms', 'godaddy-email-marketing' ),
+						'description' => esc_html__( 'Choose one of the available forms.', 'godaddy-email-marketing' ),
+						'attr'        => 'id',
+						'encode'      => false,
+						'type'        => 'select',
+						'options'     => $options,
+						'value'       => '',
+					),
+				),
+			);
+
+			shortcode_ui_register_for_shortcode( 'gem', $args );
+		}
+	}
 }
 
 /**

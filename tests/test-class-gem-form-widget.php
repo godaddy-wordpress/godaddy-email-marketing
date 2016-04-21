@@ -48,34 +48,9 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 	}
 
 	public function test_widget() {
-		$sample_data = array(
-			'fields' => array(
-				'field_a' => array(
-					'type' => 'string',
-					'field_type' => 'string',
-					'name' => 'the_name_a',
-					'required' => false,
-					'display' => 'text_a',
-				),
-				'field_b' => array(
-					'type' => 'checkbox',
-					'field_type' => 'checkbox',
-					'required' => true,
-					'name' => 'the_name_b',
-					'value' => 'the_value',
-					'display' => 'text_b',
-				),
-			),
-			'submit' => 'the_url',
-			'id' => 'the_id',
-			'button_text' => 'button_text',
-		);
-		WP_Http_Mock_Transport::$response = array(
-			'response' => array(
-				'code' => 200,
-			),
-			'body' => json_encode( $sample_data ),
-		);
+		update_option( 'gem-settings', array( 'username' => 'user_name', 'api-key' => '1234' ) );
+		set_transient( 'gem-form-123', json_decode( '{"id":123,"name":"Signup Form","fields":{"field_a":{"type":"string","field_type":"string","name":"the_name_a","required":false,"display":"text_a"},"field_b":{"type":"checkbox","field_type":"checkbox","required":true,"name":"the_name_b","value":"the_value","display":"text_b"}},"submit":"the_url","button_text":"button_text"}' ), 60 );
+		set_transient( 'gem-user_name-lists', json_decode( '{"total":1,"signups":[{"id":123,"name":"Signup Form","thumbnail":"the_url","url":"the_url"}]}' ), 60 );
 
 		$widget = new GEM_Form_Widget();
 		$args = array(
@@ -87,13 +62,17 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$instance = array(
 			'title' => 'the_title',
 			'text' => 'the_text',
-			'form' => 'form_id',
+			'form' => '123',
 		);
 
 		ob_start();
 		$widget->widget( $args, $instance );
 		$actual_output = ob_get_contents();
 		ob_end_clean();
+
+		delete_option( 'gem-settings' );
+		delete_transient( 'gem-form-123' );
+		delete_transient( 'gem-user_name-lists' );
 
 		$this->assertContains( 'before_textbefore_titlethe_titleafter_title<p>the_text</p>', $actual_output );
 		$this->assertContains( '<form action="http://the_url" method="post" class="gem-form">', $actual_output );
@@ -103,7 +82,7 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$this->assertContains( '<label for="form_3_the_name_bthe_value">', $actual_output );
 		$this->assertContains( '<input type="checkbox" value="the_value" name="the_name_b" id="form_3_the_name_bthe_value" class="gem-checkbox gem-required" />', $actual_output );
 		$this->assertContains( 'text_b', $actual_output );
-		$this->assertContains( '<input type="hidden" name="form_id" value="0" />', $actual_output );
+		$this->assertContains( '<input type="hidden" name="form_id" value="123" />', $actual_output );
 		$this->assertContains( '<input type="submit" value="button_text" class="button gem-submit" />', $actual_output );
 		$this->assertContains( 'after_text', $actual_output );
 	}

@@ -19,7 +19,7 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		GEM_Settings_Controls::description();
 		$actual_output = ob_get_contents();
 		ob_end_clean();
-		$this->assertContains( '<p>Please enter your GoDaddy Email Marketing username and API Key in order to be able to create forms.</p>', $actual_output );
+		$this->assertContains( '<p>Please enter your GoDaddy Email Marketing username and API Key. Your credentials will connect WordPress with your GoDaddy Email Marketing account and display your available forms.</p>', $actual_output );
 	}
 
 	public function test_select() {
@@ -56,7 +56,7 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		ob_end_clean();
 		$this->assertContains( '<input type="text" name="the_page[the_id]"', $actual_output );
 		$this->assertContains( 'id="the_page-the_id"', $actual_output );
-		$this->assertContains( 'value="" class="regular-text code" />', $actual_output );
+		$this->assertContains( 'value="" class="widefat code" />', $actual_output );
 	}
 
 	public function test_text_is_empty() {
@@ -87,6 +87,27 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		GEM_Settings_Controls::checkbox( array(
 			'id' => null,
 		) );
+		$actual_output = ob_get_contents();
+		ob_end_clean();
+		$this->assertEmpty( $actual_output );
+	}
+
+	public function test_button() {
+		ob_start();
+		GEM_Settings_Controls::button( array(
+			'url' => 'http://sample.org',
+			'label' => 'Cool Button',
+		) );
+		$actual_output = ob_get_contents();
+		ob_end_clean();
+		$this->assertContains( '<p>', $actual_output );
+		$this->assertContains( '<a href="http://sample.org" class="button-secondary">Cool Button</a>', $actual_output );
+		$this->assertContains( '</p>', $actual_output );
+	}
+
+	public function test_button_is_empty() {
+		ob_start();
+		GEM_Settings_Controls::button( array() );
 		$actual_output = ob_get_contents();
 		ob_end_clean();
 		$this->assertEmpty( $actual_output );
