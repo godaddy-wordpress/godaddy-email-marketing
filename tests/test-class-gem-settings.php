@@ -162,7 +162,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 
 		// dismiss action:
 		$_GET['action'] = 'dismiss';
-		$user_id = self::factory()->user->create( array( 'role' => 'administrator' ) );
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		wp_set_current_user( $user_id );
 		$instance->page_load();
 		$meta = get_user_meta( $user_id, 'gem-dismiss' );
