@@ -1,4 +1,5 @@
 /* global tb_click */
+/* jscs:disable requireCamelCaseOrUpperCaseIdentifiers */
 
 /**
  * GoDaddy Email Marketing admin script.
