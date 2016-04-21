@@ -63,6 +63,20 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertEquals( 'gem-settings', $instance->slug );
 	}
 
+	public function test_admin_enqueue_style() {
+		$instance = new GEM_Settings();
+		$instance->admin_enqueue_style();
+
+		$this->assertTrue( wp_style_is( 'gem-admin', 'enqueued' ) );
+	}
+
+	public function test_admin_enqueue_scripts() {
+		$instance = new GEM_Settings();
+		$instance->admin_enqueue_scripts();
+
+		$this->assertTrue( wp_script_is( 'gem-admin', 'enqueued' ) );
+	}
+
 	public function test_page_load() {
 		$instance = new GEM_Settings();
 		$instance->page_load();
@@ -169,6 +183,61 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$instance->page_load();
 	}
 
+	public function test_page_load_transient_gem_refresh() {
+		$instance = new GEM_Settings();
+		set_transient( 'gem-refresh', true, 30 );
+		$instance->action_admin_menu();
+		$instance->page_load();
+
+		$errors = get_settings_errors( $instance->slug );
+		$this->assertNotEmpty( $errors );
+		$this->assertEquals( 'gem-refresh', $errors[0]['code'] );
+	}
+
+	public function test_page_load_transient_gem_invalid_creds() {
+		$instance = new GEM_Settings();
+		set_transient( 'gem-invalid-creds', true, 30 );
+		$instance->action_admin_menu();
+		$instance->page_load();
+
+		$errors = get_settings_errors( $instance->slug );
+		$this->assertNotEmpty( $errors );
+		$this->assertEquals( 'gem-invalid-creds', $errors[0]['code'] );
+	}
+
+	public function test_page_load_transient_gem_valid_creds() {
+		$instance = new GEM_Settings();
+		set_transient( 'gem-valid-creds', true, 30 );
+		$instance->action_admin_menu();
+		$instance->page_load();
+
+		$errors = get_settings_errors( $instance->slug );
+		$this->assertNotEmpty( $errors );
+		$this->assertEquals( 'gem-valid-creds', $errors[0]['code'] );
+	}
+
+	public function test_page_load_transient_gem_settings_updated() {
+		$instance = new GEM_Settings();
+		set_transient( 'gem-settings-updated', true, 30 );
+		$instance->action_admin_menu();
+		$instance->page_load();
+
+		$errors = get_settings_errors( $instance->slug );
+		$this->assertNotEmpty( $errors );
+		$this->assertEquals( 'gem-settings-updated', $errors[0]['code'] );
+	}
+
+	public function test_page_load_transient_gem_empty_creds() {
+		$instance = new GEM_Settings();
+		set_transient( 'gem-empty-creds', true, 30 );
+		$instance->action_admin_menu();
+		$instance->page_load();
+
+		$errors = get_settings_errors( $instance->slug );
+		$this->assertNotEmpty( $errors );
+		$this->assertEquals( 'gem-empty-creds', $errors[0]['code'] );
+	}
+
 	public function test_setup_help_tabs() {
 		global $current_screen;
 
@@ -209,6 +278,8 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	public function test_display_settings_page() {
 		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
+		$this->set_data( $instance->slug );
+		update_option( 'gem-valid-creds', true );
 
 		ob_start();
 		$instance->display_settings_page();
@@ -222,6 +293,9 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertContains( '<input type="checkbox" name="gem-settings[display_powered_by]" id="gem-settings[display_powered_by]" value="1"  />', $actual_output );
 		$this->assertContains( '<a href="?action=debug-reset" class="button-secondary">Erase All Data</a>', $actual_output );
 		$this->assertContains( '<a href="?action=debug-reset-transients" class="button-secondary">Erase Transients</a>', $actual_output );
+		$this->assertContains( '<a href="https://gem.godaddy.com/signups" target="_blank" class="button">Create a New Signup Form</a>', $actual_output );
+
+		$this->delete_data( $instance->slug );
 	}
 
 	public function test_display_settings_page_forms() {
@@ -345,5 +419,21 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$errors = get_settings_errors( $instance->slug );
 		$this->assertEquals( $expected_output, $actual_output );
 		$this->assertFalse( get_option( 'gem-valid-creds' ) );
+	}
+
+	public function test_validate_non_api_change() {
+		$instance = new GEM_Settings();
+		$instance->action_admin_menu();
+		$this->set_data( $instance->slug );
+		$expected_output = array(
+			'username' => 'user_name',
+			'api-key' => '1234',
+			'display_powered_by' => 1,
+			'debug' => 0,
+		);
+		$this->assertEquals( $expected_output, $instance->validate( $expected_output ) );
+		$this->assertTrue( get_transient( 'gem-settings-updated' ) );
+
+		$this->delete_data( $instance->slug );
 	}
 }

@@ -92,6 +92,27 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		$this->assertEmpty( $actual_output );
 	}
 
+	public function test_button() {
+		ob_start();
+		GEM_Settings_Controls::button( array(
+			'url' => 'http://sample.org',
+			'label' => 'Cool Button',
+		) );
+		$actual_output = ob_get_contents();
+		ob_end_clean();
+		$this->assertContains( '<p>', $actual_output );
+		$this->assertContains( '<a href="http://sample.org" class="button-secondary">Cool Button</a>', $actual_output );
+		$this->assertContains( '</p>', $actual_output );
+	}
+
+	public function test_button_is_empty() {
+		ob_start();
+		GEM_Settings_Controls::button( array() );
+		$actual_output = ob_get_contents();
+		ob_end_clean();
+		$this->assertEmpty( $actual_output );
+	}
+
 	public function test_show_description() {
 		ob_start();
 		GEM_Settings_Controls::show_description( array(

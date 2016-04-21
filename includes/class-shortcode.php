@@ -31,6 +31,8 @@ class GEM_Shortcode {
 
 	/**
 	 * Registers the shortcode UI with Shortcake.
+	 *
+	 * @codeCoverageIgnore
 	 */
 	public function shortcode_ui() {
 		$forms = GEM_Dispatcher::get_forms();

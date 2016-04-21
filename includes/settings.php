@@ -73,10 +73,6 @@ class GEM_Settings {
 	public function admin_enqueue_style() {
 		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-		if ( is_rtl() ) {
-			$suffix = '-rtl' . $suffix;
-		}
-
 		wp_enqueue_style( 'gem-admin', plugins_url( "css/admin{$suffix}.css", GEM_PLUGIN_BASE ) );
 	}
 
@@ -444,16 +440,21 @@ class GEM_Settings {
 	public function do_settings_sections( $page, $columns = 2 ) {
 		global $wp_settings_sections, $wp_settings_fields;
 
+		// @codeCoverageIgnoreStart
 		if ( ! isset( $wp_settings_sections[ $page ] ) ) {
 			return;
 		}
+		// @codeCoverageIgnoreEnd
 
 		$index = 0;
 
 		foreach ( (array) $wp_settings_sections[ $page ] as $section ) {
+			// @codeCoverageIgnoreStart
 			if ( ! isset( $wp_settings_fields[ $page ] ) || ! isset( $wp_settings_fields[ $page ][ $section['id'] ] ) ) {
 				continue;
 			}
+			// @codeCoverageIgnoreEnd
+
 			$index++;
 
 			// Set the column class.
@@ -638,30 +639,35 @@ class GEM_Settings {
 		// Validate creds against the API.
 		if ( ! ( empty( $input['username'] ) || empty( $input['api-key'] ) ) ) {
 
-			// Check for an API connection.
-			$data = GEM_Dispatcher::fetch_forms( $input['username'], $input['api-key'] );
+			$non_api_change = (
+				GEM_Settings_Controls::get_option( 'username' ) === $input['username']
+				&&
+				GEM_Settings_Controls::get_option( 'api-key' ) === $input['api-key']
+			);
 
-			if ( ! $data ) {
+			if ( $non_api_change ) {
 
-				// Credentials are incorrect.
-				set_transient( 'gem-invalid-creds', true, 30 );
-			} elseif ( isset( $data->total ) && isset( $data->signups ) ) {
+				// The settings were updated.
+				set_transient( 'gem-settings-updated', true, 30 );
 
-				$non_api_change = (
-					GEM_Settings_Controls::get_option( 'username' ) === $input['username']
-					&&
-					GEM_Settings_Controls::get_option( 'api-key' ) === $input['api-key']
-				);
+				return $input; // Bail.
 
-				// Let the user know settings were updated or a connection was made.
-				if ( $non_api_change ) {
-					set_transient( 'gem-settings-updated', true, 30 );
-				} else {
+			} else {
+				// Check for an API connection.
+				$data = GEM_Dispatcher::fetch_forms( $input['username'], $input['api-key'] );
+
+				if ( ! $data ) {
+
+					// Credentials are incorrect.
+					set_transient( 'gem-invalid-creds', true, 30 );
+				} elseif ( isset( $data->total ) && isset( $data->signups ) ) {
+
+					// Let the user know settings were updated or a connection was made.
 					set_transient( 'gem-valid-creds', true, 30 );
-				}
 
-				// Flag the credentials as being valid.
-				$validated = true;
+					// Flag the credentials as being valid.
+					$validated = true;
+				}
 			}
 		} else {
 
@@ -690,7 +696,7 @@ final class GEM_Settings_Controls {
 	public static function debugging() {
 		printf(
 			'<p>%s</p>',
-			esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'godaddy-email-marketing' )
+			esc_html__( 'If you are experiencing issues and are unsure of the cause you may want to activate debug mode, which displays additional options that allow you delete stored data.', 'godaddy-email-marketing' )
 		);
 	}
 
