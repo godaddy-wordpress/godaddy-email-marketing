@@ -1,6 +1,6 @@
+/* jshint node:true */
 module.exports = function( grunt ) {
-
-	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
+	'use strict';
 
 	// Project configuration.
 	grunt.initConfig( {
@@ -75,12 +75,76 @@ module.exports = function( grunt ) {
 				src: 'languages/*.po',
 				expand: true
 			}
+		},
+
+		// Build a deployable plugin.
+		copy: {
+			build: {
+				src: [
+					'**',
+					'!.*',
+					'!.*/**',
+					'!.DS_Store',
+					'!build/**',
+					'!composer.json',
+					'!dev-lib/**',
+					'!Gruntfile.js',
+					'!node_modules/**',
+					'!npm-debug.log',
+					'!package.json',
+					'!phpcs.ruleset.xml',
+					'!phpunit.xml.dist',
+					'!readme.md',
+					'!tests/**'
+				],
+				dest: 'build',
+				expand: true,
+				dot: true
+			}
+		},
+
+		// Deploys a git Repo to the WordPress SVN repo.
+		wp_deploy: {
+			deploy: {
+				options: {
+					plugin_slug: '<%= pkg.name %>',
+					build_dir: 'build'
+				}
+			}
 		}
 
 	} );
 
-	// Default task(s).
-	grunt.registerTask( 'default', [ 'cssmin', 'uglify' ] );
-	grunt.registerTask( 'update_translation', [ 'pot', 'po2mo' ] );
+	// Load tasks
+	grunt.loadNpmTasks( 'grunt-contrib-copy' );
+	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
+	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+	grunt.loadNpmTasks( 'grunt-contrib-watch' );
+	grunt.loadNpmTasks( 'grunt-po2mo' );
+	grunt.loadNpmTasks( 'grunt-pot' );
+	grunt.loadNpmTasks( 'grunt-wp-deploy' );
+
+	// Default task.
+	grunt.registerTask( 'default', [
+		'cssmin',
+		'uglify'
+	] );
+
+	// Translates strings.
+	grunt.registerTask( 'update_translation', [
+		'pot',
+		'po2mo'
+	] );
+
+	/*
+	 * Deploys to wordpress.org.
+	 *
+	 * Execute the default & update_translation commands then commit changes before deploying.
+	 */
+	grunt.registerTask( 'deploy', [
+		'copy',
+		'wp_deploy',
+		'clean'
+	] );
 
 };
