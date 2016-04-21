@@ -42,6 +42,7 @@ class GEM_Shortcode {
 			foreach ( $forms->signups as $form ) {
 				$options[ $form->id ] = esc_html( $form->name );
 			}
+			reset( $options );
 
 			$args = array(
 				'label' => esc_html__( 'GoDaddy Email Marketing', 'godaddy-email-marketing' ),
@@ -54,7 +55,7 @@ class GEM_Shortcode {
 						'encode'      => false,
 						'type'        => 'select',
 						'options'     => $options,
-						'value'       => '',
+						'value'       => key( $options ),
 					),
 				),
 			);
