@@ -3,7 +3,7 @@ Contributors: godaddy, humanmade, xwp, fjarrett, jonathanbardo
 Tags: godaddy, forms, newsletter, opt-in, email, marketing, mailing list, signup, subscribe, widget
 Requires at least: 3.8
 Tested up to: 4.5
-Stable tag: 1.0.6
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -89,6 +89,11 @@ You can find your API key in the Settings section of your GoDaddy Email Marketin
 4. The widget, on the front-end.
 
 == Changelog ==
+
+= 1.1.0 =
+* UI & UX overhaul using tabbed navigation & enhanced admin notices.
+* Added the `debug` setting to replace the `gem_debug` filter.
+* Added Shortcake plugin integration for the `gem` shortcode.
 
 = 1.0.6 =
 * Fixed shortcode display and localization bugs [#12](https://github.com/godaddy/wp-godaddy-email-marketing/pull/12)
