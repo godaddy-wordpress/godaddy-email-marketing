@@ -89,6 +89,7 @@ module.exports = function( grunt ) {
 					'!composer.json',
 					'!dev-lib/**',
 					'!Gruntfile.js',
+					'!languages/*.po*',
 					'!node_modules/**',
 					'!npm-debug.log',
 					'!package.json',
@@ -136,10 +137,16 @@ module.exports = function( grunt ) {
 		'po2mo'
 	] );
 
+	// Executes development tasks.
+	grunt.registerTask( 'develop', [
+		'default',
+		'update_translation'
+	] );
+
 	/*
 	 * Deploys to wordpress.org.
 	 *
-	 * Execute the default & update_translation commands then commit changes before deploying.
+	 * Execute the develop command and commit changes before deploying.
 	 */
 	grunt.registerTask( 'deploy', [
 		'copy',
