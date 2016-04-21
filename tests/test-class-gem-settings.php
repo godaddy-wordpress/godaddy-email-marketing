@@ -276,21 +276,32 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	}
 
 	public function test_display_settings_page() {
+		set_transient( 'gem-user_name-account', true );
+		$this->set_data( 'gem-settings' );
+		gem()->debug = true;
 		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
-		$this->set_data( $instance->slug );
+		$instance->register_settings();
+		update_option( $instance->slug, array(
+			'username' => 'user_name',
+			'api-key' => '1234',
+			'display_powered_by' => 1,
+			'debug' => 1,
+		) );
 		update_option( 'gem-valid-creds', true );
 
 		ob_start();
 		$instance->display_settings_page();
 		$actual_output = ob_get_contents();
 		ob_end_clean();
+
 		$this->assertContains( "<input type='hidden' name='option_page' value='gem-options' />", $actual_output );
 		$this->assertContains( '<input type="text" name="gem-settings[username]"', $actual_output );
 		$this->assertContains( '<label for="gem-settings-username">Username</label>', $actual_output );
 		$this->assertContains( '<label for="gem-settings-api-key">API Key</label>', $actual_output );
 		$this->assertContains( '<input type="text" name="gem-settings[api-key]"', $actual_output );
-		$this->assertContains( '<input type="checkbox" name="gem-settings[display_powered_by]" id="gem-settings[display_powered_by]" value="1"  />', $actual_output );
+		$this->assertContains( '<input type="checkbox" name="gem-settings[display_powered_by]" id="gem-settings[display_powered_by]" value="1"  checked=\'checked\' />', $actual_output );
+		$this->assertContains( '<input type="checkbox" name="gem-settings[debug]" id="gem-settings[debug]" value="1"  checked=\'checked\' />', $actual_output );
 		$this->assertContains( '<a href="?action=debug-reset" class="button-secondary">Erase All Data</a>', $actual_output );
 		$this->assertContains( '<a href="?action=debug-reset-transients" class="button-secondary">Erase Transients</a>', $actual_output );
 		$this->assertContains( '<a href="https://gem.godaddy.com/signups" target="_blank" class="button">Create a New Signup Form</a>', $actual_output );

@@ -313,7 +313,6 @@ class GEM_Settings {
 	 * @action admin_init
 	 */
 	public function register_settings() {
-		global $pagenow;
 
 		// If no options exist, create them.
 		if ( ! get_option( $this->slug ) ) {
@@ -360,8 +359,6 @@ class GEM_Settings {
 				'label_for' => $this->slug . '-api-key',
 			)
 		);
-
-		$user_info = GEM_Dispatcher::get_user_level();
 
 		add_settings_field(
 			'display_powered_by',
@@ -424,6 +421,8 @@ class GEM_Settings {
 				)
 			);
 		}
+
+		$user_info = GEM_Dispatcher::get_user_level();
 
 		do_action( 'gem_setup_settings_fields' );
 	}
