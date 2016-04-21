@@ -26,19 +26,19 @@ msgstr "There was a problem. Please fill all required fields."
 msgid "Settings"
 msgstr ""
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "GoDaddy Email Marketing is almost ready."
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "You must enter your username &amp; API key for it to work."
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:257
 msgid "Let's do it!"
 msgstr "Let's do it!"
 
-#: includes/class-shortcode.php:48
+#: includes/class-shortcode.php:48 includes/settings.php:54
 #, fuzzy
 msgid "GoDaddy Email Marketing"
 msgstr "GoDaddy Email Marketing Form"
@@ -116,13 +116,10 @@ msgstr ""
 msgid "Year"
 msgstr ""
 
-#: includes/settings.php:53
-msgid "GoDaddy Email Marketing Settings"
-msgstr "GoDaddy Email Marketing Settings"
-
-#: includes/settings.php:54
-msgid "GoDaddy Signup Forms"
-msgstr "GoDaddy Signup Forms"
+#: includes/settings.php:53 includes/settings.php:500
+#, fuzzy
+msgid "GoDaddy Email Marketing Signup Forms"
+msgstr "GoDaddy Email Marketing Form"
 
 #: includes/settings.php:223
 #, fuzzy
@@ -294,11 +291,6 @@ msgstr "Erase All Data"
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:500
-#, fuzzy
-msgid "GoDaddy Email Marketing Signup Forms"
-msgstr "GoDaddy Email Marketing Form"
-
 #: includes/settings.php:507
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
@@ -433,6 +425,12 @@ msgstr "Please set up your GoDaddy Email Marketing account in the %s."
 #: includes/widget.php:129
 msgid "settings page"
 msgstr "settings page"
+
+#~ msgid "GoDaddy Email Marketing Settings"
+#~ msgstr "GoDaddy Email Marketing Settings"
+
+#~ msgid "GoDaddy Signup Forms"
+#~ msgstr "GoDaddy Signup Forms"
 
 #~ msgid "GoDaddy Email Marketing Username"
 #~ msgstr "GoDaddy Email Marketing Username"

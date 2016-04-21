@@ -25,19 +25,19 @@ msgstr "Er is een probleem. Vul alle verplichte velden in."
 msgid "Settings"
 msgstr "Instellingen"
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "E-mailmarketing van GoDaddy is bijna klaar."
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "Je moet je gebruikersnaam en API-sleutel invoeren om het te gebruiken."
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:257
 msgid "Let's do it!"
 msgstr "Aan de slag!"
 
-#: includes/class-shortcode.php:48
+#: includes/class-shortcode.php:48 includes/settings.php:54
 #, fuzzy
 msgid "GoDaddy Email Marketing"
 msgstr "Formulier voor e-mailmarketing van GoDaddy"
@@ -115,13 +115,10 @@ msgstr "Dag"
 msgid "Year"
 msgstr "Jaar/Jaren"
 
-#: includes/settings.php:53
-msgid "GoDaddy Email Marketing Settings"
-msgstr "Instellingen voor e-mailmarketing van GoDaddy"
-
-#: includes/settings.php:54
-msgid "GoDaddy Signup Forms"
-msgstr "Aanmeldingsformulieren GoDaddy"
+#: includes/settings.php:53 includes/settings.php:500
+#, fuzzy
+msgid "GoDaddy Email Marketing Signup Forms"
+msgstr "Formulier voor e-mailmarketing van GoDaddy"
 
 #: includes/settings.php:223
 #, fuzzy
@@ -297,11 +294,6 @@ msgstr "Alle gegevens wissen"
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:500
-#, fuzzy
-msgid "GoDaddy Email Marketing Signup Forms"
-msgstr "Formulier voor e-mailmarketing van GoDaddy"
-
 #: includes/settings.php:507
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
@@ -437,6 +429,12 @@ msgstr "Stel je account voor e-mailmarketing van GoDaddy in op de %s."
 #: includes/widget.php:129
 msgid "settings page"
 msgstr "pagina Instellingen"
+
+#~ msgid "GoDaddy Email Marketing Settings"
+#~ msgstr "Instellingen voor e-mailmarketing van GoDaddy"
+
+#~ msgid "GoDaddy Signup Forms"
+#~ msgstr "Aanmeldingsformulieren GoDaddy"
 
 #~ msgid "GoDaddy Email Marketing Username"
 #~ msgstr "Gebruikersnaam voor e-mailmarketing van GoDaddy"

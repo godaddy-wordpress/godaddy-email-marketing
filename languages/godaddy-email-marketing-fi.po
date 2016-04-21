@@ -24,19 +24,19 @@ msgstr "Tapahtui virhe. Tyt kaikki pakolliset kentt."
 msgid "Settings"
 msgstr "Asetukset"
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "GoDaddy-shkpostimarkkinointi on melkein valmis."
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "Sen toimiminen edellytt, ett annat kyttjtunnuksesi ja API-avaimen."
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:257
 msgid "Let's do it!"
 msgstr "Hoidetaan homma!"
 
-#: includes/class-shortcode.php:48
+#: includes/class-shortcode.php:48 includes/settings.php:54
 #, fuzzy
 msgid "GoDaddy Email Marketing"
 msgstr "GoDaddy-shkpostimarkkinoinnin lomake"
@@ -114,13 +114,10 @@ msgstr "Piv"
 msgid "Year"
 msgstr "Vuosi"
 
-#: includes/settings.php:53
-msgid "GoDaddy Email Marketing Settings"
-msgstr "GoDaddy-shkpostimarkkinoinnin asetukset"
-
-#: includes/settings.php:54
-msgid "GoDaddy Signup Forms"
-msgstr "GoDaddy-rekisteritymislomakkeet"
+#: includes/settings.php:53 includes/settings.php:500
+#, fuzzy
+msgid "GoDaddy Email Marketing Signup Forms"
+msgstr "GoDaddy-shkpostimarkkinoinnin lomake"
 
 #: includes/settings.php:223
 #, fuzzy
@@ -293,11 +290,6 @@ msgstr "Poista kaikki tiedot"
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:500
-#, fuzzy
-msgid "GoDaddy Email Marketing Signup Forms"
-msgstr "GoDaddy-shkpostimarkkinoinnin lomake"
-
 #: includes/settings.php:507
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
@@ -435,6 +427,12 @@ msgstr "Mrit GoDaddy-shkpostimarkkinointitilisi %s."
 #: includes/widget.php:129
 msgid "settings page"
 msgstr "asetukset-sivulla"
+
+#~ msgid "GoDaddy Email Marketing Settings"
+#~ msgstr "GoDaddy-shkpostimarkkinoinnin asetukset"
+
+#~ msgid "GoDaddy Signup Forms"
+#~ msgstr "GoDaddy-rekisteritymislomakkeet"
 
 #~ msgid "GoDaddy Email Marketing Username"
 #~ msgstr "GoDaddy-shkpostimarkkinoinnin kyttjtunnus"

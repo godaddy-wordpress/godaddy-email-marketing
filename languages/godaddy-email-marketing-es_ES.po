@@ -26,19 +26,19 @@ msgstr "Hubo un problema. Llena todos los campos obligatorios."
 msgid "Settings"
 msgstr "Configuracin"
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "GoDaddy Email Marketing est casi listo."
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "Debes ingresar tu nombre de usuario y tu clave API para que funcione."
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:257
 msgid "Let's do it!"
 msgstr "Hagmoslo!"
 
-#: includes/class-shortcode.php:48
+#: includes/class-shortcode.php:48 includes/settings.php:54
 #, fuzzy
 msgid "GoDaddy Email Marketing"
 msgstr "Formulario de GoDaddy Email Marketing"
@@ -116,13 +116,10 @@ msgstr "Da"
 msgid "Year"
 msgstr "Ao"
 
-#: includes/settings.php:53
-msgid "GoDaddy Email Marketing Settings"
-msgstr "Configuracin de GoDaddy Email Marketing"
-
-#: includes/settings.php:54
-msgid "GoDaddy Signup Forms"
-msgstr "Formularios de registro de GoDaddy"
+#: includes/settings.php:53 includes/settings.php:500
+#, fuzzy
+msgid "GoDaddy Email Marketing Signup Forms"
+msgstr "Formulario de GoDaddy Email Marketing"
 
 #: includes/settings.php:223
 #, fuzzy
@@ -299,11 +296,6 @@ msgstr "Eliminar todos los datos"
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:500
-#, fuzzy
-msgid "GoDaddy Email Marketing Signup Forms"
-msgstr "Formulario de GoDaddy Email Marketing"
-
 #: includes/settings.php:507
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
@@ -441,6 +433,12 @@ msgstr "Configura tu cuenta de GoDaddy Email Marketing en %s."
 #: includes/widget.php:129
 msgid "settings page"
 msgstr "pgina de configuracin"
+
+#~ msgid "GoDaddy Email Marketing Settings"
+#~ msgstr "Configuracin de GoDaddy Email Marketing"
+
+#~ msgid "GoDaddy Signup Forms"
+#~ msgstr "Formularios de registro de GoDaddy"
 
 #~ msgid "GoDaddy Email Marketing Username"
 #~ msgstr "Nombre de usuario de GoDaddy Email Marketing"

@@ -26,20 +26,20 @@ msgstr "Ett problem har intrffat. Fyll i alla obligatoriska flt."
 msgid "Settings"
 msgstr "Instllningar"
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "GoDaddy e-postmarknadsfring r nstan redo."
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "You must enter your username &amp; API key for it to work."
 msgstr ""
 "Du mste ange ditt anvndarnamn &amp; din API-nyckel fr att det ska fungera."
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:257
 msgid "Let's do it!"
 msgstr "Vi gr det!"
 
-#: includes/class-shortcode.php:48
+#: includes/class-shortcode.php:48 includes/settings.php:54
 #, fuzzy
 msgid "GoDaddy Email Marketing"
 msgstr "Formulr fr GoDaddy e-postmarknadsfring"
@@ -117,13 +117,10 @@ msgstr "Dag"
 msgid "Year"
 msgstr "r"
 
-#: includes/settings.php:53
-msgid "GoDaddy Email Marketing Settings"
-msgstr "Instllningar fr GoDaddy e-postmarknadsfring"
-
-#: includes/settings.php:54
-msgid "GoDaddy Signup Forms"
-msgstr "GoDaddy-anmlningsformulr"
+#: includes/settings.php:53 includes/settings.php:500
+#, fuzzy
+msgid "GoDaddy Email Marketing Signup Forms"
+msgstr "Formulr fr GoDaddy e-postmarknadsfring"
 
 #: includes/settings.php:223
 #, fuzzy
@@ -293,11 +290,6 @@ msgstr "Radera alla data"
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:500
-#, fuzzy
-msgid "GoDaddy Email Marketing Signup Forms"
-msgstr "Formulr fr GoDaddy e-postmarknadsfring"
-
 #: includes/settings.php:507
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
@@ -433,6 +425,12 @@ msgstr "Konfigurera ditt konto fr GoDaddy e-postmarknadsfring i %s."
 #: includes/widget.php:129
 msgid "settings page"
 msgstr "sidan Instllningar"
+
+#~ msgid "GoDaddy Email Marketing Settings"
+#~ msgstr "Instllningar fr GoDaddy e-postmarknadsfring"
+
+#~ msgid "GoDaddy Signup Forms"
+#~ msgstr "GoDaddy-anmlningsformulr"
 
 #~ msgid "GoDaddy Email Marketing Username"
 #~ msgstr "Anvndarnamn fr GoDaddy Email Marketing"

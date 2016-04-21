@@ -26,21 +26,21 @@ msgstr "Ada masalah. Isi semua bidang yang wajib diisi."
 msgid "Settings"
 msgstr "Pengaturan"
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "Pemasaran Email GoDaddy hampir siap."
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "You must enter your username &amp; API key for it to work."
 msgstr ""
 "Anda harus memasukkan nama pengguna &amp; kunci API agar akun dapat "
 "berfungsi."
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:257
 msgid "Let's do it!"
 msgstr "Mari kerjakan!"
 
-#: includes/class-shortcode.php:48
+#: includes/class-shortcode.php:48 includes/settings.php:54
 #, fuzzy
 msgid "GoDaddy Email Marketing"
 msgstr "Formulir Pemasaran Email GoDaddy"
@@ -118,13 +118,10 @@ msgstr "Hari"
 msgid "Year"
 msgstr "Tahun"
 
-#: includes/settings.php:53
-msgid "GoDaddy Email Marketing Settings"
-msgstr "Pengaturan Pemasaran Email GoDaddy"
-
-#: includes/settings.php:54
-msgid "GoDaddy Signup Forms"
-msgstr "Formulir Pendaftaran GoDaddy"
+#: includes/settings.php:53 includes/settings.php:500
+#, fuzzy
+msgid "GoDaddy Email Marketing Signup Forms"
+msgstr "Formulir Pemasaran Email GoDaddy"
 
 #: includes/settings.php:223
 #, fuzzy
@@ -297,11 +294,6 @@ msgstr "Hapus Semua Data"
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:500
-#, fuzzy
-msgid "GoDaddy Email Marketing Signup Forms"
-msgstr "Formulir Pemasaran Email GoDaddy"
-
 #: includes/settings.php:507
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
@@ -438,6 +430,12 @@ msgstr "Harap buat akun Pemasaran Email GoDaddy Anda di %s."
 #: includes/widget.php:129
 msgid "settings page"
 msgstr "halaman pengaturan"
+
+#~ msgid "GoDaddy Email Marketing Settings"
+#~ msgstr "Pengaturan Pemasaran Email GoDaddy"
+
+#~ msgid "GoDaddy Signup Forms"
+#~ msgstr "Formulir Pendaftaran GoDaddy"
 
 #~ msgid "GoDaddy Email Marketing Username"
 #~ msgstr "Nama Pengguna Pemasaran Email GoDaddy"

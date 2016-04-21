@@ -26,20 +26,20 @@ msgstr "Det oppstod et problem Fyll ut alle de pkrevde feltene."
 msgid "Settings"
 msgstr "Innstillinger"
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "GoDaddy Markedsfring per e-post er nesten klart."
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "You must enter your username &amp; API key for it to work."
 msgstr ""
 "Du m angi brukernavnet ditt og API-nkkelen din for at det skal fungere."
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:257
 msgid "Let's do it!"
 msgstr "La oss gjre det!"
 
-#: includes/class-shortcode.php:48
+#: includes/class-shortcode.php:48 includes/settings.php:54
 #, fuzzy
 msgid "GoDaddy Email Marketing"
 msgstr "Skjema for GoDaddy Markedsfring per e-post"
@@ -117,13 +117,10 @@ msgstr "Dag"
 msgid "Year"
 msgstr "r"
 
-#: includes/settings.php:53
-msgid "GoDaddy Email Marketing Settings"
-msgstr "Innstillinger for GoDaddy Markedsfring per e-post "
-
-#: includes/settings.php:54
-msgid "GoDaddy Signup Forms"
-msgstr "GoDaddy registreringsskjemaer"
+#: includes/settings.php:53 includes/settings.php:500
+#, fuzzy
+msgid "GoDaddy Email Marketing Signup Forms"
+msgstr "Skjema for GoDaddy Markedsfring per e-post"
 
 #: includes/settings.php:223
 #, fuzzy
@@ -297,11 +294,6 @@ msgstr "Slett alle data"
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:500
-#, fuzzy
-msgid "GoDaddy Email Marketing Signup Forms"
-msgstr "Skjema for GoDaddy Markedsfring per e-post"
-
 #: includes/settings.php:507
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
@@ -438,6 +430,12 @@ msgstr "Konfigurer GoDaddy Markedsfring per e-post-kontoen din i %s."
 #: includes/widget.php:129
 msgid "settings page"
 msgstr "innstillinger-siden"
+
+#~ msgid "GoDaddy Email Marketing Settings"
+#~ msgstr "Innstillinger for GoDaddy Markedsfring per e-post "
+
+#~ msgid "GoDaddy Signup Forms"
+#~ msgstr "GoDaddy registreringsskjemaer"
 
 #~ msgid "GoDaddy Email Marketing Username"
 #~ msgstr "Brukernavn for GoDaddy Markedsfring per e-post"

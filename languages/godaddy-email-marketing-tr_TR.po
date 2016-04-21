@@ -26,19 +26,19 @@ msgstr "Bir sorun olutu. Ltfen zorunlu alanlar doldurun."
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "GoDaddy E-posta Pazarlama'ya kavumanza az kald."
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "rnn almas iin kullanc adnz ve API anahtarn girmeniz gerekir."
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:257
 msgid "Let's do it!"
 msgstr "Hadi, ie koyulalm!"
 
-#: includes/class-shortcode.php:48
+#: includes/class-shortcode.php:48 includes/settings.php:54
 #, fuzzy
 msgid "GoDaddy Email Marketing"
 msgstr "GoDaddy E-Posta Pazarlama Formu"
@@ -116,13 +116,10 @@ msgstr "Gn"
 msgid "Year"
 msgstr "Yl"
 
-#: includes/settings.php:53
-msgid "GoDaddy Email Marketing Settings"
-msgstr "GoDaddy E-Posta Pazarlama Ayarlar"
-
-#: includes/settings.php:54
-msgid "GoDaddy Signup Forms"
-msgstr "GoDaddy Kayt Formlar"
+#: includes/settings.php:53 includes/settings.php:500
+#, fuzzy
+msgid "GoDaddy Email Marketing Signup Forms"
+msgstr "GoDaddy E-Posta Pazarlama Formu"
 
 #: includes/settings.php:223
 #, fuzzy
@@ -293,11 +290,6 @@ msgstr "Tm Verileri Sil"
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:500
-#, fuzzy
-msgid "GoDaddy Email Marketing Signup Forms"
-msgstr "GoDaddy E-Posta Pazarlama Formu"
-
 #: includes/settings.php:507
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
@@ -436,6 +428,12 @@ msgstr "GoDaddy E-posta Pazarlama hesabnz ltfen %s konumunda kurun."
 #: includes/widget.php:129
 msgid "settings page"
 msgstr "ayarlar sayfas"
+
+#~ msgid "GoDaddy Email Marketing Settings"
+#~ msgstr "GoDaddy E-Posta Pazarlama Ayarlar"
+
+#~ msgid "GoDaddy Signup Forms"
+#~ msgstr "GoDaddy Kayt Formlar"
 
 #~ msgid "GoDaddy Email Marketing Username"
 #~ msgstr "GoDaddy E-Posta Pazarlama Kullanc Ad"

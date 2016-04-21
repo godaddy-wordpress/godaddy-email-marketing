@@ -26,21 +26,21 @@ msgstr "Un problme est survenu. Veuillez remplir tous les champs obligatoires."
 msgid "Settings"
 msgstr "Paramtres"
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "Le plug-in GoDaddy Marketing par email est presque prt."
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "You must enter your username &amp; API key for it to work."
 msgstr ""
 "Vous devez entrer votre nom d'utilisateur et votre cl API pour en garantir "
 "le bon fonctionnement."
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:257
 msgid "Let's do it!"
 msgstr "Allons-y!"
 
-#: includes/class-shortcode.php:48
+#: includes/class-shortcode.php:48 includes/settings.php:54
 #, fuzzy
 msgid "GoDaddy Email Marketing"
 msgstr "Formulaire Marketing par mail GoDaddy"
@@ -118,13 +118,10 @@ msgstr "Jour"
 msgid "Year"
 msgstr "Anne"
 
-#: includes/settings.php:53
-msgid "GoDaddy Email Marketing Settings"
-msgstr "Paramtres du plug-in GoDaddy Marketing par email"
-
-#: includes/settings.php:54
-msgid "GoDaddy Signup Forms"
-msgstr "Formulaires d'inscription GoDaddy"
+#: includes/settings.php:53 includes/settings.php:500
+#, fuzzy
+msgid "GoDaddy Email Marketing Signup Forms"
+msgstr "Formulaire Marketing par mail GoDaddy"
 
 #: includes/settings.php:223
 #, fuzzy
@@ -300,11 +297,6 @@ msgstr "Supprimer toutes les donnes"
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:500
-#, fuzzy
-msgid "GoDaddy Email Marketing Signup Forms"
-msgstr "Formulaire Marketing par mail GoDaddy"
-
 #: includes/settings.php:507
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
@@ -439,6 +431,12 @@ msgstr "Configurez votre compte Marketing par mail GoDaddy dans la %s."
 #: includes/widget.php:129
 msgid "settings page"
 msgstr "page Paramtres"
+
+#~ msgid "GoDaddy Email Marketing Settings"
+#~ msgstr "Paramtres du plug-in GoDaddy Marketing par email"
+
+#~ msgid "GoDaddy Signup Forms"
+#~ msgstr "Formulaires d'inscription GoDaddy"
 
 #~ msgid "GoDaddy Email Marketing Username"
 #~ msgstr "Nom d'utilisateur pour le marketing par mail GoDaddy"

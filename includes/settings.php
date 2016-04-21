@@ -50,8 +50,8 @@ class GEM_Settings {
 	 */
 	public function action_admin_menu() {
 		$this->hook = add_options_page(
-			__( 'GoDaddy Email Marketing Settings', 'godaddy-email-marketing' ),
-			__( 'GoDaddy Signup Forms', 'godaddy-email-marketing' ),
+			__( 'GoDaddy Email Marketing Signup Forms', 'godaddy-email-marketing' ),
+			__( 'GoDaddy Email Marketing', 'godaddy-email-marketing' ),
 			'manage_options',
 			$this->slug = 'gem-settings',
 			array( $this, 'display_settings_page' )

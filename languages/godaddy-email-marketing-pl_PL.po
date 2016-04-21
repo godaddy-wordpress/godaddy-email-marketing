@@ -24,19 +24,19 @@ msgstr "Wystpi problem. Wypenij wszystkie wymagane pola."
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "Marketing e-mail GoDaddy jest ju prawie gotowy."
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "Aby mg dziaa, musisz poda nazw uytkownika iklucz API."
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:257
 msgid "Let's do it!"
 msgstr "Zrbmy to!"
 
-#: includes/class-shortcode.php:48
+#: includes/class-shortcode.php:48 includes/settings.php:54
 #, fuzzy
 msgid "GoDaddy Email Marketing"
 msgstr "Formularz Marketingu e-mail GoDaddy"
@@ -114,13 +114,10 @@ msgstr "Dzie"
 msgid "Year"
 msgstr "Rok"
 
-#: includes/settings.php:53
-msgid "GoDaddy Email Marketing Settings"
-msgstr "Ustawienia Marketingu e-mail GoDaddy"
-
-#: includes/settings.php:54
-msgid "GoDaddy Signup Forms"
-msgstr "Formularze rejestracji GoDaddy"
+#: includes/settings.php:53 includes/settings.php:500
+#, fuzzy
+msgid "GoDaddy Email Marketing Signup Forms"
+msgstr "Formularz Marketingu e-mail GoDaddy"
 
 #: includes/settings.php:223
 #, fuzzy
@@ -290,11 +287,6 @@ msgstr "Usu wszystkie dane"
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:500
-#, fuzzy
-msgid "GoDaddy Email Marketing Signup Forms"
-msgstr "Formularz Marketingu e-mail GoDaddy"
-
 #: includes/settings.php:507
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
@@ -427,6 +419,12 @@ msgstr "Skonfiguruj konto Marketingu e-mail GoDaddy w %s."
 #: includes/widget.php:129
 msgid "settings page"
 msgstr "strona ustawie"
+
+#~ msgid "GoDaddy Email Marketing Settings"
+#~ msgstr "Ustawienia Marketingu e-mail GoDaddy"
+
+#~ msgid "GoDaddy Signup Forms"
+#~ msgstr "Formularze rejestracji GoDaddy"
 
 #~ msgid "GoDaddy Email Marketing Username"
 #~ msgstr "Nazwa uytkownika Marketingu e-mail GoDaddy"

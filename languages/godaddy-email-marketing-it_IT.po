@@ -25,20 +25,20 @@ msgstr "Si  verificato un problema. Compila tutti i campi obbligatori."
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "Marketing via email di GoDaddy  quasi pronto."
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "You must enter your username &amp; API key for it to work."
 msgstr ""
 "Per poter funzionare, devi inserire il tuo nome utente e la chiave API."
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:257
 msgid "Let's do it!"
 msgstr "Procediamo."
 
-#: includes/class-shortcode.php:48
+#: includes/class-shortcode.php:48 includes/settings.php:54
 #, fuzzy
 msgid "GoDaddy Email Marketing"
 msgstr "Marketing via email di GoDaddy"
@@ -116,13 +116,10 @@ msgstr "Giorno"
 msgid "Year"
 msgstr "Anno"
 
-#: includes/settings.php:53
-msgid "GoDaddy Email Marketing Settings"
-msgstr "Impostazioni di Marketing via email di GoDaddy"
-
-#: includes/settings.php:54
-msgid "GoDaddy Signup Forms"
-msgstr "Moduli di iscrizione GoDaddy"
+#: includes/settings.php:53 includes/settings.php:500
+#, fuzzy
+msgid "GoDaddy Email Marketing Signup Forms"
+msgstr "Marketing via email di GoDaddy"
 
 #: includes/settings.php:223
 #, fuzzy
@@ -297,11 +294,6 @@ msgstr "Cancella tutti i dati"
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:500
-#, fuzzy
-msgid "GoDaddy Email Marketing Signup Forms"
-msgstr "Marketing via email di GoDaddy"
-
 #: includes/settings.php:507
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
@@ -439,6 +431,12 @@ msgstr "Configura il tuo account Marketing via email di GoDaddy nella %s."
 #: includes/widget.php:129
 msgid "settings page"
 msgstr "pagina delle impostazioni"
+
+#~ msgid "GoDaddy Email Marketing Settings"
+#~ msgstr "Impostazioni di Marketing via email di GoDaddy"
+
+#~ msgid "GoDaddy Signup Forms"
+#~ msgstr "Moduli di iscrizione GoDaddy"
 
 #~ msgid "GoDaddy Email Marketing Username"
 #~ msgstr "Nome utente di Marketing via email di GoDaddy"

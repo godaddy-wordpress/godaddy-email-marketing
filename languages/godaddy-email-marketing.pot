@@ -24,19 +24,19 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr ""
 
-#: godaddy-email-marketing.php:255
+#: godaddy-email-marketing.php:256
 msgid "You must enter your username &amp; API key for it to work."
 msgstr ""
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:257
 msgid "Let's do it!"
 msgstr ""
 
-#: includes/class-shortcode.php:48
+#: includes/class-shortcode.php:48 includes/settings.php:54
 msgid "GoDaddy Email Marketing"
 msgstr ""
 
@@ -112,12 +112,8 @@ msgstr ""
 msgid "Year"
 msgstr ""
 
-#: includes/settings.php:53
-msgid "GoDaddy Email Marketing Settings"
-msgstr ""
-
-#: includes/settings.php:54
-msgid "GoDaddy Signup Forms"
+#: includes/settings.php:53 includes/settings.php:500
+msgid "GoDaddy Email Marketing Signup Forms"
 msgstr ""
 
 #: includes/settings.php:223
@@ -270,10 +266,6 @@ msgstr ""
 
 #: includes/settings.php:420
 msgid "Purges all saved data associated with this plugin."
-msgstr ""
-
-#: includes/settings.php:500
-msgid "GoDaddy Email Marketing Signup Forms"
 msgstr ""
 
 #: includes/settings.php:507
