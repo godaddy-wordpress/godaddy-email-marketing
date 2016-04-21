@@ -246,8 +246,9 @@ class GEM_Official {
 		}
 
 		$version = get_option( 'gem-version' );
+		$settings = get_option( 'gem-settings' );
 
-		if ( ! $version ) {
+		if ( ! $version && ( empty( $settings['username'] ) || empty( $settings['api-key'] ) ) ) {
 			update_option( 'gem-version', GEM_VERSION ); ?>
 
 			<div class="updated fade">
