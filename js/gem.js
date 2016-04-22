@@ -1,5 +1,3 @@
-/* global GEM */
-
 /**
  * GoDaddy Email Marketing script.
  */
@@ -91,7 +89,7 @@
 			// Validate inputs.
 			$( this ).find( '.gem-required' ).each( function() {
 				var value = $( this ).val();
-				if ( 'signup[email]' == $( this ).attr( 'name' ) && ! GEM.isEmail( value ) ) {
+				if ( 'signup[email]' === $( this ).attr( 'name' ) && ! GEM.isEmail( value ) ) {
 
 					// Invalid email.
 					invalidElements.push( $( this ) );
@@ -146,7 +144,7 @@
 
 					$( this ).addClass( 'gem-invalid' );
 
-					if ( 'signup[email]' == $( this ).attr( 'name' ) ) {
+					if ( 'signup[email]' === $( this ).attr( 'name' ) ) {
 						if ( '' === $( this ).val() ) {
 
 							// Empty email.
