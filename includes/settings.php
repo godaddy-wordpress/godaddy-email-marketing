@@ -555,7 +555,7 @@ class GEM_Settings {
 
 						<br style="clear:both" />
 						<p class="description">
-							<?php esc_html_e( 'Not seeing your form?', 'godaddy-email-marketing' ); ?> <a href="<?php echo esc_url( add_query_arg( 'action', 'refresh' ) ); ?>" class="button"><?php esc_html_e( 'Refresh Forms', 'godaddy-email-marketing' ); ?></a>
+							<?php esc_html_e( 'Not seeing your form?', 'godaddy-email-marketing' ); ?> <a href="<?php echo esc_url( add_query_arg( 'action', 'refresh', remove_query_arg( 'tab' ) ) ); ?>" class="button"><?php esc_html_e( 'Refresh Forms', 'godaddy-email-marketing' ); ?></a>
 							<?php
 							if ( true === $valid_creds ) {
 								$this->signups_button();
