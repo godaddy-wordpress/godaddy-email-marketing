@@ -316,7 +316,7 @@ msgstr ""
 "listahan ng email."
 
 #: includes/settings.php:513
-msgctxt "godaddy-email-marketing"
+msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr ""
 
@@ -331,7 +331,8 @@ msgstr ""
 "lang ng 2 minuto! %s"
 
 #: includes/settings.php:516
-msgctxt "header note"
+#, fuzzy
+msgctxt "header button"
 msgid "Sign Up Now"
 msgstr "Mag-sign Up Na"
 

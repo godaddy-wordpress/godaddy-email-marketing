@@ -304,7 +304,7 @@ msgstr ""
 "pozwala odwiedzajcym witryn zasubskrybowa Twoj list mailingow."
 
 #: includes/settings.php:513
-msgctxt "godaddy-email-marketing"
+msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr ""
 
@@ -317,7 +317,8 @@ msgid ""
 msgstr "Nie masz konta Marketingu e-mail GoDaddy? Za je wmniej ni 2minuty! %s"
 
 #: includes/settings.php:516
-msgctxt "header note"
+#, fuzzy
+msgctxt "header button"
 msgid "Sign Up Now"
 msgstr "Utwrz konto"
 

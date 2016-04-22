@@ -308,7 +308,7 @@ msgstr ""
 "subscribe to your email list."
 
 #: includes/settings.php:513
-msgctxt "godaddy-email-marketing"
+msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr ""
 
@@ -323,7 +323,8 @@ msgstr ""
 "minutes! %s"
 
 #: includes/settings.php:516
-msgctxt "header note"
+#, fuzzy
+msgctxt "header button"
 msgid "Sign Up Now"
 msgstr " - "
 

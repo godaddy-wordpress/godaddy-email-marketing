@@ -285,7 +285,7 @@ msgid ""
 msgstr "GoDaddyWeb WordPress  GoDaddy "
 
 #: includes/settings.php:513
-msgctxt "godaddy-email-marketing"
+msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr ""
 
@@ -298,7 +298,8 @@ msgid ""
 msgstr "GoDaddy 2 %s"
 
 #: includes/settings.php:516
-msgctxt "header note"
+#, fuzzy
+msgctxt "header button"
 msgid "Sign Up Now"
 msgstr " "
 

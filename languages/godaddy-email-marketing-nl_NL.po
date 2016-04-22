@@ -311,7 +311,7 @@ msgstr ""
 "te stellen, kunnen je sitebezoekers zich abonneren op je e-maillijst."
 
 #: includes/settings.php:513
-msgctxt "godaddy-email-marketing"
+msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr ""
 
@@ -326,7 +326,8 @@ msgstr ""
 "minuten om je in te schrijven! %s"
 
 #: includes/settings.php:516
-msgctxt "header note"
+#, fuzzy
+msgctxt "header button"
 msgid "Sign Up Now"
 msgstr "Nu registreren"
 

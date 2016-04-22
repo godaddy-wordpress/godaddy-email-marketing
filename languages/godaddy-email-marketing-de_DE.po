@@ -313,7 +313,7 @@ msgstr ""
 "einzutragen."
 
 #: includes/settings.php:513
-msgctxt "godaddy-email-marketing"
+msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr ""
 
@@ -328,7 +328,8 @@ msgstr ""
 "in weniger als 2 Minuten! %s"
 
 #: includes/settings.php:516
-msgctxt "header note"
+#, fuzzy
+msgctxt "header button"
 msgid "Sign Up Now"
 msgstr "Jetzt registrieren"
 

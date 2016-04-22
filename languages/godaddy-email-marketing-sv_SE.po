@@ -308,7 +308,7 @@ msgstr ""
 "postlista."
 
 #: includes/settings.php:513
-msgctxt "godaddy-email-marketing"
+msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr ""
 
@@ -323,7 +323,8 @@ msgstr ""
 "mindre n 2 minuter! %s"
 
 #: includes/settings.php:516
-msgctxt "header note"
+#, fuzzy
+msgctxt "header button"
 msgid "Sign Up Now"
 msgstr "Anml dig nu"
 

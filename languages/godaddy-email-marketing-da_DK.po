@@ -308,7 +308,7 @@ msgstr ""
 "besgende til din website tilmelde sig din e-mailliste."
 
 #: includes/settings.php:513
-msgctxt "godaddy-email-marketing"
+msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr ""
 
@@ -322,7 +322,8 @@ msgstr ""
 "Har du ikke en konto til GoDaddy e-mailmarkedsfring? F en p f minutter! %s"
 
 #: includes/settings.php:516
-msgctxt "header note"
+#, fuzzy
+msgctxt "header button"
 msgid "Sign Up Now"
 msgstr "Tilmeldig dig nu"
 
