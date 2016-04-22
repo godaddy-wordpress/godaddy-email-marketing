@@ -174,15 +174,6 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$instance->page_load();
 	}
 
-	public function test_page_load_edit_form() {
-		$instance = new GEM_Settings();
-		$instance->action_admin_menu();
-
-		// edit_form action missing form ID: forces coverage.
-		$_GET['action'] = 'edit_form';
-		$instance->page_load();
-	}
-
 	public function test_page_load_transient_gem_refresh() {
 		$instance = new GEM_Settings();
 		set_transient( 'gem-refresh', true, 30 );

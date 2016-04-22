@@ -149,27 +149,6 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		delete_transient( 'gem-' . $user_name . '-account' );
 	}
 
-	public function test_user_sign_in() {
-		$sample_response = 'the_response';
-
-		WP_Http_Mock_Transport::$expected_url = 'http://api.madmimi.com/sessions/single_signon_token';
-		WP_Http_Mock_Transport::$response = array(
-			'response' => array(
-				'code' => 401,
-			),
-		);
-		$this->assertFalse( GEM_Dispatcher::user_sign_in() );
-
-		WP_Http_Mock_Transport::$expected_url = 'http://api.madmimi.com/sessions/single_signon_token';
-		WP_Http_Mock_Transport::$response = array(
-			'response' => array(
-				'code' => 200,
-			),
-			'body' => $sample_response,
-		);
-		$this->assertEquals( 'http://api.madmimi.com/sessions/single_signon?token=' . $sample_response, GEM_Dispatcher::user_sign_in() );
-	}
-
 	public function test_get_method_url() {
 		$auth = array(
 			'username' => 'the_user',
@@ -182,8 +161,6 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		$this->assertEquals( 'http://api.madmimi.com/signups.json?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'forms', false,  $auth ) );
 		$this->assertEquals( 'http://api.madmimi.com/signups/the_id.json?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'fields', $params,  $auth ) );
 		$this->assertEquals( 'http://api.madmimi.com/user/account_status?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'account', false,  $auth ) );
-		$this->assertEquals( 'http://api.madmimi.com/sessions/single_signon_token?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'signin', false,  $auth ) );
-		$this->assertEquals( 'http://api.madmimi.com/sessions/single_signon?token=the_token&username=the_user', GEM_Dispatcher::get_method_url( 'signin_redirect', $params,  $auth ) );
 
 		$auth = array(
 			'username' => 'the_user',
@@ -193,8 +170,6 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		$this->assertEquals( 'http://api.madmimi.com/signups.json?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'forms', false,  false ) );
 		$this->assertEquals( 'http://api.madmimi.com/signups/the_id.json?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'fields', $params,  false ) );
 		$this->assertEquals( 'http://api.madmimi.com/user/account_status?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'account', false,  false ) );
-		$this->assertEquals( 'http://api.madmimi.com/sessions/single_signon_token?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'signin', false,  false ) );
-		$this->assertEquals( 'http://api.madmimi.com/sessions/single_signon?token=the_token&username=the_user', GEM_Dispatcher::get_method_url( 'signin_redirect', $params,  false ) );
 	}
 
 	public function test_is_response_ok() {

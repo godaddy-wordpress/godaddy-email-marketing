@@ -183,22 +183,6 @@ class GEM_Settings {
 					}
 
 					break;
-				case 'edit_form' :
-					if ( ! isset( $_GET['form_id'] ) ) {
-						return;
-					}
-
-					// @codeCoverageIgnoreStart
-					$tokenized_url = add_query_arg( 'redirect', sprintf( '/signups/%d/edit', absint( $_GET['form_id'] ) ), GEM_Dispatcher::user_sign_in() );
-
-					// Not wp_safe_redirect as it's an external site.
-					if ( 'cli' !== php_sapi_name() ) {
-						wp_redirect( $tokenized_url );
-						exit;
-					}
-
-					break;
-					// @codeCoverageIgnoreEnd
 				case 'dismiss' :
 					$user_id = get_current_user_id();
 
@@ -549,17 +533,13 @@ class GEM_Settings {
 								</tr>
 							</tfoot>
 							<tbody>
-							<?php foreach ( $forms->signups as $form ) :
-								$edit_link = add_query_arg( array(
-									'action' => 'edit_form',
-									'form_id' => $form->id,
-								) ); ?>
+							<?php foreach ( $forms->signups as $form ) : ?>
 								<tr>
 									<td>
 										<?php echo esc_html( $form->name ); ?>
 										<div class="row-actions">
 											<span class="edit">
-												<a target="_blank" href="<?php echo esc_url( $edit_link ); ?>" title="<?php esc_attr_e( 'Opens in a new window', 'godaddy-email-marketing' ); ?>"><?php esc_html_e( 'Edit form in GoDaddy Email Marketing', 'godaddy-email-marketing' ); ?></a> |
+												<a target="_blank" href="<?php echo esc_url( "https://gem.godaddy.com/signups/{$form->id}/edit" ); ?>" title="<?php esc_attr_e( 'Opens in a new window', 'godaddy-email-marketing' ); ?>"><?php esc_html_e( 'Edit form in GoDaddy Email Marketing', 'godaddy-email-marketing' ); ?></a> |
 											</span>
 											<span class="view">
 												<a target="_blank" href="<?php echo esc_url( $form->url ); ?>"><?php esc_html_e( 'Preview', 'godaddy-email-marketing' ); ?></a>

@@ -143,29 +143,6 @@ class GEM_Dispatcher {
 	}
 
 	/**
-	 * Gets the sign in redirect URL.
-	 *
-	 * @return false|string The URL if sign in is successful or false.
-	 */
-	public static function user_sign_in() {
-
-		// Prepare the URL that includes our credentials.
-		$response = wp_remote_get( self::get_method_url( 'signin', false ), array(
-			'timeout' => 10,
-		) );
-
-		// Credentials are incorrect.
-		if ( ! in_array( wp_remote_retrieve_response_code( $response ), self::$ok_codes ) ) {
-			return false;
-		}
-
-		// Retrieve the token.
-		return self::get_method_url( 'signin_redirect', array(
-			'token' => wp_remote_retrieve_body( $response ),
-		) );
-	}
-
-	/**
 	 * Utility function for getting a URL for various API methods
 	 *
 	 * @param string $method The short of the API method.
@@ -192,15 +169,6 @@ class GEM_Dispatcher {
 				break;
 			case 'account' :
 				$path = add_query_arg( $auth, 'user/account_status' );
-				break;
-			case 'signin' :
-				$path = add_query_arg( $auth, 'sessions/single_signon_token' );
-				break;
-			case 'signin_redirect' :
-				$path = add_query_arg( array(
-					'token'    => $params['token'],
-					'username' => $auth['username'],
-				), 'sessions/single_signon' );
 				break;
 		}
 
