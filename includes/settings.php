@@ -510,10 +510,10 @@ class GEM_Settings {
 
 						<p class="description">
 							<?php if ( true === $valid_creds ) : ?>
-								<?php echo esc_html_x( 'You don\'t have any forms yet.', 'godaddy-email-marketing' ); ?>
+								<?php echo esc_html_x( 'You don\'t have any forms yet.', 'header note', 'godaddy-email-marketing' ); ?>
 								<?php $this->signups_button(); ?>
 							<?php else : ?>
-								<?php echo sprintf( esc_html_x( 'Don\'t have a GoDaddy Email Marketing account? Get one in less than 2 minutes! %s', 'header note', 'godaddy-email-marketing' ), sprintf( '<a target="_blank" href="https://godaddy.com/business/email-marketing" class="button">%s</a>', esc_html_x( 'Sign Up Now', 'header note', 'godaddy-email-marketing' ) ) ); ?>
+								<?php echo sprintf( esc_html_x( 'Don\'t have a GoDaddy Email Marketing account? Get one in less than 2 minutes! %s', 'header note', 'godaddy-email-marketing' ), sprintf( '<a target="_blank" href="https://godaddy.com/business/email-marketing" class="button">%s</a>', esc_html_x( 'Sign Up Now', 'header button', 'godaddy-email-marketing' ) ) ); ?>
 							<?php endif; ?>
 						</p>
 					</div>
