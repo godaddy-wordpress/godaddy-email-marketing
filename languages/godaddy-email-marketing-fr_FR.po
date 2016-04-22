@@ -1,9 +1,9 @@
-#: godaddy-email-marketing.php:205
+#: godaddy-email-marketing.php:196
 msgctxt "ajax response"
 msgid "Thank you for signing up!"
 msgstr "Merci de votre inscription!"
 
-#: godaddy-email-marketing.php:206
+#: godaddy-email-marketing.php:197
 msgctxt "ajax response"
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
@@ -12,31 +12,37 @@ msgstr ""
 "Merci de votre inscription! Veuillez vrifier votre mail pour confirmer votre "
 "abonnement."
 
-#: godaddy-email-marketing.php:207
+#: godaddy-email-marketing.php:198
 msgctxt "ajax response"
 msgid "Oops! There was a problem. Please try again."
 msgstr "Erreur! Un problme est survenu. Ressayez."
 
-#: godaddy-email-marketing.php:208
+#: godaddy-email-marketing.php:199
 msgctxt "ajax response"
-msgid "There was a problem. Please fill all required fields."
-msgstr "Un problme est survenu. Veuillez remplir tous les champs obligatoires."
+msgid "Please enter a valid email address."
+msgstr ""
 
-#: godaddy-email-marketing.php:220 includes/settings.php:528
+#: godaddy-email-marketing.php:200
+#, php-format
+msgctxt "ajax response"
+msgid "%s is a required field."
+msgstr ""
+
+#: godaddy-email-marketing.php:212 includes/settings.php:512
 msgid "Settings"
 msgstr "Paramtres"
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:248
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "Le plug-in GoDaddy Marketing par email est presque prt."
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:248
 msgid "You must enter your username &amp; API key for it to work."
 msgstr ""
 "Vous devez entrer votre nom d'utilisateur et votre cl API pour en garantir "
 "le bon fonctionnement."
 
-#: godaddy-email-marketing.php:257
+#: godaddy-email-marketing.php:249
 msgid "Let's do it!"
 msgstr "Allons-y!"
 
@@ -58,85 +64,85 @@ msgstr ""
 msgid "Powered by GoDaddy"
 msgstr "Optimis par GoDaddy"
 
-#: includes/render.php:316
+#: includes/render.php:322
 msgid "Month"
 msgstr "Mois"
 
-#: includes/render.php:317
+#: includes/render.php:323
 msgid "January"
 msgstr "Janvier"
 
-#: includes/render.php:318
+#: includes/render.php:324
 msgid "Febuary"
 msgstr "Fvrier"
 
-#: includes/render.php:319
+#: includes/render.php:325
 msgid "March"
 msgstr "Mars"
 
-#: includes/render.php:320
+#: includes/render.php:326
 msgid "April"
 msgstr "Avril"
 
-#: includes/render.php:321
+#: includes/render.php:327
 msgid "May"
 msgstr "Mai"
 
-#: includes/render.php:322
+#: includes/render.php:328
 msgid "June"
 msgstr "Juin"
 
-#: includes/render.php:323
+#: includes/render.php:329
 msgid "July"
 msgstr "Juillet"
 
-#: includes/render.php:324
+#: includes/render.php:330
 msgid "August"
 msgstr "Aot"
 
-#: includes/render.php:325
+#: includes/render.php:331
 msgid "September"
 msgstr "Septembre"
 
-#: includes/render.php:326
+#: includes/render.php:332
 msgid "October"
 msgstr "Octobre"
 
-#: includes/render.php:327
+#: includes/render.php:333
 msgid "November"
 msgstr "Novembre"
 
-#: includes/render.php:328
+#: includes/render.php:334
 msgid "December"
 msgstr "Dcembre"
 
-#: includes/render.php:333
+#: includes/render.php:339
 msgid "Day"
 msgstr "Jour"
 
-#: includes/render.php:341
+#: includes/render.php:347
 msgid "Year"
 msgstr "Anne"
 
-#: includes/settings.php:53 includes/settings.php:500
+#: includes/settings.php:53 includes/settings.php:484
 #, fuzzy
 msgid "GoDaddy Email Marketing Signup Forms"
 msgstr "Formulaire Marketing par mail GoDaddy"
 
-#: includes/settings.php:223
+#: includes/settings.php:207
 #, fuzzy
 msgid "All data has been removed."
 msgstr "Toutes les donnes temporaires en cache ont t supprimes."
 
-#: includes/settings.php:227
+#: includes/settings.php:211
 msgid "All transients were removed."
 msgstr "Toutes les donnes temporaires en cache ont t supprimes."
 
-#: includes/settings.php:231
+#: includes/settings.php:215
 msgid "Forms list was successfully updated."
 msgstr "Les listes de formulaires ont t mises  jour."
 
-#: includes/settings.php:235
+#: includes/settings.php:219
 msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
@@ -144,29 +150,29 @@ msgstr ""
 "Les informations d'identification ne sont pas correctes! Assurez-vous que "
 "les informations entres sont correctes."
 
-#: includes/settings.php:239
+#: includes/settings.php:223
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr ""
 "La connexion a t tablie  Marketing par mail GoDaddy! Opration termine !"
 
-#: includes/settings.php:244
+#: includes/settings.php:228
 msgid "Settings have been updated."
 msgstr ""
 
-#: includes/settings.php:248
+#: includes/settings.php:232
 msgid "Please fill in the username and the API key first."
 msgstr "Commencez par entrer le nom d'utilisateur et la cl API."
 
-#: includes/settings.php:280
+#: includes/settings.php:264
 msgid "Overview"
 msgstr "Prsentation"
 
-#: includes/settings.php:284
+#: includes/settings.php:268
 msgid "Instructions"
 msgstr "Instructions"
 
-#: includes/settings.php:286
+#: includes/settings.php:270
 #, php-format
 msgid ""
 "Once the plugin is activated, you will be able to select and insert any of "
@@ -182,7 +188,7 @@ msgstr ""
 "Marketing par email). Vous disposez de trois mthodes pour afficher un "
 "formulaire Web sur votre site:"
 
-#: includes/settings.php:289
+#: includes/settings.php:273
 msgid ""
 "<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
 "called GoDaddy Email Marketing Form and drag it into the widget area of your "
@@ -193,7 +199,7 @@ msgstr ""
 "de votre choix. Vous pouvez ensuite ajouter un titre et slectionner un "
 "formulaire!"
 
-#: includes/settings.php:290
+#: includes/settings.php:274
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
@@ -202,7 +208,7 @@ msgstr ""
 "publication ou page en ajoutant le code abrg (ex. <code>[gem id=80326]</"
 "code>) dans l'diteur de page/publication."
 
-#: includes/settings.php:292
+#: includes/settings.php:276
 #, php-format
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
@@ -211,98 +217,98 @@ msgstr ""
 "<strong>Balise de modle:</strong> Vous pouvez ajouter la balise de modle "
 "suivante dans tout fichier WordPress: <code>%s</code>. Ex. <code>%s</code>"
 
-#: includes/settings.php:302
+#: includes/settings.php:286
 msgid "For more information:"
 msgstr "Pour plus d'informations:"
 
-#: includes/settings.php:303
+#: includes/settings.php:287
 msgid "GoDaddy"
 msgstr "GoDaddy"
 
-#: includes/settings.php:304
+#: includes/settings.php:288
 msgid "GoDaddy Help"
 msgstr "Aide GoDaddy"
 
-#: includes/settings.php:305
+#: includes/settings.php:289
 msgid "Contact GoDaddy"
 msgstr "Contactez GoDaddy"
 
-#: includes/settings.php:330
+#: includes/settings.php:314
 msgid "Account Details"
 msgstr "Dtails du compte"
 
-#: includes/settings.php:337
+#: includes/settings.php:321
 msgid "Username"
 msgstr ""
 
-#: includes/settings.php:344
+#: includes/settings.php:328
 msgid "Your GoDaddy Email Marketing username (email address)"
 msgstr ""
 "Votre nom d'utilisateur pour le marketing par mail GoDaddy (adresse email)"
 
-#: includes/settings.php:351
+#: includes/settings.php:335
 msgid "API Key"
 msgstr ""
 
-#: includes/settings.php:358
+#: includes/settings.php:342
 msgctxt "settings page"
 msgid "Where can I find my API key?"
 msgstr "O puis-je trouver ma cl API?"
 
-#: includes/settings.php:365
+#: includes/settings.php:349
 msgid "Footer Link"
 msgstr ""
 
-#: includes/settings.php:372
+#: includes/settings.php:356
 msgid "Display \"Powered by GoDaddy\"?"
 msgstr "Afficher Optimis par GoDaddy"
 
-#: includes/settings.php:379
+#: includes/settings.php:363
 #, fuzzy
 msgid "Debugging"
 msgstr "Dboguer"
 
-#: includes/settings.php:386
+#: includes/settings.php:370
 #, fuzzy
 msgid "Debug Mode"
 msgstr "Dboguer"
 
-#: includes/settings.php:393
+#: includes/settings.php:377
 msgid "Activated"
 msgstr ""
 
-#: includes/settings.php:400
+#: includes/settings.php:384
 msgid "Cache Reset"
 msgstr ""
 
-#: includes/settings.php:406
+#: includes/settings.php:390
 msgid "Erase Transients"
 msgstr "Supprimer toutes les donnes temporaires en cache"
 
-#: includes/settings.php:407
+#: includes/settings.php:391
 msgid ""
 "Purges only the cached transients associated with this plugin, and should be "
 "attempted before a hard reset."
 msgstr ""
 
-#: includes/settings.php:413
+#: includes/settings.php:397
 msgid "Hard Reset"
 msgstr ""
 
-#: includes/settings.php:419
+#: includes/settings.php:403
 msgid "Erase All Data"
 msgstr "Supprimer toutes les donnes"
 
-#: includes/settings.php:420
+#: includes/settings.php:404
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:507
+#: includes/settings.php:491
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
 msgstr "Faites directement l'exprience du plug-in Marketing par mail GoDaddy."
 
-#: includes/settings.php:509
+#: includes/settings.php:493
 msgctxt "header note"
 msgid ""
 "Add your GoDaddy Email Marketing webform to your WordPress site! Easy to set "
@@ -313,12 +319,12 @@ msgstr ""
 "WordPress! Facile  configurer, le plug-in Marketing par mail GoDaddy permet "
 "aux visiteurs de votre site de s'abonner  votre liste de courrier."
 
-#: includes/settings.php:513
+#: includes/settings.php:497
 msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr ""
 
-#: includes/settings.php:516
+#: includes/settings.php:500
 #, php-format
 msgctxt "header note"
 msgid ""
@@ -328,71 +334,71 @@ msgstr ""
 "Vous ne disposez pas encore d'un compte Marketing par mail GoDaddy? Vous "
 "pouvez en obtenir un en moins de 2minutes! %s"
 
-#: includes/settings.php:516
+#: includes/settings.php:500
 #, fuzzy
 msgctxt "header button"
 msgid "Sign Up Now"
 msgstr "Sinscrire maintenant"
 
-#: includes/settings.php:526
+#: includes/settings.php:510
 #, fuzzy
 msgid "Forms"
 msgstr "Formulaire:"
 
-#: includes/settings.php:535
+#: includes/settings.php:519
 #, fuzzy
 msgid "Available Signup Forms"
 msgstr "Formulaires disponibles"
 
-#: includes/settings.php:539 includes/settings.php:546
+#: includes/settings.php:523 includes/settings.php:530
 msgid "Form Name"
 msgstr "Nom du formulaire"
 
-#: includes/settings.php:540 includes/settings.php:547
+#: includes/settings.php:524 includes/settings.php:531
 msgid "Form ID"
 msgstr "ID de formulaire"
 
-#: includes/settings.php:541 includes/settings.php:548
+#: includes/settings.php:525 includes/settings.php:532
 msgid "Shortcode"
 msgstr "Code abrg"
 
-#: includes/settings.php:562
+#: includes/settings.php:542
 msgid "Opens in a new window"
 msgstr "S'ouvre dans une nouvelle fentre"
 
-#: includes/settings.php:562
+#: includes/settings.php:542
 msgid "Edit form in GoDaddy Email Marketing"
 msgstr "Modifier le formulaire dans Marketing par mail GoDaddy"
 
-#: includes/settings.php:565
+#: includes/settings.php:545
 msgid "Preview"
 msgstr "Aperu"
 
-#: includes/settings.php:578
+#: includes/settings.php:558
 msgid "Not seeing your form?"
 msgstr "Vous ne voyez pas votre formulaire?"
 
-#: includes/settings.php:578 includes/settings.php:597
+#: includes/settings.php:558 includes/settings.php:577
 msgid "Refresh Forms"
 msgstr "Actualiser les formulaires"
 
-#: includes/settings.php:595
+#: includes/settings.php:575
 msgctxt "save settings button"
 msgid "Save Settings"
 msgstr "Enregistrer les paramtres"
 
-#: includes/settings.php:611
+#: includes/settings.php:591
 msgid "Create a New Signup Form"
 msgstr ""
 
-#: includes/settings.php:698
+#: includes/settings.php:678
 msgid ""
 "If you are experiencing issues and are unsure of the cause you may want to "
 "activate debug mode, which displays additional options that allow you delete "
 "stored data."
 msgstr ""
 
-#: includes/settings.php:708
+#: includes/settings.php:688
 #, fuzzy
 msgid ""
 "Please enter your GoDaddy Email Marketing username and API Key. Your "
@@ -432,6 +438,11 @@ msgstr "Configurez votre compte Marketing par mail GoDaddy dans la %s."
 #: includes/widget.php:129
 msgid "settings page"
 msgstr "page Paramtres"
+
+#~ msgctxt "ajax response"
+#~ msgid "There was a problem. Please fill all required fields."
+#~ msgstr ""
+#~ "Un problme est survenu. Veuillez remplir tous les champs obligatoires."
 
 #~ msgid "GoDaddy Email Marketing Settings"
 #~ msgstr "Paramtres du plug-in GoDaddy Marketing par email"

@@ -1,9 +1,9 @@
-#: godaddy-email-marketing.php:205
+#: godaddy-email-marketing.php:196
 msgctxt "ajax response"
 msgid "Thank you for signing up!"
 msgstr "Takk for at du registrerte deg!"
 
-#: godaddy-email-marketing.php:206
+#: godaddy-email-marketing.php:197
 msgctxt "ajax response"
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
@@ -12,30 +12,36 @@ msgstr ""
 "Takk for at du registrerte deg! Sjekk e-posten din for  bekrefte "
 "abonnementet."
 
-#: godaddy-email-marketing.php:207
+#: godaddy-email-marketing.php:198
 msgctxt "ajax response"
 msgid "Oops! There was a problem. Please try again."
 msgstr "Ops! Det oppstod et problem Prv p nytt."
 
-#: godaddy-email-marketing.php:208
+#: godaddy-email-marketing.php:199
 msgctxt "ajax response"
-msgid "There was a problem. Please fill all required fields."
-msgstr "Det oppstod et problem Fyll ut alle de pkrevde feltene."
+msgid "Please enter a valid email address."
+msgstr ""
 
-#: godaddy-email-marketing.php:220 includes/settings.php:528
+#: godaddy-email-marketing.php:200
+#, php-format
+msgctxt "ajax response"
+msgid "%s is a required field."
+msgstr ""
+
+#: godaddy-email-marketing.php:212 includes/settings.php:512
 msgid "Settings"
 msgstr "Innstillinger"
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:248
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "GoDaddy Markedsfring per e-post er nesten klart."
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:248
 msgid "You must enter your username &amp; API key for it to work."
 msgstr ""
 "Du m angi brukernavnet ditt og API-nkkelen din for at det skal fungere."
 
-#: godaddy-email-marketing.php:257
+#: godaddy-email-marketing.php:249
 msgid "Let's do it!"
 msgstr "La oss gjre det!"
 
@@ -57,114 +63,114 @@ msgstr ""
 msgid "Powered by GoDaddy"
 msgstr "Drevet av GoDaddy"
 
-#: includes/render.php:316
+#: includes/render.php:322
 msgid "Month"
 msgstr "Mned"
 
-#: includes/render.php:317
+#: includes/render.php:323
 msgid "January"
 msgstr "Januar"
 
-#: includes/render.php:318
+#: includes/render.php:324
 msgid "Febuary"
 msgstr "Februar"
 
-#: includes/render.php:319
+#: includes/render.php:325
 msgid "March"
 msgstr "Mars"
 
-#: includes/render.php:320
+#: includes/render.php:326
 msgid "April"
 msgstr "April"
 
-#: includes/render.php:321
+#: includes/render.php:327
 msgid "May"
 msgstr "Mai"
 
-#: includes/render.php:322
+#: includes/render.php:328
 msgid "June"
 msgstr "Juni"
 
-#: includes/render.php:323
+#: includes/render.php:329
 msgid "July"
 msgstr "Juli"
 
-#: includes/render.php:324
+#: includes/render.php:330
 msgid "August"
 msgstr "August"
 
-#: includes/render.php:325
+#: includes/render.php:331
 msgid "September"
 msgstr "September"
 
-#: includes/render.php:326
+#: includes/render.php:332
 msgid "October"
 msgstr "Oktober"
 
-#: includes/render.php:327
+#: includes/render.php:333
 msgid "November"
 msgstr "November"
 
-#: includes/render.php:328
+#: includes/render.php:334
 msgid "December"
 msgstr "Desember"
 
-#: includes/render.php:333
+#: includes/render.php:339
 msgid "Day"
 msgstr "Dag"
 
-#: includes/render.php:341
+#: includes/render.php:347
 msgid "Year"
 msgstr "r"
 
-#: includes/settings.php:53 includes/settings.php:500
+#: includes/settings.php:53 includes/settings.php:484
 #, fuzzy
 msgid "GoDaddy Email Marketing Signup Forms"
 msgstr "Skjema for GoDaddy Markedsfring per e-post"
 
-#: includes/settings.php:223
+#: includes/settings.php:207
 #, fuzzy
 msgid "All data has been removed."
 msgstr "Alle bufrede data ble fjernet."
 
-#: includes/settings.php:227
+#: includes/settings.php:211
 msgid "All transients were removed."
 msgstr "Alle bufrede data ble fjernet."
 
-#: includes/settings.php:231
+#: includes/settings.php:215
 msgid "Forms list was successfully updated."
 msgstr "Skjema-listen ble oppdatert."
 
-#: includes/settings.php:235
+#: includes/settings.php:219
 msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr "Legitimasjonene er feil! Bekreft at du har angitt dem riktig."
 
-#: includes/settings.php:239
+#: includes/settings.php:223
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr ""
 "Forbindelse med GoDaddy Markedsfring per e-post har blitt etablert! Da er "
 "alt klart!"
 
-#: includes/settings.php:244
+#: includes/settings.php:228
 msgid "Settings have been updated."
 msgstr ""
 
-#: includes/settings.php:248
+#: includes/settings.php:232
 msgid "Please fill in the username and the API key first."
 msgstr "Skriv inn brukernavn og API-nkkelen frst."
 
-#: includes/settings.php:280
+#: includes/settings.php:264
 msgid "Overview"
 msgstr "Oversikt"
 
-#: includes/settings.php:284
+#: includes/settings.php:268
 msgid "Instructions"
 msgstr "Instruksjoner"
 
-#: includes/settings.php:286
+#: includes/settings.php:270
 #, php-format
 msgid ""
 "Once the plugin is activated, you will be able to select and insert any of "
@@ -179,7 +185,7 @@ msgstr ""
 "nkkelen din (finnes i din GoDaddy Markedsfring per e-post-konto [%s] omrde). "
 "Her er de 3 mtene du kan vise et nettskjema p nettstedet ditt:"
 
-#: includes/settings.php:289
+#: includes/settings.php:273
 msgid ""
 "<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
 "called GoDaddy Email Marketing Form and drag it into the widget area of your "
@@ -190,7 +196,7 @@ msgstr ""
 "dra det inn i kontrollprogramomrdet du nsker. Du kan deretter legge til en "
 "tittel og velge et skjema!"
 
-#: includes/settings.php:290
+#: includes/settings.php:274
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
@@ -199,7 +205,7 @@ msgstr ""
 "helst oppfring eller side ved  legge til kortkoden (f.eks. <code>[gem "
 "id=80326]</code>) i side/oppfring-redigeringsprogrammet."
 
-#: includes/settings.php:292
+#: includes/settings.php:276
 #, php-format
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
@@ -209,97 +215,97 @@ msgstr ""
 "en hvilken som helst WordPress-fil: <code>%s</code>. Eksempel: <code>%s</"
 "code>"
 
-#: includes/settings.php:302
+#: includes/settings.php:286
 msgid "For more information:"
 msgstr "For mer informasjon: "
 
-#: includes/settings.php:303
+#: includes/settings.php:287
 msgid "GoDaddy"
 msgstr "GoDaddy"
 
-#: includes/settings.php:304
+#: includes/settings.php:288
 msgid "GoDaddy Help"
 msgstr "GoDaddy-hjelp"
 
-#: includes/settings.php:305
+#: includes/settings.php:289
 msgid "Contact GoDaddy"
 msgstr "kontakt GoDaddy"
 
-#: includes/settings.php:330
+#: includes/settings.php:314
 msgid "Account Details"
 msgstr "Kontodetaljer"
 
-#: includes/settings.php:337
+#: includes/settings.php:321
 msgid "Username"
 msgstr ""
 
-#: includes/settings.php:344
+#: includes/settings.php:328
 msgid "Your GoDaddy Email Marketing username (email address)"
 msgstr "Ditt GoDaddy Markedsfring per e-post-brukernavn (e-postadresse)"
 
-#: includes/settings.php:351
+#: includes/settings.php:335
 msgid "API Key"
 msgstr ""
 
-#: includes/settings.php:358
+#: includes/settings.php:342
 msgctxt "settings page"
 msgid "Where can I find my API key?"
 msgstr "Hvor kan jeg finne API-nkkelen min?"
 
-#: includes/settings.php:365
+#: includes/settings.php:349
 msgid "Footer Link"
 msgstr ""
 
-#: includes/settings.php:372
+#: includes/settings.php:356
 msgid "Display \"Powered by GoDaddy\"?"
 msgstr "Vis \"Drevet av GoDaddy\"?"
 
-#: includes/settings.php:379
+#: includes/settings.php:363
 #, fuzzy
 msgid "Debugging"
 msgstr "Feilsk"
 
-#: includes/settings.php:386
+#: includes/settings.php:370
 #, fuzzy
 msgid "Debug Mode"
 msgstr "Feilsk"
 
-#: includes/settings.php:393
+#: includes/settings.php:377
 msgid "Activated"
 msgstr ""
 
-#: includes/settings.php:400
+#: includes/settings.php:384
 msgid "Cache Reset"
 msgstr ""
 
-#: includes/settings.php:406
+#: includes/settings.php:390
 msgid "Erase Transients"
 msgstr "Slett bufrede data"
 
-#: includes/settings.php:407
+#: includes/settings.php:391
 msgid ""
 "Purges only the cached transients associated with this plugin, and should be "
 "attempted before a hard reset."
 msgstr ""
 
-#: includes/settings.php:413
+#: includes/settings.php:397
 msgid "Hard Reset"
 msgstr ""
 
-#: includes/settings.php:419
+#: includes/settings.php:403
 msgid "Erase All Data"
 msgstr "Slett alle data"
 
-#: includes/settings.php:420
+#: includes/settings.php:404
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:507
+#: includes/settings.php:491
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
 msgstr "Nyt GoDaddy Markedsfring per e-post-opplevelsen p egen hnd."
 
-#: includes/settings.php:509
+#: includes/settings.php:493
 msgctxt "header note"
 msgid ""
 "Add your GoDaddy Email Marketing webform to your WordPress site! Easy to set "
@@ -310,12 +316,12 @@ msgstr ""
 "nettstedet ditt! Den er enkel  installere, og GoDaddy Markedsfring per e-"
 "postmodulen lar beskende til nettstedet ditt abonnere p e-postlisten din."
 
-#: includes/settings.php:513
+#: includes/settings.php:497
 msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr ""
 
-#: includes/settings.php:516
+#: includes/settings.php:500
 #, php-format
 msgctxt "header note"
 msgid ""
@@ -325,71 +331,71 @@ msgstr ""
 "Har du ikke en GoDaddy Markedsfring per e-post-konto? F en p mindre enn 2 "
 "minutter! %s"
 
-#: includes/settings.php:516
+#: includes/settings.php:500
 #, fuzzy
 msgctxt "header button"
 msgid "Sign Up Now"
 msgstr "Registrer deg n"
 
-#: includes/settings.php:526
+#: includes/settings.php:510
 #, fuzzy
 msgid "Forms"
 msgstr "Skjema:"
 
-#: includes/settings.php:535
+#: includes/settings.php:519
 #, fuzzy
 msgid "Available Signup Forms"
 msgstr "Tilgjengelige skjemaer"
 
-#: includes/settings.php:539 includes/settings.php:546
+#: includes/settings.php:523 includes/settings.php:530
 msgid "Form Name"
 msgstr "Skjemanavn"
 
-#: includes/settings.php:540 includes/settings.php:547
+#: includes/settings.php:524 includes/settings.php:531
 msgid "Form ID"
 msgstr "Skjema-ID"
 
-#: includes/settings.php:541 includes/settings.php:548
+#: includes/settings.php:525 includes/settings.php:532
 msgid "Shortcode"
 msgstr "Kortkode"
 
-#: includes/settings.php:562
+#: includes/settings.php:542
 msgid "Opens in a new window"
 msgstr "pnes i et nytt vindu"
 
-#: includes/settings.php:562
+#: includes/settings.php:542
 msgid "Edit form in GoDaddy Email Marketing"
 msgstr "Rediger skjema i GoDaddy Markedsfring per e-post"
 
-#: includes/settings.php:565
+#: includes/settings.php:545
 msgid "Preview"
 msgstr "Forhndsvis"
 
-#: includes/settings.php:578
+#: includes/settings.php:558
 msgid "Not seeing your form?"
 msgstr "Ser du ikke skjemaet ditt?"
 
-#: includes/settings.php:578 includes/settings.php:597
+#: includes/settings.php:558 includes/settings.php:577
 msgid "Refresh Forms"
 msgstr "Oppdater skjema"
 
-#: includes/settings.php:595
+#: includes/settings.php:575
 msgctxt "save settings button"
 msgid "Save Settings"
 msgstr "Lagre innstillinger"
 
-#: includes/settings.php:611
+#: includes/settings.php:591
 msgid "Create a New Signup Form"
 msgstr ""
 
-#: includes/settings.php:698
+#: includes/settings.php:678
 msgid ""
 "If you are experiencing issues and are unsure of the cause you may want to "
 "activate debug mode, which displays additional options that allow you delete "
 "stored data."
 msgstr ""
 
-#: includes/settings.php:708
+#: includes/settings.php:688
 #, fuzzy
 msgid ""
 "Please enter your GoDaddy Email Marketing username and API Key. Your "
@@ -431,6 +437,10 @@ msgstr "Konfigurer GoDaddy Markedsfring per e-post-kontoen din i %s."
 #: includes/widget.php:129
 msgid "settings page"
 msgstr "innstillinger-siden"
+
+#~ msgctxt "ajax response"
+#~ msgid "There was a problem. Please fill all required fields."
+#~ msgstr "Det oppstod et problem Fyll ut alle de pkrevde feltene."
 
 #~ msgid "GoDaddy Email Marketing Settings"
 #~ msgstr "Innstillinger for GoDaddy Markedsfring per e-post "

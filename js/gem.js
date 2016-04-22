@@ -1,6 +1,10 @@
-;( function( $, undefined ) {
+/* global GEM */
 
-	"use strict";
+/**
+ * GoDaddy Email Marketing script.
+ */
+( function( $ ) {
+	'use strict';
 
 	var GEM = window.GEM || {};
 
@@ -9,217 +13,186 @@
 	 */
 	GEM.DEBUG_FLAG = true;
 
+	/**
+	 * Initialization
+	 */
 	GEM.init = function() {
 
 		// Handles form submissions
 		$( 'form.gem-form' ).submit( function( e ) {
+			var $wrapper = $( this ),
+			    $spinner = $( '.gem-spinner', $wrapper ),
+			    $message = $wrapper.find( '.gem-error, .gem-info' ),
+			    payload,
+			    invalidElements = [],
+			    checkboxGroup,
+			    checkboxString,
+			    dateGroup,
+			    dateString,
+			    dateValues = [];
 
 			e.preventDefault();
 
-			//code that handles multiple selected checkboxes and saves them as comma separated (value1, value2)
-			//which needed to happen before the payload gets serialized
-			 	var combined_checkbox_string = '', 
-			 		check_box_test = 0,
-			 		current_name_of_input = '';
-			 $( this ).find( ':input' ).each( function( i ) {
-			 	var name_of_input = '',
-			 	  	name_of_input = $(this).attr('name');
-			 		
-			 	if($(this).attr('type') == 'checkbox' && $(this).is(':checked')){
+			/**
+			 * Handles multiple selected checkboxes and saves them as comma separated (value1, value2)
+			 * which needs to happen before the payload gets serialized.
+			 */
+			$( this ).find( 'input[type=checkbox]' ).each( function() {
+				var checkbox = $( this ),
+				    name = checkbox.data( 'name' );
 
-			 		if(current_name_of_input != name_of_input)
-			 		{
-			 			current_name_of_input = name_of_input;
-			 			check_box_test = 0;
-			 		} 
+				if ( checkboxGroup !== name ) {
+					checkboxGroup = name;
 
-			 		if(check_box_test == 0)
-			 		{
-			 	 		combined_checkbox_string = $("input:checkbox[name='"+name_of_input+"']:checked").map(function() {return this.value;}).get().join(', ');
-			 			check_box_test = 1;
-			 		}
-					
-					$("input[name='"+name_of_input+"']").val(combined_checkbox_string);
+					checkboxString = $( 'input:checkbox[data-name="' + name + '"]:checked' ).map( function() {
+						return this.value;
+					} ).get().join( ', ' );
 
-			 	}
-			 });
-			//end of multiple checkbox select code
-
-			//code that handles multiple selected dropdowns for the date and saves them as MM dd, yy (Oct 29, 15)
-			//which needed to happen before the payload gets serialized
-			 	var combined_date_string = '', 
-			 		date_test = 0,
-			 		current_name_of_date = '';
-
-			 		var values = [];
-
-			 $( this ).find("[fingerprint='date']" ).each( function( i ) {
-			 	var name_of_input = '',
-			 	  	name_of_input = $(this).attr('name');
-
-			 		
-			 	if($(this).attr('fingerprint') == 'date'){		 	  
-
-			 		if(current_name_of_date != name_of_input)
-			 		{
-			 			current_name_of_date = name_of_input;
-			 			values=[];
-			 			combined_date_string='';
-			 		}
-
-			 		values.push($(this).val());
-					
-					if(values.length == 3)
-					{
-						//building the value with correct formatting...  MM dd, yy (Oct 29, 15)
-						combined_date_string = values[0] + ' ' + values[1] + ', ' + values[2];
-					}
-
-					$("input[name='"+name_of_input+"']").val(combined_date_string);
-			 	}
-			 });
-			//end of multiple date dropdown select code
-
-			var $wrapper = $( this ),
-				$spinner = $( '.gem-spinner', $wrapper ),
-
-				/* needed only when using WP as a proxy.
-				payload = $.extend( {}, $( this ).gemSerializeObject(), {
-					action: 'gem-submit-form'
-				} ),
-				*/
-
-				payload = $( this ).serialize(),
-				invalidElements = [],
-				m = GEM;
-
-			// make sure to clear all "invalid" elements before re-validating
-			$wrapper.find( 'input.gem-invalid' ).removeClass( 'gem-invalid' );
-
-			$( this ).find( ':input' ).each( function( i ) {
-
-			 	if ( 'signup[email]' == $( this ).attr( 'name' ) && ! GEM.isEmail( $( this ).val() ) ) {
-
-					// email not valid
-					invalidElements.push( $( this ) );
-					m.log( 'Email is NOT valid' );
-
-				} else if ( $( this ).is( '.gem-required' ) && '' == $( this ).val() ) {
-					invalidElements.push( $( this ) );
-					m.log( 'A required filled was not filled' );
+					$( 'input[name="' + name + '"]' ).val( checkboxString );
 				}
-
 			} );
 
-			// if there are no empty or invalid fields left...
-			if ( 0 == invalidElements.length ) {
+			/**
+			 * Handles multiple selected dropdowns for the date and saves them as F d, Y (October 29, 2015)
+			 * which needs to happen before the payload gets serialized.
+			 */
+			$( this ).find( '[fingerprint=date]' ).each( function() {
+				var date = $( this ),
+				    name = date.data( 'name' );
 
-				// we're good to go! start spinnin'
+				if ( dateGroup !== name ) {
+					dateGroup = name;
+
+					// Loop over the date values.
+					$( 'select[data-name="' + name + '"]' ).each( function() {
+						var value = $( this ).val();
+						if ( value ) {
+							dateValues.push( value );
+						}
+					} );
+
+					if ( 3 === dateValues.length ) {
+
+						// Build the date string.
+						dateString = dateValues[0] + ' ' + dateValues[1] + ', ' + dateValues[2];
+
+						// Set the date value.
+						$( 'input[name="' + name + '"]' ).val( dateString );
+					}
+				}
+			} );
+
+			// Serialize the payload.
+			payload = $( this ).serialize();
+
+			// Clear all "invalid" elements before re-validating.
+			$wrapper.find( 'input.gem-invalid' ).removeClass( 'gem-invalid' );
+
+			// Validate inputs.
+			$( this ).find( '.gem-required' ).each( function() {
+				var value = $( this ).val();
+				if ( 'signup[email]' == $( this ).attr( 'name' ) && ! GEM.isEmail( value ) ) {
+
+					// Invalid email.
+					invalidElements.push( $( this ) );
+				} else if ( '' === value && $( this ).is( 'input' ) ) {
+
+					// Empty required field.
+					invalidElements.push( $( this ) );
+				} else if ( $( this ).is( 'label' ) ) {
+
+					// Empty radio.
+					if ( 'undefined' === typeof $( 'input:radio[name="' + $( this ).data( 'name' ) + '"]:checked' ).val() ) {
+						invalidElements.push( $( this ) );
+					}
+				}
+			} );
+
+			// If there are no empty or invalid fields left.
+			if ( 0 === invalidElements.length ) {
+
+				// We're good to go! start spinnin'
 				$spinner.css( 'display', 'inline-block' );
 
 				$.post( $wrapper.attr( 'action' ) + '.json', payload, function( response ) {
-
 					$wrapper.fadeOut( 'fast', function() {
+						var isSuppressed;
 
-						// was the user successfully added?
+						// Was the user successfully added?
 						if ( response.success ) {
+							isSuppressed = response.result.audience_member.suppressed;
 
-							var d             = response.result,
-								is_suppressed = d.audience_member.suppressed;
-
-							if ( d.has_redirect ) {
-								window.location.href = d.redirect;
+							if ( response.result.has_redirect ) {
+								window.location.href = response.result.redirect;
 							}
 
 							$wrapper.html( GEM.addMessage(
-								is_suppressed ? [ 'suppressed', 'success' ] : [ 'info', 'success' ],
-								is_suppressed ? GEM.thankyou_suppressed : GEM.thankyou )
+								isSuppressed ? [ 'suppressed', 'success' ] : [ 'info', 'success' ],
+								isSuppressed ? GEM.thankyou_suppressed : GEM.thankyou )
 							).fadeIn( 'fast' );
-
 						} else {
 							$wrapper.html( GEM.addMessage( 'info', GEM.oops ) ).fadeIn( 'fast' );
 						}
-
 					} );
-
 				}, 'jsonp' );
-
 			} else {
-
-				// there are invalid elements
-				$( invalidElements ).each( function( i, el ) {
-					$( this ).addClass( 'gem-invalid' );
-				} );
-
-				var previousNotifications = $wrapper.find( '.gem-error, .gem-info' );
-
-				if ( 0 != previousNotifications.length ) {
-					previousNotifications.remove();
+				if ( 0 !== $message.length ) {
+					$message.remove();
 				}
 
-				$wrapper.prepend( GEM.addMessage( 'error', GEM.fix ) );
+				// Invalid elements
+				$( invalidElements.reverse() ).each( function() {
+					var error = '';
 
+					$( this ).addClass( 'gem-invalid' );
+
+					if ( 'signup[email]' == $( this ).attr( 'name' ) ) {
+						if ( '' === $( this ).val() ) {
+
+							// Empty email.
+							error = GEM.required.replace( '%s', $( this ).data( 'label' ) );
+						} else {
+
+							// Invalid email.
+							error = GEM.email;
+						}
+					} else if ( $( this ).data( 'label' ) ) {
+
+						// Empty input.
+						error = GEM.required.replace( '%s', $( this ).data( 'label' ) );
+					}
+
+					if ( error ) {
+						$wrapper.prepend( GEM.addMessage( 'error', error ) );
+					}
+				} );
 			}
-
 		} );
 	};
 
+	/**
+	 * Adds error messages
+	 */
 	GEM.addMessage = function( type, message ) {
-
 		var _class = [];
 
 		if ( $.isArray( type ) ) {
-
 			$.each( type, function( index, value ) {
 				_class.push( 'gem-' + value );
 			} );
-
 		} else {
 			_class.push( 'gem-' + type.toString() );
 		}
 
 		return $( '<p/>', { class: _class.join( ' ' ) } ).text( message );
-
-	}
-
-	GEM.isEmail = function ( email ) {
-		var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-		return regex.test( email );
-	}
-
-	GEM.log = function( message ) {
-
-		if ( GEM.DEBUG_FLAG && window.console ) {
-			console.log( message );
-		}
-
-	}
+	};
 
 	/**
-	 * ==== Helpers + Utilities ====
+	 * Email validation
 	 */
-	$.fn.gemSerializeObject = function() {
-
-		var o = {};
-		var a = this.serializeArray();
-
-		$.each( a, function() {
-
-		   if ( o[ this.name ] ) {
-
-			   if ( ! o[ this.name ].push ) {
-				   o[ this.name ] = [ o[ this.name ] ];
-			   }
-
-			   o[ this.name ].push( this.value || '' );
-
-		   } else {
-			   o[ this.name ] = this.value || '';
-		   }
-		} );
-
-		return o;
-
+	GEM.isEmail = function( email ) {
+		var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		return regex.test( email );
 	};
 
 	/**

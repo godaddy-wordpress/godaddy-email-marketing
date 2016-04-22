@@ -129,10 +129,7 @@ class Test_GEM_Official extends WP_UnitTestCase {
 	public function test_enqueue() {
 		$this->instance->enqueue();
 		$this->assertTrue( wp_script_is( 'gem-main','queue' ) );
-		$this->assertTrue( wp_script_is( 'function', 'queue' ) );
-		$this->assertTrue( wp_script_is( 'jquery-ui', 'queue' ) );
 		$this->assertTrue( wp_style_is( 'gem-base', 'registered' ) );
-		$this->assertTrue( wp_style_is( 'jquery-ui', 'registered' ) );
 	}
 
 	public function test_action_links() {

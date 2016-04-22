@@ -1,38 +1,44 @@
-#: godaddy-email-marketing.php:205
+#: godaddy-email-marketing.php:196
 msgctxt "ajax response"
 msgid "Thank you for signing up!"
 msgstr "Cm n bn  ng k!"
 
-#: godaddy-email-marketing.php:206
+#: godaddy-email-marketing.php:197
 msgctxt "ajax response"
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr "Cm n bn  ng k! Vui lng kim tra email  xc nhn vic ng k ca bn."
 
-#: godaddy-email-marketing.php:207
+#: godaddy-email-marketing.php:198
 msgctxt "ajax response"
 msgid "Oops! There was a problem. Please try again."
 msgstr "Rt tic!  xy ra vn . Vui lng th li."
 
-#: godaddy-email-marketing.php:208
+#: godaddy-email-marketing.php:199
 msgctxt "ajax response"
-msgid "There was a problem. Please fill all required fields."
-msgstr " xy ra vn . Hy in vo tt c cc trng bt buc:"
+msgid "Please enter a valid email address."
+msgstr ""
 
-#: godaddy-email-marketing.php:220 includes/settings.php:528
+#: godaddy-email-marketing.php:200
+#, php-format
+msgctxt "ajax response"
+msgid "%s is a required field."
+msgstr ""
+
+#: godaddy-email-marketing.php:212 includes/settings.php:512
 msgid "Settings"
 msgstr "Ci t"
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:248
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "Tip th qua email ca GoDaddy gn nh  sn sng"
 
-#: godaddy-email-marketing.php:256
+#: godaddy-email-marketing.php:248
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "Bn phi nhp tn ngi dng &amp; kha API  ng dng ny hot ng."
 
-#: godaddy-email-marketing.php:257
+#: godaddy-email-marketing.php:249
 msgid "Let's do it!"
 msgstr "Chng ta hy cng thc hin!"
 
@@ -54,113 +60,113 @@ msgstr ""
 msgid "Powered by GoDaddy"
 msgstr "c GoDaddy cung cp"
 
-#: includes/render.php:316
+#: includes/render.php:322
 msgid "Month"
 msgstr "thng"
 
-#: includes/render.php:317
+#: includes/render.php:323
 msgid "January"
 msgstr "Thng 1"
 
-#: includes/render.php:318
+#: includes/render.php:324
 msgid "Febuary"
 msgstr "Thng 2"
 
-#: includes/render.php:319
+#: includes/render.php:325
 msgid "March"
 msgstr "Thng 3"
 
-#: includes/render.php:320
+#: includes/render.php:326
 msgid "April"
 msgstr "Thng 4"
 
-#: includes/render.php:321
+#: includes/render.php:327
 msgid "May"
 msgstr "Thng 5"
 
-#: includes/render.php:322
+#: includes/render.php:328
 msgid "June"
 msgstr "Thng 6"
 
-#: includes/render.php:323
+#: includes/render.php:329
 msgid "July"
 msgstr "Thng 7"
 
-#: includes/render.php:324
+#: includes/render.php:330
 msgid "August"
 msgstr "Thng 8"
 
-#: includes/render.php:325
+#: includes/render.php:331
 msgid "September"
 msgstr "Thng 9"
 
-#: includes/render.php:326
+#: includes/render.php:332
 msgid "October"
 msgstr "Thng 10"
 
-#: includes/render.php:327
+#: includes/render.php:333
 msgid "November"
 msgstr "Thng 11"
 
-#: includes/render.php:328
+#: includes/render.php:334
 msgid "December"
 msgstr "Thng 12"
 
-#: includes/render.php:333
+#: includes/render.php:339
 msgid "Day"
 msgstr "Ngy"
 
-#: includes/render.php:341
+#: includes/render.php:347
 msgid "Year"
 msgstr "nm"
 
-#: includes/settings.php:53 includes/settings.php:500
+#: includes/settings.php:53 includes/settings.php:484
 #, fuzzy
 msgid "GoDaddy Email Marketing Signup Forms"
 msgstr "Mu Tip th qua email ca GoDaddy"
 
-#: includes/settings.php:223
+#: includes/settings.php:207
 #, fuzzy
 msgid "All data has been removed."
 msgstr "Tt c cc d liu c lu tm thi  b xa."
 
-#: includes/settings.php:227
+#: includes/settings.php:211
 msgid "All transients were removed."
 msgstr "Tt c cc d liu c lu tm thi  b xa."
 
-#: includes/settings.php:231
+#: includes/settings.php:215
 msgid "Forms list was successfully updated."
 msgstr "Danh sch mu  c cp nht thnh cng."
 
-#: includes/settings.php:235
+#: includes/settings.php:219
 msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr ""
 "Thng tin xc thc khng chnh xc! Hy xc minh rng bn  nhp thng tin ny chnh xc."
 
-#: includes/settings.php:239
+#: includes/settings.php:223
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr " thit lp kt ni vi Tip th qua email ca GoDaddy! Bn  thit lp xong!"
 
-#: includes/settings.php:244
+#: includes/settings.php:228
 msgid "Settings have been updated."
 msgstr ""
 
-#: includes/settings.php:248
+#: includes/settings.php:232
 msgid "Please fill in the username and the API key first."
 msgstr "Hy in tn ngi dng v kha API trc tin."
 
-#: includes/settings.php:280
+#: includes/settings.php:264
 msgid "Overview"
 msgstr "Tng quan"
 
-#: includes/settings.php:284
+#: includes/settings.php:268
 msgid "Instructions"
 msgstr "Hng dn"
 
-#: includes/settings.php:286
+#: includes/settings.php:270
 #, php-format
 msgid ""
 "Once the plugin is activated, you will be able to select and insert any of "
@@ -175,7 +181,7 @@ msgstr ""
 "email ca GoDaddy). Sau y l 3 cch m bn c th p dng  hin th webform trn trang "
 "ca mnh:"
 
-#: includes/settings.php:289
+#: includes/settings.php:273
 msgid ""
 "<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
 "called GoDaddy Email Marketing Form and drag it into the widget area of your "
@@ -185,7 +191,7 @@ msgstr ""
 "qua email ca GoDaddy v ko n vo khu vc widget m bn mun. Sau  bn c th thm tiu  "
 "v chn mu!"
 
-#: includes/settings.php:290
+#: includes/settings.php:274
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
@@ -193,7 +199,7 @@ msgstr ""
 "<strong>M ngn:</strong> Bn c th thm mu vo bt k bi ng hoc trang no bng cch "
 "thm m ngn (v d: <code>[gem id=80326]</code>) trong trnh sa trang/bi ng."
 
-#: includes/settings.php:292
+#: includes/settings.php:276
 #, php-format
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
@@ -202,97 +208,97 @@ msgstr ""
 "<strong>Th mu:</strong> Bn c th thm th mu sau vo bt k trang WordPress no: "
 "<code>%s</code>. V d: <code>%s</code>"
 
-#: includes/settings.php:302
+#: includes/settings.php:286
 msgid "For more information:"
 msgstr " bit thm thng tin:"
 
-#: includes/settings.php:303
+#: includes/settings.php:287
 msgid "GoDaddy"
 msgstr "GoDaddy"
 
-#: includes/settings.php:304
+#: includes/settings.php:288
 msgid "GoDaddy Help"
 msgstr "Tr gip GoDaddy"
 
-#: includes/settings.php:305
+#: includes/settings.php:289
 msgid "Contact GoDaddy"
 msgstr "Lin h GoDaddy"
 
-#: includes/settings.php:330
+#: includes/settings.php:314
 msgid "Account Details"
 msgstr "Chi tit ti khon"
 
-#: includes/settings.php:337
+#: includes/settings.php:321
 msgid "Username"
 msgstr ""
 
-#: includes/settings.php:344
+#: includes/settings.php:328
 msgid "Your GoDaddy Email Marketing username (email address)"
 msgstr "Tn ngi dng Tip th qua email ca GoDaddy ca bn (a ch email)"
 
-#: includes/settings.php:351
+#: includes/settings.php:335
 msgid "API Key"
 msgstr ""
 
-#: includes/settings.php:358
+#: includes/settings.php:342
 msgctxt "settings page"
 msgid "Where can I find my API key?"
 msgstr "Ti c th tm kha API  u?"
 
-#: includes/settings.php:365
+#: includes/settings.php:349
 msgid "Footer Link"
 msgstr ""
 
-#: includes/settings.php:372
+#: includes/settings.php:356
 msgid "Display \"Powered by GoDaddy\"?"
 msgstr "Hin th \"c GoDaddy cung cp\"?"
 
-#: includes/settings.php:379
+#: includes/settings.php:363
 #, fuzzy
 msgid "Debugging"
 msgstr "Sa li"
 
-#: includes/settings.php:386
+#: includes/settings.php:370
 #, fuzzy
 msgid "Debug Mode"
 msgstr "Sa li"
 
-#: includes/settings.php:393
+#: includes/settings.php:377
 msgid "Activated"
 msgstr ""
 
-#: includes/settings.php:400
+#: includes/settings.php:384
 msgid "Cache Reset"
 msgstr ""
 
-#: includes/settings.php:406
+#: includes/settings.php:390
 msgid "Erase Transients"
 msgstr "Xa d liu tm thi"
 
-#: includes/settings.php:407
+#: includes/settings.php:391
 msgid ""
 "Purges only the cached transients associated with this plugin, and should be "
 "attempted before a hard reset."
 msgstr ""
 
-#: includes/settings.php:413
+#: includes/settings.php:397
 msgid "Hard Reset"
 msgstr ""
 
-#: includes/settings.php:419
+#: includes/settings.php:403
 msgid "Erase All Data"
 msgstr "Xa tt c d liu"
 
-#: includes/settings.php:420
+#: includes/settings.php:404
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:507
+#: includes/settings.php:491
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
 msgstr "Tn hng tri nghim Tip th qua email ca GoDaddy mt cch trc tip."
 
-#: includes/settings.php:509
+#: includes/settings.php:493
 msgctxt "header note"
 msgid ""
 "Add your GoDaddy Email Marketing webform to your WordPress site! Easy to set "
@@ -303,12 +309,12 @@ msgstr ""
 "trnh cm Tip th qua email ca GoDaddy cho php khch truy cp trang ng k danh sch "
 "email ca bn."
 
-#: includes/settings.php:513
+#: includes/settings.php:497
 msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr ""
 
-#: includes/settings.php:516
+#: includes/settings.php:500
 #, php-format
 msgctxt "header note"
 msgid ""
@@ -318,71 +324,71 @@ msgstr ""
 "Bn khng c ti khon Tip th qua email ca GoDaddy? Hy to mt ti khon trong vng "
 "cha n 2 pht! %s"
 
-#: includes/settings.php:516
+#: includes/settings.php:500
 #, fuzzy
 msgctxt "header button"
 msgid "Sign Up Now"
 msgstr "ng k ngay"
 
-#: includes/settings.php:526
+#: includes/settings.php:510
 #, fuzzy
 msgid "Forms"
 msgstr "Mu:"
 
-#: includes/settings.php:535
+#: includes/settings.php:519
 #, fuzzy
 msgid "Available Signup Forms"
 msgstr "Mu sn c"
 
-#: includes/settings.php:539 includes/settings.php:546
+#: includes/settings.php:523 includes/settings.php:530
 msgid "Form Name"
 msgstr "Tn mu"
 
-#: includes/settings.php:540 includes/settings.php:547
+#: includes/settings.php:524 includes/settings.php:531
 msgid "Form ID"
 msgstr "ID mu"
 
-#: includes/settings.php:541 includes/settings.php:548
+#: includes/settings.php:525 includes/settings.php:532
 msgid "Shortcode"
 msgstr "M ngn:"
 
-#: includes/settings.php:562
+#: includes/settings.php:542
 msgid "Opens in a new window"
 msgstr "M trong mt ca s mi"
 
-#: includes/settings.php:562
+#: includes/settings.php:542
 msgid "Edit form in GoDaddy Email Marketing"
 msgstr "Sa mu trong Tip th qua email ca GoDaddy"
 
-#: includes/settings.php:565
+#: includes/settings.php:545
 msgid "Preview"
 msgstr "Xem trc"
 
-#: includes/settings.php:578
+#: includes/settings.php:558
 msgid "Not seeing your form?"
 msgstr "Khng nhn thy mu ca bn?"
 
-#: includes/settings.php:578 includes/settings.php:597
+#: includes/settings.php:558 includes/settings.php:577
 msgid "Refresh Forms"
 msgstr "Lm mi mu"
 
-#: includes/settings.php:595
+#: includes/settings.php:575
 msgctxt "save settings button"
 msgid "Save Settings"
 msgstr "Lu ci t"
 
-#: includes/settings.php:611
+#: includes/settings.php:591
 msgid "Create a New Signup Form"
 msgstr ""
 
-#: includes/settings.php:698
+#: includes/settings.php:678
 msgid ""
 "If you are experiencing issues and are unsure of the cause you may want to "
 "activate debug mode, which displays additional options that allow you delete "
 "stored data."
 msgstr ""
 
-#: includes/settings.php:708
+#: includes/settings.php:688
 #, fuzzy
 msgid ""
 "Please enter your GoDaddy Email Marketing username and API Key. Your "
@@ -420,6 +426,10 @@ msgstr "Hy ci t ti khon Tip th qua email ca GoDaddy trong %s."
 #: includes/widget.php:129
 msgid "settings page"
 msgstr "trang ci t"
+
+#~ msgctxt "ajax response"
+#~ msgid "There was a problem. Please fill all required fields."
+#~ msgstr " xy ra vn . Hy in vo tt c cc trng bt buc:"
 
 #~ msgid "GoDaddy Email Marketing Settings"
 #~ msgstr "Ci t Tip th qua email ca GoDaddy"

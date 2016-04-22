@@ -51,7 +51,7 @@ class Test_GEM_Form_Renderer extends WP_UnitTestCase {
 		$this->assertContains( 'text_a', $actual_result );
 		$this->assertContains( 'text_b', $actual_result );
 		$this->assertContains( '<label for="form_1_the_name_a">', $actual_result );
-		$this->assertContains( '<input type="text" name="the_name_a" id="form_1_the_name_a" class="gem-field" />', $actual_result );
+		$this->assertContains( '<input type="text" name="the_name_a" id="form_1_the_name_a" class="gem-field" data-label="text_a" />', $actual_result );
 		$this->assertContains( '<label for="form_1_the_name_bthe_value">', $actual_result );
 		$this->assertContains( '<input type="checkbox" value="the_value" name="the_name_b" id="form_1_the_name_bthe_value" class="gem-checkbox gem-required" />', $actual_result );
 
