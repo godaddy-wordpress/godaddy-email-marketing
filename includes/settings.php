@@ -388,7 +388,7 @@ class GEM_Settings {
 				array(
 					'url' => add_query_arg( 'action', 'debug-reset-transients' ),
 					'label' => __( 'Erase Transients', 'godaddy-email-marketing' ),
-					'description' => __( 'Purges only the cached transients associated with this plugin, and should be attempted before a hard reset.', 'godaddy-email-marketing' ),
+					'description' => __( 'Purges only the cached data associated with this plugin, and should be attempted before a hard reset.', 'godaddy-email-marketing' ),
 				)
 			);
 

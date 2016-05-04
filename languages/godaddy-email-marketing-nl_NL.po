@@ -284,7 +284,7 @@ msgstr "Tijdelijke gegevens wissen"
 
 #: includes/settings.php:391
 msgid ""
-"Purges only the cached transients associated with this plugin, and should be "
+"Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
 msgstr ""
 
