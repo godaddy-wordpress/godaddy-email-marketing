@@ -1,4 +1,3 @@
-/* global tb_click */
 /* jscs:disable requireCamelCaseOrUpperCaseIdentifiers */
 
 /**
