@@ -124,6 +124,7 @@ module.exports = function( grunt ) {
 					'!.*',
 					'!.*/**',
 					'!.DS_Store',
+					'!assets/**',
 					'!build/**',
 					'!composer.json',
 					'!dev-lib/**',
@@ -148,7 +149,8 @@ module.exports = function( grunt ) {
 			deploy: {
 				options: {
 					plugin_slug: '<%= pkg.name %>',
-					build_dir: 'build'
+					build_dir: 'build',
+					assets_dir: 'assets'
 				}
 			}
 		}
