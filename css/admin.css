@@ -111,6 +111,7 @@ input.copied::-moz-selection {
 }
 
 .button.copy-to-clipboard {
+	display: inline-block;
 	height: 30px;
 	margin-top: 1px;
 }
@@ -122,8 +123,7 @@ input.copied::-moz-selection {
 @media screen and (max-width: 782px) {
 	.button.copy-to-clipboard {
 		height: 38px;
-		margin: 1px;
+		margin: 1px 1px 10px 1px;
 		position: relative;
-		top: -5px;
 	}
 }

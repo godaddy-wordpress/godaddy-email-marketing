@@ -523,7 +523,7 @@ class GEM_Settings {
 				<?php if ( ! empty( $forms->signups ) ) : ?>
 					<div id="forms" class="panel">
 						<h3><?php esc_html_e( 'Available Signup Forms', 'godaddy-email-marketing' ); ?></h3>
-						<table class="wp-list-table widefat fixed striped pages">
+						<table class="wp-list-table widefat fixed striped">
 							<thead>
 								<tr>
 									<th scope="col" class="manage-column column-primary"><?php esc_html_e( 'Form Name', 'godaddy-email-marketing' ); ?></th>
@@ -538,9 +538,9 @@ class GEM_Settings {
 									<th scope="col" class="manage-column"><?php esc_html_e( 'Shortcode', 'godaddy-email-marketing' ); ?></th>
 								</tr>
 							</tfoot>
-							<tbody id="the-list">
+							<tbody>
 							<?php foreach ( $forms->signups as $form ) : ?>
-								<tr class="iedit">
+								<tr>
 									<td class="has-row-actions column-primary" data-colname="<?php esc_html_e( 'Form Name', 'godaddy-email-marketing' ); ?>">
 										<strong class="row-title"><?php echo esc_html( $form->name ); ?></strong>
 										<div class="row-actions">
