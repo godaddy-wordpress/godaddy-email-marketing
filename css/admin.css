@@ -89,3 +89,32 @@ div.error,
 	display: block !important;
   margin-top: 1.25em;
 }
+
+code.gem-form-id {
+	display: inline-block;
+	margin-top: 1px;
+	padding: 6px 10px 5px;
+}
+
+input.copied,
+input.copied:focus {
+	border-color: #46b450;
+	box-shadow: 0 0 2px rgba( 70, 180, 80, 0.8 );
+}
+
+input.copied::selection {
+	background-color: #d5f4d8;
+}
+
+input.copied::-moz-selection {
+	background-color: #d5f4d8;
+}
+
+.button.copy-to-clipboard {
+	height: 30px;
+	margin-top: 1px;
+}
+
+.mobile .button.copy-to-clipboard {
+	display: none;
+}

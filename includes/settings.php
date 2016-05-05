@@ -83,6 +83,11 @@ class GEM_Settings {
 		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 		wp_enqueue_script( 'gem-admin', plugins_url( "js/admin{$suffix}.js", GEM_PLUGIN_BASE ), array( 'jquery' ), GEM_VERSION, true );
+
+		// Strings.
+		wp_localize_script( 'gem-admin', 'GEMAdmin', array(
+			'copyFailed' => _x( 'Please press Ctrl/Cmd+C to copy.', 'failed copy response', 'godaddy-email-marketing' ),
+		) );
 	}
 
 	/**
@@ -547,8 +552,13 @@ class GEM_Settings {
 											</span>
 										</div>
 									</td>
-									<td><code><?php echo absint( $form->id ); ?></code></td>
-									<td><input type="text" class="code" value="[gem id=<?php echo absint( $form->id ); ?>]" onclick="this.select()" readonly /></td>
+									<td><code class="gem-form-id"><?php echo absint( $form->id ); ?></code></td>
+									<td>
+										<input type="text" id="form-<?php echo absint( $form->id ); ?>" class="code clipboard-value" value="[gem id=<?php echo absint( $form->id ); ?>]" readonly />
+										<button data-copytarget="#form-<?php echo absint( $form->id ); ?>" class="button copy-to-clipboard">
+											<img src="<?php echo plugins_url( 'images/clippy.svg', GEM_PLUGIN_BASE ); ?>" width="14" alt="Copy to clipboard">
+										</button>
+									</td>
 								</tr>
 							<?php endforeach; ?>
 							</tbody>
