@@ -118,3 +118,12 @@ input.copied::-moz-selection {
 .mobile .button.copy-to-clipboard {
 	display: none;
 }
+
+@media screen and (max-width: 782px) {
+	.button.copy-to-clipboard {
+		height: 38px;
+		margin: 1px;
+		position: relative;
+		top: -5px;
+	}
+}
