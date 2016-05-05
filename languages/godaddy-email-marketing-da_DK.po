@@ -354,14 +354,17 @@ msgid "Available Signup Forms"
 msgstr "Tilgngelige formularer"
 
 #: includes/settings.php:529 includes/settings.php:536
+#: includes/settings.php:544
 msgid "Form Name"
 msgstr "Navn p formular"
 
 #: includes/settings.php:530 includes/settings.php:537
+#: includes/settings.php:558
 msgid "Form ID"
 msgstr "Formular-id"
 
 #: includes/settings.php:531 includes/settings.php:538
+#: includes/settings.php:561
 msgid "Shortcode"
 msgstr "Genvejskode"
 
@@ -377,34 +380,34 @@ msgstr "Rediger formular i GoDaddy e-mailmarkedsfring"
 msgid "Preview"
 msgstr "Forhndsvisning"
 
-#: includes/settings.php:569
+#: includes/settings.php:574
 msgid "Not seeing your form?"
 msgstr "Kan du ikke finde din formular?"
 
-#: includes/settings.php:588
+#: includes/settings.php:593
 msgctxt "save settings button"
 msgid "Save Settings"
 msgstr "Gem indstillinger"
 
-#: includes/settings.php:618
+#: includes/settings.php:623
 msgid "Refresh Forms"
 msgstr "Forny formularer"
 
-#: includes/settings.php:625
+#: includes/settings.php:630
 msgid "Create a New Signup Form"
 msgstr ""
 
-#: includes/settings.php:632
+#: includes/settings.php:637
 msgid "Create a New Campaign"
 msgstr ""
 
-#: includes/settings.php:718
+#: includes/settings.php:723
 msgid ""
 "If you are experiencing issues and are unsure of the cause you may want to "
 "activate debug mode, which displays additional options."
 msgstr ""
 
-#: includes/settings.php:728
+#: includes/settings.php:733
 msgid ""
 "For this plugin to work, it needs to access your GoDaddy Email Marketing "
 "account. Please enter your GoDaddy username and GoDaddy Email Marketing API "

@@ -523,25 +523,25 @@ class GEM_Settings {
 				<?php if ( ! empty( $forms->signups ) ) : ?>
 					<div id="forms" class="panel">
 						<h3><?php esc_html_e( 'Available Signup Forms', 'godaddy-email-marketing' ); ?></h3>
-						<table class="wp-list-table widefat">
+						<table class="wp-list-table widefat fixed striped pages">
 							<thead>
 								<tr>
-									<th><?php esc_html_e( 'Form Name', 'godaddy-email-marketing' ); ?></th>
-									<th><?php esc_html_e( 'Form ID', 'godaddy-email-marketing' ); ?></th>
-									<th><?php esc_html_e( 'Shortcode', 'godaddy-email-marketing' ); ?></th>
+									<th scope="col" class="manage-column column-primary"><?php esc_html_e( 'Form Name', 'godaddy-email-marketing' ); ?></th>
+									<th scope="col" class="manage-column"><?php esc_html_e( 'Form ID', 'godaddy-email-marketing' ); ?></th>
+									<th scope="col" class="manage-column"><?php esc_html_e( 'Shortcode', 'godaddy-email-marketing' ); ?></th>
 								</tr>
 							</thead>
 							<tfoot>
 								<tr>
-									<th><?php esc_html_e( 'Form Name', 'godaddy-email-marketing' ); ?></th>
-									<th><?php esc_html_e( 'Form ID', 'godaddy-email-marketing' ); ?></th>
-									<th><?php esc_html_e( 'Shortcode', 'godaddy-email-marketing' ); ?></th>
+									<th scope="col" class="manage-column column-primary"><?php esc_html_e( 'Form Name', 'godaddy-email-marketing' ); ?></th>
+									<th scope="col" class="manage-column"><?php esc_html_e( 'Form ID', 'godaddy-email-marketing' ); ?></th>
+									<th scope="col" class="manage-column"><?php esc_html_e( 'Shortcode', 'godaddy-email-marketing' ); ?></th>
 								</tr>
 							</tfoot>
-							<tbody>
+							<tbody id="the-list">
 							<?php foreach ( $forms->signups as $form ) : ?>
-								<tr>
-									<td>
+								<tr class="iedit">
+									<td class="has-row-actions column-primary" data-colname="<?php esc_html_e( 'Form Name', 'godaddy-email-marketing' ); ?>">
 										<?php echo esc_html( $form->name ); ?>
 										<div class="row-actions">
 											<span class="edit">
@@ -551,9 +551,14 @@ class GEM_Settings {
 												<a target="_blank" href="<?php echo esc_url( $form->url ); ?>"><?php esc_html_e( 'Preview', 'godaddy-email-marketing' ); ?></a>
 											</span>
 										</div>
+										<button type="button" class="toggle-row">
+											<span class="screen-reader-text">Show more details</span>
+										</button>
 									</td>
-									<td><code class="gem-form-id"><?php echo absint( $form->id ); ?></code></td>
-									<td>
+									<td data-colname="<?php esc_html_e( 'Form ID', 'godaddy-email-marketing' ); ?>">
+										<code class="gem-form-id"><?php echo absint( $form->id ); ?></code>
+									</td>
+									<td data-colname="<?php esc_html_e( 'Shortcode', 'godaddy-email-marketing' ); ?>">
 										<input type="text" id="form-<?php echo absint( $form->id ); ?>" class="code clipboard-value" value="[gem id=<?php echo absint( $form->id ); ?>]" readonly />
 										<button data-copytarget="#form-<?php echo absint( $form->id ); ?>" class="button copy-to-clipboard">
 											<img src="<?php echo plugins_url( 'images/clippy.svg', GEM_PLUGIN_BASE ); ?>" width="14" alt="Copy to clipboard">
