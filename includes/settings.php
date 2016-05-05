@@ -118,6 +118,7 @@ class GEM_Settings {
 					}
 
 					delete_option( $this->slug );
+					delete_option( 'gem-valid-creds' );
 
 					set_transient( 'debug-reset', true, 30 );
 					// @codeCoverageIgnoreStart
@@ -490,14 +491,14 @@ class GEM_Settings {
 					<div class="gem-identity updated notice">
 						<p><?php echo esc_html_x( 'Enjoy the GoDaddy Email Marketing Experience, first hand.', 'gem header note', 'godaddy-email-marketing' ); ?></p>
 
-						<p><?php echo esc_html_x( 'Add your GoDaddy Email Marketing webform to your WordPress site! Easy to set up, the GoDaddy Email Marketing plugin allows your site visitors to subscribe to your email list.', 'header note', 'godaddy-email-marketing' ); ?></p>
+						<p><?php echo esc_html_x( 'Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to set up, the GoDaddy Email Marketing plugin allows your site visitors to subscribe to your email list.', 'header note', 'godaddy-email-marketing' ); ?></p>
 
 						<p class="description">
 							<?php if ( true === $valid_creds ) : ?>
 								<?php echo esc_html_x( 'You don\'t have any forms yet.', 'header note', 'godaddy-email-marketing' ); ?>
 								<?php $this->signups_button(); ?>
 							<?php else : ?>
-								<?php echo sprintf( esc_html_x( 'Don\'t have a GoDaddy Email Marketing account? Get one in less than 2 minutes! %s', 'header note', 'godaddy-email-marketing' ), sprintf( '<a target="_blank" href="https://godaddy.com/business/email-marketing" class="button">%s</a>', esc_html_x( 'Sign Up Now', 'header button', 'godaddy-email-marketing' ) ) ); ?>
+								<?php echo sprintf( esc_html_x( 'New to GoDaddy? Create an account to get started today. %1$s or %2$s to get your API Key.', 'header note', 'godaddy-email-marketing' ), sprintf( '<a target="_blank" href="%s" class="button">%s</a>', 'https://sso.godaddy.com/account/create?path=/wordpress_plugin&app=gem&realm=idp&ssoreturnpath=/%3Fpath%3D%2Fwordpress_plugin%26app%3Dgem%26realm%3Didp', esc_html_x( 'Sign Up Now', 'header button', 'godaddy-email-marketing' ) ), sprintf( '<a target="_blank" href="%s" class="button">%s</a>', 'https://sso.godaddy.com/?realm=idp&app=gem&path=/wordpress_plugin', esc_html_x( 'Sign In', 'header button', 'godaddy-email-marketing' ) ) ); ?>
 							<?php endif; ?>
 						</p>
 					</div>
@@ -555,10 +556,11 @@ class GEM_Settings {
 
 						<br style="clear:both" />
 						<p class="description">
-							<?php esc_html_e( 'Not seeing your form?', 'godaddy-email-marketing' ); ?> <a href="<?php echo esc_url( add_query_arg( 'action', 'refresh', remove_query_arg( 'tab' ) ) ); ?>" class="button"><?php esc_html_e( 'Refresh Forms', 'godaddy-email-marketing' ); ?></a>
+							<?php esc_html_e( 'Not seeing your form?', 'godaddy-email-marketing' ); ?> <?php $this->refresh_button( true ); ?>
 							<?php
 							if ( true === $valid_creds ) {
 								$this->signups_button();
+								$this->campaign_button();
 							}
 							?>
 						</p>
@@ -572,10 +574,12 @@ class GEM_Settings {
 
 					<br style="clear:both" />
 					<p class="submit">
-						<?php submit_button( _x( 'Save Settings', 'save settings button', 'godaddy-email-marketing' ), 'primary', 'submit', false ); ?>
-						<?php if ( empty( $forms->signups ) && true === $valid_creds ) : ?>
-							<a href="<?php echo esc_url( add_query_arg( 'action', 'refresh' ) ); ?>" class="button"><?php esc_html_e( 'Refresh Forms', 'godaddy-email-marketing' ); ?></a>
-						<?php endif; ?>
+						<?php
+						submit_button( _x( 'Save Settings', 'save settings button', 'godaddy-email-marketing' ), 'primary', 'submit', false );
+						if ( empty( $forms->signups ) && true === $valid_creds ) {
+							$this->refresh_button();
+						}
+						?>
 					</p>
 				</div>
 			</form>
@@ -584,12 +588,38 @@ class GEM_Settings {
 	}
 
 	/**
+	 * Generate a link button.
+	 *
+	 * @param string $text The button text.
+	 * @param string $url  The button URL.
+	 * @param bool   $out  Whether or not the link should be opened in another tab. Default is `false`.
+	 */
+	public function link_button( $text, $url, $out = false ) {
+		?>
+		<a href="<?php echo esc_url( $url ); ?>" target="<?php echo esc_attr( $out ? '_blank' : '_self' ); ?>" class="button"><?php echo esc_html( $text ); ?></a>
+		<?php
+	}
+
+	/**
+	 * Refresh forms button.
+	 */
+	public function refresh_button() {
+		$url = esc_url( add_query_arg( 'action', 'refresh', remove_query_arg( 'tab' ) ) );
+		$this->link_button( __( 'Refresh Forms', 'godaddy-email-marketing' ), $url );
+	}
+
+	/**
 	 * Signup button for a new form.
 	 */
 	public function signups_button() {
-		?>
-		<a href="https://gem.godaddy.com/signups" target="_blank" class="button"><?php esc_html_e( 'Create a New Signup Form', 'godaddy-email-marketing' ); ?></a>
-		<?php
+		$this->link_button( __( 'Create a New Signup Form', 'godaddy-email-marketing' ), 'https://gem.godaddy.com/signups', true );
+	}
+
+	/**
+	 * Button for a new campaign.
+	 */
+	public function campaign_button() {
+		$this->link_button( __( 'Create a New Campaign', 'godaddy-email-marketing' ), 'https://gem.godaddy.com/promotions', true );
 	}
 
 	/**
@@ -675,7 +705,7 @@ final class GEM_Settings_Controls {
 	public static function debugging() {
 		printf(
 			'<p>%s</p>',
-			esc_html__( 'If you are experiencing issues and are unsure of the cause you may want to activate debug mode, which displays additional options that allow you delete stored data.', 'godaddy-email-marketing' )
+			esc_html__( 'If you are experiencing issues and are unsure of the cause you may want to activate debug mode, which displays additional options.', 'godaddy-email-marketing' )
 		);
 	}
 
@@ -685,7 +715,7 @@ final class GEM_Settings_Controls {
 	public static function description() {
 		printf(
 			'<p>%s</p>',
-			esc_html__( 'Please enter your GoDaddy Email Marketing username and API Key. Your credentials will connect WordPress with your GoDaddy Email Marketing account and display your available forms.', 'godaddy-email-marketing' )
+			esc_html__( 'For this plugin to work, it needs to access your GoDaddy Email Marketing account. Please enter your GoDaddy username and GoDaddy Email Marketing API Key.', 'godaddy-email-marketing' )
 		);
 	}
 

@@ -19,7 +19,7 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		GEM_Settings_Controls::description();
 		$actual_output = ob_get_contents();
 		ob_end_clean();
-		$this->assertContains( '<p>Please enter your GoDaddy Email Marketing username and API Key. Your credentials will connect WordPress with your GoDaddy Email Marketing account and display your available forms.</p>', $actual_output );
+		$this->assertContains( '<p>For this plugin to work, it needs to access your GoDaddy Email Marketing account. Please enter your GoDaddy username and GoDaddy Email Marketing API Key.</p>', $actual_output );
 	}
 
 	public function test_select() {

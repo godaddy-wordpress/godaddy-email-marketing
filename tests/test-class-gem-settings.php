@@ -300,6 +300,29 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->delete_data( $instance->slug );
 	}
 
+	public function test_display_settings_page_empty_forms() {
+		set_transient( 'gem-user_name-account', true );
+		$instance = new GEM_Settings();
+		$instance->action_admin_menu();
+		$instance->register_settings();
+		update_option( $instance->slug, array(
+			'username' => 'user_name',
+			'api-key' => '1234',
+			'display_powered_by' => 1,
+			'debug' => 1,
+		) );
+		update_option( 'gem-valid-creds', true );
+
+		ob_start();
+		$instance->display_settings_page();
+		$actual_output = ob_get_contents();
+		ob_end_clean();
+
+		$this->assertContains( 'Refresh Forms', $actual_output );
+
+		$this->delete_data( $instance->slug );
+	}
+
 	public function test_display_settings_page_forms() {
 		add_filter( 'pre_http_request', array( $this, 'pre_http_request' ) );
 		update_option( 'gem-settings', array(
