@@ -93,7 +93,10 @@ module.exports = function( grunt ) {
 
 		po2mo: {
 			files: {
-				src: 'languages/*.po',
+				src: [
+					'languages/*.po',
+					'!languages/*.po~'
+				],
 				expand: true
 			}
 		},
@@ -153,12 +156,27 @@ module.exports = function( grunt ) {
 					assets_dir: 'assets'
 				}
 			}
+		},
+
+		// Clean up.
+		clean: {
+			po: {
+				src: [
+					'languages/*.po~'
+				]
+			},
+			build: {
+				src: [
+					'build'
+				]
+			}
 		}
 
 	} );
 
 	// Load tasks
 	grunt.loadNpmTasks( 'grunt-checktextdomain' );
+	grunt.loadNpmTasks( 'grunt-contrib-clean' );
 	grunt.loadNpmTasks( 'grunt-contrib-copy' );
 	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
@@ -177,7 +195,8 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'update_translation', [
 		'checktextdomain',
 		'pot',
-		'po2mo'
+		'po2mo',
+		'clean:po'
 	] );
 
 	// Executes development tasks.
@@ -194,7 +213,7 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'deploy', [
 		'copy',
 		'wp_deploy',
-		'clean'
+		'clean:build'
 	] );
 
 };
