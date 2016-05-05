@@ -542,7 +542,7 @@ class GEM_Settings {
 							<?php foreach ( $forms->signups as $form ) : ?>
 								<tr class="iedit">
 									<td class="has-row-actions column-primary" data-colname="<?php esc_html_e( 'Form Name', 'godaddy-email-marketing' ); ?>">
-										<?php echo esc_html( $form->name ); ?>
+										<strong class="row-title"><?php echo esc_html( $form->name ); ?></strong>
 										<div class="row-actions">
 											<span class="edit">
 												<a target="_blank" href="<?php echo esc_url( "https://gem.godaddy.com/signups/{$form->id}/edit" ); ?>" title="<?php esc_attr_e( 'Opens in a new window', 'godaddy-email-marketing' ); ?>"><?php esc_html_e( 'Edit form in GoDaddy Email Marketing', 'godaddy-email-marketing' ); ?></a> |
