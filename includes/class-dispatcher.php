@@ -17,7 +17,7 @@ class GEM_Dispatcher {
 	 *
 	 * @var string
 	 */
-	const BASE_API = 'http://api.madmimi.com/';
+	const BASE_API = 'https://gem.godaddy.com/';
 
 	/**
 	 * HTTP response codes
@@ -62,6 +62,42 @@ class GEM_Dispatcher {
 		set_transient( 'gem-' . $username . '-lists', $data = json_decode( wp_remote_retrieve_body( $response ) ), defined( DAY_IN_SECONDS ) ? DAY_IN_SECONDS : 60 * 60 * 24 );
 
 		return $data;
+	}
+
+	/**
+	 * Add a default form.
+	 *
+	 * @param string $username The username.
+	 * @return false|array The form fields array or false.
+	 */
+	public static function add_default_form() {
+		$username = GEM_Settings_Controls::get_option( 'username' );
+		$api_key = GEM_Settings_Controls::get_option( 'api-key' );
+
+		if ( ! ( $username && $api_key ) ) {
+			return false;
+		}
+
+		// Prepare the URL that includes our credentials.
+		$response = wp_remote_post( self::BASE_API . 'api/v3/signupForms', array(
+			'method' => 'POST',
+			'timeout' => 10,
+			'body' => array(
+				'username' => $username,
+				'api_key' => $api_key,
+				'name' => 'Signup Form',
+				'integration' => 'WordPress',
+				'hidden' => false,
+				'subscriberListName' => 'WordPress',
+			),
+		) );
+
+		// Credentials are incorrect.
+		if ( ! in_array( wp_remote_retrieve_response_code( $response ), self::$ok_codes ) ) {
+			return false;
+		}
+
+		return true;
 	}
 
 	/**

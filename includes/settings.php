@@ -480,6 +480,13 @@ class GEM_Settings {
 		$tab = isset( $_GET['tab'] ) ? sanitize_key( wp_unslash( $_GET['tab'] ) ) : '';
 		$forms = GEM_Dispatcher::get_forms();
 		$valid_creds = (bool) get_option( 'gem-valid-creds' );
+
+		// Create a default form.
+		if ( empty( $forms->signups ) && $valid_creds ) {
+			GEM_Dispatcher::add_default_form();
+			$forms = GEM_Dispatcher::fetch_forms( GEM_Settings_Controls::get_option( 'username' ) );
+		}
+
 		if ( ! empty( $forms->signups ) && empty( $tab ) ) {
 			$tab = 'forms';
 		}
