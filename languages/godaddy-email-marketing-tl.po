@@ -140,7 +140,7 @@ msgstr ""
 "iyong site. Madali ang pagse-setup. Sa ibaba, basta't ilagay mo lang ang "
 "email address ng iyong account at API key (makikita sa iyong Email sa "
 "Marketing ng GoDaddy na account [%s] area). Heto ang 3 paraan kung paano mo "
-"mapapakita ang isang webform sa iyong site:"
+"mapapakita ang isang webform sa iyong site:\n"
 
 #: includes/settings.php:180
 msgid ""
