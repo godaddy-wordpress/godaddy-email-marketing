@@ -15,10 +15,18 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		parent::setUp();
 	}
 
+	/**
+	 * Test that GEM_Settings_Controls exists.
+	 */
 	public function test_basics() {
 		$this->assertTrue( class_exists( 'GEM_Settings_Controls', false ) );
 	}
 
+	/**
+	 * Test description markup.
+	 *
+	 * @see GEM_Settings_Controls::description()
+	 */
 	public function test_description() {
 		ob_start();
 		GEM_Settings_Controls::description();
@@ -27,6 +35,11 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		$this->assertContains( '<p>For this plugin to work, it needs to access your GoDaddy Email Marketing account. Please enter your GoDaddy username and GoDaddy Email Marketing API Key.</p>', $actual_output );
 	}
 
+	/**
+	 * Test select markup.
+	 *
+	 * @see GEM_Settings_Controls::select()
+	 */
 	public function test_select() {
 		ob_start();
 		GEM_Settings_Controls::select( array(
@@ -41,6 +54,11 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		$this->assertContains( 'the_value', $actual_output );
 	}
 
+	/**
+	 * Test select markup.
+	 *
+	 * @see GEM_Settings_Controls::select()
+	 */
 	public function test_select_is_empty() {
 		ob_start();
 		GEM_Settings_Controls::select( array(
@@ -51,6 +69,11 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		$this->assertEmpty( $actual_output );
 	}
 
+	/**
+	 * Test text markup.
+	 *
+	 * @see GEM_Settings_Controls::text()
+	 */
 	public function test_text() {
 		ob_start();
 		GEM_Settings_Controls::text(array(
@@ -64,6 +87,11 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		$this->assertContains( 'value="" class="widefat code" />', $actual_output );
 	}
 
+	/**
+	 * Test text markup.
+	 *
+	 * @see GEM_Settings_Controls::text()
+	 */
 	public function test_text_is_empty() {
 		ob_start();
 		GEM_Settings_Controls::text( array(
@@ -74,6 +102,11 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		$this->assertEmpty( $actual_output );
 	}
 
+	/**
+	 * Test checkbox markup.
+	 *
+	 * @see GEM_Settings_Controls::checkbox()
+	 */
 	public function test_checkbox() {
 		ob_start();
 		GEM_Settings_Controls::checkbox( array(
@@ -87,6 +120,11 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		$this->assertContains( '</label>', $actual_output );
 	}
 
+	/**
+	 * Test checkbox markup.
+	 *
+	 * @see GEM_Settings_Controls::checkbox()
+	 */
 	public function test_checkbox_is_empty() {
 		ob_start();
 		GEM_Settings_Controls::checkbox( array(
@@ -97,6 +135,11 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		$this->assertEmpty( $actual_output );
 	}
 
+	/**
+	 * Test button markup.
+	 *
+	 * @see GEM_Settings_Controls::button()
+	 */
 	public function test_button() {
 		ob_start();
 		GEM_Settings_Controls::button( array(
@@ -110,6 +153,11 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		$this->assertContains( '</p>', $actual_output );
 	}
 
+	/**
+	 * Test button markup.
+	 *
+	 * @see GEM_Settings_Controls::button()
+	 */
 	public function test_button_is_empty() {
 		ob_start();
 		GEM_Settings_Controls::button( array() );
@@ -118,6 +166,11 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		$this->assertEmpty( $actual_output );
 	}
 
+	/**
+	 * Test show description markup.
+	 *
+	 * @see GEM_Settings_Controls::show_description()
+	 */
 	public function test_show_description() {
 		ob_start();
 		GEM_Settings_Controls::show_description( array(
@@ -128,6 +181,11 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		$this->assertContains( '<p class="description">the_description</p>', $actual_output );
 	}
 
+	/**
+	 * Test option value.
+	 *
+	 * @see GEM_Settings_Controls::get_option()
+	 */
 	public function test_get_option() {
 		update_option( 'gem-settings', array( 'username' => 'user_name', 'api-key' => '1234' ) );
 		$this->assertFalse( GEM_Settings_Controls::get_option( 'error' ) );

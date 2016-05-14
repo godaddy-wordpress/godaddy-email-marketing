@@ -6,10 +6,18 @@
  */
 class Test_GEM_Form_Renderer extends WP_UnitTestCase {
 
+	/**
+	 * Test that GEM_Form_Renderer exists.
+	 */
 	public function test_basics() {
 		$this->assertTrue( class_exists( 'GEM_Form_Renderer', false ) );
 	}
 
+	/**
+	 * Test process output.
+	 *
+	 * @see GEM_Form_Renderer::process()
+	 */
 	public function test_process() {
 		update_option( 'gem-settings', array( 'username' => 'user_name', 'api-key' => '1234' ) );
 		set_transient( 'gem-form-123', json_decode( '{"id":123,"name":"Signup Form","fields":{"field_a":{"type":"string","field_type":"string","name":"the_name_a","required":false,"display":"text_a"},"field_b":{"type":"checkbox","field_type":"checkbox","required":true,"name":"the_name_b","value":"the_value","display":"text_b"}},"submit":"the_url","button_text":"button_text"}' ), 60 );

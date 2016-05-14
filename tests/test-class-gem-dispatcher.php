@@ -37,10 +37,18 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		Mock_Http_Response::$test_class = null;
 	}
 
+	/**
+	 * Test that GEM_Dispatcher exists.
+	 */
 	public function test_basics() {
 		$this->assertTrue( class_exists( 'GEM_Dispatcher', false ) );
 	}
 
+	/**
+	 * Test that fetch_forms returns false.
+	 *
+	 * @see GEM_Dispatcher::fetch_forms()
+	 */
 	public function test_fetch_forms() {
 		$test = $this;
 		$user_name = 'the_user';
@@ -69,6 +77,11 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		$this->assertFalse( GEM_Dispatcher::fetch_forms( $user_name, $api_key ) );
 	}
 
+	/**
+	 * Test that fetch_forms returns sample data.
+	 *
+	 * @see GEM_Dispatcher::fetch_forms()
+	 */
 	public function test_fetch_forms_is_set() {
 		$test = $this;
 		$user_name = 'the_user';
@@ -85,6 +98,11 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		$this->assertEquals( json_decode( $sample_response ), get_transient( 'gem-' . $user_name . '-lists' ) );
 	}
 
+	/**
+	 * Test that adding a default form.
+	 *
+	 * @see GEM_Dispatcher::add_default_form()
+	 */
 	public function test_add_default_form() {
 		$user_name = 'the_user';
 		$api_key = 'the_key';
@@ -127,6 +145,11 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		$this->assertTrue( GEM_Dispatcher::add_default_form() );
 	}
 
+	/**
+	 * Test getting forms.
+	 *
+	 * @see GEM_Dispatcher::get_forms()
+	 */
 	public function test_get_forms() {
 		$user_name = 'the_user';
 		$api_key = 'the_key';
@@ -142,6 +165,11 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		delete_transient( 'gem-' . $user_name . '-lists' );
 	}
 
+	/**
+	 * Test getting fields.
+	 *
+	 * @see GEM_Dispatcher::get_fields()
+	 */
 	public function test_get_fields() {
 		$test = $this;
 		$form_id = 'the_id';
@@ -173,6 +201,11 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		delete_transient( 'gem-form-' . $form_id );
 	}
 
+	/**
+	 * Test getting user account info.
+	 *
+	 * @see GEM_Dispatcher::get_user_level()
+	 */
 	public function test_get_user_level() {
 		$sample_data = 'the_sample';
 		$user_name = 'the_user';
@@ -206,6 +239,11 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		delete_transient( 'gem-' . $user_name . '-account' );
 	}
 
+	/**
+	 * Test getting various request urls.
+	 *
+	 * @see GEM_Dispatcher::get_method_url()
+	 */
 	public function test_get_method_url() {
 		$auth = array(
 			'username' => 'the_user',
@@ -229,6 +267,11 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		$this->assertEquals( 'https://gem.godaddy.com/user/account_status?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'account', false,  false ) );
 	}
 
+	/**
+	 * Test response code.
+	 *
+	 * @see GEM_Dispatcher::is_response_ok()
+	 */
 	public function test_is_response_ok() {
 		$request = array(
 			'response' => array(

@@ -6,10 +6,18 @@
  */
 class Test_GEM_Form_Widget extends WP_UnitTestCase {
 
+	/**
+	 * Test that GEM_Form_Widget exists.
+	 */
 	public function test_basics() {
 		$this->assertTrue( class_exists( 'GEM_Form_Widget', false ) );
 	}
 
+	/**
+	 * Test constructor.
+	 *
+	 * @see GEM_Form_Widget::__construct()
+	 */
 	public function test_construct() {
 		$instance = new GEM_Form_Widget();
 		$this->assertEquals( 10, has_action( 'gem_widget_text', 'wpautop' ) );
@@ -21,6 +29,11 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$this->assertEquals( 'widget_gem-form', $instance->option_name );
 	}
 
+	/**
+	 * Test widget output.
+	 *
+	 * @see GEM_Form_Widget::widget()
+	 */
 	public function test_widget() {
 		update_option( 'gem-settings', array( 'username' => 'user_name', 'api-key' => '1234' ) );
 		set_transient( 'gem-form-123', json_decode( '{"id":123,"name":"Signup Form","fields":{"field_a":{"type":"string","field_type":"string","name":"the_name_a","required":false,"display":"text_a"},"field_b":{"type":"checkbox","field_type":"checkbox","required":true,"name":"the_name_b","value":"the_value","display":"text_b"}},"submit":"the_url","button_text":"button_text"}' ), 60 );
@@ -61,6 +74,11 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$this->assertContains( 'after_text', $actual_output );
 	}
 
+	/**
+	 * Test update.
+	 *
+	 * @see GEM_Form_Widget::update()
+	 */
 	public function test_update() {
 		$widget = new GEM_Form_Widget();
 
@@ -86,6 +104,11 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$this->assertEquals( 123, $output['form'] );
 	}
 
+	/**
+	 * Test form.
+	 *
+	 * @see GEM_Form_Widget::form()
+	 */
 	public function test_form() {
 		$widget = new GEM_Form_Widget();
 		$user_name = 'the_user';
@@ -117,6 +140,11 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$this->assertContains( '<option value="the_field_id" >the_field_name</option>', $actual_output );
 	}
 
+	/**
+	 * Test form message on failure.
+	 *
+	 * @see GEM_Form_Widget::form()
+	 */
 	public function test_form_fails_message() {
 		$widget = new GEM_Form_Widget();
 		$user_name = 'the_user';

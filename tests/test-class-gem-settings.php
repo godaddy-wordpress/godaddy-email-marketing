@@ -37,28 +37,49 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$wp_settings_errors = array();
 	}
 
+	/**
+	 * Add sample data.
+	 *
+	 * @param string $slug The setting option slug.
+	 */
 	public function set_data( $slug = '' ) {
 		update_option( $slug, array( 'username' => 'user_name', 'api-key' => '1234' ) );
 		set_transient( 'gem-form-123', json_decode( '{"id":123,"name":"Signup Form","fields":{"field_a":{"type":"string","field_type":"string","name":"the_name_a","required":false,"display":"text_a"},"field_b":{"type":"checkbox","field_type":"checkbox","required":true,"name":"the_name_b","value":"the_value","display":"text_b"}},"submit":"the_url","button_text":"button_text"}' ) );
 		set_transient( 'gem-user_name-lists', json_decode( '{"total":1,"signups":[{"id":123,"name":"Signup Form","thumbnail":"the_url","url":"the_url"}]}' ) );
 	}
 
+	/**
+	 * Delete sample data.
+	 */
 	public function delete_data( $slug ) {
 		delete_option( $slug );
 		delete_transient( 'gem-form-123' );
 		delete_transient( 'gem-user_name-lists' );
 	}
 
+	/**
+	 * Test that GEM_Settings exists.
+	 */
 	public function test_basics() {
 		$this->assertTrue( class_exists( 'GEM_Settings', false ) );
 	}
 
+	/**
+	 * Test constructor.
+	 *
+	 * @see GEM_Settings::__construct()
+	 */
 	public function test_construct() {
 		$instance = new GEM_Settings();
 		$this->assertEquals( 10, has_action( 'admin_menu', array( $instance, 'action_admin_menu' ) ) );
 		$this->assertEquals( 10, has_action( 'admin_init', array( $instance, 'register_settings' ) ) );
 	}
 
+	/**
+	 * Test menu.
+	 *
+	 * @see GEM_Settings::action_admin_menu()
+	 */
 	public function test_action_admin_menu() {
 		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
@@ -67,6 +88,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertEquals( 'gem-settings', $instance->slug );
 	}
 
+	/**
+	 * Test styles are enqueued.
+	 *
+	 * @see GEM_Settings::admin_enqueue_style()
+	 */
 	public function test_admin_enqueue_style() {
 		$instance = new GEM_Settings();
 		$instance->admin_enqueue_style();
@@ -74,6 +100,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertTrue( wp_style_is( 'gem-admin', 'enqueued' ) );
 	}
 
+	/**
+	 * Test scripts are enqueued.
+	 *
+	 * @see GEM_Settings::admin_enqueue_scripts()
+	 */
 	public function test_admin_enqueue_scripts() {
 		$instance = new GEM_Settings();
 		$instance->admin_enqueue_scripts();
@@ -81,6 +112,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertTrue( wp_script_is( 'gem-admin', 'enqueued' ) );
 	}
 
+	/**
+	 * Test actions are loaded.
+	 *
+	 * @see GEM_Settings::page_load()
+	 */
 	public function test_page_load() {
 		$instance = new GEM_Settings();
 		$instance->page_load();
@@ -91,6 +127,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertEquals( 10, has_action( 'admin_print_scripts-' . $instance->hook, array( $instance, 'admin_enqueue_scripts' ) ) );
 	}
 
+	/**
+	 * Test debug reset.
+	 *
+	 * @see GEM_Settings::page_load()
+	 */
 	public function test_page_load_debug_reset() {
 		$gem = gem();
 		$instance = new GEM_Settings();
@@ -117,6 +158,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->delete_data( $instance->slug );
 	}
 
+	/**
+	 * Test debug reset transients.
+	 *
+	 * @see GEM_Settings::page_load()
+	 */
 	public function test_page_load_debug_reset_transients() {
 		$gem = gem();
 		$instance = new GEM_Settings();
@@ -143,6 +189,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->delete_data( $instance->slug );
 	}
 
+	/**
+	 * Test refresh.
+	 *
+	 * @see GEM_Settings::page_load()
+	 */
 	public function test_page_load_refresh() {
 		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
@@ -160,6 +211,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->delete_data( $instance->slug );
 	}
 
+	/**
+	 * Test dismiss.
+	 *
+	 * @see GEM_Settings::page_load()
+	 */
 	public function test_page_load_dismiss() {
 		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
@@ -178,6 +234,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$instance->page_load();
 	}
 
+	/**
+	 * Test refresh message.
+	 *
+	 * @see GEM_Settings::page_load()
+	 */
 	public function test_page_load_transient_gem_refresh() {
 		$instance = new GEM_Settings();
 		set_transient( 'gem-refresh', true, 30 );
@@ -189,6 +250,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertEquals( 'gem-refresh', $errors[0]['code'] );
 	}
 
+	/**
+	 * Test invalid credentials message.
+	 *
+	 * @see GEM_Settings::page_load()
+	 */
 	public function test_page_load_transient_gem_invalid_creds() {
 		$instance = new GEM_Settings();
 		set_transient( 'gem-invalid-creds', true, 30 );
@@ -200,6 +266,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertEquals( 'gem-invalid-creds', $errors[0]['code'] );
 	}
 
+	/**
+	 * Test valid credentials message.
+	 *
+	 * @see GEM_Settings::page_load()
+	 */
 	public function test_page_load_transient_gem_valid_creds() {
 		$instance = new GEM_Settings();
 		set_transient( 'gem-valid-creds', true, 30 );
@@ -211,6 +282,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertEquals( 'gem-valid-creds', $errors[0]['code'] );
 	}
 
+	/**
+	 * Test settings updated message.
+	 *
+	 * @see GEM_Settings::page_load()
+	 */
 	public function test_page_load_transient_gem_settings_updated() {
 		$instance = new GEM_Settings();
 		set_transient( 'gem-settings-updated', true, 30 );
@@ -222,6 +298,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertEquals( 'gem-settings-updated', $errors[0]['code'] );
 	}
 
+	/**
+	 * Test empty credentials message.
+	 *
+	 * @see GEM_Settings::page_load()
+	 */
 	public function test_page_load_transient_gem_empty_creds() {
 		$instance = new GEM_Settings();
 		set_transient( 'gem-empty-creds', true, 30 );
@@ -233,6 +314,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertEquals( 'gem-empty-creds', $errors[0]['code'] );
 	}
 
+	/**
+	 * Test help tabs.
+	 *
+	 * @see GEM_Settings::setup_help_tabs()
+	 */
 	public function test_setup_help_tabs() {
 		global $current_screen;
 
@@ -246,6 +332,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertContains( 'GoDaddy', $current_screen->get_help_sidebar() );
 	}
 
+	/**
+	 * Test settings get registered.
+	 *
+	 * @see GEM_Settings::register_settings()
+	 */
 	public function test_register_settings() {
 		global $new_whitelist_options;
 		global $wp_settings_sections;
@@ -270,6 +361,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertArrayHasKey( 'display_powered_by', $wp_settings_fields[ $instance->slug ]['general_settings_section'] );
 	}
 
+	/**
+	 * Test settings page.
+	 *
+	 * @see GEM_Settings::display_settings_page()
+	 */
 	public function test_display_settings_page() {
 		set_transient( 'gem-user_name-account', true );
 		$this->set_data( 'gem-settings' );
@@ -304,6 +400,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->delete_data( $instance->slug );
 	}
 
+	/**
+	 * Test settings page empty forms.
+	 *
+	 * @see GEM_Settings::display_settings_page()
+	 */
 	public function test_display_settings_page_empty_forms() {
 		set_transient( 'gem-user_name-account', true );
 		$instance = new GEM_Settings();
@@ -327,6 +428,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->delete_data( $instance->slug );
 	}
 
+	/**
+	 * Test settings page forms.
+	 *
+	 * @see GEM_Settings::display_settings_page()
+	 */
 	public function test_display_settings_page_forms() {
 		Mock_Http_Response::$data = array(
 			'response' => array(
@@ -356,6 +462,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		delete_transient( 'gem-form-54321' );
 	}
 
+	/**
+	 * Test validate false creds.
+	 *
+	 * @see GEM_Settings::validate()
+	 */
 	public function test_validate_sets_gem_valid_creds_to_false() {
 		global $wp_settings_errors;
 
@@ -412,6 +523,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertFalse( get_option( 'gem-valid-creds' ) );
 	}
 
+	/**
+	 * Test validate true creds.
+	 *
+	 * @see GEM_Settings::validate()
+	 */
 	public function test_validate_sets_gem_valid_creds_to_true() {
 		Mock_Http_Response::$data = array(
 			'response' => array(
@@ -435,6 +551,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertTrue( get_option( 'gem-valid-creds' ) );
 	}
 
+	/**
+	 * Test validate no API changes.
+	 *
+	 * @see GEM_Settings::validate()
+	 */
 	public function test_validate_non_api_change() {
 		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
