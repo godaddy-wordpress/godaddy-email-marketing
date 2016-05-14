@@ -15,7 +15,7 @@ class GEM_Form_Widget extends WP_Widget {
 	/**
 	 * Sets up a new GoDaddy Email Marketing widget instance.
 	 */
-	function __construct() {
+	public function __construct() {
 		parent::__construct(
 			'gem-form',
 			__( 'GoDaddy Email Marketing Form', 'godaddy-email-marketing' ),
@@ -37,7 +37,7 @@ class GEM_Form_Widget extends WP_Widget {
 	 *                        'before_widget', and 'after_widget'.
 	 * @param array $instance Settings for the current Custom Menu widget instance.
 	 */
-	function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
 		$title   = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'GoDaddy Email Marketing Form', 'godaddy-email-marketing' ) : $instance['title'], $instance, $this->id_base );
 		$text    = empty( $instance['text'] ) ? '' : $instance['text'];
 		$form_id = empty( $instance['form'] ) ? false : $instance['form'];
@@ -66,7 +66,7 @@ class GEM_Form_Widget extends WP_Widget {
 	 * @param array $old_instance Old settings for this instance.
 	 * @return array Updated settings to save.
 	 */
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
 		$instance['title'] = strip_tags( $new_instance['title'] );
@@ -81,7 +81,7 @@ class GEM_Form_Widget extends WP_Widget {
 	 *
 	 * @param array $instance Current settings.
 	 */
-	function form( $instance ) {
+	public function form( $instance ) {
 
 		// Set defaults.
 		$instance = wp_parse_args( (array) $instance, array(
