@@ -78,7 +78,7 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		);
 		$this->assertFalse( GEM_Dispatcher::fetch_forms( $user_name ) );
 
-		Mock_Http_Response::$expected_url = "https://gem.godaddy.com/signups.json?username=$user_name&api_key=the_key";
+		Mock_Http_Response::$expected_url = "https://gem.godaddy.com/signups.json?username=$user_name&api_key=$api_key";
 		Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 401,
@@ -99,6 +99,7 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		$api_key = 'the_key';
 		$sample_response = '{ "test": "OK" }';
 
+		Mock_Http_Response::$expected_url = "https://gem.godaddy.com/signups.json?username=$user_name&api_key=$api_key";
 		Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 200,

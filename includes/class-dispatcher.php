@@ -20,6 +20,13 @@ class GEM_Dispatcher {
 	const BASE_API = 'https://gem.godaddy.com/';
 
 	/**
+	 * Transient expiration (1 day in seconds)
+	 *
+	 * @var int
+	 */
+	const EXPIRATION = 86400;
+
+	/**
 	 * HTTP response codes
 	 *
 	 * @var array
@@ -57,9 +64,8 @@ class GEM_Dispatcher {
 			return false;
 		}
 
-		// @todo should we cache for *always* since we have a button to clear the cache?
-		// Maybe having an expiration on such a thing can bloat wp_options?
-		set_transient( 'gem-' . $username . '-lists', $data = json_decode( wp_remote_retrieve_body( $response ) ), defined( DAY_IN_SECONDS ) ? DAY_IN_SECONDS : 60 * 60 * 24 );
+		$data = json_decode( wp_remote_retrieve_body( $response ) );
+		set_transient( 'gem-' . $username . '-lists', $data, self::EXPIRATION );
 
 		return $data;
 	}
@@ -128,23 +134,23 @@ class GEM_Dispatcher {
 	 * @return false|object The form fields JSON object or false.
 	 */
 	public static function get_fields( $form_id ) {
-		if ( false === ( $fields = get_transient( 'gem-form-' . $form_id ) ) ) {
+		if ( false === ( $data = get_transient( 'gem-form-' . $form_id ) ) ) {
 
 			// Fields are not cached. fetch and cache.
-			$fields = wp_remote_get( self::get_method_url( 'fields', array(
+			$response = wp_remote_get( self::get_method_url( 'fields', array(
 				'id' => $form_id,
 			) ) );
 
 			// Was there an error, connection is down? bail and try again later.
-			if ( ! self::is_response_ok( $fields ) ) {
+			if ( ! self::is_response_ok( $response ) ) {
 				return false;
 			}
 
-			// @todo should we cache results for longer than a day? not expire at all?
-			set_transient( 'gem-form-' . $form_id, $fields = json_decode( wp_remote_retrieve_body( $fields ) ) );
+			$data = json_decode( wp_remote_retrieve_body( $response ) );
+			set_transient( 'gem-form-' . $form_id, $data, self::EXPIRATION );
 		}
 
-		return $fields;
+		return $data;
 	}
 
 	/**
@@ -220,12 +226,10 @@ class GEM_Dispatcher {
 	/**
 	 * Check for an OK response.
 	 *
-	 * @todo Does this really need to be by reference?
-	 *
 	 * @param array $request HTTP response by reference.
 	 * @return bool
 	 */
-	public static function is_response_ok( &$request ) {
+	public static function is_response_ok( $request ) {
 		return ( ! is_wp_error( $request ) && in_array( wp_remote_retrieve_response_code( $request ), self::$ok_codes ) );
 	}
 }
