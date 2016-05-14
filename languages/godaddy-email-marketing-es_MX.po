@@ -425,8 +425,9 @@ msgid "GoDaddy Email Marketing Form"
 msgstr "Formulario de GoDaddy Email Marketing"
 
 #: includes/widget.php:24
+#, fuzzy
 msgctxt "widget description"
-msgid "Embed any GoDaddy Email Marketing webform in your sidebar."
+msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
 msgstr ""
 "Inserta cualquier formulario web de GoDaddy Email Marketing en tu barra "
 "lateral."

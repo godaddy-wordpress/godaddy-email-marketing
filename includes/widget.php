@@ -21,7 +21,7 @@ class GEM_Form_Widget extends WP_Widget {
 			__( 'GoDaddy Email Marketing Form', 'godaddy-email-marketing' ),
 			array(
 				'classname'   => 'gem-form',
-				'description' => _x( 'Embed any GoDaddy Email Marketing webform in your sidebar.', 'widget description', 'godaddy-email-marketing' ),
+				'description' => _x( 'Embed GoDaddy Email Marketing signup forms in the sidebar.', 'widget description', 'godaddy-email-marketing' ),
 			)
 		);
 
