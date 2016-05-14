@@ -28,7 +28,7 @@ msgctxt "ajax response"
 msgid "%s is a required field."
 msgstr ""
 
-#: godaddy-email-marketing.php:212 includes/settings.php:518
+#: godaddy-email-marketing.php:212 includes/settings.php:525
 msgid "Settings"
 msgstr "Innstillinger"
 
@@ -123,7 +123,7 @@ msgstr "Dag"
 msgid "Year"
 msgstr "r"
 
-#: includes/settings.php:53 includes/settings.php:490
+#: includes/settings.php:53 includes/settings.php:497
 #, fuzzy
 msgid "GoDaddy Email Marketing Signup Forms"
 msgstr "Skjema for GoDaddy Markedsfring per e-post"
@@ -305,12 +305,12 @@ msgstr "Slett alle data"
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:497
+#: includes/settings.php:504
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
 msgstr "Nyt GoDaddy Markedsfring per e-post-opplevelsen p egen hnd."
 
-#: includes/settings.php:499
+#: includes/settings.php:506
 #, fuzzy
 msgctxt "header note"
 msgid ""
@@ -322,12 +322,12 @@ msgstr ""
 "nettstedet ditt! Den er enkel  installere, og GoDaddy Markedsfring per e-"
 "postmodulen lar beskende til nettstedet ditt abonnere p e-postlisten din."
 
-#: includes/settings.php:503
+#: includes/settings.php:510
 msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr ""
 
-#: includes/settings.php:506
+#: includes/settings.php:513
 #, php-format
 msgctxt "header note"
 msgid ""
@@ -335,82 +335,82 @@ msgid ""
 "your API Key."
 msgstr ""
 
-#: includes/settings.php:506
+#: includes/settings.php:513
 #, fuzzy
 msgctxt "header button"
 msgid "Sign Up Now"
 msgstr "Registrer deg n"
 
-#: includes/settings.php:506
+#: includes/settings.php:513
 msgctxt "header button"
 msgid "Sign In"
 msgstr ""
 
-#: includes/settings.php:516
+#: includes/settings.php:523
 #, fuzzy
 msgid "Forms"
 msgstr "Skjema:"
 
-#: includes/settings.php:525
+#: includes/settings.php:532
 #, fuzzy
 msgid "Available Signup Forms"
 msgstr "Tilgjengelige skjemaer"
 
-#: includes/settings.php:529 includes/settings.php:536
-#: includes/settings.php:544
+#: includes/settings.php:536 includes/settings.php:543
+#: includes/settings.php:551
 msgid "Form Name"
 msgstr "Skjemanavn"
 
-#: includes/settings.php:530 includes/settings.php:537
-#: includes/settings.php:558
+#: includes/settings.php:537 includes/settings.php:544
+#: includes/settings.php:565
 msgid "Form ID"
 msgstr "Skjema-ID"
 
-#: includes/settings.php:531 includes/settings.php:538
-#: includes/settings.php:561
+#: includes/settings.php:538 includes/settings.php:545
+#: includes/settings.php:568
 msgid "Shortcode"
 msgstr "Kortkode"
 
-#: includes/settings.php:548
+#: includes/settings.php:555
 msgid "Opens in a new window"
 msgstr "pnes i et nytt vindu"
 
-#: includes/settings.php:548
+#: includes/settings.php:555
 msgid "Edit form in GoDaddy Email Marketing"
 msgstr "Rediger skjema i GoDaddy Markedsfring per e-post"
 
-#: includes/settings.php:551
+#: includes/settings.php:558
 msgid "Preview"
 msgstr "Forhndsvis"
 
-#: includes/settings.php:574
+#: includes/settings.php:581
 msgid "Not seeing your form?"
 msgstr "Ser du ikke skjemaet ditt?"
 
-#: includes/settings.php:593
+#: includes/settings.php:600
 msgctxt "save settings button"
 msgid "Save Settings"
 msgstr "Lagre innstillinger"
 
-#: includes/settings.php:623
+#: includes/settings.php:630
 msgid "Refresh Forms"
 msgstr "Oppdater skjema"
 
-#: includes/settings.php:630
+#: includes/settings.php:637
 msgid "Create a New Signup Form"
 msgstr ""
 
-#: includes/settings.php:637
+#: includes/settings.php:644
 msgid "Create a New Campaign"
 msgstr ""
 
-#: includes/settings.php:723
+#: includes/settings.php:730
 msgid ""
 "If you are experiencing issues and are unsure of the cause you may want to "
 "activate debug mode, which displays additional options."
 msgstr ""
 
-#: includes/settings.php:733
+#: includes/settings.php:740
 msgid ""
 "For this plugin to work, it needs to access your GoDaddy Email Marketing "
 "account. Please enter your GoDaddy username and GoDaddy Email Marketing API "
@@ -428,25 +428,25 @@ msgstr ""
 "Bygg inn eventuelle GoDaddy Markedsfring per e-post-nettskjema i sidestolpen "
 "din."
 
-#: includes/widget.php:97
+#: includes/widget.php:105
 msgid "Title:"
 msgstr "Tittel:"
 
-#: includes/widget.php:103
+#: includes/widget.php:111
 msgid "Additional Text:"
 msgstr "Ytterligere tekst:"
 
-#: includes/widget.php:112
+#: includes/widget.php:120
 msgid "Form:"
 msgstr "Skjema:"
 
-#: includes/widget.php:125
+#: includes/widget.php:133
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "Konfigurer GoDaddy Markedsfring per e-post-kontoen din i %s."
 
-#: includes/widget.php:129
+#: includes/widget.php:137
 msgid "settings page"
 msgstr "innstillinger-siden"
 

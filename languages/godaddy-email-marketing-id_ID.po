@@ -28,7 +28,7 @@ msgctxt "ajax response"
 msgid "%s is a required field."
 msgstr ""
 
-#: godaddy-email-marketing.php:212 includes/settings.php:518
+#: godaddy-email-marketing.php:212 includes/settings.php:525
 msgid "Settings"
 msgstr "Pengaturan"
 
@@ -124,7 +124,7 @@ msgstr "Hari"
 msgid "Year"
 msgstr "Tahun"
 
-#: includes/settings.php:53 includes/settings.php:490
+#: includes/settings.php:53 includes/settings.php:497
 #, fuzzy
 msgid "GoDaddy Email Marketing Signup Forms"
 msgstr "Formulir Pemasaran Email GoDaddy"
@@ -305,12 +305,12 @@ msgstr "Hapus Semua Data"
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:497
+#: includes/settings.php:504
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
 msgstr "Nikmati Pengalaman Pemasaran Email GoDaddy, langsung."
 
-#: includes/settings.php:499
+#: includes/settings.php:506
 #, fuzzy
 msgctxt "header note"
 msgid ""
@@ -322,12 +322,12 @@ msgstr ""
 "Plugin Pemasaran Email GoDaddy mudah disiapkan dan memungkinkan pengunjung "
 "situs Anda berlangganan dengan daftar email Anda."
 
-#: includes/settings.php:503
+#: includes/settings.php:510
 msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr ""
 
-#: includes/settings.php:506
+#: includes/settings.php:513
 #, php-format
 msgctxt "header note"
 msgid ""
@@ -335,82 +335,82 @@ msgid ""
 "your API Key."
 msgstr ""
 
-#: includes/settings.php:506
+#: includes/settings.php:513
 #, fuzzy
 msgctxt "header button"
 msgid "Sign Up Now"
 msgstr "Daftar Sekarang"
 
-#: includes/settings.php:506
+#: includes/settings.php:513
 msgctxt "header button"
 msgid "Sign In"
 msgstr ""
 
-#: includes/settings.php:516
+#: includes/settings.php:523
 #, fuzzy
 msgid "Forms"
 msgstr "Formulir:"
 
-#: includes/settings.php:525
+#: includes/settings.php:532
 #, fuzzy
 msgid "Available Signup Forms"
 msgstr "Formulir yang Tersedia"
 
-#: includes/settings.php:529 includes/settings.php:536
-#: includes/settings.php:544
+#: includes/settings.php:536 includes/settings.php:543
+#: includes/settings.php:551
 msgid "Form Name"
 msgstr "Nama Formulir"
 
-#: includes/settings.php:530 includes/settings.php:537
-#: includes/settings.php:558
+#: includes/settings.php:537 includes/settings.php:544
+#: includes/settings.php:565
 msgid "Form ID"
 msgstr "ID Formulir"
 
-#: includes/settings.php:531 includes/settings.php:538
-#: includes/settings.php:561
+#: includes/settings.php:538 includes/settings.php:545
+#: includes/settings.php:568
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: includes/settings.php:548
+#: includes/settings.php:555
 msgid "Opens in a new window"
 msgstr "Terbuka di jendela baru"
 
-#: includes/settings.php:548
+#: includes/settings.php:555
 msgid "Edit form in GoDaddy Email Marketing"
 msgstr "Edit formulir di Pemasaran Email GoDaddy"
 
-#: includes/settings.php:551
+#: includes/settings.php:558
 msgid "Preview"
 msgstr "Pratinjau"
 
-#: includes/settings.php:574
+#: includes/settings.php:581
 msgid "Not seeing your form?"
 msgstr "Tidak bisa melihat formulir Anda?"
 
-#: includes/settings.php:593
+#: includes/settings.php:600
 msgctxt "save settings button"
 msgid "Save Settings"
 msgstr "Simpan Pengaturan"
 
-#: includes/settings.php:623
+#: includes/settings.php:630
 msgid "Refresh Forms"
 msgstr "Segarkan Formulir"
 
-#: includes/settings.php:630
+#: includes/settings.php:637
 msgid "Create a New Signup Form"
 msgstr ""
 
-#: includes/settings.php:637
+#: includes/settings.php:644
 msgid "Create a New Campaign"
 msgstr ""
 
-#: includes/settings.php:723
+#: includes/settings.php:730
 msgid ""
 "If you are experiencing issues and are unsure of the cause you may want to "
 "activate debug mode, which displays additional options."
 msgstr ""
 
-#: includes/settings.php:733
+#: includes/settings.php:740
 msgid ""
 "For this plugin to work, it needs to access your GoDaddy Email Marketing "
 "account. Please enter your GoDaddy username and GoDaddy Email Marketing API "
@@ -428,25 +428,25 @@ msgstr ""
 "Sematkan sembarang formulir web Pemasaran Email GoDaddy di bilah samping "
 "Anda."
 
-#: includes/widget.php:97
+#: includes/widget.php:105
 msgid "Title:"
 msgstr "Judul:"
 
-#: includes/widget.php:103
+#: includes/widget.php:111
 msgid "Additional Text:"
 msgstr "Teks Tambahan:"
 
-#: includes/widget.php:112
+#: includes/widget.php:120
 msgid "Form:"
 msgstr "Formulir:"
 
-#: includes/widget.php:125
+#: includes/widget.php:133
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "Harap buat akun Pemasaran Email GoDaddy Anda di %s."
 
-#: includes/widget.php:129
+#: includes/widget.php:137
 msgid "settings page"
 msgstr "halaman pengaturan"
 
