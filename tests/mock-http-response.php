@@ -40,7 +40,7 @@ class Mock_Http_Response {
 	 * @param string $url  The request URL.
 	 * @return array
 	 */
-	public static function http_response( $data, $args, $url ) {
+	public function http_response( $data, $args, $url ) {
 		if ( null !== self::$test_class ) {
 			if ( ! empty( self::$expected_args ) ) {
 				self::$test_class->assertContains( self::$expected_args, $args );
