@@ -12,11 +12,11 @@ class Test_GEM_Shortcode extends WP_UnitTestCase {
 	private $instance;
 
 	/**
-	 * PHP unit setup function
+	 * Setup.
 	 *
-	 * @return void
+	 * @inheritdoc
 	 */
-	function setUp() {
+	public function setUp() {
 		parent::setUp();
 		$this->instance = new GEM_Shortcode();
 	}

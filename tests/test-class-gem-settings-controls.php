@@ -7,9 +7,9 @@
 class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 
 	/**
-	 * PHP unit setup function
+	 * Setup.
 	 *
-	 * @return void
+	 * @inheritdoc
 	 */
 	public function setUp() {
 		parent::setUp();

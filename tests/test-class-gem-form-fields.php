@@ -7,11 +7,11 @@
 class Test_GEM_Form_Fields extends WP_UnitTestCase {
 
 	/**
-	 * PHP unit setup function
+	 * Setup.
 	 *
-	 * @return void
+	 * @inheritdoc
 	 */
-	function setUp() {
+	public function setUp() {
 		parent::setUp();
 	}
 

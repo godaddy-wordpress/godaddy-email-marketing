@@ -7,13 +7,6 @@
 class Test_GEM_Dispatcher extends WP_UnitTestCase {
 
 	/**
-	 * Mock HTTP Response instance.
-	 *
-	 * @var Mock_Http_Response
-	 */
-	public $mock_response;
-
-	/**
 	 * Load Mock_Http_Response
 	 */
 	public static function setUpBeforeClass() {
@@ -21,22 +14,26 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 	}
 
 	/**
-	 * PHP unit setup function
+	 * Setup.
 	 *
-	 * @return void
+	 * @inheritdoc
 	 */
-	function setUp() {
+	public function setUp() {
 		parent::setUp();
 
-		$this->mock_response = new Mock_Http_Response();
 		Mock_Http_Response::$test_class = $this;
-		add_filter( 'http_response', array( $this->mock_response, 'http_response' ), 10, 3 );
+		add_filter( 'http_response', array( 'Mock_Http_Response', 'http_response' ), 10, 3 );
 	}
 
-	function tearDown() {
+	/**
+	 * Teardown.
+	 *
+	 * @inheritdoc
+	 */
+	public function tearDown() {
 		parent::tearDown();
 
-		remove_filter( 'http_response', array( $this->mock_response, 'http_response' ), 10, 3 );
+		remove_filter( 'http_response', array( 'Mock_Http_Response', 'http_response' ), 10, 3 );
 		Mock_Http_Response::$test_class = null;
 	}
 

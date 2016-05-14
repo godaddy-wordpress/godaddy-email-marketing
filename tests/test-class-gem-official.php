@@ -19,11 +19,11 @@ class Test_GEM_Official extends WP_UnitTestCase {
 	protected $plugin_file_path;
 
 	/**
-	 * PHP unit setup function
+	 * Setup.
 	 *
-	 * @return void
+	 * @inheritdoc
 	 */
-	function setUp() {
+	public function setUp() {
 		parent::setUp();
 		$this->plugin_file_path = $GLOBALS['_plugin_file'];
 		$this->instance = GEM_Official::instance();
