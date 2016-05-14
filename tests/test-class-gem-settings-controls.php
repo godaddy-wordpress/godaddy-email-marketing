@@ -1,4 +1,9 @@
 <?php
+/**
+ * Test Settings Controls.
+ *
+ * @group controls
+ */
 class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 
 	/**

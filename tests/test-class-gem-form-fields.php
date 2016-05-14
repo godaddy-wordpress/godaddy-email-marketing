@@ -1,4 +1,9 @@
 <?php
+/**
+ * Test Form Fields.
+ *
+ * @group fields
+ */
 class Test_GEM_Form_Fields extends WP_UnitTestCase {
 
 	/**

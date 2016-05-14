@@ -1,11 +1,23 @@
 <?php
+/**
+ * Test Settings.
+ *
+ * @group settings
+ */
 class Test_GEM_Settings extends WP_UnitTestCase {
 
 	/**
-	 * Load WP_Http_Mock_Transport
+	 * Mock HTTP Response instance.
+	 *
+	 * @var Mock_Http_Response
+	 */
+	public $mock_response;
+
+	/**
+	 * Load Mock_Http_Response
 	 */
 	public static function setUpBeforeClass() {
-		require_once( 'mock-transport.php' );
+		require_once( 'mock-http-response.php' );
 	}
 
 	/**
@@ -16,21 +28,16 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		WP_Http_Mock_Transport::$test_class = $this;
-		add_action( 'http_api_transports', array( $this, 'get_transports' ) );
+		$this->mock_response = new Mock_Http_Response();
+		add_filter( 'http_response', array( $this->mock_response, 'http_response' ), 10, 3 );
 	}
 
 	public function tearDown() {
 		global $wp_settings_errors;
 		parent::tearDown();
 
-		remove_action( 'http_api_transports', array( $this, 'get_transports' ) );
-		WP_Http_Mock_Transport::$test_class = null;
+		remove_filter( 'http_response', array( $this->mock_response, 'http_response' ), 10, 3 );
 		$wp_settings_errors = array();
-	}
-
-	public function get_transports() {
-		return array( 'Mock_Transport' );
 	}
 
 	public function set_data( $slug = '' ) {
@@ -324,7 +331,12 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	}
 
 	public function test_display_settings_page_forms() {
-		add_filter( 'pre_http_request', array( $this, 'pre_http_request' ) );
+		Mock_Http_Response::$data = array(
+			'response' => array(
+				'code' => 200,
+			),
+			'body' => '{"total":1,"signups":[{"id":"54321", "name":"Test Form", "url":"http://sample.org"}]}',
+		);
 		update_option( 'gem-settings', array(
 			'username' => 'tester',
 			'api-key'  => '12345',
@@ -341,37 +353,15 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertContains( 'Test Form', $actual_output );
 		$this->assertContains( 'http://sample.org', $actual_output );
 
-		remove_filter( 'pre_http_request', array( $this, 'pre_http_request' ) );
 		delete_option( 'gem-settings' );
 		delete_transient( 'gem-tester-account' );
 		delete_transient( 'gem-tester-lists' );
 		delete_transient( 'gem-form-54321' );
 	}
 
-	/**
-	 * Filter the HTTP request.
-	 */
-	public function pre_http_request( $pre ) {
-		$response = array();
-		$response['response']['code'] = 200;
-		$response['body'] = '{"total":1,"signups":[{"id":"54321", "name":"Test Form", "url":"http://sample.org"}]}';
-		return $response;
-	}
-
-	public function test_validate() {
+	public function test_validate_sets_gem_valid_creds_to_false() {
 		global $wp_settings_errors;
 
-		$sample_response = json_encode(
-			array(
-				'total' => 1,
-				'signups' => array( array( 'id' => 'the_id' ) ),
-			)
-		);
-		$sample_response_2 = json_encode(
-			array(
-				'total' => 2,
-			)
-		);
 		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
 
@@ -387,27 +377,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertEquals( $expected_output, $actual_output );
 		$this->assertFalse( get_option( 'gem-valid-creds' ) );
 
-		WP_Http_Mock_Transport::$expected_url = null;
-		WP_Http_Mock_Transport::$response = array(
-			'response' => array(
-				'code' => 200,
-			),
-			'body' => $sample_response,
-		);
-		$wp_settings_errors = array();
-		$creds = array( 'username' => 'user_name', 'api-key' => '1234' );
-		$expected_output = array(
-			'username' => 'user_name',
-			'api-key' => '1234',
-			'display_powered_by' => 0,
-			'debug' => 0,
-		);
-		$actual_output = $instance->validate( $creds );
-		$this->assertEquals( $expected_output, $actual_output );
-		$this->assertTrue( get_option( 'gem-valid-creds' ) );
-
-		WP_Http_Mock_Transport::$expected_url = null;
-		WP_Http_Mock_Transport::$response = array(
+		Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 500,
 			),
@@ -425,12 +395,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertEquals( $expected_output, $actual_output );
 		$this->assertFalse( get_option( 'gem-valid-creds' ) );
 
-		WP_Http_Mock_Transport::$expected_url = null;
-		WP_Http_Mock_Transport::$response = array(
+		Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 200,
 			),
-			'body' => $sample_response_2,
+			'body' => '{"total":2}',
 		);
 		$wp_settings_errors = array();
 		$creds = array( 'username' => 'user_name', 'api-key' => '1234' );
@@ -444,6 +413,29 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$errors = get_settings_errors( $instance->slug );
 		$this->assertEquals( $expected_output, $actual_output );
 		$this->assertFalse( get_option( 'gem-valid-creds' ) );
+	}
+
+	public function test_validate_sets_gem_valid_creds_to_true() {
+		Mock_Http_Response::$data = array(
+			'response' => array(
+				'code' => 200,
+			),
+			'body' => '{"total":1,"signups":[{"id":"54321", "name":"Test Form", "url":"http://sample.org"}]}',
+		);
+
+		$instance = new GEM_Settings();
+		$instance->action_admin_menu();
+
+		$creds = array( 'username' => 'user_name', 'api-key' => '1234' );
+		$expected_output = array(
+			'username' => 'user_name',
+			'api-key' => '1234',
+			'display_powered_by' => 0,
+			'debug' => 0,
+		);
+		$actual_output = $instance->validate( $creds );
+		$this->assertEquals( $expected_output, $actual_output );
+		$this->assertTrue( get_option( 'gem-valid-creds' ) );
 	}
 
 	public function test_validate_non_api_change() {

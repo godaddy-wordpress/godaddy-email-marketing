@@ -1,36 +1,10 @@
 <?php
+/**
+ * Test Widget.
+ *
+ * @group widget
+ */
 class Test_GEM_Form_Widget extends WP_UnitTestCase {
-
-	/**
-	 * Load WP_Http_Mock_Transport
-	 */
-	public static function setUpBeforeClass() {
-		require_once( 'mock-transport.php' );
-	}
-
-	/**
-	 * PHP unit setup function
-	 *
-	 * @return void
-	 */
-	public function setUp() {
-		parent::setUp();
-
-		WP_Http_Mock_Transport::$test_class = $this;
-		WP_Http_Mock_Transport::$expected_url = null;
-		add_action( 'http_api_transports', array( $this, 'get_transports' ) );
-	}
-
-	public function tearDown() {
-		parent::tearDown();
-
-		remove_action( 'http_api_transports', array( $this, 'get_transports' ) );
-		WP_Http_Mock_Transport::$test_class = null;
-	}
-
-	public function get_transports() {
-		return array( 'Mock_Transport' );
-	}
 
 	public function test_basics() {
 		$this->assertTrue( class_exists( 'GEM_Form_Widget', false ) );

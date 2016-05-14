@@ -1,11 +1,23 @@
 <?php
+/**
+ * Test Dispatcher.
+ *
+ * @group dispatcher
+ */
 class Test_GEM_Dispatcher extends WP_UnitTestCase {
 
 	/**
-	 * Load WP_Http_Mock_Transport
+	 * Mock HTTP Response instance.
+	 *
+	 * @var Mock_Http_Response
+	 */
+	public $mock_response;
+
+	/**
+	 * Load Mock_Http_Response
 	 */
 	public static function setUpBeforeClass() {
-		require_once( 'mock-transport.php' );
+		require_once( 'mock-http-response.php' );
 	}
 
 	/**
@@ -16,19 +28,16 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 	function setUp() {
 		parent::setUp();
 
-		WP_Http_Mock_Transport::$test_class = $this;
-		add_action( 'http_api_transports', array( $this, 'get_transports' ) );
+		$this->mock_response = new Mock_Http_Response();
+		Mock_Http_Response::$test_class = $this;
+		add_filter( 'http_response', array( $this->mock_response, 'http_response' ), 10, 3 );
 	}
 
 	function tearDown() {
 		parent::tearDown();
 
-		remove_action( 'http_api_transports', array( $this, 'get_transports' ) );
-		WP_Http_Mock_Transport::$test_class = null;
-	}
-
-	public function get_transports() {
-		return array( 'Mock_Transport' );
+		remove_filter( 'http_response', array( $this->mock_response, 'http_response' ), 10, 3 );
+		Mock_Http_Response::$test_class = null;
 	}
 
 	public function test_basics() {
@@ -41,8 +50,11 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		$api_key = 'the_key';
 		$sample_response = '{ "test": "OK" }';
 
-		WP_Http_Mock_Transport::$expected_url = 'https://gem.godaddy.com/signups.json';
-		WP_Http_Mock_Transport::$response = array(
+		Mock_Http_Response::$expected_args = array(
+			'timeout' => 10,
+		);
+		Mock_Http_Response::$expected_url = 'https://gem.godaddy.com/signups.json';
+		Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 401,
 			),
@@ -50,17 +62,23 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		);
 		$this->assertFalse( GEM_Dispatcher::fetch_forms( $user_name ) );
 
-		WP_Http_Mock_Transport::$expected_url = "https://gem.godaddy.com/signups.json?username=$user_name&api_key=the_key";
-		WP_Http_Mock_Transport::$response = array(
+		Mock_Http_Response::$expected_url = "https://gem.godaddy.com/signups.json?username=$user_name&api_key=the_key";
+		Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 401,
 			),
 			'body' => $sample_response,
 		);
 		$this->assertFalse( GEM_Dispatcher::fetch_forms( $user_name, $api_key ) );
+	}
 
-		WP_Http_Mock_Transport::$expected_url = "https://gem.godaddy.com/signups.json?username=$user_name&api_key=$api_key";
-		WP_Http_Mock_Transport::$response = array(
+	public function test_fetch_forms_is_set() {
+		$test = $this;
+		$user_name = 'the_user';
+		$api_key = 'the_key';
+		$sample_response = '{ "test": "OK" }';
+
+		Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 200,
 			),
@@ -79,8 +97,20 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		update_option( 'gem-settings', false );
 		$this->assertFalse( GEM_Dispatcher::add_default_form() );
 
-		WP_Http_Mock_Transport::$expected_url = 'https://gem.godaddy.com/api/v3/signupForms';
-		WP_Http_Mock_Transport::$response = array(
+		Mock_Http_Response::$expected_args = array(
+			'method' => 'POST',
+			'timeout' => 10,
+			'body' => array(
+				'username' => $user_name,
+				'api_key' => $api_key,
+				'name' => 'Signup Form',
+				'integration' => 'WordPress',
+				'hidden' => false,
+				'subscriberListName' => 'WordPress',
+			),
+		);
+		Mock_Http_Response::$expected_url = 'https://gem.godaddy.com/api/v3/signupForms';
+		Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 401,
 			),
@@ -89,8 +119,8 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		update_option( 'gem-settings', array( 'api-key' => $api_key, 'username' => $user_name ) );
 		$this->assertFalse( GEM_Dispatcher::add_default_form() );
 
-		WP_Http_Mock_Transport::$expected_url = 'https://gem.godaddy.com/api/v3/signupForms';
-		WP_Http_Mock_Transport::$response = array(
+		Mock_Http_Response::$expected_url = 'https://gem.godaddy.com/api/v3/signupForms';
+		Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 200,
 			),
@@ -125,8 +155,8 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		$this->assertEquals( $sample_data, GEM_Dispatcher::get_fields( $form_id ) );
 		delete_transient( 'gem-form-' . $form_id );
 
-		WP_Http_Mock_Transport::$expected_url = "https://gem.godaddy.com/signups/$form_id.json";
-		WP_Http_Mock_Transport::$response = array(
+		Mock_Http_Response::$expected_url = "https://gem.godaddy.com/signups/$form_id.json";
+		Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 401,
 			),
@@ -134,8 +164,8 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		);
 		$this->assertFalse( GEM_Dispatcher::get_fields( $form_id ) );
 
-		WP_Http_Mock_Transport::$expected_url = "https://gem.godaddy.com/signups/$form_id.json";
-		WP_Http_Mock_Transport::$response = array(
+		Mock_Http_Response::$expected_url = "https://gem.godaddy.com/signups/$form_id.json";
+		Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 200,
 			),
@@ -159,16 +189,16 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		$this->assertEquals( $sample_data, GEM_Dispatcher::get_user_level() );
 		delete_transient( 'gem-' . $user_name . '-account' );
 
-		WP_Http_Mock_Transport::$expected_url = "https://gem.godaddy.com/user/account_status?username=$user_name";
-		WP_Http_Mock_Transport::$response = array(
+		Mock_Http_Response::$expected_url = "https://gem.godaddy.com/user/account_status?username=$user_name";
+		Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 401,
 			),
 		);
 		$this->assertFalse( GEM_Dispatcher::get_user_level() );
 
-		WP_Http_Mock_Transport::$expected_url = "https://gem.godaddy.com/user/account_status?username=$user_name";
-		WP_Http_Mock_Transport::$response = array(
+		Mock_Http_Response::$expected_url = "https://gem.godaddy.com/user/account_status?username=$user_name";
+		Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 200,
 			),
@@ -203,7 +233,6 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 	}
 
 	public function test_is_response_ok() {
-		// $request = new WP_Error();
 		$request = array(
 			'response' => array(
 				'code' => 200,

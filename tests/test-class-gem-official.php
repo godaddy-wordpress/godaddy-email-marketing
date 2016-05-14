@@ -1,4 +1,9 @@
 <?php
+/**
+ * Test GEM.
+ *
+ * @group gem
+ */
 class Test_GEM_Official extends WP_UnitTestCase {
 
 	/**

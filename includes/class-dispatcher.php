@@ -161,18 +161,24 @@ class GEM_Dispatcher {
 		}
 
 		if ( false === ( $data = get_transient( 'gem-' . $username . '-account' ) ) ) {
-			$data = wp_remote_get( self::get_method_url( 'account' ) );
+			$data = false;
+			$request = wp_remote_get( self::get_method_url( 'account' ) );
 
 			// If the request has failed for whatever reason.
-			if ( ! self::is_response_ok( $data ) ) {
+			if ( ! self::is_response_ok( $request ) ) {
 				return false;
 			}
 
-			$data = json_decode( wp_remote_retrieve_body( $data ) );
-			$data = $data->result;
+			$body = json_decode( wp_remote_retrieve_body( $request ) );
+
+			if ( isset( $body->result ) ) {
+				$data = $body->result;
+			}
 
 			// No need to expire at all.
-			set_transient( 'gem-' . $username . '-account', $data );
+			if ( $data ) {
+				set_transient( 'gem-' . $username . '-account', $data );
+			}
 		}
 
 		return $data;
