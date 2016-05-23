@@ -241,8 +241,8 @@ msgid "Username"
 msgstr ""
 
 #: includes/settings.php:334
-msgid "Your GoDaddy Email Marketing username (email address)"
-msgstr "GoDaddy E-posta Pazarlama kullanc adnz (e-posta adresi)"
+msgid "Your GoDaddy username"
+msgstr ""
 
 #: includes/settings.php:341
 msgid "API Key"
@@ -302,8 +302,9 @@ msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
 #: includes/settings.php:504
+#, fuzzy
 msgctxt "gem header note"
-msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
+msgid "Enjoy the GoDaddy Email Marketing Experience."
 msgstr ""
 "GoDaddy E-posta Pazarlama Deneyimini birebir yaayn, bu deneyimin keyfine "
 "varn."
@@ -404,7 +405,7 @@ msgstr ""
 
 #: includes/settings.php:730
 msgid ""
-"If you are experiencing issues and are unsure of the cause you may want to "
+"If you are experiencing issues and are unsure of the cause, you may want to "
 "activate debug mode, which displays additional options."
 msgstr ""
 
@@ -448,6 +449,9 @@ msgstr "GoDaddy E-posta Pazarlama hesabnz ltfen %s konumunda kurun."
 #: includes/widget.php:137
 msgid "settings page"
 msgstr "ayarlar sayfas"
+
+#~ msgid "Your GoDaddy Email Marketing username (email address)"
+#~ msgstr "GoDaddy E-posta Pazarlama kullanc adnz (e-posta adresi)"
 
 #~ msgctxt "header note"
 #~ msgid ""

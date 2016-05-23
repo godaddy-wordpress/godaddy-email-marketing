@@ -331,7 +331,7 @@ class GEM_Settings {
 			array(
 				'id' => 'username',
 				'page' => $this->slug,
-				'description' => __( 'Your GoDaddy Email Marketing username (email address)', 'godaddy-email-marketing' ),
+				'description' => __( 'Your GoDaddy username', 'godaddy-email-marketing' ),
 				'label_for' => $this->slug . '-username',
 			)
 		);
@@ -501,7 +501,7 @@ class GEM_Settings {
 				<?php if ( empty( $forms->signups ) ) : ?>
 				
 					<div class="gem-identity updated notice">
-						<p><?php echo esc_html_x( 'Enjoy the GoDaddy Email Marketing Experience, first hand.', 'gem header note', 'godaddy-email-marketing' ); ?></p>
+						<p><?php echo esc_html_x( 'Enjoy the GoDaddy Email Marketing Experience.', 'gem header note', 'godaddy-email-marketing' ); ?></p>
 
 						<p><?php echo esc_html_x( 'Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to set up, the GoDaddy Email Marketing plugin allows your site visitors to subscribe to your email list.', 'header note', 'godaddy-email-marketing' ); ?></p>
 
@@ -727,7 +727,7 @@ final class GEM_Settings_Controls {
 	public static function debugging() {
 		printf(
 			'<p>%s</p>',
-			esc_html__( 'If you are experiencing issues and are unsure of the cause you may want to activate debug mode, which displays additional options.', 'godaddy-email-marketing' )
+			esc_html__( 'If you are experiencing issues and are unsure of the cause, you may want to activate debug mode, which displays additional options.', 'godaddy-email-marketing' )
 		);
 	}
 

@@ -238,8 +238,8 @@ msgid "Username"
 msgstr ""
 
 #: includes/settings.php:334
-msgid "Your GoDaddy Email Marketing username (email address)"
-msgstr "Tn ngi dng Tip th qua email ca GoDaddy ca bn (a ch email)"
+msgid "Your GoDaddy username"
+msgstr ""
 
 #: includes/settings.php:341
 msgid "API Key"
@@ -299,8 +299,9 @@ msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
 #: includes/settings.php:504
+#, fuzzy
 msgctxt "gem header note"
-msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
+msgid "Enjoy the GoDaddy Email Marketing Experience."
 msgstr "Tn hng tri nghim Tip th qua email ca GoDaddy mt cch trc tip."
 
 #: includes/settings.php:506
@@ -399,7 +400,7 @@ msgstr ""
 
 #: includes/settings.php:730
 msgid ""
-"If you are experiencing issues and are unsure of the cause you may want to "
+"If you are experiencing issues and are unsure of the cause, you may want to "
 "activate debug mode, which displays additional options."
 msgstr ""
 
@@ -441,6 +442,9 @@ msgstr "Hy ci t ti khon Tip th qua email ca GoDaddy trong %s."
 #: includes/widget.php:137
 msgid "settings page"
 msgstr "trang ci t"
+
+#~ msgid "Your GoDaddy Email Marketing username (email address)"
+#~ msgstr "Tn ngi dng Tip th qua email ca GoDaddy ca bn (a ch email)"
 
 #~ msgctxt "header note"
 #~ msgid ""
