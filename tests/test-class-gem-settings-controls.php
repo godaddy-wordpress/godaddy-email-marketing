@@ -187,9 +187,35 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 	 * @see GEM_Settings_Controls::get_option()
 	 */
 	public function test_get_option() {
-		update_option( 'gem-settings', array( 'username' => 'user_name', 'api-key' => '1234' ) );
+		update_option( GEM_Settings::SLUG, array( 'username' => 'user_name', 'api-key' => '1234' ) );
 		$this->assertFalse( GEM_Settings_Controls::get_option( 'error' ) );
 		$this->assertEquals( 'user_name', GEM_Settings_Controls::get_option( 'username' ) );
 		$this->assertEquals( '1234', GEM_Settings_Controls::get_option( 'api-key' ) );
+	}
+
+	/**
+	 * Test delete option value.
+	 *
+	 * @see GEM_Settings_Controls::delete_option()
+	 */
+	public function test_delete_option() {
+		update_option( GEM_Settings::SLUG, array( 'username' => 'user_name', 'api-key' => '1234' ) );
+		$this->assertEquals( '1234', GEM_Settings_Controls::get_option( 'api-key' ) );
+		$this->assertFalse( GEM_Settings_Controls::delete_option( 'fake-key' ) );
+		$this->assertTrue( GEM_Settings_Controls::delete_option( 'api-key' ) );
+		$this->assertFalse( GEM_Settings_Controls::get_option( 'api-key' ) );
+	}
+
+	/**
+	 * Test update option value.
+	 *
+	 * @see GEM_Settings_Controls::update_option()
+	 */
+	public function test_update_option() {
+		update_option( GEM_Settings::SLUG, array( 'username' => 'user_name', 'api-key' => '1234' ) );
+		$this->assertEquals( '1234', GEM_Settings_Controls::get_option( 'api-key' ) );
+		$this->assertFalse( GEM_Settings_Controls::update_option( 'api-key', '1234' ) );
+		$this->assertTrue( GEM_Settings_Controls::update_option( 'api-key', '4321' ) );
+		$this->assertEquals( '4321', GEM_Settings_Controls::get_option( 'api-key' ) );
 	}
 }

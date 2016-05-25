@@ -193,7 +193,7 @@ class Test_GEM_Official extends WP_UnitTestCase {
 	public function test_action_links() {
 		global $_parent_pages;
 
-		$_parent_pages['gem-settings'] = 'settings_slug';
+		$_parent_pages[ GEM_Settings::SLUG ] = 'settings_slug';
 
 		$sample_array = array( 'the_key' => 'the_value' );
 		$actual_result = $this->instance->action_links( $sample_array );

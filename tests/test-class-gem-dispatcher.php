@@ -121,7 +121,7 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		$sample_data = 'the_sample';
 		$sample_response = '{ "test": "OK" }';
 
-		update_option( 'gem-settings', false );
+		update_option( GEM_Settings::SLUG, false );
 		$this->assertFalse( GEM_Dispatcher::add_default_form() );
 
 		Mock_Http_Response::$expected_args = array(
@@ -143,7 +143,7 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 			),
 			'body' => $sample_response,
 		);
-		update_option( 'gem-settings', array( 'api-key' => $api_key, 'username' => $user_name ) );
+		update_option( GEM_Settings::SLUG, array( 'api-key' => $api_key, 'username' => $user_name ) );
 		$this->assertFalse( GEM_Dispatcher::add_default_form() );
 
 		Mock_Http_Response::$expected_url = 'https://gem.godaddy.com/api/v3/signupForms';
@@ -153,7 +153,7 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 			),
 			'body' => $sample_response,
 		);
-		update_option( 'gem-settings', array( 'api-key' => $api_key, 'username' => $user_name ) );
+		update_option( GEM_Settings::SLUG, array( 'api-key' => $api_key, 'username' => $user_name ) );
 		$this->assertTrue( GEM_Dispatcher::add_default_form() );
 	}
 
@@ -167,10 +167,10 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		$api_key = 'the_key';
 		$sample_data = 'the_sample';
 
-		update_option( 'gem-settings', false );
+		update_option( GEM_Settings::SLUG, false );
 		$this->assertFalse( GEM_Dispatcher::get_forms( $user_name ) );
 
-		update_option( 'gem-settings', array( 'api-key' => $api_key ) );
+		update_option( GEM_Settings::SLUG, array( 'api-key' => $api_key ) );
 		set_transient( 'gem-' . $user_name . '-lists', $sample_data );
 		$this->assertEquals( $sample_data, GEM_Dispatcher::get_forms( $user_name ) );
 
@@ -223,10 +223,10 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		$user_name = 'the_user';
 		$sample_response = '{ "result": "OK" }';
 
-		update_option( 'gem-settings', false );
+		update_option( GEM_Settings::SLUG, false );
 		$this->assertFalse( GEM_Dispatcher::get_user_level() );
 
-		update_option( 'gem-settings', array( 'username' => $user_name ) );
+		update_option( GEM_Settings::SLUG, array( 'username' => $user_name ) );
 		set_transient( 'gem-' . $user_name . '-account', $sample_data );
 		$this->assertEquals( $sample_data, GEM_Dispatcher::get_user_level() );
 		delete_transient( 'gem-' . $user_name . '-account' );
@@ -273,7 +273,7 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 			'username' => 'the_user',
 			'api-key' => 'the_key',
 		);
-		update_option( 'gem-settings', $auth );
+		update_option( GEM_Settings::SLUG, $auth );
 		$this->assertEquals( 'https://gem.godaddy.com/signups.json?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'forms', false,  false ) );
 		$this->assertEquals( 'https://gem.godaddy.com/signups/the_id.json?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'fields', $params,  false ) );
 		$this->assertEquals( 'https://gem.godaddy.com/user/account_status?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'account', false,  false ) );

@@ -98,7 +98,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$instance->action_admin_menu();
 
 		$this->assertEquals( 10, has_action( 'load-' . $instance->hook, array( $instance, 'page_load' ) ) );
-		$this->assertEquals( 'gem-settings', $instance->slug );
+		$this->assertEquals( GEM_Settings::SLUG, $instance->slug );
 	}
 
 	/**
@@ -381,7 +381,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	 */
 	public function test_display_settings_page() {
 		set_transient( 'gem-user_name-account', true );
-		$this->set_data( 'gem-settings' );
+		$this->set_data( GEM_Settings::SLUG );
 		gem()->debug = true;
 		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
@@ -453,7 +453,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 			),
 			'body' => '{"total":1,"signups":[{"id":"54321", "name":"Test Form", "url":"http://sample.org"}]}',
 		);
-		update_option( 'gem-settings', array(
+		update_option( GEM_Settings::SLUG, array(
 			'username' => 'tester',
 			'api-key'  => '12345',
 		) );
@@ -469,7 +469,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertContains( 'Test Form', $actual_output );
 		$this->assertContains( 'http://sample.org', $actual_output );
 
-		delete_option( 'gem-settings' );
+		delete_option( GEM_Settings::SLUG );
 		delete_transient( 'gem-tester-account' );
 		delete_transient( 'gem-tester-lists' );
 		delete_transient( 'gem-form-54321' );

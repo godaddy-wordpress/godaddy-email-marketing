@@ -17,6 +17,13 @@ class GEM_Settings {
 	 *
 	 * @var string
 	 */
+	const SLUG = 'gem-settings';
+
+	/**
+	 * The page slug.
+	 *
+	 * @var string
+	 */
 	public $slug;
 
 	/**
@@ -53,7 +60,7 @@ class GEM_Settings {
 			__( 'GoDaddy Email Marketing Signup Forms', 'godaddy-email-marketing' ),
 			__( 'GoDaddy Email Marketing', 'godaddy-email-marketing' ),
 			'manage_options',
-			$this->slug = 'gem-settings',
+			$this->slug = self::SLUG,
 			array( $this, 'display_settings_page' )
 		);
 
@@ -844,8 +851,35 @@ final class GEM_Settings_Controls {
 	 * @return false|mixed Returns the settings value or false.
 	 */
 	public static function get_option( $key = '' ) {
-		$settings = get_option( 'gem-settings' );
+		$settings = get_option( GEM_Settings::SLUG );
 
 		return ( ! empty( $settings[ $key ] ) ) ? $settings[ $key ] : false;
+	}
+
+	/**
+	 * Delete the settings value.
+	 *
+	 * @param string $key Settings key.
+	 * @return bool True, if option is successfully deleted. False on failure, or option does not exist.
+	 */
+	public static function delete_option( $key = '' ) {
+		$settings = get_option( GEM_Settings::SLUG );
+
+		unset( $settings[ $key ] );
+		return update_option( GEM_Settings::SLUG, $settings );
+	}
+
+	/**
+	 * Update the settings value.
+	 *
+	 * @param string $key Settings key.
+	 * @param mixed  $value Settings value.
+	 * @return bool True if option value has changed, false if not or if update failed.
+	 */
+	public static function update_option( $key = '', $value = '' ) {
+		$settings = get_option( GEM_Settings::SLUG );
+
+		$settings[ $key ] = $value;
+		return update_option( GEM_Settings::SLUG, $settings );
 	}
 }
