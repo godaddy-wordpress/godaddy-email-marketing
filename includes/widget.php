@@ -38,12 +38,9 @@ class GEM_Form_Widget extends WP_Widget {
 	 * @param array $instance Settings for the current Custom Menu widget instance.
 	 */
 	public function widget( $args, $instance ) {
-		$title   = apply_filters( 'widget_title', ! empty( $instance['title'] ) ? $instance['title'] : '', $instance, $this->id_base );
-		$text    = empty( $instance['text'] ) ? '' : $instance['text'];
-		$form_id = empty( $instance['form'] ) ? false : $instance['form'];
 
 		// Set the initial form ID value if one exists.
-		if ( false === $form_id ) {
+		if ( empty( $instance['form'] ) ) {
 			$forms = GEM_Dispatcher::get_forms();
 			$valid_creds = (bool) get_option( 'gem-valid-creds' );
 
@@ -55,9 +52,13 @@ class GEM_Form_Widget extends WP_Widget {
 			// @codeCoverageIgnoreEnd
 
 			if ( ! empty( $forms->signups ) ) {
-				$form_id = $forms->signups[0]->id;
+				$instance['form'] = $forms->signups[0]->id;
 			}
 		}
+
+		$title   = apply_filters( 'widget_title', ! empty( $instance['title'] ) ? $instance['title'] : '', $instance, $this->id_base );
+		$text    = empty( $instance['text'] ) ? '' : $instance['text'];
+		$form_id = empty( $instance['form'] ) ? false : $instance['form'];
 
 		echo $args['before_widget']; // xss ok
 

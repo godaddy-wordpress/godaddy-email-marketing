@@ -434,26 +434,26 @@ msgstr ""
 "Incorpore qualquer formulrio da internet do Marketing por correio eletrnico "
 "da GoDaddy na sua barra lateral."
 
-#: includes/widget.php:122
+#: includes/widget.php:123
 msgid "Title:"
 msgstr "Ttulo:"
 
-#: includes/widget.php:128
+#: includes/widget.php:129
 msgid "Additional Text:"
 msgstr "Texto adicional:"
 
-#: includes/widget.php:137
+#: includes/widget.php:138
 msgid "Form:"
 msgstr "Formulrio:"
 
-#: includes/widget.php:150
+#: includes/widget.php:151
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr ""
 "Configure a sua conta do Marketing por correio eletrnico da GoDaddy na %s."
 
-#: includes/widget.php:154
+#: includes/widget.php:155
 msgid "settings page"
 msgstr "pgina das definies"
 

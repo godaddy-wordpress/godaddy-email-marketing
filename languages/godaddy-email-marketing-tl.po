@@ -431,19 +431,19 @@ msgstr ""
 "I-embed ang anumang webform ng Email sa Marketing ng GoDaddy sa iyong "
 "sidebar."
 
-#: includes/widget.php:122
+#: includes/widget.php:123
 msgid "Title:"
 msgstr "Title:"
 
-#: includes/widget.php:128
+#: includes/widget.php:129
 msgid "Additional Text:"
 msgstr "Karagdagang Teksto:"
 
-#: includes/widget.php:137
+#: includes/widget.php:138
 msgid "Form:"
 msgstr "Form:"
 
-#: includes/widget.php:150
+#: includes/widget.php:151
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
@@ -451,7 +451,7 @@ msgstr ""
 "Mangyari lang i-setup ang iyong account sa Email sa Marketing ng GoDaddy sa "
 "%s."
 
-#: includes/widget.php:154
+#: includes/widget.php:155
 msgid "settings page"
 msgstr "pahina ng mga setting"
 

@@ -75,6 +75,41 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test widget output.
+	 *
+	 * @see GEM_Form_Widget::widget()
+	 */
+	public function test_widget_with_false_id() {
+		update_option( GEM_Settings::SLUG, array( 'username' => 'user_name', 'api-key' => '1234' ) );
+		set_transient( 'gem-form-123', json_decode( '{"id":123,"name":"Signup Form","fields":{"field_a":{"type":"string","field_type":"string","name":"the_name_a","required":false,"display":"text_a"},"field_b":{"type":"checkbox","field_type":"checkbox","required":true,"name":"the_name_b","value":"the_value","display":"text_b"}},"submit":"the_url","button_text":"button_text"}' ), 60 );
+		set_transient( 'gem-user_name-lists', json_decode( '{"total":1,"signups":[{"id":123,"name":"Signup Form","thumbnail":"the_url","url":"the_url"}]}' ), 60 );
+
+		$widget = new GEM_Form_Widget();
+		$args = array(
+			'before_widget' => 'before_text',
+			'after_widget' => 'after_text',
+			'before_title' => 'before_title',
+			'after_title' => 'after_title',
+		);
+		$instance = array(
+			'title' => 'the_title',
+			'text' => 'the_text',
+			'form' => null,
+		);
+
+		ob_start();
+		$widget->widget( $args, $instance );
+		$actual_output = ob_get_contents();
+		ob_end_clean();
+
+		delete_option( GEM_Settings::SLUG );
+		delete_transient( 'gem-form-123' );
+		delete_transient( 'gem-user_name-lists' );
+
+		$this->assertContains( '<input type="hidden" name="form_id" value="123" />', $actual_output );
+	}
+
+	/**
 	 * Test update.
 	 *
 	 * @see GEM_Form_Widget::update()
