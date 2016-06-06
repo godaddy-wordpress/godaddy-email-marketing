@@ -78,7 +78,7 @@ module.exports = function( grunt ) {
 
 		pot: {
 			options: {
-				omit_header: true,
+				omit_header: false,
 				text_domain: 'godaddy-email-marketing',
 				encoding: 'UTF-8',
 				dest: 'languages/',
@@ -108,7 +108,7 @@ module.exports = function( grunt ) {
 				keywords: '<%= keywords %>'
 			},
 			files: {
-				src:	[
+				src: [
 					'**/*.php',
 					'!build/**',
 					'!dev-lib/**',
