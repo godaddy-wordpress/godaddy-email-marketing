@@ -1,0 +1,351 @@
+#: godaddy-email-marketing.php:201
+msgctxt "ajax response"
+msgid "Thank you for signing up!"
+msgstr "साइन अप करण्यासाठी धन्यवाद!"
+
+#: godaddy-email-marketing.php:202
+msgctxt "ajax response"
+msgid ""
+"Thank you for signing up! Please check your email to confirm your "
+"subscription."
+msgstr ""
+"साइन अप करण्यासाठी धन्यवाद! आपल्या सदस्यतेची पुष्टी करण्यासाठी कृपया आपला "
+"ईमेल तपासा."
+
+#: godaddy-email-marketing.php:203
+msgctxt "ajax response"
+msgid "Oops! There was a problem. Please try again."
+msgstr "अरेरे! त्यात समस्या होती. कृपया पुन्हा प्रयत्न करा."
+
+#: godaddy-email-marketing.php:204
+msgctxt "ajax response"
+msgid "There was a problem. Please fill all required fields."
+msgstr "त्यात समस्या होती. कृपया सर्व आवश्यक फील्ड्स भरा."
+
+#: godaddy-email-marketing.php:216
+msgid "Settings"
+msgstr "सेटिंग्ज"
+
+#: godaddy-email-marketing.php:251
+msgid "GoDaddy Email Marketing is almost ready."
+msgstr "GoDaddy ईमेल विपणन जवळजवळ तयार झाले आहे."
+
+#: godaddy-email-marketing.php:251
+msgid "You must enter your username &amp; API key for it to work."
+msgstr "त्याने कार्य करण्यासाठी आपण वापरकर्तानाव &amp; API की प्रविष्ट करणे आवश्यक आहे."
+
+#: godaddy-email-marketing.php:252
+msgid "Let's do it!"
+msgstr "चला हे करूया!"
+
+#: includes/render.php:59
+msgid "Powered by GoDaddy"
+msgstr "GoDaddy द्वारे समर्थित"
+
+#: includes/render.php:308
+msgid "Month"
+msgstr "महिना"
+
+#: includes/render.php:309
+msgid "January"
+msgstr "जानेवारी"
+
+#: includes/render.php:310
+msgid "Febuary"
+msgstr "फेब्रुवारी"
+
+#: includes/render.php:311
+msgid "March"
+msgstr "मार्च"
+
+#: includes/render.php:312
+msgid "April"
+msgstr "एप्रिल"
+
+#: includes/render.php:313
+msgid "May"
+msgstr "मे"
+
+#: includes/render.php:314
+msgid "June"
+msgstr "जून"
+
+#: includes/render.php:315
+msgid "July"
+msgstr "जुलै"
+
+#: includes/render.php:316
+msgid "August"
+msgstr "ऑगस्ट"
+
+#: includes/render.php:317
+msgid "September"
+msgstr "सप्टेंबर"
+
+#: includes/render.php:318
+msgid "October"
+msgstr "ऑक्टोंबर"
+
+#: includes/render.php:319
+msgid "November"
+msgstr "नोव्हेंबर"
+
+#: includes/render.php:320
+msgid "December"
+msgstr "डिसेंबर"
+
+#: includes/render.php:325
+msgid "Day"
+msgstr "दिवस"
+
+#: includes/render.php:333
+msgid "Year"
+msgstr "वर्ष"
+
+#: includes/settings.php:53 includes/settings.php:284
+msgid "GoDaddy Email Marketing Settings"
+msgstr "GoDaddy ईमेल विपणन सेटिंग्ज"
+
+#: includes/settings.php:54
+msgid "GoDaddy Signup Forms"
+msgstr "GoDaddy साइनअप फॉर्म्स"
+
+#: includes/settings.php:102
+msgid "All transients were removed."
+msgstr "सर्व तात्पुरत्या गोष्टी काढल्या होत्या."
+
+#: includes/settings.php:112
+msgid "Forms list was successfully updated."
+msgstr "फॉर्म्स सूची यशस्वीरित्या अद्यतनित केली होती."
+
+#: includes/settings.php:171
+msgid "Overview"
+msgstr "विहंगावलोकन"
+
+#: includes/settings.php:175
+msgid "Instructions"
+msgstr "सूचना"
+
+#: includes/settings.php:177
+#, php-format
+msgid ""
+"Once the plugin is activated, you will be able to select and insert any of "
+"your GoDaddy Email Marketing webforms right into your site. Setup is easy. "
+"Below, simply enter your account email address and API key (found in your "
+"GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
+"display a webform on your site:"
+msgstr ""
+"प्लगइन सक्रिय केली की, आपण आपले GoDaddy ईमेल विपणन वेबफॉर्म्स थेट आपल्या साइट "
+"निवडण्यास आणि समाविष्ट करण्यास सक्षम असाल. सेटअप सोपा आहे. खाली, फक्त आपला "
+"खाते ईमेल पत्ता आणि API की प्रविष्ट करा (आपल्या GoDaddy ईमेल विपणन खाते [%s] "
+"क्षेत्रामध्ये आढळला). आपण आपल्या साइटवर 3 प्रकारे वेबफॉर्म प्रदर्शित करू शकता:"
+
+#: includes/settings.php:180
+msgid ""
+"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
+"called GoDaddy Email Marketing Form and drag it into the widget area of your "
+"choice. You can then add a title and select a form!"
+msgstr ""
+"<strong>विजेट:</strong> दृश्य &rarr; विजेट्सवर जा आणि GoDaddy ईमेल विपणन "
+"फॉर्म नावाचे विजेट शोधा आणि आपल्या आवडीच्या विजेट क्षेत्रामध्ये ड्रॅग करा. "
+"आपण नंतर शीर्शक जोडू शकता आणि फॉर्म निवडू शकता!"
+
+#: includes/settings.php:181
+msgid ""
+"<strong>Shortcode:</strong> You can add a form to any post or page by adding "
+"the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
+msgstr ""
+"<strong>शॉर्टकोड:</strong> आपण शॉर्टकोड जोडून कोणत्याही पोस्ट किंवा पृष्ठावर "
+"फॉर्म जोडू शकता (उदा. <code>[gem id=80326]</code>) पृष्ठ/पोस्ट संपादकामध्ये."
+
+#: includes/settings.php:183
+#, php-format
+msgid ""
+"<strong>Template Tag:</strong> You can add the following template tag into "
+"any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
+msgstr ""
+"<strong>टेम्प्लेट टॅग:</strong> आपण आपल्या WordPress फाइलमध्ये खालील "
+"टेम्प्लेट टॅग जोडू शकता: <code>%s</code>. उदा. <code>%s</code>"
+
+#: includes/settings.php:193
+msgid "For more information:"
+msgstr "अधिक माहितीसाठी:"
+
+#: includes/settings.php:194
+msgid "GoDaddy"
+msgstr "GoDaddy"
+
+#: includes/settings.php:195
+msgid "GoDaddy Help"
+msgstr "GoDaddy मदत"
+
+#: includes/settings.php:196
+msgid "Contact GoDaddy"
+msgstr "GoDaddy शी संपर्क करा"
+
+#: includes/settings.php:222
+msgid "Account Details"
+msgstr "खाते तपशील"
+
+#: includes/settings.php:229
+msgid "GoDaddy Email Marketing Username"
+msgstr "GoDaddy ईमेल विपणन वापरकर्तानाव"
+
+#: includes/settings.php:236
+msgid "Your GoDaddy Email Marketing username (email address)"
+msgstr "आपला GoDaddy ईमेल विपणन वापरकर्तानाव (ईमेल पत्ता)"
+
+#: includes/settings.php:243
+msgid "GoDaddy Email Marketing API Key"
+msgstr "GoDaddy ईमेल विपणन API की"
+
+#: includes/settings.php:250
+msgctxt "settings page"
+msgid "Where can I find my API key?"
+msgstr "मी माझी API की कधी शोधू शकतो?"
+
+#: includes/settings.php:266
+msgid "Display \"Powered by GoDaddy\"?"
+msgstr "\"GoDaddy द्वारे समर्थित\" प्रदर्शित करायची?"
+
+#: includes/settings.php:290
+msgctxt "gem header note"
+msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
+msgstr "GoDaddy ईमेल विपणन अनुभवाचा अनुभव घ्या, नवीन."
+
+#: includes/settings.php:292
+msgctxt "header note"
+msgid ""
+"Add your GoDaddy Email Marketing webform to your WordPress site! Easy to set "
+"up, the GoDaddy Email Marketing plugin allows your site visitors to "
+"subscribe to your email list."
+msgstr ""
+"आपली WordPress साइटवर आपला GoDaddy ईमेल विपणन वेबफॉर्म जोडा! सेट करण्यास "
+"सुलभ, GoDaddy ईमेल विपणन प्लगइन आपल्या साईट अभ्यंगतांना आपल्या ईमेल सूचींची "
+"सदस्यता घेऊ देतात."
+
+#: includes/settings.php:293
+#, php-format
+msgctxt "header note"
+msgid ""
+"Don't have a GoDaddy Email Marketing account? Get one in less than 2 "
+"minutes! %s"
+msgstr "GoDaddy ईमेल विपणन खाते नाही? 2 मिनिटांच्या आत एक मिळवा! %s"
+
+#: includes/settings.php:293
+msgctxt "header note"
+msgid "Sign Up Now"
+msgstr "आता साइन अप करा"
+
+#: includes/settings.php:305
+msgctxt "save settings button"
+msgid "Save Settings"
+msgstr "सेटिंग्ज जतन करा."
+
+#: includes/settings.php:307
+msgid "Available Forms"
+msgstr "उपलब्ध फॉर्म्स"
+
+#: includes/settings.php:313 includes/settings.php:321
+msgid "Form Name"
+msgstr "फॉर्म नाव"
+
+#: includes/settings.php:314 includes/settings.php:322
+msgid "Form ID"
+msgstr "फॉर्म ID"
+
+#: includes/settings.php:315 includes/settings.php:323
+msgid "Shortcode"
+msgstr "शॉर्टकोड"
+
+#: includes/settings.php:349
+msgid "Opens in a new window"
+msgstr "एका नवीन विंडोमध्ये उघडते"
+
+#: includes/settings.php:349
+msgid "Edit form in GoDaddy Email Marketing"
+msgstr "GoDaddy ईमेल विपणनामध्ये फॉर्म संपादित करा"
+
+#: includes/settings.php:352
+msgid "Preview"
+msgstr "पूर्वावलोकन करा"
+
+#: includes/settings.php:366
+msgid "No forms found"
+msgstr "फॉर्म्स आढळले नाहीत"
+
+#: includes/settings.php:377
+msgid "Not seeing your form?"
+msgstr "आपला फॉर्म दिसत नाही?"
+
+#: includes/settings.php:377
+msgid "Refresh Forms"
+msgstr "फॉर्म्स रीफ्रेश करा"
+
+#: includes/settings.php:382
+msgid "Debug"
+msgstr "डीबग करा"
+
+#: includes/settings.php:384
+msgid "Erase All Data"
+msgstr "सर्व डेटा खोडा"
+
+#: includes/settings.php:385
+msgid "Erase Transients"
+msgstr "तात्पुरता खोडा"
+
+#: includes/settings.php:413
+msgid ""
+"The credentials are incorrect! Please verify that you have entered them "
+"correctly."
+msgstr ""
+"अधिकारपत्रे बरोबर आहेत! कृपया पडताळणी करा की आपण ते योग्यरित्या प्रविष्ट केले आहेत."
+
+#: includes/settings.php:420
+msgid ""
+"Connection with GoDaddy Email Marketing has been established! You're all set!"
+msgstr ""
+"GoDaddy ईमेल विपणानासह कनेक्शन स्थापित करण्यात आले आहे! तुम्ही सेट झालेले आहेत!"
+
+#: includes/settings.php:426
+msgid "Please fill in the username and the API key first."
+msgstr "कृपया प्रथम वापरकर्तानाव आणि API की भरा."
+
+#: includes/settings.php:447
+msgid ""
+"Please enter your GoDaddy Email Marketing username and API Key in order to "
+"be able to create forms."
+msgstr ""
+"कृपया फॉर्म्स तयार करण्यासाठी आपले GoDaddy ईमेल विपणन वापरकर्तानाव आणि API की "
+"प्रविष्ट करा."
+
+#: includes/widget.php:21 includes/widget.php:41
+msgid "GoDaddy Email Marketing Form"
+msgstr "GoDaddy ईमेल विपणन फॉर्म"
+
+#: includes/widget.php:24
+msgctxt "widget description"
+msgid "Embed any GoDaddy Email Marketing webform in your sidebar."
+msgstr "आपल्या साइडबारमध्ये कोणत्याही GoDaddy ईमेल विपणन वेबफॉर्म एम्बेड करा."
+
+#: includes/widget.php:97
+msgid "Title:"
+msgstr "शीर्षक:"
+
+#: includes/widget.php:103
+msgid "Additional Text:"
+msgstr "अतिरिक्त मजकूर:"
+
+#: includes/widget.php:112
+msgid "Form:"
+msgstr "फॉर्म:"
+
+#: includes/widget.php:125
+#, php-format
+msgctxt "link to settings page"
+msgid "Please set up your GoDaddy Email Marketing account in the %s."
+msgstr "%s मध्ये कृपया आपले GoDaddy ईमेल विपणन खाते सेट करा."
+
+#: includes/widget.php:129
+msgid "settings page"
+msgstr "सेटिंग्ज पृष्ठ"
