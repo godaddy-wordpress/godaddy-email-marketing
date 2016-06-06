@@ -136,7 +136,7 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$this->assertContains( '<input class="widefat" id="widget-gem-form--title" name="widget-gem-form[][title]" type="text" value="the_title" />', $actual_output );
 		$this->assertContains( '<textarea class="widefat" rows="3" id="widget-gem-form--text" name="widget-gem-form[][text]">the_text</textarea>', $actual_output );
 		$this->assertContains( '<label for="widget-gem-form--form">Form:</label>', $actual_output );
-		$this->assertContains( '<select name="widget-gem-form[][form]" id="widget-gem-form--form" class="widefat">', $actual_output );
+		$this->assertContains( '<select name="widget-gem-form[][form]" id="widget-gem-form--form" class="widefat" value="123">', $actual_output );
 		$this->assertContains( '<option value="the_field_id" >the_field_name</option>', $actual_output );
 	}
 

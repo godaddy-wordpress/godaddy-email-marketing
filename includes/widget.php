@@ -42,6 +42,23 @@ class GEM_Form_Widget extends WP_Widget {
 		$text    = empty( $instance['text'] ) ? '' : $instance['text'];
 		$form_id = empty( $instance['form'] ) ? false : $instance['form'];
 
+		// Set the initial form ID value if one exists.
+		if ( false === $form_id ) {
+			$forms = GEM_Dispatcher::get_forms();
+			$valid_creds = (bool) get_option( 'gem-valid-creds' );
+
+			// Create a default form.
+			if ( empty( $forms->signups ) && $valid_creds ) { // @codeCoverageIgnoreStart
+				GEM_Dispatcher::add_default_form();
+				$forms = GEM_Dispatcher::fetch_forms( GEM_Settings_Controls::get_option( 'username' ) );
+			}
+			// @codeCoverageIgnoreEnd
+
+			if ( ! empty( $forms->signups ) ) {
+				$form_id = $forms->signups[0]->id;
+			}
+		}
+
 		echo $args['before_widget']; // xss ok
 
 		if ( $title ) {
@@ -119,10 +136,10 @@ class GEM_Form_Widget extends WP_Widget {
 
 				<label for="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>"><?php esc_html_e( 'Form:', 'godaddy-email-marketing' ); ?></label>
 				<br/>
-				<select name="<?php echo esc_attr( $this->get_field_name( 'form' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>" class="widefat">
+				<select name="<?php echo esc_attr( $this->get_field_name( 'form' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>" class="widefat" value="<?php echo esc_attr( $instance['form'] ) ?>">
 
-					<?php foreach ( $forms->signups as $f ) : ?>
-						<option value="<?php echo esc_attr( $f->id ); ?>" <?php selected( $instance['form'], $f->id ); ?>><?php echo esc_html( $f->name ); ?></option>
+					<?php foreach ( $forms->signups as $form ) : ?>
+						<option value="<?php echo esc_attr( $form->id ); ?>" <?php selected( $instance['form'], $form->id ); ?>><?php echo esc_html( $form->name ); ?></option>
 					<?php endforeach; ?>
 
 				</select>

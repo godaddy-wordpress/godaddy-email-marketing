@@ -397,25 +397,25 @@ msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
 msgstr " GoDaddy  Web "
 
-#: includes/widget.php:105
+#: includes/widget.php:122
 msgid "Title:"
 msgstr ""
 
-#: includes/widget.php:111
+#: includes/widget.php:128
 msgid "Additional Text:"
 msgstr ""
 
-#: includes/widget.php:120
+#: includes/widget.php:137
 msgid "Form:"
 msgstr ""
 
-#: includes/widget.php:133
+#: includes/widget.php:150
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr " %s  GoDaddy "
 
-#: includes/widget.php:137
+#: includes/widget.php:154
 msgid "settings page"
 msgstr ""
 
