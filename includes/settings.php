@@ -338,7 +338,7 @@ class GEM_Settings {
 			array(
 				'id' => 'username',
 				'page' => $this->slug,
-				'description' => __( 'Your GoDaddy username', 'godaddy-email-marketing' ),
+				'description' => '',
 				'label_for' => $this->slug . '-username',
 			)
 		);
@@ -352,7 +352,7 @@ class GEM_Settings {
 			array(
 				'id' => 'api-key',
 				'page' => $this->slug,
-				'description' => sprintf( '<a target="_blank" href="%s">%s</a>', 'https://www.godaddy.com/help/find-api-key-15909', _x( 'Where can I find my API key?', 'settings page', 'godaddy-email-marketing' ) ),
+				'description' => '',
 				'label_for' => $this->slug . '-api-key',
 			)
 		);
@@ -517,7 +517,7 @@ class GEM_Settings {
 								<?php echo esc_html_x( 'You don\'t have any forms yet.', 'header note', 'godaddy-email-marketing' ); ?>
 								<?php $this->signups_button(); ?>
 							<?php else : ?>
-								<?php echo sprintf( esc_html_x( 'New to GoDaddy? Create an account to get started today. %1$s or %2$s to get your API Key.', 'header note', 'godaddy-email-marketing' ), sprintf( '<a target="_blank" href="%s" class="button">%s</a>', 'https://sso.godaddy.com/account/create?path=/wordpress_plugin&app=gem&realm=idp&ssoreturnpath=/%3Fpath%3D%2Fwordpress_plugin%26app%3Dgem%26realm%3Didp', esc_html_x( 'Sign Up Now', 'header button', 'godaddy-email-marketing' ) ), sprintf( '<a target="_blank" href="%s" class="button">%s</a>', 'https://sso.godaddy.com/?realm=idp&app=gem&path=/wordpress_plugin', esc_html_x( 'Sign In', 'header button', 'godaddy-email-marketing' ) ) ); ?>
+								<?php echo sprintf( esc_html_x( 'New to GoDaddy? Create an account to get started today. %1$s', 'header note', 'godaddy-email-marketing' ), sprintf( '<a target="_blank" href="%s" class="button">%s</a>', 'https://sso.godaddy.com/account/create?path=/wordpress_plugin&app=gem&realm=idp&ssoreturnpath=/%3Fpath%3D%2Fwordpress_plugin%26app%3Dgem%26realm%3Didp', esc_html_x( 'Sign Up Now', 'header button', 'godaddy-email-marketing' ) ) ); ?>
 							<?php endif; ?>
 						</p>
 					</div>
@@ -744,7 +744,7 @@ final class GEM_Settings_Controls {
 	public static function description() {
 		printf(
 			'<p>%s</p>',
-			esc_html__( 'For this plugin to work, it needs to access your GoDaddy Email Marketing account. Please enter your GoDaddy username and GoDaddy Email Marketing API Key.', 'godaddy-email-marketing' )
+			sprintf( esc_html_x( 'For this plugin to work, it needs to access your GoDaddy Email Marketing account. %1$s to get your username and API key. Copy and paste them below; then click "Save Settings." If you don\'t have a GoDaddy Email Marketing account, %2$s.', 'account details', 'godaddy-email-marketing' ), sprintf( '<a target="_blank" href="%s">%s</a>', 'https://sso.godaddy.com/?realm=idp&app=gem&path=/wordpress_plugin', esc_html_x( 'Sign in here', 'account details link', 'godaddy-email-marketing' ) ), sprintf( '<a target="_blank" href="%s">%s</a>', 'https://sso.godaddy.com/account/create?path=/wordpress_plugin&app=gem&realm=idp&ssoreturnpath=/%3Fpath%3D%2Fwordpress_plugin%26app%3Dgem%26realm%3Didp', esc_html_x( 'sign up here', 'account details link', 'godaddy-email-marketing' ) ) )
 		);
 	}
 

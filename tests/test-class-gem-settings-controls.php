@@ -32,7 +32,7 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		GEM_Settings_Controls::description();
 		$actual_output = ob_get_contents();
 		ob_end_clean();
-		$this->assertContains( '<p>For this plugin to work, it needs to access your GoDaddy Email Marketing account. Please enter your GoDaddy username and GoDaddy Email Marketing API Key.</p>', $actual_output );
+		$this->assertContains( '<p>For this plugin to work, it needs to access your GoDaddy Email Marketing account. <a target="_blank" href="https://sso.godaddy.com/?realm=idp&app=gem&path=/wordpress_plugin">Sign in here</a> to get your username and API key. Copy and paste them below; then click &quot;Save Settings.&quot; If you don&#039;t have a GoDaddy Email Marketing account, <a target="_blank" href="https://sso.godaddy.com/account/create?path=/wordpress_plugin&app=gem&realm=idp&ssoreturnpath=/%3Fpath%3D%2Fwordpress_plugin%26app%3Dgem%26realm%3Didp">sign up here</a>.</p>', $actual_output );
 	}
 
 	/**
