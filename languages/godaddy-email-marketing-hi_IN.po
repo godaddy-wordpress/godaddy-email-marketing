@@ -177,7 +177,7 @@ msgstr ""
 
 #: includes/settings.php:245
 msgid "Please fill in the username and the API key first."
-msgstr "Please fill in the username and the API key first."
+msgstr "कृपया पहले उपयोगकर्ता नाम और API कुंजी दर्ज करें."
 
 #: includes/settings.php:277
 msgid "Overview"
@@ -290,7 +290,7 @@ msgstr ""
 
 #: includes/settings.php:403
 msgid "Erase Transients"
-msgstr "Erase Transients"
+msgstr "अस्थायी चीज़ें मिटाएं"
 
 #: includes/settings.php:404
 msgid ""
@@ -304,7 +304,7 @@ msgstr ""
 
 #: includes/settings.php:416
 msgid "Erase All Data"
-msgstr "Erase All Data"
+msgstr "सभी डेटा मिटाएं"
 
 #: includes/settings.php:417
 msgid "Purges all saved data associated with this plugin."
@@ -350,11 +350,6 @@ msgctxt "header button"
 msgid "Sign Up Now"
 msgstr " - "
 
-#: includes/settings.php:305
-msgctxt "save settings button"
-msgid "Save Settings"
-msgstr "सेटिंग्स सहेजें"
-
 #: includes/settings.php:307
 msgid "Available Forms"
 msgstr "उपलब्ध फ़ॉर्म्स"
@@ -397,7 +392,7 @@ msgstr "आपका फॉर्म दिखाई नहीं दे रह�
 #: includes/settings.php:607
 msgctxt "save settings button"
 msgid "Save Settings"
-msgstr "Save Settings"
+msgstr "सेटिंग्स सहेजें"
 
 #: includes/settings.php:637
 msgid "Refresh Forms"
@@ -406,14 +401,6 @@ msgstr "फ़ॉर्म रिफ़्रेश करें"
 #: includes/settings.php:382
 msgid "Debug"
 msgstr "डिबग करें"
-
-#: includes/settings.php:384
-msgid "Erase All Data"
-msgstr "सभी डेटा मिटाएं"
-
-#: includes/settings.php:385
-msgid "Erase Transients"
-msgstr "अस्थायी चीज़ें मिटाएं"
 
 #: includes/settings.php:737
 msgid ""
@@ -433,10 +420,6 @@ msgid ""
 "account, %2$s."
 msgstr ""
 "GoDaddy ईमेल मार्केटिंग के साथ कनेक्शन स्थापित हो गया है! आप तैयार हैं!"
-
-#: includes/settings.php:426
-msgid "Please fill in the username and the API key first."
-msgstr "कृपया पहले उपयोगकर्ता नाम और API कुंजी दर्ज करें."
 
 #: includes/settings.php:747
 msgctxt "account details link"
