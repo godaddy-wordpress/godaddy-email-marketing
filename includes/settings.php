@@ -506,7 +506,7 @@ class GEM_Settings {
 				</h1>
 
 				<?php if ( empty( $forms->signups ) ) : ?>
-				
+
 					<div class="gem-identity updated notice">
 						<p><?php echo esc_html_x( 'Enjoy the GoDaddy Email Marketing Experience.', 'gem header note', 'godaddy-email-marketing' ); ?></p>
 
@@ -517,7 +517,7 @@ class GEM_Settings {
 								<?php echo esc_html_x( 'You don\'t have any forms yet.', 'header note', 'godaddy-email-marketing' ); ?>
 								<?php $this->signups_button(); ?>
 							<?php else : ?>
-								<?php echo sprintf( esc_html_x( 'New to GoDaddy? Create an account to get started today. %1$s', 'header note', 'godaddy-email-marketing' ), sprintf( '<a target="_blank" href="%s" class="button">%s</a>', 'https://sso.godaddy.com/account/create?path=/wordpress_plugin&app=gem&realm=idp&ssoreturnpath=/%3Fpath%3D%2Fwordpress_plugin%26app%3Dgem%26realm%3Didp', esc_html_x( 'Sign Up Now', 'header button', 'godaddy-email-marketing' ) ) ); ?>
+								<?php echo sprintf( esc_html_x( 'New to GoDaddy? Create an account to get started today. %s', 'Sign up button', 'godaddy-email-marketing' ), sprintf( '<a target="_blank" href="%s" class="button">%s</a>', 'https://sso.godaddy.com/account/create?path=/wordpress_plugin&app=gem&realm=idp&ssoreturnpath=/%3Fpath%3D%2Fwordpress_plugin%26app%3Dgem%26realm%3Didp', esc_html_x( 'Sign Up Now', 'header button', 'godaddy-email-marketing' ) ) ); ?>
 							<?php endif; ?>
 						</p>
 					</div>
@@ -531,7 +531,7 @@ class GEM_Settings {
 					<?php endif; ?>
 					<a href="#settings" class="nav-tab <?php echo esc_attr( 'settings' === $tab || empty( $tab ) ? 'nav-tab-active' : '' ); ?>"><?php esc_html_e( 'Settings', 'godaddy-email-marketing' ); ?></a>
 				</h2>
-				
+
 				<div id="setting-errors"></div>
 
 				<?php if ( ! empty( $forms->signups ) ) : ?>
@@ -744,7 +744,7 @@ final class GEM_Settings_Controls {
 	public static function description() {
 		printf(
 			'<p>%s</p>',
-			sprintf( esc_html_x( 'For this plugin to work, it needs to access your GoDaddy Email Marketing account. %1$s to get your username and API key. Copy and paste them below; then click "Save Settings." If you don\'t have a GoDaddy Email Marketing account, %2$s.', 'account details', 'godaddy-email-marketing' ), sprintf( '<a target="_blank" href="%s">%s</a>', 'https://sso.godaddy.com/?realm=idp&app=gem&path=/wordpress_plugin', esc_html_x( 'Sign in here', 'account details link', 'godaddy-email-marketing' ) ), sprintf( '<a target="_blank" href="%s">%s</a>', 'https://sso.godaddy.com/account/create?path=/wordpress_plugin&app=gem&realm=idp&ssoreturnpath=/%3Fpath%3D%2Fwordpress_plugin%26app%3Dgem%26realm%3Didp', esc_html_x( 'sign up here', 'account details link', 'godaddy-email-marketing' ) ) )
+			sprintf( esc_html_x( 'For this plugin to work, it needs to access your GoDaddy Email Marketing account. %1$s to get your username and API key. Copy and paste them below; then click "Save Settings." If you don\'t have a GoDaddy Email Marketing account, %2$s.', '1. Sign-in link, 2. Sign-up link', 'godaddy-email-marketing' ), sprintf( '<a target="_blank" href="%s">%s</a>', 'https://sso.godaddy.com/?realm=idp&app=gem&path=/wordpress_plugin', esc_html_x( 'Sign in here', 'account details link', 'godaddy-email-marketing' ) ), sprintf( '<a target="_blank" href="%s">%s</a>', 'https://sso.godaddy.com/account/create?path=/wordpress_plugin&app=gem&realm=idp&ssoreturnpath=/%3Fpath%3D%2Fwordpress_plugin%26app%3Dgem%26realm%3Didp', esc_html_x( 'sign up here', 'account details link', 'godaddy-email-marketing' ) ) )
 		);
 	}
 
