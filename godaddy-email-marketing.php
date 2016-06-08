@@ -193,11 +193,11 @@ class GEM_Official {
 
 		// Help strings.
 		wp_localize_script( 'gem-main', 'GEM', array(
-			'thankyou' => _x( 'Thank you for signing up!', 'ajax response', 'godaddy-email-marketing' ),
-			'thankyou_suppressed' => _x( 'Thank you for signing up! Please check your email to confirm your subscription.', 'ajax response', 'godaddy-email-marketing' ),
-			'oops' => _x( 'Oops! There was a problem. Please try again.', 'ajax response', 'godaddy-email-marketing' ),
-			'email' => _x( 'Please enter a valid email address.', 'ajax response', 'godaddy-email-marketing' ),
-			'required' => _x( '%s is a required field.', 'ajax response', 'godaddy-email-marketing' ),
+			'thankyou' => __( 'Thank you for signing up!', 'godaddy-email-marketing' ),
+			'thankyou_suppressed' => __( 'Thank you for signing up! Please check your email to confirm your subscription.', 'godaddy-email-marketing' ),
+			'oops' => __( 'Oops! There was a problem. Please try again.', 'godaddy-email-marketing' ),
+			'email' => __( 'Please enter a valid email address.', 'godaddy-email-marketing' ),
+			'required' => _x( '%s is a required field.', 'Name of required field', 'godaddy-email-marketing' ),
 		) );
 	}
 
