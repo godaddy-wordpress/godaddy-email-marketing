@@ -80,7 +80,7 @@ class GEM_Dispatcher {
 		$username = GEM_Settings_Controls::get_option( 'username' );
 		$api_key = GEM_Settings_Controls::get_option( 'api-key' );
 
-		if ( ! ( $username && $api_key ) ) {
+		if ( ! ( $username || $api_key ) ) {
 			return false;
 		}
 
@@ -98,12 +98,12 @@ class GEM_Dispatcher {
 			),
 		) );
 
-		// Credentials are incorrect.
-		if ( ! in_array( wp_remote_retrieve_response_code( $response ), self::$ok_codes ) ) {
-			return false;
+		// Credentials are correct.
+		if ( self::is_response_ok( $response ) ) {
+			return true;
 		}
 
-		return true;
+		return false;
 	}
 
 	/**
