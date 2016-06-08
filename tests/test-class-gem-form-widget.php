@@ -35,7 +35,8 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 	 * @see GEM_Form_Widget::widget()
 	 */
 	public function test_widget() {
-		update_option( GEM_Settings::SLUG, array( 'username' => 'user_name', 'api-key' => '1234' ) );
+		GEM_Settings_Controls::update_option( 'username', 'user_name' );
+		GEM_Settings_Controls::update_option( 'api-key', '1234' );
 		set_transient( 'gem-form-123', json_decode( '{"id":123,"name":"Signup Form","fields":{"field_a":{"type":"string","field_type":"string","name":"the_name_a","required":false,"display":"text_a"},"field_b":{"type":"checkbox","field_type":"checkbox","required":true,"name":"the_name_b","value":"the_value","display":"text_b"}},"submit":"the_url","button_text":"button_text"}' ), 60 );
 		set_transient( 'gem-user_name-lists', json_decode( '{"total":1,"signups":[{"id":123,"name":"Signup Form","thumbnail":"the_url","url":"the_url"}]}' ), 60 );
 
@@ -80,7 +81,8 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 	 * @see GEM_Form_Widget::widget()
 	 */
 	public function test_widget_with_false_id() {
-		update_option( GEM_Settings::SLUG, array( 'username' => 'user_name', 'api-key' => '1234' ) );
+		GEM_Settings_Controls::update_option( 'username', 'user_name' );
+		GEM_Settings_Controls::update_option( 'api-key', '1234' );
 		set_transient( 'gem-form-123', json_decode( '{"id":123,"name":"Signup Form","fields":{"field_a":{"type":"string","field_type":"string","name":"the_name_a","required":false,"display":"text_a"},"field_b":{"type":"checkbox","field_type":"checkbox","required":true,"name":"the_name_b","value":"the_value","display":"text_b"}},"submit":"the_url","button_text":"button_text"}' ), 60 );
 		set_transient( 'gem-user_name-lists', json_decode( '{"total":1,"signups":[{"id":123,"name":"Signup Form","thumbnail":"the_url","url":"the_url"}]}' ), 60 );
 
@@ -154,7 +156,8 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$sample_field->name = 'the_field_name';
 		$sample_data->signups = array( $sample_field );
 
-		update_option( GEM_Settings::SLUG, array( 'api-key' => $api_key, 'username' => $user_name ) );
+		GEM_Settings_Controls::update_option( 'username', $user_name );
+		GEM_Settings_Controls::update_option( 'api-key', $api_key );
 		set_transient( 'gem-' . $user_name . '-lists', $sample_data );
 
 		$instance = array(
@@ -187,7 +190,8 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$sample_data = new stdClass();
 		$sample_data->signups = array();
 
-		update_option( GEM_Settings::SLUG, array( 'api-key' => $api_key, 'username' => $user_name ) );
+		GEM_Settings_Controls::update_option( 'username', $user_name );
+		GEM_Settings_Controls::update_option( 'api-key', $api_key );
 		set_transient( 'gem-' . $user_name . '-lists', $sample_data );
 
 		$instance = array(

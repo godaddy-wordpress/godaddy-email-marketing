@@ -453,10 +453,8 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 			),
 			'body' => '{"total":1,"signups":[{"id":"54321", "name":"Test Form", "url":"http://sample.org"}]}',
 		);
-		update_option( GEM_Settings::SLUG, array(
-			'username' => 'tester',
-			'api-key'  => '12345',
-		) );
+		GEM_Settings_Controls::update_option( 'username', 'tester' );
+		GEM_Settings_Controls::update_option( 'api-key', '12345' );
 		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
 

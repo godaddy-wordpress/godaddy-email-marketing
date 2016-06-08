@@ -191,6 +191,7 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		$this->assertFalse( GEM_Settings_Controls::get_option( 'error' ) );
 		$this->assertEquals( 'user_name', GEM_Settings_Controls::get_option( 'username' ) );
 		$this->assertEquals( '1234', GEM_Settings_Controls::get_option( 'api-key' ) );
+		delete_option( GEM_Settings::SLUG );
 	}
 
 	/**
@@ -204,6 +205,7 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		$this->assertFalse( GEM_Settings_Controls::delete_option( 'fake-key' ) );
 		$this->assertTrue( GEM_Settings_Controls::delete_option( 'api-key' ) );
 		$this->assertFalse( GEM_Settings_Controls::get_option( 'api-key' ) );
+		delete_option( GEM_Settings::SLUG );
 	}
 
 	/**
@@ -217,5 +219,6 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 		$this->assertFalse( GEM_Settings_Controls::update_option( 'api-key', '1234' ) );
 		$this->assertTrue( GEM_Settings_Controls::update_option( 'api-key', '4321' ) );
 		$this->assertEquals( '4321', GEM_Settings_Controls::get_option( 'api-key' ) );
+		delete_option( GEM_Settings::SLUG );
 	}
 }
