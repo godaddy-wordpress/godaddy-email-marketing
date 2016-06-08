@@ -850,7 +850,7 @@ final class GEM_Settings_Controls {
 	 * @param string $key Settings key.
 	 * @return false|mixed Returns the settings value or false.
 	 */
-	public static function get_option( $key = '' ) {
+	public static function get_option( $key ) {
 		$settings = get_option( GEM_Settings::SLUG );
 
 		return ( ! empty( $settings[ $key ] ) ) ? $settings[ $key ] : false;
@@ -862,8 +862,12 @@ final class GEM_Settings_Controls {
 	 * @param string $key Settings key.
 	 * @return bool True, if option is successfully deleted. False on failure, or option does not exist.
 	 */
-	public static function delete_option( $key = '' ) {
+	public static function delete_option( $key ) {
 		$settings = get_option( GEM_Settings::SLUG );
+
+		if ( ! isset( $settings[ $key ] ) ) {
+			return false;
+		}
 
 		unset( $settings[ $key ] );
 		return update_option( GEM_Settings::SLUG, $settings );
@@ -876,7 +880,7 @@ final class GEM_Settings_Controls {
 	 * @param mixed  $value Settings value.
 	 * @return bool True if option value has changed, false if not or if update failed.
 	 */
-	public static function update_option( $key = '', $value = '' ) {
+	public static function update_option( $key, $value ) {
 		$settings = get_option( GEM_Settings::SLUG );
 
 		$settings[ $key ] = $value;
