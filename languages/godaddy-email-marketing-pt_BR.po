@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-06 18:54-0500\n"
+"POT-Creation-Date: 2016-06-08 16:09-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: godaddy-email-marketing.php:196
-msgctxt "ajax response"
+#, fuzzy
 msgid "Thank you for signing up!"
 msgstr "Agradecemos sua inscrio!"
 
 #: godaddy-email-marketing.php:197
-msgctxt "ajax response"
+#, fuzzy
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
@@ -31,18 +31,17 @@ msgstr ""
 "Agradecemos sua inscrio! Verifique seu email para confirmar sua inscrio."
 
 #: godaddy-email-marketing.php:198
-msgctxt "ajax response"
+#, fuzzy
 msgid "Oops! There was a problem. Please try again."
 msgstr "Opa! Ocorreu um problema. Tente novamente."
 
 #: godaddy-email-marketing.php:199
-msgctxt "ajax response"
 msgid "Please enter a valid email address."
 msgstr ""
 
 #: godaddy-email-marketing.php:200
 #, php-format
-msgctxt "ajax response"
+msgctxt "Name of required field"
 msgid "%s is a required field."
 msgstr ""
 
@@ -337,8 +336,8 @@ msgstr ""
 
 #: includes/settings.php:520
 #, php-format
-msgctxt "header note"
-msgid "New to GoDaddy? Create an account to get started today. %1$s"
+msgctxt "Sign up button"
+msgid "New to GoDaddy? Create an account to get started today. %s"
 msgstr ""
 
 #: includes/settings.php:520
@@ -413,7 +412,7 @@ msgstr ""
 
 #: includes/settings.php:747
 #, php-format
-msgctxt "account details"
+msgctxt "1. Sign-in link, 2. Sign-up link"
 msgid ""
 "For this plugin to work, it needs to access your GoDaddy Email Marketing "
 "account. %1$s to get your username and API key. Copy and paste them below; "
