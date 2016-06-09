@@ -329,7 +329,7 @@ msgstr "Henüz hiç formunuz yok."
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "New to GoDaddy? Create an account to get started today. %s"
+msgstr "GoDaddy'de yeni misiniz? Hemen başlamak için bir hesap oluşturun. %s "
 
 #: includes/settings.php:520
 msgctxt "header button"

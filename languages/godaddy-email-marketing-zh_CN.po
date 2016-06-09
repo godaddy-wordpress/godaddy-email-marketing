@@ -314,7 +314,7 @@ msgstr "您还没有任何表单。"
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "New to GoDaddy? Create an account to get started today. %s"
+msgstr "初次使用 GoDaddy？ 创建账户，立即开始。 %s "
 
 #: includes/settings.php:520
 msgctxt "header button"

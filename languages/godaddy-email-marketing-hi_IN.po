@@ -329,7 +329,7 @@ msgstr "आपके पास अभी तक कोई प्रपत्र 
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "New to GoDaddy? Create an account to get started today. %s"
+msgstr "GoDaddy पर नए हैं? आज ही शुरू करने के लिए कोई खाता बनाएं. %s "
 
 #: includes/settings.php:520
 msgctxt "header button"

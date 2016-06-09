@@ -317,7 +317,7 @@ msgstr "폼이 없습니다."
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "New to GoDaddy? Create an account to get started today. %s"
+msgstr "GoDaddy가 처음이신가요? 계정을 만들어 시작해 보세요. %s "
 
 #: includes/settings.php:520
 msgctxt "header button"

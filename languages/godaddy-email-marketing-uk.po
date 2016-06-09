@@ -327,7 +327,7 @@ msgstr "Ви ще не маєте жодної форми."
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "New to GoDaddy? Create an account to get started today. %s"
+msgstr "Вперше в GoDaddy? Створіть акаунт, щоб негайно почати роботу. %s "
 
 #: includes/settings.php:520
 msgctxt "header button"

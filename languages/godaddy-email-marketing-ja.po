@@ -316,7 +316,7 @@ msgstr "まだフォームがありません。"
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "New to GoDaddy? Create an account to get started today. %s"
+msgstr "初めて、GoDaddy をご利用になりますか？ アカウントを作成すれば、今すぐご利用いただけます。 %s "
 
 #: includes/settings.php:520
 msgctxt "header button"
