@@ -18,174 +18,168 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: godaddy-email-marketing.php:196
-#, fuzzy
 msgid "Thank you for signing up!"
-msgstr "!"
+msgstr "ขอบคุณที่ลงทะเบียน!"
 
 #: godaddy-email-marketing.php:197
-#, fuzzy
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
-msgstr "! "
+msgstr "ขอบคุณที่ลงทะเบียน! โปรดดูอีเมลของคุณเพื่อยืนยันการสมัครสมาชิกของคุณ"
 
 #: godaddy-email-marketing.php:198
-#, fuzzy
 msgid "Oops! There was a problem. Please try again."
-msgstr "!  "
+msgstr "ขออภัย! มีปัญหาเกิดขึ้น โปรดลองอีกครั้ง"
 
 #: godaddy-email-marketing.php:199
 msgid "Please enter a valid email address."
-msgstr ""
+msgstr "โปรดป้อนที่อยู่อีเมลที่ถูกต้อง"
 
 #: godaddy-email-marketing.php:200
 #, php-format
 msgctxt "Name of required field"
 msgid "%s is a required field."
-msgstr ""
+msgstr "ต้องกรอกช่อง %s"
 
 #: godaddy-email-marketing.php:212 includes/settings.php:532
 msgid "Settings"
-msgstr ""
+msgstr "การตั้งค่า"
 
 #: godaddy-email-marketing.php:248
 msgid "GoDaddy Email Marketing is almost ready."
-msgstr " GoDaddy "
+msgstr "การตลาดด้วยอีเมลของ GoDaddy เกือบพร้อมแล้ว"
 
 #: godaddy-email-marketing.php:248
 msgid "You must enter your username &amp; API key for it to work."
-msgstr " API "
+msgstr "คุณต้องใส่ชื่อผู้ใช้และคีย์ API เพื่อให้สามารถทำงานได้"
 
 #: godaddy-email-marketing.php:249
 msgid "Let's do it!"
-msgstr "!"
+msgstr "มาทำกันเลย!"
 
 #: includes/class-shortcode.php:48 includes/settings.php:61
-#, fuzzy
 msgid "GoDaddy Email Marketing"
-msgstr " GoDaddy"
+msgstr "การตลาดทางอีเมลของ GoDaddy"
 
 #: includes/class-shortcode.php:52
-#, fuzzy
 msgid "Signup Forms"
-msgstr " GoDaddy"
+msgstr "แบบฟอร์ม"
 
 #: includes/class-shortcode.php:53
 msgid "Choose one of the available forms."
-msgstr ""
+msgstr "เลือกหนึ่งในแบบฟอร์มที่มีให้"
 
 #: includes/render.php:67
 msgid "Powered by GoDaddy"
-msgstr " GoDaddy"
+msgstr "ขับเคลื่อนโดย GoDaddy"
 
 #: includes/render.php:322
 msgid "Month"
-msgstr ""
+msgstr "เดือน"
 
 #: includes/render.php:323
 msgid "January"
-msgstr ""
+msgstr "มกราคม"
 
 #: includes/render.php:324
 msgid "Febuary"
-msgstr ""
+msgstr "กุมภาพันธ์"
 
 #: includes/render.php:325
 msgid "March"
-msgstr ""
+msgstr "มีนาคม"
 
 #: includes/render.php:326
 msgid "April"
-msgstr ""
+msgstr "เมษายน"
 
 #: includes/render.php:327
 msgid "May"
-msgstr ""
+msgstr "พฤษภาคม"
 
 #: includes/render.php:328
 msgid "June"
-msgstr ""
+msgstr "มิถุนายน"
 
 #: includes/render.php:329
 msgid "July"
-msgstr ""
+msgstr "กรกฎาคม"
 
 #: includes/render.php:330
 msgid "August"
-msgstr ""
+msgstr "สิงหาคม"
 
 #: includes/render.php:331
 msgid "September"
-msgstr ""
+msgstr "กันยายน"
 
 #: includes/render.php:332
 msgid "October"
-msgstr ""
+msgstr "ตุลาคม"
 
 #: includes/render.php:333
 msgid "November"
-msgstr ""
+msgstr "พฤศจิกายน"
 
 #: includes/render.php:334
 msgid "December"
-msgstr ""
+msgstr "ธันวาคม"
 
 #: includes/render.php:339
 msgid "Day"
-msgstr ""
+msgstr "วัน"
 
 #: includes/render.php:347
 msgid "Year"
-msgstr ""
+msgstr "ปี"
 
 #: includes/settings.php:60 includes/settings.php:504
-#, fuzzy
 msgid "GoDaddy Email Marketing Signup Forms"
-msgstr " GoDaddy"
+msgstr "แบบฟอร์มลงทะเบียนการตลาดด้วยอีเมลของ GoDaddy"
 
 #: includes/settings.php:96
 msgctxt "failed copy response"
 msgid "Please press Ctrl/Cmd+C to copy."
-msgstr ""
+msgstr "โปรดกดคีย์ Ctrl/Cmd+C เพื่อคัดลอก"
 
 #: includes/settings.php:220
 msgid "All data has been removed."
-msgstr ""
+msgstr "ข้อมูลทั้งหมดได้ถูกนำออกแล้ว"
 
 #: includes/settings.php:224
 msgid "All transients were removed."
-msgstr ""
+msgstr "ได้ลบส่วนชั่วคราวทั้งหมดแล้ว"
 
 #: includes/settings.php:228
 msgid "Forms list was successfully updated."
-msgstr ""
+msgstr "อัพเดทรายการแบบฟอร์มเสร็จแล้่ว"
 
 #: includes/settings.php:232
 msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
-msgstr "! "
+msgstr "ข้อมูลส่วนตัวไม่ถูกต้อง! โปรดยืนยันว่าคุณได้ใส่ข้อมูลถูกต้อง"
 
 #: includes/settings.php:236
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
-msgstr " GoDaddy ! !"
+msgstr "ได้มีการเชื่อมต่อกับการตลาดด้วยอีเมลของ GoDaddy แล้ว! เรียบร้อยแล้ว!"
 
 #: includes/settings.php:241
 msgid "Settings have been updated."
-msgstr ""
+msgstr "การตั้งค่าได้ถูกอัพเดทแล้ว"
 
 #: includes/settings.php:245
 msgid "Please fill in the username and the API key first."
-msgstr " API "
+msgstr "โปรดใส่ชื่อผู้ใช้และคีย์ API เป็นอันดับแรก"
 
 #: includes/settings.php:277
 msgid "Overview"
-msgstr ""
+msgstr "ภาพรวม"
 
 #: includes/settings.php:281
 msgid "Instructions"
-msgstr ""
+msgstr "ขั้นตอน"
 
 #: includes/settings.php:283
 #, php-format
@@ -195,32 +189,42 @@ msgid ""
 "Below, simply enter your account email address and API key (found in your "
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
-msgstr "  GoDaddy      API  ( [%s]  GoDaddy )  3 :"
+msgstr ""
+"เมื่อเปิดใช้งานปลั๊กอินแล้ว "
+"คุณจะสามารถเลือกและแทรกเว็บฟอร์มการตลาดด้วยอีเมลของ GoDaddy ใดๆ "
+"บนเว็บไซต์ของคุณได้ การตั้งค่านั้นง่าย ด้านล่าง "
+"เพียงแค่ใส่ที่อยู่อีเมลบัญชีและคีย์ API ของคุณ (หาได้ในส่วน [%s] "
+"บัญชีการตลาดด้วยอีเมลของ GoDaddy ของคุณ) ต่อไปนี้คือวิธี 3 วิธีที่คุณสามารถแสดงเว็บฟอร์มบนเว็บไซต์ของคุณ:"
 
 #: includes/settings.php:286
-#, fuzzy
 msgid ""
 "<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
 "your choice. You can then add a title and select a form!"
-msgstr "<strong>:</strong>  Appearance &rarr; widgets   GoDaddy   !"
+msgstr ""
+"<strong>วิดเจ็ท:</strong> ไปที่ Appearance &rarr; widgets แล้วหาวิดเจ็ทชื่อ "
+"“GoDaddy Email Marketing Form” แล้วลากลงในส่วนวิดเจ็ทที่คุณต้องการ จากนั้น คุณสามารถเพิ่มชื่อและเลือกแบบฟอร์ม!"
 
 #: includes/settings.php:287
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
-msgstr "<strong>:</strong>   ( <code>[gem id=80326]</code>) /"
+msgstr ""
+"<strong>รหัสแบบสั้น:</strong> คุณสามารถเพิ่มแบบฟอร์มกับโพสต์หรือหน้าเพจใดๆ "
+"ได้ด้วยการเพิ่มรหัสแบบสั้น (เช่น <code>[gem id=80326]</code>) ในโปรแแกรมแก้ไขหน้าเพจ/โพสต์"
 
 #: includes/settings.php:289
 #, php-format
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
-msgstr "<strong>:</strong>  WordPress  : <code>%s</code>.   <code>%s</code>"
+msgstr ""
+"<strong>แท็กแม่แบบ:</strong> คุณสามารถเพิ่มแท็กแม่แบบต่อไปนี้ในไฟล์ WordPress "
+"ใดๆ ได้: <code>%s</code>.  เช่น <code>%s</code>"
 
 #: includes/settings.php:299
 msgid "For more information:"
-msgstr ":"
+msgstr "สำหรับข้อมูลเพิ่มเติม:"
 
 #: includes/settings.php:300
 msgid "GoDaddy"
@@ -228,164 +232,164 @@ msgstr "GoDaddy"
 
 #: includes/settings.php:301
 msgid "GoDaddy Help"
-msgstr " GoDaddy"
+msgstr "ความช่วยเหลือของ GoDaddy"
 
 #: includes/settings.php:302
 msgid "Contact GoDaddy"
-msgstr " GoDaddy"
+msgstr "ติดต่อ GoDaddy"
 
 #: includes/settings.php:327
 msgid "Account Details"
-msgstr ""
+msgstr "รายละเอียดบัญชี"
 
 #: includes/settings.php:334
 msgid "Username"
-msgstr ""
+msgstr "ชื่อผู้ใช้"
 
 #: includes/settings.php:348
 msgid "API Key"
-msgstr ""
+msgstr "คีย์ API"
 
 #: includes/settings.php:362
 msgid "Footer Link"
-msgstr ""
+msgstr "ลิค์ท้ายหน้าเพจ"
 
 #: includes/settings.php:369
 msgid "Display \"Powered by GoDaddy\"?"
-msgstr "  GoDaddy "
+msgstr "แสดง “ขับเคลื่อนโดย GoDaddy” หรือไม่"
 
 #: includes/settings.php:376
 msgid "Debugging"
-msgstr ""
+msgstr "การแก้จุดบกพร่อง"
 
 #: includes/settings.php:383
 msgid "Debug Mode"
-msgstr ""
+msgstr "โหมดแก้จุดบกพร่อง"
 
 #: includes/settings.php:390
 msgid "Activated"
-msgstr ""
+msgstr "เปิด"
 
 #: includes/settings.php:397
 msgid "Cache Reset"
-msgstr ""
+msgstr "รีเซ็ตแคช"
 
 #: includes/settings.php:403
 msgid "Erase Transients"
-msgstr ""
+msgstr "ลบส่วนชั่วคราว"
 
 #: includes/settings.php:404
 msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
 msgstr ""
+"ล้างเฉพาะข้อมูลที่แคชไว้ที่เกี่ยวโยงกับปลั๊กอินนี้เท่านั้น และควรทำก่อนการฮาร์ดรีเซ็ต"
 
 #: includes/settings.php:410
 msgid "Hard Reset"
-msgstr ""
+msgstr "ฮาร์ดรีเซ็ต"
 
 #: includes/settings.php:416
 msgid "Erase All Data"
-msgstr ""
+msgstr "ลบข้อมูลทั้งหมด"
 
 #: includes/settings.php:417
 msgid "Purges all saved data associated with this plugin."
-msgstr ""
+msgstr "ล้างข้อมูลทั้งหมดที่บันทึกไว้ที่เกี่ยวโยงกับปลั๊กอินนี้"
 
 #: includes/settings.php:511
-#, fuzzy
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience."
-msgstr " GoDaddy "
+msgstr "เพลิดเพลินกับประสบการณ์การตลาดทางอีเมลของ GoDaddy"
 
 #: includes/settings.php:513
-#, fuzzy
 msgctxt "header note"
 msgid ""
 "Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
 "set up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
-msgstr " GoDaddy  WordPress !   GoDaddy "
+msgstr ""
+"เพิ่มแบบฟอร์มลงทะเบียนการตลาดทางอีเมลของ GoDaddy ให้แก่เว็บไซต์ WordPress "
+"ของคุณ! กำหนดค่าได้ง่าย ปลั๊กอินการตลาดทางอีเมลของ GoDaddy จะทำให้ผู้ชมเว็บไซต์ของคุณสมัครสมาชิกกับรายการอีเมลของคุณได้"
 
 #: includes/settings.php:517
 msgctxt "header note"
 msgid "You don't have any forms yet."
-msgstr ""
+msgstr "คุณยังไม่มีแบบฟอร์มใด ๆ"
 
 #: includes/settings.php:520
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr ""
+msgstr "New to GoDaddy? Create an account to get started today. %s"
 
 #: includes/settings.php:520
-#, fuzzy
 msgctxt "header button"
 msgid "Sign Up Now"
-msgstr " GoDaddy"
+msgstr "ลงทะเบียนเดี็ยวนี้เลย"
 
 #: includes/settings.php:530
-#, fuzzy
 msgid "Forms"
-msgstr ":"
+msgstr "ฟอร์ม"
 
 #: includes/settings.php:539
 msgid "Available Signup Forms"
-msgstr ""
+msgstr "แบบฟอร์มลงทะเบียนที่มีให้"
 
 #: includes/settings.php:543 includes/settings.php:550
 #: includes/settings.php:558
 msgid "Form Name"
-msgstr ""
+msgstr "ชื่อแบบฟอร์ม"
 
 #: includes/settings.php:544 includes/settings.php:551
 #: includes/settings.php:572
 msgid "Form ID"
-msgstr ""
+msgstr "หมายเลขแบบฟอร์ม"
 
 #: includes/settings.php:545 includes/settings.php:552
 #: includes/settings.php:575
 msgid "Shortcode"
-msgstr ""
+msgstr "รหัสแบบสั้น"
 
 #: includes/settings.php:562
 msgid "Opens in a new window"
-msgstr ""
+msgstr "เปิดในหน้าต่างใหม่"
 
 #: includes/settings.php:562
 msgid "Edit form in GoDaddy Email Marketing"
-msgstr " GoDaddy"
+msgstr "แก้ไขแบบฟอร์มในการตลาดด้วยอีเมลของ GoDaddy"
 
 #: includes/settings.php:565
 msgid "Preview"
-msgstr ""
+msgstr "ดูตัวอย่าง"
 
 #: includes/settings.php:588
 msgid "Not seeing your form?"
-msgstr ""
+msgstr "ไม่เห็นแบบฟอร์มของคุณหรือไม่"
 
 #: includes/settings.php:607
 msgctxt "save settings button"
 msgid "Save Settings"
-msgstr ""
+msgstr "บันทึกการตั้งค่า"
 
 #: includes/settings.php:637
 msgid "Refresh Forms"
-msgstr ""
+msgstr "รีเฟรชแบบฟอร์ม"
 
 #: includes/settings.php:644
 msgid "Create a New Signup Form"
-msgstr ""
+msgstr "สร้างแบบฟอร์มลงทะเบียนใหม่"
 
 #: includes/settings.php:651
 msgid "Create a New Campaign"
-msgstr ""
+msgstr "สร้างแคมเปญใหม่"
 
 #: includes/settings.php:737
 msgid ""
 "If you are experiencing issues and are unsure of the cause, you may want to "
 "activate debug mode, which displays additional options."
 msgstr ""
+"หากคุณประสบปัญหาและไม่ทราบว่ามาจากสาเหตุใด คุณอาจเปิดโหมดแก้จุดบกพร่องซึ่งจะแสดงตัวเลือกเพิ่มเติม"
 
 #: includes/settings.php:747
 #, php-format
@@ -396,81 +400,48 @@ msgid ""
 "then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
 "account, %2$s."
 msgstr ""
+"เพื่อให้ปลั๊กอินทำงานได้ ปลั๊กอินต้องเข้าถึงบัญชีการตลาดทางอีเมลของ GoDaddy "
+"ของคุณ  %1$s เพื่อรับชื่อผู้ใช้และคีย์ API คัดลอกและวางชื่อผู้ใช้และคีย API "
+"ด้านล่าง จากนั้นคลิก “บันทึกการตั้งค่า” หากคุณไม่มีบัญชีการตลาดทางอีเมลของ "
+"GoDaddy %2$s"
 
 #: includes/settings.php:747
 msgctxt "account details link"
 msgid "Sign in here"
-msgstr ""
+msgstr "ลงชื่อเข้่าใช้ที่นี่"
 
 #: includes/settings.php:747
 msgctxt "account details link"
 msgid "sign up here"
-msgstr ""
+msgstr "ลงทะเบียนที่นี่"
 
 #: includes/widget.php:21
 msgid "GoDaddy Email Marketing Form"
-msgstr " GoDaddy"
+msgstr "แบบฟอร์มการตลาดด้วยอีเมลของ GoDaddy"
 
 #: includes/widget.php:24
-#, fuzzy
 msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr " GoDaddy  "
+msgstr "ฝังแบบฟอร์มลงทะเบียนการตลาดทางอีเมลของ GoDaddy ในแถบด้านข้าง"
 
 #: includes/widget.php:123
 msgid "Title:"
-msgstr ":"
+msgstr "ชื่อเรื่อง:"
 
 #: includes/widget.php:129
 msgid "Additional Text:"
-msgstr ":"
+msgstr "ข้อความเพิ่มเติม:"
 
 #: includes/widget.php:138
 msgid "Form:"
-msgstr ":"
+msgstr "แบบฟอร์ม:"
 
 #: includes/widget.php:151
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
-msgstr " GoDaddy  %s"
+msgstr "โปรดตั้งค่าบัญชีการตลาดด้วยอีเมลของ GoDaddy ใน %s"
 
 #: includes/widget.php:155
 msgid "settings page"
-msgstr ""
-
-#~ msgctxt "settings page"
-#~ msgid "Where can I find my API key?"
-#~ msgstr " API "
-
-#~ msgid "Your GoDaddy Email Marketing username (email address)"
-#~ msgstr " GoDaddy  ()"
-
-#~ msgctxt "header note"
-#~ msgid ""
-#~ "Don't have a GoDaddy Email Marketing account? Get one in less than 2 "
-#~ "minutes! %s"
-#~ msgstr " GoDaddy   2 ! %s"
-
-#, fuzzy
-#~ msgid ""
-#~ "Please enter your GoDaddy Email Marketing username and API Key. Your "
-#~ "credentials will connect WordPress with your GoDaddy Email Marketing "
-#~ "account and display your available forms."
-#~ msgstr " API  GoDaddy "
-
-#~ msgctxt "ajax response"
-#~ msgid "There was a problem. Please fill all required fields."
-#~ msgstr " "
-
-#~ msgid "GoDaddy Email Marketing Settings"
-#~ msgstr " GoDaddy"
-
-#~ msgid "GoDaddy Signup Forms"
-#~ msgstr " GoDaddy"
-
-#~ msgid "GoDaddy Email Marketing Username"
-#~ msgstr " GoDaddy"
-
-#~ msgid "GoDaddy Email Marketing API Key"
-#~ msgstr " API  GoDaddy"
+msgstr "หน้าการตั้งค่า"
