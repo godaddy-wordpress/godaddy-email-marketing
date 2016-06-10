@@ -15,6 +15,6 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 // Delete all options that contain gem.
 delete_option( 'gem-valid-creds' );
 delete_option( 'gem-version' );
-delete_option( 'gem-settings' );
+delete_option( GEM_Settings::SLUG );
 
 // @codeCoverageIgnoreEnd
