@@ -28,12 +28,35 @@ Setup is easy; in the plugin Settings, simply enter your GoDaddy username and Go
 **Languages Supported:**
 
 * English
+* Dansk
 * Deutsch
+* Ελληνικά
 * Español
 * Español de México
+* Suomi
 * Français
+* हिन्दी
+* Bahasa Indonesia
+* Italiano
+* 日本語
+* 한국어
+* मराठी
+* Bahasa Melayu
+* Norsk bokmål
+* Nederlands
+* Polski
 * Português do Brasil
 * Português
+* Русский
+* Svenska
+* ไทย
+* Tagalog
+* Türkçe
+* Українська
+* Tiếng Việt
+* 简体中文
+* 香港中文版
+* 繁體中文
 
 **Find a bug?**
 
@@ -50,7 +73,7 @@ Please fill out an issue [here](https://github.com/godaddy/wp-godaddy-email-mark
 After your account is verified, you can insert a form into your site by using a widget, shortcode, or template tag:
 
 * **Widget** Go to Appearance > Widgets, find the GoDaddy Email Marketing widget, and drag it into the widget area of your choice. You can then add a title and select a form!
-* **Shortcode** Add a form to any post or page by adding the shortcode (e.g., `[gem id=80326 ]`) in the page/post editor. You can find a form's ID on the GoDaddy Email Marketing Settings page.
+* **Shortcode** Add a form to any post or page by adding the shortcode (e.g., `[gem id=12345 ]`) in the page/post editor. You can find a form's ID on the GoDaddy Email Marketing Settings page.
 * **Template** tag Add the following template tag into any WordPress file: `<?php gem_form; ?>`. For example: `<?php gem_form( 91 ); ?>` You can find a form's ID on the GoDaddy Email Marketing Settings page.
 
 That's it. You're ready to go!
@@ -71,7 +94,7 @@ Absolutely. Use it by finding the GoDaddy Email Marketing widget under Appearanc
 
 = Is there a shortcode? =
 
-Yes! You can add a form to any post or page by adding the shortcode with the form ID (e.g., `[gem id=80326 ]`) in the page/post editor. Form IDs are listed on the GoDaddy Signup Forms Settings page.
+Yes! You can add a form to any post or page by adding the shortcode with the form ID (e.g., `[gem id=12345 ]`) in the page/post editor. Form IDs are listed on the GoDaddy Signup Forms Settings page.
 
 = Is there a template tag? =
 
@@ -94,6 +117,7 @@ You can find your API key in the Settings section of your GoDaddy Email Marketin
 * UI & UX overhaul using tabbed navigation & enhanced admin notices.
 * Added the `debug` setting to replace the `gem_debug` filter.
 * Added Shortcake plugin integration for the `gem` shortcode.
+* Language support for many new locales.
 
 = 1.0.6 =
 * Fixed shortcode display and localization bugs [#12](https://github.com/godaddy/wp-godaddy-email-marketing/pull/12)
