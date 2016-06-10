@@ -18,176 +18,172 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: godaddy-email-marketing.php:196
-#, fuzzy
 msgid "Thank you for signing up!"
-msgstr "Cm n bn  ng k!"
+msgstr "Cảm ơn bạn đã đăng ký!"
 
 #: godaddy-email-marketing.php:197
-#, fuzzy
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
-msgstr "Cm n bn  ng k! Vui lng kim tra email  xc nhn vic ng k ca bn."
+msgstr ""
+"Cảm ơn bạn đã đăng ký! Vui lòng kiểm tra email để xác nhận việc đăng ký của bạn."
 
 #: godaddy-email-marketing.php:198
-#, fuzzy
 msgid "Oops! There was a problem. Please try again."
-msgstr "Rt tic!  xy ra vn . Vui lng th li."
+msgstr "Rất tiếc! Đã xảy ra vấn đề. Vui lòng thử lại."
 
 #: godaddy-email-marketing.php:199
 msgid "Please enter a valid email address."
-msgstr ""
+msgstr "Vui lòng nhập địa chỉ email hợp lệ."
 
 #: godaddy-email-marketing.php:200
 #, php-format
 msgctxt "Name of required field"
 msgid "%s is a required field."
-msgstr ""
+msgstr "%s là một trường bắt buộc."
 
 #: godaddy-email-marketing.php:212 includes/settings.php:532
 msgid "Settings"
-msgstr "Ci t"
+msgstr "Cài đặt"
 
 #: godaddy-email-marketing.php:248
 msgid "GoDaddy Email Marketing is almost ready."
-msgstr "Tip th qua email ca GoDaddy gn nh  sn sng"
+msgstr "Tiếp thị qua email của GoDaddy gần như đã sẵn sàng"
 
 #: godaddy-email-marketing.php:248
 msgid "You must enter your username &amp; API key for it to work."
-msgstr "Bn phi nhp tn ngi dng &amp; kha API  ng dng ny hot ng."
+msgstr "Bạn phải nhập tên người dùng &amp; khóa API để ứng dụng này hoạt động."
 
 #: godaddy-email-marketing.php:249
 msgid "Let's do it!"
-msgstr "Chng ta hy cng thc hin!"
+msgstr "Chúng ta hãy cùng thực hiện!"
 
 #: includes/class-shortcode.php:48 includes/settings.php:61
-#, fuzzy
 msgid "GoDaddy Email Marketing"
-msgstr "Mu Tip th qua email ca GoDaddy"
+msgstr "Tiếp thị qua email của GoDaddy"
 
 #: includes/class-shortcode.php:52
-#, fuzzy
 msgid "Signup Forms"
-msgstr "Mu ng k ca GoDaddy"
+msgstr "Mẫu đăng ký"
 
 #: includes/class-shortcode.php:53
 msgid "Choose one of the available forms."
-msgstr ""
+msgstr "Chọn một trong những mẫu sẵn có."
 
 #: includes/render.php:67
 msgid "Powered by GoDaddy"
-msgstr "c GoDaddy cung cp"
+msgstr "Được GoDaddy cung cấp"
 
 #: includes/render.php:322
 msgid "Month"
-msgstr "thng"
+msgstr "tháng"
 
 #: includes/render.php:323
 msgid "January"
-msgstr "Thng 1"
+msgstr "Tháng 1"
 
 #: includes/render.php:324
 msgid "Febuary"
-msgstr "Thng 2"
+msgstr "Tháng 2"
 
 #: includes/render.php:325
 msgid "March"
-msgstr "Thng 3"
+msgstr "Tháng 3"
 
 #: includes/render.php:326
 msgid "April"
-msgstr "Thng 4"
+msgstr "Tháng 4"
 
 #: includes/render.php:327
 msgid "May"
-msgstr "Thng 5"
+msgstr "Tháng 5"
 
 #: includes/render.php:328
 msgid "June"
-msgstr "Thng 6"
+msgstr "Tháng 6"
 
 #: includes/render.php:329
 msgid "July"
-msgstr "Thng 7"
+msgstr "Tháng 7"
 
 #: includes/render.php:330
 msgid "August"
-msgstr "Thng 8"
+msgstr "Tháng 8"
 
 #: includes/render.php:331
 msgid "September"
-msgstr "Thng 9"
+msgstr "Tháng 9"
 
 #: includes/render.php:332
 msgid "October"
-msgstr "Thng 10"
+msgstr "Tháng 10"
 
 #: includes/render.php:333
 msgid "November"
-msgstr "Thng 11"
+msgstr "Tháng 11"
 
 #: includes/render.php:334
 msgid "December"
-msgstr "Thng 12"
+msgstr "Tháng 12"
 
 #: includes/render.php:339
 msgid "Day"
-msgstr "Ngy"
+msgstr "Ngày"
 
 #: includes/render.php:347
 msgid "Year"
-msgstr "nm"
+msgstr "năm"
 
 #: includes/settings.php:60 includes/settings.php:504
-#, fuzzy
 msgid "GoDaddy Email Marketing Signup Forms"
-msgstr "Mu Tip th qua email ca GoDaddy"
+msgstr "Mẫu Đăng ký Tiếp thị qua email của GoDaddy"
 
 #: includes/settings.php:96
 msgctxt "failed copy response"
 msgid "Please press Ctrl/Cmd+C to copy."
-msgstr ""
+msgstr "Hãy nhấn Ctrl/Cmd+C để sao chép."
 
 #: includes/settings.php:220
-#, fuzzy
 msgid "All data has been removed."
-msgstr "Tt c cc d liu c lu tm thi  b xa."
+msgstr "Mọi dữ liệu đều được xóa."
 
 #: includes/settings.php:224
 msgid "All transients were removed."
-msgstr "Tt c cc d liu c lu tm thi  b xa."
+msgstr "Tất cả các dữ liệu được lưu tạm thời đã bị xóa."
 
 #: includes/settings.php:228
 msgid "Forms list was successfully updated."
-msgstr "Danh sch mu  c cp nht thnh cng."
+msgstr "Danh sách mẫu đã được cập nhật thành công."
 
 #: includes/settings.php:232
 msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr ""
-"Thng tin xc thc khng chnh xc! Hy xc minh rng bn  nhp thng tin ny chnh xc."
+"Thông tin xác thực không chính xác! Hãy xác minh rằng bạn đã nhập thông tin "
+"này chính xác."
 
 #: includes/settings.php:236
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
-msgstr " thit lp kt ni vi Tip th qua email ca GoDaddy! Bn  thit lp xong!"
+msgstr ""
+"Đã thiết lập kết nối với Tiếp thị qua email của GoDaddy! Bạn đã thiết lập xong!"
 
 #: includes/settings.php:241
 msgid "Settings have been updated."
-msgstr ""
+msgstr "Phần thiết lập đã được cập nhật."
 
 #: includes/settings.php:245
 msgid "Please fill in the username and the API key first."
-msgstr "Hy in tn ngi dng v kha API trc tin."
+msgstr "Hãy điền tên người dùng và khóa API trước tiên."
 
 #: includes/settings.php:277
 msgid "Overview"
-msgstr "Tng quan"
+msgstr "Tổng quan"
 
 #: includes/settings.php:281
 msgid "Instructions"
-msgstr "Hng dn"
+msgstr "Hướng dẫn"
 
 #: includes/settings.php:283
 #, php-format
@@ -198,30 +194,30 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"Sau khi kch hot trnh cm, bn s c th la chn v chn bt k webform Tip th qua "
-"email ca GoDaddy no vo trang ca bn. Ci t tht d dng. Bn di, ch cn nhp a ch "
-"email ca ti khon v kha API (tm thy trong khu vc [%s] ca ti khon Tip th qua "
-"email ca GoDaddy). Sau y l 3 cch m bn c th p dng  hin th webform trn trang "
-"ca mnh:"
+"Sau khi kích hoạt trình cắm, bạn sẽ có thể lựa chọn và chèn bất kỳ webform "
+"Tiếp thị qua email của GoDaddy nào vào trang của bạn. Cài đặt thật dễ dàng. "
+"Bên dưới, chỉ cần nhập địa chỉ email của tài khoản và khóa API (tìm thấy "
+"trong khu vực [%s] của tài khoản Tiếp thị qua email của GoDaddy). Sau đây là "
+"3 cách mà bạn có thể áp dụng để hiển thị webform trên trang của mình:"
 
 #: includes/settings.php:286
-#, fuzzy
 msgid ""
 "<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
 "your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Widget:</strong> Chuyn n widget Din mo v tm widget c tn l Mu Tip th "
-"qua email ca GoDaddy v ko n vo khu vc widget m bn mun. Sau  bn c th thm tiu  "
-"v chn mu!"
+"<strong>Widget:</strong> Chuyển đến widget Diện mạo và tìm widget có tên là "
+"“Mẫu Tiếp thị qua email của GoDaddy” và kéo nó vào khu vực widget mà bạn "
+"muốn. Sau đó bạn có thể thêm tiêu đề và chọn mẫu!"
 
 #: includes/settings.php:287
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
-"<strong>M ngn:</strong> Bn c th thm mu vo bt k bi ng hoc trang no bng cch "
-"thm m ngn (v d: <code>[gem id=80326]</code>) trong trnh sa trang/bi ng."
+"<strong>Mã ngắn:</strong> Bạn có thể thêm mẫu vào bất kỳ bài đăng hoặc trang "
+"nào bằng cách thêm mã ngắn (ví dụ: <code>[gem id=80326]</code>) trong trình "
+"sửa trang/bài đăng."
 
 #: includes/settings.php:289
 #, php-format
@@ -229,12 +225,12 @@ msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
 msgstr ""
-"<strong>Th mu:</strong> Bn c th thm th mu sau vo bt k trang WordPress no: "
-"<code>%s</code>. V d: <code>%s</code>"
+"<strong>Thẻ mẫu:</strong> Bạn có thể thêm thẻ mẫu sau vào bất kỳ trang "
+"WordPress nào: <code>%s</code>. Ví dụ: <code>%s</code>"
 
 #: includes/settings.php:299
 msgid "For more information:"
-msgstr " bit thm thng tin:"
+msgstr "Để biết thêm thông tin:"
 
 #: includes/settings.php:300
 msgid "GoDaddy"
@@ -242,170 +238,167 @@ msgstr "GoDaddy"
 
 #: includes/settings.php:301
 msgid "GoDaddy Help"
-msgstr "Tr gip GoDaddy"
+msgstr "Trợ giúp GoDaddy"
 
 #: includes/settings.php:302
 msgid "Contact GoDaddy"
-msgstr "Lin h GoDaddy"
+msgstr "Liên hệ GoDaddy"
 
 #: includes/settings.php:327
 msgid "Account Details"
-msgstr "Chi tit ti khon"
+msgstr "Chi tiết tài khoản"
 
 #: includes/settings.php:334
 msgid "Username"
-msgstr ""
+msgstr "Tên người dùng"
 
 #: includes/settings.php:348
 msgid "API Key"
-msgstr ""
+msgstr "Khóa API"
 
 #: includes/settings.php:362
 msgid "Footer Link"
-msgstr ""
+msgstr "Liên kết chân trang"
 
 #: includes/settings.php:369
 msgid "Display \"Powered by GoDaddy\"?"
-msgstr "Hin th \"c GoDaddy cung cp\"?"
+msgstr "Hiển thị \"Được GoDaddy cung cấp\"?"
 
 #: includes/settings.php:376
-#, fuzzy
 msgid "Debugging"
-msgstr "Sa li"
+msgstr "Sửa lỗi"
 
 #: includes/settings.php:383
-#, fuzzy
 msgid "Debug Mode"
-msgstr "Sa li"
+msgstr "Chế độ sửa lỗi"
 
 #: includes/settings.php:390
 msgid "Activated"
-msgstr ""
+msgstr "Đã kích hoạt"
 
 #: includes/settings.php:397
 msgid "Cache Reset"
-msgstr ""
+msgstr "Đã cài lại bộ nhớ đệm"
 
 #: includes/settings.php:403
 msgid "Erase Transients"
-msgstr "Xa d liu tm thi"
+msgstr "Xóa dữ liệu tạm thời"
 
 #: includes/settings.php:404
 msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
 msgstr ""
+"Chỉ xóa sạch dữ liệu được lưu trong bộ nhớ đệm liên kết với trình cắm này và "
+"nên thử làm như vậy trước khi khôi phục cài đặt gốc."
 
 #: includes/settings.php:410
 msgid "Hard Reset"
-msgstr ""
+msgstr "Khôi phục cài đặt gốc"
 
 #: includes/settings.php:416
 msgid "Erase All Data"
-msgstr "Xa tt c d liu"
+msgstr "Xóa tất cả dữ liệu"
 
 #: includes/settings.php:417
 msgid "Purges all saved data associated with this plugin."
-msgstr ""
+msgstr "Xóa sạch toàn bộ dữ liệu được lưu liên kết với trình cắm này."
 
 #: includes/settings.php:511
-#, fuzzy
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience."
-msgstr "Tn hng tri nghim Tip th qua email ca GoDaddy mt cch trc tip."
+msgstr "Tận hưởng trải nghiệm Tiếp thị qua email của GoDaddy."
 
 #: includes/settings.php:513
-#, fuzzy
 msgctxt "header note"
 msgid ""
 "Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
 "set up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
 msgstr ""
-"Thm webform Tip th qua email ca GoDaddy vo trang WordPress! Vi u im d ci t, "
-"trnh cm Tip th qua email ca GoDaddy cho php khch truy cp trang ng k danh sch "
-"email ca bn."
+"Thêm mẫu đăng ký Tiếp thị qua email của GoDaddy vào trang WordPress! Với ưu "
+"điểm dễ cài đặt, trình cắm Tiếp thị qua email của GoDaddy cho phép khách truy "
+"cập trang đăng ký danh sách email của bạn."
 
 #: includes/settings.php:517
 msgctxt "header note"
 msgid "You don't have any forms yet."
-msgstr ""
+msgstr "Bạn chưa có mẫu nào."
 
 #: includes/settings.php:520
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr ""
+msgstr "Bạn mới sử dụng GoDaddy? Tạo một tài khoản để bắt đầu ngay hôm nay. %s "
 
 #: includes/settings.php:520
-#, fuzzy
 msgctxt "header button"
 msgid "Sign Up Now"
-msgstr "ng k ngay"
+msgstr "Đăng ký ngay"
 
 #: includes/settings.php:530
-#, fuzzy
 msgid "Forms"
-msgstr "Mu:"
+msgstr "Các mẫu"
 
 #: includes/settings.php:539
-#, fuzzy
 msgid "Available Signup Forms"
-msgstr "Mu sn c"
+msgstr "Mẫu đăng ký sẵn có"
 
 #: includes/settings.php:543 includes/settings.php:550
 #: includes/settings.php:558
 msgid "Form Name"
-msgstr "Tn mu"
+msgstr "Tên mẫu"
 
 #: includes/settings.php:544 includes/settings.php:551
 #: includes/settings.php:572
 msgid "Form ID"
-msgstr "ID mu"
+msgstr "ID mẫu"
 
 #: includes/settings.php:545 includes/settings.php:552
 #: includes/settings.php:575
 msgid "Shortcode"
-msgstr "M ngn:"
+msgstr "Mã ngắn:"
 
 #: includes/settings.php:562
 msgid "Opens in a new window"
-msgstr "M trong mt ca s mi"
+msgstr "Mở trong một cửa sổ mới"
 
 #: includes/settings.php:562
 msgid "Edit form in GoDaddy Email Marketing"
-msgstr "Sa mu trong Tip th qua email ca GoDaddy"
+msgstr "Sửa mẫu trong Tiếp thị qua email của GoDaddy"
 
 #: includes/settings.php:565
 msgid "Preview"
-msgstr "Xem trc"
+msgstr "Xem trước"
 
 #: includes/settings.php:588
 msgid "Not seeing your form?"
-msgstr "Khng nhn thy mu ca bn?"
+msgstr "Không nhìn thấy mẫu của bạn?"
 
 #: includes/settings.php:607
 msgctxt "save settings button"
 msgid "Save Settings"
-msgstr "Lu ci t"
+msgstr "Lưu cài đặt"
 
 #: includes/settings.php:637
 msgid "Refresh Forms"
-msgstr "Lm mi mu"
+msgstr "Làm mới mẫu"
 
 #: includes/settings.php:644
 msgid "Create a New Signup Form"
-msgstr ""
+msgstr "Tạo một mẫu đăng ký mới"
 
 #: includes/settings.php:651
 msgid "Create a New Campaign"
-msgstr ""
+msgstr "Tạo một chiến dịch mới"
 
 #: includes/settings.php:737
 msgid ""
 "If you are experiencing issues and are unsure of the cause, you may want to "
 "activate debug mode, which displays additional options."
 msgstr ""
+"Nếu bạn gặp trục trặc và không rõ nguyên do, bạn có thể kích hoạt chế độ sửa "
+"lỗi để hiển thị các tùy chọn bổ sung."
 
 #: includes/settings.php:747
 #, php-format
@@ -416,87 +409,48 @@ msgid ""
 "then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
 "account, %2$s."
 msgstr ""
+"Để trình cắm này hoạt động, bạn cần phải truy cập vào tài khoản Tiếp thị qua "
+"email của GoDaddy.  %1$s để lấy tên người dùng và khóa API. Sao chép và dán "
+"chúng vào bên dưới, sau đó nhấp vào \"Lưu cài đặt.\" Nếu bạn không có tài "
+"khoản Tiếp thị qua email của GoDaddy, %2$s"
 
 #: includes/settings.php:747
 msgctxt "account details link"
 msgid "Sign in here"
-msgstr ""
+msgstr "Đăng nhập tại đây"
 
 #: includes/settings.php:747
 msgctxt "account details link"
 msgid "sign up here"
-msgstr ""
+msgstr "đăng ký tại đây"
 
 #: includes/widget.php:21
 msgid "GoDaddy Email Marketing Form"
-msgstr "Mu Tip th qua email ca GoDaddy"
+msgstr "Mẫu Tiếp thị qua email của GoDaddy"
 
 #: includes/widget.php:24
-#, fuzzy
 msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr "Nhng bt k webform Tip th qua email ca GoDaddy vo thanh bn."
+msgstr "Nhúng mẫu đăng ký Tiếp thị qua email của GoDaddy trong thanh bên."
 
 #: includes/widget.php:123
 msgid "Title:"
-msgstr "Tiu :"
+msgstr "Tiêu đề:"
 
 #: includes/widget.php:129
 msgid "Additional Text:"
-msgstr "Vn bn b sung:"
+msgstr "Văn bản bổ sung:"
 
 #: includes/widget.php:138
 msgid "Form:"
-msgstr "Mu:"
+msgstr "Mẫu:"
 
 #: includes/widget.php:151
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
-msgstr "Hy ci t ti khon Tip th qua email ca GoDaddy trong %s."
+msgstr "Hãy cài đặt tài khoản Tiếp thị qua email của GoDaddy trong %s."
 
 #: includes/widget.php:155
 msgid "settings page"
-msgstr "trang ci t"
-
-#~ msgctxt "settings page"
-#~ msgid "Where can I find my API key?"
-#~ msgstr "Ti c th tm kha API  u?"
-
-#~ msgid "Your GoDaddy Email Marketing username (email address)"
-#~ msgstr "Tn ngi dng Tip th qua email ca GoDaddy ca bn (a ch email)"
-
-#~ msgctxt "header note"
-#~ msgid ""
-#~ "Don't have a GoDaddy Email Marketing account? Get one in less than 2 "
-#~ "minutes! %s"
-#~ msgstr ""
-#~ "Bn khng c ti khon Tip th qua email ca GoDaddy? Hy to mt ti khon trong vng "
-#~ "cha n 2 pht! %s"
-
-#, fuzzy
-#~ msgid ""
-#~ "Please enter your GoDaddy Email Marketing username and API Key. Your "
-#~ "credentials will connect WordPress with your GoDaddy Email Marketing "
-#~ "account and display your available forms."
-#~ msgstr ""
-#~ "Hy nhp tn ngi dng Tip th qua email ca GoDaddy v kha API  c th to mu."
-
-#~ msgctxt "ajax response"
-#~ msgid "There was a problem. Please fill all required fields."
-#~ msgstr " xy ra vn . Hy in vo tt c cc trng bt buc:"
-
-#~ msgid "GoDaddy Email Marketing Settings"
-#~ msgstr "Ci t Tip th qua email ca GoDaddy"
-
-#~ msgid "GoDaddy Signup Forms"
-#~ msgstr "Mu ng k ca GoDaddy"
-
-#~ msgid "GoDaddy Email Marketing Username"
-#~ msgstr "Tn ngi dng Tip th qua email ca GoDaddy"
-
-#~ msgid "GoDaddy Email Marketing API Key"
-#~ msgstr "Kha API Tip th qua email ca GoDaddy"
-
-#~ msgid "No forms found"
-#~ msgstr "Khng tm thy mu no"
+msgstr "trang cài đặt"
