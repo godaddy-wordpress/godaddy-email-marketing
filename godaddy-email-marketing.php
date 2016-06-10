@@ -6,6 +6,7 @@
  * Version: 1.1.0
  * Author: GoDaddy
  * Author URI: https://gem.godaddy.com/
+ * License: GPL-2.0
  * Text Domain: godaddy-email-marketing
  * Domain Path: /languages
  *

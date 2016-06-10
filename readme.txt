@@ -4,8 +4,8 @@ Tags: email, forms, godaddy, mailing list, marketing, newsletter, opt-in, signup
 Requires at least: 3.8
 Tested up to: 4.5
 Stable tag: 1.1.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPL-2.0
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Add the GoDaddy Email Marketing plugin to your WordPress site! Easy to set up, the plugin allows your site visitors to subscribe to your email lists.
 
