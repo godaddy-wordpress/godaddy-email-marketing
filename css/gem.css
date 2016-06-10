@@ -35,10 +35,10 @@ form.gem-form label {
 /**
  * Messages
  */
-.gem-error {
+form.gem-form p.gem-error {
 	background-color: #ffebe8;
 	border: 1px solid #c00;
-	padding: 0.5em 1em;
+	padding: .25em .5em;
 	margin: 0.6em 0;
 	border-radius: 3px;
 }

@@ -1,130 +1,189 @@
-#: godaddy-email-marketing.php:201
-msgctxt "ajax response"
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-08 16:09-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: godaddy-email-marketing.php:196
 msgid "Thank you for signing up!"
 msgstr "Kiitos rekisteröitymisestä!"
 
-#: godaddy-email-marketing.php:202
-msgctxt "ajax response"
+#: godaddy-email-marketing.php:197
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr "Kiitos rekisteröitymisestä! Tarkista sähköpostisi ja vahvista tilaus."
 
-#: godaddy-email-marketing.php:203
-msgctxt "ajax response"
+#: godaddy-email-marketing.php:198
 msgid "Oops! There was a problem. Please try again."
 msgstr "Hups! Tapahtui virhe. Yritä uudelleen."
 
-#: godaddy-email-marketing.php:204
-msgctxt "ajax response"
-msgid "There was a problem. Please fill all required fields."
-msgstr "Tapahtui virhe. Täytä kaikki pakolliset kentät."
+#: godaddy-email-marketing.php:199
+msgid "Please enter a valid email address."
+msgstr "Anna kelvollinen sähköpostiosoite."
 
-#: godaddy-email-marketing.php:216
+#: godaddy-email-marketing.php:200
+#, php-format
+msgctxt "Name of required field"
+msgid "%s is a required field."
+msgstr "%s on pakollinen kenttä."
+
+#: godaddy-email-marketing.php:212 includes/settings.php:532
 msgid "Settings"
 msgstr "Asetukset"
 
-#: godaddy-email-marketing.php:251
+#: godaddy-email-marketing.php:248
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "GoDaddy-sähköpostimarkkinointi on melkein valmis."
 
-#: godaddy-email-marketing.php:251
+#: godaddy-email-marketing.php:248
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "Sen toimiminen edellyttää, että annat käyttäjätunnuksesi ja API-avaimen."
 
-#: godaddy-email-marketing.php:252
+#: godaddy-email-marketing.php:249
 msgid "Let's do it!"
 msgstr "Hoidetaan homma!"
 
-#: includes/render.php:59
+#: includes/class-shortcode.php:48 includes/settings.php:61
+msgid "GoDaddy Email Marketing"
+msgstr "GoDaddy-sähköpostimarkkinointi"
+
+#: includes/class-shortcode.php:52
+msgid "Signup Forms"
+msgstr "Rekisteröitymislomakkeet"
+
+#: includes/class-shortcode.php:53
+msgid "Choose one of the available forms."
+msgstr "Valitse jokin käytettävissä olevista lomakkeista."
+
+#: includes/render.php:67
 msgid "Powered by GoDaddy"
 msgstr "Palvelun tarjoaa GoDaddy"
 
-#: includes/render.php:308
+#: includes/render.php:322
 msgid "Month"
 msgstr "Kuukausi"
 
-#: includes/render.php:309
+#: includes/render.php:323
 msgid "January"
 msgstr "Tammikuu"
 
-#: includes/render.php:310
+#: includes/render.php:324
 msgid "Febuary"
 msgstr "Helmikuu"
 
-#: includes/render.php:311
+#: includes/render.php:325
 msgid "March"
 msgstr "Maaliskuu"
 
-#: includes/render.php:312
+#: includes/render.php:326
 msgid "April"
 msgstr "Huhtikuu"
 
-#: includes/render.php:313
+#: includes/render.php:327
 msgid "May"
 msgstr "Toukokuu"
 
-#: includes/render.php:314
+#: includes/render.php:328
 msgid "June"
 msgstr "Kesäkuu"
 
-#: includes/render.php:315
+#: includes/render.php:329
 msgid "July"
 msgstr "Heinäkuu"
 
-#: includes/render.php:316
+#: includes/render.php:330
 msgid "August"
 msgstr "Elokuu"
 
-#: includes/render.php:317
+#: includes/render.php:331
 msgid "September"
 msgstr "Syyskuu"
 
-#: includes/render.php:318
+#: includes/render.php:332
 msgid "October"
 msgstr "Lokakuu"
 
-#: includes/render.php:319
+#: includes/render.php:333
 msgid "November"
 msgstr "Marraskuu"
 
-#: includes/render.php:320
+#: includes/render.php:334
 msgid "December"
 msgstr "Joulukuu"
 
-#: includes/render.php:325
+#: includes/render.php:339
 msgid "Day"
 msgstr "Päivä"
 
-#: includes/render.php:333
+#: includes/render.php:347
 msgid "Year"
 msgstr "Vuosi"
 
-#: includes/settings.php:53 includes/settings.php:284
-msgid "GoDaddy Email Marketing Settings"
-msgstr "GoDaddy-sähköpostimarkkinoinnin asetukset"
+#: includes/settings.php:60 includes/settings.php:504
+msgid "GoDaddy Email Marketing Signup Forms"
+msgstr "GoDaddy-sähköpostimarkkinoinnin rekisteröitymislomakkeet"
 
-#: includes/settings.php:54
-msgid "GoDaddy Signup Forms"
-msgstr "GoDaddy-rekisteröitymislomakkeet"
+#: includes/settings.php:96
+msgctxt "failed copy response"
+msgid "Please press Ctrl/Cmd+C to copy."
+msgstr "Kopioi painamalla Ctrl/Cmd+C."
 
-#: includes/settings.php:102
+#: includes/settings.php:220
+msgid "All data has been removed."
+msgstr "Kaikki tiedot on poistettu."
+
+#: includes/settings.php:224
 msgid "All transients were removed."
 msgstr "Kaikki tilapäiset tiedot poistettiin."
 
-#: includes/settings.php:112
+#: includes/settings.php:228
 msgid "Forms list was successfully updated."
 msgstr "Lomakeluettelo on päivitetty."
 
-#: includes/settings.php:171
+#: includes/settings.php:232
+msgid ""
+"The credentials are incorrect! Please verify that you have entered them "
+"correctly."
+msgstr ""
+"Tunnistetiedot ovat virheelliset! Varmista, että olet antanut ne oikein."
+
+#: includes/settings.php:236
+msgid ""
+"Connection with GoDaddy Email Marketing has been established! You're all set!"
+msgstr ""
+"Yhteys GoDaddy-sähköpostimarkkinointiin on muodostettu. Kaikki on valmista!"
+
+#: includes/settings.php:241
+msgid "Settings have been updated."
+msgstr "Asetukset on päivitetty."
+
+#: includes/settings.php:245
+msgid "Please fill in the username and the API key first."
+msgstr "Anna ensin käyttäjätunnuksesi ja API-avaimesi."
+
+#: includes/settings.php:277
 msgid "Overview"
 msgstr "Yleiskatsaus"
 
-#: includes/settings.php:175
+#: includes/settings.php:281
 msgid "Instructions"
 msgstr "Ohjeet"
 
-#: includes/settings.php:177
+#: includes/settings.php:283
 #, php-format
 msgid ""
 "Once the plugin is activated, you will be able to select and insert any of "
@@ -139,17 +198,17 @@ msgstr ""
 "sähköpostiosoite ja API-avain (löydät ne GoDaddy-sähköpostimarkkinointitilisi "
 "osiosta [%s]). Tässä on 3 tapaa, joita käyttäen voit esittää verkkolomakkeen sivustossasi:"
 
-#: includes/settings.php:180
+#: includes/settings.php:286
 msgid ""
 "<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
-"called GoDaddy Email Marketing Form and drag it into the widget area of your "
-"choice. You can then add a title and select a form!"
+"called “GoDaddy Email Marketing Form” and drag it into the widget area of "
+"your choice. You can then add a title and select a form!"
 msgstr ""
 "<strong>Widget (pienoissovellus):</strong> Siirry kohtaan Ulkoasu &rarr; "
 "Widgetit, etsi widget nimeltä “GoDaddy-sähköpostimarkkinointilomake” ja vedä "
 "se haluamaasi widget-osioon. Tämän jälkeen voit lisätä nimen ja valita lomakkeen!"
 
-#: includes/settings.php:181
+#: includes/settings.php:287
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
@@ -158,7 +217,7 @@ msgstr ""
 "sivulle lisäämällä pikakoodin (esim. <code>[gem id=80326]</code>) sivun tai "
 "viestin editoriin."
 
-#: includes/settings.php:183
+#: includes/settings.php:289
 #, php-format
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
@@ -168,187 +227,230 @@ msgstr ""
 "mallipohjatunnisteen mihin tahansa WordPress-tiedostoon: <code>%s</code>. "
 "Esimerkki: <code>%s</code>"
 
-#: includes/settings.php:193
+#: includes/settings.php:299
 msgid "For more information:"
 msgstr "Lisätietoja:"
 
-#: includes/settings.php:194
+#: includes/settings.php:300
 msgid "GoDaddy"
 msgstr "GoDaddy"
 
-#: includes/settings.php:195
+#: includes/settings.php:301
 msgid "GoDaddy Help"
 msgstr "GoDaddy-ohje"
 
-#: includes/settings.php:196
+#: includes/settings.php:302
 msgid "Contact GoDaddy"
 msgstr "Ota yhteyttä GoDaddyyn"
 
-#: includes/settings.php:222
+#: includes/settings.php:327
 msgid "Account Details"
 msgstr "Tilin tiedot"
 
-#: includes/settings.php:229
-msgid "GoDaddy Email Marketing Username"
-msgstr "GoDaddy-sähköpostimarkkinoinnin käyttäjätunnus"
+#: includes/settings.php:334
+msgid "Username"
+msgstr "Käyttäjätunnus"
 
-#: includes/settings.php:236
-msgid "Your GoDaddy Email Marketing username (email address)"
-msgstr "GoDaddy-sähköpostimarkkinoinnin käyttäjätunnuksesi (sähköpostiosoite)"
+#: includes/settings.php:348
+msgid "API Key"
+msgstr "API-avain"
 
-#: includes/settings.php:243
-msgid "GoDaddy Email Marketing API Key"
-msgstr "GoDaddy-sähköpostimarkkinoinnin API-avain"
+#: includes/settings.php:362
+msgid "Footer Link"
+msgstr "Alatunnisteen linkki"
 
-#: includes/settings.php:250
-msgctxt "settings page"
-msgid "Where can I find my API key?"
-msgstr "Miten löydän API-avaimeni?"
-
-#: includes/settings.php:266
+#: includes/settings.php:369
 msgid "Display \"Powered by GoDaddy\"?"
 msgstr "Näytetäänkö ”Palvelun tarjoaa GoDaddy” -merkintä?"
 
-#: includes/settings.php:290
-msgctxt "gem header note"
-msgid "Enjoy the GoDaddy Email Marketing Experience, first hand."
-msgstr "Nauti GoDaddy-sähköpostimarkkinoinnin tarjoamasta käyttäjäkokemuksesta omakohtaisesti."
+#: includes/settings.php:376
+msgid "Debugging"
+msgstr "Virheenkorjaus"
 
-#: includes/settings.php:292
+#: includes/settings.php:383
+msgid "Debug Mode"
+msgstr "Virheenkorjaustila"
+
+#: includes/settings.php:390
+msgid "Activated"
+msgstr "Aktivoitu"
+
+#: includes/settings.php:397
+msgid "Cache Reset"
+msgstr "Välimuistin nollaus"
+
+#: includes/settings.php:403
+msgid "Erase Transients"
+msgstr "Poista tilapäiset tiedot"
+
+#: includes/settings.php:404
+msgid ""
+"Purges only the cached data associated with this plugin, and should be "
+"attempted before a hard reset."
+msgstr ""
+"Tyhjentää vain välimuistiin tallennetut tähän laajennukseen liittyvät tiedot. "
+"Tätä kannattaa yrittää ennen laitekäynnistystä."
+
+#: includes/settings.php:410
+msgid "Hard Reset"
+msgstr "Laitekäynnistys"
+
+#: includes/settings.php:416
+msgid "Erase All Data"
+msgstr "Poista kaikki tiedot"
+
+#: includes/settings.php:417
+msgid "Purges all saved data associated with this plugin."
+msgstr "Tyhjentää kaikki tähän laajennukseen liittyvät tiedot"
+
+#: includes/settings.php:511
+msgctxt "gem header note"
+msgid "Enjoy the GoDaddy Email Marketing Experience."
+msgstr "Nauti GoDaddy-sähköpostimarkkinoinnin tarjoamasta käyttäjäkokemuksesta."
+
+#: includes/settings.php:513
 msgctxt "header note"
 msgid ""
-"Add your GoDaddy Email Marketing webform to your WordPress site! Easy to set "
-"up, the GoDaddy Email Marketing plugin allows your site visitors to "
+"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
+"set up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
 msgstr ""
-"Lisää GoDaddy-sähköpostimarkkinoinnin verkkolomake WordPress-sivustoosi! "
-"Helposti asennettavan GoDaddy-sähköpostimarkkinointilaajennuksen avulla "
-"sivustosi vierailijat voivat ryhtyä postituslistasi tilaajiksi."
+"Lisää GoDaddy-sähköpostimarkkinoinnin rekisteröitymislomake "
+"WordPress-sivustoosi! Helposti asennettavan "
+"GoDaddy-sähköpostimarkkinointilaajennuksen avulla sivustosi vierailijat "
+"voivat ryhtyä postituslistasi tilaajiksi."
 
-#: includes/settings.php:293
+#: includes/settings.php:517
+msgctxt "header note"
+msgid "You don't have any forms yet."
+msgstr "Sinulla ei vielä ole mitään lomakkeita."
+
+#: includes/settings.php:520
 #, php-format
-msgctxt "header note"
-msgid ""
-"Don't have a GoDaddy Email Marketing account? Get one in less than 2 "
-"minutes! %s"
-msgstr ""
-"Eikö sinulla ole GoDaddy-sähköpostimarkkinoinnin tiliä? Hanki tili alle 2 "
-"minuutissa! %s"
+msgctxt "Sign up button"
+msgid "New to GoDaddy? Create an account to get started today. %s"
+msgstr "Oletko vasta tutustumassa GoDaddyyn? Luo tili ja aloita käyttö jo tänään. %s "
 
-#: includes/settings.php:293
-msgctxt "header note"
+#: includes/settings.php:520
+msgctxt "header button"
 msgid "Sign Up Now"
 msgstr "Rekisteröidy nyt"
 
-#: includes/settings.php:305
+#: includes/settings.php:530
+msgid "Forms"
+msgstr "Lomakkeet"
+
+#: includes/settings.php:539
+msgid "Available Signup Forms"
+msgstr "Käytettävissä olevat rekisteröitymislomakkeet"
+
+#: includes/settings.php:543 includes/settings.php:550
+#: includes/settings.php:558
+msgid "Form Name"
+msgstr "Lomakkeen nimi"
+
+#: includes/settings.php:544 includes/settings.php:551
+#: includes/settings.php:572
+msgid "Form ID"
+msgstr "Lomaketunnus"
+
+#: includes/settings.php:545 includes/settings.php:552
+#: includes/settings.php:575
+msgid "Shortcode"
+msgstr "Pikakoodi"
+
+#: includes/settings.php:562
+msgid "Opens in a new window"
+msgstr "Avautuu uuteen ikkunaan"
+
+#: includes/settings.php:562
+msgid "Edit form in GoDaddy Email Marketing"
+msgstr "Muokkaa lomaketta GoDaddy-sähköpostimarkkinoinnissa"
+
+#: includes/settings.php:565
+msgid "Preview"
+msgstr "Esikatselu"
+
+#: includes/settings.php:588
+msgid "Not seeing your form?"
+msgstr "Etkö näe omaa lomakettasi?"
+
+#: includes/settings.php:607
 msgctxt "save settings button"
 msgid "Save Settings"
 msgstr "Tallenna asetukset"
 
-#: includes/settings.php:307
-msgid "Available Forms"
-msgstr "Käytettävissä olevat lomakkeet"
-
-#: includes/settings.php:313 includes/settings.php:321
-msgid "Form Name"
-msgstr "Lomakkeen nimi"
-
-#: includes/settings.php:314 includes/settings.php:322
-msgid "Form ID"
-msgstr "Lomaketunnus"
-
-#: includes/settings.php:315 includes/settings.php:323
-msgid "Shortcode"
-msgstr "Pikakoodi"
-
-#: includes/settings.php:349
-msgid "Opens in a new window"
-msgstr "Avautuu uuteen ikkunaan"
-
-#: includes/settings.php:349
-msgid "Edit form in GoDaddy Email Marketing"
-msgstr "Muokkaa lomaketta GoDaddy-sähköpostimarkkinoinnissa"
-
-#: includes/settings.php:352
-msgid "Preview"
-msgstr "Esikatselu"
-
-#: includes/settings.php:366
-msgid "No forms found"
-msgstr "Lomakkeita ei löytynyt"
-
-#: includes/settings.php:377
-msgid "Not seeing your form?"
-msgstr "Etkö näe omaa lomakettasi?"
-
-#: includes/settings.php:377
+#: includes/settings.php:637
 msgid "Refresh Forms"
 msgstr "Virkistä lomakkeet"
 
-#: includes/settings.php:382
-msgid "Debug"
-msgstr "Virheenkorjaus"
+#: includes/settings.php:644
+msgid "Create a New Signup Form"
+msgstr "Luo uusi rekisteröitymislomake"
 
-#: includes/settings.php:384
-msgid "Erase All Data"
-msgstr "Poista kaikki tiedot"
+#: includes/settings.php:651
+msgid "Create a New Campaign"
+msgstr "Luo uusi kampanja"
 
-#: includes/settings.php:385
-msgid "Erase Transients"
-msgstr "Poista tilapäiset tiedot"
-
-#: includes/settings.php:413
+#: includes/settings.php:737
 msgid ""
-"The credentials are incorrect! Please verify that you have entered them "
-"correctly."
+"If you are experiencing issues and are unsure of the cause, you may want to "
+"activate debug mode, which displays additional options."
 msgstr ""
-"Tunnistetiedot ovat virheelliset! Varmista, että olet antanut ne oikein."
+"Jos käytössä on ongelmia etkä tiedä, mistä ne johtuvat, sinun kannattaa ehkä "
+"aktivoida virheenkorjaustila. Se näyttää lisää vaihtoehtoja."
 
-#: includes/settings.php:420
+#: includes/settings.php:747
+#, php-format
+msgctxt "1. Sign-in link, 2. Sign-up link"
 msgid ""
-"Connection with GoDaddy Email Marketing has been established! You're all set!"
+"For this plugin to work, it needs to access your GoDaddy Email Marketing "
+"account. %1$s to get your username and API key. Copy and paste them below; "
+"then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
+"account, %2$s."
 msgstr ""
-"Yhteys GoDaddy-sähköpostimarkkinointiin on muodostettu. Kaikki on valmista!"
+"Jotta tämä laajennus toimisi, sen on pystyttävä käyttämään "
+"GoDaddy-sähköpostimarkkinointitiliäsi.  %1$s ja hae käyttäjätunnuksesi ja "
+"API-avaimesi. Kopioi ja liitä ne alle. Napsauta sitten ”Tallenna asetukset”. "
+"Jos sinulla ei ole GoDaddy-sähköpostimarkkinointitiliä, %2$s."
 
-#: includes/settings.php:426
-msgid "Please fill in the username and the API key first."
-msgstr "Anna ensin käyttäjätunnuksesi ja API-avaimesi."
+#: includes/settings.php:747
+msgctxt "account details link"
+msgid "Sign in here"
+msgstr "Kirjaudu sisään täällä"
 
-#: includes/settings.php:447
-msgid ""
-"Please enter your GoDaddy Email Marketing username and API Key in order to "
-"be able to create forms."
-msgstr ""
-"Anna GoDaddy-sähköpostimarkkinoinnin käyttäjätunnuksesi sekä API-avain, jotta "
-"voit luoda lomakkeita."
+#: includes/settings.php:747
+msgctxt "account details link"
+msgid "sign up here"
+msgstr "rekisteröidy täällä"
 
-#: includes/widget.php:21 includes/widget.php:41
+#: includes/widget.php:21
 msgid "GoDaddy Email Marketing Form"
 msgstr "GoDaddy-sähköpostimarkkinoinnin lomake"
 
 #: includes/widget.php:24
 msgctxt "widget description"
-msgid "Embed any GoDaddy Email Marketing webform in your sidebar."
-msgstr "Upota mikä tahansa GoDaddy-sähköpostimarkkinoinnin verkkolomake sivupalkkiisi."
+msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
+msgstr "Upota GoDaddy-sähköpostimarkkinoinnin rekisteröitymislomakkeet sivupalkkiin."
 
-#: includes/widget.php:97
+#: includes/widget.php:123
 msgid "Title:"
 msgstr "Otsikko:"
 
-#: includes/widget.php:103
+#: includes/widget.php:129
 msgid "Additional Text:"
 msgstr "Lisäteksti:"
 
-#: includes/widget.php:112
+#: includes/widget.php:138
 msgid "Form:"
 msgstr "Lomake:"
 
-#: includes/widget.php:125
+#: includes/widget.php:151
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "Määritä GoDaddy-sähköpostimarkkinointitilisi %s."
 
-#: includes/widget.php:129
+#: includes/widget.php:155
 msgid "settings page"
 msgstr "asetukset-sivulla"

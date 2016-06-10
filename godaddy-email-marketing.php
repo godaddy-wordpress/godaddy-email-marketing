@@ -3,7 +3,7 @@
  * Plugin Name: GoDaddy Email Marketing Signup Forms
  * Plugin URI: https://gem.godaddy.com/
  * Description: Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to set up, the plugin allows your site visitors to subscribe to your email lists.
- * Version: 1.0.6
+ * Version: 1.1.0
  * Author: GoDaddy
  * Author URI: https://gem.godaddy.com/
  * Text Domain: godaddy-email-marketing
@@ -103,7 +103,7 @@ class GEM_Official {
 
 		// Plugin's main directory.
 		defined( 'GEM_VERSION' )
-			or define( 'GEM_VERSION', '1.0.6' );
+			or define( 'GEM_VERSION', '1.1.0' );
 
 		// Set up the base name.
 		isset( self::$basename ) || self::$basename = plugin_basename( __FILE__ );
@@ -146,7 +146,7 @@ class GEM_Official {
 	public function init() {
 
 		// Enable debug mode?
-		$this->debug = (bool) apply_filters( 'gem_debug', false );
+		$this->debug = GEM_Settings_Controls::get_option( 'debug' );
 
 		// Initialize settings.
 		if ( is_admin() ) {
@@ -161,10 +161,14 @@ class GEM_Official {
 	 * Registers the shortcode.
 	 */
 	public function register_shortcode() {
+		$shortcode = new GEM_Shortcode();
 
 		// Register shortcode.
-		add_shortcode( 'gem', array( 'GEM_Shortcode', 'render' ) );
-		add_shortcode( 'GEM', array( 'GEM_Shortcode', 'render' ) );
+		add_shortcode( 'gem', array( $shortcode, 'render' ) );
+		add_shortcode( 'GEM', array( $shortcode, 'render' ) );
+
+		// Register the Shortcake UI.
+		add_action( 'register_shortcode_ui', array( $shortcode, 'shortcode_ui' ) );
 	}
 
 	/**
@@ -184,24 +188,16 @@ class GEM_Official {
 		// Main JavaScript file.
 		wp_enqueue_script( 'gem-main', plugins_url( "js/gem{$suffix}.js", __FILE__ ), array( 'jquery' ), GEM_VERSION, true );
 
-		// Datepicker JavaScript file.
-		wp_enqueue_script( 'function', plugins_url( "js/function{$suffix}.js", __FILE__ ), array( 'jquery' ), GEM_VERSION, true );
-
-		// JQuery-ui.
-		wp_enqueue_script( 'jquery-ui', '//code.jquery.com/ui/1.11.4/jquery-ui.js', array( 'jquery' ), '1.11.4' );
-
 		// Assistance CSS.
 		wp_enqueue_style( 'gem-base', plugins_url( "css/gem{$suffix}.css", __FILE__ ), false, GEM_VERSION );
 
-		// Datepicker CSS.
-		wp_enqueue_style( 'jquery-ui', plugins_url( "css/jquery-ui{$suffix}.css", __FILE__ ), true, GEM_VERSION );
-
 		// Help strings.
 		wp_localize_script( 'gem-main', 'GEM', array(
-			'thankyou'            => _x( 'Thank you for signing up!', 'ajax response', 'godaddy-email-marketing' ),
-			'thankyou_suppressed' => _x( 'Thank you for signing up! Please check your email to confirm your subscription.', 'ajax response', 'godaddy-email-marketing' ),
-			'oops'                => _x( 'Oops! There was a problem. Please try again.', 'ajax response', 'godaddy-email-marketing' ),
-			'fix'                 => _x( 'There was a problem. Please fill all required fields.', 'ajax response', 'godaddy-email-marketing' ),
+			'thankyou' => __( 'Thank you for signing up!', 'godaddy-email-marketing' ),
+			'thankyou_suppressed' => __( 'Thank you for signing up! Please check your email to confirm your subscription.', 'godaddy-email-marketing' ),
+			'oops' => __( 'Oops! There was a problem. Please try again.', 'godaddy-email-marketing' ),
+			'email' => __( 'Please enter a valid email address.', 'godaddy-email-marketing' ),
+			'required' => _x( '%s is a required field.', 'Name of required field', 'godaddy-email-marketing' ),
 		) );
 	}
 
@@ -242,8 +238,9 @@ class GEM_Official {
 		}
 
 		$version = get_option( 'gem-version' );
+		$settings = get_option( 'gem-settings' );
 
-		if ( ! $version ) {
+		if ( ! $version && ( empty( $settings['username'] ) || empty( $settings['api-key'] ) ) ) {
 			update_option( 'gem-version', GEM_VERSION ); ?>
 
 			<div class="updated fade">

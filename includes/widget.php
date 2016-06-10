@@ -15,13 +15,13 @@ class GEM_Form_Widget extends WP_Widget {
 	/**
 	 * Sets up a new GoDaddy Email Marketing widget instance.
 	 */
-	function __construct() {
+	public function __construct() {
 		parent::__construct(
 			'gem-form',
 			__( 'GoDaddy Email Marketing Form', 'godaddy-email-marketing' ),
 			array(
 				'classname'   => 'gem-form',
-				'description' => _x( 'Embed any GoDaddy Email Marketing webform in your sidebar.', 'widget description', 'godaddy-email-marketing' ),
+				'description' => _x( 'Embed GoDaddy Email Marketing signup forms in the sidebar.', 'widget description', 'godaddy-email-marketing' ),
 			)
 		);
 
@@ -37,8 +37,26 @@ class GEM_Form_Widget extends WP_Widget {
 	 *                        'before_widget', and 'after_widget'.
 	 * @param array $instance Settings for the current Custom Menu widget instance.
 	 */
-	function widget( $args, $instance ) {
-		$title   = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'GoDaddy Email Marketing Form', 'godaddy-email-marketing' ) : $instance['title'], $instance, $this->id_base );
+	public function widget( $args, $instance ) {
+
+		// Set the initial form ID value if one exists.
+		if ( empty( $instance['form'] ) ) {
+			$forms = GEM_Dispatcher::get_forms();
+			$valid_creds = (bool) get_option( 'gem-valid-creds' );
+
+			// Create a default form.
+			if ( empty( $forms->signups ) && $valid_creds ) { // @codeCoverageIgnoreStart
+				GEM_Dispatcher::add_default_form();
+				$forms = GEM_Dispatcher::fetch_forms( GEM_Settings_Controls::get_option( 'username' ) );
+			}
+			// @codeCoverageIgnoreEnd
+
+			if ( ! empty( $forms->signups ) ) {
+				$instance['form'] = $forms->signups[0]->id;
+			}
+		}
+
+		$title   = apply_filters( 'widget_title', ! empty( $instance['title'] ) ? $instance['title'] : '', $instance, $this->id_base );
 		$text    = empty( $instance['text'] ) ? '' : $instance['text'];
 		$form_id = empty( $instance['form'] ) ? false : $instance['form'];
 
@@ -66,7 +84,7 @@ class GEM_Form_Widget extends WP_Widget {
 	 * @param array $old_instance Old settings for this instance.
 	 * @return array Updated settings to save.
 	 */
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
 		$instance['title'] = strip_tags( $new_instance['title'] );
@@ -81,7 +99,7 @@ class GEM_Form_Widget extends WP_Widget {
 	 *
 	 * @param array $instance Current settings.
 	 */
-	function form( $instance ) {
+	public function form( $instance ) {
 
 		// Set defaults.
 		$instance = wp_parse_args( (array) $instance, array(
@@ -91,6 +109,14 @@ class GEM_Form_Widget extends WP_Widget {
 		) );
 
 		$forms = GEM_Dispatcher::get_forms();
+		$valid_creds = (bool) get_option( 'gem-valid-creds' );
+
+		// Create a default form.
+		if ( empty( $forms->signups ) && $valid_creds ) { // @codeCoverageIgnoreStart
+			GEM_Dispatcher::add_default_form();
+			$forms = GEM_Dispatcher::fetch_forms( GEM_Settings_Controls::get_option( 'username' ) );
+		}
+		// @codeCoverageIgnoreEnd
 		?>
 
 		<p>
@@ -111,10 +137,10 @@ class GEM_Form_Widget extends WP_Widget {
 
 				<label for="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>"><?php esc_html_e( 'Form:', 'godaddy-email-marketing' ); ?></label>
 				<br/>
-				<select name="<?php echo esc_attr( $this->get_field_name( 'form' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>" class="widefat">
+				<select name="<?php echo esc_attr( $this->get_field_name( 'form' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>" class="widefat" value="<?php echo esc_attr( $instance['form'] ) ?>">
 
-					<?php foreach ( $forms->signups as $f ) : ?>
-						<option value="<?php echo esc_attr( $f->id ); ?>" <?php selected( $instance['form'], $f->id ); ?>><?php echo esc_html( $f->name ); ?></option>
+					<?php foreach ( $forms->signups as $form ) : ?>
+						<option value="<?php echo esc_attr( $form->id ); ?>" <?php selected( $instance['form'], $form->id ); ?>><?php echo esc_html( $form->name ); ?></option>
 					<?php endforeach; ?>
 
 				</select>

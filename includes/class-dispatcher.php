@@ -17,7 +17,14 @@ class GEM_Dispatcher {
 	 *
 	 * @var string
 	 */
-	const BASE_API = 'http://api.madmimi.com/';
+	const BASE_API = 'https://gem.godaddy.com/';
+
+	/**
+	 * Transient expiration (1 day in seconds)
+	 *
+	 * @var int
+	 */
+	const EXPIRATION = 86400;
 
 	/**
 	 * HTTP response codes
@@ -57,11 +64,46 @@ class GEM_Dispatcher {
 			return false;
 		}
 
-		// @todo should we cache for *always* since we have a button to clear the cache?
-		// Maybe having an expiration on such a thing can bloat wp_options?
-		set_transient( 'gem-' . $username . '-lists', $data = json_decode( wp_remote_retrieve_body( $response ) ), defined( DAY_IN_SECONDS ) ? DAY_IN_SECONDS : 60 * 60 * 24 );
+		$data = json_decode( wp_remote_retrieve_body( $response ) );
+		set_transient( 'gem-' . $username . '-lists', $data, self::EXPIRATION );
 
 		return $data;
+	}
+
+	/**
+	 * Add a default form.
+	 *
+	 * @param string $username The username.
+	 * @return false|array The form fields array or false.
+	 */
+	public static function add_default_form() {
+		$username = GEM_Settings_Controls::get_option( 'username' );
+		$api_key = GEM_Settings_Controls::get_option( 'api-key' );
+
+		if ( ! ( $username || $api_key ) ) {
+			return false;
+		}
+
+		// Prepare the URL that includes our credentials.
+		$response = wp_remote_post( self::BASE_API . 'api/v3/signupForms', array(
+			'method' => 'POST',
+			'timeout' => 10,
+			'body' => array(
+				'username' => $username,
+				'api_key' => $api_key,
+				'name' => 'Signup Form',
+				'integration' => 'WordPress',
+				'hidden' => false,
+				'subscriberListName' => 'WordPress',
+			),
+		) );
+
+		// Credentials are correct.
+		if ( self::is_response_ok( $response ) ) {
+			return true;
+		}
+
+		return false;
 	}
 
 	/**
@@ -74,7 +116,7 @@ class GEM_Dispatcher {
 		$username = $username ? $username : GEM_Settings_Controls::get_option( 'username' );
 		$api_key = GEM_Settings_Controls::get_option( 'api-key' );
 
-		if ( empty( $api_key ) ) {
+		if ( ! ( $username && $api_key ) ) {
 			return false;
 		}
 
@@ -92,23 +134,23 @@ class GEM_Dispatcher {
 	 * @return false|object The form fields JSON object or false.
 	 */
 	public static function get_fields( $form_id ) {
-		if ( false === ( $fields = get_transient( 'gem-form-' . $form_id ) ) ) {
+		if ( false === ( $data = get_transient( 'gem-form-' . $form_id ) ) ) {
 
 			// Fields are not cached. fetch and cache.
-			$fields = wp_remote_get( self::get_method_url( 'fields', array(
+			$response = wp_remote_get( self::get_method_url( 'fields', array(
 				'id' => $form_id,
 			) ) );
 
 			// Was there an error, connection is down? bail and try again later.
-			if ( ! self::is_response_ok( $fields ) ) {
+			if ( ! self::is_response_ok( $response ) ) {
 				return false;
 			}
 
-			// @todo should we cache results for longer than a day? not expire at all?
-			set_transient( 'gem-form-' . $form_id, $fields = json_decode( wp_remote_retrieve_body( $fields ) ) );
+			$data = json_decode( wp_remote_retrieve_body( $response ) );
+			set_transient( 'gem-form-' . $form_id, $data, self::EXPIRATION );
 		}
 
-		return $fields;
+		return $data;
 	}
 
 	/**
@@ -125,44 +167,27 @@ class GEM_Dispatcher {
 		}
 
 		if ( false === ( $data = get_transient( 'gem-' . $username . '-account' ) ) ) {
-			$data = wp_remote_get( self::get_method_url( 'account' ) );
+			$data = false;
+			$request = wp_remote_get( self::get_method_url( 'account' ) );
 
 			// If the request has failed for whatever reason.
-			if ( ! self::is_response_ok( $data ) ) {
+			if ( ! self::is_response_ok( $request ) ) {
 				return false;
 			}
 
-			$data = json_decode( wp_remote_retrieve_body( $data ) );
-			$data = $data->result;
+			$body = json_decode( wp_remote_retrieve_body( $request ) );
+
+			if ( isset( $body->result ) ) {
+				$data = $body->result;
+			}
 
 			// No need to expire at all.
-			set_transient( 'gem-' . $username . '-account', $data );
+			if ( $data ) {
+				set_transient( 'gem-' . $username . '-account', $data );
+			}
 		}
 
 		return $data;
-	}
-
-	/**
-	 * Gets the sign in redirect URL.
-	 *
-	 * @return false|string The URL if sign in is successful or false.
-	 */
-	public static function user_sign_in() {
-
-		// Prepare the URL that includes our credentials.
-		$response = wp_remote_get( self::get_method_url( 'signin', false ), array(
-			'timeout' => 10,
-		) );
-
-		// Credentials are incorrect.
-		if ( ! in_array( wp_remote_retrieve_response_code( $response ), self::$ok_codes ) ) {
-			return false;
-		}
-
-		// Retrieve the token.
-		return self::get_method_url( 'signin_redirect', array(
-			'token' => wp_remote_retrieve_body( $response ),
-		) );
 	}
 
 	/**
@@ -193,15 +218,6 @@ class GEM_Dispatcher {
 			case 'account' :
 				$path = add_query_arg( $auth, 'user/account_status' );
 				break;
-			case 'signin' :
-				$path = add_query_arg( $auth, 'sessions/single_signon_token' );
-				break;
-			case 'signin_redirect' :
-				$path = add_query_arg( array(
-					'token'    => $params['token'],
-					'username' => $auth['username'],
-				), 'sessions/single_signon' );
-				break;
 		}
 
 		return self::BASE_API . $path;
@@ -210,12 +226,10 @@ class GEM_Dispatcher {
 	/**
 	 * Check for an OK response.
 	 *
-	 * @todo Does this really need to be by reference?
-	 *
 	 * @param array $request HTTP response by reference.
 	 * @return bool
 	 */
-	public static function is_response_ok( &$request ) {
+	public static function is_response_ok( $request ) {
 		return ( ! is_wp_error( $request ) && in_array( wp_remote_retrieve_response_code( $request ), self::$ok_codes ) );
 	}
 }

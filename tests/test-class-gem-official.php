@@ -1,4 +1,9 @@
 <?php
+/**
+ * Test GEM.
+ *
+ * @group gem
+ */
 class Test_GEM_Official extends WP_UnitTestCase {
 
 	/**
@@ -14,27 +19,47 @@ class Test_GEM_Official extends WP_UnitTestCase {
 	protected $plugin_file_path;
 
 	/**
-	 * PHP unit setup function
+	 * Setup.
 	 *
-	 * @return void
+	 * @inheritdoc
 	 */
-	function setUp() {
+	public function setUp() {
 		parent::setUp();
 		$this->plugin_file_path = $GLOBALS['_plugin_file'];
 		$this->instance = GEM_Official::instance();
 	}
 
+	/**
+	 * Filter to set the locale manually.
+	 */
+	public function locale( $locale ) {
+		return 'es_ES';
+	}
+
+	/**
+	 * Test that both GEM_Official & gem() exist.
+	 */
 	public function test_basics() {
 		$this->assertTrue( class_exists( 'GEM_Official', false ) );
 		$this->assertTrue( function_exists( 'gem' ) );
 	}
 
+	/**
+	 * Test instance.
+	 *
+	 * @see GEM_Official::instance()
+	 */
 	public function test_instance() {
 		$this->assertInstanceOf( 'GEM_Official', $this->instance );
 		$instance_second = GEM_Official::instance();
 		$this->assertSame( $this->instance, $instance_second );
 	}
 
+	/**
+	 * Test actions & filters.
+	 *
+	 * @see GEM_Official::setup_actions()
+	 */
 	public function test_setup_actions() {
 		global $wp_filter;
 
@@ -47,6 +72,11 @@ class Test_GEM_Official extends WP_UnitTestCase {
 		$this->assertArrayHasKey( 'deactivate_' . plugin_basename( $this->plugin_file_path ), $wp_filter );
 	}
 
+	/**
+	 * Test constants.
+	 *
+	 * @see GEM_Official::setup_constants()
+	 */
 	public function test_setup_constants() {
 		$this->assertTrue( defined( 'GEM_PLUGIN_DIR' ) );
 		$this->assertTrue( defined( 'GEM_PLUGIN_URL' ) );
@@ -60,6 +90,11 @@ class Test_GEM_Official extends WP_UnitTestCase {
 		$this->assertEquals( GEM_VERSION, $plugin_data['Version'] );
 	}
 
+	/**
+	 * Test requirements.
+	 *
+	 * @see GEM_Official::requirements()
+	 */
 	public function test_requirements() {
 		$this->assertTrue( class_exists( 'GEM_Dispatcher', false ) );
 		$this->assertTrue( class_exists( 'GEM_Shortcode', false ) );
@@ -70,6 +105,11 @@ class Test_GEM_Official extends WP_UnitTestCase {
 		$this->assertTrue( class_exists( 'GEM_Form_Widget', false ) );
 	}
 
+	/**
+	 * Test init.
+	 *
+	 * @see GEM_Official::init()
+	 */
 	public function test_init() {
 		global $wp_filter;
 
@@ -84,6 +124,11 @@ class Test_GEM_Official extends WP_UnitTestCase {
 		$this->assertInstanceOf( 'GEM_Settings', $second_instance->settings );
 	}
 
+	/**
+	 * Test i18n.
+	 *
+	 * @see GEM_Official::i18n()
+	 */
 	public function test_i18n() {
 		unload_textdomain( 'godaddy-email-marketing' );
 		$this->assertFalse( is_textdomain_loaded( 'godaddy-email-marketing' ) );
@@ -98,12 +143,10 @@ class Test_GEM_Official extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Filter to set the locale manually.
+	 * Test register shortcode.
+	 *
+	 * @see GEM_Official::register_shortcode()
 	 */
-	public function locale( $locale ) {
-		return 'es_ES';
-	}
-
 	public function test_register_shortcode() {
 		global $shortcode_tags;
 
@@ -111,12 +154,18 @@ class Test_GEM_Official extends WP_UnitTestCase {
 		$this->assertArrayHasKey( 'gem', $shortcode_tags );
 		$this->assertArrayHasKey( 'GEM', $shortcode_tags );
 
-		$this->assertEquals( $shortcode_tags['gem'], array( 'GEM_Shortcode', 'render' ) );
-		$this->assertEquals( $shortcode_tags['GEM'], array( 'GEM_Shortcode', 'render' ) );
+		$shortcode = new GEM_Shortcode();
+		$this->assertEquals( $shortcode_tags['gem'], array( $shortcode, 'render' ) );
+		$this->assertEquals( $shortcode_tags['GEM'], array( $shortcode, 'render' ) );
 		$this->assertTrue( has_shortcode( 'This is a blob with [gem id=123] in it', 'gem' ) );
 		$this->assertTrue( has_shortcode( 'This is a blob with [GEM] in it', 'GEM' ) );
 	}
 
+	/**
+	 * Test register widget.
+	 *
+	 * @see GEM_Official::register_widget()
+	 */
 	public function test_register_widget() {
 		global $wp_widget_factory;
 
@@ -125,19 +174,26 @@ class Test_GEM_Official extends WP_UnitTestCase {
 		$this->assertInstanceOf( 'GEM_Form_Widget', $wp_widget_factory->widgets['GEM_Form_Widget'] );
 	}
 
+	/**
+	 * Test scripts & styles are enqueued.
+	 *
+	 * @see GEM_Official::enqueue()
+	 */
 	public function test_enqueue() {
 		$this->instance->enqueue();
 		$this->assertTrue( wp_script_is( 'gem-main','queue' ) );
-		$this->assertTrue( wp_script_is( 'function', 'queue' ) );
-		$this->assertTrue( wp_script_is( 'jquery-ui', 'queue' ) );
 		$this->assertTrue( wp_style_is( 'gem-base', 'registered' ) );
-		$this->assertTrue( wp_style_is( 'jquery-ui', 'registered' ) );
 	}
 
+	/**
+	 * Test action links.
+	 *
+	 * @see GEM_Official::action_links()
+	 */
 	public function test_action_links() {
 		global $_parent_pages;
 
-		$_parent_pages['gem-settings'] = 'settings_slug';
+		$_parent_pages[ GEM_Settings::SLUG ] = 'settings_slug';
 
 		$sample_array = array( 'the_key' => 'the_value' );
 		$actual_result = $this->instance->action_links( $sample_array );
@@ -148,10 +204,20 @@ class Test_GEM_Official extends WP_UnitTestCase {
 		$this->assertEquals( '<a href="http://example.org/wp-admin/settings_slug?page=gem-settings">Settings</a>', $actual_result['settings'] );
 	}
 
+	/**
+	 * Test activate.
+	 *
+	 * @see GEM_Official::activate()
+	 */
 	public function test_activate() {
 		// nothing to test
 	}
 
+	/**
+	 * Test deactivate.
+	 *
+	 * @see GEM_Official::deactivate()
+	 */
 	public function test_deactivate() {
 		update_option( 'gem-version', 'test_version' );
 
@@ -159,6 +225,11 @@ class Test_GEM_Official extends WP_UnitTestCase {
 		$this->assertNull( get_option( 'gem-version', null ) );
 	}
 
+	/**
+	 * Test admin notices.
+	 *
+	 * @see GEM_Official::action_admin_notices()
+	 */
 	public function test_action_admin_notices() {
 		global $current_screen;
 

@@ -1,41 +1,23 @@
 <?php
+/**
+ * Test Widget.
+ *
+ * @group widget
+ */
 class Test_GEM_Form_Widget extends WP_UnitTestCase {
 
 	/**
-	 * Load WP_Http_Mock_Transport
+	 * Test that GEM_Form_Widget exists.
 	 */
-	public static function setUpBeforeClass() {
-		require_once( 'mock-transport.php' );
-	}
-
-	/**
-	 * PHP unit setup function
-	 *
-	 * @return void
-	 */
-	public function setUp() {
-		parent::setUp();
-
-		WP_Http_Mock_Transport::$test_class = $this;
-		WP_Http_Mock_Transport::$expected_url = null;
-		add_action( 'http_api_transports', array( $this, 'get_transports' ) );
-	}
-
-	public function tearDown() {
-		parent::tearDown();
-
-		remove_action( 'http_api_transports', array( $this, 'get_transports' ) );
-		WP_Http_Mock_Transport::$test_class = null;
-	}
-
-	public function get_transports() {
-		return array( 'Mock_Transport' );
-	}
-
 	public function test_basics() {
 		$this->assertTrue( class_exists( 'GEM_Form_Widget', false ) );
 	}
 
+	/**
+	 * Test constructor.
+	 *
+	 * @see GEM_Form_Widget::__construct()
+	 */
 	public function test_construct() {
 		$instance = new GEM_Form_Widget();
 		$this->assertEquals( 10, has_action( 'gem_widget_text', 'wpautop' ) );
@@ -47,35 +29,16 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$this->assertEquals( 'widget_gem-form', $instance->option_name );
 	}
 
+	/**
+	 * Test widget output.
+	 *
+	 * @see GEM_Form_Widget::widget()
+	 */
 	public function test_widget() {
-		$sample_data = array(
-			'fields' => array(
-				'field_a' => array(
-					'type' => 'string',
-					'field_type' => 'string',
-					'name' => 'the_name_a',
-					'required' => false,
-					'display' => 'text_a',
-				),
-				'field_b' => array(
-					'type' => 'checkbox',
-					'field_type' => 'checkbox',
-					'required' => true,
-					'name' => 'the_name_b',
-					'value' => 'the_value',
-					'display' => 'text_b',
-				),
-			),
-			'submit' => 'the_url',
-			'id' => 'the_id',
-			'button_text' => 'button_text',
-		);
-		WP_Http_Mock_Transport::$response = array(
-			'response' => array(
-				'code' => 200,
-			),
-			'body' => json_encode( $sample_data ),
-		);
+		GEM_Settings_Controls::update_option( 'username', 'user_name' );
+		GEM_Settings_Controls::update_option( 'api-key', '1234' );
+		set_transient( 'gem-form-123', json_decode( '{"id":123,"name":"Signup Form","fields":{"field_a":{"type":"string","field_type":"string","name":"the_name_a","required":false,"display":"text_a"},"field_b":{"type":"checkbox","field_type":"checkbox","required":true,"name":"the_name_b","value":"the_value","display":"text_b"}},"submit":"the_url","button_text":"button_text"}' ), 60 );
+		set_transient( 'gem-user_name-lists', json_decode( '{"total":1,"signups":[{"id":123,"name":"Signup Form","thumbnail":"the_url","url":"the_url"}]}' ), 60 );
 
 		$widget = new GEM_Form_Widget();
 		$args = array(
@@ -87,7 +50,7 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$instance = array(
 			'title' => 'the_title',
 			'text' => 'the_text',
-			'form' => 'form_id',
+			'form' => '123',
 		);
 
 		ob_start();
@@ -95,19 +58,64 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$actual_output = ob_get_contents();
 		ob_end_clean();
 
+		delete_option( GEM_Settings::SLUG );
+		delete_transient( 'gem-form-123' );
+		delete_transient( 'gem-user_name-lists' );
+
 		$this->assertContains( 'before_textbefore_titlethe_titleafter_title<p>the_text</p>', $actual_output );
 		$this->assertContains( '<form action="http://the_url" method="post" class="gem-form">', $actual_output );
 		$this->assertContains( '<label for="form_3_the_name_a">', $actual_output );
 		$this->assertContains( 'text_a', $actual_output );
-		$this->assertContains( '<input type="text" name="the_name_a" id="form_3_the_name_a" class="gem-field" />', $actual_output );
+		$this->assertContains( '<input type="text" name="the_name_a" id="form_3_the_name_a" class="gem-field" data-label="text_a" />', $actual_output );
 		$this->assertContains( '<label for="form_3_the_name_bthe_value">', $actual_output );
 		$this->assertContains( '<input type="checkbox" value="the_value" name="the_name_b" id="form_3_the_name_bthe_value" class="gem-checkbox gem-required" />', $actual_output );
 		$this->assertContains( 'text_b', $actual_output );
-		$this->assertContains( '<input type="hidden" name="form_id" value="0" />', $actual_output );
+		$this->assertContains( '<input type="hidden" name="form_id" value="123" />', $actual_output );
 		$this->assertContains( '<input type="submit" value="button_text" class="button gem-submit" />', $actual_output );
 		$this->assertContains( 'after_text', $actual_output );
 	}
 
+	/**
+	 * Test widget output.
+	 *
+	 * @see GEM_Form_Widget::widget()
+	 */
+	public function test_widget_with_false_id() {
+		GEM_Settings_Controls::update_option( 'username', 'user_name' );
+		GEM_Settings_Controls::update_option( 'api-key', '1234' );
+		set_transient( 'gem-form-123', json_decode( '{"id":123,"name":"Signup Form","fields":{"field_a":{"type":"string","field_type":"string","name":"the_name_a","required":false,"display":"text_a"},"field_b":{"type":"checkbox","field_type":"checkbox","required":true,"name":"the_name_b","value":"the_value","display":"text_b"}},"submit":"the_url","button_text":"button_text"}' ), 60 );
+		set_transient( 'gem-user_name-lists', json_decode( '{"total":1,"signups":[{"id":123,"name":"Signup Form","thumbnail":"the_url","url":"the_url"}]}' ), 60 );
+
+		$widget = new GEM_Form_Widget();
+		$args = array(
+			'before_widget' => 'before_text',
+			'after_widget' => 'after_text',
+			'before_title' => 'before_title',
+			'after_title' => 'after_title',
+		);
+		$instance = array(
+			'title' => 'the_title',
+			'text' => 'the_text',
+			'form' => null,
+		);
+
+		ob_start();
+		$widget->widget( $args, $instance );
+		$actual_output = ob_get_contents();
+		ob_end_clean();
+
+		delete_option( GEM_Settings::SLUG );
+		delete_transient( 'gem-form-123' );
+		delete_transient( 'gem-user_name-lists' );
+
+		$this->assertContains( '<input type="hidden" name="form_id" value="123" />', $actual_output );
+	}
+
+	/**
+	 * Test update.
+	 *
+	 * @see GEM_Form_Widget::update()
+	 */
 	public function test_update() {
 		$widget = new GEM_Form_Widget();
 
@@ -133,6 +141,11 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$this->assertEquals( 123, $output['form'] );
 	}
 
+	/**
+	 * Test form.
+	 *
+	 * @see GEM_Form_Widget::form()
+	 */
 	public function test_form() {
 		$widget = new GEM_Form_Widget();
 		$user_name = 'the_user';
@@ -143,7 +156,8 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$sample_field->name = 'the_field_name';
 		$sample_data->signups = array( $sample_field );
 
-		update_option( 'gem-settings', array( 'api-key' => $api_key, 'username' => $user_name ) );
+		GEM_Settings_Controls::update_option( 'username', $user_name );
+		GEM_Settings_Controls::update_option( 'api-key', $api_key );
 		set_transient( 'gem-' . $user_name . '-lists', $sample_data );
 
 		$instance = array(
@@ -160,10 +174,15 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$this->assertContains( '<input class="widefat" id="widget-gem-form--title" name="widget-gem-form[][title]" type="text" value="the_title" />', $actual_output );
 		$this->assertContains( '<textarea class="widefat" rows="3" id="widget-gem-form--text" name="widget-gem-form[][text]">the_text</textarea>', $actual_output );
 		$this->assertContains( '<label for="widget-gem-form--form">Form:</label>', $actual_output );
-		$this->assertContains( '<select name="widget-gem-form[][form]" id="widget-gem-form--form" class="widefat">', $actual_output );
+		$this->assertContains( '<select name="widget-gem-form[][form]" id="widget-gem-form--form" class="widefat" value="123">', $actual_output );
 		$this->assertContains( '<option value="the_field_id" >the_field_name</option>', $actual_output );
 	}
 
+	/**
+	 * Test form message on failure.
+	 *
+	 * @see GEM_Form_Widget::form()
+	 */
 	public function test_form_fails_message() {
 		$widget = new GEM_Form_Widget();
 		$user_name = 'the_user';
@@ -171,7 +190,8 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		$sample_data = new stdClass();
 		$sample_data->signups = array();
 
-		update_option( 'gem-settings', array( 'api-key' => $api_key, 'username' => $user_name ) );
+		GEM_Settings_Controls::update_option( 'username', $user_name );
+		GEM_Settings_Controls::update_option( 'api-key', $api_key );
 		set_transient( 'gem-' . $user_name . '-lists', $sample_data );
 
 		$instance = array(
