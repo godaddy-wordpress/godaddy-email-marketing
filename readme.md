@@ -77,7 +77,7 @@ Please fill out an issue [here](https://github.com/godaddy/wp-godaddy-email-mark
 After your account is verified, you can insert a form into your site by using a widget, shortcode, or template tag:
 
 * **Widget** Go to Appearance > Widgets, find the GoDaddy Email Marketing widget, and drag it into the widget area of your choice. You can then add a title and select a form!
-* **Shortcode** Add a form to any post or page by adding the shortcode (e.g., `[gem id=12345 ]`) in the page/post editor. You can find a form's ID on the GoDaddy Email Marketing Settings page.
+* **Shortcode** Add a form to any post or page by adding the shortcode (e.g., `[gem id=123456 ]`) in the page/post editor. You can find a form's ID on the GoDaddy Email Marketing Settings page.
 * **Template** tag Add the following template tag into any WordPress file: `<?php gem_form; ?>`. For example: `<?php gem_form( 91 ); ?>` You can find a form's ID on the GoDaddy Email Marketing Settings page.
 
 That's it. You're ready to go!
@@ -94,7 +94,7 @@ Yes, this plugin requires a [GoDaddy Email Marketing](https://www.godaddy.com/bu
 Absolutely. Use it by finding the GoDaddy Email Marketing widget under Appearance >Widgets in the WordPress Dashboard and dragging it into the widget area of your choice. You can then add a title and select a form!
 
 ### Is there a shortcode? ###
-Yes! You can add a form to any post or page by adding the shortcode with the form ID (e.g., `[gem id=12345 ]`) in the page/post editor. Form IDs are listed on the GoDaddy Signup Forms Settings page.
+Yes! You can add a form to any post or page by adding the shortcode with the form ID (e.g., `[gem id=123456 ]`) in the page/post editor. Form IDs are listed on the GoDaddy Signup Forms Settings page.
 
 ### Is there a template tag? ###
 Yup! Add the following template tag into any WordPress file: `<?php gem_form( $form_id ); ?>`. For example: `<?php gem_form( 91 ); ?>`. Form IDs are listed on the GoDaddy Signup Forms Settings page.
