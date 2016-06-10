@@ -2,11 +2,8 @@
   "name": "godaddy-email-marketing-sign-up-forms",
   "version": "1.1.0",
   "author": "GoDaddy",
-  "license": "GPL-2.0+",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/godaddy/wp-godaddy-email-marketing.git"
-  },
+  "license": "GPL-2.0",
+  "repository": "godaddy/wp-godaddy-email-marketing",
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-checktextdomain": "~1.0.0",
