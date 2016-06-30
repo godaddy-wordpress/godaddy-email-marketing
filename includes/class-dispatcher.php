@@ -13,13 +13,6 @@
 class GEM_Dispatcher {
 
 	/**
-	 * API's base URL
-	 *
-	 * @var string
-	 */
-	const BASE_API = 'https://gem.godaddy.com/';
-
-	/**
 	 * Transient expiration (1 day in seconds)
 	 *
 	 * @var int
@@ -83,7 +76,7 @@ class GEM_Dispatcher {
 		}
 
 		// Prepare the URL that includes our credentials.
-		$response = wp_remote_post( self::BASE_API . 'api/v3/signupForms', array(
+		$response = wp_remote_post( self::get_api_base_url( 'api/v3/signupForms' ), array(
 			'method' => 'POST',
 			'timeout' => 10,
 			'body' => array(
@@ -189,6 +182,28 @@ class GEM_Dispatcher {
 	}
 
 	/**
+	 * Return the API base URL.
+	 *
+	 * @param  string $path (optional)
+	 *
+	 * @return string
+	 */
+	public static function get_api_base_url( $path = '' ) {
+
+		/**
+		 * Filter the API base URL.
+		 *
+		 * @since 1.1.1
+		 *
+		 * @var string
+		 */
+		$url = (string) apply_filters( 'gem_api_base_url', 'https://gem.godaddy.com/' );
+
+		return trailingslashit( $url ) . $path;
+
+	}
+
+	/**
 	 * Utility function for getting a URL for various API methods
 	 *
 	 * @param string $method The short of the API method.
@@ -218,7 +233,7 @@ class GEM_Dispatcher {
 				break;
 		}
 
-		return self::BASE_API . $path;
+		return self::get_api_base_url( $path );
 	}
 
 	/**
