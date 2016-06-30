@@ -40,15 +40,10 @@ class GEM_Dispatcher {
 	 * @return string $api_key  The API key.
 	 * @return false|array The form fields array or false.
 	 */
-	public static function fetch_forms( $username, $api_key = false ) {
-		if ( ! ( $username && $api_key ) ) {
-			$username = GEM_Settings_Controls::get_option( 'username' );
-			$api_key  = GEM_Settings_Controls::get_option( 'api-key' );
-		}
-
+	public static function fetch_forms( $username = false, $api_key = false ) {
 		$auth = array(
-			'username' => $username,
-			'api_key' => $api_key,
+			'username' => empty( $username ) ? GEM_Settings_Controls::get_option( 'username' ) : $username,
+			'api_key'  => empty( $api_key ) ? GEM_Settings_Controls::get_option( 'api-key' ) : $api_key,
 		);
 
 		// Prepare the URL that includes our credentials.
@@ -113,8 +108,8 @@ class GEM_Dispatcher {
 	 * @return false|array The form fields array or false.
 	 */
 	public static function get_forms( $username = false ) {
-		$username = $username ? $username : GEM_Settings_Controls::get_option( 'username' );
-		$api_key = GEM_Settings_Controls::get_option( 'api-key' );
+		$username = empty( $username ) ? GEM_Settings_Controls::get_option( 'username' ) : $username;
+		$api_key  = GEM_Settings_Controls::get_option( 'api-key' );
 
 		if ( ! ( $username && $api_key ) ) {
 			return false;
