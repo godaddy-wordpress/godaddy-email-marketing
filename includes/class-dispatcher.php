@@ -31,11 +31,17 @@ class GEM_Dispatcher {
 	 *
 	 * @param string  $username The username.
 	 * @return string $api_key  The API key.
-	 * @return false|array The form fields array or false.
+	 * @return array|false The form fields array or false.
 	 */
-	public static function fetch_forms( $username = false, $api_key = false ) {
-		$username = empty( $username ) ? GEM_Settings_Controls::get_option( 'username' ) : $username;
-		$api_key  = empty( $api_key ) ? GEM_Settings_Controls::get_option( 'api-key' ) : $api_key;
+	public static function fetch_forms( $username = '', $api_key = '' ) {
+		if ( ! $username && ! $api_key ) {
+			$username = GEM_Settings_Controls::get_option( 'username' );
+			$api_key  = GEM_Settings_Controls::get_option( 'api-key' );
+		}
+
+		if ( ! $username || ! $api_key ) {
+			return false;
+		}
 
 		$auth = array(
 			'username' => $username,
@@ -65,13 +71,13 @@ class GEM_Dispatcher {
 	 * Add a default form.
 	 *
 	 * @param string $username The username.
-	 * @return false|array The form fields array or false.
+	 * @return bool True on success or false on failue.
 	 */
 	public static function add_default_form() {
 		$username = GEM_Settings_Controls::get_option( 'username' );
-		$api_key = GEM_Settings_Controls::get_option( 'api-key' );
+		$api_key  = GEM_Settings_Controls::get_option( 'api-key' );
 
-		if ( ! ( $username || $api_key ) ) {
+		if ( ! $username || ! $api_key ) {
 			return false;
 		}
 
@@ -100,19 +106,17 @@ class GEM_Dispatcher {
 	/**
 	 * Gets the forms.
 	 *
-	 * @param string $username The username.
-	 * @return false|array The form fields array or false.
+	 * @return array|false The form fields array or false.
 	 */
-	public static function get_forms( $username = false ) {
-		$username = empty( $username ) ? GEM_Settings_Controls::get_option( 'username' ) : $username;
-		$api_key  = GEM_Settings_Controls::get_option( 'api-key' );
+	public static function get_forms() {
+		$username = GEM_Settings_Controls::get_option( 'username' );
 
-		if ( ! ( $username && $api_key ) ) {
+		if ( ! $username ) {
 			return false;
 		}
 
 		if ( false === ( $data = get_transient( 'gem-' . $username . '-lists' ) ) ) {
-			$data = self::fetch_forms( $username );
+			$data = self::fetch_forms();
 		}
 
 		return $data;

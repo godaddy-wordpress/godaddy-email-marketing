@@ -168,12 +168,13 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		$api_key = 'the_key';
 		$sample_data = 'the_sample';
 
-		$this->assertFalse( GEM_Dispatcher::get_forms( $user_name ) );
+		$this->assertFalse( GEM_Dispatcher::get_forms() );
 
+		GEM_Settings_Controls::update_option( 'username', $user_name );
 		GEM_Settings_Controls::update_option( 'api-key', $api_key );
 
 		set_transient( 'gem-' . $user_name . '-lists', $sample_data );
-		$this->assertEquals( $sample_data, GEM_Dispatcher::get_forms( $user_name ) );
+		$this->assertEquals( $sample_data, GEM_Dispatcher::get_forms() );
 
 		delete_transient( 'gem-' . $user_name . '-lists' );
 		delete_option( GEM_Settings::SLUG );
