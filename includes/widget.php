@@ -47,7 +47,7 @@ class GEM_Form_Widget extends WP_Widget {
 			// Create a default form.
 			if ( empty( $forms->signups ) && $valid_creds ) { // @codeCoverageIgnoreStart
 				GEM_Dispatcher::add_default_form();
-				$forms = GEM_Dispatcher::fetch_forms( GEM_Settings_Controls::get_option( 'username' ) );
+				$forms = GEM_Dispatcher::fetch_forms();
 			}
 			// @codeCoverageIgnoreEnd
 
@@ -114,7 +114,7 @@ class GEM_Form_Widget extends WP_Widget {
 		// Create a default form.
 		if ( empty( $forms->signups ) && $valid_creds ) { // @codeCoverageIgnoreStart
 			GEM_Dispatcher::add_default_form();
-			$forms = GEM_Dispatcher::fetch_forms( GEM_Settings_Controls::get_option( 'username' ) );
+			$forms = GEM_Dispatcher::fetch_forms();
 		}
 		// @codeCoverageIgnoreEnd
 		?>
