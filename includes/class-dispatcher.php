@@ -41,9 +41,12 @@ class GEM_Dispatcher {
 	 * @return false|array The form fields array or false.
 	 */
 	public static function fetch_forms( $username = false, $api_key = false ) {
+		$username = empty( $username ) ? GEM_Settings_Controls::get_option( 'username' ) : $username;
+		$api_key  = empty( $api_key ) ? GEM_Settings_Controls::get_option( 'api-key' ) : $api_key;
+
 		$auth = array(
-			'username' => empty( $username ) ? GEM_Settings_Controls::get_option( 'username' ) : $username,
-			'api_key'  => empty( $api_key ) ? GEM_Settings_Controls::get_option( 'api-key' ) : $api_key,
+			'username' => $username,
+			'api_key'  => $api_key,
 		);
 
 		// Prepare the URL that includes our credentials.
