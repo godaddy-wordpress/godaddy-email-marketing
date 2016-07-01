@@ -65,11 +65,10 @@ Please fill out an issue [here](https://github.com/godaddy/wp-godaddy-email-mark
 == Installation ==
 
 1. [Install the plugin manually](https://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation) by uploading a ZIP file, or [install it automatically](https://codex.wordpress.org/Managing_Plugins#Automatic_Plugin_Installation) by searching for **GoDaddy Email Marketing**.
-2. Click the **Install Now** button to add it to your site.
-3. Once the installation has finished, click **Activate**.
-4. Nagivate to **Settings > GoDaddy Email Marketing** where you will find a **Settings** tab.
-5. Follow the instructions to access your username and API key. If you don't have a GoDaddy Email Marketing account, you'll be able to create one.
-6. Click **Save Settings**.
+2. Once the plugin has been installed, click **Activate**.
+3. Nagivate to **Settings > GoDaddy Email Marketing** where you will find a **Settings** tab.
+4. Follow the instructions to access your username and API key. If you don't have a GoDaddy Email Marketing account, you'll be able to create one.
+5. Click **Save Settings**.
 
 After your account is verified, you can insert a form into your site by using a **widget**, **shortcode**, or **template tag** directly in your theme.
 
