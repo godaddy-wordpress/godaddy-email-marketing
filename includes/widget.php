@@ -53,6 +53,11 @@ class GEM_Form_Widget extends WP_Widget {
 
 			if ( ! empty( $forms->signups ) ) {
 				$instance['form'] = $forms->signups[0]->id;
+
+				// Update widget instance with new form ID
+				$settings = $this->get_settings();
+				$settings[ $this->number ] = $instance;
+				$this->save_settings( $settings );
 			}
 		}
 
