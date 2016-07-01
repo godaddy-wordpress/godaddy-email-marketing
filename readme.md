@@ -76,6 +76,17 @@ Please fill out an issue [here](https://github.com/godaddy/wp-godaddy-email-mark
 
 After your account is verified, you can insert a form into your site by using a **widget**, **shortcode**, or **template tag** directly in your theme.
 
+**Widget**
+Go to **Appearance > Widgets**, find the **GoDaddy Email Marketing Form** widget, and drag it into the widget area of your choice. You can then add a title and select a form!
+
+**Shortcode**
+Add a form to any post or page by adding the shortcode (e.g., `[gem id=123456 ]`) in the page/post editor. To see your form IDs, navigate to **Settings > GoDaddy Email Marketing** and select the **Forms** tab.
+
+**Template Tag**
+Add the following template tag into any WordPress theme template file: `<?php gem_form( $form_id ); ?>`. For example: `<?php gem_form( 123456 ); ?>` where `123456` is your form ID. To see your form IDs, navigate to **Settings > GoDaddy Email Marketing** and select the **Forms** tab.
+
+That's it. You're ready to go!
+
 ## Frequently Asked Questions ##
 
 ### What is GoDaddy Email Marketing? ###
@@ -88,13 +99,16 @@ Yes, this plugin requires a [GoDaddy Email Marketing](https://www.godaddy.com/bu
 Absolutely. Use it by finding the GoDaddy Email Marketing widget under Appearance >Widgets in the WordPress Dashboard and dragging it into the widget area of your choice. You can then add a title and select a form!
 
 ### Is there a shortcode? ###
-Yes! You can add a form to any post or page by adding the shortcode with the form ID (e.g., `[gem id=123456 ]`) in the page/post editor. Form IDs are listed on the GoDaddy Signup Forms Settings page.
+Yes! You can add a form to any post or page by adding the shortcode with the form ID (e.g., `[gem id=123456 ]`) in the page/post editor.
 
 ### Is there a template tag? ###
-Yup! Add the following template tag into any WordPress file: `<?php gem_form( $form_id ); ?>`. For example: `<?php gem_form( 91 ); ?>`. Form IDs are listed on the GoDaddy Signup Forms Settings page.
+Yup! Add the following template tag into any WordPress theme template file: `<?php gem_form( $form_id ); ?>`. For example: `<?php gem_form( 123456 ); ?>` where `123456` is your form ID.
+
+### Where can I find my form IDs? ###
+To find your form IDs, navigate to **Settings > GoDaddy Email Marketing** and select the **Forms** tab. If you've recently created new forms click the **Refresh Forms** button to pull them into your WordPress site.
 
 ### Where can I find the API Key? ###
-You can find your API key in the Settings section of your GoDaddy Email Marketing account.
+You can find your **Secret API Key** in the [Settings section](https://gem.godaddy.com/user/edit?set_api=&account_info_tabs=account_info_personal) of your GoDaddy Email Marketing account on the right hand side.
 
 
 ## Screenshots ##
