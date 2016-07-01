@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-08 16:09-0500\n"
+"POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,43 +17,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: godaddy-email-marketing.php:196
+#: godaddy-email-marketing.php:197
 msgid "Thank you for signing up!"
 msgstr "感谢您的注册！"
 
-#: godaddy-email-marketing.php:197
+#: godaddy-email-marketing.php:198
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr "感谢您的注册！ 请查看电子邮件确认您的订阅。"
 
-#: godaddy-email-marketing.php:198
+#: godaddy-email-marketing.php:199
 msgid "Oops! There was a problem. Please try again."
 msgstr "糟糕！ 出现了一个问题。 请重试。"
 
-#: godaddy-email-marketing.php:199
+#: godaddy-email-marketing.php:200
 msgid "Please enter a valid email address."
 msgstr "请输入有效的电子邮件地址。"
 
-#: godaddy-email-marketing.php:200
+#: godaddy-email-marketing.php:201
 #, php-format
 msgctxt "Name of required field"
 msgid "%s is a required field."
 msgstr "%s 是必填字段。"
 
-#: godaddy-email-marketing.php:212 includes/settings.php:532
+#: godaddy-email-marketing.php:213 includes/settings.php:532
 msgid "Settings"
 msgstr "设置"
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "GoDaddy 电邮营销快要准备好了。"
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "您必须输入您的用户名和 API 密钥才能让它生效。"
 
-#: godaddy-email-marketing.php:249
+#: godaddy-email-marketing.php:250
 msgid "Let's do it!"
 msgstr "开始吧！"
 
@@ -190,8 +190,9 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"一旦激活了插件，您将能选择您的任何 GoDaddy 电邮营销 Web 表单并直接插入您的网站中。 设置很容易。 只要在下面输入您账户的电子邮件地址和 "
-"API 密钥（在您的 GoDaddy 电邮营销账户 [%s] 区域找到）。 您有 3 种在网站中显示 Web 表单的方法："
+"一旦激活了插件，您将能选择您的任何 GoDaddy 电邮营销 Web 表单并直接插入您的网"
+"站中。 设置很容易。 只要在下面输入您账户的电子邮件地址和 API 密钥（在您的 "
+"GoDaddy 电邮营销账户 [%s] 区域找到）。 您有 3 种在网站中显示 Web 表单的方法："
 
 #: includes/settings.php:286
 msgid ""
@@ -199,15 +200,17 @@ msgid ""
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
 "your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>小组件：</strong> 转到“外观” &rarr; 小组件，找到名为“GoDaddy "
-"电邮营销表单”的小组件，然后拖动到您选择的小组件区域中。 然后您就能添加标题和选择表单了！"
+"<strong>小组件：</strong> 转到“外观” &rarr; 小组件，找到名为“GoDaddy 电邮营销"
+"表单”的小组件，然后拖动到您选择的小组件区域中。 然后您就能添加标题和选择表单"
+"了！"
 
 #: includes/settings.php:287
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
-"<strong>短代码：</strong> 您可以通过在页面/帖子编辑器中添加短代码（如 <code>[gem id=80326]</code>）来将表单添加到任何帖子或页面中。"
+"<strong>短代码：</strong> 您可以通过在页面/帖子编辑器中添加短代码（如 "
+"<code>[gem id=80326]</code>）来将表单添加到任何帖子或页面中。"
 
 #: includes/settings.php:289
 #, php-format
@@ -215,7 +218,8 @@ msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
 msgstr ""
-"<strong>模板标签：</strong> 您可以在任何 WordPress 文档中添加以下模板标签： <code>%s</code>。 例如 <code>%s</code>"
+"<strong>模板标签：</strong> 您可以在任何 WordPress 文档中添加以下模板标签： "
+"<code>%s</code>。 例如 <code>%s</code>"
 
 #: includes/settings.php:299
 msgid "For more information:"
@@ -303,7 +307,8 @@ msgid ""
 "set up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
 msgstr ""
-"将 GoDaddy 电邮营销注册表单添加到您的 WordPress 网站中！ 易于设置的 GoDaddy 电邮营销插件让您的网站访客能够订阅您的电子邮件列表。"
+"将 GoDaddy 电邮营销注册表单添加到您的 WordPress 网站中！ 易于设置的 GoDaddy "
+"电邮营销插件让您的网站访客能够订阅您的电子邮件列表。"
 
 #: includes/settings.php:517
 msgctxt "header note"
@@ -392,8 +397,9 @@ msgid ""
 "then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
 "account, %2$s."
 msgstr ""
-"此插件需要访问您的 GoDaddy 电邮营销账户才能生效。  %1$s 获取您的用户名和 API 密钥。 将其复制粘贴在下方，然后单击“保存设置”。 "
-"如果您没有 GoDaddy 电邮营销账户，%2$s。"
+"此插件需要访问您的 GoDaddy 电邮营销账户才能生效。  %1$s 获取您的用户名和 API "
+"密钥。 将其复制粘贴在下方，然后单击“保存设置”。 如果您没有 GoDaddy 电邮营销账"
+"户，%2$s。"
 
 #: includes/settings.php:747
 msgctxt "account details link"
@@ -414,24 +420,24 @@ msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
 msgstr "将 GoDaddy 电邮营销注册表单嵌入侧边栏。"
 
-#: includes/widget.php:123
+#: includes/widget.php:128
 msgid "Title:"
 msgstr "标题："
 
-#: includes/widget.php:129
+#: includes/widget.php:134
 msgid "Additional Text:"
 msgstr "更多文本："
 
-#: includes/widget.php:138
+#: includes/widget.php:143
 msgid "Form:"
 msgstr "表单："
 
-#: includes/widget.php:151
+#: includes/widget.php:156
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "请在 %s 中设置您的 GoDaddy 电邮营销账户。"
 
-#: includes/widget.php:155
+#: includes/widget.php:160
 msgid "settings page"
 msgstr "设置页面"

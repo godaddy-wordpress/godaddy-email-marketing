@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-08 16:09-0500\n"
+"POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,44 +17,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: godaddy-email-marketing.php:196
+#: godaddy-email-marketing.php:197
 msgid "Thank you for signing up!"
 msgstr "Bedankt voor je aanmelding!"
 
-#: godaddy-email-marketing.php:197
+#: godaddy-email-marketing.php:198
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr ""
 "Bedankt voor je aanmelding! Bekijk je e-mail om je abonnement te bevestigen."
 
-#: godaddy-email-marketing.php:198
+#: godaddy-email-marketing.php:199
 msgid "Oops! There was a problem. Please try again."
 msgstr "Helaas! Er is een probleem. Probeer het opnieuw."
 
-#: godaddy-email-marketing.php:199
+#: godaddy-email-marketing.php:200
 msgid "Please enter a valid email address."
 msgstr "Voer een geldig e-mailadres in."
 
-#: godaddy-email-marketing.php:200
+#: godaddy-email-marketing.php:201
 #, php-format
 msgctxt "Name of required field"
 msgid "%s is a required field."
 msgstr "%s is een verplicht veld."
 
-#: godaddy-email-marketing.php:212 includes/settings.php:532
+#: godaddy-email-marketing.php:213 includes/settings.php:532
 msgid "Settings"
 msgstr "Instellingen"
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "E-mailmarketing van GoDaddy is bijna klaar."
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "Je moet je gebruikersnaam en API-sleutel invoeren om het te gebruiken."
 
-#: godaddy-email-marketing.php:249
+#: godaddy-email-marketing.php:250
 msgid "Let's do it!"
 msgstr "Aan de slag!"
 
@@ -160,13 +160,15 @@ msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr ""
-"De aanmeldingsgegevens zijn onjuist. Controleer of je ze correct hebt ingevuld."
+"De aanmeldingsgegevens zijn onjuist. Controleer of je ze correct hebt "
+"ingevuld."
 
 #: includes/settings.php:236
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr ""
-"Er is verbinding gemaakt met e-mailmarketing van GoDaddy! Je bent er klaar voor!"
+"Er is verbinding gemaakt met e-mailmarketing van GoDaddy! Je bent er klaar "
+"voor!"
 
 #: includes/settings.php:241
 msgid "Settings have been updated."
@@ -193,12 +195,12 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"Nadat de plug-in is geactiveerd, kun je de webformulieren voor "
-"e-mailmarketing van GoDaddy selecteren en invoegen in je site. De "
-"configuratie is eenvoudig. Voer hieronder het e-mailadres en de API-sleutel "
-"van je account in (te vinden in het gedeelte van je account voor "
-"e-mailmarketing van GoDaddy [%s]). Er zijn drie manieren waarop je een "
-"webformulier kunt weergeven op je site:"
+"Nadat de plug-in is geactiveerd, kun je de webformulieren voor e-"
+"mailmarketing van GoDaddy selecteren en invoegen in je site. De configuratie "
+"is eenvoudig. Voer hieronder het e-mailadres en de API-sleutel van je "
+"account in (te vinden in het gedeelte van je account voor e-mailmarketing "
+"van GoDaddy [%s]). Er zijn drie manieren waarop je een webformulier kunt "
+"weergeven op je site:"
 
 #: includes/settings.php:286
 msgid ""
@@ -206,9 +208,10 @@ msgid ""
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
 "your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Widget:</strong> Ga naar Vormgeving &rarr; widgets en zoek het widget "
-"met de naam 'Formulier voor e-mailmarketing van GoDaddy'. Sleep het naar de "
-"gewenste locatie voor widgets. Voeg dan een titel toe en selecteer een formulier."
+"<strong>Widget:</strong> Ga naar Vormgeving &rarr; widgets en zoek het "
+"widget met de naam 'Formulier voor e-mailmarketing van GoDaddy'. Sleep het "
+"naar de gewenste locatie voor widgets. Voeg dan een titel toe en selecteer "
+"een formulier."
 
 #: includes/settings.php:287
 msgid ""
@@ -318,7 +321,8 @@ msgid ""
 msgstr ""
 "Voeg je aanmeldingsformulier voor e-mailmarketing van GoDaddy toe aan je "
 "WordPress-site! Met de plug-in voor e-mailmarketing van GoDaddy, die "
-"eenvoudig is in te stellen, kunnen je sitebezoekers zich abonneren op je e-maillijst."
+"eenvoudig is in te stellen, kunnen je sitebezoekers zich abonneren op je e-"
+"maillijst."
 
 #: includes/settings.php:517
 msgctxt "header note"
@@ -329,7 +333,9 @@ msgstr "Je hebt nog geen formulieren."
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "Nieuwe gebruiker van GoDaddy? Maak een account en ga vandaag nog aan de slag. %s "
+msgstr ""
+"Nieuwe gebruiker van GoDaddy? Maak een account en ga vandaag nog aan de "
+"slag. %s "
 
 #: includes/settings.php:520
 msgctxt "header button"
@@ -431,26 +437,28 @@ msgstr "Formulier voor e-mailmarketing van GoDaddy"
 #: includes/widget.php:24
 msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr "Voeg de aanmeldingsformulieren voor e-mailmarketing van GoDaddy toe aan de zijbalk."
+msgstr ""
+"Voeg de aanmeldingsformulieren voor e-mailmarketing van GoDaddy toe aan de "
+"zijbalk."
 
-#: includes/widget.php:123
+#: includes/widget.php:128
 msgid "Title:"
 msgstr "Titel:"
 
-#: includes/widget.php:129
+#: includes/widget.php:134
 msgid "Additional Text:"
 msgstr "Aanvullende tekst:"
 
-#: includes/widget.php:138
+#: includes/widget.php:143
 msgid "Form:"
 msgstr "Formulier:"
 
-#: includes/widget.php:151
+#: includes/widget.php:156
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "Stel je account voor e-mailmarketing van GoDaddy in op de %s."
 
-#: includes/widget.php:155
+#: includes/widget.php:160
 msgid "settings page"
 msgstr "pagina Instellingen"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-08 16:09-0500\n"
+"POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: godaddy-email-marketing.php:196
+#: godaddy-email-marketing.php:197
 msgid "Thank you for signing up!"
 msgstr "Vielen Dank für Ihre Anmeldung."
 
-#: godaddy-email-marketing.php:197
+#: godaddy-email-marketing.php:198
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
@@ -29,33 +29,33 @@ msgstr ""
 "Vielen Dank für Ihre Anmeldung. Bitte prüfen Sie Ihre E-Mail, um Ihr "
 "Abonnement zu bestätigen."
 
-#: godaddy-email-marketing.php:198
+#: godaddy-email-marketing.php:199
 msgid "Oops! There was a problem. Please try again."
 msgstr "Ups! Es ist ein Problem aufgetreten. Bitte versuchen Sie es erneut."
 
-#: godaddy-email-marketing.php:199
+#: godaddy-email-marketing.php:200
 msgid "Please enter a valid email address."
 msgstr "Geben Sie eine gültige E-Mail-Adresse ein."
 
-#: godaddy-email-marketing.php:200
+#: godaddy-email-marketing.php:201
 #, php-format
 msgctxt "Name of required field"
 msgid "%s is a required field."
 msgstr "%s ist ein erforderliches Feld."
 
-#: godaddy-email-marketing.php:212 includes/settings.php:532
+#: godaddy-email-marketing.php:213 includes/settings.php:532
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "GoDaddy E-Mail-Marketing ist fast bereit."
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "Sie müssen Ihren Benutzernamen und Ihren API-Schlüssel eingeben."
 
-#: godaddy-email-marketing.php:249
+#: godaddy-email-marketing.php:250
 msgid "Let's do it!"
 msgstr "Los geht's!"
 
@@ -195,11 +195,11 @@ msgid ""
 "display a webform on your site:"
 msgstr ""
 "Sobald das Plugin aktiviert ist, können Sie jedes Ihrer Webformulare aus "
-"Ihrem GoDaddy E-Mail-Marketing auswählen und direkt in Ihre Website einfügen. "
-"Die Einrichtung ist ein Kinderspiel. Geben Sie unten einfach die "
-"E-Mail-Adresse Ihres Kontos und den API-Schlüssel ein (zu finden in Ihrem "
-"GoDaddy E-Mail-Marketing-Konto unter [%s]). Hier sind drei Möglichkeiten, wie "
-"Sie ein Webformular auf Ihrer Website anzeigen können:"
+"Ihrem GoDaddy E-Mail-Marketing auswählen und direkt in Ihre Website "
+"einfügen. Die Einrichtung ist ein Kinderspiel. Geben Sie unten einfach die E-"
+"Mail-Adresse Ihres Kontos und den API-Schlüssel ein (zu finden in Ihrem "
+"GoDaddy E-Mail-Marketing-Konto unter [%s]). Hier sind drei Möglichkeiten, "
+"wie Sie ein Webformular auf Ihrer Website anzeigen können:"
 
 #: includes/settings.php:286
 msgid ""
@@ -217,8 +217,8 @@ msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
-"<strong>Shortcode:</strong> Sie können ein Formular in jeden Beitrag oder auf "
-"jede Seite einfügen, indem Sie den Shortcode (Beispiel: <code>[gem "
+"<strong>Shortcode:</strong> Sie können ein Formular in jeden Beitrag oder "
+"auf jede Seite einfügen, indem Sie den Shortcode (Beispiel: <code>[gem "
 "id=80326]</code>) in den Seiten-/Beitragseditor einfügen."
 
 #: includes/settings.php:289
@@ -292,7 +292,8 @@ msgid ""
 "attempted before a hard reset."
 msgstr ""
 "Löscht nur die mit diesem Plugin in Zusammenhang stehenden gepufferten Daten "
-"und sollte vor dem Zurücksetzen auf die Werkseinstellungen durchgeführt werden."
+"und sollte vor dem Zurücksetzen auf die Werkseinstellungen durchgeführt "
+"werden."
 
 #: includes/settings.php:410
 msgid "Hard Reset"
@@ -304,7 +305,8 @@ msgstr "Alle Daten löschen"
 
 #: includes/settings.php:417
 msgid "Purges all saved data associated with this plugin."
-msgstr "Löscht alle mit diesem Plugin in Zusammenhang stehenden gespeicherten Daten."
+msgstr ""
+"Löscht alle mit diesem Plugin in Zusammenhang stehenden gespeicherten Daten."
 
 #: includes/settings.php:511
 msgctxt "gem header note"
@@ -318,10 +320,10 @@ msgid ""
 "set up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
 msgstr ""
-"Fügen Sie Ihr Anmeldeformular für GoDaddy E-Mail-Marketing in Ihre "
-"WordPress-Website ein! Das GoDaddy E-Mail-Marketing-Plugin lässt sich leicht "
-"einrichten und gestattet Ihren Website-Besuchern, sich in Ihren "
-"E-Mail-Verteiler einzutragen."
+"Fügen Sie Ihr Anmeldeformular für GoDaddy E-Mail-Marketing in Ihre WordPress-"
+"Website ein! Das GoDaddy E-Mail-Marketing-Plugin lässt sich leicht "
+"einrichten und gestattet Ihren Website-Besuchern, sich in Ihren E-Mail-"
+"Verteiler einzutragen."
 
 #: includes/settings.php:517
 msgctxt "header note"
@@ -332,7 +334,8 @@ msgstr "Sie haben noch keine Formulare."
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "Neu bei GoDaddy? Erstellen Sie ein Konto, um noch heute loszulegen. %s "
+msgstr ""
+"Neu bei GoDaddy? Erstellen Sie ein Konto, um noch heute loszulegen. %s "
 
 #: includes/settings.php:520
 msgctxt "header button"
@@ -412,11 +415,11 @@ msgid ""
 "then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
 "account, %2$s."
 msgstr ""
-"Damit dieses Plugin funktioniert, muss es auf Ihr GoDaddy "
-"E-Mail-Marketing-Konto zugreifen.  %1$s, um Ihren Benutzernamen und Ihren "
-"API-Schlüssel abzurufen. Kopieren Sie sie und fügen Sie sie unten ein. "
-"Klicken Sie dann auf \"Einstellungen speichern\". Wenn Sie noch kein Konto "
-"für GoDaddy E-Mail-Marketing haben, %2$s"
+"Damit dieses Plugin funktioniert, muss es auf Ihr GoDaddy E-Mail-Marketing-"
+"Konto zugreifen.  %1$s, um Ihren Benutzernamen und Ihren API-Schlüssel "
+"abzurufen. Kopieren Sie sie und fügen Sie sie unten ein. Klicken Sie dann "
+"auf \"Einstellungen speichern\". Wenn Sie noch kein Konto für GoDaddy E-Mail-"
+"Marketing haben, %2$s"
 
 #: includes/settings.php:747
 msgctxt "account details link"
@@ -435,26 +438,28 @@ msgstr "Formular für GoDaddy E-Mail-Marketing"
 #: includes/widget.php:24
 msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr "Betten Sie Anmeldeformulare für GoDaddy E-Mail-Marketing in die Seitenleiste ein."
+msgstr ""
+"Betten Sie Anmeldeformulare für GoDaddy E-Mail-Marketing in die Seitenleiste "
+"ein."
 
-#: includes/widget.php:123
+#: includes/widget.php:128
 msgid "Title:"
 msgstr "Titel:"
 
-#: includes/widget.php:129
+#: includes/widget.php:134
 msgid "Additional Text:"
 msgstr "Zusätzlicher Text:"
 
-#: includes/widget.php:138
+#: includes/widget.php:143
 msgid "Form:"
 msgstr "Formular:"
 
-#: includes/widget.php:151
+#: includes/widget.php:156
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "Bitte richten Sie Ihr Konto für GoDaddy E-Mail-Marketing unter %s ein."
 
-#: includes/widget.php:155
+#: includes/widget.php:160
 msgid "settings page"
 msgstr "Seite mit den Einstellungen"

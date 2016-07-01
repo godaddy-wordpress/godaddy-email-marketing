@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-08 16:09-0500\n"
+"POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: godaddy-email-marketing.php:196
+#: godaddy-email-marketing.php:197
 msgid "Thank you for signing up!"
 msgstr "Merci de votre inscription !"
 
-#: godaddy-email-marketing.php:197
+#: godaddy-email-marketing.php:198
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
@@ -29,33 +29,35 @@ msgstr ""
 "Merci de votre inscription ! Veuillez vérifier votre mail pour confirmer "
 "votre abonnement."
 
-#: godaddy-email-marketing.php:198
+#: godaddy-email-marketing.php:199
 msgid "Oops! There was a problem. Please try again."
 msgstr "Erreur ! Un problème est survenu. Réessayez."
 
-#: godaddy-email-marketing.php:199
+#: godaddy-email-marketing.php:200
 msgid "Please enter a valid email address."
 msgstr "Veuillez insérer une adresse email valide."
 
-#: godaddy-email-marketing.php:200
+#: godaddy-email-marketing.php:201
 #, php-format
 msgctxt "Name of required field"
 msgid "%s is a required field."
 msgstr "%s est un champ obligatoire."
 
-#: godaddy-email-marketing.php:212 includes/settings.php:532
+#: godaddy-email-marketing.php:213 includes/settings.php:532
 msgid "Settings"
 msgstr "Paramètres"
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "Le plug-in GoDaddy Marketing par email est presque prêt."
 
-#: godaddy-email-marketing.php:248
-msgid "You must enter your username &amp; API key for it to work."
-msgstr "Vous devez entrer votre nom d'utilisateur et votre clé API pour en garantir le bon fonctionnement."
-
 #: godaddy-email-marketing.php:249
+msgid "You must enter your username &amp; API key for it to work."
+msgstr ""
+"Vous devez entrer votre nom d'utilisateur et votre clé API pour en garantir "
+"le bon fonctionnement."
+
+#: godaddy-email-marketing.php:250
 msgid "Let's do it!"
 msgstr "Allons-y !"
 
@@ -168,7 +170,8 @@ msgstr ""
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr ""
-"La connexion a été établie à Marketing par mail GoDaddy ! Opération terminée !"
+"La connexion a été établie à Marketing par mail GoDaddy ! Opération "
+"terminée !"
 
 #: includes/settings.php:241
 msgid "Settings have been updated."
@@ -219,8 +222,8 @@ msgid ""
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
 "<strong>Code abrégé :</strong> Vous pouvez ajouter un formulaire à toute "
-"publication ou page en ajoutant le code abrégé (ex. <code>[gem "
-"id=80326]</code>) dans l'éditeur de page/publication."
+"publication ou page en ajoutant le code abrégé (ex. <code>[gem id=80326]</"
+"code>) dans l'éditeur de page/publication."
 
 #: includes/settings.php:289
 #, php-format
@@ -332,7 +335,9 @@ msgstr "Vous n'avez actuellement aucun formulaire."
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "Vous ne connaissez pas encore GoDaddy ? Créez un compte conseils et commencez dès aujourd'hui ! %s "
+msgstr ""
+"Vous ne connaissez pas encore GoDaddy ? Créez un compte conseils et "
+"commencez dès aujourd'hui ! %s "
 
 #: includes/settings.php:520
 msgctxt "header button"
@@ -437,24 +442,24 @@ msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
 msgstr "Incorporez les formulaires de connexion dans la barre latérale."
 
-#: includes/widget.php:123
+#: includes/widget.php:128
 msgid "Title:"
 msgstr "Titre :"
 
-#: includes/widget.php:129
+#: includes/widget.php:134
 msgid "Additional Text:"
 msgstr "Texte supplémentaire :"
 
-#: includes/widget.php:138
+#: includes/widget.php:143
 msgid "Form:"
 msgstr "Formulaire :"
 
-#: includes/widget.php:151
+#: includes/widget.php:156
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "Configurez votre compte Marketing par mail GoDaddy dans la %s."
 
-#: includes/widget.php:155
+#: includes/widget.php:160
 msgid "settings page"
 msgstr "page Paramètres"

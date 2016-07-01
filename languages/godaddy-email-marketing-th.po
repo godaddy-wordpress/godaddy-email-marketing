@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-08 16:09-0500\n"
+"POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,43 +17,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: godaddy-email-marketing.php:196
+#: godaddy-email-marketing.php:197
 msgid "Thank you for signing up!"
 msgstr "ขอบคุณที่ลงทะเบียน!"
 
-#: godaddy-email-marketing.php:197
+#: godaddy-email-marketing.php:198
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr "ขอบคุณที่ลงทะเบียน! โปรดดูอีเมลของคุณเพื่อยืนยันการสมัครสมาชิกของคุณ"
 
-#: godaddy-email-marketing.php:198
+#: godaddy-email-marketing.php:199
 msgid "Oops! There was a problem. Please try again."
 msgstr "ขออภัย! มีปัญหาเกิดขึ้น โปรดลองอีกครั้ง"
 
-#: godaddy-email-marketing.php:199
+#: godaddy-email-marketing.php:200
 msgid "Please enter a valid email address."
 msgstr "โปรดป้อนที่อยู่อีเมลที่ถูกต้อง"
 
-#: godaddy-email-marketing.php:200
+#: godaddy-email-marketing.php:201
 #, php-format
 msgctxt "Name of required field"
 msgid "%s is a required field."
 msgstr "ต้องกรอกช่อง %s"
 
-#: godaddy-email-marketing.php:212 includes/settings.php:532
+#: godaddy-email-marketing.php:213 includes/settings.php:532
 msgid "Settings"
 msgstr "การตั้งค่า"
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "การตลาดด้วยอีเมลของ GoDaddy เกือบพร้อมแล้ว"
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "คุณต้องใส่ชื่อผู้ใช้และคีย์ API เพื่อให้สามารถทำงานได้"
 
-#: godaddy-email-marketing.php:249
+#: godaddy-email-marketing.php:250
 msgid "Let's do it!"
 msgstr "มาทำกันเลย!"
 
@@ -190,11 +190,10 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"เมื่อเปิดใช้งานปลั๊กอินแล้ว "
-"คุณจะสามารถเลือกและแทรกเว็บฟอร์มการตลาดด้วยอีเมลของ GoDaddy ใดๆ "
-"บนเว็บไซต์ของคุณได้ การตั้งค่านั้นง่าย ด้านล่าง "
-"เพียงแค่ใส่ที่อยู่อีเมลบัญชีและคีย์ API ของคุณ (หาได้ในส่วน [%s] "
-"บัญชีการตลาดด้วยอีเมลของ GoDaddy ของคุณ) ต่อไปนี้คือวิธี 3 วิธีที่คุณสามารถแสดงเว็บฟอร์มบนเว็บไซต์ของคุณ:"
+"เมื่อเปิดใช้งานปลั๊กอินแล้ว คุณจะสามารถเลือกและแทรกเว็บฟอร์มการตลาดด้วยอีเมลของ GoDaddy "
+"ใดๆ บนเว็บไซต์ของคุณได้ การตั้งค่านั้นง่าย ด้านล่าง เพียงแค่ใส่ที่อยู่อีเมลบัญชีและคีย์ API ของคุณ "
+"(หาได้ในส่วน [%s] บัญชีการตลาดด้วยอีเมลของ GoDaddy ของคุณ) ต่อไปนี้คือวิธี 3 "
+"วิธีที่คุณสามารถแสดงเว็บฟอร์มบนเว็บไซต์ของคุณ:"
 
 #: includes/settings.php:286
 msgid ""
@@ -202,8 +201,9 @@ msgid ""
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
 "your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>วิดเจ็ท:</strong> ไปที่ Appearance &rarr; widgets แล้วหาวิดเจ็ทชื่อ "
-"“GoDaddy Email Marketing Form” แล้วลากลงในส่วนวิดเจ็ทที่คุณต้องการ จากนั้น คุณสามารถเพิ่มชื่อและเลือกแบบฟอร์ม!"
+"<strong>วิดเจ็ท:</strong> ไปที่ Appearance &rarr; widgets แล้วหาวิดเจ็ทชื่อ “GoDaddy "
+"Email Marketing Form” แล้วลากลงในส่วนวิดเจ็ทที่คุณต้องการ จากนั้น "
+"คุณสามารถเพิ่มชื่อและเลือกแบบฟอร์ม!"
 
 #: includes/settings.php:287
 msgid ""
@@ -211,7 +211,8 @@ msgid ""
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
 "<strong>รหัสแบบสั้น:</strong> คุณสามารถเพิ่มแบบฟอร์มกับโพสต์หรือหน้าเพจใดๆ "
-"ได้ด้วยการเพิ่มรหัสแบบสั้น (เช่น <code>[gem id=80326]</code>) ในโปรแแกรมแก้ไขหน้าเพจ/โพสต์"
+"ได้ด้วยการเพิ่มรหัสแบบสั้น (เช่น <code>[gem id=80326]</code>) ในโปรแแกรมแก้ไขหน้าเพจ/"
+"โพสต์"
 
 #: includes/settings.php:289
 #, php-format
@@ -219,8 +220,8 @@ msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
 msgstr ""
-"<strong>แท็กแม่แบบ:</strong> คุณสามารถเพิ่มแท็กแม่แบบต่อไปนี้ในไฟล์ WordPress "
-"ใดๆ ได้: <code>%s</code>.  เช่น <code>%s</code>"
+"<strong>แท็กแม่แบบ:</strong> คุณสามารถเพิ่มแท็กแม่แบบต่อไปนี้ในไฟล์ WordPress ใดๆ ได้: "
+"<code>%s</code>.  เช่น <code>%s</code>"
 
 #: includes/settings.php:299
 msgid "For more information:"
@@ -282,8 +283,7 @@ msgstr "ลบส่วนชั่วคราว"
 msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
-msgstr ""
-"ล้างเฉพาะข้อมูลที่แคชไว้ที่เกี่ยวโยงกับปลั๊กอินนี้เท่านั้น และควรทำก่อนการฮาร์ดรีเซ็ต"
+msgstr "ล้างเฉพาะข้อมูลที่แคชไว้ที่เกี่ยวโยงกับปลั๊กอินนี้เท่านั้น และควรทำก่อนการฮาร์ดรีเซ็ต"
 
 #: includes/settings.php:410
 msgid "Hard Reset"
@@ -309,8 +309,9 @@ msgid ""
 "set up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
 msgstr ""
-"เพิ่มแบบฟอร์มลงทะเบียนการตลาดทางอีเมลของ GoDaddy ให้แก่เว็บไซต์ WordPress "
-"ของคุณ! กำหนดค่าได้ง่าย ปลั๊กอินการตลาดทางอีเมลของ GoDaddy จะทำให้ผู้ชมเว็บไซต์ของคุณสมัครสมาชิกกับรายการอีเมลของคุณได้"
+"เพิ่มแบบฟอร์มลงทะเบียนการตลาดทางอีเมลของ GoDaddy ให้แก่เว็บไซต์ WordPress ของคุณ! "
+"กำหนดค่าได้ง่าย ปลั๊กอินการตลาดทางอีเมลของ GoDaddy "
+"จะทำให้ผู้ชมเว็บไซต์ของคุณสมัครสมาชิกกับรายการอีเมลของคุณได้"
 
 #: includes/settings.php:517
 msgctxt "header note"
@@ -389,7 +390,8 @@ msgid ""
 "If you are experiencing issues and are unsure of the cause, you may want to "
 "activate debug mode, which displays additional options."
 msgstr ""
-"หากคุณประสบปัญหาและไม่ทราบว่ามาจากสาเหตุใด คุณอาจเปิดโหมดแก้จุดบกพร่องซึ่งจะแสดงตัวเลือกเพิ่มเติม"
+"หากคุณประสบปัญหาและไม่ทราบว่ามาจากสาเหตุใด "
+"คุณอาจเปิดโหมดแก้จุดบกพร่องซึ่งจะแสดงตัวเลือกเพิ่มเติม"
 
 #: includes/settings.php:747
 #, php-format
@@ -400,10 +402,9 @@ msgid ""
 "then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
 "account, %2$s."
 msgstr ""
-"เพื่อให้ปลั๊กอินทำงานได้ ปลั๊กอินต้องเข้าถึงบัญชีการตลาดทางอีเมลของ GoDaddy "
-"ของคุณ  %1$s เพื่อรับชื่อผู้ใช้และคีย์ API คัดลอกและวางชื่อผู้ใช้และคีย API "
-"ด้านล่าง จากนั้นคลิก “บันทึกการตั้งค่า” หากคุณไม่มีบัญชีการตลาดทางอีเมลของ "
-"GoDaddy %2$s"
+"เพื่อให้ปลั๊กอินทำงานได้ ปลั๊กอินต้องเข้าถึงบัญชีการตลาดทางอีเมลของ GoDaddy ของคุณ  %1$s "
+"เพื่อรับชื่อผู้ใช้และคีย์ API คัดลอกและวางชื่อผู้ใช้และคีย API ด้านล่าง จากนั้นคลิก “บันทึกการตั้งค่า” "
+"หากคุณไม่มีบัญชีการตลาดทางอีเมลของ GoDaddy %2$s"
 
 #: includes/settings.php:747
 msgctxt "account details link"
@@ -424,24 +425,24 @@ msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
 msgstr "ฝังแบบฟอร์มลงทะเบียนการตลาดทางอีเมลของ GoDaddy ในแถบด้านข้าง"
 
-#: includes/widget.php:123
+#: includes/widget.php:128
 msgid "Title:"
 msgstr "ชื่อเรื่อง:"
 
-#: includes/widget.php:129
+#: includes/widget.php:134
 msgid "Additional Text:"
 msgstr "ข้อความเพิ่มเติม:"
 
-#: includes/widget.php:138
+#: includes/widget.php:143
 msgid "Form:"
 msgstr "แบบฟอร์ม:"
 
-#: includes/widget.php:151
+#: includes/widget.php:156
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "โปรดตั้งค่าบัญชีการตลาดด้วยอีเมลของ GoDaddy ใน %s"
 
-#: includes/widget.php:155
+#: includes/widget.php:160
 msgid "settings page"
 msgstr "หน้าการตั้งค่า"

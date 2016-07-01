@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-08 16:09-0500\n"
+"POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: godaddy-email-marketing.php:196
+#: godaddy-email-marketing.php:197
 msgid "Thank you for signing up!"
 msgstr "Terima kasih kerana mendaftar!"
 
-#: godaddy-email-marketing.php:197
+#: godaddy-email-marketing.php:198
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
@@ -29,33 +29,34 @@ msgstr ""
 "Terima kasih kerana mendaftar! Sila periksa e-mel anda untuk mengesahkan "
 "langganan anda."
 
-#: godaddy-email-marketing.php:198
+#: godaddy-email-marketing.php:199
 msgid "Oops! There was a problem. Please try again."
 msgstr "Oops! Terdapat masalah. Sila cuba lagi."
 
-#: godaddy-email-marketing.php:199
+#: godaddy-email-marketing.php:200
 msgid "Please enter a valid email address."
 msgstr "Sila masukkan alamat e-mel yang sah."
 
-#: godaddy-email-marketing.php:200
+#: godaddy-email-marketing.php:201
 #, php-format
 msgctxt "Name of required field"
 msgid "%s is a required field."
 msgstr "%s adalah ruang yang diperlukan."
 
-#: godaddy-email-marketing.php:212 includes/settings.php:532
+#: godaddy-email-marketing.php:213 includes/settings.php:532
 msgid "Settings"
 msgstr "Tetapan"
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "Pemasaran E-mel GoDaddy hampir siap."
 
-#: godaddy-email-marketing.php:248
-msgid "You must enter your username &amp; API key for it to work."
-msgstr "Anda perlu masukkan nama pengguna &amp; kekunci API supaya ia berfungsi."
-
 #: godaddy-email-marketing.php:249
+msgid "You must enter your username &amp; API key for it to work."
+msgstr ""
+"Anda perlu masukkan nama pengguna &amp; kekunci API supaya ia berfungsi."
+
+#: godaddy-email-marketing.php:250
 msgid "Let's do it!"
 msgstr "Mari lakukannya!"
 
@@ -161,7 +162,8 @@ msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr ""
-"Kelayakan tidak betul! Sila sahkan bahawa anda telah masukkannya secara salah."
+"Kelayakan tidak betul! Sila sahkan bahawa anda telah masukkannya secara "
+"salah."
 
 #: includes/settings.php:236
 msgid ""
@@ -194,11 +196,11 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"Selepas pasang masuk diaktifkan, anda akan dapat pilih dan selitkan mana-mana "
-"borang web Pemasaran E-mel GoDaddy anda pada laman anda. Pemasangan itu "
-"mudah. Di bawah, cuma masukkan alamat e-mel akaun anda dan kekunci API (boleh "
-"didapati di kawasan [%s] akaun Pemasaran E-mel GoDaddy anda). Berikut adalah "
-"3 cara anda boleh memaparkan borang web pada laman anda:"
+"Selepas pasang masuk diaktifkan, anda akan dapat pilih dan selitkan mana-"
+"mana borang web Pemasaran E-mel GoDaddy anda pada laman anda. Pemasangan itu "
+"mudah. Di bawah, cuma masukkan alamat e-mel akaun anda dan kekunci API "
+"(boleh didapati di kawasan [%s] akaun Pemasaran E-mel GoDaddy anda). Berikut "
+"adalah 3 cara anda boleh memaparkan borang web pada laman anda:"
 
 #: includes/settings.php:286
 msgid ""
@@ -215,8 +217,8 @@ msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
-"<strong>Kod pendek:</strong> Anda boleh tambah borang pada mana-mana pos atau "
-"laman dengan menambah kod pendek (ex. <code>[gem id=80326]</code>) pada "
+"<strong>Kod pendek:</strong> Anda boleh tambah borang pada mana-mana pos "
+"atau laman dengan menambah kod pendek (ex. <code>[gem id=80326]</code>) pada "
 "laman/pos editor."
 
 #: includes/settings.php:289
@@ -289,8 +291,8 @@ msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
 msgstr ""
-"Singkir hanya data cache yang dikaitkan dengan pasang masuk, dan perlu dicuba "
-"sebelum set semula asal."
+"Singkir hanya data cache yang dikaitkan dengan pasang masuk, dan perlu "
+"dicuba sebelum set semula asal."
 
 #: includes/settings.php:410
 msgid "Hard Reset"
@@ -433,24 +435,24 @@ msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
 msgstr "Letakkan borang pendaftaran Pemasaran E-mel GoDaddy di palang sisi."
 
-#: includes/widget.php:123
+#: includes/widget.php:128
 msgid "Title:"
 msgstr "Tajuk:"
 
-#: includes/widget.php:129
+#: includes/widget.php:134
 msgid "Additional Text:"
 msgstr "Teks Tambahan:"
 
-#: includes/widget.php:138
+#: includes/widget.php:143
 msgid "Form:"
 msgstr "Borang:"
 
-#: includes/widget.php:151
+#: includes/widget.php:156
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "Sila tetapkan akaun Pemasaran E-mel GoDaddy pada %s."
 
-#: includes/widget.php:155
+#: includes/widget.php:160
 msgid "settings page"
 msgstr "halaman tetapan"

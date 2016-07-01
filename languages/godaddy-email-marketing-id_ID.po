@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-08 16:09-0500\n"
+"POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: godaddy-email-marketing.php:196
+#: godaddy-email-marketing.php:197
 msgid "Thank you for signing up!"
 msgstr "Terima kasih sudah mendaftar!"
 
-#: godaddy-email-marketing.php:197
+#: godaddy-email-marketing.php:198
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
@@ -29,33 +29,35 @@ msgstr ""
 "Terima kasih sudah mendaftar! Harap periksa email Anda untuk mengonfirmasi "
 "langganan Anda."
 
-#: godaddy-email-marketing.php:198
+#: godaddy-email-marketing.php:199
 msgid "Oops! There was a problem. Please try again."
 msgstr "Ups! Ada masalah. Harap coba lagi."
 
-#: godaddy-email-marketing.php:199
+#: godaddy-email-marketing.php:200
 msgid "Please enter a valid email address."
 msgstr "Silakan masukkan sebuah alamat email yang sah."
 
-#: godaddy-email-marketing.php:200
+#: godaddy-email-marketing.php:201
 #, php-format
 msgctxt "Name of required field"
 msgid "%s is a required field."
 msgstr "Bidang %s wajib diisi."
 
-#: godaddy-email-marketing.php:212 includes/settings.php:532
+#: godaddy-email-marketing.php:213 includes/settings.php:532
 msgid "Settings"
 msgstr "Pengaturan"
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "Pemasaran Email GoDaddy hampir siap."
 
-#: godaddy-email-marketing.php:248
-msgid "You must enter your username &amp; API key for it to work."
-msgstr "Anda harus memasukkan nama pengguna &amp; kunci API agar akun dapat berfungsi."
-
 #: godaddy-email-marketing.php:249
+msgid "You must enter your username &amp; API key for it to work."
+msgstr ""
+"Anda harus memasukkan nama pengguna &amp; kunci API agar akun dapat "
+"berfungsi."
+
+#: godaddy-email-marketing.php:250
 msgid "Let's do it!"
 msgstr "Mari kerjakan!"
 
@@ -161,7 +163,8 @@ msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr ""
-"Kredensial salah! Harap verifikasi bahwa Anda telah memasukkannya dengan benar."
+"Kredensial salah! Harap verifikasi bahwa Anda telah memasukkannya dengan "
+"benar."
 
 #: includes/settings.php:236
 msgid ""
@@ -207,7 +210,8 @@ msgid ""
 msgstr ""
 "<strong>Widget:</strong> Masuklah ke widget Tampilan &rarr; dan temukan "
 "widget bernama “Formulir Pemasaran Email GoDaddy” lalu seret ke dalam area "
-"widget pilihan Anda. Kemudian, Anda dapat menambahkan judul dan memilih formulir!"
+"widget pilihan Anda. Kemudian, Anda dapat menambahkan judul dan memilih "
+"formulir!"
 
 #: includes/settings.php:287
 msgid ""
@@ -215,8 +219,8 @@ msgid ""
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
 "<strong>Shortcode:</strong> Anda dapat menambahkan formulir ke posting atau "
-"halaman mana saja dengan menambahkan shortcode (msl. <code>[gem "
-"id=80326]</code>) di editor halaman/posting."
+"halaman mana saja dengan menambahkan shortcode (msl. <code>[gem id=80326]</"
+"code>) di editor halaman/posting."
 
 #: includes/settings.php:289
 #, php-format
@@ -432,24 +436,24 @@ msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
 msgstr "Sematkan formulir Pemasaran Email GoDaddy di bilah samping."
 
-#: includes/widget.php:123
+#: includes/widget.php:128
 msgid "Title:"
 msgstr "Judul:"
 
-#: includes/widget.php:129
+#: includes/widget.php:134
 msgid "Additional Text:"
 msgstr "Teks Tambahan:"
 
-#: includes/widget.php:138
+#: includes/widget.php:143
 msgid "Form:"
 msgstr "Formulir:"
 
-#: includes/widget.php:151
+#: includes/widget.php:156
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "Harap buat akun Pemasaran Email GoDaddy Anda di %s."
 
-#: includes/widget.php:155
+#: includes/widget.php:160
 msgid "settings page"
 msgstr "halaman pengaturan"

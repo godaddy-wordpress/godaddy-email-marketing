@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-08 16:09-0500\n"
+"POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,45 +17,46 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: godaddy-email-marketing.php:196
+#: godaddy-email-marketing.php:197
 msgid "Thank you for signing up!"
 msgstr "Kaydolduğunuz için teşekkürler!"
 
-#: godaddy-email-marketing.php:197
+#: godaddy-email-marketing.php:198
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr ""
-"Kaydolduğunuz için teşekkürler! Aboneliğinizi doğrulamak için lütfen "
-"e-postanızı kontrol edin."
+"Kaydolduğunuz için teşekkürler! Aboneliğinizi doğrulamak için lütfen e-"
+"postanızı kontrol edin."
 
-#: godaddy-email-marketing.php:198
+#: godaddy-email-marketing.php:199
 msgid "Oops! There was a problem. Please try again."
 msgstr "Üzgünüz! Bir sorun oluştu. Lütfen tekrar deneyin."
 
-#: godaddy-email-marketing.php:199
+#: godaddy-email-marketing.php:200
 msgid "Please enter a valid email address."
 msgstr "Lütfen geçerli bir e-posta adresi girin."
 
-#: godaddy-email-marketing.php:200
+#: godaddy-email-marketing.php:201
 #, php-format
 msgctxt "Name of required field"
 msgid "%s is a required field."
 msgstr "%s zorunlu bir alandır."
 
-#: godaddy-email-marketing.php:212 includes/settings.php:532
+#: godaddy-email-marketing.php:213 includes/settings.php:532
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "GoDaddy E-posta Pazarlama'ya kavuşmanıza az kaldı."
 
-#: godaddy-email-marketing.php:248
-msgid "You must enter your username &amp; API key for it to work."
-msgstr "Ürünün çalışması için kullanıcı adınızı ve API anahtarını girmeniz gerekir."
-
 #: godaddy-email-marketing.php:249
+msgid "You must enter your username &amp; API key for it to work."
+msgstr ""
+"Ürünün çalışması için kullanıcı adınızı ve API anahtarını girmeniz gerekir."
+
+#: godaddy-email-marketing.php:250
 msgid "Let's do it!"
 msgstr "Hadi, işe koyulalım!"
 
@@ -207,9 +208,10 @@ msgid ""
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
 "your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Modül:</strong> Görünüm &rarr; modüllerine gidin ve \"GoDaddy E-posta "
-"Pazarlama Formu\" isimli modülü bulun; modülü istediğiniz modül alanına "
-"sürükleyin. Ardından da bir başlık ekleyebilir ve form seçebilirsiniz!"
+"<strong>Modül:</strong> Görünüm &rarr; modüllerine gidin ve \"GoDaddy E-"
+"posta Pazarlama Formu\" isimli modülü bulun; modülü istediğiniz modül "
+"alanına sürükleyin. Ardından da bir başlık ekleyebilir ve form "
+"seçebilirsiniz!"
 
 #: includes/settings.php:287
 msgid ""
@@ -217,7 +219,8 @@ msgid ""
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
 "<strong>Kısa kod:</strong> Kısa kod ekleyerek sayfa/gönderi düzenleyicide "
-"istediğiniz gönderiye ya da sayfaya form  ekleyebilirsiniz (ör: <code>[gem id=80326]</code>). "
+"istediğiniz gönderiye ya da sayfaya form  ekleyebilirsiniz (ör: <code>[gem "
+"id=80326]</code>). "
 
 #: includes/settings.php:289
 #, php-format
@@ -411,8 +414,8 @@ msgid ""
 msgstr ""
 "Bu eklentinin çalışması için GoDaddy E-posta Pazarlama hesabınıza erişiminin "
 "olması gerekir. kullanıcı adınızı ve API anahtarınızı almak için %1$s .  "
-"Öğeleri aşağı yapıştırın ve ardından \"Ayarları Kaydet\" seçeneğini tıklayın. "
-"GoDaddy E-posta Pazarlama hesabınız yoksa, %2$s."
+"Öğeleri aşağı yapıştırın ve ardından \"Ayarları Kaydet\" seçeneğini "
+"tıklayın. GoDaddy E-posta Pazarlama hesabınız yoksa, %2$s."
 
 #: includes/settings.php:747
 msgctxt "account details link"
@@ -433,24 +436,24 @@ msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
 msgstr "GoDaddy E-posta Pazarlama kayıt formlarını kenar çubuğuna gömün."
 
-#: includes/widget.php:123
+#: includes/widget.php:128
 msgid "Title:"
 msgstr "Başlık:"
 
-#: includes/widget.php:129
+#: includes/widget.php:134
 msgid "Additional Text:"
 msgstr "Ek Metin:"
 
-#: includes/widget.php:138
+#: includes/widget.php:143
 msgid "Form:"
 msgstr "Form:"
 
-#: includes/widget.php:151
+#: includes/widget.php:156
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "GoDaddy E-posta Pazarlama hesabınızı lütfen %s konumunda kurun."
 
-#: includes/widget.php:155
+#: includes/widget.php:160
 msgid "settings page"
 msgstr "ayarlar sayfası"

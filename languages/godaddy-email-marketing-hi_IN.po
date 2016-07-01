@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-08 16:09-0500\n"
+"POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,45 +17,47 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: godaddy-email-marketing.php:196
+#: godaddy-email-marketing.php:197
 msgid "Thank you for signing up!"
 msgstr "साइन अप करने के लिए आपका धन्यवाद!"
 
-#: godaddy-email-marketing.php:197
+#: godaddy-email-marketing.php:198
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr ""
-"साइन अप करने के लिए आपका धन्यवाद! अपनी सदस्यता की पुष्टि करने के लिए कृपया "
-"अपने ईमेल की जांच करें."
+"साइन अप करने के लिए आपका धन्यवाद! अपनी सदस्यता की पुष्टि करने के लिए कृपया अपने ईमेल की "
+"जांच करें."
 
-#: godaddy-email-marketing.php:198
+#: godaddy-email-marketing.php:199
 msgid "Oops! There was a problem. Please try again."
 msgstr "ओह! कोई समस्या आई थी. कृपया पुनः प्रयास करें."
 
-#: godaddy-email-marketing.php:199
+#: godaddy-email-marketing.php:200
 msgid "Please enter a valid email address."
 msgstr "कृपया कोई मान्य ईमेल पता दर्ज करें."
 
-#: godaddy-email-marketing.php:200
+#: godaddy-email-marketing.php:201
 #, php-format
 msgctxt "Name of required field"
 msgid "%s is a required field."
 msgstr "%s एक आवश्यक फ़ील्ड है."
 
-#: godaddy-email-marketing.php:212 includes/settings.php:532
+#: godaddy-email-marketing.php:213 includes/settings.php:532
 msgid "Settings"
 msgstr "सेटिंग"
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "GoDaddy ईमेल मार्केटिंग लगभग तैयार है."
 
-#: godaddy-email-marketing.php:248
-msgid "You must enter your username &amp; API key for it to work."
-msgstr "यह कार्य करे, इसके लिए आपको उपयोगकर्तानाम और &amp; API कुंजी आवश्यक रूप से दर्ज करना चाहिए."
-
 #: godaddy-email-marketing.php:249
+msgid "You must enter your username &amp; API key for it to work."
+msgstr ""
+"यह कार्य करे, इसके लिए आपको उपयोगकर्तानाम और &amp; API कुंजी आवश्यक रूप से दर्ज करना "
+"चाहिए."
+
+#: godaddy-email-marketing.php:250
 msgid "Let's do it!"
 msgstr "आइए यह करें!"
 
@@ -160,15 +162,12 @@ msgstr "फ़ॉर्म सूची सफलतापूर्वक अपड
 msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
-msgstr ""
-"क्रेडेंशियल्स गलत हैं! कृपया यह सत्यापित करें कि आपने उन्हें सही रूप से दर्ज "
-"किया है."
+msgstr "क्रेडेंशियल्स गलत हैं! कृपया यह सत्यापित करें कि आपने उन्हें सही रूप से दर्ज किया है."
 
 #: includes/settings.php:236
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
-msgstr ""
-"GoDaddy ईमेल मार्केटिंग के साथ कनेक्शन स्थापित हो गया है! आप तैयार हैं!"
+msgstr "GoDaddy ईमेल मार्केटिंग के साथ कनेक्शन स्थापित हो गया है! आप तैयार हैं!"
 
 #: includes/settings.php:241
 msgid "Settings have been updated."
@@ -195,11 +194,10 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"जब प्लगइन सक्रिय किया जाता है, तो आप सीधे अपनी साइट से ही GoDaddy ईमेल "
-"मार्केटिंग वेबफ़ॉर्म का चयन कर सकते हैं और उसे सम्मिलित कर सकते हैं. सेटअप "
-"आसान है. नीचे बस अपना खाता ईमेल पता और API कुंजी (आपके GoDaddy ईमेल "
-"मार्केटिंग खाते के [%s] क्षेत्र में मिलती है) दर्ज करें. यहां वे 3 तरीके दिए "
-"गए हैं, जिनसे आप अपनी साइट पर कोई वेबफ़ॉर्म प्रदर्शित कर सकते हैं:"
+"जब प्लगइन सक्रिय किया जाता है, तो आप सीधे अपनी साइट से ही GoDaddy ईमेल मार्केटिंग "
+"वेबफ़ॉर्म का चयन कर सकते हैं और उसे सम्मिलित कर सकते हैं. सेटअप आसान है. नीचे बस अपना खाता "
+"ईमेल पता और API कुंजी (आपके GoDaddy ईमेल मार्केटिंग खाते के [%s] क्षेत्र में मिलती है) दर्ज "
+"करें. यहां वे 3 तरीके दिए गए हैं, जिनसे आप अपनी साइट पर कोई वेबफ़ॉर्म प्रदर्शित कर सकते हैं:"
 
 #: includes/settings.php:286
 msgid ""
@@ -207,17 +205,17 @@ msgid ""
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
 "your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>विजेट:</strong> प्रकटन &rarr; विजेट पर जाएं और GoDaddy ईमेल "
-"मार्केटिंग प्रपत्र नामक विजेट खोजें और उसे अपनी पसंद के विजेट क्षेत्र में "
-"खींचें. इसके बाद आप कोई शीर्षक जोड़ और कोई प्रपत्र चुन सकते हैं!"
+"<strong>विजेट:</strong> प्रकटन &rarr; विजेट पर जाएं और GoDaddy ईमेल मार्केटिंग प्रपत्र "
+"नामक विजेट खोजें और उसे अपनी पसंद के विजेट क्षेत्र में खींचें. इसके बाद आप कोई शीर्षक जोड़ और "
+"कोई प्रपत्र चुन सकते हैं!"
 
 #: includes/settings.php:287
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
-"<strong>लघुकोड:</strong> आप पृष्ठ/पोस्ट संपादक में लघुकोड जोड़कर किसी भी पोस्ट "
-"या पृष्ठ पर कोई फ़ॉर्म जोड़ सकते हैं (उदा. <code>[gem id=80326]</code>)."
+"<strong>लघुकोड:</strong> आप पृष्ठ/पोस्ट संपादक में लघुकोड जोड़कर किसी भी पोस्ट या पृष्ठ "
+"पर कोई फ़ॉर्म जोड़ सकते हैं (उदा. <code>[gem id=80326]</code>)."
 
 #: includes/settings.php:289
 #, php-format
@@ -225,8 +223,8 @@ msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
 msgstr ""
-"<strong>टेम्पलेट टैग:</strong> आप किसी भी WordPress फ़ाइल में निम्न टेम्पलेट "
-"टैग जोड़ सकते हैं: <code>%s</code>. उदा. <code>%s</code>"
+"<strong>टेम्पलेट टैग:</strong> आप किसी भी WordPress फ़ाइल में निम्न टेम्पलेट टैग जोड़ सकते "
+"हैं: <code>%s</code>. उदा. <code>%s</code>"
 
 #: includes/settings.php:299
 msgid "For more information:"
@@ -289,8 +287,8 @@ msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
 msgstr ""
-"यह प्रक्रिया करने से इस प्लगइन से संबद्ध कैश्ड डेटा हट जाता है और हार्ड रीसेट "
-"करने से पहले इसका प्रयास करना चाहिए."
+"यह प्रक्रिया करने से इस प्लगइन से संबद्ध कैश्ड डेटा हट जाता है और हार्ड रीसेट करने से पहले "
+"इसका प्रयास करना चाहिए."
 
 #: includes/settings.php:410
 msgid "Hard Reset"
@@ -316,9 +314,9 @@ msgid ""
 "set up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
 msgstr ""
-"अपनी WordPress साइट पर अपना GoDaddy ईमेल मार्केटिंग साइनअप प्रपत्र जोड़ें! "
-"सेटअप करने में आसान, GoDaddy ईमेल मार्केटिंग प्लगइन आपके साइट आगंतुकों को "
-"आपकी ईमेल सूची की सदस्यता लेने देता है."
+"अपनी WordPress साइट पर अपना GoDaddy ईमेल मार्केटिंग साइनअप प्रपत्र जोड़ें! सेटअप करने में "
+"आसान, GoDaddy ईमेल मार्केटिंग प्लगइन आपके साइट आगंतुकों को आपकी ईमेल सूची की सदस्यता लेने "
+"देता है."
 
 #: includes/settings.php:517
 msgctxt "header note"
@@ -397,8 +395,8 @@ msgid ""
 "If you are experiencing issues and are unsure of the cause, you may want to "
 "activate debug mode, which displays additional options."
 msgstr ""
-"यदि आपको समस्या हो रही हैं और कारण के बारे में अनिश्चित हैं, तो हो सकता है आप "
-"डीबग मोड सक्रिय करना चाहें, जो अतिरिक्त विकल्प प्रदर्शित करता है."
+"यदि आपको समस्या हो रही हैं और कारण के बारे में अनिश्चित हैं, तो हो सकता है आप डीबग मोड "
+"सक्रिय करना चाहें, जो अतिरिक्त विकल्प प्रदर्शित करता है."
 
 #: includes/settings.php:747
 #, php-format
@@ -409,10 +407,10 @@ msgid ""
 "then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
 "account, %2$s."
 msgstr ""
-"इस प्लगइन के कार्य करने के लिए इसे आपके GoDaddy ईमेल मार्केटिंग खाते पर पहुंच "
-"प्राप्त करने की आवश्यकता है.  %1$s अपना उपयोगकर्तानाम और API कुंजी प्राप्त "
-"करने के लिए. नीचे उनकी प्रतिलिपि बनाएं और चिपकाएं; फिर \"सेटिंग्स सहेजें\" पर "
-"क्लिक करें. यदि आपके पास कोई GoDaddy ईमेल मार्केटिंग खाता नहीं है, %2$s."
+"इस प्लगइन के कार्य करने के लिए इसे आपके GoDaddy ईमेल मार्केटिंग खाते पर पहुंच प्राप्त करने की "
+"आवश्यकता है.  %1$s अपना उपयोगकर्तानाम और API कुंजी प्राप्त करने के लिए. नीचे उनकी "
+"प्रतिलिपि बनाएं और चिपकाएं; फिर \"सेटिंग्स सहेजें\" पर क्लिक करें. यदि आपके पास कोई "
+"GoDaddy ईमेल मार्केटिंग खाता नहीं है, %2$s."
 
 #: includes/settings.php:747
 msgctxt "account details link"
@@ -433,24 +431,24 @@ msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
 msgstr "साइड पट्टी में मौजूद GoDaddy ईमेल मार्केटिंग साइनअप प्रपत्र एम्बेड करें."
 
-#: includes/widget.php:123
+#: includes/widget.php:128
 msgid "Title:"
 msgstr "शीर्षक:"
 
-#: includes/widget.php:129
+#: includes/widget.php:134
 msgid "Additional Text:"
 msgstr "अतिरिक्त पाठ:"
 
-#: includes/widget.php:138
+#: includes/widget.php:143
 msgid "Form:"
 msgstr "फ़ॉर्म:"
 
-#: includes/widget.php:151
+#: includes/widget.php:156
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "कृपया %s में अपना GoDaddy ईमेल मार्केटिंग खाता सेटअप करें."
 
-#: includes/widget.php:155
+#: includes/widget.php:160
 msgid "settings page"
 msgstr "पृष्ठ सेट करना"

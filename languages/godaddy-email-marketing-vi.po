@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-08 16:09-0500\n"
+"POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,44 +17,45 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: godaddy-email-marketing.php:196
+#: godaddy-email-marketing.php:197
 msgid "Thank you for signing up!"
 msgstr "Cảm ơn bạn đã đăng ký!"
 
-#: godaddy-email-marketing.php:197
+#: godaddy-email-marketing.php:198
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr ""
-"Cảm ơn bạn đã đăng ký! Vui lòng kiểm tra email để xác nhận việc đăng ký của bạn."
+"Cảm ơn bạn đã đăng ký! Vui lòng kiểm tra email để xác nhận việc đăng ký của "
+"bạn."
 
-#: godaddy-email-marketing.php:198
+#: godaddy-email-marketing.php:199
 msgid "Oops! There was a problem. Please try again."
 msgstr "Rất tiếc! Đã xảy ra vấn đề. Vui lòng thử lại."
 
-#: godaddy-email-marketing.php:199
+#: godaddy-email-marketing.php:200
 msgid "Please enter a valid email address."
 msgstr "Vui lòng nhập địa chỉ email hợp lệ."
 
-#: godaddy-email-marketing.php:200
+#: godaddy-email-marketing.php:201
 #, php-format
 msgctxt "Name of required field"
 msgid "%s is a required field."
 msgstr "%s là một trường bắt buộc."
 
-#: godaddy-email-marketing.php:212 includes/settings.php:532
+#: godaddy-email-marketing.php:213 includes/settings.php:532
 msgid "Settings"
 msgstr "Cài đặt"
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "Tiếp thị qua email của GoDaddy gần như đã sẵn sàng"
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "Bạn phải nhập tên người dùng &amp; khóa API để ứng dụng này hoạt động."
 
-#: godaddy-email-marketing.php:249
+#: godaddy-email-marketing.php:250
 msgid "Let's do it!"
 msgstr "Chúng ta hãy cùng thực hiện!"
 
@@ -167,7 +168,8 @@ msgstr ""
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr ""
-"Đã thiết lập kết nối với Tiếp thị qua email của GoDaddy! Bạn đã thiết lập xong!"
+"Đã thiết lập kết nối với Tiếp thị qua email của GoDaddy! Bạn đã thiết lập "
+"xong!"
 
 #: includes/settings.php:241
 msgid "Settings have been updated."
@@ -317,8 +319,8 @@ msgid ""
 "subscribe to your email list."
 msgstr ""
 "Thêm mẫu đăng ký Tiếp thị qua email của GoDaddy vào trang WordPress! Với ưu "
-"điểm dễ cài đặt, trình cắm Tiếp thị qua email của GoDaddy cho phép khách truy "
-"cập trang đăng ký danh sách email của bạn."
+"điểm dễ cài đặt, trình cắm Tiếp thị qua email của GoDaddy cho phép khách "
+"truy cập trang đăng ký danh sách email của bạn."
 
 #: includes/settings.php:517
 msgctxt "header note"
@@ -329,7 +331,8 @@ msgstr "Bạn chưa có mẫu nào."
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "Bạn mới sử dụng GoDaddy? Tạo một tài khoản để bắt đầu ngay hôm nay. %s "
+msgstr ""
+"Bạn mới sử dụng GoDaddy? Tạo một tài khoản để bắt đầu ngay hôm nay. %s "
 
 #: includes/settings.php:520
 msgctxt "header button"
@@ -433,24 +436,24 @@ msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
 msgstr "Nhúng mẫu đăng ký Tiếp thị qua email của GoDaddy trong thanh bên."
 
-#: includes/widget.php:123
+#: includes/widget.php:128
 msgid "Title:"
 msgstr "Tiêu đề:"
 
-#: includes/widget.php:129
+#: includes/widget.php:134
 msgid "Additional Text:"
 msgstr "Văn bản bổ sung:"
 
-#: includes/widget.php:138
+#: includes/widget.php:143
 msgid "Form:"
 msgstr "Mẫu:"
 
-#: includes/widget.php:151
+#: includes/widget.php:156
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "Hãy cài đặt tài khoản Tiếp thị qua email của GoDaddy trong %s."
 
-#: includes/widget.php:155
+#: includes/widget.php:160
 msgid "settings page"
 msgstr "trang cài đặt"

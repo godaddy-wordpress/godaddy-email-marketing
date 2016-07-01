@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-08 16:09-0500\n"
+"POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: godaddy-email-marketing.php:196
+#: godaddy-email-marketing.php:197
 msgid "Thank you for signing up!"
 msgstr "Благодарим за регистрацию!"
 
-#: godaddy-email-marketing.php:197
+#: godaddy-email-marketing.php:198
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
@@ -29,33 +29,33 @@ msgstr ""
 "Благодарим за регистрацию! Пожалуйста, проверьте вашу электронную почту, "
 "чтобы подтвердить подписку."
 
-#: godaddy-email-marketing.php:198
+#: godaddy-email-marketing.php:199
 msgid "Oops! There was a problem. Please try again."
 msgstr "Упс! Возникла проблема. Повторите попытку."
 
-#: godaddy-email-marketing.php:199
+#: godaddy-email-marketing.php:200
 msgid "Please enter a valid email address."
 msgstr "Введите действительный адрес электронной почты."
 
-#: godaddy-email-marketing.php:200
+#: godaddy-email-marketing.php:201
 #, php-format
 msgctxt "Name of required field"
 msgid "%s is a required field."
 msgstr "%s — обязательное поле."
 
-#: godaddy-email-marketing.php:212 includes/settings.php:532
+#: godaddy-email-marketing.php:213 includes/settings.php:532
 msgid "Settings"
 msgstr "Настройки"
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "Почтовый маркетинг GoDaddy почти готов."
 
-#: godaddy-email-marketing.php:248
+#: godaddy-email-marketing.php:249
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "Для его запуска вы должны ввести имя пользователя и ключ API."
 
-#: godaddy-email-marketing.php:249
+#: godaddy-email-marketing.php:250
 msgid "Let's do it!"
 msgstr "Давайте сделаем это!"
 
@@ -205,9 +205,10 @@ msgid ""
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
 "your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Виджет:</strong> Выберите команды Внешний вид &rarr; Виджеты, найдите "
-"виджет под названием «Форма почтового маркетинга GoDaddy» и перетащите его в "
-"область виджетов по вашему выбору. Затем можно добавить название и выбрать форму!"
+"<strong>Виджет:</strong> Выберите команды Внешний вид &rarr; Виджеты, "
+"найдите виджет под названием «Форма почтового маркетинга GoDaddy» и "
+"перетащите его в область виджетов по вашему выбору. Затем можно добавить "
+"название и выбрать форму!"
 
 #: includes/settings.php:287
 msgid ""
@@ -301,7 +302,8 @@ msgstr "Удалить все данные"
 
 #: includes/settings.php:417
 msgid "Purges all saved data associated with this plugin."
-msgstr "Это действие удаляет все сохраненные данные, связанные с этим плагином."
+msgstr ""
+"Это действие удаляет все сохраненные данные, связанные с этим плагином."
 
 #: includes/settings.php:511
 msgctxt "gem header note"
@@ -329,7 +331,9 @@ msgstr "У вас еще нет форм."
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "Еще не знакомы с системой GoDaddy? Создайте аккаунт, чтобы начать работу уже сегодня. %s "
+msgstr ""
+"Еще не знакомы с системой GoDaddy? Создайте аккаунт, чтобы начать работу уже "
+"сегодня. %s "
 
 #: includes/settings.php:520
 msgctxt "header button"
@@ -409,10 +413,11 @@ msgid ""
 "then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
 "account, %2$s."
 msgstr ""
-"Чтобы этот плагин начал работать, ему необходимо предоставить доступ к вашему "
-"аккаунту почтового маркетинга GoDaddy. %1$s, чтобы получить имя пользователя "
-"и ключ API. Скопируйте и вставьте их ниже, а затем нажмите кнопку «Сохранить "
-"настройки». Если у вас еще нет аккаунта почтового маркетинга GoDaddy, %2$s."
+"Чтобы этот плагин начал работать, ему необходимо предоставить доступ к "
+"вашему аккаунту почтового маркетинга GoDaddy. %1$s, чтобы получить имя "
+"пользователя и ключ API. Скопируйте и вставьте их ниже, а затем нажмите "
+"кнопку «Сохранить настройки». Если у вас еще нет аккаунта почтового "
+"маркетинга GoDaddy, %2$s."
 
 #: includes/settings.php:747
 msgctxt "account details link"
@@ -431,26 +436,27 @@ msgstr "Форма почтового маркетинга GoDaddy"
 #: includes/widget.php:24
 msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr "Закрепите формы регистрации почтового маркетинга GoDaddy на боковой панели."
+msgstr ""
+"Закрепите формы регистрации почтового маркетинга GoDaddy на боковой панели."
 
-#: includes/widget.php:123
+#: includes/widget.php:128
 msgid "Title:"
 msgstr "Заголовок:"
 
-#: includes/widget.php:129
+#: includes/widget.php:134
 msgid "Additional Text:"
 msgstr "Дополнительный текст:"
 
-#: includes/widget.php:138
+#: includes/widget.php:143
 msgid "Form:"
 msgstr "Форма:"
 
-#: includes/widget.php:151
+#: includes/widget.php:156
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "Настройте ваш аккаунт почтового маркетинга GoDaddy в %s."
 
-#: includes/widget.php:155
+#: includes/widget.php:160
 msgid "settings page"
 msgstr "страница настройки"
