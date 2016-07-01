@@ -70,16 +70,7 @@ Please fill out an issue [here](https://github.com/godaddy/wp-godaddy-email-mark
 4. Follow the instructions to access your username and API key. If you don't have a GoDaddy Email Marketing account, you'll be able to create one.
 5. Click **Save Settings**.
 
-After your account is verified, you can insert a form into your site by using a **widget**, **shortcode**, or **template tag** directly in your theme.
-
-**Widget**
-Go to **Appearance > Widgets**, find the **GoDaddy Email Marketing Form** widget, and drag it into the widget area of your choice. You can then add a title and select a form!
-
-**Shortcode**
-Add a form to any post or page by adding the shortcode (e.g., `[gem id=123456 ]`) in the page/post editor. To see your form IDs, navigate to **Settings > GoDaddy Email Marketing** and select the **Forms** tab.
-
-**Template Tag**
-Add the following template tag into any WordPress theme template file: `<?php gem_form( $form_id ); ?>`. For example: `<?php gem_form( 123456 ); ?>` where `123456` is your form ID. To see your form IDs, navigate to **Settings > GoDaddy Email Marketing** and select the **Forms** tab.
+After your account is verified, you can insert a form into your site by using a **widget**, **shortcode**, or **template tag** directly in your theme. See the FAQ section for more details.
 
 That's it. You're ready to go!
 
@@ -95,7 +86,7 @@ Yes, this plugin requires a [GoDaddy Email Marketing](https://www.godaddy.com/bu
 
 = Is there a widget? =
 
-Absolutely. Use it by finding the GoDaddy Email Marketing widget under Appearance >Widgets in the WordPress Dashboard and dragging it into the widget area of your choice. You can then add a title and select a form!
+Absolutely. Use it by finding the GoDaddy Email Marketing widget under **Appearance > Widgets** in the WordPress Dashboard and dragging it into the widget area of your choice. You can then add a title and select a form!
 
 = Is there a shortcode? =
 
