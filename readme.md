@@ -8,7 +8,7 @@ Add the GoDaddy Email Marketing plugin to your WordPress site! Easy to set up, t
 **Tags:** [email](https://wordpress.org/plugins/tags/email), [forms](https://wordpress.org/plugins/tags/forms), [godaddy](https://wordpress.org/plugins/tags/godaddy), [mailing list](https://wordpress.org/plugins/tags/mailing list), [marketing](https://wordpress.org/plugins/tags/marketing), [newsletter](https://wordpress.org/plugins/tags/newsletter), [opt-in](https://wordpress.org/plugins/tags/opt-in), [signup](https://wordpress.org/plugins/tags/signup), [subscribe](https://wordpress.org/plugins/tags/subscribe), [widget](https://wordpress.org/plugins/tags/widget), [contacts](https://wordpress.org/plugins/tags/contacts)  
 **Requires at least:** 3.8  
 **Tested up to:** 4.5  
-**Stable tag:** 1.1.0  
+**Stable tag:** 1.1.1  
 **License:** [GPL-2.0](https://www.gnu.org/licenses/gpl-2.0.html)  
 
 [![Build Status](https://travis-ci.org/godaddy/wp-godaddy-email-marketing.svg?branch=master)](https://travis-ci.org/godaddy/wp-godaddy-email-marketing) [![Coverage Status](https://coveralls.io/repos/godaddy/wp-godaddy-email-marketing/badge.svg?branch=master)](https://coveralls.io/github/godaddy/wp-godaddy-email-marketing) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com) [![devDependency Status](https://david-dm.org/godaddy/wp-godaddy-email-marketing/dev-status.svg)](https://david-dm.org/godaddy/wp-godaddy-email-marketing#info=devDependencies) 
@@ -68,19 +68,14 @@ Please fill out an issue [here](https://github.com/godaddy/wp-godaddy-email-mark
 
 ## Installation ##
 
-* Upload plugin files to your plugins folder, or install using WordPress' built-in Add New Plugin installer.
-* Activate the plugin.
-* Go to the plugin Settings page (under Settings > GoDaddy Email Marketing Settings).
-* Enter your account email address and API key (found in the Settings section of your GoDaddy Email Marketing account).
-* Click **Save Changes**.
+1. [Install the plugin manually](https://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation) by uploading a ZIP file, or [install it automatically](https://codex.wordpress.org/Managing_Plugins#Automatic_Plugin_Installation) by searching for **GoDaddy Email Marketing**.
+2. Click the **Install Now** button to add it to your site.
+3. Once the installation has finished, click **Activate**.
+4. Nagivate to **Settings > GoDaddy Email Marketing** where you will find a **Settings** tab.
+5. Follow the instructions to access your username and API key. If you don't have a GoDaddy Email Marketing account, you'll be able to create one.
+6. Click **Save Settings**.
 
-After your account is verified, you can insert a form into your site by using a widget, shortcode, or template tag:
-
-* **Widget** Go to Appearance > Widgets, find the GoDaddy Email Marketing widget, and drag it into the widget area of your choice. You can then add a title and select a form!
-* **Shortcode** Add a form to any post or page by adding the shortcode (e.g., `[gem id=123456 ]`) in the page/post editor. You can find a form's ID on the GoDaddy Email Marketing Settings page.
-* **Template** tag Add the following template tag into any WordPress file: `<?php gem_form; ?>`. For example: `<?php gem_form( 91 ); ?>` You can find a form's ID on the GoDaddy Email Marketing Settings page.
-
-That's it. You're ready to go!
+After your account is verified, you can insert a form into your site by using a **widget**, **shortcode**, or **template tag** directly in your theme.
 
 ## Frequently Asked Questions ##
 
@@ -122,6 +117,9 @@ You can find your API key in the Settings section of your GoDaddy Email Marketin
 ![The widget, on the front-end.](assets/screenshot-4.png)
 
 ## Changelog ##
+
+### 1.1.1 ###
+* Minor improvements and bug fixes.
 
 ### 1.1.0 ###
 * UI & UX overhaul using tabbed navigation & enhanced admin notices.
