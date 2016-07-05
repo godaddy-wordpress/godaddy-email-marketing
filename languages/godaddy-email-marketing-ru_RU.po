@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the godaddy-email-marketing-sign-up-forms package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
+"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -205,10 +205,9 @@ msgid ""
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
 "your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Виджет:</strong> Выберите команды Внешний вид &rarr; Виджеты, "
-"найдите виджет под названием «Форма почтового маркетинга GoDaddy» и "
-"перетащите его в область виджетов по вашему выбору. Затем можно добавить "
-"название и выбрать форму!"
+"<strong>Виджет:</strong> Выберите команды Внешний вид &rarr; Виджеты, найдите "
+"виджет под названием «Форма почтового маркетинга GoDaddy» и перетащите его в "
+"область виджетов по вашему выбору. Затем можно добавить название и выбрать форму!"
 
 #: includes/settings.php:287
 msgid ""
@@ -302,8 +301,7 @@ msgstr "Удалить все данные"
 
 #: includes/settings.php:417
 msgid "Purges all saved data associated with this plugin."
-msgstr ""
-"Это действие удаляет все сохраненные данные, связанные с этим плагином."
+msgstr "Это действие удаляет все сохраненные данные, связанные с этим плагином."
 
 #: includes/settings.php:511
 msgctxt "gem header note"
@@ -331,9 +329,7 @@ msgstr "У вас еще нет форм."
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr ""
-"Еще не знакомы с системой GoDaddy? Создайте аккаунт, чтобы начать работу уже "
-"сегодня. %s "
+msgstr "Еще не знакомы с системой GoDaddy? Создайте аккаунт, чтобы начать работу уже сегодня. %s "
 
 #: includes/settings.php:520
 msgctxt "header button"
@@ -413,11 +409,10 @@ msgid ""
 "then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
 "account, %2$s."
 msgstr ""
-"Чтобы этот плагин начал работать, ему необходимо предоставить доступ к "
-"вашему аккаунту почтового маркетинга GoDaddy. %1$s, чтобы получить имя "
-"пользователя и ключ API. Скопируйте и вставьте их ниже, а затем нажмите "
-"кнопку «Сохранить настройки». Если у вас еще нет аккаунта почтового "
-"маркетинга GoDaddy, %2$s."
+"Чтобы этот плагин начал работать, ему необходимо предоставить доступ к вашему "
+"аккаунту почтового маркетинга GoDaddy. %1$s, чтобы получить имя пользователя "
+"и ключ API. Скопируйте и вставьте их ниже, а затем нажмите кнопку «Сохранить "
+"настройки». Если у вас еще нет аккаунта почтового маркетинга GoDaddy, %2$s."
 
 #: includes/settings.php:747
 msgctxt "account details link"
@@ -436,8 +431,7 @@ msgstr "Форма почтового маркетинга GoDaddy"
 #: includes/widget.php:24
 msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr ""
-"Закрепите формы регистрации почтового маркетинга GoDaddy на боковой панели."
+msgstr "Закрепите формы регистрации почтового маркетинга GoDaddy на боковой панели."
 
 #: includes/widget.php:128
 msgid "Title:"

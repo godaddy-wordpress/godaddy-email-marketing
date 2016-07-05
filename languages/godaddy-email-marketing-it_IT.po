@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the godaddy-email-marketing-sign-up-forms package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
+"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -52,8 +52,7 @@ msgstr "Marketing via email di GoDaddy è quasi pronto."
 
 #: godaddy-email-marketing.php:249
 msgid "You must enter your username &amp; API key for it to work."
-msgstr ""
-"Per poter funzionare, devi inserire il tuo nome utente e la chiave API."
+msgstr "Per poter funzionare, devi inserire il tuo nome utente e la chiave API."
 
 #: godaddy-email-marketing.php:250
 msgid "Let's do it!"
@@ -167,8 +166,7 @@ msgstr ""
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr ""
-"È stata stabilita la connessione con Marketing via email di GoDaddy. Ecco "
-"fatto."
+"È stata stabilita la connessione con Marketing via email di GoDaddy. Ecco fatto."
 
 #: includes/settings.php:241
 msgid "Settings have been updated."
@@ -227,9 +225,8 @@ msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
 msgstr ""
-"<strong>Tag dei modelli:</strong> Puoi aggiungere il seguente tag dei "
-"modelli in qualsiasi file WordPress: <code>%s</code>. Esempio: <code>%s</"
-"code>"
+"<strong>Tag dei modelli:</strong> Puoi aggiungere il seguente tag dei modelli "
+"in qualsiasi file WordPress: <code>%s</code>. Esempio: <code>%s</code>"
 
 #: includes/settings.php:299
 msgid "For more information:"
@@ -332,8 +329,7 @@ msgstr "Non hai ancora nessun form."
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr ""
-"Sei un nuovo utente GoDaddy! Crea un account per iniziare oggi stesso. %s "
+msgstr "Sei un nuovo utente GoDaddy! Crea un account per iniziare oggi stesso. %s "
 
 #: includes/settings.php:520
 msgctxt "header button"
@@ -414,9 +410,9 @@ msgid ""
 "account, %2$s."
 msgstr ""
 "Affinché questo plug-in funzioni correttamente, devi accedere al tuo account "
-"Marketing via email di GoDaddy.  %1$s per reperire il nome utente e la "
-"chiave API. Copiali e incollali qui sotto, poi fai clic su \"Salva "
-"impostazioni\". Se non hai un account Marketing via email di GoDaddy, %2$s."
+"Marketing via email di GoDaddy.  %1$s per reperire il nome utente e la chiave "
+"API. Copiali e incollali qui sotto, poi fai clic su \"Salva impostazioni\". "
+"Se non hai un account Marketing via email di GoDaddy, %2$s."
 
 #: includes/settings.php:747
 msgctxt "account details link"
@@ -435,9 +431,7 @@ msgstr "Marketing via email di GoDaddy"
 #: includes/widget.php:24
 msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr ""
-"Incorpora i form di iscrizione di Marketing via email di GoDaddy nella barra "
-"laterale."
+msgstr "Incorpora i form di iscrizione di Marketing via email di GoDaddy nella barra laterale."
 
 #: includes/widget.php:128
 msgid "Title:"

@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the godaddy-email-marketing-sign-up-forms package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
+"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -53,8 +53,7 @@ msgstr "Pemasaran E-mel GoDaddy hampir siap."
 
 #: godaddy-email-marketing.php:249
 msgid "You must enter your username &amp; API key for it to work."
-msgstr ""
-"Anda perlu masukkan nama pengguna &amp; kekunci API supaya ia berfungsi."
+msgstr "Anda perlu masukkan nama pengguna &amp; kekunci API supaya ia berfungsi."
 
 #: godaddy-email-marketing.php:250
 msgid "Let's do it!"
@@ -162,8 +161,7 @@ msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr ""
-"Kelayakan tidak betul! Sila sahkan bahawa anda telah masukkannya secara "
-"salah."
+"Kelayakan tidak betul! Sila sahkan bahawa anda telah masukkannya secara salah."
 
 #: includes/settings.php:236
 msgid ""
@@ -196,11 +194,11 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"Selepas pasang masuk diaktifkan, anda akan dapat pilih dan selitkan mana-"
-"mana borang web Pemasaran E-mel GoDaddy anda pada laman anda. Pemasangan itu "
-"mudah. Di bawah, cuma masukkan alamat e-mel akaun anda dan kekunci API "
-"(boleh didapati di kawasan [%s] akaun Pemasaran E-mel GoDaddy anda). Berikut "
-"adalah 3 cara anda boleh memaparkan borang web pada laman anda:"
+"Selepas pasang masuk diaktifkan, anda akan dapat pilih dan selitkan mana-mana "
+"borang web Pemasaran E-mel GoDaddy anda pada laman anda. Pemasangan itu "
+"mudah. Di bawah, cuma masukkan alamat e-mel akaun anda dan kekunci API (boleh "
+"didapati di kawasan [%s] akaun Pemasaran E-mel GoDaddy anda). Berikut adalah "
+"3 cara anda boleh memaparkan borang web pada laman anda:"
 
 #: includes/settings.php:286
 msgid ""
@@ -217,8 +215,8 @@ msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
-"<strong>Kod pendek:</strong> Anda boleh tambah borang pada mana-mana pos "
-"atau laman dengan menambah kod pendek (ex. <code>[gem id=80326]</code>) pada "
+"<strong>Kod pendek:</strong> Anda boleh tambah borang pada mana-mana pos atau "
+"laman dengan menambah kod pendek (ex. <code>[gem id=80326]</code>) pada "
 "laman/pos editor."
 
 #: includes/settings.php:289
@@ -291,8 +289,8 @@ msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
 msgstr ""
-"Singkir hanya data cache yang dikaitkan dengan pasang masuk, dan perlu "
-"dicuba sebelum set semula asal."
+"Singkir hanya data cache yang dikaitkan dengan pasang masuk, dan perlu dicuba "
+"sebelum set semula asal."
 
 #: includes/settings.php:410
 msgid "Hard Reset"

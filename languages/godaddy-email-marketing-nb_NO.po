@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the godaddy-email-marketing-sign-up-forms package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
+"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -26,8 +26,7 @@ msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr ""
-"Takk for at du registrerte deg! Sjekk e-posten din for å bekrefte "
-"abonnementet."
+"Takk for at du registrerte deg! Sjekk e-posten din for å bekrefte abonnementet."
 
 #: godaddy-email-marketing.php:199
 msgid "Oops! There was a problem. Please try again."
@@ -53,8 +52,7 @@ msgstr "GoDaddy Markedsføring per e-post er nesten klart."
 
 #: godaddy-email-marketing.php:249
 msgid "You must enter your username &amp; API key for it to work."
-msgstr ""
-"Du må angi brukernavnet ditt og API-nøkkelen din for at det skal fungere."
+msgstr "Du må angi brukernavnet ditt og API-nøkkelen din for at det skal fungere."
 
 #: godaddy-email-marketing.php:250
 msgid "Let's do it!"
@@ -228,8 +226,7 @@ msgid ""
 "any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
 msgstr ""
 "<strong>Template-kode:</strong> Du kan legge til følgende template-kode til "
-"en hvilken som helst WordPress-fil: <code>%s</code>. Eksempel: <code>%s</"
-"code>"
+"en hvilken som helst WordPress-fil: <code>%s</code>. Eksempel: <code>%s</code>"
 
 #: includes/settings.php:299
 msgid "For more information:"
@@ -292,8 +289,8 @@ msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
 msgstr ""
-"Tømmer bare data i hurtigbufferen som har forbindelse med denne plugin-"
-"modulen. Dette bør du prøve før en hard tilbakestilling."
+"Tømmer bare data i hurtigbufferen som har forbindelse med denne "
+"plugin-modulen. Dette bør du prøve før en hard tilbakestilling."
 
 #: includes/settings.php:410
 msgid "Hard Reset"
@@ -320,8 +317,8 @@ msgid ""
 "subscribe to your email list."
 msgstr ""
 "Legg til registreringsskjemaet for GoDaddy Markedsføring per e-post på "
-"WordPress-nettstedet ditt! Plugin-modulen for GoDaddy Markedsføring per e-"
-"post er enkel å installere, slik at besøkende til nettstedet ditt kan "
+"WordPress-nettstedet ditt! Plugin-modulen for GoDaddy Markedsføring per "
+"e-post er enkel å installere, slik at besøkende til nettstedet ditt kan "
 "abonnere på e-postlisten din."
 
 #: includes/settings.php:517
@@ -333,8 +330,7 @@ msgstr "Du har ingen skjemaer ennå."
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr ""
-"Er GoDaddy nytt for deg? Opprett en konto for å komme i gang i dag. %s "
+msgstr "Er GoDaddy nytt for deg? Opprett en konto for å komme i gang i dag. %s "
 
 #: includes/settings.php:520
 msgctxt "header button"
@@ -415,10 +411,10 @@ msgid ""
 "account, %2$s."
 msgstr ""
 "Denne plugin-modulen fungerer bare hvis den har tilgang til kontoen din for "
-"GoDaddy Markedsføring per e-post.  %1$s for å få brukernavnet og API-"
-"nøkkelen. Kopier og lim dem inn nedenfor, og klikk deretter på «Lagre "
-"innstillinger». Hvis du ikke har en konto for GoDaddy Markedsføring per e-"
-"post, %2$s."
+"GoDaddy Markedsføring per e-post.  %1$s for å få brukernavnet og "
+"API-nøkkelen. Kopier og lim dem inn nedenfor, og klikk deretter på «Lagre "
+"innstillinger». Hvis du ikke har en konto for GoDaddy Markedsføring per "
+"e-post, %2$s."
 
 #: includes/settings.php:747
 msgctxt "account details link"
@@ -437,9 +433,7 @@ msgstr "Skjema for GoDaddy Markedsføring per e-post"
 #: includes/widget.php:24
 msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr ""
-"Legg inn registreringsskjemaer for GoDaddy Markedsføring per e-post i "
-"sidefeltet."
+msgstr "Legg inn registreringsskjemaer for GoDaddy Markedsføring per e-post i sidefeltet."
 
 #: includes/widget.php:128
 msgid "Title:"
