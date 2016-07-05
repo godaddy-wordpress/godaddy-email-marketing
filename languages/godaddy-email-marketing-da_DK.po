@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the godaddy-email-marketing-sign-up-forms package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
+"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -52,8 +52,7 @@ msgstr "GoDaddy e-mailmarkedsføring er næsten parat."
 
 #: godaddy-email-marketing.php:249
 msgid "You must enter your username &amp; API key for it to work."
-msgstr ""
-"Du skal angive dit brugernavn og din API-nøgle for at få det til at virke."
+msgstr "Du skal angive dit brugernavn og din API-nøgle for at få det til at virke."
 
 #: godaddy-email-marketing.php:250
 msgid "Let's do it!"
@@ -161,8 +160,7 @@ msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr ""
-"Legitimationsoplysningerne er forkerte! Bekræft, at du indtastede dem "
-"rigtigt."
+"Legitimationsoplysningerne er forkerte! Bekræft, at du indtastede dem rigtigt."
 
 #: includes/settings.php:236
 msgid ""
@@ -197,8 +195,8 @@ msgid ""
 msgstr ""
 "Når plug-in er aktiveret, kan du vælge og indsætte enhver af dine "
 "webformularer fra GoDaddy e-mailmarkedsføring direkte på din website. "
-"Konfiguration er nemt. Du skal blot angive din kontos e-mailadresse og API-"
-"nøgle (kan findes i kontoområdet for GoDaddy e-mailmarkedsføring [%s]) "
+"Konfiguration er nemt. Du skal blot angive din kontos e-mailadresse og "
+"API-nøgle (kan findes i kontoområdet for GoDaddy e-mailmarkedsføring [%s]) "
 "nedenfor. Her er de tre måder, som du kan vise en webformular på din site på:"
 
 #: includes/settings.php:286
@@ -217,8 +215,8 @@ msgid ""
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
 "<strong>Genvejskode:</strong> Du kan tilføje en formular til enhver mail "
-"eller side ved at tilføje genvejskoden (f.eks. <code>[gem id=80326]</code>) "
-"i din side-/mail-editor."
+"eller side ved at tilføje genvejskoden (f.eks. <code>[gem id=80326]</code>) i "
+"din side-/mail-editor."
 
 #: includes/settings.php:289
 #, php-format
@@ -410,10 +408,10 @@ msgid ""
 "then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
 "account, %2$s."
 msgstr ""
-"Denne plug-in fungerer kun, hvis den har adgang til din GoDaddy E-"
-"mailmarketing-konto.  %1$s for at få dit brugernavn og din API-nøgle. Kopiér "
-"og indsæt dem nedenfor og klik derefter på \"Gem indstillinger\". Hvis du "
-"ikke har en GoDaddy E-mailmarketing-konto, %2$s."
+"Denne plug-in fungerer kun, hvis den har adgang til din GoDaddy "
+"E-mailmarketing-konto.  %1$s for at få dit brugernavn og din API-nøgle. "
+"Kopiér og indsæt dem nedenfor og klik derefter på \"Gem indstillinger\". Hvis "
+"du ikke har en GoDaddy E-mailmarketing-konto, %2$s."
 
 #: includes/settings.php:747
 msgctxt "account details link"
@@ -432,8 +430,7 @@ msgstr "Formular til GoDaddy e-mailmarkedsføring"
 #: includes/widget.php:24
 msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr ""
-"Integrer tilmeldingsformularer fra GoDaddy E-mailmarketing i sidepanelet."
+msgstr "Integrer tilmeldingsformularer fra GoDaddy E-mailmarketing i sidepanelet."
 
 #: includes/widget.php:128
 msgid "Title:"

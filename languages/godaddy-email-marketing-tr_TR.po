@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the godaddy-email-marketing-sign-up-forms package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
+"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -26,8 +26,8 @@ msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr ""
-"Kaydolduğunuz için teşekkürler! Aboneliğinizi doğrulamak için lütfen e-"
-"postanızı kontrol edin."
+"Kaydolduğunuz için teşekkürler! Aboneliğinizi doğrulamak için lütfen "
+"e-postanızı kontrol edin."
 
 #: godaddy-email-marketing.php:199
 msgid "Oops! There was a problem. Please try again."
@@ -53,8 +53,7 @@ msgstr "GoDaddy E-posta Pazarlama'ya kavuşmanıza az kaldı."
 
 #: godaddy-email-marketing.php:249
 msgid "You must enter your username &amp; API key for it to work."
-msgstr ""
-"Ürünün çalışması için kullanıcı adınızı ve API anahtarını girmeniz gerekir."
+msgstr "Ürünün çalışması için kullanıcı adınızı ve API anahtarını girmeniz gerekir."
 
 #: godaddy-email-marketing.php:250
 msgid "Let's do it!"
@@ -208,10 +207,9 @@ msgid ""
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
 "your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Modül:</strong> Görünüm &rarr; modüllerine gidin ve \"GoDaddy E-"
-"posta Pazarlama Formu\" isimli modülü bulun; modülü istediğiniz modül "
-"alanına sürükleyin. Ardından da bir başlık ekleyebilir ve form "
-"seçebilirsiniz!"
+"<strong>Modül:</strong> Görünüm &rarr; modüllerine gidin ve \"GoDaddy E-posta "
+"Pazarlama Formu\" isimli modülü bulun; modülü istediğiniz modül alanına "
+"sürükleyin. Ardından da bir başlık ekleyebilir ve form seçebilirsiniz!"
 
 #: includes/settings.php:287
 msgid ""
@@ -219,8 +217,7 @@ msgid ""
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
 "<strong>Kısa kod:</strong> Kısa kod ekleyerek sayfa/gönderi düzenleyicide "
-"istediğiniz gönderiye ya da sayfaya form  ekleyebilirsiniz (ör: <code>[gem "
-"id=80326]</code>). "
+"istediğiniz gönderiye ya da sayfaya form  ekleyebilirsiniz (ör: <code>[gem id=80326]</code>). "
 
 #: includes/settings.php:289
 #, php-format
@@ -414,8 +411,8 @@ msgid ""
 msgstr ""
 "Bu eklentinin çalışması için GoDaddy E-posta Pazarlama hesabınıza erişiminin "
 "olması gerekir. kullanıcı adınızı ve API anahtarınızı almak için %1$s .  "
-"Öğeleri aşağı yapıştırın ve ardından \"Ayarları Kaydet\" seçeneğini "
-"tıklayın. GoDaddy E-posta Pazarlama hesabınız yoksa, %2$s."
+"Öğeleri aşağı yapıştırın ve ardından \"Ayarları Kaydet\" seçeneğini tıklayın. "
+"GoDaddy E-posta Pazarlama hesabınız yoksa, %2$s."
 
 #: includes/settings.php:747
 msgctxt "account details link"

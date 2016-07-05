@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the godaddy-email-marketing-sign-up-forms package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
+"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -26,8 +26,7 @@ msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr ""
-"Cảm ơn bạn đã đăng ký! Vui lòng kiểm tra email để xác nhận việc đăng ký của "
-"bạn."
+"Cảm ơn bạn đã đăng ký! Vui lòng kiểm tra email để xác nhận việc đăng ký của bạn."
 
 #: godaddy-email-marketing.php:199
 msgid "Oops! There was a problem. Please try again."
@@ -168,8 +167,7 @@ msgstr ""
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr ""
-"Đã thiết lập kết nối với Tiếp thị qua email của GoDaddy! Bạn đã thiết lập "
-"xong!"
+"Đã thiết lập kết nối với Tiếp thị qua email của GoDaddy! Bạn đã thiết lập xong!"
 
 #: includes/settings.php:241
 msgid "Settings have been updated."
@@ -319,8 +317,8 @@ msgid ""
 "subscribe to your email list."
 msgstr ""
 "Thêm mẫu đăng ký Tiếp thị qua email của GoDaddy vào trang WordPress! Với ưu "
-"điểm dễ cài đặt, trình cắm Tiếp thị qua email của GoDaddy cho phép khách "
-"truy cập trang đăng ký danh sách email của bạn."
+"điểm dễ cài đặt, trình cắm Tiếp thị qua email của GoDaddy cho phép khách truy "
+"cập trang đăng ký danh sách email của bạn."
 
 #: includes/settings.php:517
 msgctxt "header note"
@@ -331,8 +329,7 @@ msgstr "Bạn chưa có mẫu nào."
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr ""
-"Bạn mới sử dụng GoDaddy? Tạo một tài khoản để bắt đầu ngay hôm nay. %s "
+msgstr "Bạn mới sử dụng GoDaddy? Tạo một tài khoản để bắt đầu ngay hôm nay. %s "
 
 #: includes/settings.php:520
 msgctxt "header button"

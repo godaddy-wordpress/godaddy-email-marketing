@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the godaddy-email-marketing-sign-up-forms package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
+"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -53,9 +53,7 @@ msgstr "Le plug-in GoDaddy Marketing par email est presque prêt."
 
 #: godaddy-email-marketing.php:249
 msgid "You must enter your username &amp; API key for it to work."
-msgstr ""
-"Vous devez entrer votre nom d'utilisateur et votre clé API pour en garantir "
-"le bon fonctionnement."
+msgstr "Vous devez entrer votre nom d'utilisateur et votre clé API pour en garantir le bon fonctionnement."
 
 #: godaddy-email-marketing.php:250
 msgid "Let's do it!"
@@ -170,8 +168,7 @@ msgstr ""
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr ""
-"La connexion a été établie à Marketing par mail GoDaddy ! Opération "
-"terminée !"
+"La connexion a été établie à Marketing par mail GoDaddy ! Opération terminée !"
 
 #: includes/settings.php:241
 msgid "Settings have been updated."
@@ -222,8 +219,8 @@ msgid ""
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
 "<strong>Code abrégé :</strong> Vous pouvez ajouter un formulaire à toute "
-"publication ou page en ajoutant le code abrégé (ex. <code>[gem id=80326]</"
-"code>) dans l'éditeur de page/publication."
+"publication ou page en ajoutant le code abrégé (ex. <code>[gem "
+"id=80326]</code>) dans l'éditeur de page/publication."
 
 #: includes/settings.php:289
 #, php-format
@@ -335,9 +332,7 @@ msgstr "Vous n'avez actuellement aucun formulaire."
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr ""
-"Vous ne connaissez pas encore GoDaddy ? Créez un compte conseils et "
-"commencez dès aujourd'hui ! %s "
+msgstr "Vous ne connaissez pas encore GoDaddy ? Créez un compte conseils et commencez dès aujourd'hui ! %s "
 
 #: includes/settings.php:520
 msgctxt "header button"

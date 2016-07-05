@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the godaddy-email-marketing-sign-up-forms package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
+"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -191,8 +191,8 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"Po aktywowaniu wtyczki możesz wybierać formularze internetowe Marketingu e-"
-"mail GoDaddy i wstawiać je wprost do witryny. Konfiguracja jest łatwa. "
+"Po aktywowaniu wtyczki możesz wybierać formularze internetowe Marketingu "
+"e-mail GoDaddy i wstawiać je wprost do witryny. Konfiguracja jest łatwa. "
 "Wprowadź poniżej po prostu adres e-mail konta i klucz API (znajdziesz go na "
 "koncie Marketingu e-mail GoDaddy w obszarze [%s]). Formularz internetowy "
 "można wyświetlić w witrynie na 3 sposoby:"
@@ -325,9 +325,7 @@ msgstr "Nie masz jeszcze żadnych formularzy."
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr ""
-"Dopiero zaczynasz współpracę z GoDaddy? Utwórz konto, aby rozpocząć jeszcze "
-"dziś. %s "
+msgstr "Dopiero zaczynasz współpracę z GoDaddy? Utwórz konto, aby rozpocząć jeszcze dziś. %s "
 
 #: includes/settings.php:520
 msgctxt "header button"

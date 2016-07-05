@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the godaddy-email-marketing-sign-up-forms package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
+"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -26,8 +26,7 @@ msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr ""
-"Tack för registreringen! Kontrollera din e-post för att bekräfta ditt "
-"abonnemang."
+"Tack för registreringen! Kontrollera din e-post för att bekräfta ditt abonnemang."
 
 #: godaddy-email-marketing.php:199
 msgid "Oops! There was a problem. Please try again."
@@ -53,8 +52,7 @@ msgstr "GoDaddy e-postmarknadsföring är nästan redo."
 
 #: godaddy-email-marketing.php:249
 msgid "You must enter your username &amp; API key for it to work."
-msgstr ""
-"Du måste ange ditt användarnamn &amp; din API-nyckel för att det ska fungera."
+msgstr "Du måste ange ditt användarnamn &amp; din API-nyckel för att det ska fungera."
 
 #: godaddy-email-marketing.php:250
 msgid "Let's do it!"
@@ -197,8 +195,8 @@ msgstr ""
 "När insticksprogrammet aktiveras kommer du att kunna välja och infoga vilket "
 "som helst av dina webbformulär för GoDaddy e-postmarknadsföring direkt i "
 "webbplatsen. Konfigurationen är enkel. Ange e-postadressen och API-nyckeln "
-"för ditt konto (finns i området för ditt konto för GoDaddy e-"
-"postmarknadsföring [%s]). Det finns tre sätt att visa ett webbformulär på "
+"för ditt konto (finns i området för ditt konto för GoDaddy "
+"e-postmarknadsföring [%s]). Det finns tre sätt att visa ett webbformulär på "
 "din webbplats:"
 
 #: includes/settings.php:286
@@ -209,8 +207,7 @@ msgid ""
 msgstr ""
 "<strong>Widget:</strong> Gå till Utseende &rarr; widgetar och hitta widgeten "
 "som heter “Formulär för GoDaddy e-postmarknadsföring” och dra det in i "
-"valfritt widgetområde. Sedan kan du lägga till en titel och välja ett "
-"formulär!"
+"valfritt widgetområde. Sedan kan du lägga till en titel och välja ett formulär!"
 
 #: includes/settings.php:287
 msgid ""
@@ -291,8 +288,8 @@ msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
 msgstr ""
-"Rensar endast cachade data förknippade med det här insticksprogrammet och "
-"bör försökas före en hård återställning."
+"Rensar endast cachade data förknippade med det här insticksprogrammet och bör "
+"försökas före en hård återställning."
 
 #: includes/settings.php:410
 msgid "Hard Reset"
@@ -332,8 +329,7 @@ msgstr "Du har inga formulär än."
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr ""
-"Är GoDaddy nytt för dig? Skapa ett konto för att komma igång redan idag. %s "
+msgstr "Är GoDaddy nytt för dig? Skapa ett konto för att komma igång redan idag. %s "
 
 #: includes/settings.php:520
 msgctxt "header button"
@@ -416,8 +412,7 @@ msgstr ""
 "För att insticksprogrammet ska fungera kräver det tillgång till ditt konto "
 "för GoDaddy e-postmarknadsföring.  %1$s för att få ditt användarnamn och din "
 "API-nyckel. Kopiera och klistra in dem nedan och klicka sedan på \"Spara "
-"inställningar.\" Om du inte har ett konto för GoDaddy e-postmarknadsföring, "
-"%2$s."
+"inställningar.\" Om du inte har ett konto för GoDaddy e-postmarknadsföring, %2$s."
 
 #: includes/settings.php:747
 msgctxt "account details link"
@@ -436,8 +431,7 @@ msgstr "Formulär för GoDaddy e-postmarknadsföring"
 #: includes/widget.php:24
 msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr ""
-"Bädda in anmälningsformulär för GoDaddy e-postmarknadsföring i sidopanelen."
+msgstr "Bädda in anmälningsformulär för GoDaddy e-postmarknadsföring i sidopanelen."
 
 #: includes/widget.php:128
 msgid "Title:"

@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the godaddy-email-marketing-sign-up-forms package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
+"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 09:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -190,10 +190,8 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"一旦啟用了外掛程式，您就可以選取任何 GoDaddy 電子郵件行銷網頁表格並直接插入網"
-"站。 設定過程很簡單。 只需在下方輸入您的帳戶電子郵件地址及 API 金鑰（可在 "
-"GoDaddy 電子郵件行銷帳戶  [%s] 區域中找到）。 您有三種方法可以在網站上顯示網"
-"頁表格："
+"一旦啟用了外掛程式，您就可以選取任何 GoDaddy 電子郵件行銷網頁表格並直接插入網站。 設定過程很簡單。 只需在下方輸入您的帳戶電子郵件地址及 API "
+"金鑰（可在 GoDaddy 電子郵件行銷帳戶  [%s] 區域中找到）。 您有三種方法可以在網站上顯示網頁表格："
 
 #: includes/settings.php:286
 msgid ""
@@ -201,17 +199,15 @@ msgid ""
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
 "your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>小工具：</strong> 前往 [外觀] &rarr; [小工具] 找到 [GoDaddy 電子郵件"
-"行銷表格] 的小工具，並將其拖曳到您選擇的小工具區域。 接著，您可以新增標題並選"
-"取表格！"
+"<strong>小工具：</strong> 前往 [外觀] &rarr; [小工具] 找到 [GoDaddy 電子郵件行銷表格] "
+"的小工具，並將其拖曳到您選擇的小工具區域。 接著，您可以新增標題並選取表格！"
 
 #: includes/settings.php:287
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
-"<strong>短代碼：</strong> 您可在任何貼文或頁面上新增短代碼，以便在頁面/貼文編"
-"輯器中新增表格（例如： <code>[gem id=80326]</code>）。"
+"<strong>短代碼：</strong> 您可在任何貼文或頁面上新增短代碼，以便在頁面/貼文編輯器中新增表格（例如： <code>[gem id=80326]</code>）。"
 
 #: includes/settings.php:289
 #, php-format
@@ -219,8 +215,7 @@ msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
 msgstr ""
-"<strong>範本標記：</strong> 您可以在所有 WordPress 檔案中新增下列範本標記： "
-"<code>%s</code>。 例如： <code>%s</code>"
+"<strong>範本標記：</strong> 您可以在所有 WordPress 檔案中新增下列範本標記： <code>%s</code>。 例如： <code>%s</code>"
 
 #: includes/settings.php:299
 msgid "For more information:"
@@ -308,8 +303,7 @@ msgid ""
 "set up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
 msgstr ""
-"在 WordPress 網站中新增 GoDaddy 電子郵件行銷註冊表格！ GoDaddy 電子郵件行銷外"
-"掛程式設定十分簡單，可讓您的網站訪客訂閱電子郵件清單。"
+"在 WordPress 網站中新增 GoDaddy 電子郵件行銷註冊表格！ GoDaddy 電子郵件行銷外掛程式設定十分簡單，可讓您的網站訪客訂閱電子郵件清單。"
 
 #: includes/settings.php:517
 msgctxt "header note"
@@ -398,9 +392,8 @@ msgid ""
 "then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
 "account, %2$s."
 msgstr ""
-"要讓外掛程式正常運作，需要存取您的 GoDaddy 電子郵件行銷帳戶。  %1$s 以取得您"
-"的用戶名及 API 金鑰。 在下方複製並貼上，再按一下 [儲存設定]。 如果沒有 "
-"GoDaddy 電子郵件行銷帳戶，%2$s。"
+"要讓外掛程式正常運作，需要存取您的 GoDaddy 電子郵件行銷帳戶。  %1$s 以取得您的用戶名及 API 金鑰。 在下方複製並貼上，再按一下 "
+"[儲存設定]。 如果沒有 GoDaddy 電子郵件行銷帳戶，%2$s。"
 
 #: includes/settings.php:747
 msgctxt "account details link"
