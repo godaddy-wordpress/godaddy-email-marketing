@@ -203,7 +203,8 @@ msgid ""
 "your choice. You can then add a title and select a form!"
 msgstr ""
 "<strong>วิดเจ็ท:</strong> ไปที่ Appearance &rarr; widgets แล้วหาวิดเจ็ทชื่อ "
-"“GoDaddy Email Marketing Form” แล้วลากลงในส่วนวิดเจ็ทที่คุณต้องการ จากนั้น คุณสามารถเพิ่มชื่อและเลือกแบบฟอร์ม!"
+"“แบบฟอร์มการตลาดด้วยอีเมลของ GoDaddy” แล้วลากลงในส่วนวิดเจ็ทที่คุณต้องการ "
+"จากนั้น คุณสามารถเพิ่มชื่อและเลือกแบบฟอร์ม!"
 
 #: includes/settings.php:287
 msgid ""
