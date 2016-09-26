@@ -64,7 +64,7 @@ class GEM_Form_Renderer {
 					if ( $show_powered_by ) : ?>
 
 						<p>
-							<a href="https://www.godaddy.com/business/email-marketing/" target="_blank"><?php esc_html_e( 'Powered by GoDaddy', 'godaddy-email-marketing' ); ?></a>
+							<a href="https://www.godaddy.com/online-marketing/email-marketing" rel="nofollow" target="_blank"><?php esc_html_e( 'Powered by GoDaddy', 'godaddy-email-marketing' ); ?></a>
 						</p>
 
 					<?php endif; ?>
