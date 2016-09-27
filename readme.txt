@@ -82,7 +82,7 @@ GoDaddy Email Marketing is the easiest way to create, send, share, and track ema
 
 = Do I need a GoDaddy Email Marketing account to use this plugin? =
 
-Yes, this plugin requires a [GoDaddy Email Marketing](https://www.godaddy.com/business/email-marketing) account.
+Yes, this plugin requires a [GoDaddy Email Marketing](https://www.godaddy.com/online-marketing/email-marketing) account.
 
 = Is there a widget? =
 
