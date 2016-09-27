@@ -104,7 +104,7 @@ class GEM_Official {
 
 		// Plugin's main directory.
 		defined( 'GEM_VERSION' )
-			or define( 'GEM_VERSION', '1.1.1' );
+			or define( 'GEM_VERSION', '1.1.2' );
 
 		// Set up the base name.
 		isset( self::$basename ) || self::$basename = plugin_basename( __FILE__ );
