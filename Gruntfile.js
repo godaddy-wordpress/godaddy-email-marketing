@@ -2,9 +2,11 @@
 module.exports = function( grunt ) {
 	'use strict';
 
+	var pkg = grunt.file.readJSON( 'package.json' );
+
 	// Project configuration.
 	grunt.initConfig( {
-		pkg: grunt.file.readJSON( 'package.json' ),
+		pkg: pkg,
 
 		keywords: [
 			'__',
@@ -151,9 +153,10 @@ module.exports = function( grunt ) {
 		wp_deploy: {
 			deploy: {
 				options: {
-					plugin_slug: '<%= pkg.name %>',
+					plugin_slug: pkg.name,
 					build_dir: 'build',
-					assets_dir: 'assets'
+					assets_dir: 'assets',
+					plugin_main_file: 'godaddy-email-marketing.php'
 				}
 			}
 		},
