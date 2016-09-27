@@ -84,7 +84,7 @@ That's it. You're ready to go!
 GoDaddy Email Marketing is the easiest way to create, send, share, and track email newsletters online. It's for people who want email marketing to be simple.
 
 ### Do I need a GoDaddy Email Marketing account to use this plugin? ###
-Yes, this plugin requires a [GoDaddy Email Marketing](https://www.godaddy.com/business/email-marketing) account.
+Yes, this plugin requires a [GoDaddy Email Marketing](https://www.godaddy.com/online-marketing/email-marketing) account.
 
 ### Is there a widget? ###
 Absolutely. Use it by finding the GoDaddy Email Marketing widget under **Appearance > Widgets** in the WordPress Dashboard and dragging it into the widget area of your choice. You can then add a title and select a form!
