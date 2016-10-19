@@ -104,6 +104,12 @@ class GEM_Settings {
 	 */
 	public function page_load() {
 
+		if ( ! current_user_can( 'manage_options' ) ) {
+
+			return false;
+
+		}
+
 		// Main switch for various maintenance processes.
 		if ( isset( $_GET['action'] ) ) {
 			$settings = get_option( $this->slug );
@@ -113,6 +119,8 @@ class GEM_Settings {
 					if ( ! $this->gem->debug ) {
 						return;
 					}
+
+					check_admin_referer( 'gem_settings_hard_reset_nonce' );
 
 					if ( isset( $settings['username'] ) ) {
 
@@ -135,7 +143,7 @@ class GEM_Settings {
 					set_transient( 'debug-reset', true, 30 );
 					// @codeCoverageIgnoreStart
 					if ( 'cli' !== php_sapi_name() ) {
-						wp_safe_redirect( remove_query_arg( array( 'action', 'settings-updated' ), add_query_arg( 'tab', 'settings' ) ) );
+						wp_safe_redirect( remove_query_arg( array( 'action', 'settings-updated', '_wpnonce' ), add_query_arg( 'tab', 'settings' ) ) );
 						exit;
 					}
 					// @codeCoverageIgnoreEnd
@@ -145,6 +153,8 @@ class GEM_Settings {
 					if ( ! $this->gem->debug ) {
 						return;
 					}
+
+					check_admin_referer( 'gem_settings_reset_transients_nonce' );
 
 					if ( isset( $settings['username'] ) ) {
 
@@ -163,7 +173,7 @@ class GEM_Settings {
 						set_transient( 'debug-reset-transients', true, 30 );
 						// @codeCoverageIgnoreStart
 						if ( 'cli' !== php_sapi_name() ) {
-							wp_safe_redirect( remove_query_arg( array( 'action', 'settings-updated' ), add_query_arg( 'tab', 'settings' ) ) );
+							wp_safe_redirect( remove_query_arg( array( 'action', 'settings-updated', '_wpnonce' ), add_query_arg( 'tab', 'settings' ) ) );
 							exit;
 						}
 						// @codeCoverageIgnoreEnd
@@ -171,6 +181,8 @@ class GEM_Settings {
 
 					break;
 				case 'refresh' :
+
+					check_admin_referer( 'gem_settings_refresh_nonce' );
 
 					if ( isset( $settings['username'] ) ) {
 
@@ -189,26 +201,16 @@ class GEM_Settings {
 						set_transient( 'gem-refresh', true, 30 );
 						// @codeCoverageIgnoreStart
 						if ( 'cli' !== php_sapi_name() ) {
-							wp_safe_redirect( remove_query_arg( array( 'action', 'settings-updated' ) ) );
+							wp_safe_redirect( remove_query_arg( array( 'action', 'settings-updated', '_wpnonce' ) ) );
 							exit;
 						}
 						// @codeCoverageIgnoreEnd
 					}
 
 					break;
-				case 'dismiss' :
-					$user_id = get_current_user_id();
-
-					if ( ! $user_id ) {
-						return;
-					}
-
-					update_user_meta( $user_id, 'gem-dismiss', 'show' );
-
-					break;
 			}
 		} elseif ( isset( $_GET['settings-updated'] ) && 'cli' !== php_sapi_name() ) { // @codeCoverageIgnoreStart
-			wp_safe_redirect( remove_query_arg( array( 'action', 'settings-updated' ), add_query_arg( 'tab', 'settings' ) ) );
+			wp_safe_redirect( remove_query_arg( array( 'action', 'settings-updated', '_wpnonce' ), add_query_arg( 'tab', 'settings' ) ) );
 			exit;
 		}
 		// @codeCoverageIgnoreEnd
@@ -392,6 +394,7 @@ class GEM_Settings {
 		);
 
 		if ( $this->gem->debug ) {
+
 			add_settings_field(
 				'erase_transients',
 				__( 'Cache Reset', 'godaddy-email-marketing' ),
@@ -399,7 +402,10 @@ class GEM_Settings {
 				$this->slug,
 				'debugging_section',
 				array(
-					'url' => add_query_arg( 'action', 'debug-reset-transients' ),
+					'url' => add_query_arg( array(
+						'action'   => 'debug-reset-transients',
+						'_wpnonce' => wp_create_nonce( 'gem_settings_reset_transients_nonce' ),
+					) ),
 					'label' => __( 'Erase Transients', 'godaddy-email-marketing' ),
 					'description' => __( 'Purges only the cached data associated with this plugin, and should be attempted before a hard reset.', 'godaddy-email-marketing' ),
 				)
@@ -412,7 +418,10 @@ class GEM_Settings {
 				$this->slug,
 				'debugging_section',
 				array(
-					'url' => add_query_arg( 'action', 'debug-reset' ),
+					'url' => add_query_arg( array(
+						'action'   => 'debug-reset',
+						'_wpnonce' => wp_create_nonce( 'gem_settings_hard_reset_nonce' ),
+					) ),
 					'label' => __( 'Erase All Data', 'godaddy-email-marketing' ),
 					'description' => __( 'Purges all saved data associated with this plugin.', 'godaddy-email-marketing' ),
 				)
@@ -633,7 +642,15 @@ class GEM_Settings {
 	 * Refresh forms button.
 	 */
 	public function refresh_button() {
-		$url = esc_url( add_query_arg( 'action', 'refresh', remove_query_arg( 'tab' ) ) );
+		$url = esc_url(
+			add_query_arg(
+				array(
+					'action'   => 'refresh',
+					'wp_nonce' => wp_create_nonce( 'gem_settings_refresh_nonce' ),
+				),
+				remove_query_arg( 'tab' )
+			)
+		);
 		$this->link_button( __( 'Refresh Forms', 'godaddy-email-marketing' ), $url );
 	}
 
