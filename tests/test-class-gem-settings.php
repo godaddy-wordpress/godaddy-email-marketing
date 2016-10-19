@@ -132,6 +132,10 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	 */
 	public function test_page_load() {
 		$instance = new GEM_Settings();
+
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		wp_set_current_user( $user_id );
+
 		$instance->page_load();
 		$instance->action_admin_menu();
 
@@ -151,8 +155,12 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$instance->action_admin_menu();
 		$this->set_data( $instance->slug );
 
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		wp_set_current_user( $user_id );
+
 		// debug-reset action:
-		$_GET['action'] = 'debug-reset';
+		$_GET['action']   = 'debug-reset';
+		$_GET['_wpnonce'] = wp_create_nonce( 'gem_settings_hard_reset_nonce' );
 		$gem->debug = false;
 		$instance->page_load();
 		$this->assertNotNull( get_option( $instance->slug, null ) );
@@ -182,8 +190,12 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$instance->action_admin_menu();
 		$this->set_data( $instance->slug );
 
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		wp_set_current_user( $user_id );
+
 		// debug-reset-transients action:
-		$_GET['action'] = 'debug-reset-transients';
+		$_GET['action']   = 'debug-reset-transients';
+		$_GET['_wpnonce'] = wp_create_nonce( 'gem_settings_reset_transients_nonce' );
 		$gem->debug = false;
 		update_option( $instance->slug, array( 'username' => null ) );
 		$instance->page_load();
@@ -212,8 +224,12 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$instance->action_admin_menu();
 		$this->set_data( $instance->slug );
 
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		wp_set_current_user( $user_id );
+
 		// refresh action:
-		$_GET['action'] = 'refresh';
+		$_GET['action']   = 'refresh';
+		$_GET['_wpnonce'] = wp_create_nonce( 'gem_settings_refresh_nonce' );
 		$instance->page_load();
 		$errors = get_settings_errors( $instance->slug );
 		$this->assertFalse( get_transient( 'gem-form-123' ) );
