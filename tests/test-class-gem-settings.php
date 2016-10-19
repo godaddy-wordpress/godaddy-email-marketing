@@ -419,8 +419,8 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertContains( '<input type="text" name="gem-settings[api-key]"', $actual_output );
 		$this->assertContains( '<input type="checkbox" name="gem-settings[display_powered_by]" id="gem-settings[display_powered_by]" value="1"  checked=\'checked\' />', $actual_output );
 		$this->assertContains( '<input type="checkbox" name="gem-settings[debug]" id="gem-settings[debug]" value="1"  checked=\'checked\' />', $actual_output );
-		$this->assertContains( '<a href="?action=debug-reset" class="button-secondary">Erase All Data</a>', $actual_output );
-		$this->assertContains( '<a href="?action=debug-reset-transients" class="button-secondary">Erase Transients</a>', $actual_output );
+		$this->assertContains( 'class="button-secondary">Erase All Data</a>', $actual_output );
+		$this->assertContains( 'class="button-secondary">Erase Transients</a>', $actual_output );
 		$this->assertContains( '<a href="https://gem.godaddy.com/signups" target="_blank" class="button">Create a New Signup Form</a>', $actual_output );
 
 		$this->delete_data( $instance->slug );
