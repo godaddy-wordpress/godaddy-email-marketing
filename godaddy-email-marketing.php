@@ -206,6 +206,8 @@ class GEM_Official {
 	 * Adds the settings page to the action links.
 	 *
 	 * @param array $actions An array of plugin action links.
+	 *
+	 * @return array
 	 */
 	public function action_links( $actions ) {
 		return array_merge(
@@ -234,7 +236,7 @@ class GEM_Official {
 	public function action_admin_notices() {
 		$screen = get_current_screen();
 
-		if ( 'plugins' != $screen->id ) {
+		if ( 'plugins' !== $screen->id ) {
 			return;
 		}
 

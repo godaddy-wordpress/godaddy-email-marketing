@@ -207,7 +207,7 @@ class GEM_Settings {
 
 					break;
 			}
-		} else if ( isset( $_GET['settings-updated'] ) && 'cli' !== php_sapi_name() ) { // @codeCoverageIgnoreStart
+		} elseif ( isset( $_GET['settings-updated'] ) && 'cli' !== php_sapi_name() ) { // @codeCoverageIgnoreStart
 			wp_safe_redirect( remove_query_arg( array( 'action', 'settings-updated' ), add_query_arg( 'tab', 'settings' ) ) );
 			exit;
 		}
@@ -575,7 +575,7 @@ class GEM_Settings {
 									<td data-colname="<?php esc_html_e( 'Shortcode', 'godaddy-email-marketing' ); ?>">
 										<input type="text" id="form-<?php echo absint( $form->id ); ?>" class="code clipboard-value" value="[gem id=<?php echo absint( $form->id ); ?>]" readonly />
 										<button data-copytarget="#form-<?php echo absint( $form->id ); ?>" class="button copy-to-clipboard">
-											<img src="<?php echo plugins_url( 'images/clippy.svg', GEM_PLUGIN_BASE ); ?>" width="14" alt="Copy to clipboard">
+											<img src="<?php echo esc_url( plugins_url( 'images/clippy.svg', GEM_PLUGIN_BASE ) ); ?>" width="14" alt="Copy to clipboard">
 										</button>
 									</td>
 								</tr>
