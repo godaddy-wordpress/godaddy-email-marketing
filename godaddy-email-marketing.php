@@ -3,7 +3,7 @@
  * Plugin Name: GoDaddy Email Marketing Signup Forms
  * Plugin URI: https://gem.godaddy.com/
  * Description: Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to set up, the plugin allows your site visitors to subscribe to your email lists.
- * Version: 1.1.3
+ * Version: 1.1.4
  * Author: GoDaddy
  * Author URI: https://gem.godaddy.com/
  * License: GPL-2.0
