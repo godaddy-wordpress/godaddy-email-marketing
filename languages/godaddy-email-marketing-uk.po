@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 09:12-0500\n"
+"POT-Creation-Date: 2016-11-18 15:09-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,99 +41,99 @@ msgctxt "Name of required field"
 msgid "%s is a required field."
 msgstr "  %s — обов'язкове для заповнення поле."
 
-#: godaddy-email-marketing.php:213 includes/settings.php:532
+#: godaddy-email-marketing.php:215 includes/settings.php:541
 msgid "Settings"
 msgstr "Налаштування"
 
-#: godaddy-email-marketing.php:249
+#: godaddy-email-marketing.php:251
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "GoDaddy Маркетинг електронною поштою майже готовий."
 
-#: godaddy-email-marketing.php:249
+#: godaddy-email-marketing.php:251
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "Щоб він запрацював, ви маєте ввести своє ім’я користувача та ключ API."
 
-#: godaddy-email-marketing.php:250
+#: godaddy-email-marketing.php:252
 msgid "Let's do it!"
 msgstr "Давайте зробимо це!"
 
-#: includes/class-shortcode.php:48 includes/settings.php:61
+#: includes/class-shortcode.php:50 includes/settings.php:61
 msgid "GoDaddy Email Marketing"
 msgstr "GoDaddy Маркетинг електронною поштою"
 
-#: includes/class-shortcode.php:52
+#: includes/class-shortcode.php:54
 msgid "Signup Forms"
 msgstr "Реєстр. форми"
 
-#: includes/class-shortcode.php:53
+#: includes/class-shortcode.php:55
 msgid "Choose one of the available forms."
 msgstr "Виберіть одну з доступних форм."
 
-#: includes/render.php:67
+#: includes/render.php:71
 msgid "Powered by GoDaddy"
 msgstr "На платформі GoDaddy"
 
-#: includes/render.php:322
+#: includes/render.php:326
 msgid "Month"
 msgstr "Місяць"
 
-#: includes/render.php:323
+#: includes/render.php:327
 msgid "January"
 msgstr "Січень"
 
-#: includes/render.php:324
+#: includes/render.php:328
 msgid "Febuary"
 msgstr "лютий"
 
-#: includes/render.php:325
+#: includes/render.php:329
 msgid "March"
 msgstr "Березень"
 
-#: includes/render.php:326
+#: includes/render.php:330
 msgid "April"
 msgstr "Квітень"
 
-#: includes/render.php:327
+#: includes/render.php:331
 msgid "May"
 msgstr "Травень"
 
-#: includes/render.php:328
+#: includes/render.php:332
 msgid "June"
 msgstr "Червень"
 
-#: includes/render.php:329
+#: includes/render.php:333
 msgid "July"
 msgstr "Липень"
 
-#: includes/render.php:330
+#: includes/render.php:334
 msgid "August"
 msgstr "Серпень"
 
-#: includes/render.php:331
+#: includes/render.php:335
 msgid "September"
 msgstr "Вересень"
 
-#: includes/render.php:332
+#: includes/render.php:336
 msgid "October"
 msgstr "Жовтень"
 
-#: includes/render.php:333
+#: includes/render.php:337
 msgid "November"
 msgstr "Листопад"
 
-#: includes/render.php:334
+#: includes/render.php:338
 msgid "December"
 msgstr "Грудень"
 
-#: includes/render.php:339
+#: includes/render.php:343
 msgid "Day"
 msgstr "Число"
 
-#: includes/render.php:347
+#: includes/render.php:351
 msgid "Year"
 msgstr "Рік"
 
-#: includes/settings.php:60 includes/settings.php:504
+#: includes/settings.php:60 includes/settings.php:513
 msgid "GoDaddy Email Marketing Signup Forms"
 msgstr "Реєстраційні форми GoDaddy Маркетингу електронною поштою"
 
@@ -142,47 +142,48 @@ msgctxt "failed copy response"
 msgid "Please press Ctrl/Cmd+C to copy."
 msgstr "Натисніть Ctrl/Cmd+C для копіювання."
 
-#: includes/settings.php:220
+#: includes/settings.php:222
 msgid "All data has been removed."
 msgstr "Усі дані видалено."
 
-#: includes/settings.php:224
+#: includes/settings.php:226
 msgid "All transients were removed."
 msgstr "Усі тимчасові дані видалено."
 
-#: includes/settings.php:228
+#: includes/settings.php:230
 msgid "Forms list was successfully updated."
 msgstr "Список форм успішно оновлено."
 
-#: includes/settings.php:232
+#: includes/settings.php:234
 msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr "Облікові дані неправильні! Перевірте, чи правильно ви ввели їх."
 
-#: includes/settings.php:236
+#: includes/settings.php:238
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr ""
-"З’єднання з GoDaddy Маркетингом електронною поштою установлено! Усе налаштовано!"
+"З’єднання з GoDaddy Маркетингом електронною поштою установлено! Усе "
+"налаштовано!"
 
-#: includes/settings.php:241
+#: includes/settings.php:243
 msgid "Settings have been updated."
 msgstr "Настройки оновлено."
 
-#: includes/settings.php:245
+#: includes/settings.php:247
 msgid "Please fill in the username and the API key first."
 msgstr "Спочатку вкажіть ім’я користувача та ключ API."
 
-#: includes/settings.php:277
+#: includes/settings.php:279
 msgid "Overview"
 msgstr "Огляд"
 
-#: includes/settings.php:281
+#: includes/settings.php:283
 msgid "Instructions"
 msgstr "Інструкції"
 
-#: includes/settings.php:283
+#: includes/settings.php:285
 #, php-format
 msgid ""
 "Once the plugin is activated, you will be able to select and insert any of "
@@ -191,13 +192,13 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"Після активації плагіну ви зможете вибирати й вставляти просто на сайт "
-"будь-які ваші веб-форми GoDaddy Маркетингу електронною поштою. Налаштувати це "
+"Після активації плагіну ви зможете вибирати й вставляти просто на сайт будь-"
+"які ваші веб-форми GoDaddy Маркетингу електронною поштою. Налаштувати це "
 "дуже просто. Лише введіть нижче адрес електронної пошти вашого акаунта та "
 "ключ API (зазначений в області [%s] вашого акаунта GoDaddy Маркетингу "
 "електронною поштою). Є три способи відображення веб-форми на вашому сайті:"
 
-#: includes/settings.php:286
+#: includes/settings.php:288
 msgid ""
 "<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
@@ -208,16 +209,16 @@ msgstr ""
 "перетягніть його до бажаної області віджетів. Після цього можна додати "
 "заголовок і вибрати форму."
 
-#: includes/settings.php:287
+#: includes/settings.php:289
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
-"<strong>Короткий код.</strong> Форму можна вставити в будь-яку публікацію або "
-"сторінку, додавши короткий код (наприклад, <code>[gem id=80326]</code>) у "
-"редакторі сторінок/публікацій."
+"<strong>Короткий код.</strong> Форму можна вставити в будь-яку публікацію "
+"або сторінку, додавши короткий код (наприклад, <code>[gem id=80326]</code>) "
+"у редакторі сторінок/публікацій."
 
-#: includes/settings.php:289
+#: includes/settings.php:291
 #, php-format
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
@@ -226,88 +227,88 @@ msgstr ""
 "<strong>Код шаблону.</strong> До будь-якого файлу WordPress можна додати "
 "такий код шаблону: <code>%s</code>. Наприклад: <code>%s</code>"
 
-#: includes/settings.php:299
+#: includes/settings.php:301
 msgid "For more information:"
 msgstr "Додаткова інформація:"
 
-#: includes/settings.php:300
+#: includes/settings.php:302
 msgid "GoDaddy"
 msgstr "GoDaddy"
 
-#: includes/settings.php:301
+#: includes/settings.php:303
 msgid "GoDaddy Help"
 msgstr "Довідка GoDaddy"
 
-#: includes/settings.php:302
+#: includes/settings.php:304
 msgid "Contact GoDaddy"
 msgstr "Зверніться до GoDaddy"
 
-#: includes/settings.php:327
+#: includes/settings.php:329
 msgid "Account Details"
 msgstr "Відомості акаунта"
 
-#: includes/settings.php:334
+#: includes/settings.php:336
 msgid "Username"
 msgstr "Ім'я користувача"
 
-#: includes/settings.php:348
+#: includes/settings.php:350
 msgid "API Key"
 msgstr "Ключ API"
 
-#: includes/settings.php:362
+#: includes/settings.php:364
 msgid "Footer Link"
 msgstr "Посилання в нижньому колонтитулі"
 
-#: includes/settings.php:369
+#: includes/settings.php:371
 msgid "Display \"Powered by GoDaddy\"?"
 msgstr "Показувати «На платформі GoDaddy»?"
 
-#: includes/settings.php:376
+#: includes/settings.php:378
 msgid "Debugging"
 msgstr "Відлагодження"
 
-#: includes/settings.php:383
+#: includes/settings.php:385
 msgid "Debug Mode"
 msgstr "Режим відлагодження"
 
-#: includes/settings.php:390
+#: includes/settings.php:392
 msgid "Activated"
 msgstr "Активовано"
 
-#: includes/settings.php:397
+#: includes/settings.php:400
 msgid "Cache Reset"
 msgstr "Скидання кешу"
 
-#: includes/settings.php:403
+#: includes/settings.php:409
 msgid "Erase Transients"
 msgstr "Стерти тимчасові дані"
 
-#: includes/settings.php:404
+#: includes/settings.php:410
 msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
 msgstr ""
-"Видаляє лише кешовані дані, зв’язані з цим плагіном, і має виконуватися перед "
-"повним скиданням."
+"Видаляє лише кешовані дані, зв’язані з цим плагіном, і має виконуватися "
+"перед повним скиданням."
 
-#: includes/settings.php:410
+#: includes/settings.php:416
 msgid "Hard Reset"
 msgstr "Повне скидання"
 
-#: includes/settings.php:416
+#: includes/settings.php:425
 msgid "Erase All Data"
 msgstr "Стерти всі дані"
 
-#: includes/settings.php:417
+#: includes/settings.php:426
 msgid "Purges all saved data associated with this plugin."
 msgstr "Видаляє всі збережені дані, пов’язані з цим плагіном."
 
-#: includes/settings.php:511
+#: includes/settings.php:520
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience."
 msgstr "Відчуйте переваги GoDaddy Маркетингу електронною поштою."
 
-#: includes/settings.php:513
+#: includes/settings.php:522
 msgctxt "header note"
 msgid ""
 "Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
@@ -316,81 +317,95 @@ msgid ""
 msgstr ""
 "Установіть реєстраційну форму GoDaddy Маркетингу електронною поштою на свій "
 "сайт WordPress! Зручний у настроюванні плагін GoDaddy Маркетингу електронною "
-"поштою дає змогу відвідувачам вашого сайту підписуватися на вашу поштову розсилку."
+"поштою дає змогу відвідувачам вашого сайту підписуватися на вашу поштову "
+"розсилку."
 
-#: includes/settings.php:517
+#: includes/settings.php:526
 msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr "Ви ще не маєте жодної форми."
 
-#: includes/settings.php:520
+#: includes/settings.php:529
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
 msgstr "Вперше в GoDaddy? Створіть акаунт, щоб негайно почати роботу. %s "
 
-#: includes/settings.php:520
+#: includes/settings.php:529
 msgctxt "header button"
 msgid "Sign Up Now"
 msgstr "Зареєструватися зараз"
 
-#: includes/settings.php:530
+#: includes/settings.php:539
 msgid "Forms"
 msgstr "Форми"
 
-#: includes/settings.php:539
+#: includes/settings.php:548
+msgid "Reach Your Fans"
+msgstr ""
+
+#: includes/settings.php:551
+#, php-format
+msgid ""
+"Email marketing makes it easier than ever to turn casual visits into lasting "
+"relationship. You're already collecting subscribers, now you just need to "
+"start emailing them. It only takes a few moments to %screate an email "
+"marketing campaign%s."
+msgstr ""
+
+#: includes/settings.php:557
 msgid "Available Signup Forms"
 msgstr "Доступні реєстраційні форми"
 
-#: includes/settings.php:543 includes/settings.php:550
-#: includes/settings.php:558
+#: includes/settings.php:561 includes/settings.php:568
+#: includes/settings.php:576
 msgid "Form Name"
 msgstr "Ім'я форми"
 
-#: includes/settings.php:544 includes/settings.php:551
-#: includes/settings.php:572
+#: includes/settings.php:562 includes/settings.php:569
+#: includes/settings.php:590
 msgid "Form ID"
 msgstr "ID форми"
 
-#: includes/settings.php:545 includes/settings.php:552
-#: includes/settings.php:575
+#: includes/settings.php:563 includes/settings.php:570
+#: includes/settings.php:593
 msgid "Shortcode"
 msgstr "Короткий код"
 
-#: includes/settings.php:562
+#: includes/settings.php:580
 msgid "Opens in a new window"
 msgstr "Відкривається в новому вікні"
 
-#: includes/settings.php:562
+#: includes/settings.php:580
 msgid "Edit form in GoDaddy Email Marketing"
 msgstr "Редагувати форму в GoDaddy Маркетингу електронною поштою"
 
-#: includes/settings.php:565
+#: includes/settings.php:583
 msgid "Preview"
 msgstr "Попередній перегляд"
 
-#: includes/settings.php:588
+#: includes/settings.php:606
 msgid "Not seeing your form?"
 msgstr "Не бачите свою форму?"
 
-#: includes/settings.php:607
+#: includes/settings.php:625
 msgctxt "save settings button"
 msgid "Save Settings"
 msgstr "Зберегти настройки"
 
-#: includes/settings.php:637
+#: includes/settings.php:663
 msgid "Refresh Forms"
 msgstr "Оновити форми"
 
-#: includes/settings.php:644
+#: includes/settings.php:670
 msgid "Create a New Signup Form"
 msgstr "Створити реєстраційну форму"
 
-#: includes/settings.php:651
+#: includes/settings.php:677
 msgid "Create a New Campaign"
 msgstr "Створити кампанію"
 
-#: includes/settings.php:737
+#: includes/settings.php:763
 msgid ""
 "If you are experiencing issues and are unsure of the cause, you may want to "
 "activate debug mode, which displays additional options."
@@ -398,7 +413,7 @@ msgstr ""
 "Якщо ви стикаєтеся з проблемами, причина яких невідома, спробуйте активувати "
 "режим відлагодження, який пропонує додаткові можливості."
 
-#: includes/settings.php:747
+#: includes/settings.php:773
 #, php-format
 msgctxt "1. Sign-in link, 2. Sign-up link"
 msgid ""
@@ -413,12 +428,12 @@ msgstr ""
 "настройки». Якщо ви ще не маєте акаунта GoDaddy Маркетингу електронною "
 "поштою, %2$s"
 
-#: includes/settings.php:747
+#: includes/settings.php:773
 msgctxt "account details link"
 msgid "Sign in here"
 msgstr "Зареєструйтеся тут"
 
-#: includes/settings.php:747
+#: includes/settings.php:773
 msgctxt "account details link"
 msgid "sign up here"
 msgstr "зареєструйтеся тут"
@@ -430,7 +445,9 @@ msgstr "Форма GoDaddy Маркетингу електронною пошт�
 #: includes/widget.php:24
 msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr "Розташуйте реєстраційні форми GoDaddy Маркетингу електронною поштою на бічній панелі."
+msgstr ""
+"Розташуйте реєстраційні форми GoDaddy Маркетингу електронною поштою на "
+"бічній панелі."
 
 #: includes/widget.php:128
 msgid "Title:"

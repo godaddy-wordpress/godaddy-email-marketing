@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 09:12-0500\n"
+"POT-Creation-Date: 2016-11-18 15:09-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,99 +42,99 @@ msgctxt "Name of required field"
 msgid "%s is a required field."
 msgstr "%s is een verplicht veld."
 
-#: godaddy-email-marketing.php:213 includes/settings.php:532
+#: godaddy-email-marketing.php:215 includes/settings.php:541
 msgid "Settings"
 msgstr "Instellingen"
 
-#: godaddy-email-marketing.php:249
+#: godaddy-email-marketing.php:251
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "E-mailmarketing van GoDaddy is bijna klaar."
 
-#: godaddy-email-marketing.php:249
+#: godaddy-email-marketing.php:251
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "Je moet je gebruikersnaam en API-sleutel invoeren om het te gebruiken."
 
-#: godaddy-email-marketing.php:250
+#: godaddy-email-marketing.php:252
 msgid "Let's do it!"
 msgstr "Aan de slag!"
 
-#: includes/class-shortcode.php:48 includes/settings.php:61
+#: includes/class-shortcode.php:50 includes/settings.php:61
 msgid "GoDaddy Email Marketing"
 msgstr "E-mailmarketing van GoDaddy"
 
-#: includes/class-shortcode.php:52
+#: includes/class-shortcode.php:54
 msgid "Signup Forms"
 msgstr "Registratieformulieren"
 
-#: includes/class-shortcode.php:53
+#: includes/class-shortcode.php:55
 msgid "Choose one of the available forms."
 msgstr "Kies een van de beschikbare formulieren."
 
-#: includes/render.php:67
+#: includes/render.php:71
 msgid "Powered by GoDaddy"
 msgstr "Gemaakt door GoDaddy"
 
-#: includes/render.php:322
+#: includes/render.php:326
 msgid "Month"
 msgstr "Maand"
 
-#: includes/render.php:323
+#: includes/render.php:327
 msgid "January"
 msgstr "januari"
 
-#: includes/render.php:324
+#: includes/render.php:328
 msgid "Febuary"
 msgstr "Februari"
 
-#: includes/render.php:325
+#: includes/render.php:329
 msgid "March"
 msgstr "maart"
 
-#: includes/render.php:326
+#: includes/render.php:330
 msgid "April"
 msgstr "april"
 
-#: includes/render.php:327
+#: includes/render.php:331
 msgid "May"
 msgstr "mei"
 
-#: includes/render.php:328
+#: includes/render.php:332
 msgid "June"
 msgstr "juni"
 
-#: includes/render.php:329
+#: includes/render.php:333
 msgid "July"
 msgstr "juli"
 
-#: includes/render.php:330
+#: includes/render.php:334
 msgid "August"
 msgstr "augustus"
 
-#: includes/render.php:331
+#: includes/render.php:335
 msgid "September"
 msgstr "september"
 
-#: includes/render.php:332
+#: includes/render.php:336
 msgid "October"
 msgstr "oktober"
 
-#: includes/render.php:333
+#: includes/render.php:337
 msgid "November"
 msgstr "november"
 
-#: includes/render.php:334
+#: includes/render.php:338
 msgid "December"
 msgstr "december"
 
-#: includes/render.php:339
+#: includes/render.php:343
 msgid "Day"
 msgstr "Dag"
 
-#: includes/render.php:347
+#: includes/render.php:351
 msgid "Year"
 msgstr "Jaar/Jaren"
 
-#: includes/settings.php:60 includes/settings.php:504
+#: includes/settings.php:60 includes/settings.php:513
 msgid "GoDaddy Email Marketing Signup Forms"
 msgstr "Aanmeldingsformulieren voor e-mailmarketing van GoDaddy"
 
@@ -143,48 +143,50 @@ msgctxt "failed copy response"
 msgid "Please press Ctrl/Cmd+C to copy."
 msgstr "Druk op Ctrl/Cmd+C om te kopiëren."
 
-#: includes/settings.php:220
+#: includes/settings.php:222
 msgid "All data has been removed."
 msgstr "Alle gegevens zijn verwijderd."
 
-#: includes/settings.php:224
+#: includes/settings.php:226
 msgid "All transients were removed."
 msgstr "Alle tijdelijke gegevens zijn verwijderd."
 
-#: includes/settings.php:228
+#: includes/settings.php:230
 msgid "Forms list was successfully updated."
 msgstr "De lijst met formulieren is bijgewerkt."
 
-#: includes/settings.php:232
+#: includes/settings.php:234
 msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr ""
-"De aanmeldingsgegevens zijn onjuist. Controleer of je ze correct hebt ingevuld."
+"De aanmeldingsgegevens zijn onjuist. Controleer of je ze correct hebt "
+"ingevuld."
 
-#: includes/settings.php:236
+#: includes/settings.php:238
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr ""
-"Er is verbinding gemaakt met e-mailmarketing van GoDaddy! Je bent er klaar voor!"
+"Er is verbinding gemaakt met e-mailmarketing van GoDaddy! Je bent er klaar "
+"voor!"
 
-#: includes/settings.php:241
+#: includes/settings.php:243
 msgid "Settings have been updated."
 msgstr "De instellingen zijn bijgewerkt."
 
-#: includes/settings.php:245
+#: includes/settings.php:247
 msgid "Please fill in the username and the API key first."
 msgstr "Vul eerst de gebruikersnaam en API-sleutel in."
 
-#: includes/settings.php:277
+#: includes/settings.php:279
 msgid "Overview"
 msgstr "Overzicht"
 
-#: includes/settings.php:281
+#: includes/settings.php:283
 msgid "Instructions"
 msgstr "Instructies"
 
-#: includes/settings.php:283
+#: includes/settings.php:285
 #, php-format
 msgid ""
 "Once the plugin is activated, you will be able to select and insert any of "
@@ -193,24 +195,25 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"Nadat de plug-in is geactiveerd, kun je de webformulieren voor "
-"e-mailmarketing van GoDaddy selecteren en invoegen in je site. De "
-"configuratie is eenvoudig. Voer hieronder het e-mailadres en de API-sleutel "
-"van je account in (te vinden in het gedeelte van je account voor "
-"e-mailmarketing van GoDaddy [%s]). Er zijn drie manieren waarop je een "
-"webformulier kunt weergeven op je site:"
+"Nadat de plug-in is geactiveerd, kun je de webformulieren voor e-"
+"mailmarketing van GoDaddy selecteren en invoegen in je site. De configuratie "
+"is eenvoudig. Voer hieronder het e-mailadres en de API-sleutel van je "
+"account in (te vinden in het gedeelte van je account voor e-mailmarketing "
+"van GoDaddy [%s]). Er zijn drie manieren waarop je een webformulier kunt "
+"weergeven op je site:"
 
-#: includes/settings.php:286
+#: includes/settings.php:288
 msgid ""
 "<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
 "your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Widget:</strong> Ga naar Vormgeving &rarr; widgets en zoek het widget "
-"met de naam 'Formulier voor e-mailmarketing van GoDaddy'. Sleep het naar de "
-"gewenste locatie voor widgets. Voeg dan een titel toe en selecteer een formulier."
+"<strong>Widget:</strong> Ga naar Vormgeving &rarr; widgets en zoek het "
+"widget met de naam 'Formulier voor e-mailmarketing van GoDaddy'. Sleep het "
+"naar de gewenste locatie voor widgets. Voeg dan een titel toe en selecteer "
+"een formulier."
 
-#: includes/settings.php:287
+#: includes/settings.php:289
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
@@ -219,7 +222,7 @@ msgstr ""
 "of pagina door de shortcode te gebruiken (bijv. <code>[gem id=80326]</code>) "
 "in de editor van de pagina/het bericht."
 
-#: includes/settings.php:289
+#: includes/settings.php:291
 #, php-format
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
@@ -228,63 +231,63 @@ msgstr ""
 "<strong>Sjabloontag:</strong> Je kunt de volgende sjabloontag toevoegen aan "
 "een WordPress-bestand: <code>%s</code>. Bijvoorbeeld <code>%s</code>"
 
-#: includes/settings.php:299
+#: includes/settings.php:301
 msgid "For more information:"
 msgstr "Voor meer informatie:"
 
-#: includes/settings.php:300
+#: includes/settings.php:302
 msgid "GoDaddy"
 msgstr "GoDaddy"
 
-#: includes/settings.php:301
+#: includes/settings.php:303
 msgid "GoDaddy Help"
 msgstr "GoDaddy Help"
 
-#: includes/settings.php:302
+#: includes/settings.php:304
 msgid "Contact GoDaddy"
 msgstr "Contact met GoDaddy"
 
-#: includes/settings.php:327
+#: includes/settings.php:329
 msgid "Account Details"
 msgstr "Accountgegevens"
 
-#: includes/settings.php:334
+#: includes/settings.php:336
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: includes/settings.php:348
+#: includes/settings.php:350
 msgid "API Key"
 msgstr "API-sleutel"
 
-#: includes/settings.php:362
+#: includes/settings.php:364
 msgid "Footer Link"
 msgstr "Voettekstlink"
 
-#: includes/settings.php:369
+#: includes/settings.php:371
 msgid "Display \"Powered by GoDaddy\"?"
 msgstr "'Gemaakt door GoDaddy' weergeven?"
 
-#: includes/settings.php:376
+#: includes/settings.php:378
 msgid "Debugging"
 msgstr "Debuggen"
 
-#: includes/settings.php:383
+#: includes/settings.php:385
 msgid "Debug Mode"
 msgstr "Debugmodus"
 
-#: includes/settings.php:390
+#: includes/settings.php:392
 msgid "Activated"
 msgstr "Geactiveerd"
 
-#: includes/settings.php:397
+#: includes/settings.php:400
 msgid "Cache Reset"
 msgstr "Cache opnieuw instellen"
 
-#: includes/settings.php:403
+#: includes/settings.php:409
 msgid "Erase Transients"
 msgstr "Tijdelijke gegevens wissen"
 
-#: includes/settings.php:404
+#: includes/settings.php:410
 msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
@@ -292,24 +295,24 @@ msgstr ""
 "Alleen de gegevens in de cache gekoppeld aan deze plug-in worden verwijderd. "
 "Dit moet worden gedaan voor een harde reset."
 
-#: includes/settings.php:410
+#: includes/settings.php:416
 msgid "Hard Reset"
 msgstr "Harde reset"
 
-#: includes/settings.php:416
+#: includes/settings.php:425
 msgid "Erase All Data"
 msgstr "Alle gegevens wissen"
 
-#: includes/settings.php:417
+#: includes/settings.php:426
 msgid "Purges all saved data associated with this plugin."
 msgstr "Alle opgeslagen gegevens gekoppeld aan deze plug-in worden verwijderd."
 
-#: includes/settings.php:511
+#: includes/settings.php:520
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience."
 msgstr "Ervaar de e-mailmarketing van GoDaddy."
 
-#: includes/settings.php:513
+#: includes/settings.php:522
 msgctxt "header note"
 msgid ""
 "Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
@@ -318,81 +321,97 @@ msgid ""
 msgstr ""
 "Voeg je aanmeldingsformulier voor e-mailmarketing van GoDaddy toe aan je "
 "WordPress-site! Met de plug-in voor e-mailmarketing van GoDaddy, die "
-"eenvoudig is in te stellen, kunnen je sitebezoekers zich abonneren op je e-maillijst."
+"eenvoudig is in te stellen, kunnen je sitebezoekers zich abonneren op je e-"
+"maillijst."
 
-#: includes/settings.php:517
+#: includes/settings.php:526
 msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr "Je hebt nog geen formulieren."
 
-#: includes/settings.php:520
+#: includes/settings.php:529
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "Nieuwe gebruiker van GoDaddy? Maak een account en ga vandaag nog aan de slag. %s "
+msgstr ""
+"Nieuwe gebruiker van GoDaddy? Maak een account en ga vandaag nog aan de "
+"slag. %s "
 
-#: includes/settings.php:520
+#: includes/settings.php:529
 msgctxt "header button"
 msgid "Sign Up Now"
 msgstr "Nu registreren"
 
-#: includes/settings.php:530
+#: includes/settings.php:539
 msgid "Forms"
 msgstr "Formulieren"
 
-#: includes/settings.php:539
+#: includes/settings.php:548
+msgid "Reach Your Fans"
+msgstr ""
+
+#: includes/settings.php:551
+#, php-format
+msgid ""
+"Email marketing makes it easier than ever to turn casual visits into lasting "
+"relationship. You're already collecting subscribers, now you just need to "
+"start emailing them. It only takes a few moments to %screate an email "
+"marketing campaign%s."
+msgstr ""
+
+#: includes/settings.php:557
 msgid "Available Signup Forms"
 msgstr "Beschikbare aanmeldingsformulieren"
 
-#: includes/settings.php:543 includes/settings.php:550
-#: includes/settings.php:558
+#: includes/settings.php:561 includes/settings.php:568
+#: includes/settings.php:576
 msgid "Form Name"
 msgstr "Naam formulier"
 
-#: includes/settings.php:544 includes/settings.php:551
-#: includes/settings.php:572
+#: includes/settings.php:562 includes/settings.php:569
+#: includes/settings.php:590
 msgid "Form ID"
 msgstr "Formuliernummer"
 
-#: includes/settings.php:545 includes/settings.php:552
-#: includes/settings.php:575
+#: includes/settings.php:563 includes/settings.php:570
+#: includes/settings.php:593
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: includes/settings.php:562
+#: includes/settings.php:580
 msgid "Opens in a new window"
 msgstr "Wordt in een nieuw venster geopend"
 
-#: includes/settings.php:562
+#: includes/settings.php:580
 msgid "Edit form in GoDaddy Email Marketing"
 msgstr "Formulier bewerken in e-mailmarketing van GoDaddy"
 
-#: includes/settings.php:565
+#: includes/settings.php:583
 msgid "Preview"
 msgstr "Voorbeeld"
 
-#: includes/settings.php:588
+#: includes/settings.php:606
 msgid "Not seeing your form?"
 msgstr "Kun je je formulier niet vinden?"
 
-#: includes/settings.php:607
+#: includes/settings.php:625
 msgctxt "save settings button"
 msgid "Save Settings"
 msgstr "Instellingen opslaan"
 
-#: includes/settings.php:637
+#: includes/settings.php:663
 msgid "Refresh Forms"
 msgstr "Formulieren vernieuwen"
 
-#: includes/settings.php:644
+#: includes/settings.php:670
 msgid "Create a New Signup Form"
 msgstr "Een nieuw aanmeldingsformulier maken"
 
-#: includes/settings.php:651
+#: includes/settings.php:677
 msgid "Create a New Campaign"
 msgstr "Een nieuwe campagne maken"
 
-#: includes/settings.php:737
+#: includes/settings.php:763
 msgid ""
 "If you are experiencing issues and are unsure of the cause, you may want to "
 "activate debug mode, which displays additional options."
@@ -400,7 +419,7 @@ msgstr ""
 "Als je problemen ondervindt en niet weet wat de oorzaak is, kun je de "
 "debugmodus activeren. Er worden dan aanvullende opties weergegeven."
 
-#: includes/settings.php:747
+#: includes/settings.php:773
 #, php-format
 msgctxt "1. Sign-in link, 2. Sign-up link"
 msgid ""
@@ -414,12 +433,12 @@ msgstr ""
 "Kopieer en plak ze hieronder. Klik dan op Instellingen opslaan. Heb je geen "
 "account voor e-mailmarketing van GoDaddy? %2$s."
 
-#: includes/settings.php:747
+#: includes/settings.php:773
 msgctxt "account details link"
 msgid "Sign in here"
 msgstr "Meld je hier aan"
 
-#: includes/settings.php:747
+#: includes/settings.php:773
 msgctxt "account details link"
 msgid "sign up here"
 msgstr "Meld je hier aan"
@@ -431,7 +450,9 @@ msgstr "Formulier voor e-mailmarketing van GoDaddy"
 #: includes/widget.php:24
 msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr "Voeg de aanmeldingsformulieren voor e-mailmarketing van GoDaddy toe aan de zijbalk."
+msgstr ""
+"Voeg de aanmeldingsformulieren voor e-mailmarketing van GoDaddy toe aan de "
+"zijbalk."
 
 #: includes/widget.php:128
 msgid "Title:"

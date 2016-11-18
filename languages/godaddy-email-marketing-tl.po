@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 09:12-0500\n"
+"POT-Creation-Date: 2016-11-18 15:09-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,99 +43,100 @@ msgctxt "Name of required field"
 msgid "%s is a required field."
 msgstr "Kinakailangang field ang %s."
 
-#: godaddy-email-marketing.php:213 includes/settings.php:532
+#: godaddy-email-marketing.php:215 includes/settings.php:541
 msgid "Settings"
 msgstr "Mga Setting"
 
-#: godaddy-email-marketing.php:249
+#: godaddy-email-marketing.php:251
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "Halos handa na ang Email sa Marketing ng GoDaddy."
 
-#: godaddy-email-marketing.php:249
+#: godaddy-email-marketing.php:251
 msgid "You must enter your username &amp; API key for it to work."
-msgstr "Kailangan mong ilagay ang iyong username &amp; API key para gumana ito."
+msgstr ""
+"Kailangan mong ilagay ang iyong username &amp; API key para gumana ito."
 
-#: godaddy-email-marketing.php:250
+#: godaddy-email-marketing.php:252
 msgid "Let's do it!"
 msgstr "Gawin na natin!"
 
-#: includes/class-shortcode.php:48 includes/settings.php:61
+#: includes/class-shortcode.php:50 includes/settings.php:61
 msgid "GoDaddy Email Marketing"
 msgstr "Email Marketing ng GoDaddy"
 
-#: includes/class-shortcode.php:52
+#: includes/class-shortcode.php:54
 msgid "Signup Forms"
 msgstr "Mga Form sa Pag-sign up"
 
-#: includes/class-shortcode.php:53
+#: includes/class-shortcode.php:55
 msgid "Choose one of the available forms."
 msgstr "Pumili ng isa sa mga available na form."
 
-#: includes/render.php:67
+#: includes/render.php:71
 msgid "Powered by GoDaddy"
 msgstr "Pinapagana ng GoDaddy"
 
-#: includes/render.php:322
+#: includes/render.php:326
 msgid "Month"
 msgstr "Buwan"
 
-#: includes/render.php:323
+#: includes/render.php:327
 msgid "January"
 msgstr "Enero"
 
-#: includes/render.php:324
+#: includes/render.php:328
 msgid "Febuary"
 msgstr "Pebrero"
 
-#: includes/render.php:325
+#: includes/render.php:329
 msgid "March"
 msgstr "Marso"
 
-#: includes/render.php:326
+#: includes/render.php:330
 msgid "April"
 msgstr "Abril"
 
-#: includes/render.php:327
+#: includes/render.php:331
 msgid "May"
 msgstr "Mayo"
 
-#: includes/render.php:328
+#: includes/render.php:332
 msgid "June"
 msgstr "Hunyo"
 
-#: includes/render.php:329
+#: includes/render.php:333
 msgid "July"
 msgstr "Hulyo"
 
-#: includes/render.php:330
+#: includes/render.php:334
 msgid "August"
 msgstr "Agosto"
 
-#: includes/render.php:331
+#: includes/render.php:335
 msgid "September"
 msgstr "Setyembre"
 
-#: includes/render.php:332
+#: includes/render.php:336
 msgid "October"
 msgstr "Oktubre"
 
-#: includes/render.php:333
+#: includes/render.php:337
 msgid "November"
 msgstr "Nobyembre"
 
-#: includes/render.php:334
+#: includes/render.php:338
 msgid "December"
 msgstr "Disyembre"
 
-#: includes/render.php:339
+#: includes/render.php:343
 msgid "Day"
 msgstr "Araw"
 
-#: includes/render.php:347
+#: includes/render.php:351
 msgid "Year"
 msgstr "Taon"
 
-#: includes/settings.php:60 includes/settings.php:504
+#: includes/settings.php:60 includes/settings.php:513
 msgid "GoDaddy Email Marketing Signup Forms"
 msgstr "Form ng Pag-sign up para sa Email sa Marketing ng GoDaddy"
 
@@ -144,49 +145,49 @@ msgctxt "failed copy response"
 msgid "Please press Ctrl/Cmd+C to copy."
 msgstr "Pakipindot ang Ctrl/Cmd+C para kopyahin."
 
-#: includes/settings.php:220
+#: includes/settings.php:222
 msgid "All data has been removed."
 msgstr "Tinanggal na ang lahat ng data."
 
-#: includes/settings.php:224
+#: includes/settings.php:226
 msgid "All transients were removed."
 msgstr "Naalis ang lahat ng transients."
 
-#: includes/settings.php:228
+#: includes/settings.php:230
 msgid "Forms list was successfully updated."
 msgstr "Matagumpay na na-update ang listahan ng mga form."
 
-#: includes/settings.php:232
+#: includes/settings.php:234
 msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr ""
-"Hindi tama ang mga kredensiyal! Mangyaring patotohanan na nailagay mo ang mga "
-"ito nang wasto."
+"Hindi tama ang mga kredensiyal! Mangyaring patotohanan na nailagay mo ang "
+"mga ito nang wasto."
 
-#: includes/settings.php:236
+#: includes/settings.php:238
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr ""
 "Natatag na ang koneksyon sa Email sa Marketing ng GoDaddy! Handa ka na!"
 
-#: includes/settings.php:241
+#: includes/settings.php:243
 msgid "Settings have been updated."
 msgstr "Na-update na ang mga setting."
 
-#: includes/settings.php:245
+#: includes/settings.php:247
 msgid "Please fill in the username and the API key first."
 msgstr "Mangyari lang isulat ang username at API key muna."
 
-#: includes/settings.php:277
+#: includes/settings.php:279
 msgid "Overview"
 msgstr "Pangkalahatang-ideya"
 
-#: includes/settings.php:281
+#: includes/settings.php:283
 msgid "Instructions"
 msgstr "Mga tagubilin"
 
-#: includes/settings.php:283
+#: includes/settings.php:285
 #, php-format
 msgid ""
 "Once the plugin is activated, you will be able to select and insert any of "
@@ -202,18 +203,18 @@ msgstr ""
 "Marketing ng GoDaddy na account [%s] area). Heto ang 3 paraan kung paano mo "
 "mapapakita ang isang webform sa iyong site:\n"
 
-#: includes/settings.php:286
+#: includes/settings.php:288
 msgid ""
 "<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
 "your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Widget:</strong> Magpunta sa Appearance &rarr; widgets at hanapin ang "
-"widget na tinatawag na \"Email sa Marketing na Form ng GoDaddy\" at i-drag "
-"ito sa lugar ng widget na gusto mo. Maaari ka nang magdagdag ng pamagat at "
-"pumili ng form!"
+"<strong>Widget:</strong> Magpunta sa Appearance &rarr; widgets at hanapin "
+"ang widget na tinatawag na \"Email sa Marketing na Form ng GoDaddy\" at i-"
+"drag ito sa lugar ng widget na gusto mo. Maaari ka nang magdagdag ng pamagat "
+"at pumili ng form!"
 
-#: includes/settings.php:287
+#: includes/settings.php:289
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
@@ -222,97 +223,99 @@ msgstr ""
 "pahina sa pamamagitan ng pagdadagdag ng shortcode (hal. <code>[gem "
 "id=80326]</code>) sa editor ng pahina/post."
 
-#: includes/settings.php:289
+#: includes/settings.php:291
 #, php-format
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
 msgstr ""
-"<strong>Template Tag:</strong> Maaari kang magdagdag ng sumusunod na template "
-"tag sa anumang file ng WordPress: <code>%s</code>. Hal. <code>%s</code>"
+"<strong>Template Tag:</strong> Maaari kang magdagdag ng sumusunod na "
+"template tag sa anumang file ng WordPress: <code>%s</code>. Hal. <code>%s</"
+"code>"
 
-#: includes/settings.php:299
+#: includes/settings.php:301
 msgid "For more information:"
 msgstr "Para sa iba pang impormasyon:"
 
-#: includes/settings.php:300
+#: includes/settings.php:302
 msgid "GoDaddy"
 msgstr "GoDaddy"
 
-#: includes/settings.php:301
+#: includes/settings.php:303
 msgid "GoDaddy Help"
 msgstr "Tulong sa GoDaddy"
 
-#: includes/settings.php:302
+#: includes/settings.php:304
 msgid "Contact GoDaddy"
 msgstr "Makipag-ugnayan sa GoDaddy"
 
-#: includes/settings.php:327
+#: includes/settings.php:329
 msgid "Account Details"
 msgstr "Mga Detalye ng Account"
 
-#: includes/settings.php:334
+#: includes/settings.php:336
 msgid "Username"
 msgstr "Username"
 
-#: includes/settings.php:348
+#: includes/settings.php:350
 msgid "API Key"
 msgstr "API Key"
 
-#: includes/settings.php:362
+#: includes/settings.php:364
 msgid "Footer Link"
 msgstr "Link sa Footer"
 
-#: includes/settings.php:369
+#: includes/settings.php:371
 msgid "Display \"Powered by GoDaddy\"?"
 msgstr "Ipakita ang \"Pinapagana ng GoDaddy\"?"
 
-#: includes/settings.php:376
+#: includes/settings.php:378
 msgid "Debugging"
 msgstr "Dine-debug"
 
-#: includes/settings.php:383
+#: includes/settings.php:385
 msgid "Debug Mode"
 msgstr "Debug Mode"
 
-#: includes/settings.php:390
+#: includes/settings.php:392
 msgid "Activated"
 msgstr "Naka-activate"
 
-#: includes/settings.php:397
+#: includes/settings.php:400
 msgid "Cache Reset"
 msgstr "Pag-reset ng Cache"
 
-#: includes/settings.php:403
+#: includes/settings.php:409
 msgid "Erase Transients"
 msgstr "Burahin ang Transients"
 
-#: includes/settings.php:404
+#: includes/settings.php:410
 msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
 msgstr ""
-"Pine-purge lang ang naka-cache na data na nauugnay sa plugin na ito, ay dapat "
-"itong subukan bago ang isang hard reset."
+"Pine-purge lang ang naka-cache na data na nauugnay sa plugin na ito, ay "
+"dapat itong subukan bago ang isang hard reset."
 
-#: includes/settings.php:410
+#: includes/settings.php:416
 msgid "Hard Reset"
 msgstr "Hard Reset"
 
-#: includes/settings.php:416
+#: includes/settings.php:425
 msgid "Erase All Data"
 msgstr "Burahin ang Lahat ng Data"
 
-#: includes/settings.php:417
+#: includes/settings.php:426
 msgid "Purges all saved data associated with this plugin."
-msgstr "Pine-purge ang lahat ng naka-save na data na nauugnay sa plugin na ito."
+msgstr ""
+"Pine-purge ang lahat ng naka-save na data na nauugnay sa plugin na ito."
 
-#: includes/settings.php:511
+#: includes/settings.php:520
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience."
 msgstr "I-enjoy ang Karanasan sa Email Marketing ng GoDaddy."
 
-#: includes/settings.php:513
+#: includes/settings.php:522
 msgctxt "header note"
 msgid ""
 "Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
@@ -321,81 +324,96 @@ msgid ""
 msgstr ""
 "Idagdag sa iyong WordPress site ang iyong form para sa Email sa Marketing ng "
 "GoDaddy! Madaling i-set up, pinapahintulutan ng plugin ng Email sa Marketing "
-"ng GoDaddy ang iyong mga bisita na makapag-subscribe sa iyong listahan ng email."
+"ng GoDaddy ang iyong mga bisita na makapag-subscribe sa iyong listahan ng "
+"email."
 
-#: includes/settings.php:517
+#: includes/settings.php:526
 msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr "Wala ka pang anumang mga form."
 
-#: includes/settings.php:520
+#: includes/settings.php:529
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "Bago ka ba sa GoDaddy? Gumawa ng account para makapagsimula ngayon. %s "
+msgstr ""
+"Bago ka ba sa GoDaddy? Gumawa ng account para makapagsimula ngayon. %s "
 
-#: includes/settings.php:520
+#: includes/settings.php:529
 msgctxt "header button"
 msgid "Sign Up Now"
 msgstr "Mag-sign Up Na"
 
-#: includes/settings.php:530
+#: includes/settings.php:539
 msgid "Forms"
 msgstr "Mga Form"
 
-#: includes/settings.php:539
+#: includes/settings.php:548
+msgid "Reach Your Fans"
+msgstr ""
+
+#: includes/settings.php:551
+#, php-format
+msgid ""
+"Email marketing makes it easier than ever to turn casual visits into lasting "
+"relationship. You're already collecting subscribers, now you just need to "
+"start emailing them. It only takes a few moments to %screate an email "
+"marketing campaign%s."
+msgstr ""
+
+#: includes/settings.php:557
 msgid "Available Signup Forms"
 msgstr "Mga Available na Signup Form"
 
-#: includes/settings.php:543 includes/settings.php:550
-#: includes/settings.php:558
+#: includes/settings.php:561 includes/settings.php:568
+#: includes/settings.php:576
 msgid "Form Name"
 msgstr "Pangalan ng Form"
 
-#: includes/settings.php:544 includes/settings.php:551
-#: includes/settings.php:572
+#: includes/settings.php:562 includes/settings.php:569
+#: includes/settings.php:590
 msgid "Form ID"
 msgstr "Form ID"
 
-#: includes/settings.php:545 includes/settings.php:552
-#: includes/settings.php:575
+#: includes/settings.php:563 includes/settings.php:570
+#: includes/settings.php:593
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: includes/settings.php:562
+#: includes/settings.php:580
 msgid "Opens in a new window"
 msgstr "Magbubukas ito ng bagong window"
 
-#: includes/settings.php:562
+#: includes/settings.php:580
 msgid "Edit form in GoDaddy Email Marketing"
 msgstr "I-edit ang form sa Email sa Marketing ng GoDaddy"
 
-#: includes/settings.php:565
+#: includes/settings.php:583
 msgid "Preview"
 msgstr "I-preview"
 
-#: includes/settings.php:588
+#: includes/settings.php:606
 msgid "Not seeing your form?"
 msgstr "Hindi nakikita ang iyong form?"
 
-#: includes/settings.php:607
+#: includes/settings.php:625
 msgctxt "save settings button"
 msgid "Save Settings"
 msgstr "I-save ang Mga Setting"
 
-#: includes/settings.php:637
+#: includes/settings.php:663
 msgid "Refresh Forms"
 msgstr "I-refresh ang mga Form"
 
-#: includes/settings.php:644
+#: includes/settings.php:670
 msgid "Create a New Signup Form"
 msgstr "Gumawa ng Bagong Signup Form"
 
-#: includes/settings.php:651
+#: includes/settings.php:677
 msgid "Create a New Campaign"
 msgstr "Gumawa ng Bagong Campaign"
 
-#: includes/settings.php:737
+#: includes/settings.php:763
 msgid ""
 "If you are experiencing issues and are unsure of the cause, you may want to "
 "activate debug mode, which displays additional options."
@@ -404,7 +422,7 @@ msgstr ""
 "maaaring gustuhin mong i-activate ang debug mode, na nagpapakita ng mga "
 "karagdagang opsyon."
 
-#: includes/settings.php:747
+#: includes/settings.php:773
 #, php-format
 msgctxt "1. Sign-in link, 2. Sign-up link"
 msgid ""
@@ -415,15 +433,16 @@ msgid ""
 msgstr ""
 "Para gumana ang plugin na ito, kailangan nitong ma-access ang iyong Email "
 "Marketing ng GoDaddy account.  %1$s para makuha ang iyong username at API "
-"key. Kopyahin at i-paste ang mga iyon sa ibaba; pagkatapos ay i-click ang "
-"“I-save ang Mga Setting.\" Kung wala kang Email Marketing ng GoDaddy account, %2$s."
+"key. Kopyahin at i-paste ang mga iyon sa ibaba; pagkatapos ay i-click ang “I-"
+"save ang Mga Setting.\" Kung wala kang Email Marketing ng GoDaddy account, "
+"%2$s."
 
-#: includes/settings.php:747
+#: includes/settings.php:773
 msgctxt "account details link"
 msgid "Sign in here"
 msgstr "Mag-sign in dito"
 
-#: includes/settings.php:747
+#: includes/settings.php:773
 msgctxt "account details link"
 msgid "sign up here"
 msgstr "mag-sign up dito"
@@ -453,7 +472,9 @@ msgstr "Form:"
 #, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
-msgstr "Mangyari lang i-setup ang iyong account sa Email sa Marketing ng GoDaddy sa %s."
+msgstr ""
+"Mangyari lang i-setup ang iyong account sa Email sa Marketing ng GoDaddy sa "
+"%s."
 
 #: includes/widget.php:160
 msgid "settings page"
