@@ -153,7 +153,7 @@ class GEM_Form_Widget extends WP_Widget {
 			<?php else : ?>
 
 			<span><?php printf(
-				_x( 'Please set up your GoDaddy Email Marketing account in the %s.', 'link to settings page', 'godaddy-email-marketing' ),
+				esc_html_x( 'Please set up your GoDaddy Email Marketing account in the %s.', 'link to settings page', 'godaddy-email-marketing' ),
 				sprintf(
 					'<a href="%s">%s</a>',
 					esc_url( admin_url( 'options-general.php?page=gem-settings' ) ),

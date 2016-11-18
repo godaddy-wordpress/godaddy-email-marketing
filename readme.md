@@ -8,7 +8,7 @@ Add the GoDaddy Email Marketing plugin to your WordPress site! Easy to set up, t
 **Tags:** [email](https://wordpress.org/plugins/tags/email), [forms](https://wordpress.org/plugins/tags/forms), [godaddy](https://wordpress.org/plugins/tags/godaddy), [mailing list](https://wordpress.org/plugins/tags/mailing list), [marketing](https://wordpress.org/plugins/tags/marketing), [newsletter](https://wordpress.org/plugins/tags/newsletter), [opt-in](https://wordpress.org/plugins/tags/opt-in), [signup](https://wordpress.org/plugins/tags/signup), [subscribe](https://wordpress.org/plugins/tags/subscribe), [widget](https://wordpress.org/plugins/tags/widget), [contacts](https://wordpress.org/plugins/tags/contacts)  
 **Requires at least:** 3.8  
 **Tested up to:** 4.5  
-**Stable tag:** 1.1.1  
+**Stable tag:** 1.1.3  
 **License:** [GPL-2.0](https://www.gnu.org/licenses/gpl-2.0.html)  
 
 [![Build Status](https://travis-ci.org/godaddy/wp-godaddy-email-marketing.svg?branch=master)](https://travis-ci.org/godaddy/wp-godaddy-email-marketing) [![Coverage Status](https://coveralls.io/repos/godaddy/wp-godaddy-email-marketing/badge.svg?branch=master)](https://coveralls.io/github/godaddy/wp-godaddy-email-marketing) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com) [![devDependency Status](https://david-dm.org/godaddy/wp-godaddy-email-marketing/dev-status.svg)](https://david-dm.org/godaddy/wp-godaddy-email-marketing#info=devDependencies) 
@@ -84,7 +84,7 @@ That's it. You're ready to go!
 GoDaddy Email Marketing is the easiest way to create, send, share, and track email newsletters online. It's for people who want email marketing to be simple.
 
 ### Do I need a GoDaddy Email Marketing account to use this plugin? ###
-Yes, this plugin requires a [GoDaddy Email Marketing](https://www.godaddy.com/business/email-marketing) account.
+Yes, this plugin requires a [GoDaddy Email Marketing](https://www.godaddy.com/online-marketing/email-marketing) account.
 
 ### Is there a widget? ###
 Absolutely. Use it by finding the GoDaddy Email Marketing widget under **Appearance > Widgets** in the WordPress Dashboard and dragging it into the widget area of your choice. You can then add a title and select a form!
@@ -121,6 +121,12 @@ You can find your **Secret API Key** in the [Settings section](https://gem.godad
 ![The widget, on the front-end.](assets/screenshot-4.png)
 
 ## Changelog ##
+
+### 1.1.3 ###
+* Fixed: CSRF - thanks to pluginvulnerabilities.com for reporting it
+
+### 1.1.2 ###
+* Minor URL fix
 
 ### 1.1.1 ###
 * Minor improvements and bug fixes.

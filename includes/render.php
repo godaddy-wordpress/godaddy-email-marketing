@@ -23,7 +23,9 @@ class GEM_Form_Renderer {
 	 * Generates the form.
 	 *
 	 * @param string $form_id Form ID.
-	 * @param bool   $echo Wether to echo the form field. Default false.
+	 * @param bool   $echo    Wether to echo the form field. Default false.
+	 *
+	 * @return string
 	 */
 	public function process( $form_id, $echo = false ) {
 		$form = GEM_Dispatcher::get_fields( (int) $form_id );
@@ -38,7 +40,9 @@ class GEM_Form_Renderer {
 
 		if ( ! empty( $form->fields ) && in_array( (int) $form_id, $form_ids, true ) ) :
 
-			self::$loops++; ob_start(); ?>
+			self::$loops++;
+			ob_start();
+			?>
 
 			<div class="gem-form-wrapper" id="form-<?php echo absint( $form_id ); ?>">
 				<form action="<?php echo esc_url( $form->submit ); ?>" method="post" class="gem-form">
@@ -64,7 +68,7 @@ class GEM_Form_Renderer {
 					if ( $show_powered_by ) : ?>
 
 						<p>
-							<a href="https://www.godaddy.com/business/email-marketing/" target="_blank"><?php esc_html_e( 'Powered by GoDaddy', 'godaddy-email-marketing' ); ?></a>
+							<a href="https://www.godaddy.com/online-marketing/email-marketing" rel="nofollow" target="_blank"><?php esc_html_e( 'Powered by GoDaddy', 'godaddy-email-marketing' ); ?></a>
 						</p>
 
 					<?php endif; ?>
@@ -338,7 +342,7 @@ class GEM_Form_Fields {
 			<select fingerprint="date" data-id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" data-name="<?php echo esc_attr( $args->name ); ?>">
 				<option value=""> <?php esc_html_e( 'Day', 'godaddy-email-marketing' ) ?> </option>
 				<?php for ( $i = 1; $i < 32; $i++ ) : ?>
-					<option value="<?php echo strlen( $i ) < 2 ? '0'.$i : $i; ?>"> <?php echo esc_attr( $i ); ?> </option>
+					<option value="<?php echo strlen( $i ) < 2 ? '0' . esc_attr( $i ) : esc_attr( $i ); ?>"> <?php echo esc_attr( $i ); ?> </option>
 				<?php endfor; ?>
 			</select>
 		</span>

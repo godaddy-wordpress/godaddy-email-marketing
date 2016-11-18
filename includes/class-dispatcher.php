@@ -29,9 +29,10 @@ class GEM_Dispatcher {
 	/**
 	 * Gets and sets the forms.
 	 *
-	 * @param string  $username The username.
+	 * @param string $username The username.
+	 * @param string $api_key
+	 *
 	 * @return string $api_key  The API key.
-	 * @return array|false The form fields array or false.
 	 */
 	public static function fetch_forms( $username = '', $api_key = '' ) {
 		if ( ! $username && ! $api_key ) {
@@ -57,7 +58,7 @@ class GEM_Dispatcher {
 		delete_transient( 'gem-' . $username . '-lists' );
 
 		// Credentials are incorrect.
-		if ( ! in_array( wp_remote_retrieve_response_code( $response ), self::$ok_codes ) ) {
+		if ( ! in_array( wp_remote_retrieve_response_code( $response ), self::$ok_codes, true ) ) {
 			return false;
 		}
 
@@ -70,7 +71,6 @@ class GEM_Dispatcher {
 	/**
 	 * Add a default form.
 	 *
-	 * @param string $username The username.
 	 * @return bool True on success or false on failue.
 	 */
 	public static function add_default_form() {
@@ -247,6 +247,6 @@ class GEM_Dispatcher {
 	 * @return bool
 	 */
 	public static function is_response_ok( $request ) {
-		return ( ! is_wp_error( $request ) && in_array( wp_remote_retrieve_response_code( $request ), self::$ok_codes ) );
+		return ( ! is_wp_error( $request ) && in_array( wp_remote_retrieve_response_code( $request ), self::$ok_codes, true ) );
 	}
 }

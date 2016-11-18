@@ -16,6 +16,8 @@ class GEM_Shortcode {
 	 * Renders the shortcode.
 	 *
 	 * @param array $atts An array of shortcode attributes.
+	 *
+	 * @return string|void
 	 */
 	public function render( $atts ) {
 		extract( shortcode_atts( array(
@@ -69,10 +71,12 @@ class GEM_Shortcode {
  * The main template tag. Pass on the ID and watch the magic happen.
  *
  * @since 1.0
- * @see GEM_Form_Renderer
+ * @see   GEM_Form_Renderer
  *
- * @param int  $id The ID of the form you wish to output.
+ * @param int  $id   The ID of the form you wish to output.
  * @param bool $echo Wether to echo the form field. Default true.
+ *
+ * @return string
  */
 function gem_form( $id, $echo = true ) {
 	if ( class_exists( 'GEM_Form_Renderer', false ) ) {
@@ -83,6 +87,6 @@ function gem_form( $id, $echo = true ) {
 			return $form;
 		}
 
-		echo $form;
+		echo $form;//xss ok
 	}
 }

@@ -132,6 +132,10 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	 */
 	public function test_page_load() {
 		$instance = new GEM_Settings();
+
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		wp_set_current_user( $user_id );
+
 		$instance->page_load();
 		$instance->action_admin_menu();
 
@@ -151,8 +155,12 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$instance->action_admin_menu();
 		$this->set_data( $instance->slug );
 
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		wp_set_current_user( $user_id );
+
 		// debug-reset action:
-		$_GET['action'] = 'debug-reset';
+		$_GET['action']       = 'debug-reset';
+		$_REQUEST['_wpnonce'] = wp_create_nonce( 'gem_settings_hard_reset_nonce' );
 		$gem->debug = false;
 		$instance->page_load();
 		$this->assertNotNull( get_option( $instance->slug, null ) );
@@ -182,8 +190,12 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$instance->action_admin_menu();
 		$this->set_data( $instance->slug );
 
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		wp_set_current_user( $user_id );
+
 		// debug-reset-transients action:
-		$_GET['action'] = 'debug-reset-transients';
+		$_GET['action']       = 'debug-reset-transients';
+		$_REQUEST['_wpnonce'] = wp_create_nonce( 'gem_settings_reset_transients_nonce' );
 		$gem->debug = false;
 		update_option( $instance->slug, array( 'username' => null ) );
 		$instance->page_load();
@@ -212,8 +224,12 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$instance->action_admin_menu();
 		$this->set_data( $instance->slug );
 
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		wp_set_current_user( $user_id );
+
 		// refresh action:
-		$_GET['action'] = 'refresh';
+		$_GET['action']       = 'refresh';
+		$_REQUEST['_wpnonce'] = wp_create_nonce( 'gem_settings_refresh_nonce' );
 		$instance->page_load();
 		$errors = get_settings_errors( $instance->slug );
 		$this->assertFalse( get_transient( 'gem-form-123' ) );
@@ -225,29 +241,6 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test dismiss.
-	 *
-	 * @see GEM_Settings::page_load()
-	 */
-	public function test_page_load_dismiss() {
-		$instance = new GEM_Settings();
-		$instance->action_admin_menu();
-
-		// dismiss action:
-		$_GET['action'] = 'dismiss';
-		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
-		wp_set_current_user( $user_id );
-		$instance->page_load();
-		$meta = get_user_meta( $user_id, 'gem-dismiss' );
-		$this->assertEquals( 'show', $meta[0] );
-
-		// dismiss action missing user ID: forces coverage.
-		$_GET['action'] = 'dismiss';
-		wp_set_current_user( 0 );
-		$instance->page_load();
-	}
-
-	/**
 	 * Test refresh message.
 	 *
 	 * @see GEM_Settings::page_load()
@@ -255,6 +248,10 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	public function test_page_load_transient_gem_refresh() {
 		$instance = new GEM_Settings();
 		set_transient( 'gem-refresh', true, 30 );
+
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		wp_set_current_user( $user_id );
+
 		$instance->action_admin_menu();
 		$instance->page_load();
 
@@ -271,6 +268,10 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	public function test_page_load_transient_gem_invalid_creds() {
 		$instance = new GEM_Settings();
 		set_transient( 'gem-invalid-creds', true, 30 );
+
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		wp_set_current_user( $user_id );
+
 		$instance->action_admin_menu();
 		$instance->page_load();
 
@@ -287,6 +288,10 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	public function test_page_load_transient_gem_valid_creds() {
 		$instance = new GEM_Settings();
 		set_transient( 'gem-valid-creds', true, 30 );
+
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		wp_set_current_user( $user_id );
+
 		$instance->action_admin_menu();
 		$instance->page_load();
 
@@ -303,6 +308,10 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	public function test_page_load_transient_gem_settings_updated() {
 		$instance = new GEM_Settings();
 		set_transient( 'gem-settings-updated', true, 30 );
+
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		wp_set_current_user( $user_id );
+
 		$instance->action_admin_menu();
 		$instance->page_load();
 
@@ -319,6 +328,10 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	public function test_page_load_transient_gem_empty_creds() {
 		$instance = new GEM_Settings();
 		set_transient( 'gem-empty-creds', true, 30 );
+
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		wp_set_current_user( $user_id );
+
 		$instance->action_admin_menu();
 		$instance->page_load();
 
@@ -406,8 +419,8 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertContains( '<input type="text" name="gem-settings[api-key]"', $actual_output );
 		$this->assertContains( '<input type="checkbox" name="gem-settings[display_powered_by]" id="gem-settings[display_powered_by]" value="1"  checked=\'checked\' />', $actual_output );
 		$this->assertContains( '<input type="checkbox" name="gem-settings[debug]" id="gem-settings[debug]" value="1"  checked=\'checked\' />', $actual_output );
-		$this->assertContains( '<a href="?action=debug-reset" class="button-secondary">Erase All Data</a>', $actual_output );
-		$this->assertContains( '<a href="?action=debug-reset-transients" class="button-secondary">Erase Transients</a>', $actual_output );
+		$this->assertContains( 'class="button-secondary">Erase All Data</a>', $actual_output );
+		$this->assertContains( 'class="button-secondary">Erase Transients</a>', $actual_output );
 		$this->assertContains( '<a href="https://gem.godaddy.com/signups" target="_blank" class="button">Create a New Signup Form</a>', $actual_output );
 
 		$this->delete_data( $instance->slug );
