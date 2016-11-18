@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 09:12-0500\n"
+"POT-Creation-Date: 2016-11-18 15:09-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,99 +41,99 @@ msgctxt "Name of required field"
 msgid "%s is a required field."
 msgstr "%s 是必填欄位。"
 
-#: godaddy-email-marketing.php:213 includes/settings.php:532
+#: godaddy-email-marketing.php:215 includes/settings.php:541
 msgid "Settings"
 msgstr "設定"
 
-#: godaddy-email-marketing.php:249
+#: godaddy-email-marketing.php:251
 msgid "GoDaddy Email Marketing is almost ready."
 msgstr "GoDaddy 電子郵件行銷即將可開始使用。"
 
-#: godaddy-email-marketing.php:249
+#: godaddy-email-marketing.php:251
 msgid "You must enter your username &amp; API key for it to work."
 msgstr "您必須輸入用戶名及 API 金鑰才能使用。"
 
-#: godaddy-email-marketing.php:250
+#: godaddy-email-marketing.php:252
 msgid "Let's do it!"
 msgstr "立即開始！"
 
-#: includes/class-shortcode.php:48 includes/settings.php:61
+#: includes/class-shortcode.php:50 includes/settings.php:61
 msgid "GoDaddy Email Marketing"
 msgstr "GoDaddy 電子郵件行銷"
 
-#: includes/class-shortcode.php:52
+#: includes/class-shortcode.php:54
 msgid "Signup Forms"
 msgstr "註冊表單"
 
-#: includes/class-shortcode.php:53
+#: includes/class-shortcode.php:55
 msgid "Choose one of the available forms."
 msgstr "選擇一個可用的表單。"
 
-#: includes/render.php:67
+#: includes/render.php:71
 msgid "Powered by GoDaddy"
 msgstr "由 GoDaddy 提供者"
 
-#: includes/render.php:322
+#: includes/render.php:326
 msgid "Month"
 msgstr "月"
 
-#: includes/render.php:323
+#: includes/render.php:327
 msgid "January"
 msgstr "一月"
 
-#: includes/render.php:324
+#: includes/render.php:328
 msgid "Febuary"
 msgstr "二月"
 
-#: includes/render.php:325
+#: includes/render.php:329
 msgid "March"
 msgstr "三月"
 
-#: includes/render.php:326
+#: includes/render.php:330
 msgid "April"
 msgstr "四月"
 
-#: includes/render.php:327
+#: includes/render.php:331
 msgid "May"
 msgstr "五月"
 
-#: includes/render.php:328
+#: includes/render.php:332
 msgid "June"
 msgstr "六月"
 
-#: includes/render.php:329
+#: includes/render.php:333
 msgid "July"
 msgstr "七月"
 
-#: includes/render.php:330
+#: includes/render.php:334
 msgid "August"
 msgstr "八月"
 
-#: includes/render.php:331
+#: includes/render.php:335
 msgid "September"
 msgstr "九月"
 
-#: includes/render.php:332
+#: includes/render.php:336
 msgid "October"
 msgstr "十月"
 
-#: includes/render.php:333
+#: includes/render.php:337
 msgid "November"
 msgstr "十一月"
 
-#: includes/render.php:334
+#: includes/render.php:338
 msgid "December"
 msgstr "十二月"
 
-#: includes/render.php:339
+#: includes/render.php:343
 msgid "Day"
 msgstr "天"
 
-#: includes/render.php:347
+#: includes/render.php:351
 msgid "Year"
 msgstr "年"
 
-#: includes/settings.php:60 includes/settings.php:504
+#: includes/settings.php:60 includes/settings.php:513
 msgid "GoDaddy Email Marketing Signup Forms"
 msgstr "GoDaddy 電子郵件行銷註冊表格"
 
@@ -142,46 +142,46 @@ msgctxt "failed copy response"
 msgid "Please press Ctrl/Cmd+C to copy."
 msgstr "請按下 Ctrl/Cmd+C 進行複製。"
 
-#: includes/settings.php:220
+#: includes/settings.php:222
 msgid "All data has been removed."
 msgstr "已移除所有資料。"
 
-#: includes/settings.php:224
+#: includes/settings.php:226
 msgid "All transients were removed."
 msgstr "已移除所有快取資料。"
 
-#: includes/settings.php:228
+#: includes/settings.php:230
 msgid "Forms list was successfully updated."
 msgstr "表格清單已成功更新。"
 
-#: includes/settings.php:232
+#: includes/settings.php:234
 msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr "認證不正確！ 請確定您輸入正確。"
 
-#: includes/settings.php:236
+#: includes/settings.php:238
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr "已建立與 GoDaddy 電子郵件行銷的連線！　 您已設定完成！"
 
-#: includes/settings.php:241
+#: includes/settings.php:243
 msgid "Settings have been updated."
 msgstr "已更新設定。"
 
-#: includes/settings.php:245
+#: includes/settings.php:247
 msgid "Please fill in the username and the API key first."
 msgstr "請先輸入用戶名和 API 金鑰。"
 
-#: includes/settings.php:277
+#: includes/settings.php:279
 msgid "Overview"
 msgstr "概覽"
 
-#: includes/settings.php:281
+#: includes/settings.php:283
 msgid "Instructions"
 msgstr "指示"
 
-#: includes/settings.php:283
+#: includes/settings.php:285
 #, php-format
 msgid ""
 "Once the plugin is activated, you will be able to select and insert any of "
@@ -190,200 +190,219 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"一旦啟用了外掛程式，您就可以選取任何 GoDaddy 電子郵件行銷網頁表格並直接插入網站。 設定過程很簡單。 只需在下方輸入您的帳戶電子郵件地址及 API "
-"金鑰（可在 GoDaddy 電子郵件行銷帳戶  [%s] 區域中找到）。 您有三種方法可以在網站上顯示網頁表格："
+"一旦啟用了外掛程式，您就可以選取任何 GoDaddy 電子郵件行銷網頁表格並直接插入網"
+"站。 設定過程很簡單。 只需在下方輸入您的帳戶電子郵件地址及 API 金鑰（可在 "
+"GoDaddy 電子郵件行銷帳戶  [%s] 區域中找到）。 您有三種方法可以在網站上顯示網"
+"頁表格："
 
-#: includes/settings.php:286
+#: includes/settings.php:288
 msgid ""
 "<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
 "your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>小工具：</strong> 前往 [外觀] &rarr; [小工具] 找到 [GoDaddy 電子郵件行銷表格] "
-"的小工具，並將其拖曳到您選擇的小工具區域。 接著，您可以新增標題並選取表格！"
+"<strong>小工具：</strong> 前往 [外觀] &rarr; [小工具] 找到 [GoDaddy 電子郵件"
+"行銷表格] 的小工具，並將其拖曳到您選擇的小工具區域。 接著，您可以新增標題並選"
+"取表格！"
 
-#: includes/settings.php:287
+#: includes/settings.php:289
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
-"<strong>短代碼：</strong> 您可在任何貼文或頁面上新增短代碼，以便在頁面/貼文編輯器中新增表格（例如： <code>[gem id=80326]</code>）。"
+"<strong>短代碼：</strong> 您可在任何貼文或頁面上新增短代碼，以便在頁面/貼文編"
+"輯器中新增表格（例如： <code>[gem id=80326]</code>）。"
 
-#: includes/settings.php:289
+#: includes/settings.php:291
 #, php-format
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
 msgstr ""
-"<strong>範本標記：</strong> 您可以在所有 WordPress 檔案中新增下列範本標記： <code>%s</code>。 例如： <code>%s</code>"
+"<strong>範本標記：</strong> 您可以在所有 WordPress 檔案中新增下列範本標記： "
+"<code>%s</code>。 例如： <code>%s</code>"
 
-#: includes/settings.php:299
+#: includes/settings.php:301
 msgid "For more information:"
 msgstr "如需更多資訊："
 
-#: includes/settings.php:300
+#: includes/settings.php:302
 msgid "GoDaddy"
 msgstr "GoDaddy"
 
-#: includes/settings.php:301
+#: includes/settings.php:303
 msgid "GoDaddy Help"
 msgstr "GoDaddy 說明"
 
-#: includes/settings.php:302
+#: includes/settings.php:304
 msgid "Contact GoDaddy"
 msgstr "聯絡 GoDaddy"
 
-#: includes/settings.php:327
+#: includes/settings.php:329
 msgid "Account Details"
 msgstr "帳戶詳細資料"
 
-#: includes/settings.php:334
+#: includes/settings.php:336
 msgid "Username"
 msgstr "用戶名"
 
-#: includes/settings.php:348
+#: includes/settings.php:350
 msgid "API Key"
 msgstr "API 金鑰"
 
-#: includes/settings.php:362
+#: includes/settings.php:364
 msgid "Footer Link"
 msgstr "頁尾連結"
 
-#: includes/settings.php:369
+#: includes/settings.php:371
 msgid "Display \"Powered by GoDaddy\"?"
 msgstr "是否顯示「由 GoDaddy 提供」？"
 
-#: includes/settings.php:376
+#: includes/settings.php:378
 msgid "Debugging"
 msgstr "偵錯"
 
-#: includes/settings.php:383
+#: includes/settings.php:385
 msgid "Debug Mode"
 msgstr "偵錯模式"
 
-#: includes/settings.php:390
+#: includes/settings.php:392
 msgid "Activated"
 msgstr "已啟動"
 
-#: includes/settings.php:397
+#: includes/settings.php:400
 msgid "Cache Reset"
 msgstr "快取重設"
 
-#: includes/settings.php:403
+#: includes/settings.php:409
 msgid "Erase Transients"
 msgstr "清除所有快取資料"
 
-#: includes/settings.php:404
+#: includes/settings.php:410
 msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
 msgstr "僅清除與此外掛程式相關的已快取資料，且應該在硬重設前嘗試。"
 
-#: includes/settings.php:410
+#: includes/settings.php:416
 msgid "Hard Reset"
 msgstr "硬重設"
 
-#: includes/settings.php:416
+#: includes/settings.php:425
 msgid "Erase All Data"
 msgstr "清除所有資料"
 
-#: includes/settings.php:417
+#: includes/settings.php:426
 msgid "Purges all saved data associated with this plugin."
 msgstr "清除與此外掛程式相關的所有已儲存資料。"
 
-#: includes/settings.php:511
+#: includes/settings.php:520
 msgctxt "gem header note"
 msgid "Enjoy the GoDaddy Email Marketing Experience."
 msgstr "體驗 GoDaddy 電子郵件行銷。"
 
-#: includes/settings.php:513
+#: includes/settings.php:522
 msgctxt "header note"
 msgid ""
 "Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
 "set up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
 msgstr ""
-"在 WordPress 網站中新增 GoDaddy 電子郵件行銷註冊表格！ GoDaddy 電子郵件行銷外掛程式設定十分簡單，可讓您的網站訪客訂閱電子郵件清單。"
+"在 WordPress 網站中新增 GoDaddy 電子郵件行銷註冊表格！ GoDaddy 電子郵件行銷外"
+"掛程式設定十分簡單，可讓您的網站訪客訂閱電子郵件清單。"
 
-#: includes/settings.php:517
+#: includes/settings.php:526
 msgctxt "header note"
 msgid "You don't have any forms yet."
 msgstr "您沒有任何表單。"
 
-#: includes/settings.php:520
+#: includes/settings.php:529
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
 msgstr "您是第一次加入 GoDaddy 嗎？ 立即建立帳戶開始使用。 %s "
 
-#: includes/settings.php:520
+#: includes/settings.php:529
 msgctxt "header button"
 msgid "Sign Up Now"
 msgstr "立即註冊"
 
-#: includes/settings.php:530
+#: includes/settings.php:539
 msgid "Forms"
 msgstr "表單"
 
-#: includes/settings.php:539
+#: includes/settings.php:548
+msgid "Reach Your Fans"
+msgstr ""
+
+#: includes/settings.php:551
+#, php-format
+msgid ""
+"Email marketing makes it easier than ever to turn casual visits into lasting "
+"relationship. You're already collecting subscribers, now you just need to "
+"start emailing them. It only takes a few moments to %screate an email "
+"marketing campaign%s."
+msgstr ""
+
+#: includes/settings.php:557
 msgid "Available Signup Forms"
 msgstr "可用的註冊表單"
 
-#: includes/settings.php:543 includes/settings.php:550
-#: includes/settings.php:558
+#: includes/settings.php:561 includes/settings.php:568
+#: includes/settings.php:576
 msgid "Form Name"
 msgstr "表單名稱"
 
-#: includes/settings.php:544 includes/settings.php:551
-#: includes/settings.php:572
+#: includes/settings.php:562 includes/settings.php:569
+#: includes/settings.php:590
 msgid "Form ID"
 msgstr "表格 ID"
 
-#: includes/settings.php:545 includes/settings.php:552
-#: includes/settings.php:575
+#: includes/settings.php:563 includes/settings.php:570
+#: includes/settings.php:593
 msgid "Shortcode"
 msgstr "短代碼"
 
-#: includes/settings.php:562
+#: includes/settings.php:580
 msgid "Opens in a new window"
 msgstr "在新視窗開啟"
 
-#: includes/settings.php:562
+#: includes/settings.php:580
 msgid "Edit form in GoDaddy Email Marketing"
 msgstr "在 GoDaddy 電子郵件行銷中編輯表格"
 
-#: includes/settings.php:565
+#: includes/settings.php:583
 msgid "Preview"
 msgstr "預覽"
 
-#: includes/settings.php:588
+#: includes/settings.php:606
 msgid "Not seeing your form?"
 msgstr "沒看到您的表格嗎？"
 
-#: includes/settings.php:607
+#: includes/settings.php:625
 msgctxt "save settings button"
 msgid "Save Settings"
 msgstr "儲存設定"
 
-#: includes/settings.php:637
+#: includes/settings.php:663
 msgid "Refresh Forms"
 msgstr "重新整理表格"
 
-#: includes/settings.php:644
+#: includes/settings.php:670
 msgid "Create a New Signup Form"
 msgstr "建立一個新的註冊表單。"
 
-#: includes/settings.php:651
+#: includes/settings.php:677
 msgid "Create a New Campaign"
 msgstr "建立新行銷活動"
 
-#: includes/settings.php:737
+#: includes/settings.php:763
 msgid ""
 "If you are experiencing issues and are unsure of the cause, you may want to "
 "activate debug mode, which displays additional options."
 msgstr "如果遇到任何問題且不確定發生原因，建議您啟用偵錯模式，以顯示其他選項。"
 
-#: includes/settings.php:747
+#: includes/settings.php:773
 #, php-format
 msgctxt "1. Sign-in link, 2. Sign-up link"
 msgid ""
@@ -392,15 +411,16 @@ msgid ""
 "then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
 "account, %2$s."
 msgstr ""
-"要讓外掛程式正常運作，需要存取您的 GoDaddy 電子郵件行銷帳戶。  %1$s 以取得您的用戶名及 API 金鑰。 在下方複製並貼上，再按一下 "
-"[儲存設定]。 如果沒有 GoDaddy 電子郵件行銷帳戶，%2$s。"
+"要讓外掛程式正常運作，需要存取您的 GoDaddy 電子郵件行銷帳戶。  %1$s 以取得您"
+"的用戶名及 API 金鑰。 在下方複製並貼上，再按一下 [儲存設定]。 如果沒有 "
+"GoDaddy 電子郵件行銷帳戶，%2$s。"
 
-#: includes/settings.php:747
+#: includes/settings.php:773
 msgctxt "account details link"
 msgid "Sign in here"
 msgstr "在此登入"
 
-#: includes/settings.php:747
+#: includes/settings.php:773
 msgctxt "account details link"
 msgid "sign up here"
 msgstr "在此註冊"
