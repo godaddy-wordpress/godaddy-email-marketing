@@ -6,7 +6,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
+"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-18 15:09-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -26,8 +26,7 @@ msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr ""
-"Tack för registreringen! Kontrollera din e-post för att bekräfta ditt "
-"abonnemang."
+"Tack för registreringen! Kontrollera din e-post för att bekräfta ditt abonnemang."
 
 #: godaddy-email-marketing.php:199
 msgid "Oops! There was a problem. Please try again."
@@ -53,8 +52,7 @@ msgstr "GoDaddy e-postmarknadsföring är nästan redo."
 
 #: godaddy-email-marketing.php:251
 msgid "You must enter your username &amp; API key for it to work."
-msgstr ""
-"Du måste ange ditt användarnamn &amp; din API-nyckel för att det ska fungera."
+msgstr "Du måste ange ditt användarnamn &amp; din API-nyckel för att det ska fungera."
 
 #: godaddy-email-marketing.php:252
 msgid "Let's do it!"
@@ -197,8 +195,8 @@ msgstr ""
 "När insticksprogrammet aktiveras kommer du att kunna välja och infoga vilket "
 "som helst av dina webbformulär för GoDaddy e-postmarknadsföring direkt i "
 "webbplatsen. Konfigurationen är enkel. Ange e-postadressen och API-nyckeln "
-"för ditt konto (finns i området för ditt konto för GoDaddy e-"
-"postmarknadsföring [%s]). Det finns tre sätt att visa ett webbformulär på "
+"för ditt konto (finns i området för ditt konto för GoDaddy "
+"e-postmarknadsföring [%s]). Det finns tre sätt att visa ett webbformulär på "
 "din webbplats:"
 
 #: includes/settings.php:288
@@ -209,8 +207,7 @@ msgid ""
 msgstr ""
 "<strong>Widget:</strong> Gå till Utseende &rarr; widgetar och hitta widgeten "
 "som heter “Formulär för GoDaddy e-postmarknadsföring” och dra det in i "
-"valfritt widgetområde. Sedan kan du lägga till en titel och välja ett "
-"formulär!"
+"valfritt widgetområde. Sedan kan du lägga till en titel och välja ett formulär!"
 
 #: includes/settings.php:289
 msgid ""
@@ -291,8 +288,8 @@ msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
 msgstr ""
-"Rensar endast cachade data förknippade med det här insticksprogrammet och "
-"bör försökas före en hård återställning."
+"Rensar endast cachade data förknippade med det här insticksprogrammet och bör "
+"försökas före en hård återställning."
 
 #: includes/settings.php:416
 msgid "Hard Reset"
@@ -332,8 +329,7 @@ msgstr "Du har inga formulär än."
 #, php-format
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr ""
-"Är GoDaddy nytt för dig? Skapa ett konto för att komma igång redan idag. %s "
+msgstr "Är GoDaddy nytt för dig? Skapa ett konto för att komma igång redan idag. %s "
 
 #: includes/settings.php:529
 msgctxt "header button"
@@ -346,7 +342,7 @@ msgstr "Formulär"
 
 #: includes/settings.php:548
 msgid "Reach Your Fans"
-msgstr ""
+msgstr "Nå dina fans"
 
 #: includes/settings.php:551
 #, php-format
@@ -356,6 +352,10 @@ msgid ""
 "start emailing them. It only takes a few moments to %screate an email "
 "marketing campaign%s."
 msgstr ""
+"Med e-postmarknadsföring är det hur lätt som helst att förvandla ett "
+"tillfälligt besök till en bestående relation. Du håller redan på att samla in "
+"prenumeranter; nu är det bara att börja skicka mail till dem. Det tar bara "
+"ett par minuter att %sskapa en e-postmarknadsföringskampanj%s."
 
 #: includes/settings.php:557
 msgid "Available Signup Forms"
@@ -429,8 +429,7 @@ msgstr ""
 "För att insticksprogrammet ska fungera kräver det tillgång till ditt konto "
 "för GoDaddy e-postmarknadsföring.  %1$s för att få ditt användarnamn och din "
 "API-nyckel. Kopiera och klistra in dem nedan och klicka sedan på \"Spara "
-"inställningar.\" Om du inte har ett konto för GoDaddy e-postmarknadsföring, "
-"%2$s."
+"inställningar.\" Om du inte har ett konto för GoDaddy e-postmarknadsföring, %2$s."
 
 #: includes/settings.php:773
 msgctxt "account details link"
@@ -449,8 +448,7 @@ msgstr "Formulär för GoDaddy e-postmarknadsföring"
 #: includes/widget.php:24
 msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr ""
-"Bädda in anmälningsformulär för GoDaddy e-postmarknadsföring i sidopanelen."
+msgstr "Bädda in anmälningsformulär för GoDaddy e-postmarknadsföring i sidopanelen."
 
 #: includes/widget.php:128
 msgid "Title:"
