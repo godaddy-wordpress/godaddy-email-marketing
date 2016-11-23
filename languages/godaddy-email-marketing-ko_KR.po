@@ -6,7 +6,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.1\n"
+"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-18 15:09-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -190,10 +190,9 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"일단 플러그인을 활성화하면, GoDaddy 이메일 마케팅 웹폼을 선택하여 귀하의 사이"
-"트에 직접 삽입할 수 있습니다. 쉽게 설정할 수 있습니다. 아래에서, 귀하의 계정 "
-"이메일 주소와 API 키(귀하의 GoDaddy 이메일 마케팅 계정 [%s] 영역에 있음)를 입"
-"력하면 됩니다. 귀하의 사이트에 웹폼을 3 가지 방식으로 표시할 수 있습니다:"
+"일단 플러그인을 활성화하면, GoDaddy 이메일 마케팅 웹폼을 선택하여 귀하의 사이트에 직접 삽입할 수 있습니다. 쉽게 설정할 수 "
+"있습니다. 아래에서, 귀하의 계정 이메일 주소와 API 키(귀하의 GoDaddy 이메일 마케팅 계정 [%s] 영역에 있음)를 입력하면 "
+"됩니다. 귀하의 사이트에 웹폼을 3 가지 방식으로 표시할 수 있습니다:"
 
 #: includes/settings.php:288
 msgid ""
@@ -201,18 +200,16 @@ msgid ""
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
 "your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>위젯:</strong> 모양 &rarr; 위젯으로 이동하여 “GoDaddy 이메일 마케팅 "
-"폼\" 위젯을 찾아, 원하는 위젯 영역으로 끌어 넣습니다. 제목을 추가하고 폼을 선"
-"택합니다!"
+"<strong>위젯:</strong> 모양 &rarr; 위젯으로 이동하여 “GoDaddy 이메일 마케팅 폼\" 위젯을 찾아, 원하는 위젯 "
+"영역으로 끌어 넣습니다. 제목을 추가하고 폼을 선택합니다!"
 
 #: includes/settings.php:289
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
-"<strong>단축 코드:</strong> 페이지/게시물 편집기에서 단축 코드(예: "
-"<code>[gem id=80326]</code>)를 추가하여, 게시물 또는 페이지에 폼을 추가할 수 "
-"있습니다."
+"<strong>단축 코드:</strong> 페이지/게시물 편집기에서 단축 코드(예: <code>[gem id=80326]</code>)를 "
+"추가하여, 게시물 또는 페이지에 폼을 추가할 수 있습니다."
 
 #: includes/settings.php:291
 #, php-format
@@ -220,8 +217,8 @@ msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
 msgstr ""
-"<strong>템플릿 태그:</strong> WordPress 파일에 다음 템플릿 태그를 추가할 수 "
-"있습니다: <code>%s</code>. 예: <code>%s</code>"
+"<strong>템플릿 태그:</strong> WordPress 파일에 다음 템플릿 태그를 추가할 수 있습니다: "
+"<code>%s</code>. 예: <code>%s</code>"
 
 #: includes/settings.php:301
 msgid "For more information:"
@@ -283,9 +280,7 @@ msgstr "임시 데이터 삭제"
 msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
-msgstr ""
-"이 플러그인과 관련된 캐시 데이터만 제거하며, 하드를 다시 설정하기 전에 시도해"
-"야 합니다."
+msgstr "이 플러그인과 관련된 캐시 데이터만 제거하며, 하드를 다시 설정하기 전에 시도해야 합니다."
 
 #: includes/settings.php:416
 msgid "Hard Reset"
@@ -311,9 +306,8 @@ msgid ""
 "set up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
 msgstr ""
-"GoDaddy 이메일 마케팅 등록 폼을 귀하의 WordPress 사이트에 추가하십시오! 쉽게 "
-"설정할 수 있습니다. GoDaddy 이메일 마케팅 플러그인을 사용하면 사이트의 방문자"
-"들이 귀하의 이메일 목록에 등록할 수 있습니다."
+"GoDaddy 이메일 마케팅 등록 폼을 귀하의 WordPress 사이트에 추가하십시오! 쉽게 설정할 수 있습니다. GoDaddy 이메일 "
+"마케팅 플러그인을 사용하면 사이트의 방문자들이 귀하의 이메일 목록에 등록할 수 있습니다."
 
 #: includes/settings.php:526
 msgctxt "header note"
@@ -337,7 +331,7 @@ msgstr "폼"
 
 #: includes/settings.php:548
 msgid "Reach Your Fans"
-msgstr ""
+msgstr "팬에게 다가가기"
 
 #: includes/settings.php:551
 #, php-format
@@ -347,6 +341,8 @@ msgid ""
 "start emailing them. It only takes a few moments to %screate an email "
 "marketing campaign%s."
 msgstr ""
+"이메일 마케팅을 활용하면 가벼운 방문을 지속적인 관계로 쉽게 바꿀 수 있습니다. 귀하는 이미 구독자를 모집하고 있으니, 이제 구독자들에게 "
+"이메일 발송을 시작해야 합니다. %s이메일 마케팅 캠페인 제작%s은 잠깐이면 됩니다."
 
 #: includes/settings.php:557
 msgid "Available Signup Forms"
@@ -404,9 +400,7 @@ msgstr "새 캠페인 만들기"
 msgid ""
 "If you are experiencing issues and are unsure of the cause, you may want to "
 "activate debug mode, which displays additional options."
-msgstr ""
-"문제가 발생하고 문제의 원인이 분명하지 않은 경우, 추가 옵션을 표시하는 디버"
-"그 모드를 활성화할 수 있습니다."
+msgstr "문제가 발생하고 문제의 원인이 분명하지 않은 경우, 추가 옵션을 표시하는 디버그 모드를 활성화할 수 있습니다."
 
 #: includes/settings.php:773
 #, php-format
@@ -417,10 +411,8 @@ msgid ""
 "then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
 "account, %2$s."
 msgstr ""
-"이 플러그인이 동작하도록 하려면 GoDaddy 이메일 마케팅 계정에 액세스해야 합니"
-"다. 사용자 이름 및 API 키를 받으려면 %1$s합니다. 아래에 복사하여 붙여넣은 다"
-"음 \"설정 저장\"을 클릭합니다. GoDaddy 이메일 마케팅 계정이 아직 없는 경우, "
-"%2$s합니다."
+"이 플러그인이 동작하도록 하려면 GoDaddy 이메일 마케팅 계정에 액세스해야 합니다. 사용자 이름 및 API 키를 받으려면 "
+"%1$s합니다. 아래에 복사하여 붙여넣은 다음 \"설정 저장\"을 클릭합니다. GoDaddy 이메일 마케팅 계정이 아직 없는 경우, %2$s합니다."
 
 #: includes/settings.php:773
 msgctxt "account details link"
