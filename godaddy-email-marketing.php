@@ -75,9 +75,7 @@ class GEM_Official {
 		add_action( 'init',                       array( $this, 'init' ) );
 		add_action( 'widgets_init',               array( $this, 'register_widget' ) );
 		add_action( 'init',                       array( $this, 'register_shortcode' ), 20 );
-		add_action( 'admin_enqueue_scripts',      array( $this, 'register_admin_scripts' ) );
 		add_action( 'admin_notices',              array( $this, 'action_admin_notices' ) );
-		add_action( 'wp_ajax_dismiss_gem_notice', array( $this, 'delete_wpem_gem_notice_option' ) );
 
 		add_filter( 'plugin_action_links_' . self::$basename, array( $this, 'action_links' ), 10 );
 
@@ -234,29 +232,6 @@ class GEM_Official {
 	}
 
 	/**
-	 * Enqueue admin scripts
-	 *
-	 * @since 1.1.4
-	 */
-	public function register_admin_scripts() {
-
-		if ( ! $this->display_gem_notice ) {
-
-			return;
-
-		}
-
-		$suffix = WP_DEBUG ? '' : '.min';
-
-		wp_enqueue_script( 'gem-notice', GEM_PLUGIN_URL . "js/gem-notice{$suffix}.js", array( 'jquery' ), GEM_VERSION );
-
-		wp_localize_script( 'gem-notice', 'gem_notice', array(
-			'ajax_nonce' => wp_create_nonce( 'dismiss_gem_notice_nonce' ),
-		) );
-
-	}
-
-	/**
 	 * Displays the admin notice.
 	 */
 	public function action_admin_notices() {
@@ -301,19 +276,6 @@ class GEM_Official {
 
 			<?php
 		}
-	}
-
-	/**
-	 * Delete the wpem-gem-notice option from the database
-	 *
-	 * @since 1.1.4
-	 */
-	public function delete_wpem_gem_notice_option() {
-
-		check_ajax_referer( 'dismiss_gem_notice_nonce', 'nonce' );
-
-		delete_option( 'wpem-gem-notice' );
-
 	}
 }
 
