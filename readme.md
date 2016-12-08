@@ -8,7 +8,7 @@ Add the GoDaddy Email Marketing plugin to your WordPress site! Easy to set up, t
 **Tags:** [email](https://wordpress.org/plugins/tags/email), [forms](https://wordpress.org/plugins/tags/forms), [godaddy](https://wordpress.org/plugins/tags/godaddy), [mailing list](https://wordpress.org/plugins/tags/mailing list), [marketing](https://wordpress.org/plugins/tags/marketing), [newsletter](https://wordpress.org/plugins/tags/newsletter), [opt-in](https://wordpress.org/plugins/tags/opt-in), [signup](https://wordpress.org/plugins/tags/signup), [subscribe](https://wordpress.org/plugins/tags/subscribe), [widget](https://wordpress.org/plugins/tags/widget), [contacts](https://wordpress.org/plugins/tags/contacts)  
 **Requires at least:** 3.8  
 **Tested up to:** 4.5  
-**Stable tag:** 1.1.3  
+**Stable tag:** 1.1.4  
 **License:** [GPL-2.0](https://www.gnu.org/licenses/gpl-2.0.html)  
 
 [![Build Status](https://travis-ci.org/godaddy/wp-godaddy-email-marketing.svg?branch=master)](https://travis-ci.org/godaddy/wp-godaddy-email-marketing) [![Coverage Status](https://coveralls.io/repos/godaddy/wp-godaddy-email-marketing/badge.svg?branch=master)](https://coveralls.io/github/godaddy/wp-godaddy-email-marketing) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com) [![devDependency Status](https://david-dm.org/godaddy/wp-godaddy-email-marketing/dev-status.svg)](https://david-dm.org/godaddy/wp-godaddy-email-marketing#info=devDependencies) 
