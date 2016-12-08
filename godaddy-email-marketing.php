@@ -151,7 +151,7 @@ class GEM_Official {
 
 		// Initialize settings.
 		if ( is_admin() ) {
-			$this->display_gem_notice = get_option( 'wpem-gem-notice' );
+			$this->display_gem_notice = get_option( 'wpem_gem_notice' );
 			$this->settings = new GEM_Settings;
 		}
 
