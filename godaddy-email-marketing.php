@@ -258,12 +258,14 @@ class GEM_Official {
 			?>
 
 			<div class="gem-notice notice notice-success is-dismissible">
-				<?php
-					printf(
-						'<p>' . __( 'Your website has a superpower: Email marketing. %1$s.', 'gd-system-plugin' ) . '</p>',
-						'<a href="' . admin_url( 'options-general.php?page=gem-settings' ) . '">' . __( 'Learn More', 'gd-system-plugin' ) . '</a>'
-					);
-				?>
+				<p>
+					<?php
+						printf(
+							__( 'Your website has a superpower: Email marketing. %1$s.', 'gd-system-plugin' ),
+							'<a href="' . admin_url( 'options-general.php?page=gem-settings' ) . '">' . __( 'Learn More', 'gd-system-plugin' ) . '</a>'
+						);
+					?>
+				</p>
 			</div>
 
 			<?php
