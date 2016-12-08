@@ -51,6 +51,13 @@ class GEM_Official {
 	public $debug;
 
 	/**
+	 * GEM Notice option
+	 *
+	 * @var bool
+	 */
+	private $display_gem_notice;
+
+	/**
 	 * Class instance.
 	 *
 	 * @codeCoverageIgnore
