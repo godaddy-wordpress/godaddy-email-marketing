@@ -71,13 +71,13 @@ class GEM_Official {
 	 * @codeCoverageIgnore
 	 */
 	private function setup_actions() {
-		add_action( 'plugins_loaded',                  array( $this, 'i18n' ) );
-		add_action( 'init',                            array( $this, 'init' ) );
-		add_action( 'widgets_init',                    array( $this, 'register_widget' ) );
-		add_action( 'init',                            array( $this, 'register_shortcode' ), 20 );
-		add_Action( 'admin_enqueue_scripts',           array( $this, 'register_admin_scripts' ) );
-		add_action( 'admin_notices',                   array( $this, 'action_admin_notices' ) );
-		add_action( 'wp_ajax_dismiss_gem_notice',      array( $this, 'delete_wpem_gem_notice_option' ) );
+		add_action( 'plugins_loaded',             array( $this, 'i18n' ) );
+		add_action( 'init',                       array( $this, 'init' ) );
+		add_action( 'widgets_init',               array( $this, 'register_widget' ) );
+		add_action( 'init',                       array( $this, 'register_shortcode' ), 20 );
+		add_action( 'admin_enqueue_scripts',      array( $this, 'register_admin_scripts' ) );
+		add_action( 'admin_notices',              array( $this, 'action_admin_notices' ) );
+		add_action( 'wp_ajax_dismiss_gem_notice', array( $this, 'delete_wpem_gem_notice_option' ) );
 
 		add_filter( 'plugin_action_links_' . self::$basename, array( $this, 'action_links' ), 10 );
 
@@ -153,6 +153,7 @@ class GEM_Official {
 
 		// Initialize settings.
 		if ( is_admin() ) {
+			$this->display_gem_notice = get_option( 'wpem-gem-notice' );
 			$this->settings = new GEM_Settings;
 		}
 
@@ -239,17 +240,19 @@ class GEM_Official {
 	 */
 	public function register_admin_scripts() {
 
-		if ( get_option( 'wpem-gem-notice' ) ) {
+		if ( ! $this->display_gem_notice ) {
 
-			$suffix = WP_DEBUG ? '' : '.min';
-
-			wp_enqueue_script( 'gem-notice', GEM_PLUGIN_URL . "js/gem-notice{$suffix}.js", array( 'jquery' ), GEM_VERSION );
-
-			wp_localize_script( 'gem-notice', 'gem_notice', array(
-				'ajax_nonce' => wp_create_nonce( 'dismiss_gem_notice_nonce' ),
-			) );
+			return;
 
 		}
+
+		$suffix = WP_DEBUG ? '' : '.min';
+
+		wp_enqueue_script( 'gem-notice', GEM_PLUGIN_URL . "js/gem-notice{$suffix}.js", array( 'jquery' ), GEM_VERSION );
+
+		wp_localize_script( 'gem-notice', 'gem_notice', array(
+			'ajax_nonce' => wp_create_nonce( 'dismiss_gem_notice_nonce' ),
+		) );
 
 	}
 
@@ -258,7 +261,7 @@ class GEM_Official {
 	 */
 	public function action_admin_notices() {
 
-		if ( get_option( 'wpem-gem-notice' ) ) {
+		if ( $this->display_gem_notice ) {
 
 			?>
 
@@ -266,8 +269,8 @@ class GEM_Official {
 				<p>
 					<?php
 						printf(
-							__( 'Your website has a superpower: Email marketing. %1$s.', 'gd-system-plugin' ),
-							'<a href="' . admin_url( 'options-general.php?page=gem-settings' ) . '">' . __( 'Learn More', 'gd-system-plugin' ) . '</a>'
+							__( 'Your website has a superpower: Email marketing. %1$s.', 'godaddy-email-marketing' ),
+							'<a href="' . admin_url( 'options-general.php?page=gem-settings' ) . '">' . __( 'Learn More', 'godaddy-email-marketing' ) . '</a>'
 						);
 					?>
 				</p>
@@ -302,8 +305,6 @@ class GEM_Official {
 
 	/**
 	 * Delete the wpem-gem-notice option from the database
-	 *
-	 * @return boolean
 	 *
 	 * @since 1.1.4
 	 */
