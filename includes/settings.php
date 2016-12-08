@@ -545,15 +545,6 @@ class GEM_Settings {
 
 				<?php if ( ! empty( $forms->signups ) ) : ?>
 					<div id="forms" class="panel">
-						<h3><?php esc_html_e( 'Reach Your Fans', 'godaddy-email-marketing' ); ?></h3>
-						<p><?php
-							printf(
-								esc_html__( 'Email marketing makes it easier than ever to turn casual visits into lasting relationship. You\'re already collecting subscribers, now you just need to start emailing them. It only takes a few moments to %1$screate an email marketing campaign%2$s.', 'godaddy-email-marketing' ),
-								'<a href="https://gem.godaddy.com" target="_blank">',
-								'</a>'
-							);
-							?>
-						</p>
 						<h3><?php esc_html_e( 'Available Signup Forms', 'godaddy-email-marketing' ); ?></h3>
 						<table class="wp-list-table widefat fixed striped">
 							<thead>
