@@ -245,9 +245,9 @@ class GEM_Official {
 
 			wp_enqueue_script( 'gem-notice', GEM_PLUGIN_URL . "js/gem-notice{$suffix}.js", array( 'jquery' ), GEM_VERSION );
 
-			wp_localize_script( 'gem-notice', 'gem_notice', [
+			wp_localize_script( 'gem-notice', 'gem_notice', array(
 				'ajax_nonce' => wp_create_nonce( 'dismiss_gem_notice_nonce' ),
-			] );
+			) );
 
 		}
 
