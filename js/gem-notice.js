@@ -1,5 +1,5 @@
-/*global ajaxurl*/
-/*global gem_notice*/
+/* global ajaxurl */
+/* global gem_notice */
 
 /**
  * Dismiss the gem notice when the 'x' is clicked
