@@ -247,6 +247,7 @@ class GEM_Official {
 
 			wp_localize_script( 'gem-notice', 'gem_notice', [
 				'ajax_nonce' => wp_create_nonce( 'dismiss_gem_notice_nonce' ),
+				'ajax_url'   => admin_url( 'admin-ajax.php' ),
 			] );
 
 		}
