@@ -252,6 +252,8 @@ class GEM_Official {
 
 			<?php
 
+			delete_option( 'wpem_gem_notice' );
+
 		}
 
 		$screen = get_current_screen();
