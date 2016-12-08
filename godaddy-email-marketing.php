@@ -51,13 +51,6 @@ class GEM_Official {
 	public $debug;
 
 	/**
-	 * GEM Notice option
-	 *
-	 * @var bool
-	 */
-	private $display_gem_notice;
-
-	/**
 	 * Class instance.
 	 *
 	 * @codeCoverageIgnore
@@ -158,7 +151,6 @@ class GEM_Official {
 
 		// Initialize settings.
 		if ( is_admin() ) {
-			$this->display_gem_notice = get_option( 'wpem_gem_notice' );
 			$this->settings = new GEM_Settings;
 		}
 
@@ -243,7 +235,7 @@ class GEM_Official {
 	 */
 	public function action_admin_notices() {
 
-		if ( $this->display_gem_notice ) {
+		if ( get_option( 'wpem_gem_notice' ) ) {
 
 			?>
 
