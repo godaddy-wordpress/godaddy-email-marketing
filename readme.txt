@@ -3,7 +3,7 @@ Contributors: godaddy, humanmade, xwp, fjarrett, jonathanbardo
 Tags: email, forms, godaddy, mailing list, marketing, newsletter, opt-in, signup, subscribe, widget, contacts
 Requires at least: 3.8
 Tested up to: 4.7
-Stable tag: 1.1.4
+Stable tag: 1.1.3
 License: GPL-2.0
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -112,9 +112,6 @@ You can find your **Secret API Key** in the [Settings section](https://gem.godad
 4. The widget, on the front-end.
 
 == Changelog ==
-
-= 1.1.4 =
-* Added informational notice for new users who have gone through the GoDaddy setup process.
 
 = 1.1.3 =
 * Fixed: CSRF - thanks to pluginvulnerabilities.com for reporting it
