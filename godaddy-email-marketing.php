@@ -245,10 +245,10 @@ class GEM_Official {
 			<div class="gem-notice notice notice-success is-dismissible">
 				<p>
 					<?php
-						printf(
-							__( 'Your website has a superpower: Email marketing. %1$s.', 'godaddy-email-marketing' ),
-							'<a href="' . admin_url( 'options-general.php?page=gem-settings' ) . '">' . __( 'Learn More', 'godaddy-email-marketing' ) . '</a>'
-						);
+					printf(
+						__( 'Your website has a superpower: Email marketing. %1$s.', 'godaddy-email-marketing' ),
+						'<a href="' . admin_url( 'options-general.php?page=gem-settings' ) . '">' . __( 'Learn More', 'godaddy-email-marketing' ) . '</a>'
+					);
 					?>
 				</p>
 			</div>
