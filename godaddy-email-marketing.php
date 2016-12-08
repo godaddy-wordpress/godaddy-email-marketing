@@ -232,6 +232,11 @@ class GEM_Official {
 		delete_option( 'gem-version' );
 	}
 
+	/**
+	 * Enqueue admin scripts
+	 *
+	 * @since 1.1.4
+	 */
 	public function register_admin_scripts() {
 
 		if ( get_option( 'wpem-gem-notice' ) ) {
@@ -299,6 +304,8 @@ class GEM_Official {
 	 * Delete the wpem-gem-notice option from the database
 	 *
 	 * @return boolean
+	 *
+	 * @since 1.1.4
 	 */
 	public function delete_wpem_gem_notice_option() {
 
