@@ -236,6 +236,8 @@ class Test_GEM_Official extends WP_UnitTestCase {
 		$current_screen = new stdClass();
 		$current_screen->id = 'test';
 
+		$display_gem_notice = false;
+
 		ob_start();
 		$this->instance->action_admin_notices();
 		$actual_output = ob_get_contents();
