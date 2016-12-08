@@ -7,7 +7,7 @@ Add the GoDaddy Email Marketing plugin to your WordPress site! Easy to set up, t
 **Contributors:** [godaddy](https://profiles.wordpress.org/godaddy), [humanmade](https://profiles.wordpress.org/humanmade), [xwp](https://profiles.wordpress.org/xwp), [fjarrett](https://profiles.wordpress.org/fjarrett), [jonathanbardo](https://profiles.wordpress.org/jonathanbardo)  
 **Tags:** [email](https://wordpress.org/plugins/tags/email), [forms](https://wordpress.org/plugins/tags/forms), [godaddy](https://wordpress.org/plugins/tags/godaddy), [mailing list](https://wordpress.org/plugins/tags/mailing list), [marketing](https://wordpress.org/plugins/tags/marketing), [newsletter](https://wordpress.org/plugins/tags/newsletter), [opt-in](https://wordpress.org/plugins/tags/opt-in), [signup](https://wordpress.org/plugins/tags/signup), [subscribe](https://wordpress.org/plugins/tags/subscribe), [widget](https://wordpress.org/plugins/tags/widget), [contacts](https://wordpress.org/plugins/tags/contacts)  
 **Requires at least:** 3.8  
-**Tested up to:** 4.5  
+**Tested up to:** 4.7  
 **Stable tag:** 1.1.4  
 **License:** [GPL-2.0](https://www.gnu.org/licenses/gpl-2.0.html)  
 
@@ -121,6 +121,9 @@ You can find your **Secret API Key** in the [Settings section](https://gem.godad
 ![The widget, on the front-end.](assets/screenshot-4.png)
 
 ## Changelog ##
+
+### 1.1.4 ###
+* Tweak: Indicate support for WordPress 4.7
 
 ### 1.1.3 ###
 * Fixed: CSRF - thanks to pluginvulnerabilities.com for reporting it
