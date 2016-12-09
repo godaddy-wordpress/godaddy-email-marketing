@@ -238,6 +238,26 @@ class GEM_Official {
 	 * Displays the admin notice.
 	 */
 	public function action_admin_notices() {
+
+		if ( get_option( 'wpem_gem_notice' ) ) {
+
+			?>
+			<div class="gem-notice notice notice-success is-dismissible">
+				<p>
+					<?php
+					printf(
+						__( 'Your website has a superpower: Email marketing. %1$s.', 'godaddy-email-marketing' ),
+						'<a href="' . admin_url( 'options-general.php?page=gem-settings' ) . '">' . __( 'Learn More', 'godaddy-email-marketing' ) . '</a>'
+					);
+					?>
+				</p>
+			</div>
+			<?php
+
+			delete_option( 'wpem_gem_notice' );
+
+		}
+
 		$screen = get_current_screen();
 
 		if ( 'plugins' !== $screen->id ) {
