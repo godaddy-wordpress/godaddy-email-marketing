@@ -243,6 +243,22 @@ class Test_GEM_Official extends WP_UnitTestCase {
 		$this->assertEmpty( $actual_output );
 
 		ob_start();
+		update_option( 'wpem_gem_notice', 1 );
+		$current_screen->id = 'dashboard';
+		$this->instance->action_admin_notices();
+		$actual_output = ob_get_contents();
+		ob_end_clean();
+		$this->assertContains( 'Your website has a superpower: Email marketing.', $actual_output );
+
+		ob_start();
+		delete_option( 'wpem_gem_notice' );
+		$current_screen->id = 'dashboard';
+		$this->instance->action_admin_notices();
+		$actual_output = ob_get_contents();
+		ob_end_clean();
+		$this->assertEmpty( $actual_output );
+
+		ob_start();
 		delete_option( 'gem-version' );
 		$current_screen->id = 'plugins';
 		$this->instance->action_admin_notices();
