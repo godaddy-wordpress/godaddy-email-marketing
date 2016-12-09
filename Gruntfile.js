@@ -3,9 +3,9 @@ module.exports = function( grunt ) {
 	'use strict';
 
 	var pkg = grunt.file.readJSON( 'package.json' ),
-	    build_dir = 'build';
+	    BUILD_DIR = 'build';
 
-	require('matchdep').filterDev('grunt-*').forEach( grunt.loadNpmTasks );
+	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 
 	// Project configuration.
 	grunt.initConfig( {
@@ -146,7 +146,7 @@ module.exports = function( grunt ) {
 					'!readme.md',
 					'!tests/**'
 				],
-				dest: build_dir,
+				dest: BUILD_DIR,
 				expand: true,
 				dot: true
 			}
@@ -189,7 +189,7 @@ module.exports = function( grunt ) {
 			deploy: {
 				options: {
 					plugin_slug: pkg.name,
-					build_dir: build_dir,
+					build_dir: BUILD_DIR,
 					assets_dir: 'assets',
 					plugin_main_file: 'godaddy-email-marketing.php'
 				}
