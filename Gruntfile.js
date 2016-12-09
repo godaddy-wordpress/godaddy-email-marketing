@@ -2,7 +2,10 @@
 module.exports = function( grunt ) {
 	'use strict';
 
-	var pkg = grunt.file.readJSON( 'package.json' );
+	var pkg = grunt.file.readJSON( 'package.json' ),
+	    build_dir = 'build';
+
+	require('matchdep').filterDev('grunt-*').forEach( grunt.loadNpmTasks );
 
 	// Project configuration.
 	grunt.initConfig( {
@@ -143,9 +146,41 @@ module.exports = function( grunt ) {
 					'!readme.md',
 					'!tests/**'
 				],
-				dest: 'build',
+				dest: build_dir,
 				expand: true,
 				dot: true
+			}
+		},
+
+		replace: {
+			version_php: {
+				src: [
+					'**/*.php',
+					'!vendor/**',
+					'!dev-lib/*'
+				],
+				overwrite: true,
+				replacements: [ {
+					from: /Version:(\s*?)[a-zA-Z0-9\.\-\+]+$/m,
+					to: 'Version:$1' + pkg.version
+				}, {
+					from: /@version(\s*?)[a-zA-Z0-9\.\-\+]+$/m,
+					to: '@version$1' + pkg.version
+				}, {
+					from: /@since(.*?)NEXT/mg,
+					to: '@since$1' + pkg.version
+				}, {
+					from: /VERSION(\s*?)=(\s*?['"])[a-zA-Z0-9\.\-\+]+/mg,
+					to: 'VERSION$1=$2' + pkg.version
+				} ]
+			},
+			version_readme: {
+				src: 'readme.*',
+				overwrite: true,
+				replacements: [ {
+					from: /^(\*\*|)Stable tag:(\*\*|)(\s*?)[a-zA-Z0-9.-]+(\s*?)$/mi,
+					to: '$1Stable tag:$2$3<%= pkg.version %>$4'
+				} ]
 			}
 		},
 
@@ -154,7 +189,7 @@ module.exports = function( grunt ) {
 			deploy: {
 				options: {
 					plugin_slug: pkg.name,
-					build_dir: 'build',
+					build_dir: build_dir,
 					assets_dir: 'assets',
 					plugin_main_file: 'godaddy-email-marketing.php'
 				}
@@ -177,46 +212,10 @@ module.exports = function( grunt ) {
 
 	} );
 
-	// Load tasks
-	grunt.loadNpmTasks( 'grunt-checktextdomain' );
-	grunt.loadNpmTasks( 'grunt-contrib-clean' );
-	grunt.loadNpmTasks( 'grunt-contrib-copy' );
-	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
-	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-	grunt.loadNpmTasks( 'grunt-contrib-watch' );
-	grunt.loadNpmTasks( 'grunt-po2mo' );
-	grunt.loadNpmTasks( 'grunt-pot' );
-	grunt.loadNpmTasks( 'grunt-wp-deploy' );
-
-	// Default task.
-	grunt.registerTask( 'default', [
-		'cssmin',
-		'uglify'
-	] );
-
-	// Translates strings.
-	grunt.registerTask( 'update_translation', [
-		'checktextdomain',
-		'pot',
-		'po2mo',
-		'clean:po'
-	] );
-
-	// Executes development tasks.
-	grunt.registerTask( 'develop', [
-		'default',
-		'update_translation'
-	] );
-
-	/*
-	 * Deploys to wordpress.org.
-	 *
-	 * Execute the develop command and commit changes before deploying.
-	 */
-	grunt.registerTask( 'deploy', [
-		'copy',
-		'wp_deploy',
-		'clean:build'
-	] );
+	grunt.registerTask( 'default', [ 'cssmin', 'uglify'	] );
+	grunt.registerTask( 'version', ['replace'] );
+	grunt.registerTask( 'update_translation', [ 'checktextdomain', 'pot', 'po2mo', 'clean:po' ] );
+	grunt.registerTask( 'develop', [ 'default', 'update_translation' ] );
+	grunt.registerTask( 'deploy', [ 'copy', 'wp_deploy', 'clean:build' ] );
 
 };
