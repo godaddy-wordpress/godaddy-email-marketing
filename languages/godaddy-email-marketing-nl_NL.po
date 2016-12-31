@@ -132,7 +132,7 @@ msgstr "Dag"
 
 #: includes/render.php:351
 msgid "Year"
-msgstr "Jaar/Jaren"
+msgstr "Jaar"
 
 #: includes/settings.php:60 includes/settings.php:513
 msgid "GoDaddy Email Marketing Signup Forms"

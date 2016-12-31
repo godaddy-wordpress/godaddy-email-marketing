@@ -44,7 +44,7 @@ msgstr "%s là một trường bắt buộc."
 
 #: godaddy-email-marketing.php:215 includes/settings.php:541
 msgid "Settings"
-msgstr "Cài đặt"
+msgstr "Thiết lập"
 
 #: godaddy-email-marketing.php:251
 msgid "GoDaddy Email Marketing is almost ready."
