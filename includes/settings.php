@@ -97,7 +97,7 @@ class GEM_Settings {
 		) );
 
 		wp_enqueue_script(
-			'wpaas-iframeresizer',
+			'gem-iframeresizer',
 			plugins_url( 'js/iframeResizer.min.js', GEM_PLUGIN_BASE ),
 			[],
 			'3.5.1',
@@ -105,14 +105,14 @@ class GEM_Settings {
 		);
 
 		wp_enqueue_script(
-			'wpaas-iframeresizer-ie8',
+			'gem-iframeresizer-ie8',
 			plugins_url( 'js/js/iframeResizer.ie8.polyfils.min.js', GEM_PLUGIN_BASE ),
 			[],
 			'3.5.1',
 			false
 		);
 
-		wp_script_add_data( 'wpaas-iframeresizer-ie8', 'conditional', 'lte IE 8' );
+		wp_script_add_data( 'gem-iframeresizer-ie8', 'conditional', 'lte IE 8' );
 
 	}
 
