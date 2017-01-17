@@ -70,10 +70,6 @@ div.updated.gem-identity p:first-child {
 	min-height: 1100px;
 }
 
-	#help .sf-dialog-content {
-		overflow: scroll;
-	}
-
 @media screen and (min-width: 783px) {
 	#settings .form-table th {
 		width: 30%;
