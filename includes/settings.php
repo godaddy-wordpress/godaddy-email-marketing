@@ -95,6 +95,25 @@ class GEM_Settings {
 		wp_localize_script( 'gem-admin', 'GEMAdmin', array(
 			'copyFailed' => _x( 'Please press Ctrl/Cmd+C to copy.', 'failed copy response', 'godaddy-email-marketing' ),
 		) );
+
+		wp_enqueue_script(
+			'wpaas-iframeresizer',
+			plugins_url( 'js/iframeResizer.min.js', GEM_PLUGIN_BASE ),
+			[],
+			'3.5.1',
+			false
+		);
+
+		wp_enqueue_script(
+			'wpaas-iframeresizer-ie8',
+			plugins_url( 'js/js/iframeResizer.ie8.polyfils.min.js', GEM_PLUGIN_BASE ),
+			[],
+			'3.5.1',
+			false
+		);
+
+		wp_script_add_data( 'wpaas-iframeresizer-ie8', 'conditional', 'lte IE 8' );
+
 	}
 
 	/**
@@ -443,6 +462,7 @@ class GEM_Settings {
 	 * @param int    $columns The number of columns in each row.
 	 */
 	public function do_settings_sections( $page, $columns = 2 ) {
+
 		global $wp_settings_sections, $wp_settings_fields;
 
 		// @codeCoverageIgnoreStart
@@ -485,6 +505,56 @@ class GEM_Settings {
 			</div>
 			<?php
 		}
+	}
+
+	/**
+	 * Generate the help tab content
+	 *
+	 * @since NEXT
+	 *
+	 * @return mixed
+	 */
+	public function generate_help_content() {
+
+		$language  = get_option( 'WPLANG', 'www' );
+		$parts     = explode( '_', $language );
+		$subdomain = ! empty( $parts[1] ) ? strtolower( $parts[1] ) : strtolower( $language );
+
+		// Overrides
+		switch ( $subdomain ) {
+
+			case '' :
+
+				$subdomain = 'www'; // Default
+
+				break;
+
+			case 'uk' :
+
+				$subdomain = 'ua'; // Ukrainian (Українська)
+
+				break;
+
+			case 'el' :
+
+				$subdomain = 'gr'; // Greek (Ελληνικά)
+
+				break;
+
+		}
+
+		?>
+		<iframe src="<?php echo esc_url( "https://{$subdomain}.godaddy.com/help/managed-wordpress-1000021" ) ?>" frameborder="0" scrolling="no"></iframe>
+
+		<script type="text/javascript">
+			iFrameResize( {
+				bodyBackground: 'transparent',
+				checkOrigin: false,
+				heightCalculationMethod: 'taggedElement'
+			} );
+		</script>
+		<?php
+
 	}
 
 	/**
@@ -539,6 +609,7 @@ class GEM_Settings {
 						<a href="#forms" class="nav-tab <?php echo esc_attr( 'forms' === $tab ? 'nav-tab-active' : '' ); ?>"><?php esc_html_e( 'Forms', 'godaddy-email-marketing' ); ?></a>
 					<?php endif; ?>
 					<a href="#settings" class="nav-tab <?php echo esc_attr( 'settings' === $tab || empty( $tab ) ? 'nav-tab-active' : '' ); ?>"><?php esc_html_e( 'Settings', 'godaddy-email-marketing' ); ?></a>
+					<a href="#help" class="nav-tab <?php echo esc_attr( 'help' === $tab || empty( $tab ) ? 'nav-tab-active' : '' ); ?>"><?php esc_html_e( 'Help', 'godaddy-email-marketing' ); ?></a>
 				</h2>
 
 				<div id="setting-errors"></div>
@@ -630,6 +701,13 @@ class GEM_Settings {
 					</p>
 				</div>
 			</form>
+
+			<div id="help" class="panel">
+
+				<?php $this->generate_help_content(); ?>
+
+				<br style="clear:both" />
+			</div>
 		</div>
 		<?php
 	}
