@@ -67,8 +67,8 @@ div.updated.gem-identity p:first-child {
 
 #help iframe {
 	width: 100%;
-	 min-height: 800px;
-	 margin-top: 20px;
+	min-height: 800px;
+	margin-top: 20px;
 }
 
 @media screen and (min-width: 783px) {
