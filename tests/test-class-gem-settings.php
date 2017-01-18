@@ -595,4 +595,29 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 
 		$this->delete_data( $instance->slug );
 	}
+
+	/**
+	 * Test getting various request urls.
+	 *
+	 * @see GEM_Settings::generate_help_content()
+	 */
+	public function test_generate_help_content() {
+
+		$domains = array(
+			'www',
+			'uk',
+			'el',
+		);
+
+		foreach ( $domains as $domain ) {
+
+			GEM_Settings_Controls::update_option( 'WPLANG', $domain );
+
+			$this->assertContains( "<iframe src='https://{$domain}.godaddy.com/help/managed-wordpress-1000021' frameborder='0' scrolling='no'></iframe>", GEM_Settings::generate_help_content() );
+
+		}
+
+		delete_option( GEM_Settings::SLUG );
+
+	}
 }
