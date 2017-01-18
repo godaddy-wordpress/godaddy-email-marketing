@@ -142,7 +142,7 @@ class GEM_Official {
 	 * Load translations.
 	 */
 	public function i18n() {
-		load_plugin_textdomain( 'godaddy-email-marketing', false, dirname( self::$basename ) . '/languages' );
+		load_plugin_textdomain( 'godaddy-email-marketing', false, basename( dirname( self::$basename ) ) . '/languages' );
 	}
 
 	/**
