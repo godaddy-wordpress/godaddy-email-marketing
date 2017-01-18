@@ -619,9 +619,9 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 
 			$instance->generate_help_tab_content();
 
-			$contents = ob_get_contents();
+			$contents = ob_get_clean();
 
-			$this->assertContains( "<iframe src='https://{$domain}.godaddy.com/help/managed-wordpress-1000021' frameborder='0' scrolling='no'></iframe>", $contents );
+			$this->assertContains( "<iframe src=\"https://{$domain}.godaddy.com/help/managed-wordpress-1000021\" frameborder=\"0\" scrolling=\"no\"></iframe>", $contents );
 
 		}
 
