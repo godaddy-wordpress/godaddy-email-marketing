@@ -609,11 +609,14 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 			'el',
 		);
 
+		$instance = new GEM_Settings();
+		$instance->action_admin_menu();
+
 		foreach ( $domains as $domain ) {
 
 			GEM_Settings_Controls::update_option( 'WPLANG', $domain );
 
-			$this->assertContains( "<iframe src='https://{$domain}.godaddy.com/help/managed-wordpress-1000021' frameborder='0' scrolling='no'></iframe>", GEM_Settings::generate_help_content() );
+			$this->assertContains( "<iframe src='https://{$domain}.godaddy.com/help/managed-wordpress-1000021' frameborder='0' scrolling='no'></iframe>", $instance->generate_help_content() );
 
 		}
 
