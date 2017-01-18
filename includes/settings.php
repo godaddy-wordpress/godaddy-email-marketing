@@ -99,7 +99,7 @@ class GEM_Settings {
 		wp_enqueue_script(
 			'gem-iframeresizer',
 			plugins_url( 'js/iframeResizer.min.js', GEM_PLUGIN_BASE ),
-			[],
+			array(),
 			'3.5.1',
 			false
 		);
@@ -107,7 +107,7 @@ class GEM_Settings {
 		wp_enqueue_script(
 			'gem-iframeresizer-ie8',
 			plugins_url( 'js/js/iframeResizer.ie8.polyfils.min.js', GEM_PLUGIN_BASE ),
-			[],
+			array(),
 			'3.5.1',
 			false
 		);
