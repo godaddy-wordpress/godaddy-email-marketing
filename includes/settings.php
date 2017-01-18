@@ -514,7 +514,7 @@ class GEM_Settings {
 	 *
 	 * @return mixed
 	 */
-	public function generate_help_content() {
+	public function generate_help_tab_content() {
 
 		$language  = get_option( 'WPLANG', 'www' );
 		$parts     = explode( '_', $language );
@@ -704,7 +704,7 @@ class GEM_Settings {
 
 			<div id="help" class="panel">
 
-				<?php $this->generate_help_content(); ?>
+				<?php $this->generate_help_tab_content(); ?>
 
 				<br style="clear:both" />
 			</div>

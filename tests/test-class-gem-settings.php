@@ -599,9 +599,9 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	/**
 	 * Test getting various request urls.
 	 *
-	 * @see GEM_Settings::generate_help_content()
+	 * @see GEM_Settings::generate_help_tab_content()
 	 */
-	public function test_generate_help_content() {
+	public function test_generate_help_tab_content() {
 
 		$domains = array(
 			'www',
@@ -609,18 +609,17 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 			'el',
 		);
 
-		$instance = new GEM_Settings();
-		$instance->action_admin_menu();
-
 		foreach ( $domains as $domain ) {
 
-			GEM_Settings_Controls::update_option( 'WPLANG', $domain );
+			update_option( 'WPLANG', $domain );
 
-			$this->assertContains( "<iframe src='https://{$domain}.godaddy.com/help/managed-wordpress-1000021' frameborder='0' scrolling='no'></iframe>", $instance->generate_help_content() );
+			$instance = new GEM_Settings();
+
+			$this->assertContains( "<iframe src='https://{$domain}.godaddy.com/help/managed-wordpress-1000021' frameborder='0' scrolling='no'></iframe>", $instance->generate_help_tab_content() );
 
 		}
 
-		delete_option( GEM_Settings::SLUG );
+		delete_option( 'WPLANG' );
 
 	}
 }
