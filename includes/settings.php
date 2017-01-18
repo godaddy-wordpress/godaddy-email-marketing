@@ -516,8 +516,8 @@ class GEM_Settings {
 	 */
 	public function generate_help_tab_content() {
 
-		$language  = get_option( 'WPLANG', 'www' );
-		$parts     = explode( '_', $language );
+		$language  = get_locale();
+        $parts     = explode( '_', $language );
 		$subdomain = ! empty( $parts[1] ) ? strtolower( $parts[1] ) : strtolower( $language );
 
 		// Overrides

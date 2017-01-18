@@ -603,6 +603,8 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	 */
 	public function test_generate_help_tab_content() {
 
+		global $locale;
+
 		$domains = array(
 			'www' => 'www',
 			'uk'  => 'ua',
@@ -611,16 +613,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 
 		foreach ( $domains as $lang => $domain ) {
 
-			$closure = function() use ( $lang, &$closure ) {
-
-				remove_filter( 'pre_option_WPLANG', $closure );
-
-				return $lang;
-
-			};
-
-			add_filter( 'pre_option_WPLANG', $closure );
-
+			$locale   = $lang;
 			$instance = new GEM_Settings();
 
 			ob_start();
@@ -633,7 +626,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 
 		}
 
-		delete_option( 'WPLANG' );
+		unset( $locale );
 
 	}
 }

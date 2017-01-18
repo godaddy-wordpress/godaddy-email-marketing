@@ -130,15 +130,6 @@ class Test_GEM_Official extends WP_UnitTestCase {
 	 * @see GEM_Official::i18n()
 	 */
 	public function test_i18n() {
-
-		global $l10n;
-
-		if ( empty( $l10n ) ) {
-
-			return;
-
-		}
-
 		unload_textdomain( 'godaddy-email-marketing' );
 		$this->assertFalse( is_textdomain_loaded( 'godaddy-email-marketing' ) );
 
