@@ -112,7 +112,7 @@ class GEM_Settings {
 			false
 		);
 
-		wp_script_add_data( 'gem-iframeresizer-ie8', 'conditional', 'lte IE 8' );
+		function_exists( 'wp_script_add_data' ) ? wp_script_add_data( 'gem-iframeresizer-ie8', 'conditional', 'lte IE 8' ) : $GLOBALS['wp_styles']->add_data( 'gem-iframeresizer-ie8', 'conditional', 'lte IE 8' );
 
 	}
 
@@ -307,7 +307,7 @@ class GEM_Settings {
 				__( '<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget called “GoDaddy Email Marketing Form” and drag it into the widget area of your choice. You can then add a title and select a form!', 'godaddy-email-marketing' ),
 				__( '<strong>Shortcode:</strong> You can add a form to any post or page by adding the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor.', 'godaddy-email-marketing' ),
 				sprintf(
-					__( '<strong>Template Tag:</strong> You can add the following template tag into any WordPress file: <code>%s</code>. Ex. <code>%s</code>', 'godaddy-email-marketing' ),
+					__( '<strong>Template Tag:</strong> You can add the following template tag into any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>', 'godaddy-email-marketing' ),
 					'&lt;?php gem_form( $form_id ); ?&gt;',
 					'&lt;?php gem_form( 91 ); ?&gt;'
 				)
