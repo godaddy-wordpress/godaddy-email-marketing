@@ -604,14 +604,22 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	public function test_generate_help_tab_content() {
 
 		$domains = array(
-			'www',
-			'uk',
-			'el',
+			'www' => 'www',
+			'uk'  => 'ua',
+			'el'  => 'gr',
 		);
 
-		foreach ( $domains as $domain ) {
+		foreach ( $domains as $lang => $domain ) {
 
-			update_option( 'WPLANG', $domain );
+			$closure = function() use ( $lang, &$closure ) {
+
+				remove_filter( 'pre_option_WPLANG', $closure );
+
+				return $lang;
+
+			};
+
+			add_filter( 'pre_option_WPLANG', $closure );
 
 			$instance = new GEM_Settings();
 
