@@ -622,7 +622,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 
 			$contents = ob_get_clean();
 
-			$this->assertContains( "<iframe src=\"https://{$domain}.godaddy.com/help/managed-wordpress-1000021\" frameborder=\"0\" scrolling=\"no\"></iframe>", $contents );
+			$this->assertContains( "<iframe src=\"https://{$domain}.com/help/godaddy-marketing-par-email-1000013\" frameborder=\"0\" scrolling=\"no\"></iframe>", $contents );
 
 		}
 
