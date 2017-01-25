@@ -7,8 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.3\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-18 15:09-0500\n"
+"Report-Msgid-Bugs-To: https://github.com/godaddy/wp-godaddy-email-marketing/"
+"issues\n"
+"POT-Creation-Date: 2017-01-25 23:34:36+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,47 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: godaddy-email-marketing.php:197
-msgid "Thank you for signing up!"
-msgstr "感谢您的注册！"
-
-#: godaddy-email-marketing.php:198
-msgid ""
-"Thank you for signing up! Please check your email to confirm your "
-"subscription."
-msgstr "感谢您的注册！ 请查看电子邮件确认您的订阅。"
-
-#: godaddy-email-marketing.php:199
-msgid "Oops! There was a problem. Please try again."
-msgstr "糟糕！ 出现了一个问题。 请重试。"
-
-#: godaddy-email-marketing.php:200
-msgid "Please enter a valid email address."
-msgstr "请输入有效的电子邮件地址。"
-
-#: godaddy-email-marketing.php:201
-#, php-format
-msgctxt "Name of required field"
-msgid "%s is a required field."
-msgstr "%s 是必填字段。"
-
-#: godaddy-email-marketing.php:215 includes/settings.php:541
-msgid "Settings"
-msgstr "设置"
-
-#: godaddy-email-marketing.php:251
-msgid "GoDaddy Email Marketing is almost ready."
-msgstr "GoDaddy 电邮营销快要准备好了。"
-
-#: godaddy-email-marketing.php:251
-msgid "You must enter your username &amp; API key for it to work."
-msgstr "您必须输入您的用户名和 API 密钥才能让它生效。"
-
-#: godaddy-email-marketing.php:252
-msgid "Let's do it!"
-msgstr "开始吧！"
-
-#: includes/class-shortcode.php:50 includes/settings.php:61
+#. Plugin Name of the plugin/theme
 msgid "GoDaddy Email Marketing"
 msgstr "GoDaddy 电邮营销"
 
@@ -137,11 +98,6 @@ msgstr "年"
 msgid "GoDaddy Email Marketing Signup Forms"
 msgstr "GoDaddy 电邮营销注册表单"
 
-#: includes/settings.php:96
-msgctxt "failed copy response"
-msgid "Please press Ctrl/Cmd+C to copy."
-msgstr "请按 Ctrl/Cmd+C 进行复制。"
-
 #: includes/settings.php:222
 msgid "All data has been removed."
 msgstr "所有数据已移除。"
@@ -182,7 +138,6 @@ msgid "Instructions"
 msgstr "说明"
 
 #: includes/settings.php:285
-#, php-format
 msgid ""
 "Once the plugin is activated, you will be able to select and insert any of "
 "your GoDaddy Email Marketing webforms right into your site. Setup is easy. "
@@ -190,8 +145,9 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"一旦激活了插件，您将能选择您的任何 GoDaddy 电邮营销 Web 表单并直接插入您的网站中。 设置很容易。 只要在下面输入您账户的电子邮件地址和 "
-"API 密钥（在您的 GoDaddy 电邮营销账户 [%s] 区域找到）。 您有 3 种在网站中显示 Web 表单的方法："
+"一旦激活了插件，您将能选择您的任何 GoDaddy 电邮营销 Web 表单并直接插入您的网"
+"站中。 设置很容易。 只要在下面输入您账户的电子邮件地址和 API 密钥（在您的 "
+"GoDaddy 电邮营销账户 [%s] 区域找到）。 您有 3 种在网站中显示 Web 表单的方法："
 
 #: includes/settings.php:288
 msgid ""
@@ -199,29 +155,31 @@ msgid ""
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
 "your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>小组件：</strong> 转到“外观” &rarr; 小组件，找到名为“GoDaddy "
-"电邮营销表单”的小组件，然后拖动到您选择的小组件区域中。 然后您就能添加标题和选择表单了！"
+"<strong>小组件：</strong> 转到“外观” &rarr; 小组件，找到名为“GoDaddy 电邮营销"
+"表单”的小组件，然后拖动到您选择的小组件区域中。 然后您就能添加标题和选择表单"
+"了！"
 
 #: includes/settings.php:289
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
-"<strong>短代码：</strong> 您可以通过在页面/帖子编辑器中添加短代码（如 <code>[gem id=80326]</code>）来将表单添加到任何帖子或页面中。"
+"<strong>短代码：</strong> 您可以通过在页面/帖子编辑器中添加短代码（如 "
+"<code>[gem id=80326]</code>）来将表单添加到任何帖子或页面中。"
 
 #: includes/settings.php:291
-#, php-format
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
 msgstr ""
-"<strong>模板标签：</strong> 您可以在任何 WordPress 文档中添加以下模板标签： <code>%s</code>。 例如 <code>%s</code>"
+"<strong>模板标签：</strong> 您可以在任何 WordPress 文档中添加以下模板标签： "
+"<code>%s</code>。 例如 <code>%s</code>"
 
 #: includes/settings.php:301
 msgid "For more information:"
 msgstr "有关详细信息，请参阅："
 
-#: includes/settings.php:302
+#. Author of the plugin/theme
 msgid "GoDaddy"
 msgstr "GoDaddy"
 
@@ -291,53 +249,28 @@ msgstr "删除所有数据"
 msgid "Purges all saved data associated with this plugin."
 msgstr "清除所有与此插件相关的保存数据。"
 
-#: includes/settings.php:520
-msgctxt "gem header note"
-msgid "Enjoy the GoDaddy Email Marketing Experience."
-msgstr "享受 GoDaddy 电邮营销体验。"
-
-#: includes/settings.php:522
-msgctxt "header note"
-msgid ""
-"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
-"set up, the GoDaddy Email Marketing plugin allows your site visitors to "
-"subscribe to your email list."
-msgstr ""
-"将 GoDaddy 电邮营销注册表单添加到您的 WordPress 网站中！ 易于设置的 GoDaddy 电邮营销插件让您的网站访客能够订阅您的电子邮件列表。"
-
-#: includes/settings.php:526
-msgctxt "header note"
-msgid "You don't have any forms yet."
-msgstr "您还没有任何表单。"
-
-#: includes/settings.php:529
-#, php-format
-msgctxt "Sign up button"
-msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "初次使用 GoDaddy？ 创建账户，立即开始。 %s "
-
-#: includes/settings.php:529
-msgctxt "header button"
-msgid "Sign Up Now"
-msgstr "立即注册"
-
 #: includes/settings.php:539
 msgid "Forms"
 msgstr "表单"
+
+#: includes/settings.php:541
+msgid "Settings"
+msgstr "设置"
 
 #: includes/settings.php:548
 msgid "Reach Your Fans"
 msgstr "获得粉丝"
 
 #: includes/settings.php:551
-#, php-format
+#, fuzzy
 msgid ""
 "Email marketing makes it easier than ever to turn casual visits into lasting "
 "relationship. You're already collecting subscribers, now you just need to "
-"start emailing them. It only takes a few moments to %screate an email "
-"marketing campaign%s."
+"start emailing them. It only takes a few moments to %1$screate an email "
+"marketing campaign%2$s."
 msgstr ""
-"使用电邮营销比以往更轻松地实现休闲访客到顾客的转换。您已经开始收集订户了，现在只需要开始向他们发送电子邮件。只要花费几分钟 %s创建一场电邮营销活动%s。"
+"使用电邮营销比以往更轻松地实现休闲访客到顾客的转换。您已经开始收集订户了，现"
+"在只需要开始向他们发送电子邮件。只要花费几分钟 %s创建一场电邮营销活动%s。"
 
 #: includes/settings.php:557
 msgid "Available Signup Forms"
@@ -374,11 +307,6 @@ msgstr "预览"
 msgid "Not seeing your form?"
 msgstr "没有看到您的表单？"
 
-#: includes/settings.php:625
-msgctxt "save settings button"
-msgid "Save Settings"
-msgstr "保存设置"
-
 #: includes/settings.php:663
 msgid "Refresh Forms"
 msgstr "刷新表单"
@@ -397,36 +325,9 @@ msgid ""
 "activate debug mode, which displays additional options."
 msgstr "如果您遇到问题且不明原因，您可能需要激活调试模式，查看更多选项。"
 
-#: includes/settings.php:773
-#, php-format
-msgctxt "1. Sign-in link, 2. Sign-up link"
-msgid ""
-"For this plugin to work, it needs to access your GoDaddy Email Marketing "
-"account. %1$s to get your username and API key. Copy and paste them below; "
-"then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
-"account, %2$s."
-msgstr ""
-"此插件需要访问您的 GoDaddy 电邮营销账户才能生效。  %1$s 获取您的用户名和 API 密钥。 将其复制粘贴在下方，然后单击“保存设置”。 "
-"如果您没有 GoDaddy 电邮营销账户，%2$s。"
-
-#: includes/settings.php:773
-msgctxt "account details link"
-msgid "Sign in here"
-msgstr "在此登录"
-
-#: includes/settings.php:773
-msgctxt "account details link"
-msgid "sign up here"
-msgstr "在此注册"
-
 #: includes/widget.php:21
 msgid "GoDaddy Email Marketing Form"
 msgstr "GoDaddy 电邮营销表单"
-
-#: includes/widget.php:24
-msgctxt "widget description"
-msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr "将 GoDaddy 电邮营销注册表单嵌入侧边栏。"
 
 #: includes/widget.php:128
 msgid "Title:"
@@ -440,12 +341,119 @@ msgstr "更多文本："
 msgid "Form:"
 msgstr "表单："
 
+#: includes/widget.php:160
+msgid "settings page"
+msgstr "设置页面"
+
+#. Author URI of the plugin/theme
+msgid "https://gem.godaddy.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+#, fuzzy
+msgid ""
+"Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to "
+"set up, the plugin allows your site visitors to subscribe to your email "
+"lists."
+msgstr ""
+"将 GoDaddy 电邮营销注册表单添加到您的 WordPress 网站中！ 易于设置的 GoDaddy "
+"电邮营销插件让您的网站访客能够订阅您的电子邮件列表。"
+
+#: includes/settings.php:96
+msgctxt "failed copy response"
+msgid "Please press Ctrl/Cmd+C to copy."
+msgstr "请按 Ctrl/Cmd+C 进行复制。"
+
+#: includes/settings.php:520
+msgctxt "gem header note"
+msgid "Enjoy the GoDaddy Email Marketing Experience."
+msgstr "享受 GoDaddy 电邮营销体验。"
+
+#: includes/settings.php:522
+msgctxt "header note"
+msgid ""
+"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
+"set up, the GoDaddy Email Marketing plugin allows your site visitors to "
+"subscribe to your email list."
+msgstr ""
+"将 GoDaddy 电邮营销注册表单添加到您的 WordPress 网站中！ 易于设置的 GoDaddy "
+"电邮营销插件让您的网站访客能够订阅您的电子邮件列表。"
+
+#: includes/settings.php:526
+msgctxt "header note"
+msgid "You don't have any forms yet."
+msgstr "您还没有任何表单。"
+
+#: includes/settings.php:529
+msgctxt "Sign up button"
+msgid "New to GoDaddy? Create an account to get started today. %s"
+msgstr "初次使用 GoDaddy？ 创建账户，立即开始。 %s "
+
+#: includes/settings.php:529
+msgctxt "header button"
+msgid "Sign Up Now"
+msgstr "立即注册"
+
+#: includes/settings.php:625
+msgctxt "save settings button"
+msgid "Save Settings"
+msgstr "保存设置"
+
+#: includes/settings.php:773
+msgctxt "1. Sign-in link, 2. Sign-up link"
+msgid ""
+"For this plugin to work, it needs to access your GoDaddy Email Marketing "
+"account. %1$s to get your username and API key. Copy and paste them below; "
+"then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
+"account, %2$s."
+msgstr ""
+"此插件需要访问您的 GoDaddy 电邮营销账户才能生效。  %1$s 获取您的用户名和 API "
+"密钥。 将其复制粘贴在下方，然后单击“保存设置”。 如果您没有 GoDaddy 电邮营销账"
+"户，%2$s。"
+
+#: includes/settings.php:773
+msgctxt "account details link"
+msgid "Sign in here"
+msgstr "在此登录"
+
+#: includes/settings.php:773
+msgctxt "account details link"
+msgid "sign up here"
+msgstr "在此注册"
+
+#: includes/widget.php:24
+msgctxt "widget description"
+msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
+msgstr "将 GoDaddy 电邮营销注册表单嵌入侧边栏。"
+
 #: includes/widget.php:156
-#, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "请在 %s 中设置您的 GoDaddy 电邮营销账户。"
 
-#: includes/widget.php:160
-msgid "settings page"
-msgstr "设置页面"
+#~ msgid "Thank you for signing up!"
+#~ msgstr "感谢您的注册！"
+
+#~ msgid ""
+#~ "Thank you for signing up! Please check your email to confirm your "
+#~ "subscription."
+#~ msgstr "感谢您的注册！ 请查看电子邮件确认您的订阅。"
+
+#~ msgid "Oops! There was a problem. Please try again."
+#~ msgstr "糟糕！ 出现了一个问题。 请重试。"
+
+#~ msgid "Please enter a valid email address."
+#~ msgstr "请输入有效的电子邮件地址。"
+
+#~ msgctxt "Name of required field"
+#~ msgid "%s is a required field."
+#~ msgstr "%s 是必填字段。"
+
+#~ msgid "GoDaddy Email Marketing is almost ready."
+#~ msgstr "GoDaddy 电邮营销快要准备好了。"
+
+#~ msgid "You must enter your username &amp; API key for it to work."
+#~ msgstr "您必须输入您的用户名和 API 密钥才能让它生效。"
+
+#~ msgid "Let's do it!"
+#~ msgstr "开始吧！"

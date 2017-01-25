@@ -1,63 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the godaddy-email-marketing-sign-up-forms package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Copyright (c) 2017 GoDaddy Operating Company, LLC. All Rights Reserved.
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.3\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-18 15:09-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Project-Id-Version: GoDaddy Email Marketing 1.1.4\n"
+"Report-Msgid-Bugs-To: "
+"https://github.com/godaddy/wp-godaddy-email-marketing/issues\n"
+"POT-Creation-Date: 2017-01-25 23:34:36+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
 
-#: godaddy-email-marketing.php:197
-msgid "Thank you for signing up!"
-msgstr ""
-
-#: godaddy-email-marketing.php:198
-msgid ""
-"Thank you for signing up! Please check your email to confirm your "
-"subscription."
-msgstr ""
-
-#: godaddy-email-marketing.php:199
-msgid "Oops! There was a problem. Please try again."
-msgstr ""
-
-#: godaddy-email-marketing.php:200
-msgid "Please enter a valid email address."
-msgstr ""
-
-#: godaddy-email-marketing.php:201
-#, php-format
-msgctxt "Name of required field"
-msgid "%s is a required field."
-msgstr ""
-
-#: godaddy-email-marketing.php:215 includes/settings.php:541
-msgid "Settings"
-msgstr ""
-
-#: godaddy-email-marketing.php:251
-msgid "GoDaddy Email Marketing is almost ready."
-msgstr ""
-
-#: godaddy-email-marketing.php:251
-msgid "You must enter your username &amp; API key for it to work."
-msgstr ""
-
-#: godaddy-email-marketing.php:252
-msgid "Let's do it!"
-msgstr ""
-
-#: includes/class-shortcode.php:50 includes/settings.php:61
+#. Plugin Name of the plugin/theme
 msgid "GoDaddy Email Marketing"
 msgstr ""
 
@@ -137,11 +96,6 @@ msgstr ""
 msgid "GoDaddy Email Marketing Signup Forms"
 msgstr ""
 
-#: includes/settings.php:96
-msgctxt "failed copy response"
-msgid "Please press Ctrl/Cmd+C to copy."
-msgstr ""
-
 #: includes/settings.php:222
 msgid "All data has been removed."
 msgstr ""
@@ -162,7 +116,8 @@ msgstr ""
 
 #: includes/settings.php:238
 msgid ""
-"Connection with GoDaddy Email Marketing has been established! You're all set!"
+"Connection with GoDaddy Email Marketing has been established! You're all "
+"set!"
 msgstr ""
 
 #: includes/settings.php:243
@@ -182,7 +137,6 @@ msgid "Instructions"
 msgstr ""
 
 #: includes/settings.php:285
-#, php-format
 msgid ""
 "Once the plugin is activated, you will be able to select and insert any of "
 "your GoDaddy Email Marketing webforms right into your site. Setup is easy. "
@@ -193,19 +147,19 @@ msgstr ""
 
 #: includes/settings.php:288
 msgid ""
-"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
-"called “GoDaddy Email Marketing Form” and drag it into the widget area of "
-"your choice. You can then add a title and select a form!"
+"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the "
+"widget called “GoDaddy Email Marketing Form” and drag it into the widget "
+"area of your choice. You can then add a title and select a form!"
 msgstr ""
 
 #: includes/settings.php:289
 msgid ""
-"<strong>Shortcode:</strong> You can add a form to any post or page by adding "
-"the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
+"<strong>Shortcode:</strong> You can add a form to any post or page by "
+"adding the shortcode (ex. <code>[gem id=80326]</code>) in the page/post "
+"editor."
 msgstr ""
 
 #: includes/settings.php:291
-#, php-format
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
@@ -215,7 +169,7 @@ msgstr ""
 msgid "For more information:"
 msgstr ""
 
-#: includes/settings.php:302
+#. Author of the plugin/theme
 msgid "GoDaddy"
 msgstr ""
 
@@ -285,37 +239,12 @@ msgstr ""
 msgid "Purges all saved data associated with this plugin."
 msgstr ""
 
-#: includes/settings.php:520
-msgctxt "gem header note"
-msgid "Enjoy the GoDaddy Email Marketing Experience."
-msgstr ""
-
-#: includes/settings.php:522
-msgctxt "header note"
-msgid ""
-"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
-"set up, the GoDaddy Email Marketing plugin allows your site visitors to "
-"subscribe to your email list."
-msgstr ""
-
-#: includes/settings.php:526
-msgctxt "header note"
-msgid "You don't have any forms yet."
-msgstr ""
-
-#: includes/settings.php:529
-#, php-format
-msgctxt "Sign up button"
-msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr ""
-
-#: includes/settings.php:529
-msgctxt "header button"
-msgid "Sign Up Now"
-msgstr ""
-
 #: includes/settings.php:539
 msgid "Forms"
+msgstr ""
+
+#: includes/settings.php:541
+msgid "Settings"
 msgstr ""
 
 #: includes/settings.php:548
@@ -323,12 +252,11 @@ msgid "Reach Your Fans"
 msgstr ""
 
 #: includes/settings.php:551
-#, php-format
 msgid ""
-"Email marketing makes it easier than ever to turn casual visits into lasting "
-"relationship. You're already collecting subscribers, now you just need to "
-"start emailing them. It only takes a few moments to %screate an email "
-"marketing campaign%s."
+"Email marketing makes it easier than ever to turn casual visits into "
+"lasting relationship. You're already collecting subscribers, now you just "
+"need to start emailing them. It only takes a few moments to %1$screate an "
+"email marketing campaign%2$s."
 msgstr ""
 
 #: includes/settings.php:557
@@ -366,11 +294,6 @@ msgstr ""
 msgid "Not seeing your form?"
 msgstr ""
 
-#: includes/settings.php:625
-msgctxt "save settings button"
-msgid "Save Settings"
-msgstr ""
-
 #: includes/settings.php:663
 msgid "Refresh Forms"
 msgstr ""
@@ -389,8 +312,76 @@ msgid ""
 "activate debug mode, which displays additional options."
 msgstr ""
 
+#: includes/widget.php:21
+msgid "GoDaddy Email Marketing Form"
+msgstr ""
+
+#: includes/widget.php:128
+msgid "Title:"
+msgstr ""
+
+#: includes/widget.php:134
+msgid "Additional Text:"
+msgstr ""
+
+#: includes/widget.php:143
+msgid "Form:"
+msgstr ""
+
+#: includes/widget.php:160
+msgid "settings page"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://gem.godaddy.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to "
+"set up, the plugin allows your site visitors to subscribe to your email "
+"lists."
+msgstr ""
+
+#: includes/settings.php:96
+msgctxt "failed copy response"
+msgid "Please press Ctrl/Cmd+C to copy."
+msgstr ""
+
+#: includes/settings.php:520
+msgctxt "gem header note"
+msgid "Enjoy the GoDaddy Email Marketing Experience."
+msgstr ""
+
+#: includes/settings.php:522
+msgctxt "header note"
+msgid ""
+"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy "
+"to set up, the GoDaddy Email Marketing plugin allows your site visitors to "
+"subscribe to your email list."
+msgstr ""
+
+#: includes/settings.php:526
+msgctxt "header note"
+msgid "You don't have any forms yet."
+msgstr ""
+
+#: includes/settings.php:529
+msgctxt "Sign up button"
+msgid "New to GoDaddy? Create an account to get started today. %s"
+msgstr ""
+
+#: includes/settings.php:529
+msgctxt "header button"
+msgid "Sign Up Now"
+msgstr ""
+
+#: includes/settings.php:625
+msgctxt "save settings button"
+msgid "Save Settings"
+msgstr ""
+
 #: includes/settings.php:773
-#, php-format
 msgctxt "1. Sign-in link, 2. Sign-up link"
 msgid ""
 "For this plugin to work, it needs to access your GoDaddy Email Marketing "
@@ -409,33 +400,12 @@ msgctxt "account details link"
 msgid "sign up here"
 msgstr ""
 
-#: includes/widget.php:21
-msgid "GoDaddy Email Marketing Form"
-msgstr ""
-
 #: includes/widget.php:24
 msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
 msgstr ""
 
-#: includes/widget.php:128
-msgid "Title:"
-msgstr ""
-
-#: includes/widget.php:134
-msgid "Additional Text:"
-msgstr ""
-
-#: includes/widget.php:143
-msgid "Form:"
-msgstr ""
-
 #: includes/widget.php:156
-#, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
-msgstr ""
-
-#: includes/widget.php:160
-msgid "settings page"
 msgstr ""
