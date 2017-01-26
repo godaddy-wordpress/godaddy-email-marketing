@@ -198,7 +198,7 @@ module.exports = function( grunt ) {
 			options: {
 				plugin_slug: pkg.name,
 				build_dir: BUILD_DIR,
-				assets_dir: 'wp-org-assets',
+				assets_dir: 'assets',
 				plugin_main_file: 'godaddy-email-marketing.php',
 				svn_user: SVN_USERNAME
 			}
