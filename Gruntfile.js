@@ -80,7 +80,7 @@ module.exports = function( grunt ) {
 		imagemin: {
 			build: {
 				options: {
-					optimizationLevel: 5
+					optimizationLevel: 3
 				},
 				files: [
 					{
