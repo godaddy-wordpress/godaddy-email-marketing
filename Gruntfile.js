@@ -19,28 +19,29 @@ module.exports = function( grunt ) {
 		pkg: pkg,
 
 		clean: {
-			build: [ BUILD_DIR + '*' ],
-			options: {
-				force: true
-			}
+			build: [ BUILD_DIR ]
 		},
 
 		copy: {
-			files: {
-				cwd: '.',
-				expand: true,
-				src: [
-					'*.php',
-					'license.txt',
-					'readme.txt',
-					'assets/**',
-					'css/**',
-					'images/**',
-					'includes/**',
-					'js/**',
-					'languages/*.{mo,pot}'
-				],
-				dest: BUILD_DIR
+			build: {
+				files: [
+					{
+						expand: true,
+						src: [
+							'*.php',
+							'license.txt',
+							'readme.txt',
+							'assets/**',
+							'css/**',
+							'images/**',
+							'includes/**',
+							'js/**',
+							'languages/*.{mo,pot}',
+							'!**/*.{ai,eps,psd}'
+						],
+						dest: BUILD_DIR
+					}
+				]
 			}
 		},
 
@@ -64,38 +65,30 @@ module.exports = function( grunt ) {
 		},
 
 		devUpdate: {
-			main: {
-				options: {
-					updateType: 'force',
-					reportUpdated: false,
-					semver: true,
-					packages: {
-						devDependencies: true,
-						dependencies: false
-					},
-					packageJson: null,
-					reportOnlyPkgs: []
-				}
+			options: {
+				updateType: 'force',
+				reportUpdated: false,
+				semver: true,
+				packages: {
+					devDependencies: true,
+					dependencies: false
+				},
+				packageJson: null,
+				reportOnlyPkgs: []
 			}
 		},
 
 		imagemin: {
-			dynamic: {
+			build: {
 				options: {
-					optimizationLevel: 3
+					optimizationLevel: 5
 				},
 				files: [
 					{
 						expand: true,
-						cwd: 'assets',
-						src: [ '*.{gif,jpeg,jpg,png,svg}' ],
-						dest: 'assets'
-					},
-					{
-						expand: true,
-						cwd: 'images',
-						src: [ '*.{gif,jpeg,jpg,png,svg}' ],
-						dest: 'images'
+						cwd: BUILD_DIR,
+						src: [ '**/*.{gif,jpeg,jpg,png,svg}' ],
+						dest: BUILD_DIR
 					}
 				]
 			}
@@ -106,21 +99,19 @@ module.exports = function( grunt ) {
 		},
 
 		makepot: {
-			target: {
-				options: {
-					domainPath: 'languages/',
-					include: [ '*.php', 'includes/.+\.php' ],
-					potComments: 'Copyright (c) {year} GoDaddy Operating Company, LLC. All Rights Reserved.',
-					potHeaders: {
-						'x-poedit-keywordslist': true
-					},
-					processPot: function( pot, options ) {
-						pot.headers['report-msgid-bugs-to'] = pkg.bugs.url;
-						return pot;
-					},
-					type: 'wp-plugin',
-					updatePoFiles: true
-				}
+			options: {
+				domainPath: 'languages/',
+				include: [ '*.php', 'includes/.+\.php' ],
+				potComments: 'Copyright (c) {year} GoDaddy Operating Company, LLC. All Rights Reserved.',
+				potHeaders: {
+					'x-poedit-keywordslist': true
+				},
+				processPot: function( pot, options ) {
+					pot.headers['report-msgid-bugs-to'] = pkg.bugs.url;
+					return pot;
+				},
+				type: 'wp-plugin',
+				updatePoFiles: true
 			}
 		},
 
@@ -135,7 +126,7 @@ module.exports = function( grunt ) {
 		},
 
 		replace: {
-			version_php: {
+			php: {
 				src: [
 					'*.php',
 					'includes/**/*.php'
@@ -160,13 +151,15 @@ module.exports = function( grunt ) {
 					}
 				]
 			},
-			version_readme: {
+			readme: {
 				src: 'readme.*',
 				overwrite: true,
-				replacements: [ {
-					from: /^(\*\*|)Stable tag:(\*\*|)(\s*?)[a-zA-Z0-9.-]+(\s*?)$/mi,
-					to: '$1Stable tag:$2$3<%= pkg.version %>$4'
-				} ]
+				replacements: [
+					{
+						from: /^(\*\*|)Stable tag:(\*\*|)(\s*?)[a-zA-Z0-9.-]+(\s*?)$/mi,
+						to: '$1Stable tag:$2$3<%= pkg.version %>$4'
+					}
+				]
 			}
 		},
 
@@ -174,12 +167,12 @@ module.exports = function( grunt ) {
 			options: {
 				ASCIIOnly: true
 			},
-			core: {
+			all: {
 				expand: true,
 				cwd: 'js',
+				src: ['**/*.js', '!**/*.min.js'],
 				dest: 'js',
-				ext: '.min.js',
-				src: ['**/*.js', '!**/*.min.js']
+				ext: '.min.js'
 			}
 		},
 
@@ -192,7 +185,7 @@ module.exports = function( grunt ) {
 				},
 				tasks: [ 'cssmin' ]
 			},
-			uglify: {
+			js: {
 				files: [ '**/*.js', '!**/*.min.js' ],
 				options: {
 					cwd: 'js',
@@ -203,14 +196,12 @@ module.exports = function( grunt ) {
 		},
 
 		wp_deploy: {
-			deploy: {
-				options: {
-					plugin_slug: pkg.name,
-					build_dir: BUILD_DIR,
-					assets_dir: 'wp-org-assets',
-					plugin_main_file: 'godaddy-email-marketing.php',
-					svn_user: svn_username
-				}
+			options: {
+				plugin_slug: pkg.name,
+				build_dir: BUILD_DIR,
+				assets_dir: 'wp-org-assets',
+				plugin_main_file: 'godaddy-email-marketing.php',
+				svn_user: svn_username
 			}
 		}
 
@@ -219,8 +210,8 @@ module.exports = function( grunt ) {
 	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 
 	grunt.registerTask( 'default', [ 'cssmin', 'jshint', 'uglify' ] );
-	grunt.registerTask( 'build', [ 'default', 'version', 'clean', 'copy', 'imagemin' ] );
-	grunt.registerTask( 'deploy', [ 'build', 'wp_deploy', 'clean' ] );
+	grunt.registerTask( 'build', [ 'default', 'version', 'clean:build', 'copy:build', 'imagemin:build' ] );
+	grunt.registerTask( 'deploy', [ 'build', 'wp_deploy', 'clean:build' ] );
 	grunt.registerTask( 'update-pot', [ 'makepot' ] );
 	grunt.registerTask( 'update-mo', [ 'potomo' ] );
 	grunt.registerTask( 'version', [ 'replace' ] );
