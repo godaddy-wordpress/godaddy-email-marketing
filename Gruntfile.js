@@ -2,15 +2,14 @@ module.exports = function( grunt ) {
 
 	'use strict';
 
-	var BUILD_DIR = 'build/';
-
 	var pkg = grunt.file.readJSON( 'package.json' );
 
-	var svn_username = false;
+	var BUILD_DIR    = 'build/',
+	    SVN_USERNAME = false;
 
 	if ( grunt.file.exists( 'svn-username' ) ) {
 
-		svn_username = grunt.file.read( 'svn-username' ).trim();
+		SVN_USERNAME = grunt.file.read( 'svn-username' ).trim();
 
 	}
 
@@ -51,7 +50,7 @@ module.exports = function( grunt ) {
 				roundingPrecision: 5,
 				processImport: false
 			},
-			target: {
+			all: {
 				files: [
 					{
 						expand: true,
@@ -178,19 +177,19 @@ module.exports = function( grunt ) {
 
 		watch: {
 			css: {
-				files: [ '**/*.css', '!**/*.min.css' ],
 				options: {
-					cwd: 'css',
-					nospawn: true
+					nospawn: true,
+					cwd: 'css'
 				},
+				files: [ '**/*.css', '!**/*.min.css' ],
 				tasks: [ 'cssmin' ]
 			},
 			js: {
-				files: [ '**/*.js', '!**/*.min.js' ],
 				options: {
-					cwd: 'js',
-					nospawn: true
+					nospawn: true,
+					cwd: 'js'
 				},
+				files: [ '**/*.js', '!**/*.min.js' ],
 				tasks: [ 'jshint', 'uglify' ]
 			}
 		},
@@ -201,7 +200,7 @@ module.exports = function( grunt ) {
 				build_dir: BUILD_DIR,
 				assets_dir: 'wp-org-assets',
 				plugin_main_file: 'godaddy-email-marketing.php',
-				svn_user: svn_username
+				svn_user: SVN_USERNAME
 			}
 		}
 
