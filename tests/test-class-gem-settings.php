@@ -136,6 +136,8 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		wp_set_current_user( $user_id );
 
+		$this->assertTrue( current_user_can( 'manage_options' ) );
+
 		$instance->page_load();
 		$instance->action_admin_menu();
 
