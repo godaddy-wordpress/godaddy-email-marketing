@@ -606,7 +606,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		global $locale;
 
 		$domains = array(
-			'www' => 'www',
+			''    => 'www',
 			'uk'  => 'ua',
 			'el'  => 'gr',
 		);
