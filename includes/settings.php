@@ -123,14 +123,8 @@ class GEM_Settings {
 	 */
 	public function page_load() {
 
-		if ( ! current_user_can( 'manage_options' ) ) {
-
-			return false;
-
-		}
-
 		// Main switch for various maintenance processes.
-		if ( isset( $_GET['action'] ) ) {
+		if ( current_user_can( 'manage_options' ) && isset( $_GET['action'] ) ) {
 			$settings = get_option( $this->slug );
 
 			switch ( $_GET['action'] ) {
