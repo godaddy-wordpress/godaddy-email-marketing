@@ -147,8 +147,8 @@ module.exports = function( grunt ) {
 						to: '@since$1' + pkg.version
 					},
 					{
-						from: /'GEM_VERSION',(\s*?)'[a-zA-Z0-9\.\-\+]+'/mg,
-						to: '\'GEM_VERSION\',$1\'' + pkg.version + '\''
+						from: /GEM_VERSION(['"]\s*?,\s*?['"])[a-zA-Z0-9\.\-\+]+/mg,
+						to: 'GEM_VERSION$1' + pkg.version
 					}
 				]
 			},
@@ -171,7 +171,7 @@ module.exports = function( grunt ) {
 			all: {
 				expand: true,
 				cwd: 'js',
-				src: ['**/*.js', '!**/*.min.js'],
+				src: [ '**/*.js', '!**/*.min.js' ],
 				dest: 'js',
 				ext: '.min.js'
 			}
