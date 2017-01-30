@@ -1,14 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the godaddy-email-marketing-sign-up-forms package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 09:12-0500\n"
+"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.3\n"
+"Report-Msgid-Bugs-To: https://github.com/godaddy/wp-godaddy-email-marketing/"
+"issues\n"
+"POT-Creation-Date: 2017-01-25 23:34:36+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,174 +18,127 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: godaddy-email-marketing.php:197
-msgid "Thank you for signing up!"
-msgstr "साइन अप करण्यासाठी धन्यवाद!"
-
-#: godaddy-email-marketing.php:198
-msgid ""
-"Thank you for signing up! Please check your email to confirm your "
-"subscription."
-msgstr ""
-"साइन अप करण्यासाठी धन्यवाद! आपल्या सदस्यतेची पुष्टी करण्यासाठी कृपया आपला ईमेल तपासा."
-
-#: godaddy-email-marketing.php:199
-msgid "Oops! There was a problem. Please try again."
-msgstr "अरेरे! त्यात समस्या होती. कृपया पुन्हा प्रयत्न करा."
-
-#: godaddy-email-marketing.php:200
-msgid "Please enter a valid email address."
-msgstr "कृपया वैध ईमेल पत्ता प्रविष्ट करा."
-
-#: godaddy-email-marketing.php:201
-#, php-format
-msgctxt "Name of required field"
-msgid "%s is a required field."
-msgstr "%s ही आवश्यक फील्ड आहे."
-
-#: godaddy-email-marketing.php:213 includes/settings.php:532
-msgid "Settings"
-msgstr "सेटिंग्ज"
-
-#: godaddy-email-marketing.php:249
-msgid "GoDaddy Email Marketing is almost ready."
-msgstr "GoDaddy ईमेल विपणन जवळजवळ तयार झाले आहे."
-
-#: godaddy-email-marketing.php:249
-msgid "You must enter your username &amp; API key for it to work."
-msgstr "त्याने कार्य करण्यासाठी आपण वापरकर्तानाव &amp; API की प्रविष्ट करणे आवश्यक आहे."
-
-#: godaddy-email-marketing.php:250
-msgid "Let's do it!"
-msgstr "चला हे करूया!"
-
-#: includes/class-shortcode.php:48 includes/settings.php:61
+#. Plugin Name of the plugin/theme
 msgid "GoDaddy Email Marketing"
 msgstr "GoDaddy ईमेल विपणन"
 
-#: includes/class-shortcode.php:52
+#: includes/class-shortcode.php:54
 msgid "Signup Forms"
 msgstr "साईनअप फॉर्म्स"
 
-#: includes/class-shortcode.php:53
+#: includes/class-shortcode.php:55
 msgid "Choose one of the available forms."
 msgstr "उपलब्ध फॉर्म्स पैकी एक निवडा"
 
-#: includes/render.php:67
+#: includes/render.php:71
 msgid "Powered by GoDaddy"
 msgstr "GoDaddy द्वारे समर्थित"
 
-#: includes/render.php:322
+#: includes/render.php:326
 msgid "Month"
 msgstr "महिना"
 
-#: includes/render.php:323
+#: includes/render.php:327
 msgid "January"
 msgstr "जानेवारी"
 
-#: includes/render.php:324
+#: includes/render.php:328
 msgid "Febuary"
 msgstr "फेब्रुवारी"
 
-#: includes/render.php:325
+#: includes/render.php:329
 msgid "March"
 msgstr "मार्च"
 
-#: includes/render.php:326
+#: includes/render.php:330
 msgid "April"
 msgstr "एप्रिल"
 
-#: includes/render.php:327
+#: includes/render.php:331
 msgid "May"
 msgstr "मे"
 
-#: includes/render.php:328
+#: includes/render.php:332
 msgid "June"
 msgstr "जून"
 
-#: includes/render.php:329
+#: includes/render.php:333
 msgid "July"
 msgstr "जुलै"
 
-#: includes/render.php:330
+#: includes/render.php:334
 msgid "August"
 msgstr "ऑगस्ट"
 
-#: includes/render.php:331
+#: includes/render.php:335
 msgid "September"
 msgstr "सप्टेंबर"
 
-#: includes/render.php:332
+#: includes/render.php:336
 msgid "October"
 msgstr "ऑक्टोंबर"
 
-#: includes/render.php:333
+#: includes/render.php:337
 msgid "November"
 msgstr "नोव्हेंबर"
 
-#: includes/render.php:334
+#: includes/render.php:338
 msgid "December"
 msgstr "डिसेंबर"
 
-#: includes/render.php:339
+#: includes/render.php:343
 msgid "Day"
 msgstr "दिवस"
 
-#: includes/render.php:347
+#: includes/render.php:351
 msgid "Year"
 msgstr "वर्ष"
 
-#: includes/settings.php:60 includes/settings.php:504
+#: includes/settings.php:60 includes/settings.php:513
 msgid "GoDaddy Email Marketing Signup Forms"
 msgstr "GoDaddy ईमेल विपणन साइन अप फॉर्म"
 
-#: includes/settings.php:96
-msgctxt "failed copy response"
-msgid "Please press Ctrl/Cmd+C to copy."
-msgstr "कॉपी करण्यासाठी कृपया Ctrl/Cmd+C दाबा."
-
-#: includes/settings.php:220
+#: includes/settings.php:222
 msgid "All data has been removed."
 msgstr "सर्व डेटा काढून टाकण्यात आला आहे."
 
-#: includes/settings.php:224
+#: includes/settings.php:226
 msgid "All transients were removed."
 msgstr "सर्व तात्पुरत्या गोष्टी काढल्या होत्या."
 
-#: includes/settings.php:228
+#: includes/settings.php:230
 msgid "Forms list was successfully updated."
 msgstr "फॉर्म्स सूची यशस्वीरित्या अद्यतनित केली होती."
 
-#: includes/settings.php:232
+#: includes/settings.php:234
 msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr ""
 "अधिकारपत्रे बरोबर आहेत! कृपया पडताळणी करा की आपण ते योग्यरित्या प्रविष्ट केले आहेत."
 
-#: includes/settings.php:236
+#: includes/settings.php:238
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr "GoDaddy ईमेल विपणानासह कनेक्शन स्थापित करण्यात आले आहे! तुम्ही सेट झालेले आहेत!"
 
-#: includes/settings.php:241
+#: includes/settings.php:243
 msgid "Settings have been updated."
 msgstr "सेटिंग्ज अद्ययावत केलेली आहे."
 
-#: includes/settings.php:245
+#: includes/settings.php:247
 msgid "Please fill in the username and the API key first."
 msgstr "कृपया प्रथम वापरकर्तानाव आणि API की भरा."
 
-#: includes/settings.php:277
+#: includes/settings.php:279
 msgid "Overview"
 msgstr "विहंगावलोकन"
 
-#: includes/settings.php:281
+#: includes/settings.php:283
 msgid "Instructions"
 msgstr "सूचना"
 
-#: includes/settings.php:283
-#, php-format
+#: includes/settings.php:285
 msgid ""
 "Once the plugin is activated, you will be able to select and insert any of "
 "your GoDaddy Email Marketing webforms right into your site. Setup is easy. "
@@ -197,7 +151,7 @@ msgstr ""
 "API की प्रविष्ट करा (आपल्या GoDaddy ईमेल विपणन खाते [%s] क्षेत्रामध्ये आढळला). आपण "
 "आपल्या साइटवर 3 प्रकारे वेबफॉर्म प्रदर्शित करू शकता:"
 
-#: includes/settings.php:286
+#: includes/settings.php:288
 msgid ""
 "<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
@@ -207,7 +161,7 @@ msgstr ""
 "नावाचे विजेट शोधा आणि आपल्या आवडीच्या विजेट क्षेत्रामध्ये ड्रॅग करा. आपण त्यानंतर शीर्षक "
 "जोडू शकता आणि एक फॉर्म निवडू शकता!"
 
-#: includes/settings.php:287
+#: includes/settings.php:289
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
@@ -215,8 +169,7 @@ msgstr ""
 "<strong>शॉर्टकोड:</strong> आपण शॉर्टकोड जोडून कोणत्याही पोस्ट किंवा पृष्ठावर फॉर्म "
 "जोडू शकता (उदा. <code>[gem id=80326]</code>) पृष्ठ/पोस्ट संपादकामध्ये."
 
-#: includes/settings.php:289
-#, php-format
+#: includes/settings.php:291
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
@@ -224,63 +177,63 @@ msgstr ""
 "<strong>टेम्प्लेट टॅग:</strong> आपण आपल्या WordPress फाइलमध्ये खालील टेम्प्लेट टॅग जोडू "
 "शकता: <code>%s</code>. उदा. <code>%s</code>"
 
-#: includes/settings.php:299
+#: includes/settings.php:301
 msgid "For more information:"
 msgstr "अधिक माहितीसाठी:"
 
-#: includes/settings.php:300
+#. Author of the plugin/theme
 msgid "GoDaddy"
 msgstr "GoDaddy"
 
-#: includes/settings.php:301
+#: includes/settings.php:303
 msgid "GoDaddy Help"
 msgstr "GoDaddy मदत"
 
-#: includes/settings.php:302
+#: includes/settings.php:304
 msgid "Contact GoDaddy"
 msgstr "GoDaddy शी संपर्क करा"
 
-#: includes/settings.php:327
+#: includes/settings.php:329
 msgid "Account Details"
 msgstr "खाते तपशील"
 
-#: includes/settings.php:334
+#: includes/settings.php:336
 msgid "Username"
 msgstr "वापरकर्तानाव"
 
-#: includes/settings.php:348
+#: includes/settings.php:350
 msgid "API Key"
 msgstr "API की"
 
-#: includes/settings.php:362
+#: includes/settings.php:364
 msgid "Footer Link"
 msgstr "तळटिप लिंक"
 
-#: includes/settings.php:369
+#: includes/settings.php:371
 msgid "Display \"Powered by GoDaddy\"?"
 msgstr "\"GoDaddy द्वारे समर्थित\" प्रदर्शित करायची?"
 
-#: includes/settings.php:376
+#: includes/settings.php:378
 msgid "Debugging"
 msgstr "डीबगिंग"
 
-#: includes/settings.php:383
+#: includes/settings.php:385
 msgid "Debug Mode"
 msgstr "डीबग मोड"
 
-#: includes/settings.php:390
+#: includes/settings.php:392
 msgid "Activated"
 msgstr "सक्रीय केले"
 
-#: includes/settings.php:397
+#: includes/settings.php:400
 msgid "Cache Reset"
 msgstr "कॅशे रीसेट करा"
 
-#: includes/settings.php:403
+#: includes/settings.php:409
 msgid "Erase Transients"
 msgstr "तात्पुरता खोडा"
 
-#: includes/settings.php:404
+#: includes/settings.php:410
 msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
@@ -288,107 +241,90 @@ msgstr ""
 "या प्लगइन सह फक्त संबंधित असलेला कॅशे डेटा पुसते आणि हार्ड रीसेट करण्याआधी प्रयत्न करायला "
 "हवा."
 
-#: includes/settings.php:410
+#: includes/settings.php:416
 msgid "Hard Reset"
 msgstr "हार्ड रीसेट "
 
-#: includes/settings.php:416
+#: includes/settings.php:425
 msgid "Erase All Data"
 msgstr "सर्व डेटा खोडा"
 
-#: includes/settings.php:417
+#: includes/settings.php:426
 msgid "Purges all saved data associated with this plugin."
 msgstr "या प्लगइन सह फक्त संबंधित जतन डेटा पुसते"
 
-#: includes/settings.php:511
-msgctxt "gem header note"
-msgid "Enjoy the GoDaddy Email Marketing Experience."
-msgstr "GoDaddy ईमेल विपणन अनुभवाचा आनंद घ्या"
-
-#: includes/settings.php:513
-msgctxt "header note"
-msgid ""
-"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
-"set up, the GoDaddy Email Marketing plugin allows your site visitors to "
-"subscribe to your email list."
-msgstr ""
-"आपल्या WordPress साइटवर आपला GoDaddy ईमेल विपणन साइन अप फॉर्म जोडा! सेट करण्यास "
-"सुलभ, GoDaddy ईमेल विपणन प्लगइन आपल्या साइट अभ्यंगतांना आपल्या ईमेल सूचींची सदस्यता "
-"घेण्याची अनुमती देतात."
-
-#: includes/settings.php:517
-msgctxt "header note"
-msgid "You don't have any forms yet."
-msgstr "आपण अद्याप कोणतेही फॉर्म नाहीत."
-
-#: includes/settings.php:520
-#, php-format
-msgctxt "Sign up button"
-msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "GoDaddy वर नवीन आहात? आजच प्रारंभ करण्यासाठी खाते तयार करा. %s "
-
-#: includes/settings.php:520
-msgctxt "header button"
-msgid "Sign Up Now"
-msgstr "आता साइन अप करा"
-
-#: includes/settings.php:530
+#: includes/settings.php:539
 msgid "Forms"
 msgstr "फॉर्म्स"
 
-#: includes/settings.php:539
+#: includes/settings.php:541
+msgid "Settings"
+msgstr "सेटिंग्ज"
+
+#: includes/settings.php:548
+msgid "Reach Your Fans"
+msgstr "आपल्या चाहत्यांपर्यंत पोहचा"
+
+#: includes/settings.php:551
+#, fuzzy
+msgid ""
+"Email marketing makes it easier than ever to turn casual visits into lasting "
+"relationship. You're already collecting subscribers, now you just need to "
+"start emailing them. It only takes a few moments to %1$screate an email "
+"marketing campaign%2$s."
+msgstr ""
+"इमेल विमणन प्रासंगिक भेटी कायमच्या चिरस्थायी संबंधांमध्ये चालू करण्यापेक्षा ते सोपे करते. आपण "
+"आधीपासूनच सदस्यांना गोळा केले आहे, आता आपण केवळ त्यांना इमेल करणे प्रारंभ करण्याची आवश्यकता "
+"आहे. इमेल विपणन मोहिम तयार करण्यासाठी %sते केवळ काही क्षण घेते%s."
+
+#: includes/settings.php:557
 msgid "Available Signup Forms"
 msgstr "उपलब्ध साइन अप फॉर्म्स"
 
-#: includes/settings.php:543 includes/settings.php:550
-#: includes/settings.php:558
+#: includes/settings.php:561 includes/settings.php:568
+#: includes/settings.php:576
 msgid "Form Name"
 msgstr "फॉर्म नाव"
 
-#: includes/settings.php:544 includes/settings.php:551
-#: includes/settings.php:572
+#: includes/settings.php:562 includes/settings.php:569
+#: includes/settings.php:590
 msgid "Form ID"
 msgstr "फॉर्म ID"
 
-#: includes/settings.php:545 includes/settings.php:552
-#: includes/settings.php:575
+#: includes/settings.php:563 includes/settings.php:570
+#: includes/settings.php:593
 msgid "Shortcode"
 msgstr "शॉर्टकोड"
 
-#: includes/settings.php:562
+#: includes/settings.php:580
 msgid "Opens in a new window"
 msgstr "एका नवीन विंडोमध्ये उघडते"
 
-#: includes/settings.php:562
+#: includes/settings.php:580
 msgid "Edit form in GoDaddy Email Marketing"
 msgstr "GoDaddy ईमेल विपणनामध्ये फॉर्म संपादित करा"
 
-#: includes/settings.php:565
+#: includes/settings.php:583
 msgid "Preview"
 msgstr "पूर्वावलोकन करा"
 
-#: includes/settings.php:588
+#: includes/settings.php:606
 msgid "Not seeing your form?"
 msgstr "आपला फॉर्म दिसत नाही?"
 
-#: includes/settings.php:607
-msgctxt "save settings button"
-msgid "Save Settings"
-msgstr "सेटिंग्ज जतन करा."
-
-#: includes/settings.php:637
+#: includes/settings.php:663
 msgid "Refresh Forms"
 msgstr "फॉर्म्स रीफ्रेश करा"
 
-#: includes/settings.php:644
+#: includes/settings.php:670
 msgid "Create a New Signup Form"
 msgstr "नवीन साइन अप फॉर्म तयार करा"
 
-#: includes/settings.php:651
+#: includes/settings.php:677
 msgid "Create a New Campaign"
 msgstr "नवीन मोहीम तयार करा"
 
-#: includes/settings.php:737
+#: includes/settings.php:763
 msgid ""
 "If you are experiencing issues and are unsure of the cause, you may want to "
 "activate debug mode, which displays additional options."
@@ -396,38 +332,9 @@ msgstr ""
 "आपणास समस्या येत असल्यास आणि आपणास त्याच्या कारणाची खात्री नसल्यास, आपल्याला कदाचित "
 "डीबग मोड सक्षम करावासा वाटू शकेल, जो अधिक पर्याय दर्शवितो."
 
-#: includes/settings.php:747
-#, php-format
-msgctxt "1. Sign-in link, 2. Sign-up link"
-msgid ""
-"For this plugin to work, it needs to access your GoDaddy Email Marketing "
-"account. %1$s to get your username and API key. Copy and paste them below; "
-"then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
-"account, %2$s."
-msgstr ""
-"या प्लगइनसाठी कार्य करण्यासाठी, त्याला आपल्या GoDaddy ईमेल विपणन खात्यामध्ये प्रवेश करणे "
-"जरूरीचे आहे. %1$sआपले प्रयोक्तानाव आणि API की मिळविण्यासाठी. त्यांना खाली प्रतिलिपी "
-"करा आणि चिकटवा; त्यानंतर \"जतन सेटिंग्ज\" वर क्लिक करा. आपल्याकडे GoDaddy ईमेल विपणन "
-"खाते नसल्यास, %2$s."
-
-#: includes/settings.php:747
-msgctxt "account details link"
-msgid "Sign in here"
-msgstr "येथे साइन इन करा"
-
-#: includes/settings.php:747
-msgctxt "account details link"
-msgid "sign up here"
-msgstr "येथे साइन अप करा"
-
 #: includes/widget.php:21
 msgid "GoDaddy Email Marketing Form"
 msgstr "GoDaddy ईमेल विपणन फॉर्म"
-
-#: includes/widget.php:24
-msgctxt "widget description"
-msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr "साइडबारमध्ये GoDaddy ईमेल विपणन फॉर्म साइन इन करून एम्बेड करा."
 
 #: includes/widget.php:128
 msgid "Title:"
@@ -441,12 +348,125 @@ msgstr "अतिरिक्त मजकूर:"
 msgid "Form:"
 msgstr "फॉर्म:"
 
+#: includes/widget.php:160
+msgid "settings page"
+msgstr "सेटिंग्ज पृष्ठ"
+
+#. Author URI of the plugin/theme
+msgid "https://gem.godaddy.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+#, fuzzy
+msgid ""
+"Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to "
+"set up, the plugin allows your site visitors to subscribe to your email "
+"lists."
+msgstr ""
+"आपल्या WordPress साइटवर आपला GoDaddy ईमेल विपणन साइन अप फॉर्म जोडा! सेट करण्यास "
+"सुलभ, GoDaddy ईमेल विपणन प्लगइन आपल्या साइट अभ्यंगतांना आपल्या ईमेल सूचींची सदस्यता "
+"घेण्याची अनुमती देतात."
+
+#: includes/settings.php:96
+msgctxt "failed copy response"
+msgid "Please press Ctrl/Cmd+C to copy."
+msgstr "कॉपी करण्यासाठी कृपया Ctrl/Cmd+C दाबा."
+
+#: includes/settings.php:520
+msgctxt "gem header note"
+msgid "Enjoy the GoDaddy Email Marketing Experience."
+msgstr "GoDaddy ईमेल विपणन अनुभवाचा आनंद घ्या"
+
+#: includes/settings.php:522
+msgctxt "header note"
+msgid ""
+"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
+"set up, the GoDaddy Email Marketing plugin allows your site visitors to "
+"subscribe to your email list."
+msgstr ""
+"आपल्या WordPress साइटवर आपला GoDaddy ईमेल विपणन साइन अप फॉर्म जोडा! सेट करण्यास "
+"सुलभ, GoDaddy ईमेल विपणन प्लगइन आपल्या साइट अभ्यंगतांना आपल्या ईमेल सूचींची सदस्यता "
+"घेण्याची अनुमती देतात."
+
+#: includes/settings.php:526
+msgctxt "header note"
+msgid "You don't have any forms yet."
+msgstr "आपण अद्याप कोणतेही फॉर्म नाहीत."
+
+#: includes/settings.php:529
+msgctxt "Sign up button"
+msgid "New to GoDaddy? Create an account to get started today. %s"
+msgstr "GoDaddy वर नवीन आहात? आजच प्रारंभ करण्यासाठी खाते तयार करा. %s "
+
+#: includes/settings.php:529
+msgctxt "header button"
+msgid "Sign Up Now"
+msgstr "आता साइन अप करा"
+
+#: includes/settings.php:625
+msgctxt "save settings button"
+msgid "Save Settings"
+msgstr "सेटिंग्ज जतन करा."
+
+#: includes/settings.php:773
+msgctxt "1. Sign-in link, 2. Sign-up link"
+msgid ""
+"For this plugin to work, it needs to access your GoDaddy Email Marketing "
+"account. %1$s to get your username and API key. Copy and paste them below; "
+"then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
+"account, %2$s."
+msgstr ""
+"या प्लगइनसाठी कार्य करण्यासाठी, त्याला आपल्या GoDaddy ईमेल विपणन खात्यामध्ये प्रवेश करणे "
+"जरूरीचे आहे. %1$sआपले प्रयोक्तानाव आणि API की मिळविण्यासाठी. त्यांना खाली प्रतिलिपी "
+"करा आणि चिकटवा; त्यानंतर \"जतन सेटिंग्ज\" वर क्लिक करा. आपल्याकडे GoDaddy ईमेल विपणन "
+"खाते नसल्यास, %2$s."
+
+#: includes/settings.php:773
+msgctxt "account details link"
+msgid "Sign in here"
+msgstr "येथे साइन इन करा"
+
+#: includes/settings.php:773
+msgctxt "account details link"
+msgid "sign up here"
+msgstr "येथे साइन अप करा"
+
+#: includes/widget.php:24
+msgctxt "widget description"
+msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
+msgstr "साइडबारमध्ये GoDaddy ईमेल विपणन फॉर्म साइन इन करून एम्बेड करा."
+
 #: includes/widget.php:156
-#, php-format
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "%s मध्ये कृपया आपले GoDaddy ईमेल विपणन खाते सेट करा."
 
-#: includes/widget.php:160
-msgid "settings page"
-msgstr "सेटिंग्ज पृष्ठ"
+#~ msgid "Thank you for signing up!"
+#~ msgstr "साइन अप करण्यासाठी धन्यवाद!"
+
+#~ msgid ""
+#~ "Thank you for signing up! Please check your email to confirm your "
+#~ "subscription."
+#~ msgstr ""
+#~ "साइन अप करण्यासाठी धन्यवाद! आपल्या सदस्यतेची पुष्टी करण्यासाठी कृपया आपला ईमेल "
+#~ "तपासा."
+
+#~ msgid "Oops! There was a problem. Please try again."
+#~ msgstr "अरेरे! त्यात समस्या होती. कृपया पुन्हा प्रयत्न करा."
+
+#~ msgid "Please enter a valid email address."
+#~ msgstr "कृपया वैध ईमेल पत्ता प्रविष्ट करा."
+
+#~ msgctxt "Name of required field"
+#~ msgid "%s is a required field."
+#~ msgstr "%s ही आवश्यक फील्ड आहे."
+
+#~ msgid "GoDaddy Email Marketing is almost ready."
+#~ msgstr "GoDaddy ईमेल विपणन जवळजवळ तयार झाले आहे."
+
+#~ msgid "You must enter your username &amp; API key for it to work."
+#~ msgstr ""
+#~ "त्याने कार्य करण्यासाठी आपण वापरकर्तानाव &amp; API की प्रविष्ट करणे आवश्यक आहे."
+
+#~ msgid "Let's do it!"
+#~ msgstr "चला हे करूया!"
