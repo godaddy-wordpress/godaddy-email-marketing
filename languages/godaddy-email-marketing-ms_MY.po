@@ -1,22 +1,20 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the godaddy-email-marketing-sign-up-forms package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Copyright (c) 2017 GoDaddy Operating Company, LLC. All Rights Reserved.
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.3\n"
-"Report-Msgid-Bugs-To: https://github.com/godaddy/wp-godaddy-email-marketing/"
-"issues\n"
+"Project-Id-Version: GoDaddy Email Marketing 1.1.4\n"
+"Report-Msgid-Bugs-To: "
+"https://github.com/godaddy/wp-godaddy-email-marketing/issues\n"
 "POT-Creation-Date: 2017-01-30 22:15:59+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
 
 #. Plugin Name of the plugin/theme
 msgid "GoDaddy Email Marketing"
@@ -115,12 +113,12 @@ msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr ""
-"Kelayakan tidak betul! Sila sahkan bahawa anda telah masukkannya secara "
-"salah."
+"Kelayakan tidak betul! Sila sahkan bahawa anda telah masukkannya secara salah."
 
 #: includes/settings.php:257
 msgid ""
-"Connection with GoDaddy Email Marketing has been established! You're all set!"
+"Connection with GoDaddy Email Marketing has been established! You're all "
+"set!"
 msgstr ""
 "Sambungan ke Pemasaran E-mel GoDaddy telah diwujudkan! Anda telah bersedia!"
 
@@ -148,17 +146,17 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"Selepas pasang masuk diaktifkan, anda akan dapat pilih dan selitkan mana-"
-"mana borang web Pemasaran E-mel GoDaddy anda pada laman anda. Pemasangan itu "
-"mudah. Di bawah, cuma masukkan alamat e-mel akaun anda dan kekunci API "
-"(boleh didapati di kawasan [%s] akaun Pemasaran E-mel GoDaddy anda). Berikut "
-"adalah 3 cara anda boleh memaparkan borang web pada laman anda:"
+"Selepas pasang masuk diaktifkan, anda akan dapat pilih dan selitkan mana-mana "
+"borang web Pemasaran E-mel GoDaddy anda pada laman anda. Pemasangan itu "
+"mudah. Di bawah, cuma masukkan alamat e-mel akaun anda dan kekunci API (boleh "
+"didapati di kawasan [%s] akaun Pemasaran E-mel GoDaddy anda). Berikut adalah "
+"3 cara anda boleh memaparkan borang web pada laman anda:"
 
 #: includes/settings.php:307
 msgid ""
-"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
-"called “GoDaddy Email Marketing Form” and drag it into the widget area of "
-"your choice. You can then add a title and select a form!"
+"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the "
+"widget called “GoDaddy Email Marketing Form” and drag it into the widget "
+"area of your choice. You can then add a title and select a form!"
 msgstr ""
 "<strong>Widget:</strong> Pergi ke widget Penampilan &rarr; dan widget yang "
 "dipanggil “Borang Pemasaran E-mel GoDaddy” dan seretkan ke kawasan widget "
@@ -166,21 +164,21 @@ msgstr ""
 
 #: includes/settings.php:308
 msgid ""
-"<strong>Shortcode:</strong> You can add a form to any post or page by adding "
-"the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
+"<strong>Shortcode:</strong> You can add a form to any post or page by "
+"adding the shortcode (ex. <code>[gem id=80326]</code>) in the page/post "
+"editor."
 msgstr ""
-"<strong>Kod pendek:</strong> Anda boleh tambah borang pada mana-mana pos "
-"atau laman dengan menambah kod pendek (ex. <code>[gem id=80326]</code>) pada "
+"<strong>Kod pendek:</strong> Anda boleh tambah borang pada mana-mana pos atau "
+"laman dengan menambah kod pendek (ex. <code>[gem id=80326]</code>) pada "
 "laman/pos editor."
 
 #: includes/settings.php:310
-#, fuzzy
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>"
 msgstr ""
-"<strong>Tag Templat:</strong> Anda boleh tambah tag templat berikut ke dalam "
-"mana-mana fail WordPress: <code>%s</code>. Ex. <code>%s</code>"
+"<strong>Template Tag:</strong> You can add the following template tag into "
+"any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>"
 
 #: includes/settings.php:320
 msgid "For more information:"
@@ -243,8 +241,8 @@ msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
 msgstr ""
-"Singkir hanya data cache yang dikaitkan dengan pasang masuk, dan perlu "
-"dicuba sebelum set semula asal."
+"Singkir hanya data cache yang dikaitkan dengan pasang masuk, dan perlu dicuba "
+"sebelum set semula asal."
 
 #: includes/settings.php:435
 msgid "Hard Reset"
@@ -268,24 +266,23 @@ msgstr "Tetapan"
 
 #: includes/settings.php:612
 msgid "Help"
-msgstr ""
+msgstr "Help"
 
 #: includes/settings.php:619
 msgid "Reach Your Fans"
 msgstr "Reach Your Fans"
 
 #: includes/settings.php:622
-#, fuzzy
 msgid ""
+"Email marketing makes it easier than ever to turn casual visits into "
+"lasting relationship. You're already collecting subscribers, now you just "
+"need to start emailing them. It only takes a few moments to %1$screate an "
+"email marketing campaign%2$s."
+msgstr ""
 "Email marketing makes it easier than ever to turn casual visits into lasting "
 "relationship. You're already collecting subscribers, now you just need to "
 "start emailing them. It only takes a few moments to %1$screate an email "
 "marketing campaign%2$s."
-msgstr ""
-"Email marketing makes it easier than ever to turn casual visits into lasting "
-"relationship. You're already collecting subscribers, now you just need to "
-"start emailing them. It only takes a few moments to %screate an email "
-"marketing campaign%s."
 
 #: includes/settings.php:628
 msgid "Available Signup Forms"
@@ -364,18 +361,16 @@ msgstr "halaman tetapan"
 
 #. Author URI of the plugin/theme
 msgid "https://gem.godaddy.com/"
-msgstr ""
+msgstr "https://gem.godaddy.com/"
 
 #. Description of the plugin/theme
-#, fuzzy
 msgid ""
 "Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to "
 "set up, the plugin allows your site visitors to subscribe to your email "
 "lists."
 msgstr ""
-"Tambah borang pendaftaran Pemasaran E-mel GoDaddy pada laman WordPress anda! "
-"Pasang masuk Pemasaran E-mel GoDaddy yang mudah dipasang membolehkan pelawat "
-"laman melanggan senarai e-mel anda."
+"Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to "
+"set up, the plugin allows your site visitors to subscribe to your email lists."
 
 #: includes/settings.php:96
 msgctxt "failed copy response"
@@ -390,8 +385,8 @@ msgstr "Nikmati Pengalaman Pemasaran E-mel GoDaddy."
 #: includes/settings.php:592
 msgctxt "header note"
 msgid ""
-"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
-"set up, the GoDaddy Email Marketing plugin allows your site visitors to "
+"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy "
+"to set up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
 msgstr ""
 "Tambah borang pendaftaran Pemasaran E-mel GoDaddy pada laman WordPress anda! "
@@ -450,33 +445,3 @@ msgstr "Letakkan borang pendaftaran Pemasaran E-mel GoDaddy di palang sisi."
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "Sila tetapkan akaun Pemasaran E-mel GoDaddy pada %s."
-
-#~ msgid "Thank you for signing up!"
-#~ msgstr "Terima kasih kerana mendaftar!"
-
-#~ msgid ""
-#~ "Thank you for signing up! Please check your email to confirm your "
-#~ "subscription."
-#~ msgstr ""
-#~ "Terima kasih kerana mendaftar! Sila periksa e-mel anda untuk mengesahkan "
-#~ "langganan anda."
-
-#~ msgid "Oops! There was a problem. Please try again."
-#~ msgstr "Oops! Terdapat masalah. Sila cuba lagi."
-
-#~ msgid "Please enter a valid email address."
-#~ msgstr "Sila masukkan alamat e-mel yang sah."
-
-#~ msgctxt "Name of required field"
-#~ msgid "%s is a required field."
-#~ msgstr "%s adalah ruang yang diperlukan."
-
-#~ msgid "GoDaddy Email Marketing is almost ready."
-#~ msgstr "Pemasaran E-mel GoDaddy hampir siap."
-
-#~ msgid "You must enter your username &amp; API key for it to work."
-#~ msgstr ""
-#~ "Anda perlu masukkan nama pengguna &amp; kekunci API supaya ia berfungsi."
-
-#~ msgid "Let's do it!"
-#~ msgstr "Mari lakukannya!"

@@ -1,22 +1,20 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the godaddy-email-marketing-sign-up-forms package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Copyright (c) 2017 GoDaddy Operating Company, LLC. All Rights Reserved.
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.3\n"
-"Report-Msgid-Bugs-To: https://github.com/godaddy/wp-godaddy-email-marketing/"
-"issues\n"
+"Project-Id-Version: GoDaddy Email Marketing 1.1.4\n"
+"Report-Msgid-Bugs-To: "
+"https://github.com/godaddy/wp-godaddy-email-marketing/issues\n"
 "POT-Creation-Date: 2017-01-30 22:15:59+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
 
 #. Plugin Name of the plugin/theme
 msgid "GoDaddy Email Marketing"
@@ -118,7 +116,8 @@ msgstr "認証情報が正しくありません。 正確に入力したかど�
 
 #: includes/settings.php:257
 msgid ""
-"Connection with GoDaddy Email Marketing has been established! You're all set!"
+"Connection with GoDaddy Email Marketing has been established! You're all "
+"set!"
 msgstr "GoDaddyメールマーケティングに接続しました！ 準備が整いました！"
 
 #: includes/settings.php:262
@@ -145,39 +144,34 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"プラグインを有効にするとすぐに、GoDaddyメールマーケティングの Webフォームを選"
-"択し、サイトへ挿入することができるようになります。 設定は簡単です。 下に、ア"
-"カウントのメールアドレスと APIキー（GoDaddyメールマーケティングのアカウント "
-"[%s] エリアで確認できます）を入力します。 Webフォームをサイトに表示する3つの"
-"方法："
+"プラグインを有効にするとすぐに、GoDaddyメールマーケティングの Webフォームを選択し、サイトへ挿入することができるようになります。 "
+"設定は簡単です。 下に、アカウントのメールアドレスと APIキー（GoDaddyメールマーケティングのアカウント [%s] "
+"エリアで確認できます）を入力します。 Webフォームをサイトに表示する3つの方法："
 
 #: includes/settings.php:307
 msgid ""
-"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
-"called “GoDaddy Email Marketing Form” and drag it into the widget area of "
-"your choice. You can then add a title and select a form!"
+"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the "
+"widget called “GoDaddy Email Marketing Form” and drag it into the widget "
+"area of your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>ウィジェット：</strong> 外観 &rarr; ウィジェットへ進んで「GoDaddyメー"
-"ルマーケティングフォーム」というウィジェットを見つけ、任意のウィジェットエリ"
-"アへドラッグしてください。 次にタイトルを追加してフォームを選択します。"
+"<strong>ウィジェット：</strong> 外観 &rarr; "
+"ウィジェットへ進んで「GoDaddyメールマーケティングフォーム」というウィジェットを見つけ、任意のウィジェットエリアへドラッグしてください。 次にタイトルを追加してフォームを選択します。"
 
 #: includes/settings.php:308
 msgid ""
-"<strong>Shortcode:</strong> You can add a form to any post or page by adding "
-"the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
+"<strong>Shortcode:</strong> You can add a form to any post or page by "
+"adding the shortcode (ex. <code>[gem id=80326]</code>) in the page/post "
+"editor."
 msgstr ""
-"<strong>ショートコード：</strong> ページ/投稿エディタでショートコード（例： "
-"<code>[gem id=80326]</code>）を追加することで、あらゆる投稿やページにフォーム"
-"を追加することができます。"
+"<strong>ショートコード：</strong> ページ/投稿エディタでショートコード（例： <code>[gem id=80326]</code>）を追加することで、あらゆる投稿やページにフォームを追加することができます。"
 
 #: includes/settings.php:310
-#, fuzzy
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>"
 msgstr ""
-"<strong>テンプレートタグ：</strong> 次のテンプレートタグを任意の WordPress"
-"ファイルに追加できます： <code>%s</code>。 例： <code>%s</code>"
+"<strong>Template Tag:</strong> You can add the following template tag into "
+"any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>"
 
 #: includes/settings.php:320
 msgid "For more information:"
@@ -239,9 +233,7 @@ msgstr "トランジェントデータを消去"
 msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
-msgstr ""
-"このプラグインに関係するキャッシュデータだけを削除します。ハードリセットを行"
-"う前に行う必要があります。"
+msgstr "このプラグインに関係するキャッシュデータだけを削除します。ハードリセットを行う前に行う必要があります。"
 
 #: includes/settings.php:435
 msgid "Hard Reset"
@@ -265,23 +257,23 @@ msgstr "設定"
 
 #: includes/settings.php:612
 msgid "Help"
-msgstr ""
+msgstr "Help"
 
 #: includes/settings.php:619
 msgid "Reach Your Fans"
 msgstr "ファンの心をつかみましょう"
 
 #: includes/settings.php:622
-#, fuzzy
 msgid ""
+"Email marketing makes it easier than ever to turn casual visits into "
+"lasting relationship. You're already collecting subscribers, now you just "
+"need to start emailing them. It only takes a few moments to %1$screate an "
+"email marketing campaign%2$s."
+msgstr ""
 "Email marketing makes it easier than ever to turn casual visits into lasting "
 "relationship. You're already collecting subscribers, now you just need to "
 "start emailing them. It only takes a few moments to %1$screate an email "
 "marketing campaign%2$s."
-msgstr ""
-"メールマーケティングを使えば、たまたま訪れたビジターの心をつかみ、長期的なお"
-"客様になっていただくことも簡単です。購読者が集まった今、今度はメールを送信し"
-"始めるだけです。わずかな時間で%sメールキャンペーンを作成%sできます。"
 
 #: includes/settings.php:628
 msgid "Available Signup Forms"
@@ -334,9 +326,7 @@ msgstr "新規キャンペーンを作成"
 msgid ""
 "If you are experiencing issues and are unsure of the cause, you may want to "
 "activate debug mode, which displays additional options."
-msgstr ""
-"問題に遭遇し、原因が不明な場合には、デバッグモードをアクティブにしてみてくだ"
-"さい。追加のオプションが表示されます。"
+msgstr "問題に遭遇し、原因が不明な場合には、デバッグモードをアクティブにしてみてください。追加のオプションが表示されます。"
 
 #: includes/widget.php:21
 msgid "GoDaddy Email Marketing Form"
@@ -360,18 +350,16 @@ msgstr "設定ページ"
 
 #. Author URI of the plugin/theme
 msgid "https://gem.godaddy.com/"
-msgstr ""
+msgstr "https://gem.godaddy.com/"
 
 #. Description of the plugin/theme
-#, fuzzy
 msgid ""
 "Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to "
 "set up, the plugin allows your site visitors to subscribe to your email "
 "lists."
 msgstr ""
-"GoDaddyメールマーケティング登録フォームを WordPressサイトへ追加しましょう！ "
-"簡単設定の GoDaddyメールマーケティング プラグインなら、サイト訪問者がメーリン"
-"グリストに登録できるようになります。"
+"Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to "
+"set up, the plugin allows your site visitors to subscribe to your email lists."
 
 #: includes/settings.php:96
 msgctxt "failed copy response"
@@ -386,13 +374,11 @@ msgstr "GoDaddyメールマーケティング体験をお楽しみください�
 #: includes/settings.php:592
 msgctxt "header note"
 msgid ""
-"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
-"set up, the GoDaddy Email Marketing plugin allows your site visitors to "
+"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy "
+"to set up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
 msgstr ""
-"GoDaddyメールマーケティング登録フォームを WordPressサイトへ追加しましょう！ "
-"簡単設定の GoDaddyメールマーケティング プラグインなら、サイト訪問者がメーリン"
-"グリストに登録できるようになります。"
+"GoDaddyメールマーケティング登録フォームを WordPressサイトへ追加しましょう！ 簡単設定の GoDaddyメールマーケティング プラグインなら、サイト訪問者がメーリングリストに登録できるようになります。"
 
 #: includes/settings.php:596
 msgctxt "header note"
@@ -402,9 +388,7 @@ msgstr "まだフォームがありません。"
 #: includes/settings.php:599
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr ""
-"初めて、GoDaddy をご利用になりますか？ アカウントを作成すれば、今すぐご利用い"
-"ただけます。 %s "
+msgstr "初めて、GoDaddy をご利用になりますか？ アカウントを作成すれば、今すぐご利用いただけます。 %s "
 
 #: includes/settings.php:599
 msgctxt "header button"
@@ -424,10 +408,9 @@ msgid ""
 "then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
 "account, %2$s."
 msgstr ""
-"このプラグインを作動するには、GoDaddyメールマーケティングアカウントにアクセス"
-"する必要があります。  %1$s で、ユーザー名と API キーを入手できます。 以下にコ"
-"ピー＆ペーストしてから、[設定を保存] をクリックします。 GoDaddyメールマーケ"
-"ティングのアカウントをまだお持ちでない場合、%2$s で取得できます。"
+"このプラグインを作動するには、GoDaddyメールマーケティングアカウントにアクセスする必要があります。  %1$s で、ユーザー名と API "
+"キーを入手できます。 以下にコピー＆ペーストしてから、[設定を保存] をクリックします。 "
+"GoDaddyメールマーケティングのアカウントをまだお持ちでない場合、%2$s で取得できます。"
 
 #: includes/settings.php:851
 msgctxt "account details link"
@@ -442,39 +425,9 @@ msgstr "ここでお申込みいただけます"
 #: includes/widget.php:24
 msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr ""
-"サイドバーに、GoDaddyメールマーケティング登録フォームが埋め込まれています。"
+msgstr "サイドバーに、GoDaddyメールマーケティング登録フォームが埋め込まれています。"
 
 #: includes/widget.php:156
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr "%sで GoDaddyメールマーケティングのアカウントを設定してください。"
-
-#~ msgid "Thank you for signing up!"
-#~ msgstr "この度はご登録ありがとうございます！"
-
-#~ msgid ""
-#~ "Thank you for signing up! Please check your email to confirm your "
-#~ "subscription."
-#~ msgstr ""
-#~ "この度はご登録ありがとうございます！ 登録確認のためメールをご確認くださ"
-#~ "い。"
-
-#~ msgid "Oops! There was a problem. Please try again."
-#~ msgstr "申し訳ありません。 問題があります。 もう一度お試しください。"
-
-#~ msgid "Please enter a valid email address."
-#~ msgstr "有効なメールアドレスを入力してください。"
-
-#~ msgctxt "Name of required field"
-#~ msgid "%s is a required field."
-#~ msgstr "%s の欄は入力必須です。"
-
-#~ msgid "GoDaddy Email Marketing is almost ready."
-#~ msgstr "GoDaddyメールマーケティングの準備が間もなく整います。"
-
-#~ msgid "You must enter your username &amp; API key for it to work."
-#~ msgstr "完了するにはユーザー名 &amp; APIキーを入力する必要があります。"
-
-#~ msgid "Let's do it!"
-#~ msgstr "入力してください！"
