@@ -136,6 +136,8 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		wp_set_current_user( $user_id );
 
+		$this->assertTrue( current_user_can( 'manage_options' ) );
+
 		$instance->page_load();
 		$instance->action_admin_menu();
 
@@ -594,5 +596,39 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertTrue( get_transient( 'gem-settings-updated' ) );
 
 		$this->delete_data( $instance->slug );
+	}
+
+	/**
+	 * Test getting various request urls.
+	 *
+	 * @see GEM_Settings::generate_help_tab_content()
+	 */
+	public function test_generate_help_tab_content() {
+
+		global $locale;
+
+		$domains = array(
+			''    => 'www',
+			'uk'  => 'ua',
+			'el'  => 'gr',
+		);
+
+		foreach ( $domains as $lang => $domain ) {
+
+			$locale   = $lang;
+			$instance = new GEM_Settings();
+
+			ob_start();
+
+			$instance->generate_help_tab_content();
+
+			$contents = ob_get_clean();
+
+			$this->assertContains( "<iframe src=\"https://{$domain}.godaddy.com/help/godaddy-email-marketing-1000013\" frameborder=\"0\" scrolling=\"no\"></iframe>", $contents );
+
+		}
+
+		unset( $locale );
+
 	}
 }

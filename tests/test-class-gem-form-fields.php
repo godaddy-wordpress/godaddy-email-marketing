@@ -254,7 +254,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$this->assertContains( '<option value="31"> 31 </option>', $actual_output );
 		$this->assertContains( '<select fingerprint="date" data-id="form_1_the_name_a" data-name="the_name_a">', $actual_output );
 		$this->assertContains( '<option value="2021"> 2021 </option>', $actual_output );
-		$this->assertContains( '<option value="1936"> 1936 </option>', $actual_output );
+		$this->assertContains( '<option value="1937"> 1937 </option>', $actual_output );
 		$this->assertContains( '<input type="hidden" id="form_1_the_name_a" name="the_name_a" value="" class="" data-label="' . $field->display . '" />', $actual_output );
 		remove_action( 'gem_required_field_class', array( $this, 'gem_required_field_class_callback' ) );
 

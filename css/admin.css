@@ -65,9 +65,18 @@ div.updated.gem-identity p:first-child {
 	vertical-align: top;
 }
 
+#help iframe {
+	width: 100%;
+	min-height: 800px;
+	margin-top: 20px;
+}
+
 @media screen and (min-width: 783px) {
 	#settings .form-table th {
 		width: 30%;
+	}
+	#help iframe {
+		margin-top: 10px;
 	}
 }
 
