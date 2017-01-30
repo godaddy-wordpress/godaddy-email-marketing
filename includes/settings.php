@@ -609,7 +609,7 @@ class GEM_Settings {
 						<a href="#forms" class="nav-tab <?php echo esc_attr( 'forms' === $tab ? 'nav-tab-active' : '' ); ?>"><?php esc_html_e( 'Forms', 'godaddy-email-marketing' ); ?></a>
 					<?php endif; ?>
 					<a href="#settings" class="nav-tab <?php echo esc_attr( 'settings' === $tab || empty( $tab ) ? 'nav-tab-active' : '' ); ?>"><?php esc_html_e( 'Settings', 'godaddy-email-marketing' ); ?></a>
-					<a href="#help" class="nav-tab <?php echo esc_attr( 'help' === $tab || empty( $tab ) ? 'nav-tab-active' : '' ); ?>"><?php esc_html_e( 'Help', 'godaddy-email-marketing' ); ?></a>
+					<a href="#help" class="nav-tab <?php echo esc_attr( 'help' === $tab ? 'nav-tab-active' : '' ); ?>"><?php esc_html_e( 'Help', 'godaddy-email-marketing' ); ?></a>
 				</h2>
 
 				<div id="setting-errors"></div>
