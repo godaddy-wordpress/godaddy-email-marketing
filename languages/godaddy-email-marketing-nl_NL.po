@@ -370,8 +370,9 @@ msgid ""
 "set up, the plugin allows your site visitors to subscribe to your email "
 "lists."
 msgstr ""
-"Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to "
-"set up, the plugin allows your site visitors to subscribe to your email lists."
+"Voeg het aanmeldingsformulier voor e-mailmarketing van GoDaddy toe aan je "
+"WordPress-site! Met de plug-in, die eenvoudig is in te stellen, kunnen je "
+"sitebezoekers zich abonneren op je e-maillijsten."
 
 #: includes/settings.php:96
 msgctxt "failed copy response"

@@ -266,7 +266,7 @@ msgstr "सेटिंग"
 
 #: includes/settings.php:612
 msgid "Help"
-msgstr "Help"
+msgstr "मदद"
 
 #: includes/settings.php:619
 msgid "Reach Your Fans"

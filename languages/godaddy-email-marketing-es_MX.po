@@ -268,7 +268,7 @@ msgstr "Configuración"
 
 #: includes/settings.php:612
 msgid "Help"
-msgstr "Help"
+msgstr "Ayuda"
 
 #: includes/settings.php:619
 msgid "Reach Your Fans"
@@ -371,8 +371,9 @@ msgid ""
 "set up, the plugin allows your site visitors to subscribe to your email "
 "lists."
 msgstr ""
-"Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to "
-"set up, the plugin allows your site visitors to subscribe to your email lists."
+"¡Agrega el formulario de registro de GoDaddy Email Marketing a tu sitio de "
+"WordPress! El complemento es fácil de configurar y permite a los visitantes "
+"de tu sitio registrarse a tus listas de correos electrónicos."
 
 #: includes/settings.php:96
 msgctxt "failed copy response"

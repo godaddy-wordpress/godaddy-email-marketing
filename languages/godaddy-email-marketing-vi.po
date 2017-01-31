@@ -267,7 +267,7 @@ msgstr "Thiết lập"
 
 #: includes/settings.php:612
 msgid "Help"
-msgstr "Help"
+msgstr "Trợ giúp"
 
 #: includes/settings.php:619
 msgid "Reach Your Fans"
@@ -370,8 +370,9 @@ msgid ""
 "set up, the plugin allows your site visitors to subscribe to your email "
 "lists."
 msgstr ""
-"Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to "
-"set up, the plugin allows your site visitors to subscribe to your email lists."
+"Thêm mẫu đăng ký Tiếp thị qua email của GoDaddy vào trang WordPress! Với ưu "
+"điểm dễ cài đặt, trình cắm cho phép khách truy cập trang đăng ký danh sách "
+"email của bạn."
 
 #: includes/settings.php:96
 msgctxt "failed copy response"
