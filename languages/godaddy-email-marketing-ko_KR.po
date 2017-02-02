@@ -171,8 +171,8 @@ msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>"
 msgstr ""
-"<strong>Template Tag:</strong> You can add the following template tag into "
-"any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>"
+"‌‌<strong>템플릿 태그:</strong> 워드프레스 파일에 다음과 같은 템플릿 태그를 추가할 수 있습니다. "
+"<code>%1$s</code> 예: <code>%2$s</code>"
 
 #: includes/settings.php:320
 msgid "For more information:"
@@ -271,10 +271,8 @@ msgid ""
 "need to start emailing them. It only takes a few moments to %1$screate an "
 "email marketing campaign%2$s."
 msgstr ""
-"Email marketing makes it easier than ever to turn casual visits into lasting "
-"relationship. You're already collecting subscribers, now you just need to "
-"start emailing them. It only takes a few moments to %1$screate an email "
-"marketing campaign%2$s."
+"이메일 마케팅을 활용하면 가벼운 방문을 지속적인 관계로 쉽게 바꿀 수 있습니다. 귀하는 이미 구독자를 모집하고 있으니, 이제 구독자들에게 "
+"이메일 발송을 시작해야 합니다. %1$s이메일 마케팅 캠페인 만들기%2$s는 잠깐이면 됩니다."
 
 #: includes/settings.php:628
 msgid "Available Signup Forms"

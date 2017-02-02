@@ -169,8 +169,7 @@ msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>"
 msgstr ""
-"<strong>Template Tag:</strong> You can add the following template tag into "
-"any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>"
+"‌‌<strong>模板标签：</strong>您可以在任何 WordPress 文档中添加以下模板标签：<code>%1$s</code>。例如 <code>%2$s</code>"
 
 #: includes/settings.php:320
 msgid "For more information:"
@@ -269,10 +268,7 @@ msgid ""
 "need to start emailing them. It only takes a few moments to %1$screate an "
 "email marketing campaign%2$s."
 msgstr ""
-"Email marketing makes it easier than ever to turn casual visits into lasting "
-"relationship. You're already collecting subscribers, now you just need to "
-"start emailing them. It only takes a few moments to %1$screate an email "
-"marketing campaign%2$s."
+"使用电邮营销比以往更轻松地实现休闲访客到顾客的转换。您已经开始收集订户了，现在只需要开始向他们发送电子邮件。只需花费几分钟%1$s创建一场电邮营销活动%2$s。"
 
 #: includes/settings.php:628
 msgid "Available Signup Forms"

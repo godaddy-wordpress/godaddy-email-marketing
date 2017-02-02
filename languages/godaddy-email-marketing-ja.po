@@ -170,8 +170,7 @@ msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>"
 msgstr ""
-"<strong>Template Tag:</strong> You can add the following template tag into "
-"any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>"
+"‌‌<strong>テンプレートタグ：</strong>次のテンプレートタグを任意の WordPressファイルに追加できます：<code>%1$s</code>。例：<code>%2$s</code>"
 
 #: includes/settings.php:320
 msgid "For more information:"
@@ -270,10 +269,8 @@ msgid ""
 "need to start emailing them. It only takes a few moments to %1$screate an "
 "email marketing campaign%2$s."
 msgstr ""
-"Email marketing makes it easier than ever to turn casual visits into lasting "
-"relationship. You're already collecting subscribers, now you just need to "
-"start emailing them. It only takes a few moments to %1$screate an email "
-"marketing campaign%2$s."
+"メールマーケティングを使えば、たまたま訪れたビジターの心をつかみ、長期的なお客様になっていただくことも簡単です。購読者が集まり始めたので、今度はメールを送信しましょう。わずかな時間で%1$sメールマーケティング "
+"キャンペーンを作成%2$sできます。"
 
 #: includes/settings.php:628
 msgid "Available Signup Forms"
