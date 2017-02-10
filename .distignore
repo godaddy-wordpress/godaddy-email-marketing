@@ -1,7 +1,6 @@
 .*
 composer.*
 Gruntfile.js
-languages/*.po
 package.json
 phpcs.ruleset.xml
 phpunit.xml.dist
@@ -9,5 +8,6 @@ readme.md
 bin/
 assets/
 dev-lib/
+languages/*.po
 tests/
 vendor/
