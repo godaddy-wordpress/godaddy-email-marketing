@@ -2,7 +2,7 @@
   "name": "godaddy-email-marketing-sign-up-forms",
   "title": "GoDaddy Email Marketing",
   "description": "Allow your site visitors to subscribe to your email lists using a sidebar widget.",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "author": "GoDaddy",
   "license": "GPL-2.0",
   "repository": "godaddy/wp-godaddy-email-marketing",
@@ -11,7 +11,7 @@
     "url": "https://github.com/godaddy/wp-godaddy-email-marketing/issues"
   },
   "engines": {
-    "node" : ">= 7.5.0",
+    "node": ">= 7.5.0",
     "php": ">= 5.2",
     "wordpress": ">= 3.8"
   },

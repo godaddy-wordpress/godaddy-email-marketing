@@ -510,7 +510,7 @@ class GEM_Settings {
 	/**
 	 * Generate the help tab content
 	 *
-	 * @since NEXT
+	 * @since 1.2.0
 	 *
 	 * @return mixed
 	 */
