@@ -1,10 +1,10 @@
 # Copyright (c) 2017 GoDaddy Operating Company, LLC. All Rights Reserved.
 msgid ""
 msgstr ""
-"Project-Id-Version: GoDaddy Email Marketing 1.1.4\n"
+"Project-Id-Version: GoDaddy Email Marketing 1.2.0\n"
 "Report-Msgid-Bugs-To: "
 "https://github.com/godaddy/wp-godaddy-email-marketing/issues\n"
-"POT-Creation-Date: 2017-02-10 21:19:40+00:00\n"
+"POT-Creation-Date: 2017-02-10 23:03:03+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
