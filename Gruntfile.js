@@ -23,7 +23,6 @@ module.exports = function( grunt ) {
 							'*.php',
 							'license.txt',
 							'readme.txt',
-							'assets/**',
 							'css/**',
 							'images/**',
 							'includes/**',
