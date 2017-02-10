@@ -1,48 +1,164 @@
-/* jshint node:true */
+/* global module, require */
+
 module.exports = function( grunt ) {
+
 	'use strict';
 
 	var pkg = grunt.file.readJSON( 'package.json' );
 
-	// Project configuration.
 	grunt.initConfig( {
+
 		pkg: pkg,
 
-		keywords: [
-			'__',
-			'_e',
-			'__ngettext:1,2',
-			'_n:1,2',
-			'__ngettext_noop:1,2',
-			'_n_noop:1,2',
-			'_c',
-			'_nc:4c,1,2',
-			'_x:1,2c',
-			'_nx:4c,1,2',
-			'_nx_noop:4c,1,2',
-			'_ex:1,2c',
-			'esc_attr__',
-			'esc_attr_e',
-			'esc_attr_x:1,2c',
-			'esc_html__',
-			'esc_html_e',
-			'esc_html_x:1,2c'
-		],
+		clean: {
+			build: [ 'build/' ]
+		},
+
+		copy: {
+			build: {
+				files: [
+					{
+						expand: true,
+						src: [
+							'*.php',
+							'license.txt',
+							'readme.txt',
+							'css/**',
+							'images/**',
+							'includes/**',
+							'js/**',
+							'languages/*.{mo,pot}',
+							'!**/*.{ai,eps,psd}'
+						],
+						dest: 'build/'
+					}
+				]
+			}
+		},
 
 		cssmin: {
 			options: {
 				shorthandCompacting: false,
-				roundingPrecision: -1,
+				roundingPrecision: 5,
 				processImport: false
 			},
+			all: {
+				files: [
+					{
+						expand: true,
+						cwd: 'css/',
+						src: [ '**/*.css', '!**/*.min.css' ],
+						dest: 'css/',
+						ext: '.min.css'
+					}
+				]
+			}
+		},
+
+		devUpdate: {
+			packages: {
+				options: {
+					packageJson: null,
+					packages: {
+						devDependencies: true,
+						dependencies: false
+					},
+					reportOnlyPkgs: [],
+					reportUpdated: false,
+					semver: true,
+					updateType: 'force'
+				}
+			}
+		},
+
+		imagemin: {
+			options: {
+				optimizationLevel: 3
+			},
+			assets: {
+				expand: true,
+				cwd: 'assets/',
+				src: [ '**/*.{gif,jpeg,jpg,png,svg}' ],
+				dest: 'assets/'
+			},
+			images: {
+				expand: true,
+				cwd: 'images/',
+				src: [ '**/*.{gif,jpeg,jpg,png,svg}' ],
+				dest: 'images/'
+			},
+		},
+
+		jshint: {
+			all: [ 'Gruntfile.js', 'js/**/*.js', '!js/**/*.min.js' ]
+		},
+
+		makepot: {
 			target: {
-				files: [{
-					expand: true,
-					cwd: 'css',
-					src: ['*.css', '!*.min.css'],
-					dest: 'css',
-					ext: '.min.css'
-				}]
+				options: {
+					domainPath: 'languages/',
+					include: [ '/*.php', 'includes/.+\.php' ],
+					mainFile: 'godaddy-email-marketing.php',
+					potComments: 'Copyright (c) {year} GoDaddy Operating Company, LLC. All Rights Reserved.',
+					potFilename: 'godaddy-email-marketing.pot',
+					potHeaders: {
+						'x-poedit-keywordslist': true
+					},
+					processPot: function( pot, options ) {
+						pot.headers['report-msgid-bugs-to'] = pkg.bugs.url;
+						return pot;
+					},
+					type: 'wp-plugin',
+					updatePoFiles: true
+				}
+			}
+		},
+
+		potomo: {
+			files: {
+				expand: true,
+				cwd: 'languages/',
+				src: [ '*.po' ],
+				dest: 'languages/',
+				ext: '.mo'
+			}
+		},
+
+		replace: {
+			php: {
+				src: [
+					'*.php',
+					'includes/**/*.php'
+				],
+				overwrite: true,
+				replacements: [
+					{
+						from: /Version:(\s*?)[a-zA-Z0-9\.\-\+]+$/m,
+						to: 'Version:$1' + pkg.version
+					},
+					{
+						from: /@version(\s*?)[a-zA-Z0-9\.\-\+]+$/m,
+						to: '@version$1' + pkg.version
+					},
+					{
+						from: /@since(.*?)NEXT/mg,
+						to: '@since$1' + pkg.version
+					},
+					{
+						from: /GEM_VERSION(['"]\s*?,\s*?['"])[a-zA-Z0-9\.\-\+]+/mg,
+						to: 'GEM_VERSION$1' + pkg.version
+					}
+				]
+			},
+			readme: {
+				src: 'readme.*',
+				overwrite: true,
+				replacements: [
+					{
+						from: /^(\*\*|)Stable tag:(\*\*|)(\s*?)[a-zA-Z0-9.-]+(\s*?)$/mi,
+						to: '$1Stable tag:$2$3<%= pkg.version %>$4'
+					}
+				]
 			}
 		},
 
@@ -50,173 +166,82 @@ module.exports = function( grunt ) {
 			options: {
 				ASCIIOnly: true
 			},
-			core: {
+			all: {
 				expand: true,
-				cwd: 'js',
-				dest: 'js',
-				ext: '.min.js',
-				src: ['*.js', '!*.min.js']
+				cwd: 'js/',
+				src: [ '**/*.js', '!**/*.min.js' ],
+				dest: 'js/',
+				ext: '.min.js'
 			}
 		},
 
 		watch: {
 			css: {
-				files: ['*.css', '!*.min.css'],
-				options: {
-					cwd: 'css',
-					nospawn: true
-				},
-				tasks: ['cssmin']
+				files: [ '**/*.css', '!**/*.min.css' ],
+				tasks: [ 'imagemin' ]
 			},
-			uglify: {
-				files: ['*.js', '!*.js.css'],
-				options: {
-					cwd: 'js',
-					nospawn: true
-				},
-				tasks: ['uglify']
-			}
-		},
-
-		pot: {
-			options: {
-				omit_header: false,
-				text_domain: 'godaddy-email-marketing',
-				encoding: 'UTF-8',
-				dest: 'languages/',
-				keywords: '<%= keywords %>',
-				msgmerge: true
+			images: {
+				files: [ 'assets/**/*.{gif,jpeg,jpg,png,svg}', 'images/**/*.{gif,jpeg,jpg,png,svg}' ],
+				tasks: [ 'imagemin' ]
 			},
-			files: {
-				src: [ 'godaddy-email-marketing.php', 'includes/*.php' ],
-				expand: true
-			}
-		},
-
-		po2mo: {
-			files: {
-				src: [
-					'languages/*.po',
-					'!languages/*.po~'
-				],
-				expand: true
-			}
-		},
-
-		// Check textdomain errors.
-		checktextdomain: {
-			options:{
-				text_domain: 'godaddy-email-marketing',
-				keywords: '<%= keywords %>'
+			js: {
+				files: [ '**/*.js', '!**/*.min.js' ],
+				tasks: [ 'jshint', 'uglify' ]
 			},
-			files: {
-				src: [
-					'**/*.php',
-					'!build/**',
-					'!dev-lib/**',
-					'!node_modules/**',
-					'!tests/**'
-				],
-				expand: true
+			readme: {
+				files: 'readme.txt',
+				tasks: [ 'readme' ]
 			}
 		},
 
-		// Build a deployable plugin.
-		copy: {
-			build: {
-				src: [
-					'**',
-					'!.*',
-					'!.*/**',
-					'!.DS_Store',
-					'!assets/**',
-					'!build/**',
-					'!composer.json',
-					'!dev-lib/**',
-					'!Gruntfile.js',
-					'!languages/*.po*',
-					'!node_modules/**',
-					'!npm-debug.log',
-					'!package.json',
-					'!phpcs.ruleset.xml',
-					'!phpunit.xml.dist',
-					'!readme.md',
-					'!tests/**'
-				],
-				dest: 'build',
-				expand: true,
-				dot: true
-			}
-		},
-
-		// Deploys a git Repo to the WordPress SVN repo.
 		wp_deploy: {
-			deploy: {
-				options: {
-					plugin_slug: pkg.name,
-					build_dir: 'build',
-					assets_dir: 'assets',
-					plugin_main_file: 'godaddy-email-marketing.php'
-				}
+			options: {
+				plugin_slug: pkg.name,
+				build_dir: 'build/',
+				assets_dir: 'assets/',
+				plugin_main_file: 'godaddy-email-marketing.php',
+				svn_user: grunt.file.exists( 'svn-username' ) ? grunt.file.read( 'svn-username' ).trim() : ''
 			}
 		},
 
-		// Clean up.
-		clean: {
-			po: {
-				src: [
-					'languages/*.po~'
-				]
+		wp_readme_to_markdown: {
+			options: {
+				post_convert: function( readme ) {
+					var matches = readme.match( /\*\*Tags:\*\*(.*)\r?\n/ ),
+					    tags    = matches[1].trim().split( ', ' ),
+					    section = matches[0];
+
+					for ( var i = 0; i < tags.length; i++ ) {
+						section = section.replace( tags[i], '[' + tags[i] + '](https://wordpress.org/plugins/tags/' + tags[i] + '/)' );
+					}
+
+					// Tag links
+					readme = readme.replace( matches[0], section );
+
+					// Badges
+					readme = readme.replace( '## Description ##', grunt.template.process( pkg.badges.join( ' ' ) ) + "  \r\n\r\n## Description ##" );
+
+					return readme;
+				}
 			},
-			build: {
-				src: [
-					'build'
-				]
+			main: {
+				files: {
+					'readme.md': 'readme.txt'
+				}
 			}
 		}
 
 	} );
 
-	// Load tasks
-	grunt.loadNpmTasks( 'grunt-checktextdomain' );
-	grunt.loadNpmTasks( 'grunt-contrib-clean' );
-	grunt.loadNpmTasks( 'grunt-contrib-copy' );
-	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
-	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-	grunt.loadNpmTasks( 'grunt-contrib-watch' );
-	grunt.loadNpmTasks( 'grunt-po2mo' );
-	grunt.loadNpmTasks( 'grunt-pot' );
-	grunt.loadNpmTasks( 'grunt-wp-deploy' );
+	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 
-	// Default task.
-	grunt.registerTask( 'default', [
-		'cssmin',
-		'uglify'
-	] );
-
-	// Translates strings.
-	grunt.registerTask( 'update_translation', [
-		'checktextdomain',
-		'pot',
-		'po2mo',
-		'clean:po'
-	] );
-
-	// Executes development tasks.
-	grunt.registerTask( 'develop', [
-		'default',
-		'update_translation'
-	] );
-
-	/*
-	 * Deploys to wordpress.org.
-	 *
-	 * Execute the develop command and commit changes before deploying.
-	 */
-	grunt.registerTask( 'deploy', [
-		'copy',
-		'wp_deploy',
-		'clean:build'
-	] );
+	grunt.registerTask( 'default',    [ 'cssmin', 'jshint', 'uglify', 'imagemin', 'readme' ] );
+	grunt.registerTask( 'check',      [ 'devUpdate' ] );
+	grunt.registerTask( 'build',      [ 'default', 'clean:build', 'copy:build' ] );
+	grunt.registerTask( 'deploy',     [ 'build', 'wp_deploy', 'clean:build' ] );
+	grunt.registerTask( 'readme',     [ 'wp_readme_to_markdown' ] );
+	grunt.registerTask( 'update-pot', [ 'makepot' ] );
+	grunt.registerTask( 'update-mo',  [ 'potomo' ] );
+	grunt.registerTask( 'version',    [ 'replace', 'readme' ] );
 
 };

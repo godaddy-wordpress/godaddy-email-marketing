@@ -1,19 +1,46 @@
 {
   "name": "godaddy-email-marketing-sign-up-forms",
-  "version": "1.1.4",
+  "title": "GoDaddy Email Marketing",
+  "description": "Allow your site visitors to subscribe to your email lists using a sidebar widget.",
+  "version": "1.2.0",
   "author": "GoDaddy",
   "license": "GPL-2.0",
   "repository": "godaddy/wp-godaddy-email-marketing",
+  "homepage": "https://wordpress.org/plugins/godaddy-email-marketing-sign-up-forms/",
+  "bugs": {
+    "url": "https://github.com/godaddy/wp-godaddy-email-marketing/issues"
+  },
+  "engines": {
+    "node": ">= 7.5.0",
+    "php": ">= 5.2",
+    "wordpress": ">= 3.8"
+  },
+  "badges": [
+    "[![Build Status](https://travis-ci.org/<%= pkg.repository %>.svg?branch=master)](https://travis-ci.org/<%= pkg.repository %>)",
+    "[![devDependencies Status](https://david-dm.org/<%= pkg.repository %>/master/dev-status.svg)](https://david-dm.org/<%= pkg.repository %>/master?type=dev)",
+    "[![License](https://img.shields.io/badge/license-GPL--2.0-brightgreen.svg)](https://github.com/<%= pkg.repository %>/blob/master/license.txt)",
+    "[![PHP <%= pkg.engines.php %>](https://img.shields.io/badge/php-<%= pkg.engines.php %>-8892bf.svg)](https://secure.php.net/supported-versions.php)",
+    "[![WordPress <%= pkg.engines.wordpress %>](https://img.shields.io/badge/wordpress-<%= pkg.engines.wordpress %>-blue.svg)](https://wordpress.org/download/release-archive/)"
+  ],
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-checktextdomain": "~1.0.0",
-    "grunt-contrib-clean": "~1.0.0",
-    "grunt-contrib-copy": "~1.0.0",
-    "grunt-contrib-cssmin": "~1.0.0",
-    "grunt-contrib-uglify": "~1.0.0",
-    "grunt-contrib-watch": "~1.0.0",
-    "grunt-po2mo": "^0.1.2",
-    "grunt-pot": "^0.2.1",
-    "grunt-wp-deploy": "~1.2.0"
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-dev-update": "^2.0.0",
+    "grunt-potomo": "^3.5.0",
+    "grunt-text-replace": "^0.4.0",
+    "grunt-wp-i18n": "^1.0.0",
+    "grunt-wp-deploy": "^1.2.1",
+    "grunt-wp-readme-to-markdown": "^2.0.1",
+    "matchdep": "^1.0.1"
+  },
+  "scripts": {
+    "version": "grunt version && git add -A .",
+    "postversion": "git push && git push --tags"
   }
 }

@@ -1,16 +1,20 @@
 <?php
 /**
- * Plugin Name: GoDaddy Email Marketing Signup Forms
+ * Plugin Name: GoDaddy Email Marketing
  * Plugin URI: https://gem.godaddy.com/
  * Description: Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to set up, the plugin allows your site visitors to subscribe to your email lists.
- * Version: 1.1.4
+ * Version: 1.2.0
  * Author: GoDaddy
  * Author URI: https://gem.godaddy.com/
  * License: GPL-2.0
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: godaddy-email-marketing
  * Domain Path: /languages
  *
- * Copyright © 2016 GoDaddy Operating Company, LLC. All Rights Reserved.
+ * This plugin, like WordPress, is licensed under the GPL.
+ * Use it to make something cool, have fun, and share what you've learned with others.
+ *
+ * Copyright © 2017 GoDaddy Operating Company, LLC. All Rights Reserved.
  *
  * @package GEM
  */
@@ -104,7 +108,7 @@ class GEM_Official {
 
 		// Plugin's main directory.
 		defined( 'GEM_VERSION' )
-			or define( 'GEM_VERSION', '1.1.4' );
+			or define( 'GEM_VERSION', '1.2.0' );
 
 		// Set up the base name.
 		isset( self::$basename ) || self::$basename = plugin_basename( __FILE__ );
@@ -138,7 +142,7 @@ class GEM_Official {
 	 * Load translations.
 	 */
 	public function i18n() {
-		load_plugin_textdomain( 'godaddy-email-marketing', false, dirname( self::$basename ) . '/languages' );
+		load_plugin_textdomain( 'godaddy-email-marketing', false, basename( dirname( self::$basename ) ) . '/languages' );
 	}
 
 	/**
@@ -234,6 +238,26 @@ class GEM_Official {
 	 * Displays the admin notice.
 	 */
 	public function action_admin_notices() {
+
+		if ( get_option( 'wpem_gem_notice' ) ) {
+
+			?>
+			<div class="gem-notice notice notice-success is-dismissible">
+				<p>
+					<?php
+					printf(
+						__( 'Your website has a superpower: Email marketing. %1$s.', 'godaddy-email-marketing' ),
+						'<a href="' . admin_url( 'options-general.php?page=gem-settings' ) . '">' . __( 'Learn More', 'godaddy-email-marketing' ) . '</a>'
+					);
+					?>
+				</p>
+			</div>
+			<?php
+
+			delete_option( 'wpem_gem_notice' );
+
+		}
+
 		$screen = get_current_screen();
 
 		if ( 'plugins' !== $screen->id ) {

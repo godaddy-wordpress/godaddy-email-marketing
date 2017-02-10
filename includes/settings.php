@@ -95,6 +95,25 @@ class GEM_Settings {
 		wp_localize_script( 'gem-admin', 'GEMAdmin', array(
 			'copyFailed' => _x( 'Please press Ctrl/Cmd+C to copy.', 'failed copy response', 'godaddy-email-marketing' ),
 		) );
+
+		wp_enqueue_script(
+			'gem-iframeresizer',
+			plugins_url( 'js/iframeResizer.min.js', GEM_PLUGIN_BASE ),
+			array(),
+			'3.5.1',
+			false
+		);
+
+		wp_enqueue_script(
+			'gem-iframeresizer-ie8',
+			plugins_url( 'js/js/iframeResizer.ie8.polyfils.min.js', GEM_PLUGIN_BASE ),
+			array(),
+			'3.5.1',
+			false
+		);
+
+		function_exists( 'wp_script_add_data' ) ? wp_script_add_data( 'gem-iframeresizer-ie8', 'conditional', 'lte IE 8' ) : $GLOBALS['wp_styles']->add_data( 'gem-iframeresizer-ie8', 'conditional', 'lte IE 8' );
+
 	}
 
 	/**
@@ -288,7 +307,7 @@ class GEM_Settings {
 				__( '<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget called “GoDaddy Email Marketing Form” and drag it into the widget area of your choice. You can then add a title and select a form!', 'godaddy-email-marketing' ),
 				__( '<strong>Shortcode:</strong> You can add a form to any post or page by adding the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor.', 'godaddy-email-marketing' ),
 				sprintf(
-					__( '<strong>Template Tag:</strong> You can add the following template tag into any WordPress file: <code>%s</code>. Ex. <code>%s</code>', 'godaddy-email-marketing' ),
+					__( '<strong>Template Tag:</strong> You can add the following template tag into any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>', 'godaddy-email-marketing' ),
 					'&lt;?php gem_form( $form_id ); ?&gt;',
 					'&lt;?php gem_form( 91 ); ?&gt;'
 				)
@@ -443,6 +462,7 @@ class GEM_Settings {
 	 * @param int    $columns The number of columns in each row.
 	 */
 	public function do_settings_sections( $page, $columns = 2 ) {
+
 		global $wp_settings_sections, $wp_settings_fields;
 
 		// @codeCoverageIgnoreStart
@@ -485,6 +505,56 @@ class GEM_Settings {
 			</div>
 			<?php
 		}
+	}
+
+	/**
+	 * Generate the help tab content
+	 *
+	 * @since 1.2.0
+	 *
+	 * @return mixed
+	 */
+	public function generate_help_tab_content() {
+
+		$language  = get_locale();
+		$parts     = explode( '_', $language );
+		$subdomain = ! empty( $parts[1] ) ? strtolower( $parts[1] ) : strtolower( $language );
+
+		// Overrides
+		switch ( $subdomain ) {
+
+			case '' :
+
+				$subdomain = 'www'; // Default
+
+				break;
+
+			case 'uk' :
+
+				$subdomain = 'ua'; // Ukrainian (Українська)
+
+				break;
+
+			case 'el' :
+
+				$subdomain = 'gr'; // Greek (Ελληνικά)
+
+				break;
+
+		}
+
+		?>
+		<iframe src="<?php echo esc_url( "https://{$subdomain}.godaddy.com/help/godaddy-email-marketing-1000013" ) ?>" frameborder="0" scrolling="no"></iframe>
+
+		<script type="text/javascript">
+			iFrameResize( {
+				bodyBackground: 'transparent',
+				checkOrigin: false,
+				heightCalculationMethod: 'taggedElement'
+			} );
+		</script>
+		<?php
+
 	}
 
 	/**
@@ -539,12 +609,22 @@ class GEM_Settings {
 						<a href="#forms" class="nav-tab <?php echo esc_attr( 'forms' === $tab ? 'nav-tab-active' : '' ); ?>"><?php esc_html_e( 'Forms', 'godaddy-email-marketing' ); ?></a>
 					<?php endif; ?>
 					<a href="#settings" class="nav-tab <?php echo esc_attr( 'settings' === $tab || empty( $tab ) ? 'nav-tab-active' : '' ); ?>"><?php esc_html_e( 'Settings', 'godaddy-email-marketing' ); ?></a>
+					<a href="#help" class="nav-tab <?php echo esc_attr( 'help' === $tab ? 'nav-tab-active' : '' ); ?>"><?php esc_html_e( 'Help', 'godaddy-email-marketing' ); ?></a>
 				</h2>
 
 				<div id="setting-errors"></div>
 
 				<?php if ( ! empty( $forms->signups ) ) : ?>
 					<div id="forms" class="panel">
+						<h3><?php esc_html_e( 'Reach Your Fans', 'godaddy-email-marketing' ); ?></h3>
+						<p><?php
+							printf(
+								esc_html__( 'Email marketing makes it easier than ever to turn casual visits into lasting relationship. You\'re already collecting subscribers, now you just need to start emailing them. It only takes a few moments to %1$screate an email marketing campaign%2$s.', 'godaddy-email-marketing' ),
+								'<a href="https://gem.godaddy.com" target="_blank">',
+								'</a>'
+							);
+							?>
+						</p>
 						<h3><?php esc_html_e( 'Available Signup Forms', 'godaddy-email-marketing' ); ?></h3>
 						<table class="wp-list-table widefat fixed striped">
 							<thead>
@@ -621,6 +701,13 @@ class GEM_Settings {
 					</p>
 				</div>
 			</form>
+
+			<div id="help" class="panel">
+
+				<?php $this->generate_help_tab_content(); ?>
+
+				<br style="clear:both" />
+			</div>
 		</div>
 		<?php
 	}

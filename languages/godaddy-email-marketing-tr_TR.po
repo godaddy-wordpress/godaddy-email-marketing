@@ -1,193 +1,144 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Copyright (c) 2017 GoDaddy Operating Company, LLC. All Rights Reserved.
 msgid ""
 msgstr ""
-"Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 09:12-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Project-Id-Version: GoDaddy Email Marketing 1.1.4\n"
+"Report-Msgid-Bugs-To: https://github.com/godaddy/wp-godaddy-email-marketing/"
+"issues\n"
+"POT-Creation-Date: 2017-02-10 21:19:40+00:00\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;\n"
 
-#: godaddy-email-marketing.php:197
-msgid "Thank you for signing up!"
-msgstr "Kaydolduğunuz için teşekkürler!"
-
-#: godaddy-email-marketing.php:198
-msgid ""
-"Thank you for signing up! Please check your email to confirm your "
-"subscription."
-msgstr ""
-"Kaydolduğunuz için teşekkürler! Aboneliğinizi doğrulamak için lütfen e-"
-"postanızı kontrol edin."
-
-#: godaddy-email-marketing.php:199
-msgid "Oops! There was a problem. Please try again."
-msgstr "Üzgünüz! Bir sorun oluştu. Lütfen tekrar deneyin."
-
-#: godaddy-email-marketing.php:200
-msgid "Please enter a valid email address."
-msgstr "Lütfen geçerli bir e-posta adresi girin."
-
-#: godaddy-email-marketing.php:201
-#, php-format
-msgctxt "Name of required field"
-msgid "%s is a required field."
-msgstr "%s zorunlu bir alandır."
-
-#: godaddy-email-marketing.php:213 includes/settings.php:532
-msgid "Settings"
-msgstr "Ayarlar"
-
-#: godaddy-email-marketing.php:249
-msgid "GoDaddy Email Marketing is almost ready."
-msgstr "GoDaddy E-posta Pazarlama'ya kavuşmanıza az kaldı."
-
-#: godaddy-email-marketing.php:249
-msgid "You must enter your username &amp; API key for it to work."
-msgstr ""
-"Ürünün çalışması için kullanıcı adınızı ve API anahtarını girmeniz gerekir."
-
-#: godaddy-email-marketing.php:250
-msgid "Let's do it!"
-msgstr "Hadi, işe koyulalım!"
-
-#: includes/class-shortcode.php:48 includes/settings.php:61
+#. Plugin Name of the plugin/theme
 msgid "GoDaddy Email Marketing"
 msgstr "GoDaddy E-posta Pazarlama"
 
-#: includes/class-shortcode.php:52
+#: includes/class-shortcode.php:54
 msgid "Signup Forms"
 msgstr "Kayıt Formları"
 
-#: includes/class-shortcode.php:53
+#: includes/class-shortcode.php:55
 msgid "Choose one of the available forms."
 msgstr "Kullanılabilir formlardan birini seçin."
 
-#: includes/render.php:67
+#: includes/render.php:71
 msgid "Powered by GoDaddy"
 msgstr "GoDaddy Destekli"
 
-#: includes/render.php:322
+#: includes/render.php:326
 msgid "Month"
 msgstr "Ay"
 
-#: includes/render.php:323
+#: includes/render.php:327
 msgid "January"
 msgstr "Ocak"
 
-#: includes/render.php:324
+#: includes/render.php:328
 msgid "Febuary"
 msgstr "Şubat"
 
-#: includes/render.php:325
+#: includes/render.php:329
 msgid "March"
 msgstr "Mart"
 
-#: includes/render.php:326
+#: includes/render.php:330
 msgid "April"
 msgstr "Nisan"
 
-#: includes/render.php:327
+#: includes/render.php:331
 msgid "May"
 msgstr "Mayıs"
 
-#: includes/render.php:328
+#: includes/render.php:332
 msgid "June"
 msgstr "Haziran"
 
-#: includes/render.php:329
+#: includes/render.php:333
 msgid "July"
 msgstr "Temmuz"
 
-#: includes/render.php:330
+#: includes/render.php:334
 msgid "August"
 msgstr "Ağustos"
 
-#: includes/render.php:331
+#: includes/render.php:335
 msgid "September"
 msgstr "Eylül"
 
-#: includes/render.php:332
+#: includes/render.php:336
 msgid "October"
 msgstr "Ekim"
 
-#: includes/render.php:333
+#: includes/render.php:337
 msgid "November"
 msgstr "Kasım"
 
-#: includes/render.php:334
+#: includes/render.php:338
 msgid "December"
 msgstr "Aralık"
 
-#: includes/render.php:339
+#: includes/render.php:343
 msgid "Day"
 msgstr "Gün"
 
-#: includes/render.php:347
+#: includes/render.php:351
 msgid "Year"
 msgstr "Yıl"
 
-#: includes/settings.php:60 includes/settings.php:504
+#: includes/settings.php:60 includes/settings.php:583
 msgid "GoDaddy Email Marketing Signup Forms"
 msgstr "GoDaddy E-Posta Pazarlama Kayıt Formları"
 
-#: includes/settings.php:96
-msgctxt "failed copy response"
-msgid "Please press Ctrl/Cmd+C to copy."
-msgstr "Kopyalamak için Ctrl/Cmd+C tuşlarına basın."
-
-#: includes/settings.php:220
+#: includes/settings.php:241
 msgid "All data has been removed."
 msgstr "Tüm veriler silindi"
 
-#: includes/settings.php:224
+#: includes/settings.php:245
 msgid "All transients were removed."
 msgstr "Geçici tüm veriler kaldırıldı."
 
-#: includes/settings.php:228
+#: includes/settings.php:249
 msgid "Forms list was successfully updated."
 msgstr "Form listesi başarıyla güncellendi."
 
-#: includes/settings.php:232
+#: includes/settings.php:253
 msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr ""
 "Kullanıcı bilgileri hatalı! Lütfen bilgileri doğru girdiğinizden emin olun."
 
-#: includes/settings.php:236
+#: includes/settings.php:257
 msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr ""
 "GoDaddy E-posta Pazarlama ile bağlantı kuruldu! Ayarlarınız tamamlandı!"
 
-#: includes/settings.php:241
+#: includes/settings.php:262
 msgid "Settings have been updated."
 msgstr "Ayarlar güncellendi."
 
-#: includes/settings.php:245
+#: includes/settings.php:266
 msgid "Please fill in the username and the API key first."
 msgstr "Lütfen öncelikle kullanıcı adını ve API anahtarını doldurun."
 
-#: includes/settings.php:277
+#: includes/settings.php:298
 msgid "Overview"
 msgstr "Genel bakış"
 
-#: includes/settings.php:281
+#: includes/settings.php:302
 msgid "Instructions"
 msgstr "Talimatlar"
 
-#: includes/settings.php:283
-#, php-format
+#: includes/settings.php:304
 msgid ""
 "Once the plugin is activated, you will be able to select and insert any of "
 "your GoDaddy Email Marketing webforms right into your site. Setup is easy. "
@@ -202,7 +153,7 @@ msgstr ""
 "girmeniz yeterlidir. Sitenizde web formu görüntülemek için aşağıdaki 3 "
 "yöntemden yararlanabilirsiniz:"
 
-#: includes/settings.php:286
+#: includes/settings.php:307
 msgid ""
 "<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
 "called “GoDaddy Email Marketing Form” and drag it into the widget area of "
@@ -213,7 +164,7 @@ msgstr ""
 "alanına sürükleyin. Ardından da bir başlık ekleyebilir ve form "
 "seçebilirsiniz!"
 
-#: includes/settings.php:287
+#: includes/settings.php:308
 msgid ""
 "<strong>Shortcode:</strong> You can add a form to any post or page by adding "
 "the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
@@ -222,72 +173,72 @@ msgstr ""
 "istediğiniz gönderiye ya da sayfaya form  ekleyebilirsiniz (ör: <code>[gem "
 "id=80326]</code>). "
 
-#: includes/settings.php:289
-#, php-format
+#: includes/settings.php:310
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
-"any WordPress file: <code>%s</code>. Ex. <code>%s</code>"
+"any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>"
 msgstr ""
 "<strong>Şablon Etiket:</strong> Aşağıdaki şablon etiketi istediğiniz "
-"WordPress dosyasına ekleyebilirsiniz: <code>%s</code>. Örn: <code>%s</code>"
+"WordPress dosyasına ekleyebilirsiniz: <code>%1$s</code>. Ör. <code>%2$s</"
+"code>"
 
-#: includes/settings.php:299
+#: includes/settings.php:320
 msgid "For more information:"
 msgstr "Ayrıntılı bilgi için: "
 
-#: includes/settings.php:300
+#. Author of the plugin/theme
 msgid "GoDaddy"
 msgstr "GoDaddy"
 
-#: includes/settings.php:301
+#: includes/settings.php:322
 msgid "GoDaddy Help"
 msgstr "GoDaddy Yardım"
 
-#: includes/settings.php:302
+#: includes/settings.php:323
 msgid "Contact GoDaddy"
 msgstr "GoDaddy ile iletişime geçin"
 
-#: includes/settings.php:327
+#: includes/settings.php:348
 msgid "Account Details"
 msgstr "Hesap Bilgileri"
 
-#: includes/settings.php:334
+#: includes/settings.php:355
 msgid "Username"
 msgstr "Kullanıcı adı"
 
-#: includes/settings.php:348
+#: includes/settings.php:369
 msgid "API Key"
 msgstr "API Anahtarı"
 
-#: includes/settings.php:362
+#: includes/settings.php:383
 msgid "Footer Link"
 msgstr "Alt Bağlantı"
 
-#: includes/settings.php:369
+#: includes/settings.php:390
 msgid "Display \"Powered by GoDaddy\"?"
 msgstr "\"GoDaddy Destekli\" mesajı gösterilsin mi?"
 
-#: includes/settings.php:376
+#: includes/settings.php:397
 msgid "Debugging"
 msgstr "Hata Ayıklama"
 
-#: includes/settings.php:383
+#: includes/settings.php:404
 msgid "Debug Mode"
 msgstr "Hata Ayıklama Modu"
 
-#: includes/settings.php:390
+#: includes/settings.php:411
 msgid "Activated"
 msgstr "Etkinleştirildi"
 
-#: includes/settings.php:397
+#: includes/settings.php:419
 msgid "Cache Reset"
 msgstr "Önbellek Sıfırlama"
 
-#: includes/settings.php:403
+#: includes/settings.php:428
 msgid "Erase Transients"
 msgstr "Geçici Verileri Sil"
 
-#: includes/settings.php:404
+#: includes/settings.php:429
 msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
@@ -295,107 +246,95 @@ msgstr ""
 "Sadece bu eklentiyle ilişkilendirilen önbelleklenmiş verileri temizler ve "
 "donanım sıfırlaması öncesinde gerçekleştirilir."
 
-#: includes/settings.php:410
+#: includes/settings.php:435
 msgid "Hard Reset"
 msgstr "Donanım Sıfırlaması"
 
-#: includes/settings.php:416
+#: includes/settings.php:444
 msgid "Erase All Data"
 msgstr "Tüm Verileri Sil"
 
-#: includes/settings.php:417
+#: includes/settings.php:445
 msgid "Purges all saved data associated with this plugin."
 msgstr "Bu eklentiyle ilişkilendirilen, kaydedilmiş tüm verileri temizler."
 
-#: includes/settings.php:511
-msgctxt "gem header note"
-msgid "Enjoy the GoDaddy Email Marketing Experience."
-msgstr "GoDaddy E-posta Pazarlama Deneyiminin Keyfine Varın."
-
-#: includes/settings.php:513
-msgctxt "header note"
-msgid ""
-"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
-"set up, the GoDaddy Email Marketing plugin allows your site visitors to "
-"subscribe to your email list."
-msgstr ""
-"GoDaddy E-posta Pazarlama kayıt formunu WordPress sitenize ekleyin! Kurulumu "
-"kolay GoDaddy E-posta Pazarlama eklentisi, site ziyaretçilerinizin e-posta "
-"listenize abone olmalarını sağlar."
-
-#: includes/settings.php:517
-msgctxt "header note"
-msgid "You don't have any forms yet."
-msgstr "Henüz hiç formunuz yok."
-
-#: includes/settings.php:520
-#, php-format
-msgctxt "Sign up button"
-msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "GoDaddy'de yeni misiniz? Hemen başlamak için bir hesap oluşturun. %s "
-
-#: includes/settings.php:520
-msgctxt "header button"
-msgid "Sign Up Now"
-msgstr "Şimdi Kaydolun"
-
-#: includes/settings.php:530
+#: includes/settings.php:609
 msgid "Forms"
 msgstr "Formlar"
 
-#: includes/settings.php:539
+#: includes/settings.php:611
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: includes/settings.php:612
+msgid "Help"
+msgstr "Yardım"
+
+#: includes/settings.php:619
+msgid "Reach Your Fans"
+msgstr "Hayranlarınıza Ulaşın"
+
+#: includes/settings.php:622
+msgid ""
+"Email marketing makes it easier than ever to turn casual visits into lasting "
+"relationship. You're already collecting subscribers, now you just need to "
+"start emailing them. It only takes a few moments to %1$screate an email "
+"marketing campaign%2$s."
+msgstr ""
+"E-posta pazarlama, sitenizi şans eseri ziyaret eden kişilerle daha kolay "
+"ilişki kurmanızı sağlayarak onları sürekli ziyaretçilere dönüştürür. Zaten "
+"abone kazanmaya devam ediyorsunuz; sıra bu abonelere e-posta göndermeye "
+"geldi. %1$sBir e-posta pazarlama kampanyası oluşturmak%2$s için sadece "
+"birkaç dakikanızı ayırmanız yeterli."
+
+#: includes/settings.php:628
 msgid "Available Signup Forms"
 msgstr "Kullanılabilen Kayıt Formları"
 
-#: includes/settings.php:543 includes/settings.php:550
-#: includes/settings.php:558
+#: includes/settings.php:632 includes/settings.php:639
+#: includes/settings.php:647
 msgid "Form Name"
 msgstr "Form Adı"
 
-#: includes/settings.php:544 includes/settings.php:551
-#: includes/settings.php:572
+#: includes/settings.php:633 includes/settings.php:640
+#: includes/settings.php:661
 msgid "Form ID"
 msgstr "Form Kimliği"
 
-#: includes/settings.php:545 includes/settings.php:552
-#: includes/settings.php:575
+#: includes/settings.php:634 includes/settings.php:641
+#: includes/settings.php:664
 msgid "Shortcode"
 msgstr "Kısa kod"
 
-#: includes/settings.php:562
+#: includes/settings.php:651
 msgid "Opens in a new window"
 msgstr "Yeni bir pencerede açılır"
 
-#: includes/settings.php:562
+#: includes/settings.php:651
 msgid "Edit form in GoDaddy Email Marketing"
 msgstr "Formu GoDaddy E-posta Pazarlamada düzenle"
 
-#: includes/settings.php:565
+#: includes/settings.php:654
 msgid "Preview"
 msgstr "Önizleme"
 
-#: includes/settings.php:588
+#: includes/settings.php:677
 msgid "Not seeing your form?"
 msgstr "Formunuzu görüntüleyemiyor musunuz?"
 
-#: includes/settings.php:607
-msgctxt "save settings button"
-msgid "Save Settings"
-msgstr "Ayarları Kaydet"
-
-#: includes/settings.php:637
+#: includes/settings.php:741
 msgid "Refresh Forms"
 msgstr "Formları Yenile"
 
-#: includes/settings.php:644
+#: includes/settings.php:748
 msgid "Create a New Signup Form"
 msgstr "Yeni bir Kayıt Formu Oluşturun"
 
-#: includes/settings.php:651
+#: includes/settings.php:755
 msgid "Create a New Campaign"
 msgstr "Yeni bir Kampanya Oluşturun"
 
-#: includes/settings.php:737
+#: includes/settings.php:841
 msgid ""
 "If you are experiencing issues and are unsure of the cause, you may want to "
 "activate debug mode, which displays additional options."
@@ -403,38 +342,9 @@ msgstr ""
 "Sorun yaşıyorsanız ve nedenini bilmiyorsanız, ek seçenekleri gösteren hata "
 "ayıklama modunu etkinleştirmeniz gerekebilir."
 
-#: includes/settings.php:747
-#, php-format
-msgctxt "1. Sign-in link, 2. Sign-up link"
-msgid ""
-"For this plugin to work, it needs to access your GoDaddy Email Marketing "
-"account. %1$s to get your username and API key. Copy and paste them below; "
-"then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
-"account, %2$s."
-msgstr ""
-"Bu eklentinin çalışması için GoDaddy E-posta Pazarlama hesabınıza erişiminin "
-"olması gerekir. kullanıcı adınızı ve API anahtarınızı almak için %1$s .  "
-"Öğeleri aşağı yapıştırın ve ardından \"Ayarları Kaydet\" seçeneğini "
-"tıklayın. GoDaddy E-posta Pazarlama hesabınız yoksa, %2$s."
-
-#: includes/settings.php:747
-msgctxt "account details link"
-msgid "Sign in here"
-msgstr "Buradan giriş yapın"
-
-#: includes/settings.php:747
-msgctxt "account details link"
-msgid "sign up here"
-msgstr "buradan giriş yapın"
-
 #: includes/widget.php:21
 msgid "GoDaddy Email Marketing Form"
 msgstr "GoDaddy E-Posta Pazarlama Formu"
-
-#: includes/widget.php:24
-msgctxt "widget description"
-msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr "GoDaddy E-posta Pazarlama kayıt formlarını kenar çubuğuna gömün."
 
 #: includes/widget.php:128
 msgid "Title:"
@@ -448,12 +358,94 @@ msgstr "Ek Metin:"
 msgid "Form:"
 msgstr "Form:"
 
-#: includes/widget.php:156
-#, php-format
-msgctxt "link to settings page"
-msgid "Please set up your GoDaddy Email Marketing account in the %s."
-msgstr "GoDaddy E-posta Pazarlama hesabınızı lütfen %s konumunda kurun."
-
 #: includes/widget.php:160
 msgid "settings page"
 msgstr "ayarlar sayfası"
+
+#. Author URI of the plugin/theme
+msgid "https://gem.godaddy.com/"
+msgstr "https://gem.godaddy.com/"
+
+#. Description of the plugin/theme
+msgid ""
+"Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to "
+"set up, the plugin allows your site visitors to subscribe to your email "
+"lists."
+msgstr ""
+"GoDaddy E-posta Pazarlama web formunu WordPress sitenize ekleyin! Kurulumu "
+"kolay eklenti, site ziyaretçilerinizin e-posta listelerinize abone "
+"olmalarını sağlar."
+
+#: includes/settings.php:96
+msgctxt "failed copy response"
+msgid "Please press Ctrl/Cmd+C to copy."
+msgstr "Kopyalamak için Ctrl/Cmd+C tuşlarına basın."
+
+#: includes/settings.php:590
+msgctxt "gem header note"
+msgid "Enjoy the GoDaddy Email Marketing Experience."
+msgstr "GoDaddy E-posta Pazarlama Deneyiminin Keyfine Varın."
+
+#: includes/settings.php:592
+msgctxt "header note"
+msgid ""
+"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
+"set up, the GoDaddy Email Marketing plugin allows your site visitors to "
+"subscribe to your email list."
+msgstr ""
+"GoDaddy E-posta Pazarlama kayıt formunu WordPress sitenize ekleyin! Kurulumu "
+"kolay GoDaddy E-posta Pazarlama eklentisi, site ziyaretçilerinizin e-posta "
+"listenize abone olmalarını sağlar."
+
+#: includes/settings.php:596
+msgctxt "header note"
+msgid "You don't have any forms yet."
+msgstr "Henüz hiç formunuz yok."
+
+#: includes/settings.php:599
+msgctxt "Sign up button"
+msgid "New to GoDaddy? Create an account to get started today. %s"
+msgstr "GoDaddy'de yeni misiniz? Hemen başlamak için bir hesap oluşturun. %s "
+
+#: includes/settings.php:599
+msgctxt "header button"
+msgid "Sign Up Now"
+msgstr "Şimdi Kaydolun"
+
+#: includes/settings.php:696
+msgctxt "save settings button"
+msgid "Save Settings"
+msgstr "Ayarları Kaydet"
+
+#: includes/settings.php:851
+msgctxt "1. Sign-in link, 2. Sign-up link"
+msgid ""
+"For this plugin to work, it needs to access your GoDaddy Email Marketing "
+"account. %1$s to get your username and API key. Copy and paste them below; "
+"then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
+"account, %2$s."
+msgstr ""
+"Bu eklentinin çalışması için GoDaddy E-posta Pazarlama hesabınıza erişiminin "
+"olması gerekir. kullanıcı adınızı ve API anahtarınızı almak için %1$s .  "
+"Öğeleri aşağı yapıştırın ve ardından \"Ayarları Kaydet\" seçeneğini "
+"tıklayın. GoDaddy E-posta Pazarlama hesabınız yoksa, %2$s."
+
+#: includes/settings.php:851
+msgctxt "account details link"
+msgid "Sign in here"
+msgstr "Buradan giriş yapın"
+
+#: includes/settings.php:851
+msgctxt "account details link"
+msgid "sign up here"
+msgstr "buradan giriş yapın"
+
+#: includes/widget.php:24
+msgctxt "widget description"
+msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
+msgstr "GoDaddy E-posta Pazarlama kayıt formlarını kenar çubuğuna gömün."
+
+#: includes/widget.php:156
+msgctxt "link to settings page"
+msgid "Please set up your GoDaddy Email Marketing account in the %s."
+msgstr "GoDaddy E-posta Pazarlama hesabınızı lütfen %s konumunda kurun."

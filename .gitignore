@@ -1,5 +1,5 @@
+svn-username
 .idea/
-vendor/
-node_modules/
-composer.lock
 build/
+node_modules/
+vendor/
