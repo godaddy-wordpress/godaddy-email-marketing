@@ -86,7 +86,7 @@ module.exports = function( grunt ) {
 				cwd: 'images/',
 				src: [ '**/*.{gif,jpeg,jpg,png,svg}' ],
 				dest: 'images/'
-			},
+			}
 		},
 
 		jshint: {
