@@ -1,5 +1,5 @@
 === GoDaddy Email Marketing ===
-Contributors: godaddy, humanmade, xwp, fjarrett, jonathanbardo
+Contributors: godaddy, fjarrett, jonathanbardo, eherman24, susanygodaddy, madmimi
 Tags: email, forms, godaddy, mailing list, marketing, newsletter, opt-in, signup, subscribe, widget, contacts
 Requires at least: 3.8
 Tested up to: 4.7
