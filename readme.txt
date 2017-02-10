@@ -113,6 +113,10 @@ You can find your **Secret API Key** in the [Settings section](https://gem.godad
 
 == Changelog ==
 
+= 1.2.0 =
+* New: Added a Help tab to the Settings screen.
+* New: Dismissable admin notice after on-boarding
+
 = 1.1.4 =
 * Tweak: Indicate support for WordPress 4.7
 
