@@ -40,7 +40,7 @@
     "matchdep": "^1.0.1"
   },
   "scripts": {
-    "version": "grunt version && dev-lib/generate-markdown-readme && git add -A .",
+    "version": "grunt version && git add -A .",
     "postversion": "git push && git push --tags"
   }
 }

@@ -236,13 +236,13 @@ module.exports = function( grunt ) {
 
 	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 
-	grunt.registerTask( 'default',    [ 'cssmin', 'jshint', 'uglify', 'readme' ] );
+	grunt.registerTask( 'default',    [ 'cssmin', 'jshint', 'uglify', 'imagemin', 'readme' ] );
 	grunt.registerTask( 'check',      [ 'devUpdate' ] );
-	grunt.registerTask( 'build',      [ 'default', 'clean:build', 'copy:build', 'imagemin:build' ] );
+	grunt.registerTask( 'build',      [ 'default', 'clean:build', 'copy:build' ] );
 	grunt.registerTask( 'deploy',     [ 'build', 'wp_deploy', 'clean:build' ] );
 	grunt.registerTask( 'readme',     [ 'wp_readme_to_markdown' ] );
 	grunt.registerTask( 'update-pot', [ 'makepot' ] );
 	grunt.registerTask( 'update-mo',  [ 'potomo' ] );
-	grunt.registerTask( 'version',    [ 'replace' ] );
+	grunt.registerTask( 'version',    [ 'replace', 'readme' ] );
 
 };
