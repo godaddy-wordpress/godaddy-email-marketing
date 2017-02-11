@@ -34,6 +34,8 @@ after_script:
   - source $DEV_LIB_PATH/travis.after_script.sh
 
 before_deploy:
+  - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar /tmp/wp-cli.phar
+  - chmod +x /tmp/wp-cli.phar
   - export RELEASE_FOLDER=godaddy-email-marketing
   - php /tmp/wp-cli.phar package install runcommand/dist-archive
   - cp -r ${TRAVIS_BUILD_DIR} /tmp/${RELEASE_FOLDER}
