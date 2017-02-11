@@ -195,12 +195,14 @@ module.exports = function( grunt ) {
 		},
 
 		wp_deploy: {
-			options: {
-				plugin_slug: pkg.name,
-				build_dir: 'build/',
-				assets_dir: 'assets/',
-				plugin_main_file: 'godaddy-email-marketing.php',
-				svn_user: grunt.file.exists( 'svn-username' ) ? grunt.file.read( 'svn-username' ).trim() : ''
+			plugin: {
+				options: {
+					plugin_slug: pkg.name,
+					build_dir: 'build/',
+					assets_dir: 'assets/',
+					plugin_main_file: 'godaddy-email-marketing.php',
+					svn_user: grunt.file.exists( 'svn-username' ) ? grunt.file.read( 'svn-username' ).trim() : false
+				}
 			}
 		},
 
