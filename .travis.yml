@@ -36,7 +36,7 @@ after_script:
 before_deploy:
   - curl https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar > /tmp/wp-cli.phar
   - chmod +x /tmp/wp-cli.phar
-  - export RELEASE_FOLDER=godaddy-email-marketing
+  - export RELEASE_FOLDER=godaddy-email-marketing-sign-up-forms
   - php /tmp/wp-cli.phar package install runcommand/dist-archive
   - cp -r ${TRAVIS_BUILD_DIR} /tmp/${RELEASE_FOLDER}
   - mv /tmp/${RELEASE_FOLDER} ${TRAVIS_BUILD_DIR}
