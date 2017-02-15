@@ -15,6 +15,8 @@ The GoDaddy Email Marketing Signup Forms plugin makes it easy to start building 
 
 With a GoDaddy Email Marketing starter account, you can collect as many email addresses as you like for free. And you can send up to 50 total emails to try it out. To learn more about GoDaddy Email Marketing, check out an overview [here](https://www.godaddy.com/online-marketing/email-marketing).
 
+[youtube https://youtu.be/0dNbib686ss]
+
 Once the plugin is activated, you can easily add a default signup form to your site using a widget. Or you can build your own custom signup form in GoDaddy Email Marketing and add it to your site by using a widget, shortcode, or template tag.
 
 Setup is easy; in the plugin Settings, simply enter your GoDaddy username and GoDaddy Email Marketing API key. Don’t have one? The plugin makes it easy to sign up.

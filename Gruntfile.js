@@ -217,11 +217,19 @@ module.exports = function( grunt ) {
 						section = section.replace( tags[i], '[' + tags[i] + '](https://wordpress.org/plugins/tags/' + tags[i] + '/)' );
 					}
 
+					// Banner
+					if ( grunt.file.exists( 'assets/banner-1544x500.png' ) ) {
+						readme = readme.replace( '**Contributors:**', "![Banner Image](assets/banner-1544x500.png)\r\n\r\n**Contributors:**" );
+					}
+
 					// Tag links
 					readme = readme.replace( matches[0], section );
 
 					// Badges
 					readme = readme.replace( '## Description ##', grunt.template.process( pkg.badges.join( ' ' ) ) + "  \r\n\r\n## Description ##" );
+
+					// YouTube
+					readme = readme.replace( /\[youtube\s+(?:https?:\/\/www\.youtube\.com\/watch\?v=|https?:\/\/youtu\.be\/)(.+?)\]/g, '[![Play video on YouTube](https://img.youtube.com/vi/$1/maxresdefault.jpg)](https://www.youtube.com/watch?v=$1)' );
 
 					return readme;
 				}
