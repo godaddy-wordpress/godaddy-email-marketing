@@ -2,19 +2,63 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GoDaddy Email Marketing 1.2.0\n"
-"Report-Msgid-Bugs-To: "
-"https://github.com/godaddy/wp-godaddy-email-marketing/issues\n"
-"POT-Creation-Date: 2017-02-10 23:03:03+00:00\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Report-Msgid-Bugs-To: https://github.com/godaddy/wp-godaddy-email-marketing/"
+"issues\n"
+"POT-Creation-Date: 2017-03-09 21:44:14+00:00\n"
 "PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Poedit-KeywordsList: "
-"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
-"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;\n"
 "X-Generator: grunt-wp-i18n1.0.0\n"
+
+#: godaddy-email-marketing.php:201
+msgid "Thank you for signing up!"
+msgstr ""
+
+#: godaddy-email-marketing.php:202
+msgid ""
+"Thank you for signing up! Please check your email to confirm your "
+"subscription."
+msgstr ""
+
+#: godaddy-email-marketing.php:203
+msgid "Oops! There was a problem. Please try again."
+msgstr ""
+
+#: godaddy-email-marketing.php:204
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: godaddy-email-marketing.php:219 includes/settings.php:611
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+#: godaddy-email-marketing.php:249
+msgid "Your website has a superpower: Email marketing. %1$s."
+msgstr ""
+
+#: godaddy-email-marketing.php:250
+msgid "Learn More"
+msgstr ""
+
+#: godaddy-email-marketing.php:275
+#, fuzzy
+msgid "GoDaddy Email Marketing is almost ready."
+msgstr "Φόρμα GoDaddy Μάρκετινγκ μέσω email"
+
+#: godaddy-email-marketing.php:275
+msgid "You must enter your username &amp; API key for it to work."
+msgstr ""
+
+#: godaddy-email-marketing.php:276
+msgid "Let's do it!"
+msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "GoDaddy Email Marketing"
@@ -113,12 +157,12 @@ msgid ""
 "The credentials are incorrect! Please verify that you have entered them "
 "correctly."
 msgstr ""
-"Τα διαπιστευτήρια είναι εσφαλμένα! Βεβαιωθείτε ότι τα έχετε καταχωρήσει σωστά."
+"Τα διαπιστευτήρια είναι εσφαλμένα! Βεβαιωθείτε ότι τα έχετε καταχωρήσει "
+"σωστά."
 
 #: includes/settings.php:257
 msgid ""
-"Connection with GoDaddy Email Marketing has been established! You're all "
-"set!"
+"Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr ""
 "Η σύνδεση με το GoDaddy Μάρκετινγκ μέσω email αποκαταστάθηκε! Είστε έτοιμοι!"
 
@@ -150,26 +194,25 @@ msgstr ""
 "οποιασδήποτε από τις φόρμες σας web από το GoDaddy Μάρκετινγκ μέσω email "
 "απευθείας στον ιστότοπό σας. Η ρύθμιση είναι πανεύκολη. Παρακάτω, αρκεί να "
 "καταχωρήσετε τη διεύθυνση email και το κλειδί API του λογαριασμού σας (το "
-"οποίο θα βρείτε στην περιοχή του λογαριασμού σας [%s] GoDaddy Μάρκετινγκ μέσω "
-"email). Ακολουθούν οι 3 τρόποι με τους οποίους μπορείτε να εμφανίσετε μια "
-"φόρμα web στον ιστότοπό σας:"
+"οποίο θα βρείτε στην περιοχή του λογαριασμού σας [%s] GoDaddy Μάρκετινγκ "
+"μέσω email). Ακολουθούν οι 3 τρόποι με τους οποίους μπορείτε να εμφανίσετε "
+"μια φόρμα web στον ιστότοπό σας:"
 
 #: includes/settings.php:307
 msgid ""
-"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the "
-"widget called “GoDaddy Email Marketing Form” and drag it into the widget "
-"area of your choice. You can then add a title and select a form!"
+"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
+"called “GoDaddy Email Marketing Form” and drag it into the widget area of "
+"your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>Widget:</strong> Μεταβείτε στην Εμφάνιση &rarr; Widgets και βρείτε το "
-"widget που ονομάζεται “Φόρμα GoDaddy Μάρκετινγκ μέσω email” και σύρετέ το "
+"<strong>Widget:</strong> Μεταβείτε στην Εμφάνιση &rarr; Widgets και βρείτε "
+"το widget που ονομάζεται “Φόρμα GoDaddy Μάρκετινγκ μέσω email” και σύρετέ το "
 "στην περιοχή widget της επιλογής σας. Στη συνέχεια μπορείτε να προσθέσετε "
 "έναν τίτλο και να επιλέξετε μια φόρμα!"
 
 #: includes/settings.php:308
 msgid ""
-"<strong>Shortcode:</strong> You can add a form to any post or page by "
-"adding the shortcode (ex. <code>[gem id=80326]</code>) in the page/post "
-"editor."
+"<strong>Shortcode:</strong> You can add a form to any post or page by adding "
+"the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
 "<strong>Σύντομος κωδικός:</strong> Μπορείτε να προσθέσετε μια φόρμα σε "
 "οποιαδήποτε ανάρτηση ή σελίδα, προσθέτοντας τον σύντομο κωδικό (π.χ. "
@@ -181,7 +224,8 @@ msgid ""
 "any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>"
 msgstr ""
 "<strong>Ετικέτα προτύπου:</strong> Μπορείτε να προσθέσετε την παρακάτω "
-"ετικέτα προτύπου σε οποιοδήποτε αρχείο WordPress: <code>%1$s</code> Π.χ. <code>%2$s</code>"
+"ετικέτα προτύπου σε οποιοδήποτε αρχείο WordPress: <code>%1$s</code> Π.χ. "
+"<code>%2$s</code>"
 
 #: includes/settings.php:320
 msgid "For more information:"
@@ -258,15 +302,13 @@ msgstr "Διαγραφή όλων των δεδομένων"
 
 #: includes/settings.php:445
 msgid "Purges all saved data associated with this plugin."
-msgstr "Κάνει εκκαθάριση όλων των αποθηκευμένων δεδομένων που σχετίζονται με αυτή την προσθήκη."
+msgstr ""
+"Κάνει εκκαθάριση όλων των αποθηκευμένων δεδομένων που σχετίζονται με αυτή "
+"την προσθήκη."
 
 #: includes/settings.php:609
 msgid "Forms"
 msgstr "Φόρμες"
-
-#: includes/settings.php:611
-msgid "Settings"
-msgstr "Ρυθμίσεις"
 
 #: includes/settings.php:612
 msgid "Help"
@@ -278,10 +320,10 @@ msgstr "Προσεγγίστε τους οπαδούς σας"
 
 #: includes/settings.php:622
 msgid ""
-"Email marketing makes it easier than ever to turn casual visits into "
-"lasting relationship. You're already collecting subscribers, now you just "
-"need to start emailing them. It only takes a few moments to %1$screate an "
-"email marketing campaign%2$s."
+"Email marketing makes it easier than ever to turn casual visits into lasting "
+"relationship. You're already collecting subscribers, now you just need to "
+"start emailing them. It only takes a few moments to %1$screate an email "
+"marketing campaign%2$s."
 msgstr ""
 "Το μάρκετινγκ μέσω email διευκολύνει άνευ προηγουμένου τη μετατροπή των "
 "περιστασιακών επισκέψεων σε μακρόχρονες σχέσεις. Ήδη συλλέγετε συνδρομητές, "
@@ -378,6 +420,11 @@ msgstr ""
 "σας WordPress! Εύκολη στη ρύθμιση, η προσθήκη επιτρέπει στους επισκέπτες του "
 "ιστότοπού σας να εγγράφονται ως συνδρομητές στις λίστες email σας."
 
+#: godaddy-email-marketing.php:205
+msgctxt "Name of required field"
+msgid "%s is a required field."
+msgstr ""
+
 #: includes/settings.php:96
 msgctxt "failed copy response"
 msgid "Please press Ctrl/Cmd+C to copy."
@@ -391,8 +438,8 @@ msgstr "Απολαύστε την εμπειρία του GoDaddy Μάρκετι
 #: includes/settings.php:592
 msgctxt "header note"
 msgid ""
-"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy "
-"to set up, the GoDaddy Email Marketing plugin allows your site visitors to "
+"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
+"set up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
 msgstr ""
 "Προσθέστε τη φόρμα εγγραφής στο GoDaddy Μάρκετινγκ μέσω email στον ιστότοπό "
@@ -408,7 +455,9 @@ msgstr "Δεν έχετε ακόμα καμία φόρμα."
 #: includes/settings.php:599
 msgctxt "Sign up button"
 msgid "New to GoDaddy? Create an account to get started today. %s"
-msgstr "Είστε νέοι στην GoDaddy? Δημιουργήστε έναν λογαριασμό για να ξεκινήσετε σήμερα. %s "
+msgstr ""
+"Είστε νέοι στην GoDaddy? Δημιουργήστε έναν λογαριασμό για να ξεκινήσετε "
+"σήμερα. %s "
 
 #: includes/settings.php:599
 msgctxt "header button"
@@ -447,7 +496,9 @@ msgstr "πραγματοποιήστε είσοδο εδώ"
 #: includes/widget.php:24
 msgctxt "widget description"
 msgid "Embed GoDaddy Email Marketing signup forms in the sidebar."
-msgstr "Ενσωμάτωση φορμών εγγραφής στο GoDaddy μάρκετινγκ μέσω email στην πλευρική γραμμή."
+msgstr ""
+"Ενσωμάτωση φορμών εγγραφής στο GoDaddy μάρκετινγκ μέσω email στην πλευρική "
+"γραμμή."
 
 #: includes/widget.php:156
 msgctxt "link to settings page"

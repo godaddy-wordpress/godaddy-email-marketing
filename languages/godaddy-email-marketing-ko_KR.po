@@ -2,19 +2,63 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GoDaddy Email Marketing 1.2.0\n"
-"Report-Msgid-Bugs-To: "
-"https://github.com/godaddy/wp-godaddy-email-marketing/issues\n"
-"POT-Creation-Date: 2017-02-10 23:03:03+00:00\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Report-Msgid-Bugs-To: https://github.com/godaddy/wp-godaddy-email-marketing/"
+"issues\n"
+"POT-Creation-Date: 2017-03-09 21:44:14+00:00\n"
 "PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Poedit-KeywordsList: "
-"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
-"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;\n"
 "X-Generator: grunt-wp-i18n1.0.0\n"
+
+#: godaddy-email-marketing.php:201
+msgid "Thank you for signing up!"
+msgstr ""
+
+#: godaddy-email-marketing.php:202
+msgid ""
+"Thank you for signing up! Please check your email to confirm your "
+"subscription."
+msgstr ""
+
+#: godaddy-email-marketing.php:203
+msgid "Oops! There was a problem. Please try again."
+msgstr ""
+
+#: godaddy-email-marketing.php:204
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: godaddy-email-marketing.php:219 includes/settings.php:611
+msgid "Settings"
+msgstr "설정"
+
+#: godaddy-email-marketing.php:249
+msgid "Your website has a superpower: Email marketing. %1$s."
+msgstr ""
+
+#: godaddy-email-marketing.php:250
+msgid "Learn More"
+msgstr ""
+
+#: godaddy-email-marketing.php:275
+#, fuzzy
+msgid "GoDaddy Email Marketing is almost ready."
+msgstr "GoDaddy 이메일 마케팅 폼"
+
+#: godaddy-email-marketing.php:275
+msgid "You must enter your username &amp; API key for it to work."
+msgstr ""
+
+#: godaddy-email-marketing.php:276
+msgid "Let's do it!"
+msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "GoDaddy Email Marketing"
@@ -116,8 +160,7 @@ msgstr "자격 증명이 정확하지 않습니다! 정확하게 입력했는지
 
 #: includes/settings.php:257
 msgid ""
-"Connection with GoDaddy Email Marketing has been established! You're all "
-"set!"
+"Connection with GoDaddy Email Marketing has been established! You're all set!"
 msgstr "GoDaddy 이메일 마케팅에 연결되었습니다! 모두 완료되었습니다!"
 
 #: includes/settings.php:262
@@ -144,35 +187,37 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"일단 플러그인을 활성화하면, GoDaddy 이메일 마케팅 웹폼을 선택하여 귀하의 사이트에 직접 삽입할 수 있습니다. 쉽게 설정할 수 "
-"있습니다. 아래에서, 귀하의 계정 이메일 주소와 API 키(귀하의 GoDaddy 이메일 마케팅 계정 [%s] 영역에 있음)를 입력하면 "
-"됩니다. 귀하의 사이트에 웹폼을 3 가지 방식으로 표시할 수 있습니다:"
+"일단 플러그인을 활성화하면, GoDaddy 이메일 마케팅 웹폼을 선택하여 귀하의 사이"
+"트에 직접 삽입할 수 있습니다. 쉽게 설정할 수 있습니다. 아래에서, 귀하의 계정 "
+"이메일 주소와 API 키(귀하의 GoDaddy 이메일 마케팅 계정 [%s] 영역에 있음)를 입"
+"력하면 됩니다. 귀하의 사이트에 웹폼을 3 가지 방식으로 표시할 수 있습니다:"
 
 #: includes/settings.php:307
 msgid ""
-"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the "
-"widget called “GoDaddy Email Marketing Form” and drag it into the widget "
-"area of your choice. You can then add a title and select a form!"
+"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
+"called “GoDaddy Email Marketing Form” and drag it into the widget area of "
+"your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>위젯:</strong> 모양 &rarr; 위젯으로 이동하여 “GoDaddy 이메일 마케팅 폼\" 위젯을 찾아, 원하는 위젯 "
-"영역으로 끌어 넣습니다. 제목을 추가하고 폼을 선택합니다!"
+"<strong>위젯:</strong> 모양 &rarr; 위젯으로 이동하여 “GoDaddy 이메일 마케팅 "
+"폼\" 위젯을 찾아, 원하는 위젯 영역으로 끌어 넣습니다. 제목을 추가하고 폼을 선"
+"택합니다!"
 
 #: includes/settings.php:308
 msgid ""
-"<strong>Shortcode:</strong> You can add a form to any post or page by "
-"adding the shortcode (ex. <code>[gem id=80326]</code>) in the page/post "
-"editor."
+"<strong>Shortcode:</strong> You can add a form to any post or page by adding "
+"the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
 msgstr ""
-"<strong>단축 코드:</strong> 페이지/게시물 편집기에서 단축 코드(예: <code>[gem id=80326]</code>)를 "
-"추가하여, 게시물 또는 페이지에 폼을 추가할 수 있습니다."
+"<strong>단축 코드:</strong> 페이지/게시물 편집기에서 단축 코드(예: "
+"<code>[gem id=80326]</code>)를 추가하여, 게시물 또는 페이지에 폼을 추가할 수 "
+"있습니다."
 
 #: includes/settings.php:310
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>"
 msgstr ""
-"‌‌<strong>템플릿 태그:</strong> 워드프레스 파일에 다음과 같은 템플릿 태그를 추가할 수 있습니다. "
-"<code>%1$s</code> 예: <code>%2$s</code>"
+"‌‌<strong>템플릿 태그:</strong> 워드프레스 파일에 다음과 같은 템플릿 태그를 추"
+"가할 수 있습니다. <code>%1$s</code> 예: <code>%2$s</code>"
 
 #: includes/settings.php:320
 msgid "For more information:"
@@ -234,7 +279,9 @@ msgstr "임시 데이터 삭제"
 msgid ""
 "Purges only the cached data associated with this plugin, and should be "
 "attempted before a hard reset."
-msgstr "이 플러그인과 관련된 캐시 데이터만 제거하며, 하드를 다시 설정하기 전에 시도해야 합니다."
+msgstr ""
+"이 플러그인과 관련된 캐시 데이터만 제거하며, 하드를 다시 설정하기 전에 시도해"
+"야 합니다."
 
 #: includes/settings.php:435
 msgid "Hard Reset"
@@ -252,10 +299,6 @@ msgstr "이 플러그인과 관련된 모든 저장 데이터를 제거합니다
 msgid "Forms"
 msgstr "폼"
 
-#: includes/settings.php:611
-msgid "Settings"
-msgstr "설정"
-
 #: includes/settings.php:612
 msgid "Help"
 msgstr "도움말"
@@ -266,13 +309,14 @@ msgstr "팬에게 다가가기"
 
 #: includes/settings.php:622
 msgid ""
-"Email marketing makes it easier than ever to turn casual visits into "
-"lasting relationship. You're already collecting subscribers, now you just "
-"need to start emailing them. It only takes a few moments to %1$screate an "
-"email marketing campaign%2$s."
+"Email marketing makes it easier than ever to turn casual visits into lasting "
+"relationship. You're already collecting subscribers, now you just need to "
+"start emailing them. It only takes a few moments to %1$screate an email "
+"marketing campaign%2$s."
 msgstr ""
-"이메일 마케팅을 활용하면 가벼운 방문을 지속적인 관계로 쉽게 바꿀 수 있습니다. 귀하는 이미 구독자를 모집하고 있으니, 이제 구독자들에게 "
-"이메일 발송을 시작해야 합니다. %1$s이메일 마케팅 캠페인 만들기%2$s는 잠깐이면 됩니다."
+"이메일 마케팅을 활용하면 가벼운 방문을 지속적인 관계로 쉽게 바꿀 수 있습니"
+"다. 귀하는 이미 구독자를 모집하고 있으니, 이제 구독자들에게 이메일 발송을 시"
+"작해야 합니다. %1$s이메일 마케팅 캠페인 만들기%2$s는 잠깐이면 됩니다."
 
 #: includes/settings.php:628
 msgid "Available Signup Forms"
@@ -325,7 +369,9 @@ msgstr "새 캠페인 만들기"
 msgid ""
 "If you are experiencing issues and are unsure of the cause, you may want to "
 "activate debug mode, which displays additional options."
-msgstr "문제가 발생하고 문제의 원인이 분명하지 않은 경우, 추가 옵션을 표시하는 디버그 모드를 활성화할 수 있습니다."
+msgstr ""
+"문제가 발생하고 문제의 원인이 분명하지 않은 경우, 추가 옵션을 표시하는 디버"
+"그 모드를 활성화할 수 있습니다."
 
 #: includes/widget.php:21
 msgid "GoDaddy Email Marketing Form"
@@ -357,8 +403,14 @@ msgid ""
 "set up, the plugin allows your site visitors to subscribe to your email "
 "lists."
 msgstr ""
-"GoDaddy 이메일 마케팅 등록 폼을 귀하의 워드프레스 사이트에 추가하십시오! 설정하기 쉬운 플러그인을 사용하면, 귀하의 사이트 "
-"방문자들은 귀하의 이메일 목록에 등록할 수 있습니다."
+"GoDaddy 이메일 마케팅 등록 폼을 귀하의 워드프레스 사이트에 추가하십시오! 설정"
+"하기 쉬운 플러그인을 사용하면, 귀하의 사이트 방문자들은 귀하의 이메일 목록에 "
+"등록할 수 있습니다."
+
+#: godaddy-email-marketing.php:205
+msgctxt "Name of required field"
+msgid "%s is a required field."
+msgstr ""
 
 #: includes/settings.php:96
 msgctxt "failed copy response"
@@ -373,12 +425,13 @@ msgstr "즐거운 GoDaddy 이메일 마케팅 경험이 되시기 바랍니다."
 #: includes/settings.php:592
 msgctxt "header note"
 msgid ""
-"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy "
-"to set up, the GoDaddy Email Marketing plugin allows your site visitors to "
+"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
+"set up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
 msgstr ""
-"GoDaddy 이메일 마케팅 등록 폼을 귀하의 WordPress 사이트에 추가하십시오! 쉽게 설정할 수 있습니다. GoDaddy 이메일 "
-"마케팅 플러그인을 사용하면 사이트의 방문자들이 귀하의 이메일 목록에 등록할 수 있습니다."
+"GoDaddy 이메일 마케팅 등록 폼을 귀하의 WordPress 사이트에 추가하십시오! 쉽게 "
+"설정할 수 있습니다. GoDaddy 이메일 마케팅 플러그인을 사용하면 사이트의 방문자"
+"들이 귀하의 이메일 목록에 등록할 수 있습니다."
 
 #: includes/settings.php:596
 msgctxt "header note"
@@ -408,8 +461,10 @@ msgid ""
 "then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
 "account, %2$s."
 msgstr ""
-"이 플러그인이 동작하도록 하려면 GoDaddy 이메일 마케팅 계정에 액세스해야 합니다. 사용자 이름 및 API 키를 받으려면 "
-"%1$s합니다. 아래에 복사하여 붙여넣은 다음 \"설정 저장\"을 클릭합니다. GoDaddy 이메일 마케팅 계정이 아직 없는 경우, %2$s합니다."
+"이 플러그인이 동작하도록 하려면 GoDaddy 이메일 마케팅 계정에 액세스해야 합니"
+"다. 사용자 이름 및 API 키를 받으려면 %1$s합니다. 아래에 복사하여 붙여넣은 다"
+"음 \"설정 저장\"을 클릭합니다. GoDaddy 이메일 마케팅 계정이 아직 없는 경우, "
+"%2$s합니다."
 
 #: includes/settings.php:851
 msgctxt "account details link"

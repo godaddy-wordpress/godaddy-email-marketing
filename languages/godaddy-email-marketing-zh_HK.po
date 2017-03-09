@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: godaddy-email-marketing-sign-up-forms 1.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/godaddy/wp-godaddy-email-marketing/"
 "issues\n"
-"POT-Creation-Date: 2017-01-30 22:15:59+00:00\n"
+"POT-Creation-Date: 2017-03-09 21:44:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,50 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: godaddy-email-marketing.php:201
+msgid "Thank you for signing up!"
+msgstr ""
+
+#: godaddy-email-marketing.php:202
+#, fuzzy
+msgid ""
+"Thank you for signing up! Please check your email to confirm your "
+"subscription."
+msgstr " "
+
+#: godaddy-email-marketing.php:203
+#, fuzzy
+msgid "Oops! There was a problem. Please try again."
+msgstr "  "
+
+#: godaddy-email-marketing.php:204
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: godaddy-email-marketing.php:219 includes/settings.php:611
+msgid "Settings"
+msgstr ""
+
+#: godaddy-email-marketing.php:249
+msgid "Your website has a superpower: Email marketing. %1$s."
+msgstr ""
+
+#: godaddy-email-marketing.php:250
+msgid "Learn More"
+msgstr ""
+
+#: godaddy-email-marketing.php:275
+msgid "GoDaddy Email Marketing is almost ready."
+msgstr "GoDaddy "
+
+#: godaddy-email-marketing.php:275
+msgid "You must enter your username &amp; API key for it to work."
+msgstr " API "
+
+#: godaddy-email-marketing.php:276
+msgid "Let's do it!"
+msgstr ""
 
 #. Plugin Name of the plugin/theme
 #, fuzzy
@@ -248,10 +292,6 @@ msgstr ""
 msgid "Forms"
 msgstr ""
 
-#: includes/settings.php:611
-msgid "Settings"
-msgstr ""
-
 #: includes/settings.php:612
 msgid "Help"
 msgstr ""
@@ -353,6 +393,11 @@ msgid ""
 "lists."
 msgstr " WordPress  GoDaddy  GoDaddy "
 
+#: godaddy-email-marketing.php:205
+msgctxt "Name of required field"
+msgid "%s is a required field."
+msgstr ""
+
 #: includes/settings.php:96
 msgctxt "failed copy response"
 msgid "Please press Ctrl/Cmd+C to copy."
@@ -423,22 +468,6 @@ msgstr " GoDaddy "
 msgctxt "link to settings page"
 msgid "Please set up your GoDaddy Email Marketing account in the %s."
 msgstr " %s  GoDaddy "
-
-#, fuzzy
-#~ msgid ""
-#~ "Thank you for signing up! Please check your email to confirm your "
-#~ "subscription."
-#~ msgstr " "
-
-#, fuzzy
-#~ msgid "Oops! There was a problem. Please try again."
-#~ msgstr "  "
-
-#~ msgid "GoDaddy Email Marketing is almost ready."
-#~ msgstr "GoDaddy "
-
-#~ msgid "You must enter your username &amp; API key for it to work."
-#~ msgstr " API "
 
 #~ msgctxt "settings page"
 #~ msgid "Where can I find my API key?"
