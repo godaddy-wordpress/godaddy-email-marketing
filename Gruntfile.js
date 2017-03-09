@@ -97,7 +97,7 @@ module.exports = function( grunt ) {
 			target: {
 				options: {
 					domainPath: 'languages/',
-					include: [ '/*.php', 'includes/.+\.php' ],
+					include: [ 'godaddy-email-marketing.php', 'includes/.+\.php' ],
 					mainFile: 'godaddy-email-marketing.php',
 					potComments: 'Copyright (c) {year} GoDaddy Operating Company, LLC. All Rights Reserved.',
 					potFilename: 'godaddy-email-marketing.pot',
