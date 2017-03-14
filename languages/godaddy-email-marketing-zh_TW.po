@@ -2,38 +2,38 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GoDaddy Email Marketing 1.2.0\n"
-"Report-Msgid-Bugs-To: https://github.com/godaddy/wp-godaddy-email-marketing/"
-"issues\n"
+"Report-Msgid-Bugs-To: "
+"https://github.com/godaddy/wp-godaddy-email-marketing/issues\n"
 "POT-Creation-Date: 2017-03-09 21:44:14+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
-"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
-"esc_html_x:1,2c;\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
 "X-Generator: grunt-wp-i18n1.0.0\n"
 
 #: godaddy-email-marketing.php:201
 msgid "Thank you for signing up!"
-msgstr ""
+msgstr "Thank you for signing up!"
 
 #: godaddy-email-marketing.php:202
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr ""
+"Thank you for signing up! Please check your email to confirm your subscription."
 
 #: godaddy-email-marketing.php:203
 msgid "Oops! There was a problem. Please try again."
-msgstr ""
+msgstr "Oops! There was a problem. Please try again."
 
 #: godaddy-email-marketing.php:204
 msgid "Please enter a valid email address."
-msgstr ""
+msgstr "Please enter a valid email address."
 
 #: godaddy-email-marketing.php:219 includes/settings.php:611
 msgid "Settings"
@@ -41,24 +41,23 @@ msgstr "設定"
 
 #: godaddy-email-marketing.php:249
 msgid "Your website has a superpower: Email marketing. %1$s."
-msgstr ""
+msgstr "Your website has a superpower: Email marketing. %1$s."
 
 #: godaddy-email-marketing.php:250
 msgid "Learn More"
-msgstr ""
+msgstr "Learn More"
 
 #: godaddy-email-marketing.php:275
-#, fuzzy
 msgid "GoDaddy Email Marketing is almost ready."
-msgstr "GoDaddy 電子郵件行銷表格"
+msgstr "GoDaddy Email Marketing is almost ready."
 
 #: godaddy-email-marketing.php:275
 msgid "You must enter your username &amp; API key for it to work."
-msgstr ""
+msgstr "You must enter your username &amp; API key for it to work."
 
 #: godaddy-email-marketing.php:276
 msgid "Let's do it!"
-msgstr ""
+msgstr "Let's do it!"
 
 #. Plugin Name of the plugin/theme
 msgid "GoDaddy Email Marketing"
@@ -160,7 +159,8 @@ msgstr "認證不正確！ 請確定您輸入正確。"
 
 #: includes/settings.php:257
 msgid ""
-"Connection with GoDaddy Email Marketing has been established! You're all set!"
+"Connection with GoDaddy Email Marketing has been established! You're all "
+"set!"
 msgstr "已建立與 GoDaddy 電子郵件行銷的連線！　 您已設定完成！"
 
 #: includes/settings.php:262
@@ -187,36 +187,32 @@ msgid ""
 "GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can "
 "display a webform on your site:"
 msgstr ""
-"一旦啟用了外掛程式，您就可以選取任何 GoDaddy 電子郵件行銷網頁表格並直接插入網"
-"站。 設定過程很簡單。 只需在下方輸入您的帳戶電子郵件地址及 API 金鑰（可在 "
-"GoDaddy 電子郵件行銷帳戶  [%s] 區域中找到）。 您有三種方法可以在網站上顯示網"
-"頁表格："
+"一旦啟用了外掛程式，您就可以選取任何 GoDaddy 電子郵件行銷網頁表格並直接插入網站。 設定過程很簡單。 只需在下方輸入您的帳戶電子郵件地址及 API "
+"金鑰（可在 GoDaddy 電子郵件行銷帳戶  [%s] 區域中找到）。 您有三種方法可以在網站上顯示網頁表格："
 
 #: includes/settings.php:307
 msgid ""
-"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget "
-"called “GoDaddy Email Marketing Form” and drag it into the widget area of "
-"your choice. You can then add a title and select a form!"
+"<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the "
+"widget called “GoDaddy Email Marketing Form” and drag it into the widget "
+"area of your choice. You can then add a title and select a form!"
 msgstr ""
-"<strong>小工具：</strong> 前往 [外觀] &rarr; [小工具] 找到 [GoDaddy 電子郵件"
-"行銷表格] 的小工具，並將其拖曳到您選擇的小工具區域。 接著，您可以新增標題並選"
-"取表格！"
+"<strong>小工具：</strong> 前往 [外觀] &rarr; [小工具] 找到 [GoDaddy 電子郵件行銷表格] "
+"的小工具，並將其拖曳到您選擇的小工具區域。 接著，您可以新增標題並選取表格！"
 
 #: includes/settings.php:308
 msgid ""
-"<strong>Shortcode:</strong> You can add a form to any post or page by adding "
-"the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor."
+"<strong>Shortcode:</strong> You can add a form to any post or page by "
+"adding the shortcode (ex. <code>[gem id=80326]</code>) in the page/post "
+"editor."
 msgstr ""
-"<strong>短代碼：</strong> 您可在任何貼文或頁面上新增短代碼，以便在頁面/貼文編"
-"輯器中新增表格（例如： <code>[gem id=80326]</code>）。"
+"<strong>短代碼：</strong> 您可在任何貼文或頁面上新增短代碼，以便在頁面/貼文編輯器中新增表格（例如： <code>[gem id=80326]</code>）。"
 
 #: includes/settings.php:310
 msgid ""
 "<strong>Template Tag:</strong> You can add the following template tag into "
 "any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>"
 msgstr ""
-"‌<strong>範本標記：</strong>您可以在所有 WordPress 檔案中新增下列範本標記："
-"<code>%1$s</code>例如：<code>%2$s</code>"
+"‌<strong>範本標記：</strong>您可以在所有 WordPress 檔案中新增下列範本標記：<code>%1$s</code>例如：<code>%2$s</code>"
 
 #: includes/settings.php:320
 msgid "For more information:"
@@ -306,13 +302,12 @@ msgstr "觸及您的粉絲"
 
 #: includes/settings.php:622
 msgid ""
-"Email marketing makes it easier than ever to turn casual visits into lasting "
-"relationship. You're already collecting subscribers, now you just need to "
-"start emailing them. It only takes a few moments to %1$screate an email "
-"marketing campaign%2$s."
+"Email marketing makes it easier than ever to turn casual visits into "
+"lasting relationship. You're already collecting subscribers, now you just "
+"need to start emailing them. It only takes a few moments to %1$screate an "
+"email marketing campaign%2$s."
 msgstr ""
-"電子郵件行銷可讓您輕鬆將隨意的造訪變為長遠的關係。您已經收集了訂閱者，現在只"
-"需要開始寄送電子郵件即可。您只需很短的時間就能%1$s建立電子郵件行銷活動%2$s。"
+"電子郵件行銷可讓您輕鬆將隨意的造訪變為長遠的關係。您已經收集了訂閱者，現在只需要開始寄送電子郵件即可。您只需很短的時間就能%1$s建立電子郵件行銷活動%2$s。"
 
 #: includes/settings.php:628
 msgid "Available Signup Forms"
@@ -396,14 +391,12 @@ msgid ""
 "Add the GoDaddy Email Marketing signup form to your WordPress site! Easy to "
 "set up, the plugin allows your site visitors to subscribe to your email "
 "lists."
-msgstr ""
-"在 WordPress 網站中新增 GoDaddy 電子郵件行銷註冊表格！ 外掛程式設定十分簡單，"
-"可讓您的網站訪客訂閱電子郵件清單。"
+msgstr "在 WordPress 網站中新增 GoDaddy 電子郵件行銷註冊表格！ 外掛程式設定十分簡單，可讓您的網站訪客訂閱電子郵件清單。"
 
 #: godaddy-email-marketing.php:205
 msgctxt "Name of required field"
 msgid "%s is a required field."
-msgstr ""
+msgstr "%s is a required field."
 
 #: includes/settings.php:96
 msgctxt "failed copy response"
@@ -418,12 +411,11 @@ msgstr "體驗 GoDaddy 電子郵件行銷。"
 #: includes/settings.php:592
 msgctxt "header note"
 msgid ""
-"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy to "
-"set up, the GoDaddy Email Marketing plugin allows your site visitors to "
+"Add your GoDaddy Email Marketing signup form to your WordPress site! Easy "
+"to set up, the GoDaddy Email Marketing plugin allows your site visitors to "
 "subscribe to your email list."
 msgstr ""
-"在 WordPress 網站中新增 GoDaddy 電子郵件行銷註冊表格！ GoDaddy 電子郵件行銷外"
-"掛程式設定十分簡單，可讓您的網站訪客訂閱電子郵件清單。"
+"在 WordPress 網站中新增 GoDaddy 電子郵件行銷註冊表格！ GoDaddy 電子郵件行銷外掛程式設定十分簡單，可讓您的網站訪客訂閱電子郵件清單。"
 
 #: includes/settings.php:596
 msgctxt "header note"
@@ -453,9 +445,8 @@ msgid ""
 "then click \"Save Settings.\" If you don't have a GoDaddy Email Marketing "
 "account, %2$s."
 msgstr ""
-"要讓外掛程式正常運作，需要存取您的 GoDaddy 電子郵件行銷帳戶。  %1$s 以取得您"
-"的用戶名及 API 金鑰。 在下方複製並貼上，再按一下 [儲存設定]。 如果沒有 "
-"GoDaddy 電子郵件行銷帳戶，%2$s。"
+"要讓外掛程式正常運作，需要存取您的 GoDaddy 電子郵件行銷帳戶。  %1$s 以取得您的用戶名及 API 金鑰。 在下方複製並貼上，再按一下 "
+"[儲存設定]。 如果沒有 GoDaddy 電子郵件行銷帳戶，%2$s。"
 
 #: includes/settings.php:851
 msgctxt "account details link"
