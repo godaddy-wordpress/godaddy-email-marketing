@@ -18,22 +18,21 @@ msgstr ""
 
 #: godaddy-email-marketing.php:201
 msgid "Thank you for signing up!"
-msgstr "Thank you for signing up!"
+msgstr "Kiitos rekisteröitymisestä!"
 
 #: godaddy-email-marketing.php:202
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
-msgstr ""
-"Thank you for signing up! Please check your email to confirm your subscription."
+msgstr "Kiitos rekisteröitymisestä! Tarkista sähköpostisi ja vahvista tilaus."
 
 #: godaddy-email-marketing.php:203
 msgid "Oops! There was a problem. Please try again."
-msgstr "Oops! There was a problem. Please try again."
+msgstr "Hups! Tapahtui virhe. Yritä uudelleen."
 
 #: godaddy-email-marketing.php:204
 msgid "Please enter a valid email address."
-msgstr "Please enter a valid email address."
+msgstr "Ole hyvä ja anna oikea sähköpostiosoite."
 
 #: godaddy-email-marketing.php:219 includes/settings.php:611
 msgid "Settings"
@@ -41,23 +40,23 @@ msgstr "Asetukset"
 
 #: godaddy-email-marketing.php:249
 msgid "Your website has a superpower: Email marketing. %1$s."
-msgstr "Your website has a superpower: Email marketing. %1$s."
+msgstr "Verkkosivustollasi on supervoima: Sähköpostimarkkinointi, %1$s."
 
 #: godaddy-email-marketing.php:250
 msgid "Learn More"
-msgstr "Learn More"
+msgstr "Lue lisää"
 
 #: godaddy-email-marketing.php:275
 msgid "GoDaddy Email Marketing is almost ready."
-msgstr "GoDaddy Email Marketing is almost ready."
+msgstr "GoDaddy-sähköpostimarkkinointi on melkein valmis."
 
 #: godaddy-email-marketing.php:275
 msgid "You must enter your username &amp; API key for it to work."
-msgstr "You must enter your username &amp; API key for it to work."
+msgstr "Sen toimiminen edellyttää, että annat käyttäjätunnuksesi ja API-avaimen."
 
 #: godaddy-email-marketing.php:276
 msgid "Let's do it!"
-msgstr "Let's do it!"
+msgstr "Hoidetaan homma!"
 
 #. Plugin Name of the plugin/theme
 msgid "GoDaddy Email Marketing"
@@ -416,7 +415,7 @@ msgstr ""
 #: godaddy-email-marketing.php:205
 msgctxt "Name of required field"
 msgid "%s is a required field."
-msgstr "%s is a required field."
+msgstr "%s on pakollinen kenttä."
 
 #: includes/settings.php:96
 msgctxt "failed copy response"

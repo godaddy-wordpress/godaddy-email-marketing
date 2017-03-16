@@ -18,22 +18,21 @@ msgstr ""
 
 #: godaddy-email-marketing.php:201
 msgid "Thank you for signing up!"
-msgstr "Thank you for signing up!"
+msgstr "ขอบคุณที่ลงทะเบียน!"
 
 #: godaddy-email-marketing.php:202
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
-msgstr ""
-"Thank you for signing up! Please check your email to confirm your subscription."
+msgstr "ขอบคุณที่ลงทะเบียน! โปรดดูอีเมลของคุณเพื่อยืนยันการสมัครสมาชิกของคุณ"
 
 #: godaddy-email-marketing.php:203
 msgid "Oops! There was a problem. Please try again."
-msgstr "Oops! There was a problem. Please try again."
+msgstr "ขออภัย! มีปัญหาเกิดขึ้น โปรดลองอีกครั้ง"
 
 #: godaddy-email-marketing.php:204
 msgid "Please enter a valid email address."
-msgstr "Please enter a valid email address."
+msgstr "โปรดป้อนที่อยู่อีเมลที่ถูกต้อง"
 
 #: godaddy-email-marketing.php:219 includes/settings.php:611
 msgid "Settings"
@@ -41,23 +40,23 @@ msgstr "การตั้งค่า"
 
 #: godaddy-email-marketing.php:249
 msgid "Your website has a superpower: Email marketing. %1$s."
-msgstr "Your website has a superpower: Email marketing. %1$s."
+msgstr "เว็บไซต์ของคุณมีประสิทธิภาพอย่างยิ่ง: การตลาดทางอีเมล %1$s"
 
 #: godaddy-email-marketing.php:250
 msgid "Learn More"
-msgstr "Learn More"
+msgstr "เรียนรู้เพิ่มเติม"
 
 #: godaddy-email-marketing.php:275
 msgid "GoDaddy Email Marketing is almost ready."
-msgstr "GoDaddy Email Marketing is almost ready."
+msgstr "การตลาดด้วยอีเมลของ GoDaddy เกือบพร้อมแล้ว"
 
 #: godaddy-email-marketing.php:275
 msgid "You must enter your username &amp; API key for it to work."
-msgstr "You must enter your username &amp; API key for it to work."
+msgstr "คุณต้องใส่ชื่อผู้ใช้และคีย์ API เพื่อให้สามารถทำงานได้"
 
 #: godaddy-email-marketing.php:276
 msgid "Let's do it!"
-msgstr "Let's do it!"
+msgstr "มาทำกันเลย!"
 
 #. Plugin Name of the plugin/theme
 msgid "GoDaddy Email Marketing"
@@ -409,7 +408,7 @@ msgstr ""
 #: godaddy-email-marketing.php:205
 msgctxt "Name of required field"
 msgid "%s is a required field."
-msgstr "%s is a required field."
+msgstr "ต้องกรอกช่อง %s"
 
 #: includes/settings.php:96
 msgctxt "failed copy response"

@@ -18,22 +18,22 @@ msgstr ""
 
 #: godaddy-email-marketing.php:201
 msgid "Thank you for signing up!"
-msgstr "Thank you for signing up!"
+msgstr "Takk for at du registrerte deg!"
 
 #: godaddy-email-marketing.php:202
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr ""
-"Thank you for signing up! Please check your email to confirm your subscription."
+"Takk for at du registrerte deg! Sjekk e-posten din for å bekrefte abonnementet."
 
 #: godaddy-email-marketing.php:203
 msgid "Oops! There was a problem. Please try again."
-msgstr "Oops! There was a problem. Please try again."
+msgstr "Ops! Det oppstod et problem Prøv på nytt."
 
 #: godaddy-email-marketing.php:204
 msgid "Please enter a valid email address."
-msgstr "Please enter a valid email address."
+msgstr "Fyll inn en gyldig e-postadresse."
 
 #: godaddy-email-marketing.php:219 includes/settings.php:611
 msgid "Settings"
@@ -41,23 +41,23 @@ msgstr "Innstillinger"
 
 #: godaddy-email-marketing.php:249
 msgid "Your website has a superpower: Email marketing. %1$s."
-msgstr "Your website has a superpower: Email marketing. %1$s."
+msgstr "Nettstedet ditt har superkrefter: Markedsføring per e-post. %1$s."
 
 #: godaddy-email-marketing.php:250
 msgid "Learn More"
-msgstr "Learn More"
+msgstr "Finn ut mer"
 
 #: godaddy-email-marketing.php:275
 msgid "GoDaddy Email Marketing is almost ready."
-msgstr "GoDaddy Email Marketing is almost ready."
+msgstr "GoDaddy Markedsføring per e-post er nesten klart."
 
 #: godaddy-email-marketing.php:275
 msgid "You must enter your username &amp; API key for it to work."
-msgstr "You must enter your username &amp; API key for it to work."
+msgstr "Du må angi brukernavnet ditt og API-nøkkelen din for at det skal fungere."
 
 #: godaddy-email-marketing.php:276
 msgid "Let's do it!"
-msgstr "Let's do it!"
+msgstr "La oss gjøre det!"
 
 #. Plugin Name of the plugin/theme
 msgid "GoDaddy Email Marketing"
@@ -416,7 +416,7 @@ msgstr ""
 #: godaddy-email-marketing.php:205
 msgctxt "Name of required field"
 msgid "%s is a required field."
-msgstr "%s is a required field."
+msgstr "%s er et obligatorisk felt."
 
 #: includes/settings.php:96
 msgctxt "failed copy response"

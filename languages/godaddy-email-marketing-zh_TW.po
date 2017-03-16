@@ -18,22 +18,21 @@ msgstr ""
 
 #: godaddy-email-marketing.php:201
 msgid "Thank you for signing up!"
-msgstr "Thank you for signing up!"
+msgstr "感謝您的註冊！"
 
 #: godaddy-email-marketing.php:202
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
-msgstr ""
-"Thank you for signing up! Please check your email to confirm your subscription."
+msgstr "感謝您的註冊！ 請收取電子郵件，確認您的訂閱。"
 
 #: godaddy-email-marketing.php:203
 msgid "Oops! There was a problem. Please try again."
-msgstr "Oops! There was a problem. Please try again."
+msgstr "糟糕了！ 發生問題。 請再試一次。"
 
 #: godaddy-email-marketing.php:204
 msgid "Please enter a valid email address."
-msgstr "Please enter a valid email address."
+msgstr "請輸入有效的電子郵件地址。"
 
 #: godaddy-email-marketing.php:219 includes/settings.php:611
 msgid "Settings"
@@ -41,23 +40,23 @@ msgstr "設定"
 
 #: godaddy-email-marketing.php:249
 msgid "Your website has a superpower: Email marketing. %1$s."
-msgstr "Your website has a superpower: Email marketing. %1$s."
+msgstr "您的網站有一項強大的功能：就是電子郵件行銷。%1$s。"
 
 #: godaddy-email-marketing.php:250
 msgid "Learn More"
-msgstr "Learn More"
+msgstr "進一步了解"
 
 #: godaddy-email-marketing.php:275
 msgid "GoDaddy Email Marketing is almost ready."
-msgstr "GoDaddy Email Marketing is almost ready."
+msgstr "GoDaddy 電子郵件行銷即將可開始使用。"
 
 #: godaddy-email-marketing.php:275
 msgid "You must enter your username &amp; API key for it to work."
-msgstr "You must enter your username &amp; API key for it to work."
+msgstr "您必須輸入用戶名及 API 金鑰才能使用。"
 
 #: godaddy-email-marketing.php:276
 msgid "Let's do it!"
-msgstr "Let's do it!"
+msgstr "立即開始！"
 
 #. Plugin Name of the plugin/theme
 msgid "GoDaddy Email Marketing"
@@ -396,7 +395,7 @@ msgstr "在 WordPress 網站中新增 GoDaddy 電子郵件行銷註冊表格！ 
 #: godaddy-email-marketing.php:205
 msgctxt "Name of required field"
 msgid "%s is a required field."
-msgstr "%s is a required field."
+msgstr "%s 是必填欄位。"
 
 #: includes/settings.php:96
 msgctxt "failed copy response"

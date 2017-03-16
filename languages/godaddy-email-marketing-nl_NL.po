@@ -18,22 +18,22 @@ msgstr ""
 
 #: godaddy-email-marketing.php:201
 msgid "Thank you for signing up!"
-msgstr "Thank you for signing up!"
+msgstr "Bedankt voor je aanmelding!"
 
 #: godaddy-email-marketing.php:202
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
 msgstr ""
-"Thank you for signing up! Please check your email to confirm your subscription."
+"Bedankt voor je aanmelding! Bekijk je e-mail om je abonnement te bevestigen."
 
 #: godaddy-email-marketing.php:203
 msgid "Oops! There was a problem. Please try again."
-msgstr "Oops! There was a problem. Please try again."
+msgstr "Helaas! Er is een probleem. Probeer het opnieuw."
 
 #: godaddy-email-marketing.php:204
 msgid "Please enter a valid email address."
-msgstr "Please enter a valid email address."
+msgstr "Voer alstublieft een geldig email adres in."
 
 #: godaddy-email-marketing.php:219 includes/settings.php:611
 msgid "Settings"
@@ -41,23 +41,23 @@ msgstr "Instellingen"
 
 #: godaddy-email-marketing.php:249
 msgid "Your website has a superpower: Email marketing. %1$s."
-msgstr "Your website has a superpower: Email marketing. %1$s."
+msgstr "Je website heeft iets bijzonders: E-mailmarketing. %1$s."
 
 #: godaddy-email-marketing.php:250
 msgid "Learn More"
-msgstr "Learn More"
+msgstr "Meer informatie"
 
 #: godaddy-email-marketing.php:275
 msgid "GoDaddy Email Marketing is almost ready."
-msgstr "GoDaddy Email Marketing is almost ready."
+msgstr "E-mailmarketing van GoDaddy is bijna klaar."
 
 #: godaddy-email-marketing.php:275
 msgid "You must enter your username &amp; API key for it to work."
-msgstr "You must enter your username &amp; API key for it to work."
+msgstr "Je moet je gebruikersnaam en API-sleutel invoeren om het te gebruiken."
 
 #: godaddy-email-marketing.php:276
 msgid "Let's do it!"
-msgstr "Let's do it!"
+msgstr "Aan de slag!"
 
 #. Plugin Name of the plugin/theme
 msgid "GoDaddy Email Marketing"
@@ -416,7 +416,7 @@ msgstr ""
 #: godaddy-email-marketing.php:205
 msgctxt "Name of required field"
 msgid "%s is a required field."
-msgstr "%s is a required field."
+msgstr "%s is een verplicht veld."
 
 #: includes/settings.php:96
 msgctxt "failed copy response"
