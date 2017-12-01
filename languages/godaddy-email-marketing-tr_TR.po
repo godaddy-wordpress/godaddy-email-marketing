@@ -164,7 +164,7 @@ msgid ""
 "Connection with GoDaddy Email Marketing has been established! You're all "
 "set!"
 msgstr ""
-"GoDaddy E-posta Pazarlama ile bağlantı kuruldu! Ayarlarınız tamamlandı!"
+"GoDaddy E-posta Pazarlama ile bağlantı kuruldu! Yola koyulmaya hazırsınız!"
 
 #: includes/settings.php:262
 msgid "Settings have been updated."
