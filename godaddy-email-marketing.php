@@ -8,7 +8,7 @@
  * Author URI: https://gem.godaddy.com/
  * License: GPL-2.0
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: godaddy-email-marketing
+ * Text Domain: godaddy-email-marketing-sign-up-forms
  * Domain Path: /languages
  *
  * This plugin, like WordPress, is licensed under the GPL.
