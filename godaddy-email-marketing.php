@@ -142,7 +142,7 @@ class GEM_Official {
 	 * Load translations.
 	 */
 	public function i18n() {
-		load_plugin_textdomain( 'godaddy-email-marketing', false, basename( dirname( self::$basename ) ) . '/languages' );
+		load_plugin_textdomain( 'godaddy-email-marketing-sign-up-forms', false, basename( dirname( self::$basename ) ) . '/languages' );
 	}
 
 	/**
@@ -198,11 +198,11 @@ class GEM_Official {
 
 		// Help strings.
 		wp_localize_script( 'gem-main', 'GEM', array(
-			'thankyou' => __( 'Thank you for signing up!', 'godaddy-email-marketing' ),
-			'thankyou_suppressed' => __( 'Thank you for signing up! Please check your email to confirm your subscription.', 'godaddy-email-marketing' ),
-			'oops' => __( 'Oops! There was a problem. Please try again.', 'godaddy-email-marketing' ),
-			'email' => __( 'Please enter a valid email address.', 'godaddy-email-marketing' ),
-			'required' => _x( '%s is a required field.', 'Name of required field', 'godaddy-email-marketing' ),
+			'thankyou' => __( 'Thank you for signing up!', 'godaddy-email-marketing-sign-up-forms' ),
+			'thankyou_suppressed' => __( 'Thank you for signing up! Please check your email to confirm your subscription.', 'godaddy-email-marketing-sign-up-forms' ),
+			'oops' => __( 'Oops! There was a problem. Please try again.', 'godaddy-email-marketing-sign-up-forms' ),
+			'email' => __( 'Please enter a valid email address.', 'godaddy-email-marketing-sign-up-forms' ),
+			'required' => _x( '%s is a required field.', 'Name of required field', 'godaddy-email-marketing-sign-up-forms' ),
 		) );
 	}
 
@@ -216,7 +216,7 @@ class GEM_Official {
 	public function action_links( $actions ) {
 		return array_merge(
 			array(
-				'settings' => sprintf( '<a href="%s">%s</a>', menu_page_url( 'gem-settings', false ), __( 'Settings', 'godaddy-email-marketing' ) ),
+				'settings' => sprintf( '<a href="%s">%s</a>', menu_page_url( 'gem-settings', false ), __( 'Settings', 'godaddy-email-marketing-sign-up-forms' ) ),
 			),
 			$actions
 		);
@@ -246,8 +246,8 @@ class GEM_Official {
 				<p>
 					<?php
 					printf(
-						__( 'Your website has a superpower: Email marketing. %1$s.', 'godaddy-email-marketing' ),
-						'<a href="' . admin_url( 'options-general.php?page=gem-settings' ) . '">' . __( 'Learn More', 'godaddy-email-marketing' ) . '</a>'
+						__( 'Your website has a superpower: Email marketing. %1$s.', 'godaddy-email-marketing-sign-up-forms' ),
+						'<a href="' . admin_url( 'options-general.php?page=gem-settings' ) . '">' . __( 'Learn More', 'godaddy-email-marketing-sign-up-forms' ) . '</a>'
 					);
 					?>
 				</p>
@@ -272,8 +272,8 @@ class GEM_Official {
 
 			<div class="updated fade">
 				<p>
-					<strong><?php esc_html_e( 'GoDaddy Email Marketing is almost ready.', 'godaddy-email-marketing' ); ?></strong> <?php esc_html_e( 'You must enter your username &amp; API key for it to work.', 'godaddy-email-marketing' ); ?> &nbsp;
-					<a class="button" href="<?php menu_page_url( 'gem-settings' ); ?>"><?php esc_html_e( "Let's do it!", 'godaddy-email-marketing' ); ?></a>
+					<strong><?php esc_html_e( 'GoDaddy Email Marketing is almost ready.', 'godaddy-email-marketing-sign-up-forms' ); ?></strong> <?php esc_html_e( 'You must enter your username &amp; API key for it to work.', 'godaddy-email-marketing-sign-up-forms' ); ?> &nbsp;
+					<a class="button" href="<?php menu_page_url( 'gem-settings' ); ?>"><?php esc_html_e( "Let's do it!", 'godaddy-email-marketing-sign-up-forms' ); ?></a>
 				</p>
 			</div>
 

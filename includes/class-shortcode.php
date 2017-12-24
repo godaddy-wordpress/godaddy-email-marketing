@@ -47,12 +47,12 @@ class GEM_Shortcode {
 			reset( $options );
 
 			$args = array(
-				'label' => esc_html__( 'GoDaddy Email Marketing', 'godaddy-email-marketing' ),
+				'label' => esc_html__( 'GoDaddy Email Marketing', 'godaddy-email-marketing-sign-up-forms' ),
 				'listItemImage' => 'dashicons-feedback',
 				'attrs' => array(
 					array(
-						'label'       => esc_html__( 'Signup Forms', 'godaddy-email-marketing' ),
-						'description' => esc_html__( 'Choose one of the available forms.', 'godaddy-email-marketing' ),
+						'label'       => esc_html__( 'Signup Forms', 'godaddy-email-marketing-sign-up-forms' ),
+						'description' => esc_html__( 'Choose one of the available forms.', 'godaddy-email-marketing-sign-up-forms' ),
 						'attr'        => 'id',
 						'encode'      => false,
 						'type'        => 'select',
