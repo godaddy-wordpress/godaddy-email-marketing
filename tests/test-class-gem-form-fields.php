@@ -243,7 +243,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->display  = 'text_a';
 		$field->value    = 'the_value';
 		$cur_year        = date( 'Y' ) + 5;
-		$min_year        = date( 'Y' ) - 81;
+		$min_year        = date( 'Y' ) - 80;
 		ob_start();
 		GEM_Form_Fields::date( $field );
 		$actual_output = ob_get_clean();
