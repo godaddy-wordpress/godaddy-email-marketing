@@ -97,7 +97,7 @@ module.exports = function( grunt ) {
 			target: {
 				options: {
 					domainPath: 'languages/',
-					include: [ '/*.php', 'includes/.+\.php' ],
+					include: [ 'godaddy-email-marketing.php', 'includes/.+\.php' ],
 					mainFile: 'godaddy-email-marketing.php',
 					potComments: 'Copyright (c) {year} GoDaddy Operating Company, LLC. All Rights Reserved.',
 					potFilename: 'godaddy-email-marketing.pot',
@@ -195,12 +195,14 @@ module.exports = function( grunt ) {
 		},
 
 		wp_deploy: {
-			options: {
-				plugin_slug: pkg.name,
-				build_dir: 'build/',
-				assets_dir: 'assets/',
-				plugin_main_file: 'godaddy-email-marketing.php',
-				svn_user: grunt.file.exists( 'svn-username' ) ? grunt.file.read( 'svn-username' ).trim() : ''
+			plugin: {
+				options: {
+					plugin_slug: pkg.name,
+					build_dir: 'build/',
+					assets_dir: 'assets/',
+					plugin_main_file: 'godaddy-email-marketing.php',
+					svn_user: grunt.file.exists( 'svn-username' ) ? grunt.file.read( 'svn-username' ).trim() : false
+				}
 			}
 		},
 
@@ -215,11 +217,19 @@ module.exports = function( grunt ) {
 						section = section.replace( tags[i], '[' + tags[i] + '](https://wordpress.org/plugins/tags/' + tags[i] + '/)' );
 					}
 
+					// Banner
+					if ( grunt.file.exists( 'assets/banner-1544x500.png' ) ) {
+						readme = readme.replace( '**Contributors:**', "![Banner Image](assets/banner-1544x500.png)\r\n\r\n**Contributors:**" );
+					}
+
 					// Tag links
 					readme = readme.replace( matches[0], section );
 
 					// Badges
 					readme = readme.replace( '## Description ##', grunt.template.process( pkg.badges.join( ' ' ) ) + "  \r\n\r\n## Description ##" );
+
+					// YouTube
+					readme = readme.replace( /\[youtube\s+(?:https?:\/\/www\.youtube\.com\/watch\?v=|https?:\/\/youtu\.be\/)(.+?)\]/g, '[![Play video on YouTube](https://img.youtube.com/vi/$1/hqdefault.jpg)](https://www.youtube.com/watch?v=$1)' );
 
 					return readme;
 				}

@@ -1,11 +1,21 @@
 sudo: false
 
-language:
-  - php
-  - node_js
+language: php
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+branches:
+  only:
+    - master
+    - develop
 
 php:
-  - 5.2
+  # Disable PHP 5.2
+  # See: https://github.com/travis-ci/travis-ci/issues/8072
+  # - 5.2
   - 5.6
   - 7.1
 
@@ -15,6 +25,7 @@ env:
   - WP_VERSION=trunk WP_MULTISITE=0
 
 matrix:
+  fast_finish: true
   exclude:
     - php: 5.6
       env: WP_VERSION=3.8 WP_MULTISITE=0

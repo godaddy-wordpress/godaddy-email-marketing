@@ -1,10 +1,10 @@
 # Copyright (c) 2017 GoDaddy Operating Company, LLC. All Rights Reserved.
 msgid ""
 msgstr ""
-"Project-Id-Version: GoDaddy Email Marketing 1.1.4\n"
+"Project-Id-Version: GoDaddy Email Marketing 1.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/godaddy/wp-godaddy-email-marketing/"
 "issues\n"
-"POT-Creation-Date: 2017-02-10 21:19:40+00:00\n"
+"POT-Creation-Date: 2017-03-09 21:44:14+00:00\n"
 "PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,10 +12,53 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: grunt-wp-i18n 0.5.4\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c;\n"
+"X-Generator: grunt-wp-i18n1.0.0\n"
+
+#: godaddy-email-marketing.php:201
+msgid "Thank you for signing up!"
+msgstr ""
+
+#: godaddy-email-marketing.php:202
+msgid ""
+"Thank you for signing up! Please check your email to confirm your "
+"subscription."
+msgstr ""
+
+#: godaddy-email-marketing.php:203
+msgid "Oops! There was a problem. Please try again."
+msgstr ""
+
+#: godaddy-email-marketing.php:204
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: godaddy-email-marketing.php:219 includes/settings.php:611
+msgid "Settings"
+msgstr "Instellingen"
+
+#: godaddy-email-marketing.php:249
+msgid "Your website has a superpower: Email marketing. %1$s."
+msgstr ""
+
+#: godaddy-email-marketing.php:250
+msgid "Learn More"
+msgstr ""
+
+#: godaddy-email-marketing.php:275
+#, fuzzy
+msgid "GoDaddy Email Marketing is almost ready."
+msgstr "Formulier voor e-mailmarketing van GoDaddy"
+
+#: godaddy-email-marketing.php:275
+msgid "You must enter your username &amp; API key for it to work."
+msgstr ""
+
+#: godaddy-email-marketing.php:276
+msgid "Let's do it!"
+msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "GoDaddy Email Marketing"
@@ -263,10 +306,6 @@ msgstr "Alle opgeslagen gegevens gekoppeld aan deze plug-in worden verwijderd."
 msgid "Forms"
 msgstr "Formulieren"
 
-#: includes/settings.php:611
-msgid "Settings"
-msgstr "Instellingen"
-
 #: includes/settings.php:612
 msgid "Help"
 msgstr "Help"
@@ -376,6 +415,11 @@ msgstr ""
 "Voeg het aanmeldingsformulier voor e-mailmarketing van GoDaddy toe aan je "
 "WordPress-site! Met de plug-in, die eenvoudig is in te stellen, kunnen je "
 "sitebezoekers zich abonneren op je e-maillijsten."
+
+#: godaddy-email-marketing.php:205
+msgctxt "Name of required field"
+msgid "%s is a required field."
+msgstr ""
 
 #: includes/settings.php:96
 msgctxt "failed copy response"

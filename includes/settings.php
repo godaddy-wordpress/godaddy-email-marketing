@@ -733,7 +733,7 @@ class GEM_Settings {
 			add_query_arg(
 				array(
 					'action'   => 'refresh',
-					'wp_nonce' => wp_create_nonce( 'gem_settings_refresh_nonce' ),
+					'_wpnonce' => wp_create_nonce( 'gem_settings_refresh_nonce' ),
 				),
 				remove_query_arg( 'tab' )
 			)
