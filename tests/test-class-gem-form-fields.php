@@ -233,14 +233,17 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 	 * Test date markup.
 	 *
 	 * @see GEM_Form_Fields::date()
+	 * @group test
 	 */
 	public function test_date() {
 		add_action( 'gem_required_field_class', array( $this, 'gem_required_field_class_callback' ) );
-		$field = new stdClass();
-		$field->name = 'the_name_a';
+		$field           = new stdClass();
+		$field->name     = 'the_name_a';
 		$field->required = false;
-		$field->display = 'text_a';
-		$field->value = 'the_value';
+		$field->display  = 'text_a';
+		$field->value    = 'the_value';
+		$cur_year        = date( 'Y' ) + 5;
+		$min_year        = date( 'Y' ) - 80;
 		ob_start();
 		GEM_Form_Fields::date( $field );
 		$actual_output = ob_get_clean();
@@ -253,8 +256,8 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$this->assertContains( '<option value="01"> 1 </option>', $actual_output );
 		$this->assertContains( '<option value="31"> 31 </option>', $actual_output );
 		$this->assertContains( '<select fingerprint="date" data-id="form_1_the_name_a" data-name="the_name_a">', $actual_output );
-		$this->assertContains( '<option value="2021"> 2021 </option>', $actual_output );
-		$this->assertContains( '<option value="1937"> 1937 </option>', $actual_output );
+		$this->assertContains( '<option value="' . $cur_year . '"> ' . $cur_year . ' </option>', $actual_output );
+		$this->assertContains( '<option value="' . $min_year . '"> ' . $min_year . ' </option>', $actual_output );
 		$this->assertContains( '<input type="hidden" id="form_1_the_name_a" name="the_name_a" value="" class="" data-label="' . $field->display . '" />', $actual_output );
 		remove_action( 'gem_required_field_class', array( $this, 'gem_required_field_class_callback' ) );
 
