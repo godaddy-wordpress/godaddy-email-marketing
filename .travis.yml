@@ -9,7 +9,7 @@ notifications:
 
 branches:
   only:
-    - /^v\d.*$/
+    - ^(\d+\.)?(\d+\.)?(\*|\d+)$
     - master
     - develop
 
@@ -49,7 +49,7 @@ before_deploy:
   - curl https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar > /tmp/wp-cli.phar
   - chmod +x /tmp/wp-cli.phar
   - export RELEASE_FOLDER=godaddy-email-marketing-sign-up-forms
-  - php /tmp/wp-cli.phar package install runcommand/dist-archive
+  - php /tmp/wp-cli.phar package install git@github.com:wp-cli/dist-archive-command.git
   - cp -r ${TRAVIS_BUILD_DIR} /tmp/${RELEASE_FOLDER}
   - mv /tmp/${RELEASE_FOLDER} ${TRAVIS_BUILD_DIR}
   - php /tmp/wp-cli.phar dist-archive ${RELEASE_FOLDER} ${TRAVIS_BUILD_DIR}/${RELEASE_FOLDER}.zip --format=zip --debug
@@ -58,7 +58,7 @@ deploy:
   provider: releases
   api_key:
     secure: jQMEnbE3F9zkrYn4WyPhDmw9ph+hs6gTY8kQyBYOA310PQkyyhKASG9i84R24DKiIUCuJhUiuVotGUCt5Y0fP/QjxwEET2IPYhhzL6lonoraGt2u0mJ9zQVJvajx+0J6auVKp9VIBucGLQPGPHECZO03cdmzYdQhLiaOhjf6vMedCLVimGu/2hDWEtQgfpZztNUMehRqDg7s8co8hlHMQa+E+mmmihRGjYjU7eMZUXF3izGFiOMKxlr9tRXNMafVwEyO/IAdeN0KZI6rYGSeegukVem+HwOTTc1ZIGS51Brr47tA46zEeWcNaPZalC35Kdfu3axNNpEWzX7AeyVJvr37klXK2Tffh9wZxGIW9mulHcvV0uOrI7d5ATEjcriMsA2tBiHaSfzQCyYcz2h7R3KiAskqXfUU9TkvhZiFjjfTWHlGTgASNsZecGa5geEnGZ/14vIAL7mfAMxi+zodviRVJ2eZdOGKXE/W5525bggD7qNrf2/upDJd8T7sma8YDpb5yuXavvQWI3dgaCSDOhDkzLTYFzwjNhiztd4YM8S/w2fqr7NmF+OqJtt7gOD5MpeGR97WbrejV3fsUSS4tirH2HddC7Xfs9dGXKusoD6Vm8TqR3w1ldok10KTnRs4LfT7XqX2Nz9nVYKh23Qr9UtmdwXRy/7mcHa8p8Mjzy8=
-  file: $TRAVIS_BUILD_DIR/godaddy-email-marketing-sign-up-forms.zip
+  file: $TRAVIS_BUILD_DIR/$RELEASE_FOLDER.zip
   skip_cleanup: true
   overwrite: true
   on:
