@@ -237,13 +237,13 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 	 */
 	public function test_date() {
 		add_action( 'gem_required_field_class', array( $this, 'gem_required_field_class_callback' ) );
-		$field = new stdClass();
-		$field->name = 'the_name_a';
+		$field           = new stdClass();
+		$field->name     = 'the_name_a';
 		$field->required = false;
-		$field->display = 'text_a';
-		$field->value = 'the_value';
-		$cur_year = date( 'Y' ) + 5;
-		$min_year = date( 'Y' ) - 81;
+		$field->display  = 'text_a';
+		$field->value    = 'the_value';
+		$cur_year        = date( 'Y' ) + 5;
+		$min_year        = date( 'Y' ) - 81;
 		ob_start();
 		GEM_Form_Fields::date( $field );
 		$actual_output = ob_get_clean();
