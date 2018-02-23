@@ -9,7 +9,7 @@ notifications:
 
 branches:
   only:
-    - ^(\d+\.)?(\d+\.)?(\*|\d+)$
+    - /^v\d.*$/
     - master
     - develop
 
