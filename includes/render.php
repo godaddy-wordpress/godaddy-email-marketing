@@ -414,6 +414,8 @@ class GEM_Form_Fields {
 	 */
 	public static function tos_link( $args ) {
 
+		print_r( $args );
+
 		$field_classes = array( 'gem-field' );
 
 		// Is this field required?

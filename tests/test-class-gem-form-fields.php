@@ -72,6 +72,20 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		GEM_Form_Fields::dispatch_field( $field );
 		$actual_output = ob_get_clean();
 		$this->assertContains( '<input type="checkbox" value="1" name="the_name_a" id="form_1_the_name_a1" class="gem-checkbox" />', $actual_output );
+
+		$field = new stdClass();
+		$field->type = 'string';
+		$field->field_type = 'tos_link';
+		$field->name = 'signup';
+		$field->required = false;
+		$field->display = 'Terms of Service Link Field';
+		$field->options = json_encode( [ 'link' => 'https://example.org' ] );
+		$field->field_name = 'terms_of_service_link_field';
+		$field->value = '';
+		ob_start();
+		GEM_Form_Fields::dispatch_field( $field );
+		$actual_output = ob_get_clean();
+		$this->assertContains( '<a href="https://example.org" target="_blank">Terms of Service Link Field</a>', $actual_output );
 	}
 
 	/**
