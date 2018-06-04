@@ -123,6 +123,9 @@ class GEM_Form_Fields {
 
 		if ( ! is_null( $field->field_type ) ) {
 			$field = self::adjust_field_type( $field );
+			if ( ! method_exists( __CLASS__, $field->field_type ) ) {
+				return;
+			}
 			call_user_func( array( __CLASS__, $field->field_type ), $field );
 		} else {
 			call_user_func( array( __CLASS__, $field->type ), $field );
@@ -442,8 +445,8 @@ class GEM_Form_Fields {
 
 		if ( in_array( $field->field_type, [ 'tracking_option', 'age_check' ], true ) ) {
 
+			$field->value      = $field->display;
 			$field->field_type = 'checkbox';
-			$field->value      = '1';
 
 		}
 
