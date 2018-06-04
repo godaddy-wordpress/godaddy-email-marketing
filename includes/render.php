@@ -186,6 +186,8 @@ class GEM_Form_Fields {
 	 * @param array $args Settings field arguments.
 	 */
 	public static function checkbox( $args ) {
+		print_r( $args );
+
 		$field_classes = array( 'gem-checkbox' );
 
 		// Is this field required?
@@ -413,8 +415,6 @@ class GEM_Form_Fields {
 	 * @param array $args Settings field arguments.
 	 */
 	public static function tos_link( $args ) {
-
-		print_r( $args );
 
 		$field_classes = array( 'gem-field' );
 

@@ -86,6 +86,19 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		GEM_Form_Fields::dispatch_field( $field );
 		$actual_output = ob_get_clean();
 		$this->assertContains( '<a href="https://example.org" target="_blank">Terms of Service Link Field</a>', $actual_output );
+
+		$field = new stdClass();
+		$field->type = 'string';
+		$field->field_type = 'tracking_option';
+		$field->name = 'signup[i_confirm_that_i_am_over_18_years_old]';
+		$field->required = true;
+		$field->display = 'I confirm that I am over 18 years old';
+		$field->field_name = 'i_confirm_that_i_am_over_18_years_old';
+		$field->value = 'I confirm that I am over 18 years old';
+		ob_start();
+		GEM_Form_Fields::dispatch_field( $field );
+		$actual_output = ob_get_clean();
+		$this->assertContains( '<input type="checkbox" value="I confirm that I am over 18 years old" name="signup[i_confirm_that_i_am_over_18_years_old]" id="form_1_signup[i_confirm_that_i_am_over_18_years_old]I confirm that I am over 18 years old" class="gem-checkbox gem-required" />', $actual_output );
 	}
 
 	/**
