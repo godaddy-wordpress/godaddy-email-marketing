@@ -83,14 +83,14 @@ class GEM_Dispatcher {
 
 		// Prepare the URL that includes our credentials.
 		$response = wp_remote_post( self::get_api_base_url( 'api/v3/signupForms' ), array(
-			'method' => 'POST',
+			'method'  => 'POST',
 			'timeout' => 10,
-			'body' => array(
-				'username' => $username,
-				'api_key' => $api_key,
-				'name' => 'Signup Form',
-				'integration' => 'WordPress',
-				'hidden' => false,
+			'body'    => array(
+				'username'           => $username,
+				'api_key'            => $api_key,
+				'name'               => 'Signup Form',
+				'integration'        => 'WordPress',
+				'hidden'             => false,
 				'subscriberListName' => 'WordPress',
 			),
 		) );
@@ -114,8 +114,8 @@ class GEM_Dispatcher {
 		if ( ! $username ) {
 			return false;
 		}
-
-		if ( false === ( $data = get_transient( 'gem-' . $username . '-lists' ) ) ) {
+		$data = get_transient( 'gem-' . $username . '-lists' );
+		if ( false === $data ) {
 			$data = self::fetch_forms();
 		}
 
@@ -129,8 +129,8 @@ class GEM_Dispatcher {
 	 * @return false|object The form fields JSON object or false.
 	 */
 	public static function get_fields( $form_id ) {
-		delete_transient( 'gem-form-' . $form_id );
-		if ( false === ( $data = get_transient( 'gem-form-' . $form_id ) ) ) {
+		$data = get_transient( 'gem-form-' . $form_id );
+		if ( false === $data ) {
 
 			// Fields are not cached. fetch and cache.
 			$response = wp_remote_get( self::get_method_url( 'fields', array(
@@ -161,9 +161,9 @@ class GEM_Dispatcher {
 		if ( ! $username ) {
 			return false;
 		}
-
-		if ( false === ( $data = get_transient( 'gem-' . $username . '-account' ) ) ) {
-			$data = false;
+		$data = get_transient( 'gem-' . $username . '-account' );
+		if ( false === $data ) {
+			$data    = false;
 			$request = wp_remote_get( self::get_method_url( 'account' ) );
 
 			// If the request has failed for whatever reason.
@@ -220,20 +220,20 @@ class GEM_Dispatcher {
 	public static function get_method_url( $method, $params = array(), $auth = false ) {
 		$auth = $auth ? $auth : array(
 			'username' => GEM_Settings_Controls::get_option( 'username' ),
-			'api_key' => GEM_Settings_Controls::get_option( 'api-key' ),
+			'api_key'  => GEM_Settings_Controls::get_option( 'api-key' ),
 		);
 
 		$path = '';
 
 		switch ( $method ) {
 
-			case 'forms' :
+			case 'forms':
 				$path = add_query_arg( $auth, 'signups.json' );
 				break;
-			case 'fields' :
+			case 'fields':
 				$path = add_query_arg( $auth, 'signups/' . $params['id'] . '.json' );
 				break;
-			case 'account' :
+			case 'account':
 				$path = add_query_arg( $auth, 'user/account_status' );
 				break;
 		}

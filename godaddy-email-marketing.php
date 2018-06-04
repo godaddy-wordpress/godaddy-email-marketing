@@ -76,14 +76,14 @@ class GEM_Official {
 	 */
 	private function setup_actions() {
 		add_action( 'plugins_loaded', array( $this, 'i18n' ) );
-		add_action( 'init',           array( $this, 'init' ) );
-		add_action( 'widgets_init',   array( $this, 'register_widget' ) );
-		add_action( 'init',           array( $this, 'register_shortcode' ), 20 );
-		add_action( 'admin_notices',  array( $this, 'action_admin_notices' ) );
+		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'widgets_init', array( $this, 'register_widget' ) );
+		add_action( 'init', array( $this, 'register_shortcode' ), 20 );
+		add_action( 'admin_notices', array( $this, 'action_admin_notices' ) );
 
 		add_filter( 'plugin_action_links_' . self::$basename, array( $this, 'action_links' ), 10 );
 
-		register_activation_hook( __FILE__,   array( $this, 'activate' ) );
+		register_activation_hook( __FILE__, array( $this, 'activate' ) );
 		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
 	}
 
@@ -111,7 +111,7 @@ class GEM_Official {
 			or define( 'GEM_VERSION', '1.2.1' );
 
 		// Set up the base name.
-		isset( self::$basename ) || self::$basename = plugin_basename( __FILE__ );
+		self::$basename = isset( self::$basename ) ? self::$basename : plugin_basename( __FILE__ );
 	}
 
 	/**
@@ -198,11 +198,11 @@ class GEM_Official {
 
 		// Help strings.
 		wp_localize_script( 'gem-main', 'GEM', array(
-			'thankyou' => __( 'Thank you for signing up!', 'godaddy-email-marketing' ),
+			'thankyou'            => __( 'Thank you for signing up!', 'godaddy-email-marketing' ),
 			'thankyou_suppressed' => __( 'Thank you for signing up! Please check your email to confirm your subscription.', 'godaddy-email-marketing' ),
-			'oops' => __( 'Oops! There was a problem. Please try again.', 'godaddy-email-marketing' ),
-			'email' => __( 'Please enter a valid email address.', 'godaddy-email-marketing' ),
-			'required' => _x( '%s is a required field.', 'Name of required field', 'godaddy-email-marketing' ),
+			'oops'                => __( 'Oops! There was a problem. Please try again.', 'godaddy-email-marketing' ),
+			'email'               => __( 'Please enter a valid email address.', 'godaddy-email-marketing' ),
+			'required'            => /* translators: Name of required field */__( '%s is a required field.', 'godaddy-email-marketing' ),
 		) );
 	}
 
@@ -246,6 +246,7 @@ class GEM_Official {
 				<p>
 					<?php
 					printf(
+						/* translators: Link to settings page. */
 						__( 'Your website has a superpower: Email marketing. %1$s.', 'godaddy-email-marketing' ),
 						'<a href="' . admin_url( 'options-general.php?page=gem-settings' ) . '">' . __( 'Learn More', 'godaddy-email-marketing' ) . '</a>'
 					);
@@ -264,11 +265,12 @@ class GEM_Official {
 			return;
 		}
 
-		$version = get_option( 'gem-version' );
+		$version  = get_option( 'gem-version' );
 		$settings = get_option( 'gem-settings' );
 
 		if ( ! $version && ( empty( $settings['username'] ) || empty( $settings['api-key'] ) ) ) {
-			update_option( 'gem-version', GEM_VERSION ); ?>
+			update_option( 'gem-version', GEM_VERSION );
+			?>
 
 			<div class="updated fade">
 				<p>

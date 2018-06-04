@@ -41,7 +41,7 @@ class GEM_Form_Widget extends WP_Widget {
 
 		// Set the initial form ID value if one exists.
 		if ( empty( $instance['form'] ) ) {
-			$forms = GEM_Dispatcher::get_forms();
+			$forms       = GEM_Dispatcher::get_forms();
 			$valid_creds = (bool) get_option( 'gem-valid-creds' );
 
 			// Create a default form.
@@ -56,6 +56,7 @@ class GEM_Form_Widget extends WP_Widget {
 
 				// Update widget instance with new form ID
 				$settings = $this->get_settings();
+
 				$settings[ $this->number ] = $instance;
 				$this->save_settings( $settings );
 			}
@@ -113,7 +114,7 @@ class GEM_Form_Widget extends WP_Widget {
 			'form'  => 0,
 		) );
 
-		$forms = GEM_Dispatcher::get_forms();
+		$forms       = GEM_Dispatcher::get_forms();
 		$valid_creds = (bool) get_option( 'gem-valid-creds' );
 
 		// Create a default form.
@@ -127,7 +128,7 @@ class GEM_Form_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'godaddy-email-marketing' ); ?></label>
 			<br/>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ) ?>" />
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
 
 		<p>
@@ -142,7 +143,7 @@ class GEM_Form_Widget extends WP_Widget {
 
 				<label for="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>"><?php esc_html_e( 'Form:', 'godaddy-email-marketing' ); ?></label>
 				<br/>
-				<select name="<?php echo esc_attr( $this->get_field_name( 'form' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>" class="widefat" value="<?php echo esc_attr( $instance['form'] ) ?>">
+				<select name="<?php echo esc_attr( $this->get_field_name( 'form' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'form' ) ); ?>" class="widefat" value="<?php echo esc_attr( $instance['form'] ); ?>">
 
 					<?php foreach ( $forms->signups as $form ) : ?>
 						<option value="<?php echo esc_attr( $form->id ); ?>" <?php selected( $instance['form'], $form->id ); ?>><?php echo esc_html( $form->name ); ?></option>
@@ -152,14 +153,19 @@ class GEM_Form_Widget extends WP_Widget {
 
 			<?php else : ?>
 
-			<span><?php printf(
-				esc_html_x( 'Please set up your GoDaddy Email Marketing account in the %s.', 'link to settings page', 'godaddy-email-marketing' ),
+			<span>
+			<?php
+			printf(
+				/* translators: Link to settings page */
+				esc_html__( 'Please set up your GoDaddy Email Marketing account in the %s.', 'godaddy-email-marketing' ),
 				sprintf(
 					'<a href="%s">%s</a>',
 					esc_url( admin_url( 'options-general.php?page=gem-settings' ) ),
 					esc_html__( 'settings page', 'godaddy-email-marketing' )
 				)
-			); ?></span>
+			);
+			?>
+			</span>
 
 			<?php endif; ?>
 

@@ -28,8 +28,8 @@ class GEM_Form_Renderer {
 	 * @return string
 	 */
 	public function process( $form_id, $echo = false ) {
-		$form  = (object) apply_filters( 'test', GEM_Dispatcher::get_fields( (int) $form_id ) );
-		$forms = GEM_Dispatcher::get_forms();
+		$form     = (object) apply_filters( 'test', GEM_Dispatcher::get_fields( (int) $form_id ) );
+		$forms    = GEM_Dispatcher::get_forms();
 		$form_ids = array();
 
 		if ( ! empty( $forms->signups ) ) {
@@ -63,9 +63,13 @@ class GEM_Form_Renderer {
 						<span class="gem-spinner"></span>
 					</p>
 
-					<?php $show_powered_by = GEM_Settings_Controls::get_option( 'display_powered_by' ) ? true : false;
+					<?php
 
-					if ( $show_powered_by ) : ?>
+					$show_powered_by = GEM_Settings_Controls::get_option( 'display_powered_by' ) ? true : false;
+
+					if ( $show_powered_by ) :
+
+					?>
 
 						<p>
 							<a href="https://www.godaddy.com/online-marketing/email-marketing" rel="nofollow" target="_blank"><?php esc_html_e( 'Powered by GoDaddy', 'godaddy-email-marketing' ); ?></a>
@@ -76,7 +80,9 @@ class GEM_Form_Renderer {
 				</form>
 			</div>
 
-			<?php $output = ob_get_clean();
+			<?php
+
+			$output = ob_get_clean();
 
 			if ( $echo ) {
 				echo $output; // xss ok
@@ -221,16 +227,17 @@ class GEM_Form_Fields {
 
 		<?php
 		$trim_values = array( '[', ']' );
-		$options = $args->options;
+		$options     = $args->options;
 		foreach ( $trim_values as $trim ) {
 			$options = trim( $options, $trim );
 		}
 
 		$trimmed_options = array();
-		$options = str_replace( '"', '', $options );
+		$options         = str_replace( '"', '', $options );
 		$trimmed_options = explode( ',', $options );
 
-		foreach ( $trimmed_options as $key => $value ) : ?>
+		foreach ( $trimmed_options as $key => $value ) :
+		?>
 			<input type="checkbox" data-id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" data-name="<?php echo esc_attr( $args->name ); ?>" value="<?php echo esc_attr( $value ); ?>" /> <?php echo esc_attr( $value ); ?><br>
 		<?php endforeach; ?>
 
@@ -256,16 +263,18 @@ class GEM_Form_Fields {
 		</br>
 		<select id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo esc_attr( $args->name ); ?>" class="<?php echo $args->required ? 'gem-required' : ''; ?>" data-label="<?php echo esc_attr( $args->display ); ?>">
 
-		<?php $trim_values = array( '[', ']' );
-		$options = $args->options;
+		<?php
+		$trim_values = array( '[', ']' );
+		$options     = $args->options;
 		foreach ( $trim_values as $trim ) {
 			$options = trim( $options, $trim );
 		}
 		$trimmed_options = array();
-		$options = str_replace( '"', '', $options );
+		$options         = str_replace( '"', '', $options );
 		$trimmed_options = explode( ',', $options );
 
-		foreach ( $trimmed_options as $dropdown_options ) : ?>
+		foreach ( $trimmed_options as $dropdown_options ) :
+		?>
 			<option value="<?php echo esc_attr( $dropdown_options ); ?>"> <?php echo esc_html( $dropdown_options ); ?><br>
 		<?php endforeach; ?>
 		</select>
@@ -289,19 +298,22 @@ class GEM_Form_Fields {
 		</label>
 		</br>
 
-		<?php $trim_values = array( '[', ']' );
-		$options = $args->options;
+		<?php
+		$trim_values = array( '[', ']' );
+		$options     = $args->options;
 		foreach ( $trim_values as $trim ) {
 			$options = trim( $options, $trim );
 		}
 
 		$trimmed_options = array();
-		$options = str_replace( '"', '', $options );
+		$options         = str_replace( '"', '', $options );
 		$trimmed_options = explode( ',', $options );
 
-		foreach ( $trimmed_options as $key => $value ) : ?>
+		foreach ( $trimmed_options as $key => $value ) :
+		?>
 			<input type="radio" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo esc_attr( $args->name ); ?>" value="<?php echo esc_attr( $value ); ?>" /> <?php echo esc_html( $value ); ?><br>
-		<?php endforeach;
+		<?php
+		endforeach;
 	}
 
 	/**
@@ -324,24 +336,24 @@ class GEM_Form_Fields {
 
 		<span class="third">
 			<select fingerprint="date" data-id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" data-name="<?php echo esc_attr( $args->name ); ?>">
-				<option value=""> <?php esc_html_e( 'Month', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'January', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'January', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'Febuary', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'Febuary', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'March', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'March', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'April', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'April', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'May', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'May', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'June', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'June', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'July', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'July', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'August', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'August', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'September', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'September', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'October', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'October', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'November', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'November', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'December', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'December', 'godaddy-email-marketing' ) ?> </option>
+				<option value=""> <?php esc_html_e( 'Month', 'godaddy-email-marketing' ); ?> </option>
+				<option value="<?php esc_attr_e( 'January', 'godaddy-email-marketing' ); ?>"> <?php esc_html_e( 'January', 'godaddy-email-marketing' ); ?> </option>
+				<option value="<?php esc_attr_e( 'Febuary', 'godaddy-email-marketing' ); ?>"> <?php esc_html_e( 'Febuary', 'godaddy-email-marketing' ); ?> </option>
+				<option value="<?php esc_attr_e( 'March', 'godaddy-email-marketing' ); ?>"> <?php esc_html_e( 'March', 'godaddy-email-marketing' ); ?> </option>
+				<option value="<?php esc_attr_e( 'April', 'godaddy-email-marketing' ); ?>"> <?php esc_html_e( 'April', 'godaddy-email-marketing' ); ?> </option>
+				<option value="<?php esc_attr_e( 'May', 'godaddy-email-marketing' ); ?>"> <?php esc_html_e( 'May', 'godaddy-email-marketing' ); ?> </option>
+				<option value="<?php esc_attr_e( 'June', 'godaddy-email-marketing' ); ?>"> <?php esc_html_e( 'June', 'godaddy-email-marketing' ); ?> </option>
+				<option value="<?php esc_attr_e( 'July', 'godaddy-email-marketing' ); ?>"> <?php esc_html_e( 'July', 'godaddy-email-marketing' ); ?> </option>
+				<option value="<?php esc_attr_e( 'August', 'godaddy-email-marketing' ); ?>"> <?php esc_html_e( 'August', 'godaddy-email-marketing' ); ?> </option>
+				<option value="<?php esc_attr_e( 'September', 'godaddy-email-marketing' ); ?>"> <?php esc_html_e( 'September', 'godaddy-email-marketing' ); ?> </option>
+				<option value="<?php esc_attr_e( 'October', 'godaddy-email-marketing' ); ?>"> <?php esc_html_e( 'October', 'godaddy-email-marketing' ); ?> </option>
+				<option value="<?php esc_attr_e( 'November', 'godaddy-email-marketing' ); ?>"> <?php esc_html_e( 'November', 'godaddy-email-marketing' ); ?> </option>
+				<option value="<?php esc_attr_e( 'December', 'godaddy-email-marketing' ); ?>"> <?php esc_html_e( 'December', 'godaddy-email-marketing' ); ?> </option>
 			</select>
 		</span>
 		<span class="third">
 			<select fingerprint="date" data-id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" data-name="<?php echo esc_attr( $args->name ); ?>">
-				<option value=""> <?php esc_html_e( 'Day', 'godaddy-email-marketing' ) ?> </option>
+				<option value=""> <?php esc_html_e( 'Day', 'godaddy-email-marketing' ); ?> </option>
 				<?php for ( $i = 1; $i < 32; $i++ ) : ?>
 					<option value="<?php echo strlen( $i ) < 2 ? '0' . esc_attr( $i ) : esc_attr( $i ); ?>"> <?php echo esc_attr( $i ); ?> </option>
 				<?php endfor; ?>
@@ -349,8 +361,8 @@ class GEM_Form_Fields {
 		</span>
 		<span class="third">
 			<select fingerprint="date" data-id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" data-name="<?php echo esc_attr( $args->name ); ?>">
-				<option value=""> <?php esc_html_e( 'Year', 'godaddy-email-marketing' ) ?> </option>
-				<?php for ( $x = $current_year + 5 ; $x > $current_year - 81 ; $x-- ) : ?>
+				<option value=""> <?php esc_html_e( 'Year', 'godaddy-email-marketing' ); ?> </option>
+				<?php for ( $x = $current_year + 5; $x > $current_year - 81; $x-- ) : ?>
 					<option value="<?php echo absint( $x ); ?>"> <?php echo absint( $x ); ?> </option>
 				<?php endfor; ?>
 			</select>
