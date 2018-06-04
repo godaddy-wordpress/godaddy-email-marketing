@@ -392,6 +392,11 @@ class GEM_Form_Fields {
 		<?php
 	}
 
+	/**
+	 * Displays the "Terms of Service" field.
+	 *
+	 * @param array $args Settings field arguments.
+	 */
 	public static function tos_link( $args ) {
 
 		$field_classes = array( 'gem-field' );
