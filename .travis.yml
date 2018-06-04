@@ -26,7 +26,6 @@ env:
   - WP_VERSION=trunk WP_MULTISITE=0
 
 addons:
-  chrome: stable
   apt:
     packages:
       # Needed for `xmllint`.
