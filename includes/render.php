@@ -28,7 +28,7 @@ class GEM_Form_Renderer {
 	 * @return string
 	 */
 	public function process( $form_id, $echo = false ) {
-		$form = GEM_Dispatcher::get_fields( (int) $form_id );
+		$form  = (object) apply_filters( 'test', GEM_Dispatcher::get_fields( (int) $form_id ) );
 		$forms = GEM_Dispatcher::get_forms();
 		$form_ids = array();
 
@@ -116,6 +116,7 @@ class GEM_Form_Fields {
 		self::$cycle = absint( $cycle );
 
 		if ( ! is_null( $field->field_type ) ) {
+			$field = self::adjust_field_type( $field );
 			call_user_func( array( __CLASS__, $field->field_type ), $field );
 		} else {
 			call_user_func( array( __CLASS__, $field->type ), $field );
@@ -389,5 +390,47 @@ class GEM_Form_Fields {
 		<input type="text" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" class="<?php echo esc_attr( join( ' ', $field_classes ) ); ?>" data-label="<?php echo esc_attr( $args->display ); ?>" />
 
 		<?php
+	}
+
+	public static function tos_link( $args ) {
+
+		$field_classes = array( 'gem-field' );
+
+		// Is this field required?
+		if ( $args->required ) {
+			$field_classes[] = 'gem-required';
+		}
+
+		$field_classes = (array) apply_filters( 'gem_required_field_class', $field_classes, $args );
+		$field_options = ! empty( $args->options ) ? json_decode( $args->options ) : false;
+		$tos_link      = isset( $field_options->link ) ? $field_options->link : false;
+		?>
+
+		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>">
+
+			<a href="<?php echo esc_url( $tos_link ); ?>" target="_blank"><?php echo esc_html( $args->display ); ?></a>
+
+		</label>
+
+		<?php
+
+	}
+
+	/**
+	 * Adjust a field type to reuse existing methods.
+	 *
+	 * @return string Field type
+	 */
+	private static function adjust_field_type( $field ) {
+
+		if ( in_array( $field->field_type, [ 'tracking_option', 'age_check' ], true ) ) {
+
+			$field->field_type = 'checkbox';
+			$field->value      = '1';
+
+		}
+
+		return $field;
+
 	}
 }

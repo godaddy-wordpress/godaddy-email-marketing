@@ -129,6 +129,7 @@ class GEM_Dispatcher {
 	 * @return false|object The form fields JSON object or false.
 	 */
 	public static function get_fields( $form_id ) {
+		delete_transient( 'gem-form-' . $form_id );
 		if ( false === ( $data = get_transient( 'gem-form-' . $form_id ) ) ) {
 
 			// Fields are not cached. fetch and cache.
