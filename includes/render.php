@@ -28,7 +28,7 @@ class GEM_Form_Renderer {
 	 * @return string
 	 */
 	public function process( $form_id, $echo = false ) {
-		$form     = (object) apply_filters( 'test', GEM_Dispatcher::get_fields( (int) $form_id ) );
+		$form     = GEM_Dispatcher::get_fields( (int) $form_id );
 		$forms    = GEM_Dispatcher::get_forms();
 		$form_ids = array();
 
