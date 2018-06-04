@@ -47,6 +47,11 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 
 		$field = new stdClass();
 		$field->type = 'string';
+		$field->field_type = 'invalid_field_type';
+		$this->assertEmpty( GEM_Form_Fields::dispatch_field( $field ) );
+
+		$field = new stdClass();
+		$field->type = 'string';
 		$field->field_type = 'string';
 		$field->name = 'the_name_a';
 		$field->required = false;
