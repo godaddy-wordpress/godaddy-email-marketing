@@ -175,7 +175,7 @@ msgstr "Harap isi nama pengguna dan kunci API terlebih dahulu."
 
 #: includes/settings.php:298
 msgid "Overview"
-msgstr "Gambaran umum"
+msgstr "Gambaran Umum"
 
 #: includes/settings.php:302
 msgid "Instructions"
