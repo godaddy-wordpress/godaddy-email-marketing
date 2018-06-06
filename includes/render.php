@@ -340,7 +340,7 @@ class GEM_Form_Fields {
 		</span>
 		<span class="third">
 			<select fingerprint="date" data-id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" data-name="<?php echo esc_attr( $args->name ); ?>">
-				<option value=""> <?php esc_html_e( 'Day', 'godaddy-email-marketing-sign-up-forms' ) ?> </option>
+				<option value=""> <?php esc_html_e( 'Day', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
 				<?php for ( $i = 1; $i < 32; $i++ ) : ?>
 					<option value="<?php echo strlen( $i ) < 2 ? '0' . esc_attr( $i ) : esc_attr( $i ); ?>"> <?php echo esc_attr( $i ); ?> </option>
 				<?php endfor; ?>
