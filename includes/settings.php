@@ -300,15 +300,15 @@ class GEM_Settings {
 			'content' => sprintf(
 				'<h3>%s</h3><p>%s</p><ul><li>%s</li><li>%s</li><li>%s</li></ul>',
 				esc_html__( 'Instructions', 'godaddy-email-marketing-sign-up-forms' ),
-				/* translators: %s: link to GoDaddy Email Marketing account page */
 				sprintf(
+					/* translators: %s: link to GoDaddy Email Marketing account page */
 					esc_html__( 'Once the plugin is activated, you will be able to select and insert any of your GoDaddy Email Marketing webforms right into your site. Setup is easy. Below, simply enter your account email address and API key (found in your GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can display a webform on your site:', 'godaddy-email-marketing-sign-up-forms' ),
 					'<a href="https://gem.godaddy.com/user/edit" target="_blank">https://gem.godaddy.com/user/edit</a>'
 				),
 				__( '<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget called “GoDaddy Email Marketing Form” and drag it into the widget area of your choice. You can then add a title and select a form!', 'godaddy-email-marketing-sign-up-forms' ),
 				__( '<strong>Shortcode:</strong> You can add a form to any post or page by adding the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor.', 'godaddy-email-marketing-sign-up-forms' ),
-				/* translators: %1$s: &lt;?php gem_form( $form_id ); ?&gt;, %2$s: &lt;?php gem_form( 91 ); ?&gt; */
 				sprintf(
+					/* translators: %1$s: &lt;?php gem_form( $form_id ); ?&gt;, %2$s: &lt;?php gem_form( 91 ); ?&gt; */
 					__( '<strong>Template Tag:</strong> You can add the following template tag into any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>', 'godaddy-email-marketing-sign-up-forms' ),
 					'&lt;?php gem_form( $form_id ); ?&gt;',
 					'&lt;?php gem_form( 91 ); ?&gt;'
@@ -621,8 +621,8 @@ class GEM_Settings {
 					<div id="forms" class="panel">
 						<h3><?php esc_html_e( 'Reach Your Fans', 'godaddy-email-marketing-sign-up-forms' ); ?></h3>
 						<p><?php
-							/* translators: %1$s: <a href="https://gem.godaddy.com">, %2$s: </a> */
 							printf(
+								/* translators: %1$s: <a href="https://gem.godaddy.com">, %2$s: </a> */
 								esc_html__( 'Email marketing makes it easier than ever to turn casual visits into lasting relationship. You\'re already collecting subscribers, now you just need to start emailing them. It only takes a few moments to %1$screate an email marketing campaign%2$s.', 'godaddy-email-marketing-sign-up-forms' ),
 								'<a href="https://gem.godaddy.com" target="_blank">',
 								'</a>'

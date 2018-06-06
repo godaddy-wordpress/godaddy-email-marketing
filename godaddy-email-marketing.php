@@ -246,8 +246,8 @@ class GEM_Official {
 			<div class="gem-notice notice notice-success is-dismissible">
 				<p>
 					<?php
-					/* translators: %s: Link to plugin settings page with text 'Learn More'. */
 					printf(
+						/* translators: %1$s: Link to plugin settings page with text 'Learn More'. */
 						__( 'Your website has a superpower: Email marketing. %1$s.', 'godaddy-email-marketing-sign-up-forms' ),
 						'<a href="' . admin_url( 'options-general.php?page=gem-settings' ) . '">' . __( 'Learn More', 'godaddy-email-marketing-sign-up-forms' ) . '</a>'
 					);
