@@ -5,7 +5,7 @@
 **Tags:** [email](https://wordpress.org/plugins/tags/email/), [forms](https://wordpress.org/plugins/tags/forms/), [godaddy](https://wordpress.org/plugins/tags/godaddy/), [mailing list](https://wordpress.org/plugins/tags/mailing list/), [marketing](https://wordpress.org/plugins/tags/marketing/), [newsletter](https://wordpress.org/plugins/tags/newsletter/), [opt-in](https://wordpress.org/plugins/tags/opt-in/), [signup](https://wordpress.org/plugins/tags/signup/), [subscribe](https://wordpress.org/plugins/tags/subscribe/), [widget](https://wordpress.org/plugins/tags/widget/), [contacts](https://wordpress.org/plugins/tags/contacts/)  
 **Requires at least:** 3.8  
 **Tested up to:** 4.9  
-**Stable tag:** 1.2.0  
+**Stable tag:** 1.2.1  
 **License:** GPL-2.0  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -118,6 +118,9 @@ You can find your **Secret API Key** in the [Settings section](https://gem.godad
 4. The widget, on the front-end.
 
 ## Changelog ##
+
+### 1.2.1 ###
+* Fix: Switch `wp_nonce` to `_wpnonce`, fixing the ability to refresh GEM forms.
 
 ### 1.2.0 ###
 * New: Help tab on the Settings screen

@@ -3,7 +3,7 @@ Contributors: godaddy, fjarrett, jonathanbardo, eherman24, susanygodaddy, madmim
 Tags: email, forms, godaddy, mailing list, marketing, newsletter, opt-in, signup, subscribe, widget, contacts
 Requires at least: 3.8
 Tested up to: 4.9
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPL-2.0
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -114,6 +114,9 @@ You can find your **Secret API Key** in the [Settings section](https://gem.godad
 4. The widget, on the front-end.
 
 == Changelog ==
+
+= 1.2.1 =
+* Fix: Switch `wp_nonce` to `_wpnonce`, fixing the ability to refresh GEM forms.
 
 = 1.2.0 =
 * New: Help tab on the Settings screen

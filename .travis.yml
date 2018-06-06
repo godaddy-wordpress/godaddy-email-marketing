@@ -9,11 +9,14 @@ notifications:
 
 branches:
   only:
+    - /^v\d.*$/
     - master
     - develop
 
 php:
-  - 5.2
+  # Disable PHP 5.2
+  # See: https://github.com/travis-ci/travis-ci/issues/8072
+  # - 5.2
   - 5.6
   - 7.1
 
@@ -46,7 +49,7 @@ before_deploy:
   - curl https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar > /tmp/wp-cli.phar
   - chmod +x /tmp/wp-cli.phar
   - export RELEASE_FOLDER=godaddy-email-marketing-sign-up-forms
-  - php /tmp/wp-cli.phar package install runcommand/dist-archive
+  - php /tmp/wp-cli.phar package install git@github.com:wp-cli/dist-archive-command.git
   - cp -r ${TRAVIS_BUILD_DIR} /tmp/${RELEASE_FOLDER}
   - mv /tmp/${RELEASE_FOLDER} ${TRAVIS_BUILD_DIR}
   - php /tmp/wp-cli.phar dist-archive ${RELEASE_FOLDER} ${TRAVIS_BUILD_DIR}/${RELEASE_FOLDER}.zip --format=zip --debug
@@ -54,8 +57,8 @@ before_deploy:
 deploy:
   provider: releases
   api_key:
-    secure: jQMEnbE3F9zkrYn4WyPhDmw9ph+hs6gTY8kQyBYOA310PQkyyhKASG9i84R24DKiIUCuJhUiuVotGUCt5Y0fP/QjxwEET2IPYhhzL6lonoraGt2u0mJ9zQVJvajx+0J6auVKp9VIBucGLQPGPHECZO03cdmzYdQhLiaOhjf6vMedCLVimGu/2hDWEtQgfpZztNUMehRqDg7s8co8hlHMQa+E+mmmihRGjYjU7eMZUXF3izGFiOMKxlr9tRXNMafVwEyO/IAdeN0KZI6rYGSeegukVem+HwOTTc1ZIGS51Brr47tA46zEeWcNaPZalC35Kdfu3axNNpEWzX7AeyVJvr37klXK2Tffh9wZxGIW9mulHcvV0uOrI7d5ATEjcriMsA2tBiHaSfzQCyYcz2h7R3KiAskqXfUU9TkvhZiFjjfTWHlGTgASNsZecGa5geEnGZ/14vIAL7mfAMxi+zodviRVJ2eZdOGKXE/W5525bggD7qNrf2/upDJd8T7sma8YDpb5yuXavvQWI3dgaCSDOhDkzLTYFzwjNhiztd4YM8S/w2fqr7NmF+OqJtt7gOD5MpeGR97WbrejV3fsUSS4tirH2HddC7Xfs9dGXKusoD6Vm8TqR3w1ldok10KTnRs4LfT7XqX2Nz9nVYKh23Qr9UtmdwXRy/7mcHa8p8Mjzy8=
-  file: godaddy-email-marketing-sign-up-forms.zip
+    secure: QjszjdBVY4X6n4aIjJyfd31vGdkmzfF/m80GnU3/ZpHZFtBsNab2mx4ZMp/8ZUcFtxtvGU9oRub9Q5GkYWRWDVErjJQbuoz89AsXqSJHrturY1rjOEYUG5oh7Kyi/TqKj+4eR/iGBq4eHS+D90/MLIpRQxU9CIPHUho4WbbRowVQ59RDBxcgW5lGlDoMAr4z0R/7eMN9HdVmcP43DHuPTDPLjevWiN9QdOLRB1dOwTWYaYQYanBp/NCKCR9JZPCBeX0lurnzNGhi+cWQremU/DRb3rfxejKTgQjX4g0DoC0VjjvySRl69W4Z/+fOayJV4szppgC2DoCiPHGnStLSkV5vuQPNphpHqi8uk6uge3FIXCWUJInPV2B9P8rG8ZvnUXHwhpv4p9yly8BOjQof6nQU/uNA6c6VWWnFC/KJfh+u3T3X9W1wTd/vJtM07/8NV4GQaHswhkFA3Bm8S71vLp5bPwtOvDp9YWC2TyZxxrHFCxgqz0zv6p9Iegkv1WPF7fxndZJPg5vqihv2D55zoPV5HqjABaHRoDbShrWz5cb1Re2FW25BrpubV+jnNMxPkL35B+z8/UlX3fT/VhXEyp54T0LcTDRSIT85Bx+Pcd8iHcDXXPY4Z6N4w7s+vTKB0Ayd5npiH8GxQtjANuUJi8htVIa7bbGpOyRf80SRRfM=
+  file: "$TRAVIS_BUILD_DIR/$RELEASE_FOLDER.zip"
   skip_cleanup: true
   overwrite: true
   on:
