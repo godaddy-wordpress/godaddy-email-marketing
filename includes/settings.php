@@ -427,7 +427,7 @@ class GEM_Settings {
 						'action'   => 'debug-reset-transients',
 						'_wpnonce' => wp_create_nonce( 'gem_settings_reset_transients_nonce' ),
 					) ),
-					'label' => __( 'Erase Transients', 'godaddy-email-marketing-sign-up-forms' ),
+					'label'       => __( 'Erase Transients', 'godaddy-email-marketing-sign-up-forms' ),
 					'description' => __( 'Purges only the cached data associated with this plugin, and should be attempted before a hard reset.', 'godaddy-email-marketing-sign-up-forms' ),
 				)
 			);
@@ -443,7 +443,7 @@ class GEM_Settings {
 						'action'   => 'debug-reset',
 						'_wpnonce' => wp_create_nonce( 'gem_settings_hard_reset_nonce' ),
 					) ),
-					'label' => __( 'Erase All Data', 'godaddy-email-marketing-sign-up-forms' ),
+					'label'       => __( 'Erase All Data', 'godaddy-email-marketing-sign-up-forms' ),
 					'description' => __( 'Purges all saved data associated with this plugin.', 'godaddy-email-marketing-sign-up-forms' ),
 				)
 			);

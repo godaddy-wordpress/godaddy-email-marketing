@@ -47,7 +47,7 @@ class GEM_Shortcode {
 			reset( $options );
 
 			$args = array(
-				'label' => esc_html__( 'GoDaddy Email Marketing', 'godaddy-email-marketing-sign-up-forms' ),
+				'label'         => esc_html__( 'GoDaddy Email Marketing', 'godaddy-email-marketing-sign-up-forms' ),
 				'listItemImage' => 'dashicons-feedback',
 				'attrs' => array(
 					array(
