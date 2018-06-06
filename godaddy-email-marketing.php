@@ -202,6 +202,7 @@ class GEM_Official {
 			'thankyou_suppressed' => __( 'Thank you for signing up! Please check your email to confirm your subscription.', 'godaddy-email-marketing-sign-up-forms' ),
 			'oops' => __( 'Oops! There was a problem. Please try again.', 'godaddy-email-marketing-sign-up-forms' ),
 			'email' => __( 'Please enter a valid email address.', 'godaddy-email-marketing-sign-up-forms' ),
+			/* translators: %s: Name of required field */
 			'required' => _x( '%s is a required field.', 'Name of required field', 'godaddy-email-marketing-sign-up-forms' ),
 		) );
 	}
@@ -245,6 +246,7 @@ class GEM_Official {
 			<div class="gem-notice notice notice-success is-dismissible">
 				<p>
 					<?php
+					/* translators: %s: Link to plugin settings page with text 'Learn More'. */
 					printf(
 						__( 'Your website has a superpower: Email marketing. %1$s.', 'godaddy-email-marketing-sign-up-forms' ),
 						'<a href="' . admin_url( 'options-general.php?page=gem-settings' ) . '">' . __( 'Learn More', 'godaddy-email-marketing-sign-up-forms' ) . '</a>'
