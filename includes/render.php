@@ -199,7 +199,7 @@ class GEM_Form_Fields {
 
 		<label for="<?php echo esc_attr( self::get_form_id( $args->name ) . $args->value ); ?>">
 
-			<input type="checkbox" value="<?php echo esc_attr( $args->value ); ?>" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo esc_attr( self::get_form_id( $args->name ) . $args->value ); ?>" class="<?php echo esc_attr( join( ' ', $field_classes ) ); ?>" />
+			<input type="checkbox" value="<?php echo esc_attr( $args->value ); ?>" name="<?php echo esc_attr( $args->name ); ?>" id="<?php echo esc_attr( self::get_form_id( $args->name ) . $args->value ); ?>" class="<?php echo esc_attr( join( ' ', $field_classes ) ); ?>" data-label="<?php echo esc_attr( $args->display ); ?>" />
 
 			<?php echo esc_html( $args->display ); ?>
 
