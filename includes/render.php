@@ -68,7 +68,7 @@ class GEM_Form_Renderer {
 					if ( $show_powered_by ) : ?>
 
 						<p>
-							<a href="https://www.godaddy.com/online-marketing/email-marketing" rel="nofollow" target="_blank"><?php esc_html_e( 'Powered by GoDaddy', 'godaddy-email-marketing' ); ?></a>
+							<a href="https://www.godaddy.com/online-marketing/email-marketing" rel="nofollow" target="_blank"><?php esc_html_e( 'Powered by GoDaddy', 'godaddy-email-marketing-sign-up-forms' ); ?></a>
 						</p>
 
 					<?php endif; ?>
@@ -323,24 +323,24 @@ class GEM_Form_Fields {
 
 		<span class="third">
 			<select fingerprint="date" data-id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" data-name="<?php echo esc_attr( $args->name ); ?>">
-				<option value=""> <?php esc_html_e( 'Month', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'January', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'January', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'Febuary', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'Febuary', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'March', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'March', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'April', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'April', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'May', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'May', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'June', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'June', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'July', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'July', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'August', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'August', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'September', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'September', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'October', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'October', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'November', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'November', 'godaddy-email-marketing' ) ?> </option>
-				<option value="<?php esc_attr_e( 'December', 'godaddy-email-marketing' ) ?>"> <?php esc_html_e( 'December', 'godaddy-email-marketing' ) ?> </option>
+				<option value=""> <?php esc_html_e( 'Month', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
+				<option value="<?php esc_attr_e( 'January', 'godaddy-email-marketing-sign-up-forms' ); ?>"> <?php esc_html_e( 'January', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
+				<option value="<?php esc_attr_e( 'Febuary', 'godaddy-email-marketing-sign-up-forms' ); ?>"> <?php esc_html_e( 'Febuary', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
+				<option value="<?php esc_attr_e( 'March', 'godaddy-email-marketing-sign-up-forms' ); ?>"> <?php esc_html_e( 'March', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
+				<option value="<?php esc_attr_e( 'April', 'godaddy-email-marketing-sign-up-forms' ); ?>"> <?php esc_html_e( 'April', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
+				<option value="<?php esc_attr_e( 'May', 'godaddy-email-marketing-sign-up-forms' ); ?>"> <?php esc_html_e( 'May', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
+				<option value="<?php esc_attr_e( 'June', 'godaddy-email-marketing-sign-up-forms' ); ?>"> <?php esc_html_e( 'June', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
+				<option value="<?php esc_attr_e( 'July', 'godaddy-email-marketing-sign-up-forms' ); ?>"> <?php esc_html_e( 'July', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
+				<option value="<?php esc_attr_e( 'August', 'godaddy-email-marketing-sign-up-forms' ); ?>"> <?php esc_html_e( 'August', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
+				<option value="<?php esc_attr_e( 'September', 'godaddy-email-marketing-sign-up-forms' ); ?>"> <?php esc_html_e( 'September', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
+				<option value="<?php esc_attr_e( 'October', 'godaddy-email-marketing-sign-up-forms' ); ?>"> <?php esc_html_e( 'October', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
+				<option value="<?php esc_attr_e( 'November', 'godaddy-email-marketing-sign-up-forms' ); ?>"> <?php esc_html_e( 'November', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
+				<option value="<?php esc_attr_e( 'December', 'godaddy-email-marketing-sign-up-forms' ); ?>"> <?php esc_html_e( 'December', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
 			</select>
 		</span>
 		<span class="third">
 			<select fingerprint="date" data-id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" data-name="<?php echo esc_attr( $args->name ); ?>">
-				<option value=""> <?php esc_html_e( 'Day', 'godaddy-email-marketing' ) ?> </option>
+				<option value=""> <?php esc_html_e( 'Day', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
 				<?php for ( $i = 1; $i < 32; $i++ ) : ?>
 					<option value="<?php echo strlen( $i ) < 2 ? '0' . esc_attr( $i ) : esc_attr( $i ); ?>"> <?php echo esc_attr( $i ); ?> </option>
 				<?php endfor; ?>
@@ -348,7 +348,7 @@ class GEM_Form_Fields {
 		</span>
 		<span class="third">
 			<select fingerprint="date" data-id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" data-name="<?php echo esc_attr( $args->name ); ?>">
-				<option value=""> <?php esc_html_e( 'Year', 'godaddy-email-marketing' ) ?> </option>
+				<option value=""> <?php esc_html_e( 'Year', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
 				<?php for ( $x = $current_year + 5 ; $x > $current_year - 81 ; $x-- ) : ?>
 					<option value="<?php echo absint( $x ); ?>"> <?php echo absint( $x ); ?> </option>
 				<?php endfor; ?>
