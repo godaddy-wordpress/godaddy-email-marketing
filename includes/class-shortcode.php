@@ -20,15 +20,15 @@ class GEM_Shortcode {
 	 * @return string|void
 	 */
 	public function render( $atts ) {
-		extract( shortcode_atts( array(
+		$atts = shortcode_atts( array(
 			'id' => false,
-		), $atts ) );
+		), $atts );
 
-		if ( ! $id ) {
+		if ( ! $atts['id'] ) {
 			return;
 		}
 
-		return gem_form( $id, false );
+		return gem_form( $atts['id'], false );
 	}
 
 	/**
@@ -47,12 +47,12 @@ class GEM_Shortcode {
 			reset( $options );
 
 			$args = array(
-				'label' => esc_html__( 'GoDaddy Email Marketing', 'godaddy-email-marketing' ),
+				'label'         => esc_html__( 'GoDaddy Email Marketing', 'godaddy-email-marketing-sign-up-forms' ),
 				'listItemImage' => 'dashicons-feedback',
-				'attrs' => array(
+				'attrs'         => array(
 					array(
-						'label'       => esc_html__( 'Signup Forms', 'godaddy-email-marketing' ),
-						'description' => esc_html__( 'Choose one of the available forms.', 'godaddy-email-marketing' ),
+						'label'       => esc_html__( 'Signup Forms', 'godaddy-email-marketing-sign-up-forms' ),
+						'description' => esc_html__( 'Choose one of the available forms.', 'godaddy-email-marketing-sign-up-forms' ),
 						'attr'        => 'id',
 						'encode'      => false,
 						'type'        => 'select',
@@ -81,7 +81,7 @@ class GEM_Shortcode {
 function gem_form( $id, $echo = true ) {
 	if ( class_exists( 'GEM_Form_Renderer', false ) ) {
 		$renderer = new GEM_Form_Renderer();
-		$form = $renderer->process( $id, false );
+		$form     = $renderer->process( $id, false );
 
 		if ( ! $echo ) {
 			return $form;

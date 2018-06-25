@@ -115,12 +115,17 @@ You can find your **Secret API Key** in the [Settings section](https://gem.godad
 
 == Changelog ==
 
+= 1.3.0 =
+* New: Add support for GDPR fields (Age consent, terms of service and tracking option)
+* Fix: Update text domain to match plugin slug.
+* Tweak: Update translation functions and regenerate translations.
+
 = 1.2.1 =
 * Fix: Switch `wp_nonce` to `_wpnonce`, fixing the ability to refresh GEM forms.
 
 = 1.2.0 =
 * New: Help tab on the Settings screen
-* New: Dismissable admin notice after on-boarding
+* New: Dismissible admin notice after on-boarding
 
 = 1.1.4 =
 * Tweak: Indicate support for WordPress 4.7

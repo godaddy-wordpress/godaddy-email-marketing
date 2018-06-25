@@ -100,7 +100,7 @@ module.exports = function( grunt ) {
 					include: [ 'godaddy-email-marketing.php', 'includes/.+\.php' ],
 					mainFile: 'godaddy-email-marketing.php',
 					potComments: 'Copyright (c) {year} GoDaddy Operating Company, LLC. All Rights Reserved.',
-					potFilename: 'godaddy-email-marketing.pot',
+					potFilename: 'godaddy-email-marketing-sign-up-forms.pot',
 					potHeaders: {
 						'x-poedit-keywordslist': true
 					},
@@ -185,7 +185,7 @@ module.exports = function( grunt ) {
 				tasks: [ 'imagemin' ]
 			},
 			js: {
-				files: [ '**/*.js', '!**/*.min.js' ],
+				files: [ 'js/**/*.js', '!js/**/*.min.js' ],
 				tasks: [ 'jshint', 'uglify' ]
 			},
 			readme: {
