@@ -97,6 +97,10 @@
 
 					// Empty required field.
 					invalidElements.push( $( this ) );
+				} else if ( $( this ).is( 'input[type="checkbox"]' ) && ! $( this ).is( ':checked' ) ) {
+
+					// Empty checkbox.
+					invalidElements.push( $( this ) );
 				} else if ( $( this ).is( 'label' ) ) {
 
 					// Empty radio.

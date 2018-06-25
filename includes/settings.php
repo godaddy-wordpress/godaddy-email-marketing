@@ -56,11 +56,12 @@ class GEM_Settings {
 	 * @action admin_menu
 	 */
 	public function action_admin_menu() {
+		$this->slug = self::SLUG;
 		$this->hook = add_options_page(
 			__( 'GoDaddy Email Marketing Signup Forms', 'godaddy-email-marketing-sign-up-forms' ),
 			__( 'GoDaddy Email Marketing', 'godaddy-email-marketing-sign-up-forms' ),
 			'manage_options',
-			$this->slug = self::SLUG,
+			$this->slug,
 			array( $this, 'display_settings_page' )
 		);
 
@@ -134,7 +135,8 @@ class GEM_Settings {
 			$settings = get_option( $this->slug );
 
 			switch ( $_GET['action'] ) {
-				case 'debug-reset' :
+
+				case 'debug-reset':
 					if ( ! $this->gem->debug ) {
 						return;
 					}
@@ -168,7 +170,8 @@ class GEM_Settings {
 					// @codeCoverageIgnoreEnd
 
 					break;
-				case 'debug-reset-transients' :
+
+				case 'debug-reset-transients':
 					if ( ! $this->gem->debug ) {
 						return;
 					}
@@ -199,8 +202,8 @@ class GEM_Settings {
 					}
 
 					break;
-				case 'refresh' :
 
+				case 'refresh':
 					check_admin_referer( 'gem_settings_refresh_nonce' );
 
 					if ( isset( $settings['username'] ) ) {
@@ -359,10 +362,10 @@ class GEM_Settings {
 			$this->slug,
 			'general_settings_section',
 			array(
-				'id' => 'username',
-				'page' => $this->slug,
+				'id'          => 'username',
+				'page'        => $this->slug,
 				'description' => '',
-				'label_for' => $this->slug . '-username',
+				'label_for'   => $this->slug . '-username',
 			)
 		);
 
@@ -373,10 +376,10 @@ class GEM_Settings {
 			$this->slug,
 			'general_settings_section',
 			array(
-				'id' => 'api-key',
-				'page' => $this->slug,
+				'id'          => 'api-key',
+				'page'        => $this->slug,
 				'description' => '',
-				'label_for' => $this->slug . '-api-key',
+				'label_for'   => $this->slug . '-api-key',
 			)
 		);
 
@@ -387,8 +390,8 @@ class GEM_Settings {
 			$this->slug,
 			'general_settings_section',
 			array(
-				'id' => 'display_powered_by',
-				'page' => $this->slug,
+				'id'    => 'display_powered_by',
+				'page'  => $this->slug,
 				'label' => __( 'Display "Powered by GoDaddy"?', 'godaddy-email-marketing-sign-up-forms' ),
 			)
 		);
@@ -408,8 +411,8 @@ class GEM_Settings {
 			$this->slug,
 			'debugging_section',
 			array(
-				'id' => 'debug',
-				'page' => $this->slug,
+				'id'    => 'debug',
+				'page'  => $this->slug,
 				'label' => __( 'Activated', 'godaddy-email-marketing-sign-up-forms' ),
 			)
 		);
@@ -423,7 +426,7 @@ class GEM_Settings {
 				$this->slug,
 				'debugging_section',
 				array(
-					'url' => add_query_arg( array(
+					'url'         => add_query_arg( array(
 						'action'   => 'debug-reset-transients',
 						'_wpnonce' => wp_create_nonce( 'gem_settings_reset_transients_nonce' ),
 					) ),
@@ -439,7 +442,7 @@ class GEM_Settings {
 				$this->slug,
 				'debugging_section',
 				array(
-					'url' => add_query_arg( array(
+					'url'         => add_query_arg( array(
 						'action'   => 'debug-reset',
 						'_wpnonce' => wp_create_nonce( 'gem_settings_hard_reset_nonce' ),
 					) ),
@@ -488,7 +491,7 @@ class GEM_Settings {
 			$class = 'col col-' . $index;
 			if ( $columns === $index ) {
 				$class .= ' last';
-				$index = 0;
+				$index  = 0;
 			}
 			?>
 			<div class="<?php echo esc_attr( $class ); ?>">
@@ -499,7 +502,8 @@ class GEM_Settings {
 				if ( ! empty( $section['callback'] ) ) {
 					call_user_func( $section['callback'], $section );
 				}
-				if ( isset( $wp_settings_fields ) ) { ?>
+				if ( isset( $wp_settings_fields ) ) {
+					?>
 				<table class="form-table">
 					<?php do_settings_fields( $page, $section['id'] ); ?>
 				</table>
@@ -525,28 +529,22 @@ class GEM_Settings {
 		// Overrides
 		switch ( $subdomain ) {
 
-			case '' :
-
+			case '':
 				$subdomain = 'www'; // Default
-
 				break;
 
-			case 'uk' :
-
+			case 'uk':
 				$subdomain = 'ua'; // Ukrainian (Українська)
-
 				break;
 
-			case 'el' :
-
+			case 'el':
 				$subdomain = 'gr'; // Greek (Ελληνικά)
-
 				break;
 
 		}
 
 		?>
-		<iframe src="<?php echo esc_url( "https://{$subdomain}.godaddy.com/help/godaddy-email-marketing-1000013" ) ?>" frameborder="0" scrolling="no"></iframe>
+		<iframe src="<?php echo esc_url( "https://{$subdomain}.godaddy.com/help/godaddy-email-marketing-1000013" ); ?>" frameborder="0" scrolling="no"></iframe>
 
 		<script type="text/javascript">
 			iFrameResize( {
@@ -565,8 +563,8 @@ class GEM_Settings {
 	 * @todo Move this into a view file and include.
 	 */
 	public function display_settings_page() {
-		$tab = isset( $_GET['tab'] ) ? sanitize_key( wp_unslash( $_GET['tab'] ) ) : '';
-		$forms = GEM_Dispatcher::get_forms();
+		$tab         = isset( $_GET['tab'] ) ? sanitize_key( wp_unslash( $_GET['tab'] ) ) : '';
+		$forms       = GEM_Dispatcher::get_forms();
 		$valid_creds = (bool) get_option( 'gem-valid-creds' );
 
 		// Create a default form.
@@ -598,8 +596,7 @@ class GEM_Settings {
 								<?php echo esc_html_x( 'You don\'t have any forms yet.', 'header note', 'godaddy-email-marketing-sign-up-forms' ); ?>
 								<?php $this->signups_button(); ?>
 							<?php else : ?>
-								<?php /* translators: %s: Sign Up Now button */ ?>
-								<?php echo sprintf( esc_html_x( 'New to GoDaddy? Create an account to get started today. %s', 'Sign up button', 'godaddy-email-marketing-sign-up-forms' ), sprintf( '<a target="_blank" href="%s" class="button">%s</a>', 'https://sso.godaddy.com/account/create?path=/wordpress_plugin&app=gem&realm=idp&ssoreturnpath=/%3Fpath%3D%2Fwordpress_plugin%26app%3Dgem%26realm%3Didp', esc_html_x( 'Sign Up Now', 'header button', 'godaddy-email-marketing-sign-up-forms' ) ) ); ?>
+								<?php echo /* translators: %s: Sign Up Now button */ sprintf( esc_html_x( 'New to GoDaddy? Create an account to get started today. %s', 'Sign up button', 'godaddy-email-marketing-sign-up-forms' ), sprintf( '<a target="_blank" href="%s" class="button">%s</a>', 'https://sso.godaddy.com/account/create?path=/wordpress_plugin&app=gem&realm=idp&ssoreturnpath=/%3Fpath%3D%2Fwordpress_plugin%26app%3Dgem%26realm%3Didp', esc_html_x( 'Sign Up Now', 'header button', 'godaddy-email-marketing-sign-up-forms' ) ) ); ?>
 							<?php endif; ?>
 						</p>
 					</div>
@@ -852,8 +849,8 @@ final class GEM_Settings_Controls {
 	public static function description() {
 		printf(
 			'<p>%s</p>',
-			/* translators: %1$s: Sign in here link, %2$s: Sign up here link */
-			sprintf( esc_html_x( 'For this plugin to work, it needs to access your GoDaddy Email Marketing account. %1$s to get your username and API key. Copy and paste them below; then click "Save Settings." If you don\'t have a GoDaddy Email Marketing account, %2$s.', '1. Sign-in link, 2. Sign-up link', 'godaddy-email-marketing-sign-up-forms' ), sprintf( '<a target="_blank" href="%s">%s</a>', 'https://sso.godaddy.com/?realm=idp&app=gem&path=/wordpress_plugin', esc_html_x( 'Sign in here', 'account details link', 'godaddy-email-marketing-sign-up-forms' ) ), sprintf( '<a target="_blank" href="%s">%s</a>', 'https://sso.godaddy.com/account/create?path=/wordpress_plugin&app=gem&realm=idp&ssoreturnpath=/%3Fpath%3D%2Fwordpress_plugin%26app%3Dgem%26realm%3Didp', esc_html_x( 'sign up here', 'account details link', 'godaddy-email-marketing-sign-up-forms' ) ) )
+			/* translators: 1. Sign in here link, 2. Sign up here link */
+			sprintf( esc_html__( 'For this plugin to work, it needs to access your GoDaddy Email Marketing account. %1$s to get your username and API key. Copy and paste them below; then click "Save Settings." If you don\'t have a GoDaddy Email Marketing account, %2$s.', 'godaddy-email-marketing-sign-up-forms' ), sprintf( '<a target="_blank" href="%s">%s</a>', 'https://sso.godaddy.com/?realm=idp&app=gem&path=/wordpress_plugin', /* translators: account details link */ esc_html__( 'Sign in here', 'godaddy-email-marketing-sign-up-forms' ) ), sprintf( '<a target="_blank" href="%s">%s</a>', 'https://sso.godaddy.com/account/create?path=/wordpress_plugin&app=gem&realm=idp&ssoreturnpath=/%3Fpath%3D%2Fwordpress_plugin%26app%3Dgem%26realm%3Didp', esc_html_x( 'sign up here', 'account details link', 'godaddy-email-marketing-sign-up-forms' ) ) )
 		);
 	}
 
@@ -865,7 +862,8 @@ final class GEM_Settings_Controls {
 	public static function select( $args ) {
 		if ( empty( $args['options'] ) || empty( $args['id'] ) || empty( $args['page'] ) ) {
 			return;
-		} ?>
+		}
+		?>
 
 		<select id="<?php echo esc_attr( $args['id'] ); ?>" name="<?php echo esc_attr( sprintf( '%s[%s]', $args['page'], $args['id'] ) ); ?>">
 
@@ -896,9 +894,10 @@ final class GEM_Settings_Controls {
 		$value = self::get_option( $args['id'] );
 		?>
 
-		<input type="text" name="<?php echo esc_attr( $name ); ?>" id="<?php echo esc_attr( $id ) ?>" value="<?php echo esc_attr( $value ); ?>" class="widefat code" />
+		<input type="text" name="<?php echo esc_attr( $name ); ?>" id="<?php echo esc_attr( $id ); ?>" value="<?php echo esc_attr( $value ); ?>" class="widefat code" />
 
-		<?php self::show_description( $args );
+		<?php
+		self::show_description( $args );
 	}
 
 	/**
@@ -911,15 +910,18 @@ final class GEM_Settings_Controls {
 			return;
 		}
 
-		$name = sprintf( '%s[%s]', $args['page'], $args['id'] );
-		$label = isset( $args['label'] ) ? $args['label'] : ''; ?>
+		$name  = sprintf( '%s[%s]', $args['page'], $args['id'] );
+		$label = isset( $args['label'] ) ? $args['label'] : '';
+
+		?>
 
 		<label for="<?php echo esc_attr( $name ); ?>">
 			<input type="checkbox" name="<?php echo esc_attr( $name ); ?>" id="<?php echo esc_attr( $name ); ?>" value="1" <?php checked( self::get_option( $args['id'] ) ); ?> />
 			<?php echo esc_html( $label ); ?>
 		</label>
 
-		<?php self::show_description( $args );
+		<?php
+		self::show_description( $args );
 	}
 
 	/**
@@ -937,7 +939,8 @@ final class GEM_Settings_Controls {
 			<a href="<?php echo esc_url( $args['url'] ); ?>" class="button-secondary"><?php echo esc_html( $args['label'] ); ?></a>
 		</p>
 
-		<?php self::show_description( $args );
+		<?php
+		self::show_description( $args );
 	}
 
 	/**
@@ -946,11 +949,13 @@ final class GEM_Settings_Controls {
 	 * @param array $args Settings field arguments.
 	 */
 	public static function show_description( $args ) {
-		if ( isset( $args['description'] ) ) : ?>
+		if ( isset( $args['description'] ) ) :
+			?>
 
 			<p class="description"><?php echo wp_kses_post( $args['description'] ); ?></p>
 
-		<?php endif;
+			<?php
+		endif;
 	}
 
 	/**

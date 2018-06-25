@@ -47,6 +47,11 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 
 		$field = new stdClass();
 		$field->type = 'string';
+		$field->field_type = 'invalid_field_type';
+		$this->assertEmpty( GEM_Form_Fields::dispatch_field( $field ) );
+
+		$field = new stdClass();
+		$field->type = 'string';
 		$field->field_type = 'string';
 		$field->name = 'the_name_a';
 		$field->required = false;
@@ -67,6 +72,33 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		GEM_Form_Fields::dispatch_field( $field );
 		$actual_output = ob_get_clean();
 		$this->assertContains( '<input type="checkbox" value="1" name="the_name_a" id="form_1_the_name_a1" class="gem-checkbox" />', $actual_output );
+
+		$field = new stdClass();
+		$field->type = 'string';
+		$field->field_type = 'tos_link';
+		$field->name = 'signup';
+		$field->required = false;
+		$field->display = 'Terms of Service Link Field';
+		$field->options = json_encode( [ 'link' => 'https://example.org' ] );
+		$field->field_name = 'terms_of_service_link_field';
+		$field->value = '';
+		ob_start();
+		GEM_Form_Fields::dispatch_field( $field );
+		$actual_output = ob_get_clean();
+		$this->assertContains( '<a href="https://example.org" target="_blank">Terms of Service Link Field</a>', $actual_output );
+
+		$field = new stdClass();
+		$field->type = 'string';
+		$field->field_type = 'tracking_option';
+		$field->name = 'signup[i_confirm_that_i_am_over_18_years_old]';
+		$field->required = true;
+		$field->display = 'I confirm that I am over 18 years old';
+		$field->field_name = 'i_confirm_that_i_am_over_18_years_old';
+		$field->value = 'I confirm that I am over 18 years old';
+		ob_start();
+		GEM_Form_Fields::dispatch_field( $field );
+		$actual_output = ob_get_clean();
+		$this->assertContains( '<input type="checkbox" value="I confirm that I am over 18 years old" name="signup[i_confirm_that_i_am_over_18_years_old]" id="form_1_signup[i_confirm_that_i_am_over_18_years_old]I confirm that I am over 18 years old" class="gem-checkbox gem-required" />', $actual_output );
 	}
 
 	/**

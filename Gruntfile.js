@@ -185,7 +185,7 @@ module.exports = function( grunt ) {
 				tasks: [ 'imagemin' ]
 			},
 			js: {
-				files: [ '**/*.js', '!**/*.min.js' ],
+				files: [ 'js/**/*.js', '!js/**/*.min.js' ],
 				tasks: [ 'jshint', 'uglify' ]
 			},
 			readme: {
