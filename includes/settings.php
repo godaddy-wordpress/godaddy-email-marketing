@@ -503,7 +503,7 @@ class GEM_Settings {
 					call_user_func( $section['callback'], $section );
 				}
 				if ( isset( $wp_settings_fields ) ) {
-				?>
+					?>
 				<table class="form-table">
 					<?php do_settings_fields( $page, $section['id'] ); ?>
 				</table>
@@ -950,11 +950,11 @@ final class GEM_Settings_Controls {
 	 */
 	public static function show_description( $args ) {
 		if ( isset( $args['description'] ) ) :
-		?>
+			?>
 
 			<p class="description"><?php echo wp_kses_post( $args['description'] ); ?></p>
 
-		<?php
+			<?php
 		endif;
 	}
 

@@ -69,7 +69,7 @@ class GEM_Form_Renderer {
 
 					if ( $show_powered_by ) :
 
-					?>
+						?>
 
 						<p>
 							<a href="https://www.godaddy.com/online-marketing/email-marketing" rel="nofollow" target="_blank"><?php esc_html_e( 'Powered by GoDaddy', 'godaddy-email-marketing' ); ?></a>
@@ -241,7 +241,7 @@ class GEM_Form_Fields {
 		$trimmed_options = explode( ',', $options );
 
 		foreach ( $trimmed_options as $key => $value ) :
-		?>
+			?>
 			<input type="checkbox" data-id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" data-name="<?php echo esc_attr( $args->name ); ?>" value="<?php echo esc_attr( $value ); ?>" /> <?php echo esc_attr( $value ); ?><br>
 		<?php endforeach; ?>
 
@@ -278,7 +278,7 @@ class GEM_Form_Fields {
 		$trimmed_options = explode( ',', $options );
 
 		foreach ( $trimmed_options as $dropdown_options ) :
-		?>
+			?>
 			<option value="<?php echo esc_attr( $dropdown_options ); ?>"> <?php echo esc_html( $dropdown_options ); ?><br>
 		<?php endforeach; ?>
 		</select>
@@ -314,9 +314,9 @@ class GEM_Form_Fields {
 		$trimmed_options = explode( ',', $options );
 
 		foreach ( $trimmed_options as $key => $value ) :
-		?>
+			?>
 			<input type="radio" id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" name="<?php echo esc_attr( $args->name ); ?>" value="<?php echo esc_attr( $value ); ?>" /> <?php echo esc_html( $value ); ?><br>
-		<?php
+			<?php
 		endforeach;
 	}
 
