@@ -7,16 +7,7 @@ notifications:
     on_success: never
     on_failure: change
 
-branches:
-  only:
-    - /^v\d.*$/
-    - master
-    - develop
-
 php:
-  # Disable PHP 5.2
-  # See: https://github.com/travis-ci/travis-ci/issues/8072
-  # - 5.2
   - 5.6
   - 7.1
 
