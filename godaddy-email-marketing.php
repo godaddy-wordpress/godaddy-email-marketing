@@ -79,6 +79,7 @@ class GEM_Official {
 		add_action( 'init', array( $this, 'init' ) );
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
 		add_action( 'init', array( $this, 'register_shortcode' ), 20 );
+		add_action( 'init', array( $this, 'load_content_blocks' ) );
 		add_action( 'admin_notices', array( $this, 'action_admin_notices' ) );
 
 		add_filter( 'plugin_action_links_' . self::$basename, array( $this, 'action_links' ), 10 );
@@ -128,6 +129,9 @@ class GEM_Official {
 		// The shortcode.
 		require_once GEM_PLUGIN_DIR . 'includes/class-shortcode.php';
 
+		// Content blocks.
+		require_once GEM_PLUGIN_DIR . 'includes/class-blocks.php';
+
 		// The file renders the form.
 		require_once GEM_PLUGIN_DIR . 'includes/render.php';
 
@@ -174,6 +178,15 @@ class GEM_Official {
 
 		// Register the Shortcake UI.
 		add_action( 'register_shortcode_ui', array( $shortcode, 'shortcode_ui' ) );
+	}
+
+	/**
+	 * Load content blocks.
+	 */
+	public function load_content_blocks() {
+
+		new GEM_Blocks();
+
 	}
 
 	/**

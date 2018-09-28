@@ -90,7 +90,7 @@ module.exports = function( grunt ) {
 		},
 
 		jshint: {
-			all: [ 'Gruntfile.js', 'js/**/*.js', '!js/**/*.min.js' ]
+			all: [ 'Gruntfile.js', 'js/**/*.js', '!js/blocks.js', '!js/**/*.min.js' ]
 		},
 
 		makepot: {
@@ -175,6 +175,12 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		shell: {
+			blocks: [
+				'cross-env BABEL_ENV=default webpack'
+			].join( ' && ' )
+		},
+
 		watch: {
 			css: {
 				files: [ '**/*.css', '!**/*.min.css' ],
@@ -191,7 +197,11 @@ module.exports = function( grunt ) {
 			readme: {
 				files: 'readme.txt',
 				tasks: [ 'readme' ]
-			}
+			},
+			blocks: {
+				files: [ 'includes/blocks/**/*.js', '!includes/blocks/**/*.min.js' ],
+				tasks: [ 'shell:blocks' ]
+			},
 		},
 
 		wp_deploy: {
