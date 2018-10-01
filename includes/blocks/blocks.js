@@ -51,6 +51,10 @@ export default registerBlockType( 'godaddy-email-marketing-sign-up-forms/gem-blo
     },
   },
 
+  componentDidMount: props => {
+    alert( 'testing' );
+  },
+
   edit: props => {
 
     const { attributes: { title, form }, isSelected, className, setAttributes } = props;
@@ -67,7 +71,7 @@ export default registerBlockType( 'godaddy-email-marketing-sign-up-forms/gem-blo
               options={ gem.forms }
               onChange={ ( form ) => { setAttributes( { form } ) } }
             />
-          ) : ( <h2>{ form }</h2> ) }
+        ) : ( <div>[gem id={ form }]</div> ) }
         </div>
       </div>
 
@@ -77,6 +81,8 @@ export default registerBlockType( 'godaddy-email-marketing-sign-up-forms/gem-blo
   save: props => {
     const { attributes: { title, form }, className } = props;
 
-    return;
+    return (
+      <div>[gem id={ form }]</div>
+    );
   },
 } );
