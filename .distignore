@@ -13,3 +13,5 @@ languages/*.po
 node_modules/
 tests/
 vendor/
+.babelrbc
+webpack.config.js
