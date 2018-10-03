@@ -108,11 +108,14 @@ class GEM_Form_Widget extends WP_Widget {
 	public function form( $instance ) {
 
 		// Set defaults.
-		$instance = wp_parse_args( (array) $instance, array(
-			'title' => '',
-			'text'  => '',
-			'form'  => 0,
-		) );
+		$instance = wp_parse_args(
+			(array) $instance,
+			array(
+				'title' => '',
+				'text'  => '',
+				'form'  => 0,
+			)
+		);
 
 		$forms       = GEM_Dispatcher::get_forms();
 		$valid_creds = (bool) get_option( 'gem-valid-creds' );

@@ -210,14 +210,18 @@ class GEM_Official {
 		wp_enqueue_style( 'gem-base', plugins_url( "css/gem{$suffix}.css", __FILE__ ), false, GEM_VERSION );
 
 		// Help strings.
-		wp_localize_script( 'gem-main', 'GEM', array(
-			'thankyou'            => __( 'Thank you for signing up!', 'godaddy-email-marketing-sign-up-forms' ),
-			'thankyou_suppressed' => __( 'Thank you for signing up! Please check your email to confirm your subscription.', 'godaddy-email-marketing-sign-up-forms' ),
-			'oops'                => __( 'Oops! There was a problem. Please try again.', 'godaddy-email-marketing-sign-up-forms' ),
-			'email'               => __( 'Please enter a valid email address.', 'godaddy-email-marketing-sign-up-forms' ),
-			/* translators: %s: Name of required field */
-			'required'            => __( '%s is a required field.', 'godaddy-email-marketing-sign-up-forms' ),
-		) );
+		wp_localize_script(
+			'gem-main',
+			'GEM',
+			array(
+				'thankyou'            => __( 'Thank you for signing up!', 'godaddy-email-marketing-sign-up-forms' ),
+				'thankyou_suppressed' => __( 'Thank you for signing up! Please check your email to confirm your subscription.', 'godaddy-email-marketing-sign-up-forms' ),
+				'oops'                => __( 'Oops! There was a problem. Please try again.', 'godaddy-email-marketing-sign-up-forms' ),
+				'email'               => __( 'Please enter a valid email address.', 'godaddy-email-marketing-sign-up-forms' ),
+				/* translators: %s: Name of required field */
+				'required'            => __( '%s is a required field.', 'godaddy-email-marketing-sign-up-forms' ),
+			)
+		);
 	}
 
 	/**

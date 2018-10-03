@@ -366,7 +366,7 @@ class GEM_Form_Fields {
 		<span class="third">
 			<select fingerprint="date" data-id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" data-name="<?php echo esc_attr( $args->name ); ?>">
 				<option value=""> <?php esc_html_e( 'Year', 'godaddy-email-marketing-sign-up-forms' ); ?> </option>
-				<?php for ( $x = $current_year + 5 ; $x > $current_year - 81 ; $x-- ) : ?>
+				<?php for ( $x = $current_year + 5; $x > $current_year - 81; $x-- ) : ?>
 					<option value="<?php echo absint( $x ); ?>"> <?php echo absint( $x ); ?> </option>
 				<?php endfor; ?>
 			</select>

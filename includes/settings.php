@@ -93,9 +93,13 @@ class GEM_Settings {
 		wp_enqueue_script( 'gem-admin', plugins_url( "js/admin{$suffix}.js", GEM_PLUGIN_BASE ), array( 'jquery' ), GEM_VERSION, true );
 
 		// Strings.
-		wp_localize_script( 'gem-admin', 'GEMAdmin', array(
-			'copyFailed' => _x( 'Please press Ctrl/Cmd+C to copy.', 'failed copy response', 'godaddy-email-marketing-sign-up-forms' ),
-		) );
+		wp_localize_script(
+			'gem-admin',
+			'GEMAdmin',
+			array(
+				'copyFailed' => _x( 'Please press Ctrl/Cmd+C to copy.', 'failed copy response', 'godaddy-email-marketing-sign-up-forms' ),
+			)
+		);
 
 		wp_enqueue_script(
 			'gem-iframeresizer',
@@ -297,27 +301,29 @@ class GEM_Settings {
 		$screen = get_current_screen();
 
 		// @todo Remove HTML from the translation strings.
-		$screen->add_help_tab( array(
-			'title'   => __( 'Overview', 'godaddy-email-marketing-sign-up-forms' ),
-			'id'      => 'gem-overview',
-			'content' => sprintf(
-				'<h3>%s</h3><p>%s</p><ul><li>%s</li><li>%s</li><li>%s</li></ul>',
-				esc_html__( 'Instructions', 'godaddy-email-marketing-sign-up-forms' ),
-				sprintf(
-					/* translators: %s: link to GoDaddy Email Marketing account page */
-					esc_html__( 'Once the plugin is activated, you will be able to select and insert any of your GoDaddy Email Marketing webforms right into your site. Setup is easy. Below, simply enter your account email address and API key (found in your GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can display a webform on your site:', 'godaddy-email-marketing-sign-up-forms' ),
-					'<a href="https://gem.godaddy.com/user/edit" target="_blank">https://gem.godaddy.com/user/edit</a>'
+		$screen->add_help_tab(
+			array(
+				'title'   => __( 'Overview', 'godaddy-email-marketing-sign-up-forms' ),
+				'id'      => 'gem-overview',
+				'content' => sprintf(
+					'<h3>%s</h3><p>%s</p><ul><li>%s</li><li>%s</li><li>%s</li></ul>',
+					esc_html__( 'Instructions', 'godaddy-email-marketing-sign-up-forms' ),
+					sprintf(
+						/* translators: %s: link to GoDaddy Email Marketing account page */
+						esc_html__( 'Once the plugin is activated, you will be able to select and insert any of your GoDaddy Email Marketing webforms right into your site. Setup is easy. Below, simply enter your account email address and API key (found in your GoDaddy Email Marketing account [%s] area). Here are the 3 ways you can display a webform on your site:', 'godaddy-email-marketing-sign-up-forms' ),
+						'<a href="https://gem.godaddy.com/user/edit" target="_blank">https://gem.godaddy.com/user/edit</a>'
+					),
+					__( '<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget called “GoDaddy Email Marketing Form” and drag it into the widget area of your choice. You can then add a title and select a form!', 'godaddy-email-marketing-sign-up-forms' ),
+					__( '<strong>Shortcode:</strong> You can add a form to any post or page by adding the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor.', 'godaddy-email-marketing-sign-up-forms' ),
+					sprintf(
+						/* translators: %1$s: &lt;?php gem_form( $form_id ); ?&gt;, %2$s: &lt;?php gem_form( 91 ); ?&gt; */
+						__( '<strong>Template Tag:</strong> You can add the following template tag into any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>', 'godaddy-email-marketing-sign-up-forms' ),
+						'&lt;?php gem_form( $form_id ); ?&gt;',
+						'&lt;?php gem_form( 91 ); ?&gt;'
+					)
 				),
-				__( '<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget called “GoDaddy Email Marketing Form” and drag it into the widget area of your choice. You can then add a title and select a form!', 'godaddy-email-marketing-sign-up-forms' ),
-				__( '<strong>Shortcode:</strong> You can add a form to any post or page by adding the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor.', 'godaddy-email-marketing-sign-up-forms' ),
-				sprintf(
-					/* translators: %1$s: &lt;?php gem_form( $form_id ); ?&gt;, %2$s: &lt;?php gem_form( 91 ); ?&gt; */
-					__( '<strong>Template Tag:</strong> You can add the following template tag into any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>', 'godaddy-email-marketing-sign-up-forms' ),
-					'&lt;?php gem_form( $form_id ); ?&gt;',
-					'&lt;?php gem_form( 91 ); ?&gt;'
-				)
-			),
-		) );
+			)
+		);
 
 		$screen->set_help_sidebar(
 			sprintf(
@@ -339,10 +345,16 @@ class GEM_Settings {
 
 		// If no options exist, create them.
 		if ( ! get_option( $this->slug ) ) {
-			update_option( $this->slug, apply_filters( 'gem_default_options', array(
-				'username' => '',
-				'api-key'  => '',
-			) ) );
+			update_option(
+				$this->slug,
+				apply_filters(
+					'gem_default_options',
+					array(
+						'username' => '',
+						'api-key'  => '',
+					)
+				)
+			);
 		}
 
 		register_setting( 'gem-options', $this->slug, array( $this, 'validate' ) );
@@ -426,10 +438,12 @@ class GEM_Settings {
 				$this->slug,
 				'debugging_section',
 				array(
-					'url'         => add_query_arg( array(
-						'action'   => 'debug-reset-transients',
-						'_wpnonce' => wp_create_nonce( 'gem_settings_reset_transients_nonce' ),
-					) ),
+					'url'         => add_query_arg(
+						array(
+							'action'   => 'debug-reset-transients',
+							'_wpnonce' => wp_create_nonce( 'gem_settings_reset_transients_nonce' ),
+						)
+					),
 					'label'       => __( 'Erase Transients', 'godaddy-email-marketing-sign-up-forms' ),
 					'description' => __( 'Purges only the cached data associated with this plugin, and should be attempted before a hard reset.', 'godaddy-email-marketing-sign-up-forms' ),
 				)
@@ -442,10 +456,12 @@ class GEM_Settings {
 				$this->slug,
 				'debugging_section',
 				array(
-					'url'         => add_query_arg( array(
-						'action'   => 'debug-reset',
-						'_wpnonce' => wp_create_nonce( 'gem_settings_hard_reset_nonce' ),
-					) ),
+					'url'         => add_query_arg(
+						array(
+							'action'   => 'debug-reset',
+							'_wpnonce' => wp_create_nonce( 'gem_settings_hard_reset_nonce' ),
+						)
+					),
 					'label'       => __( 'Erase All Data', 'godaddy-email-marketing-sign-up-forms' ),
 					'description' => __( 'Purges all saved data associated with this plugin.', 'godaddy-email-marketing-sign-up-forms' ),
 				)
@@ -617,7 +633,8 @@ class GEM_Settings {
 				<?php if ( ! empty( $forms->signups ) ) : ?>
 					<div id="forms" class="panel">
 						<h3><?php esc_html_e( 'Reach Your Fans', 'godaddy-email-marketing-sign-up-forms' ); ?></h3>
-						<p><?php
+						<p>
+						<?php
 							printf(
 								/* translators: %1$s: <a href="https://gem.godaddy.com">, %2$s: </a> */
 								esc_html__( 'Email marketing makes it easier than ever to turn casual visits into lasting relationship. You\'re already collecting subscribers, now you just need to start emailing them. It only takes a few moments to %1$screate an email marketing campaign%2$s.', 'godaddy-email-marketing-sign-up-forms' ),

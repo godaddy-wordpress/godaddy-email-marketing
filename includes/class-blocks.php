@@ -24,9 +24,13 @@ class GEM_Blocks {
 
 		wp_enqueue_script( 'gem-blocks', plugins_url( "../js/blocks{$suffix}.js", __FILE__ ), array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components' ), GEM_VERSION, true );
 
-		wp_localize_script( 'gem-blocks', 'gem', [
-			'forms' => $this->get_forms(),
-		] );
+		wp_localize_script(
+			'gem-blocks',
+			'gem',
+			[
+				'forms' => $this->get_forms(),
+			]
+		);
 
 	}
 
