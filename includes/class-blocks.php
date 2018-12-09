@@ -16,6 +16,8 @@ class GEM_Blocks {
 
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_scripts' ) );
 
+		add_action( 'wp_ajax_get_gem_form', [ $this, 'get_gem_form' ] );
+
 	}
 
 	public function enqueue_block_scripts() {
@@ -28,9 +30,32 @@ class GEM_Blocks {
 			'gem-blocks',
 			'gem',
 			[
-				'forms' => $this->get_forms(),
+				'forms'        => $this->get_forms(),
+				'settingsURL'  => admin_url( 'options-general.php?page=gem-settings'),
+				'getFormError' => __( 'There was an error retreiving the GEM form. Please try again.', 'godaddy-email-marketing-sign-up-forms' ),
 			]
 		);
+
+	}
+
+	/**
+	 * Render the GEM form in the block
+	 *
+	 * @since NEXT
+	 *
+	 * @return mixed Markup for the GEM form
+	 */
+	public function get_gem_form() {
+
+		$form_id = filter_input( INPUT_POST, 'formID', FILTER_SANITIZE_NUMBER_INT );
+
+		if ( ! $form_id ) {
+
+			wp_send_json_error();
+
+		}
+
+		wp_send_json_success( gem_form( $form_id, false ) );
 
 	}
 

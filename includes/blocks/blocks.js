@@ -47,12 +47,8 @@ export default registerBlockType( 'godaddy-email-marketing-sign-up-forms/gem-blo
     form: {
       type: 'array',
       selector: '.form',
-      default: ( Object.keys( gem.forms ).length > 0 ) ? gem.forms[0].label : undefined,
+      default: ( Object.keys( gem.forms ).length > 0 ) ? gem.forms[0].value : undefined,
     },
-  },
-
-  componentDidMount: props => {
-    alert( 'testing' );
   },
 
   edit: props => {
@@ -65,13 +61,8 @@ export default registerBlockType( 'godaddy-email-marketing-sign-up-forms/gem-blo
       <div className={ className } key={ className }>
         <div className="gem-forms">
           { isSelected ? (
-            <SelectControl
-              label={ __( 'Gem Form', 'godaddy-email-marketing-sign-up-forms' ) }
-              value={ form }
-              options={ gem.forms }
-              onChange={ ( form ) => { setAttributes( { form } ) } }
-            />
-        ) : ( <div>[gem id={ form }]</div> ) }
+            getFormSelect( form, setAttributes )
+          ) : ( <div className="gem-form">{ renderGemForm( form ) }</div> ) }
         </div>
       </div>
 
@@ -82,7 +73,47 @@ export default registerBlockType( 'godaddy-email-marketing-sign-up-forms/gem-blo
     const { attributes: { title, form }, className } = props;
 
     return (
-      <div>[gem id={ form }]</div>
+      <div>{ renderGemForm( form ) }</div>
     );
   },
 } );
+
+function getFormSelect( form, setAttributes ) {
+
+  if ( Object.keys( gem.forms ).length <= 0 ) {
+
+    return <div>{ __( 'GoDaddy Email Marketing is not connected.', 'godaddy-email-marketing-sign-up-forms' ) } <a href={ gem.settingsURL }> {__( 'Connect Now', 'godaddy-email-marketing-sign-up-forms' ) }</a></div>;
+
+  }
+
+  return <SelectControl
+    label={ __( 'Gem Form', 'godaddy-email-marketing-sign-up-forms' ) }
+    value={ form }
+    options={ gem.forms }
+    onChange={ ( form ) => { setAttributes( { form } ) } }
+  />
+
+}
+
+function renderGemForm( formID ) {
+
+  var data = {
+    'action': 'get_gem_form',
+    'formID': formID,
+  };
+
+  $.post( ajaxurl, data, function( response ) {
+
+    if ( ! response.success ) {
+
+      $( '.gem-form' ).html( gem.getFormError );
+
+      return;
+
+    }
+
+    $( '.gem-form' ).html( response.data );
+
+  } );
+
+}
