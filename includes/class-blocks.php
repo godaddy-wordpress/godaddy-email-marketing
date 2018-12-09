@@ -31,7 +31,7 @@ class GEM_Blocks {
 			'gem',
 			[
 				'forms'        => $this->get_forms(),
-				'settingsURL'  => admin_url( 'options-general.php?page=gem-settings'),
+				'settingsURL'  => admin_url( 'options-general.php?page=gem-settings' ),
 				'getFormError' => __( 'There was an error retreiving the GEM form. Please try again.', 'godaddy-email-marketing-sign-up-forms' ),
 			]
 		);
