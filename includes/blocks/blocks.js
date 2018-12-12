@@ -8,19 +8,10 @@ import gemIcons from './icons';
 const { __ } = wp.i18n;
 
 const {
-  registerBlockType,
-  RichText,
-  AlignmentToolbar,
-  BlockAlignmentToolbar
+  registerBlockType
 } = wp.blocks;
 
 const {
-  BlockControls,
-  InspectorControls
-} = wp.editor;
-
-const {
-  Toolbar,
   SelectControl
 } = wp.components;
 
@@ -45,8 +36,8 @@ export default registerBlockType( 'godaddy-email-marketing-sign-up-forms/gem-blo
       selector: '.gem-title',
     },
     form: {
-      type: 'array',
-      selector: '.form',
+      type: 'string',
+      sourece: 'text',
       default: ( Object.keys( gem.forms ).length > 0 ) ? gem.forms[0].value : undefined,
     },
   },
@@ -72,9 +63,7 @@ export default registerBlockType( 'godaddy-email-marketing-sign-up-forms/gem-blo
   save: props => {
     const { attributes: { title, form }, className } = props;
 
-    return (
-      <div>{ renderGemForm( form ) }</div>
-    );
+    return ( '[gem id=' + form + ']' );
   },
 } );
 
@@ -87,6 +76,7 @@ function getFormSelect( form, setAttributes ) {
   }
 
   return <SelectControl
+    className="form"
     label={ __( 'Gem Form', 'godaddy-email-marketing-sign-up-forms' ) }
     value={ form }
     options={ gem.forms }
