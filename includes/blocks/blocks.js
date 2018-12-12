@@ -30,11 +30,6 @@ export default registerBlockType( 'godaddy-email-marketing-sign-up-forms/gem-blo
   ],
 
   attributes: {
-    title: {
-      type: 'string',
-      source: 'text',
-      selector: '.gem-title',
-    },
     form: {
       type: 'string',
       sourece: 'text',
@@ -44,7 +39,7 @@ export default registerBlockType( 'godaddy-email-marketing-sign-up-forms/gem-blo
 
   edit: props => {
 
-    const { attributes: { title, form }, isSelected, className, setAttributes } = props;
+    const { attributes: { form }, isSelected, className, setAttributes } = props;
 
     return [
 
@@ -61,7 +56,7 @@ export default registerBlockType( 'godaddy-email-marketing-sign-up-forms/gem-blo
   },
 
   save: props => {
-    const { attributes: { title, form }, className } = props;
+    const { attributes: { form }, className } = props;
 
     return ( '[gem id=' + form + ']' );
   },

@@ -8,7 +8,7 @@
 /**
  * GoDaddy Email Marketing Dispatcher.
  *
- * @since 1.0
+ * @since NEXT
  */
 class GEM_Blocks {
 
@@ -20,10 +20,16 @@ class GEM_Blocks {
 
 	}
 
+	/**
+	 * Enqueue GEM block scripts
+	 *
+	 * @since NEXT
+	 */
 	public function enqueue_block_scripts() {
 
 		$suffix = SCRIPT_DEBUG ? '' : '.min';
 
+		wp_enqueue_style( 'gem-blocks', plugins_url( "../css/blocks{$suffix}.css", __FILE__ ), array(), GEM_VERSION, 'all' );
 		wp_enqueue_script( 'gem-blocks', plugins_url( "../js/blocks{$suffix}.js", __FILE__ ), array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components' ), GEM_VERSION, true );
 
 		wp_localize_script(
@@ -61,6 +67,8 @@ class GEM_Blocks {
 
 	/**
 	 * Retreive the GEM forms.
+	 *
+	 * @since NEXT
 	 *
 	 * @return array GEM forms array.
 	 */

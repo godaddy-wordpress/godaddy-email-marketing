@@ -184,7 +184,7 @@ module.exports = function( grunt ) {
 		watch: {
 			css: {
 				files: [ '**/*.css', '!**/*.min.css' ],
-				tasks: [ 'imagemin' ]
+				tasks: [ 'cssmin' ]
 			},
 			images: {
 				files: [ 'assets/**/*.{gif,jpeg,jpg,png,svg}', 'images/**/*.{gif,jpeg,jpg,png,svg}' ],
