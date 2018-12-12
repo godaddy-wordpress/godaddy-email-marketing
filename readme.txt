@@ -112,6 +112,9 @@ You can find your **Secret API Key** in the [Settings section](https://gem.godad
 2. A full list of your GoDaddy Email Marketing Webforms, with ready shortcodes.
 3. The widget, on the widgets page.
 4. The widget, on the front-end.
+5. GoDaddy Email Marketing widget block.
+6. GoDaddy Email Marketing widget preview, in the block editor.
+7. GoDaddy Email Marketing widget, on the block front-end.
 
 == Changelog ==
 
