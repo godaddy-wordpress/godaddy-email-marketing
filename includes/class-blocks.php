@@ -12,6 +12,11 @@
  */
 class GEM_Blocks {
 
+	/**
+	 * GoDaddy Email Marketing available forms
+	 *
+	 * @var array
+	 */
 	private $forms;
 
 	public function __construct() {
