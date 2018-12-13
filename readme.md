@@ -122,6 +122,9 @@ You can find your **Secret API Key** in the [Settings section](https://gem.godad
 
 ## Changelog ##
 
+### 1.4.0 ###
+* New: Introduce GoDaddy Email Marketing content block.
+
 ### 1.3.0 ###
 * New: Add support for GDPR fields (Age consent, terms of service and tracking option)
 * Fix: Update text domain to match plugin slug.
