@@ -56,3 +56,10 @@ form.gem-form p.gem-error {
 		background-image: url( '../images/spinner-2x.gif' );
 	}
 }
+
+/**
+ * Block Styles
+ */
+.gem-form-wrapper input:not([type="submit"]) {
+	width: 100%;
+}

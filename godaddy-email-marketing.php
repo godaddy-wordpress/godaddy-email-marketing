@@ -79,6 +79,7 @@ class GEM_Official {
 		add_action( 'init', array( $this, 'init' ) );
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
 		add_action( 'init', array( $this, 'register_shortcode' ), 20 );
+		add_action( 'init', array( $this, 'load_content_blocks' ) );
 		add_action( 'admin_notices', array( $this, 'action_admin_notices' ) );
 
 		add_filter( 'plugin_action_links_' . self::$basename, array( $this, 'action_links' ), 10 );
@@ -127,6 +128,9 @@ class GEM_Official {
 
 		// The shortcode.
 		require_once GEM_PLUGIN_DIR . 'includes/class-shortcode.php';
+
+		// Content blocks.
+		require_once GEM_PLUGIN_DIR . 'includes/class-blocks.php';
 
 		// The file renders the form.
 		require_once GEM_PLUGIN_DIR . 'includes/render.php';
@@ -177,6 +181,15 @@ class GEM_Official {
 	}
 
 	/**
+	 * Load content blocks.
+	 */
+	public function load_content_blocks() {
+
+		new GEM_Blocks();
+
+	}
+
+	/**
 	 * Registers the widget.
 	 */
 	public function register_widget() {
@@ -197,14 +210,18 @@ class GEM_Official {
 		wp_enqueue_style( 'gem-base', plugins_url( "css/gem{$suffix}.css", __FILE__ ), false, GEM_VERSION );
 
 		// Help strings.
-		wp_localize_script( 'gem-main', 'GEM', array(
-			'thankyou'            => __( 'Thank you for signing up!', 'godaddy-email-marketing-sign-up-forms' ),
-			'thankyou_suppressed' => __( 'Thank you for signing up! Please check your email to confirm your subscription.', 'godaddy-email-marketing-sign-up-forms' ),
-			'oops'                => __( 'Oops! There was a problem. Please try again.', 'godaddy-email-marketing-sign-up-forms' ),
-			'email'               => __( 'Please enter a valid email address.', 'godaddy-email-marketing-sign-up-forms' ),
-			/* translators: %s: Name of required field */
-			'required'            => __( '%s is a required field.', 'godaddy-email-marketing-sign-up-forms' ),
-		) );
+		wp_localize_script(
+			'gem-main',
+			'GEM',
+			array(
+				'thankyou'            => __( 'Thank you for signing up!', 'godaddy-email-marketing-sign-up-forms' ),
+				'thankyou_suppressed' => __( 'Thank you for signing up! Please check your email to confirm your subscription.', 'godaddy-email-marketing-sign-up-forms' ),
+				'oops'                => __( 'Oops! There was a problem. Please try again.', 'godaddy-email-marketing-sign-up-forms' ),
+				'email'               => __( 'Please enter a valid email address.', 'godaddy-email-marketing-sign-up-forms' ),
+				/* translators: %s: Name of required field */
+				'required'            => __( '%s is a required field.', 'godaddy-email-marketing-sign-up-forms' ),
+			)
+		);
 	}
 
 	/**

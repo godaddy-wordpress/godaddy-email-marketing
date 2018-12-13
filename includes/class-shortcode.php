@@ -20,9 +20,12 @@ class GEM_Shortcode {
 	 * @return string|void
 	 */
 	public function render( $atts ) {
-		$atts = shortcode_atts( array(
-			'id' => false,
-		), $atts );
+		$atts = shortcode_atts(
+			array(
+				'id' => false,
+			),
+			$atts
+		);
 
 		if ( ! $atts['id'] ) {
 			return;

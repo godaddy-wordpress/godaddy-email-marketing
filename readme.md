@@ -4,7 +4,7 @@
 **Contributors:** [godaddy](https://profiles.wordpress.org/godaddy), [fjarrett](https://profiles.wordpress.org/fjarrett), [jonathanbardo](https://profiles.wordpress.org/jonathanbardo), [eherman24](https://profiles.wordpress.org/eherman24), [susanygodaddy](https://profiles.wordpress.org/susanygodaddy), [madmimi](https://profiles.wordpress.org/madmimi)  
 **Tags:** [email](https://wordpress.org/plugins/tags/email/), [forms](https://wordpress.org/plugins/tags/forms/), [godaddy](https://wordpress.org/plugins/tags/godaddy/), [mailing list](https://wordpress.org/plugins/tags/mailing list/), [marketing](https://wordpress.org/plugins/tags/marketing/), [newsletter](https://wordpress.org/plugins/tags/newsletter/), [opt-in](https://wordpress.org/plugins/tags/opt-in/), [signup](https://wordpress.org/plugins/tags/signup/), [subscribe](https://wordpress.org/plugins/tags/subscribe/), [widget](https://wordpress.org/plugins/tags/widget/), [contacts](https://wordpress.org/plugins/tags/contacts/)  
 **Requires at least:** 3.8  
-**Tested up to:** 4.9  
+**Tested up to:** 5.0  
 **Stable tag:** 1.3.0  
 **License:** GPL-2.0  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
@@ -116,6 +116,9 @@ You can find your **Secret API Key** in the [Settings section](https://gem.godad
 2. A full list of your GoDaddy Email Marketing Webforms, with ready shortcodes.
 3. The widget, on the widgets page.
 4. The widget, on the front-end.
+5. GoDaddy Email Marketing widget block.
+6. GoDaddy Email Marketing widget preview, in the block editor.
+7. GoDaddy Email Marketing widget, on the block front-end.
 
 ## Changelog ##
 
