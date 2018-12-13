@@ -2,6 +2,10 @@
 	margin: 10px 20px 0 2px;
 }
 
+	.about-wrap img {
+		width: 15px;
+	}
+
 .intro {
 	float: left;
 	width: 100%;
