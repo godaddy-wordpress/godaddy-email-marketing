@@ -12,7 +12,11 @@
  */
 class GEM_Blocks {
 
+	private $forms;
+
 	public function __construct() {
+
+		$this->forms = $this->get_forms();
 
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_scripts' ) );
 
@@ -36,9 +40,11 @@ class GEM_Blocks {
 			'gem-blocks',
 			'gem',
 			[
-				'forms'        => $this->get_forms(),
+				'forms'        => $this->forms,
 				'settingsURL'  => admin_url( 'options-general.php?page=gem-settings' ),
-				'getFormError' => __( 'There was an error retreiving the GEM form. Please try again.', 'godaddy-email-marketing-sign-up-forms' ),
+				'getFormError' => esc_html__( 'There was an error retreiving the GEM form. Please try again.', 'godaddy-email-marketing-sign-up-forms' ),
+				'isConnected'  => ! empty( $this->forms ),
+				'preloaderUrl' => admin_url( 'images/wpspin_light-2x.gif' ),
 			]
 		);
 

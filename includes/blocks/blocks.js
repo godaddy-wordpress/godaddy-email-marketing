@@ -33,7 +33,7 @@ export default registerBlockType( 'godaddy-email-marketing-sign-up-forms/gem-blo
     form: {
       type: 'string',
       sourece: 'text',
-      default: ( Object.keys( gem.forms ).length > 0 ) ? gem.forms[0].value : undefined,
+      default: gem.isConnected ? gem.forms[0].value : undefined,
     },
   },
 
@@ -48,7 +48,7 @@ export default registerBlockType( 'godaddy-email-marketing-sign-up-forms/gem-blo
         <div className="gem-forms">
           { isSelected ? (
             getFormSelect( form, setAttributes )
-          ) : ( <div className="gem-form">{ renderGemForm( form ) }</div> ) }
+          ) : ( <div className="gem-form"><img src={ gem.preloaderUrl } className="preloader" />{ renderGemForm( form ) }</div> ) }
         </div>
       </div>
 
@@ -58,15 +58,27 @@ export default registerBlockType( 'godaddy-email-marketing-sign-up-forms/gem-blo
   save: props => {
     const { attributes: { form }, className } = props;
 
+    if ( ! gem.isConnected ) {
+
+      return;
+
+    }
+
     return ( '[gem id=' + form + ']' );
   },
 } );
 
+/**
+ * Generate the GoDaddy Email Marketing form select field.
+ *
+ * @param  {integer}  form          Form ID
+ * @param  {function} setAttributes Set attributes method.
+ */
 function getFormSelect( form, setAttributes ) {
 
-  if ( Object.keys( gem.forms ).length <= 0 ) {
+  if ( ! gem.isConnected ) {
 
-    return <div>{ __( 'GoDaddy Email Marketing is not connected.', 'godaddy-email-marketing-sign-up-forms' ) } <a href={ gem.settingsURL }> {__( 'Connect Now', 'godaddy-email-marketing-sign-up-forms' ) }</a></div>;
+    return notConnectedError();
 
   }
 
@@ -80,7 +92,18 @@ function getFormSelect( form, setAttributes ) {
 
 }
 
+/**
+ * Render the GoDaddy Email Marketing form markup
+ *
+ * @param {integer} formID Form ID
+ */
 function renderGemForm( formID ) {
+
+  if ( ! gem.isConnected ) {
+
+    return notConnectedError();
+
+  }
 
   var data = {
     'action': 'get_gem_form',
@@ -100,5 +123,16 @@ function renderGemForm( formID ) {
     $( '.gem-form' ).html( response.data );
 
   } );
+
+}
+
+/**
+ * Render the error message when not connected to the GoDaddy Email Marketing API
+ *
+ * @return {mixed} Markup for the Not connected error notice.
+ */
+function notConnectedError() {
+
+  return <div>{ __( 'GoDaddy Email Marketing is not connected.', 'godaddy-email-marketing-sign-up-forms' ) } <p><a class="button button-secondary" href={ gem.settingsURL }> {__( 'Connect Now', 'godaddy-email-marketing-sign-up-forms' ) }</a></p></div>;
 
 }
