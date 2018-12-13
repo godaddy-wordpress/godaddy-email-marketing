@@ -8,7 +8,7 @@
 /**
  * GoDaddy Email Marketing Dispatcher.
  *
- * @since NEXT
+ * @since 1.4.0
  */
 class GEM_Blocks {
 
@@ -32,7 +32,7 @@ class GEM_Blocks {
 	/**
 	 * Enqueue GEM block scripts
 	 *
-	 * @since NEXT
+	 * @since 1.4.0
 	 */
 	public function enqueue_block_scripts() {
 
@@ -58,7 +58,7 @@ class GEM_Blocks {
 	/**
 	 * Render the GEM form in the block
 	 *
-	 * @since NEXT
+	 * @since 1.4.0
 	 *
 	 * @return mixed Markup for the GEM form
 	 */
@@ -79,7 +79,7 @@ class GEM_Blocks {
 	/**
 	 * Retreive the GEM forms.
 	 *
-	 * @since NEXT
+	 * @since 1.4.0
 	 *
 	 * @return array GEM forms array.
 	 */
