@@ -1,5 +1,0 @@
-{
-	"require-dev": {
-		"php-coveralls/php-coveralls": "v2.1.0"
-	}
-}
