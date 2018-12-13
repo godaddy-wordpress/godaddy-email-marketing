@@ -1,6 +1,8 @@
-sudo: false
+sudo: required
 
 language: php
+
+dist: trusty
 
 notifications:
   email:
