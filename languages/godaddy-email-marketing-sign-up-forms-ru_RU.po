@@ -19,17 +19,17 @@ msgstr ""
 
 #: godaddy-email-marketing.php:201
 msgid "Thank you for signing up!"
-msgstr ""
+msgstr "Спасибо за регистрацию!"
 
 #: godaddy-email-marketing.php:202
 msgid ""
 "Thank you for signing up! Please check your email to confirm your "
 "subscription."
-msgstr ""
+msgstr "Спасибо за регистрацию! Пожалуйста проверьте вашу электронную почту для подтверждения регистрации"
 
 #: godaddy-email-marketing.php:203
 msgid "Oops! There was a problem. Please try again."
-msgstr ""
+msgstr "Упс! Возникла ошибка. Пожалуйста попробуйте снова."
 
 #: godaddy-email-marketing.php:204
 msgid "Please enter a valid email address."
