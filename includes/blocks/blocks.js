@@ -84,7 +84,7 @@ function getFormSelect( form, setAttributes ) {
 
   return <SelectControl
     className="form"
-    label={ __( 'Gem Form', 'godaddy-email-marketing-sign-up-forms' ) }
+    label={ __( 'GoDaddy Email Marketing Form', 'godaddy-email-marketing-sign-up-forms' ) }
     value={ form }
     options={ gem.forms }
     onChange={ ( form ) => { setAttributes( { form } ) } }

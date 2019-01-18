@@ -85,7 +85,7 @@ class GEM_Blocks {
 	 */
 	private function get_forms() {
 
-		$forms = GEM_Dispatcher::fetch_forms();
+		$forms = GEM_Dispatcher::get_forms();
 
 		if ( empty( $forms->signups ) ) {
 
