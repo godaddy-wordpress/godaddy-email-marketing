@@ -3,7 +3,7 @@ Contributors: godaddy, fjarrett, jonathanbardo, eherman24, susanygodaddy, madmim
 Tags: email, forms, godaddy, mailing list, marketing, newsletter, opt-in, signup, subscribe, widget, contacts
 Requires at least: 3.8
 Tested up to: 5.0
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 License: GPL-2.0
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -120,6 +120,7 @@ You can find your **Secret API Key** in the [Settings section](https://gem.godad
 
 = 1.4.1 =
 * Fix: Update plugin bypassing cache when fetching customer forms
+* Fix: Fix US help tab iframe URL
 * Tweak: Update `SelectControl` label to `GoDaddy Email Marketing Form`
 * Tweak: Update strings in Russian translation file. @props [beebeatle](https://github.com/beebeatle)
 
