@@ -122,6 +122,11 @@ You can find your **Secret API Key** in the [Settings section](https://gem.godad
 
 ## Changelog ##
 
+### 1.4.1 ###
+* Fix: Update plugin bypassing cache when fetching customer forms
+* Tweak: Update `SelectControl` label to `GoDaddy Email Marketing Form`
+* Tweak: Update strings in Russian translation file. @props [beebeatle](https://github.com/beebeatle)
+
 ### 1.4.0 ###
 * New: Introduce GoDaddy Email Marketing content block.
 
