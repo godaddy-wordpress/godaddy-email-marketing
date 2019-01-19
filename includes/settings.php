@@ -559,7 +559,7 @@ class GEM_Settings {
 
 		}
 
-		$subdomain = 'us' ? '' : $subdomain . '.';
+		$subdomain = $subdomain == 'us' ? '' : $subdomain . '.';
 
 		?>
 		<iframe src="<?php echo esc_url( "https://{$subdomain}godaddy.com/help/godaddy-email-marketing-1000013" ); ?>" frameborder="0" scrolling="no"></iframe>
