@@ -546,6 +546,7 @@ class GEM_Settings {
 		switch ( $subdomain ) {
 
 			case '':
+			case 'us':
 				$subdomain = 'www'; // Default
 				break;
 
@@ -559,10 +560,8 @@ class GEM_Settings {
 
 		}
 
-		$subdomain = 'us' ? '' : $subdomain . '.';
-
 		?>
-		<iframe src="<?php echo esc_url( "https://{$subdomain}godaddy.com/help/godaddy-email-marketing-1000013" ); ?>" frameborder="0" scrolling="no"></iframe>
+		<iframe src="<?php echo esc_url( "https://{$subdomain}.godaddy.com/help/godaddy-email-marketing-1000013" ); ?>" frameborder="0" scrolling="no"></iframe>
 
 		<script type="text/javascript">
 			iFrameResize( {
