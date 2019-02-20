@@ -118,6 +118,9 @@ You can find your **Secret API Key** in the [Settings section](https://gem.godad
 
 == Changelog ==
 
+= 1.4.2 =
+* Fix: Update help tab iframe URL with www. @props [aaroncampbell](https://github.com/aaroncampbell)
+
 = 1.4.1 =
 * Fix: Update plugin bypassing cache when fetching customer forms
 * Fix: Fix US help tab iframe URL
