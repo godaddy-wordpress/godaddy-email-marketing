@@ -1,3 +1,4 @@
+
 // Locale
 import './i18n.js';
 import gemIcons from './icons';
@@ -14,8 +15,6 @@ const {
 const {
   SelectControl
 } = wp.components;
-
-console.log( gemIcons );
 
 /**
  * Register block
