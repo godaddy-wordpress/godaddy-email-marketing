@@ -122,6 +122,9 @@ You can find your **Secret API Key** in the [Settings section](https://gem.godad
 
 ## Changelog ##
 
+### 1.4.3 ###
+* Tweak: Test with and bump support for WordPress 5.4.
+
 ### 1.4.2 ###
 * Fix: Update help tab iframe URL with www. @props [aaroncampbell](https://github.com/aaroncampbell)
 
