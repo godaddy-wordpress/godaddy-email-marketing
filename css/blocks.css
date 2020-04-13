@@ -7,3 +7,7 @@
 	margin: 2em auto;
 	max-width: 20px;
 }
+
+.wp-block-godaddy-email-marketing-sign-up-forms-gem-block label {
+	margin-right: 12px;
+}
