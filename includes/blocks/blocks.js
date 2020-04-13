@@ -1,3 +1,4 @@
+
 // Locale
 import './i18n.js';
 import gemIcons from './icons';
@@ -110,17 +111,17 @@ function renderGemForm( formID ) {
     'formID': formID,
   };
 
-  $.post( ajaxurl, data, function( response ) {
+  jQuery.post( ajaxurl, data, function( response ) {
 
     if ( ! response.success ) {
 
-      $( '.gem-form' ).html( gem.getFormError );
+      jQuery( '.gem-form' ).html( gem.getFormError );
 
       return;
 
     }
 
-    $( '.gem-form' ).html( response.data );
+    jQuery( '.gem-form' ).html( response.data );
 
   } );
 

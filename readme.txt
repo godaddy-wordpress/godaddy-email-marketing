@@ -2,7 +2,7 @@
 Contributors: godaddy, fjarrett, jonathanbardo, eherman24, susanygodaddy, madmimi
 Tags: email, forms, godaddy, mailing list, marketing, newsletter, opt-in, signup, subscribe, widget, contacts
 Requires at least: 3.8
-Tested up to: 5.0
+Tested up to: 5.4
 Stable tag: 1.4.2
 License: GPL-2.0
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -117,6 +117,11 @@ You can find your **Secret API Key** in the [Settings section](https://gem.godad
 7. GoDaddy Email Marketing widget, on the block front-end.
 
 == Changelog ==
+
+= 1.4.3 =
+* Fix: Remove reference to `$` and use `jQuery`
+* Fix: Fix block icon SVG element so it renders properly in Firefox as well as Chrome.
+* Tweak: Test with and bump support for WordPress 5.4.
 
 = 1.4.2 =
 * Fix: Update help tab iframe URL with www. @props [aaroncampbell](https://github.com/aaroncampbell)
