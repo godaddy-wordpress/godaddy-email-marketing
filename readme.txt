@@ -118,6 +118,11 @@ You can find your **Secret API Key** in the [Settings section](https://gem.godad
 
 == Changelog ==
 
+= 1.4.3 =
+* Fix: Remove reference to `$` and use `jQuery`
+* Fix: Fix block icon SVG element so it renders properly in Firefox as well as Chrome.
+* Tweak: Test with and bump support for WordPress 5.4.
+
 = 1.4.2 =
 * Fix: Update help tab iframe URL with www. @props [aaroncampbell](https://github.com/aaroncampbell)
 
