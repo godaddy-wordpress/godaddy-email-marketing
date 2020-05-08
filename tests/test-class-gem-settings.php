@@ -17,7 +17,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	 * Load Mock_Http_Response
 	 */
 	public static function setUpBeforeClass() {
-		require_once( 'mock-http-response.php' );
+		require_once 'mock-http-response.php';
 	}
 
 	/**
@@ -28,7 +28,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		$this->http_response = new Mock_Http_Response();
+		$this->http_response            = new Mock_Http_Response();
 		Mock_Http_Response::$test_class = $this;
 		add_filter( 'pre_http_request', array( $this->http_response, 'filter_response' ), 10, 3 );
 	}
@@ -43,11 +43,11 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		parent::tearDown();
 
 		remove_filter( 'pre_http_request', array( $this->http_response, 'filter_response' ), 10, 3 );
-		Mock_Http_Response::$data = null;
-		Mock_Http_Response::$test_class = null;
+		Mock_Http_Response::$data          = null;
+		Mock_Http_Response::$test_class    = null;
 		Mock_Http_Response::$expected_args = null;
-		Mock_Http_Response::$expected_url = null;
-		$wp_settings_errors = array();
+		Mock_Http_Response::$expected_url  = null;
+		$wp_settings_errors                = array();
 	}
 
 	/**
@@ -56,7 +56,13 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	 * @param string $slug The setting option slug.
 	 */
 	public function set_data( $slug = '' ) {
-		update_option( $slug, array( 'username' => 'user_name', 'api-key' => '1234' ) );
+		update_option(
+			$slug,
+			array(
+				'username' => 'user_name',
+				'api-key'  => '1234',
+			)
+		);
 		set_transient( 'gem-form-123', json_decode( '{"id":123,"name":"Signup Form","fields":{"field_a":{"type":"string","field_type":"string","name":"the_name_a","required":false,"display":"text_a"},"field_b":{"type":"checkbox","field_type":"checkbox","required":true,"name":"the_name_b","value":"the_value","display":"text_b"}},"submit":"the_url","button_text":"button_text"}' ) );
 		set_transient( 'gem-user_name-lists', json_decode( '{"total":1,"signups":[{"id":123,"name":"Signup Form","thumbnail":"the_url","url":"the_url"}]}' ) );
 	}
@@ -152,7 +158,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	 * @see GEM_Settings::page_load()
 	 */
 	public function test_page_load_debug_reset() {
-		$gem = gem();
+		$gem      = gem();
 		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
 		$this->set_data( $instance->slug );
@@ -163,7 +169,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		// debug-reset action:
 		$_GET['action']       = 'debug-reset';
 		$_REQUEST['_wpnonce'] = wp_create_nonce( 'gem_settings_hard_reset_nonce' );
-		$gem->debug = false;
+		$gem->debug           = false;
 		$instance->page_load();
 		$this->assertNotNull( get_option( $instance->slug, null ) );
 		$this->assertObjectHasAttribute( 'id', get_transient( 'gem-form-123' ) );
@@ -187,7 +193,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	 * @see GEM_Settings::page_load()
 	 */
 	public function test_page_load_debug_reset_transients() {
-		$gem = gem();
+		$gem      = gem();
 		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
 		$this->set_data( $instance->slug );
@@ -198,14 +204,20 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		// debug-reset-transients action:
 		$_GET['action']       = 'debug-reset-transients';
 		$_REQUEST['_wpnonce'] = wp_create_nonce( 'gem_settings_reset_transients_nonce' );
-		$gem->debug = false;
+		$gem->debug           = false;
 		update_option( $instance->slug, array( 'username' => null ) );
 		$instance->page_load();
 		$this->assertObjectHasAttribute( 'id', get_transient( 'gem-form-123' ) );
 		$this->assertObjectHasAttribute( 'total', get_transient( 'gem-user_name-lists' ) );
 
 		$gem->debug = true;
-		update_option( $instance->slug, array( 'username' => 'user_name', 'api-key' => '1234' ) );
+		update_option(
+			$instance->slug,
+			array(
+				'username' => 'user_name',
+				'api-key'  => '1234',
+			)
+		);
 		$instance->page_load();
 		$errors = get_settings_errors( $instance->slug );
 		$this->assertFalse( get_transient( 'gem-form-123' ) );
@@ -398,15 +410,18 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		set_transient( 'gem-user_name-account', true );
 		$this->set_data( GEM_Settings::SLUG );
 		gem()->debug = true;
-		$instance = new GEM_Settings();
+		$instance    = new GEM_Settings();
 		$instance->action_admin_menu();
 		$instance->register_settings();
-		update_option( $instance->slug, array(
-			'username' => 'user_name',
-			'api-key' => '1234',
-			'display_powered_by' => 1,
-			'debug' => 1,
-		) );
+		update_option(
+			$instance->slug,
+			array(
+				'username'           => 'user_name',
+				'api-key'            => '1234',
+				'display_powered_by' => 1,
+				'debug'              => 1,
+			)
+		);
 		update_option( 'gem-valid-creds', true );
 
 		ob_start();
@@ -438,12 +453,15 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
 		$instance->register_settings();
-		update_option( $instance->slug, array(
-			'username' => 'user_name',
-			'api-key' => '1234',
-			'display_powered_by' => 1,
-			'debug' => 1,
-		) );
+		update_option(
+			$instance->slug,
+			array(
+				'username'           => 'user_name',
+				'api-key'            => '1234',
+				'display_powered_by' => 1,
+				'debug'              => 1,
+			)
+		);
 		update_option( 'gem-valid-creds', true );
 
 		ob_start();
@@ -466,7 +484,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 			'response' => array(
 				'code' => 200,
 			),
-			'body' => '{"total":1,"signups":[{"id":"54321", "name":"Test Form", "url":"http://sample.org"}]}',
+			'body'     => '{"total":1,"signups":[{"id":"54321", "name":"Test Form", "url":"http://sample.org"}]}',
 		);
 		GEM_Settings_Controls::update_option( 'username', 'tester' );
 		GEM_Settings_Controls::update_option( 'api-key', '12345' );
@@ -500,14 +518,14 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$instance->action_admin_menu();
 
 		$wp_settings_errors = array();
-		$expected_output = array(
-			'username' => '',
-			'api-key' => '',
+		$expected_output    = array(
+			'username'           => '',
+			'api-key'            => '',
 			'display_powered_by' => 0,
-			'debug' => 0,
+			'debug'              => 0,
 		);
-		$actual_output = $instance->validate( array() );
-		$errors = get_settings_errors( $instance->slug );
+		$actual_output      = $instance->validate( array() );
+		$errors             = get_settings_errors( $instance->slug );
 		$this->assertEquals( $expected_output, $actual_output );
 		$this->assertFalse( get_option( 'gem-valid-creds' ) );
 
@@ -516,16 +534,19 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 				'code' => 500,
 			),
 		);
-		$wp_settings_errors = array();
-		$creds = array( 'username' => 'user_name', 'api-key' => '1234' );
-		$expected_output = array(
+		$wp_settings_errors       = array();
+		$creds                    = array(
 			'username' => 'user_name',
-			'api-key' => '1234',
-			'display_powered_by' => 0,
-			'debug' => 0,
+			'api-key'  => '1234',
 		);
-		$actual_output = $instance->validate( $creds );
-		$errors = get_settings_errors( $instance->slug );
+		$expected_output          = array(
+			'username'           => 'user_name',
+			'api-key'            => '1234',
+			'display_powered_by' => 0,
+			'debug'              => 0,
+		);
+		$actual_output            = $instance->validate( $creds );
+		$errors                   = get_settings_errors( $instance->slug );
 		$this->assertEquals( $expected_output, $actual_output );
 		$this->assertFalse( get_option( 'gem-valid-creds' ) );
 
@@ -533,18 +554,21 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 			'response' => array(
 				'code' => 200,
 			),
-			'body' => '{"total":2}',
+			'body'     => '{"total":2}',
 		);
-		$wp_settings_errors = array();
-		$creds = array( 'username' => 'user_name', 'api-key' => '1234' );
-		$expected_output = array(
+		$wp_settings_errors       = array();
+		$creds                    = array(
 			'username' => 'user_name',
-			'api-key' => '1234',
-			'display_powered_by' => 0,
-			'debug' => 0,
+			'api-key'  => '1234',
 		);
-		$actual_output = $instance->validate( $creds );
-		$errors = get_settings_errors( $instance->slug );
+		$expected_output          = array(
+			'username'           => 'user_name',
+			'api-key'            => '1234',
+			'display_powered_by' => 0,
+			'debug'              => 0,
+		);
+		$actual_output            = $instance->validate( $creds );
+		$errors                   = get_settings_errors( $instance->slug );
 		$this->assertEquals( $expected_output, $actual_output );
 		$this->assertFalse( get_option( 'gem-valid-creds' ) );
 	}
@@ -559,20 +583,23 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 			'response' => array(
 				'code' => 200,
 			),
-			'body' => '{"total":1,"signups":[{"id":"54321", "name":"Test Form", "url":"http://sample.org"}]}',
+			'body'     => '{"total":1,"signups":[{"id":"54321", "name":"Test Form", "url":"http://sample.org"}]}',
 		);
 
 		$instance = new GEM_Settings();
 		$instance->action_admin_menu();
 
-		$creds = array( 'username' => 'user_name', 'api-key' => '1234' );
-		$expected_output = array(
+		$creds           = array(
 			'username' => 'user_name',
-			'api-key' => '1234',
-			'display_powered_by' => 0,
-			'debug' => 0,
+			'api-key'  => '1234',
 		);
-		$actual_output = $instance->validate( $creds );
+		$expected_output = array(
+			'username'           => 'user_name',
+			'api-key'            => '1234',
+			'display_powered_by' => 0,
+			'debug'              => 0,
+		);
+		$actual_output   = $instance->validate( $creds );
 		$this->assertEquals( $expected_output, $actual_output );
 		$this->assertTrue( get_option( 'gem-valid-creds' ) );
 	}
@@ -587,10 +614,10 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$instance->action_admin_menu();
 		$this->set_data( $instance->slug );
 		$expected_output = array(
-			'username' => 'user_name',
-			'api-key' => '1234',
+			'username'           => 'user_name',
+			'api-key'            => '1234',
 			'display_powered_by' => 1,
-			'debug' => 0,
+			'debug'              => 0,
 		);
 		$this->assertEquals( $expected_output, $instance->validate( $expected_output ) );
 		$this->assertTrue( get_transient( 'gem-settings-updated' ) );
@@ -608,9 +635,9 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		global $locale;
 
 		$domains = array(
-			''    => 'www',
-			'uk'  => 'ua',
-			'el'  => 'gr',
+			''   => 'www',
+			'uk' => 'ua',
+			'el' => 'gr',
 		);
 
 		foreach ( $domains as $lang => $domain ) {

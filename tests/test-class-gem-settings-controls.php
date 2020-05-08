@@ -42,11 +42,13 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 	 */
 	public function test_select() {
 		ob_start();
-		GEM_Settings_Controls::select( array(
-			'options' => array( 'key' => 'the_value' ),
-			'id' => 'the_id',
-			'page' => 'the_page',
-		) );
+		GEM_Settings_Controls::select(
+			array(
+				'options' => array( 'key' => 'the_value' ),
+				'id'      => 'the_id',
+				'page'    => 'the_page',
+			)
+		);
 		$actual_output = ob_get_contents();
 		ob_end_clean();
 		$this->assertContains( '<select id="the_id" name="the_page[the_id]">', $actual_output );
@@ -61,9 +63,11 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 	 */
 	public function test_select_is_empty() {
 		ob_start();
-		GEM_Settings_Controls::select( array(
-			'id' => null,
-		) );
+		GEM_Settings_Controls::select(
+			array(
+				'id' => null,
+			)
+		);
 		$actual_output = ob_get_contents();
 		ob_end_clean();
 		$this->assertEmpty( $actual_output );
@@ -76,10 +80,12 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 	 */
 	public function test_text() {
 		ob_start();
-		GEM_Settings_Controls::text(array(
-			'id' => 'the_id',
-			'page' => 'the_page',
-		) );
+		GEM_Settings_Controls::text(
+			array(
+				'id'   => 'the_id',
+				'page' => 'the_page',
+			)
+		);
 		$actual_output = ob_get_contents();
 		ob_end_clean();
 		$this->assertContains( '<input type="text" name="the_page[the_id]"', $actual_output );
@@ -94,9 +100,11 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 	 */
 	public function test_text_is_empty() {
 		ob_start();
-		GEM_Settings_Controls::text( array(
-			'id' => null,
-		) );
+		GEM_Settings_Controls::text(
+			array(
+				'id' => null,
+			)
+		);
 		$actual_output = ob_get_contents();
 		ob_end_clean();
 		$this->assertEmpty( $actual_output );
@@ -109,10 +117,12 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 	 */
 	public function test_checkbox() {
 		ob_start();
-		GEM_Settings_Controls::checkbox( array(
-			'id' => 'the_id',
-			'page' => 'the_page',
-		) );
+		GEM_Settings_Controls::checkbox(
+			array(
+				'id'   => 'the_id',
+				'page' => 'the_page',
+			)
+		);
 		$actual_output = ob_get_contents();
 		ob_end_clean();
 		$this->assertContains( '<label for="the_page[the_id]">', $actual_output );
@@ -127,9 +137,11 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 	 */
 	public function test_checkbox_is_empty() {
 		ob_start();
-		GEM_Settings_Controls::checkbox( array(
-			'id' => null,
-		) );
+		GEM_Settings_Controls::checkbox(
+			array(
+				'id' => null,
+			)
+		);
 		$actual_output = ob_get_contents();
 		ob_end_clean();
 		$this->assertEmpty( $actual_output );
@@ -142,10 +154,12 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 	 */
 	public function test_button() {
 		ob_start();
-		GEM_Settings_Controls::button( array(
-			'url' => 'http://sample.org',
-			'label' => 'Cool Button',
-		) );
+		GEM_Settings_Controls::button(
+			array(
+				'url'   => 'http://sample.org',
+				'label' => 'Cool Button',
+			)
+		);
 		$actual_output = ob_get_contents();
 		ob_end_clean();
 		$this->assertContains( '<p>', $actual_output );
@@ -173,9 +187,11 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 	 */
 	public function test_show_description() {
 		ob_start();
-		GEM_Settings_Controls::show_description( array(
-			'description' => 'the_description',
-		) );
+		GEM_Settings_Controls::show_description(
+			array(
+				'description' => 'the_description',
+			)
+		);
 		$actual_output = ob_get_contents();
 		ob_end_clean();
 		$this->assertContains( '<p class="description">the_description</p>', $actual_output );
@@ -187,7 +203,13 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 	 * @see GEM_Settings_Controls::get_option()
 	 */
 	public function test_get_option() {
-		update_option( GEM_Settings::SLUG, array( 'username' => 'user_name', 'api-key' => '1234' ) );
+		update_option(
+			GEM_Settings::SLUG,
+			array(
+				'username' => 'user_name',
+				'api-key'  => '1234',
+			)
+		);
 		$this->assertFalse( GEM_Settings_Controls::get_option( 'error' ) );
 		$this->assertEquals( 'user_name', GEM_Settings_Controls::get_option( 'username' ) );
 		$this->assertEquals( '1234', GEM_Settings_Controls::get_option( 'api-key' ) );
@@ -200,7 +222,13 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 	 * @see GEM_Settings_Controls::delete_option()
 	 */
 	public function test_delete_option() {
-		update_option( GEM_Settings::SLUG, array( 'username' => 'user_name', 'api-key' => '1234' ) );
+		update_option(
+			GEM_Settings::SLUG,
+			array(
+				'username' => 'user_name',
+				'api-key'  => '1234',
+			)
+		);
 		$this->assertEquals( '1234', GEM_Settings_Controls::get_option( 'api-key' ) );
 		$this->assertFalse( GEM_Settings_Controls::delete_option( 'fake-key' ) );
 		$this->assertTrue( GEM_Settings_Controls::delete_option( 'api-key' ) );
@@ -214,7 +242,13 @@ class Test_GEM_Settings_Controls extends WP_UnitTestCase {
 	 * @see GEM_Settings_Controls::update_option()
 	 */
 	public function test_update_option() {
-		update_option( GEM_Settings::SLUG, array( 'username' => 'user_name', 'api-key' => '1234' ) );
+		update_option(
+			GEM_Settings::SLUG,
+			array(
+				'username' => 'user_name',
+				'api-key'  => '1234',
+			)
+		);
 		$this->assertEquals( '1234', GEM_Settings_Controls::get_option( 'api-key' ) );
 		$this->assertFalse( GEM_Settings_Controls::update_option( 'api-key', '1234' ) );
 		$this->assertTrue( GEM_Settings_Controls::update_option( 'api-key', '4321' ) );

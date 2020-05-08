@@ -157,7 +157,7 @@ class GEM_Form_Widget extends WP_Widget {
 			<?php else : ?>
 
 			<span>
-			<?php
+				<?php
 				printf(
 					/* translators: %s: link to settings page */
 					esc_html__( 'Please set up your GoDaddy Email Marketing account in the %s.', 'godaddy-email-marketing-sign-up-forms' ),
@@ -167,7 +167,7 @@ class GEM_Form_Widget extends WP_Widget {
 						esc_html__( 'settings page', 'godaddy-email-marketing-sign-up-forms' )
 					)
 				);
-			?>
+				?>
 			</span>
 
 			<?php endif; ?>

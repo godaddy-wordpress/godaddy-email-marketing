@@ -444,7 +444,7 @@ class GEM_Form_Fields {
 	 */
 	private static function adjust_field_type( $field ) {
 
-		if ( in_array( $field->field_type, [ 'tracking_option', 'age_check' ], true ) ) {
+		if ( in_array( $field->field_type, array( 'tracking_option', 'age_check' ), true ) ) {
 
 			$field->value      = $field->display;
 			$field->field_type = 'checkbox';

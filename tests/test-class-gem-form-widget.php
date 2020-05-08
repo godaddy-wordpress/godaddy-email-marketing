@@ -40,17 +40,17 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		set_transient( 'gem-form-123', json_decode( '{"id":123,"name":"Signup Form","fields":{"field_a":{"type":"string","field_type":"string","name":"the_name_a","required":false,"display":"text_a"},"field_b":{"type":"checkbox","field_type":"checkbox","required":true,"name":"the_name_b","value":"the_value","display":"text_b"}},"submit":"the_url","button_text":"button_text"}' ), 60 );
 		set_transient( 'gem-user_name-lists', json_decode( '{"total":1,"signups":[{"id":123,"name":"Signup Form","thumbnail":"the_url","url":"the_url"}]}' ), 60 );
 
-		$widget = new GEM_Form_Widget();
-		$args = array(
+		$widget   = new GEM_Form_Widget();
+		$args     = array(
 			'before_widget' => 'before_text',
-			'after_widget' => 'after_text',
-			'before_title' => 'before_title',
-			'after_title' => 'after_title',
+			'after_widget'  => 'after_text',
+			'before_title'  => 'before_title',
+			'after_title'   => 'after_title',
 		);
 		$instance = array(
 			'title' => 'the_title',
-			'text' => 'the_text',
-			'form' => '123',
+			'text'  => 'the_text',
+			'form'  => '123',
 		);
 
 		ob_start();
@@ -86,17 +86,17 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 		set_transient( 'gem-form-123', json_decode( '{"id":123,"name":"Signup Form","fields":{"field_a":{"type":"string","field_type":"string","name":"the_name_a","required":false,"display":"text_a"},"field_b":{"type":"checkbox","field_type":"checkbox","required":true,"name":"the_name_b","value":"the_value","display":"text_b"}},"submit":"the_url","button_text":"button_text"}' ), 60 );
 		set_transient( 'gem-user_name-lists', json_decode( '{"total":1,"signups":[{"id":123,"name":"Signup Form","thumbnail":"the_url","url":"the_url"}]}' ), 60 );
 
-		$widget = new GEM_Form_Widget();
-		$args = array(
+		$widget   = new GEM_Form_Widget();
+		$args     = array(
 			'before_widget' => 'before_text',
-			'after_widget' => 'after_text',
-			'before_title' => 'before_title',
-			'after_title' => 'after_title',
+			'after_widget'  => 'after_text',
+			'before_title'  => 'before_title',
+			'after_title'   => 'after_title',
 		);
 		$instance = array(
 			'title' => 'the_title',
-			'text' => 'the_text',
-			'form' => null,
+			'text'  => 'the_text',
+			'form'  => null,
 		);
 
 		ob_start();
@@ -121,23 +121,23 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 
 		$new_instance = array(
 			'title' => '<b>the_title</b>',
-			'text' => 'new_text',
-			'form' => 123,
+			'text'  => 'new_text',
+			'form'  => 123,
 		);
 		$old_instance = array(
 			'title' => 'the_old',
-			'text' => 'old_text',
-			'form' => 456,
+			'text'  => 'old_text',
+			'form'  => 456,
 			'other' => 'new_value',
 		);
-		$output = $widget->update( $new_instance, $old_instance );
+		$output       = $widget->update( $new_instance, $old_instance );
 		$this->assertEquals( 'the_title', $output['title'] );
 		$this->assertEquals( 'new_text', $output['text'] );
 		$this->assertEquals( 123, $output['form'] );
 		$this->assertEquals( 'new_value', $output['other'] );
 
 		$new_instance['form'] = -123;
-		$output = $widget->update( $new_instance, $old_instance );
+		$output               = $widget->update( $new_instance, $old_instance );
 		$this->assertEquals( 123, $output['form'] );
 	}
 
@@ -147,13 +147,13 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 	 * @see GEM_Form_Widget::form()
 	 */
 	public function test_form() {
-		$widget = new GEM_Form_Widget();
-		$user_name = 'the_user';
-		$api_key = 'the_api_key';
-		$sample_data = new stdClass();
-		$sample_field = new stdClass();
-		$sample_field->id = 'the_field_id';
-		$sample_field->name = 'the_field_name';
+		$widget               = new GEM_Form_Widget();
+		$user_name            = 'the_user';
+		$api_key              = 'the_api_key';
+		$sample_data          = new stdClass();
+		$sample_field         = new stdClass();
+		$sample_field->id     = 'the_field_id';
+		$sample_field->name   = 'the_field_name';
 		$sample_data->signups = array( $sample_field );
 
 		GEM_Settings_Controls::update_option( 'username', $user_name );
@@ -162,8 +162,8 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 
 		$instance = array(
 			'title' => 'the_title',
-			'text' => 'the_text',
-			'form' => 123,
+			'text'  => 'the_text',
+			'form'  => 123,
 		);
 		ob_start();
 		$widget->form( $instance );
@@ -184,10 +184,10 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 	 * @see GEM_Form_Widget::form()
 	 */
 	public function test_form_fails_message() {
-		$widget = new GEM_Form_Widget();
-		$user_name = 'the_user';
-		$api_key = 'the_api_key';
-		$sample_data = new stdClass();
+		$widget               = new GEM_Form_Widget();
+		$user_name            = 'the_user';
+		$api_key              = 'the_api_key';
+		$sample_data          = new stdClass();
 		$sample_data->signups = array();
 
 		GEM_Settings_Controls::update_option( 'username', $user_name );
@@ -196,8 +196,8 @@ class Test_GEM_Form_Widget extends WP_UnitTestCase {
 
 		$instance = array(
 			'title' => 'the_title',
-			'text' => 'the_text',
-			'form' => 123,
+			'text'  => 'the_text',
+			'form'  => 123,
 		);
 		ob_start();
 		$widget->form( $instance );

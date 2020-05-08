@@ -642,7 +642,7 @@ class GEM_Settings {
 								'<a href="https://gem.godaddy.com" target="_blank">',
 								'</a>'
 							);
-							?>
+						?>
 						</p>
 						<h3><?php esc_html_e( 'Available Signup Forms', 'godaddy-email-marketing-sign-up-forms' ); ?></h3>
 						<table class="wp-list-table widefat fixed striped">

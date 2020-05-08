@@ -26,7 +26,7 @@ class Test_GEM_Official extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 		$this->plugin_file_path = $GLOBALS['_plugin_file'];
-		$this->instance = GEM_Official::instance();
+		$this->instance         = GEM_Official::instance();
 	}
 
 	/**
@@ -181,7 +181,7 @@ class Test_GEM_Official extends WP_UnitTestCase {
 	 */
 	public function test_enqueue() {
 		$this->instance->enqueue();
-		$this->assertTrue( wp_script_is( 'gem-main','queue' ) );
+		$this->assertTrue( wp_script_is( 'gem-main', 'queue' ) );
 		$this->assertTrue( wp_style_is( 'gem-base', 'registered' ) );
 	}
 
@@ -195,7 +195,7 @@ class Test_GEM_Official extends WP_UnitTestCase {
 
 		$_parent_pages[ GEM_Settings::SLUG ] = 'settings_slug';
 
-		$sample_array = array( 'the_key' => 'the_value' );
+		$sample_array  = array( 'the_key' => 'the_value' );
 		$actual_result = $this->instance->action_links( $sample_array );
 
 		$this->assertArrayHasKey( 'the_key', $actual_result );
@@ -233,7 +233,7 @@ class Test_GEM_Official extends WP_UnitTestCase {
 	public function test_action_admin_notices() {
 		global $current_screen;
 
-		$current_screen = new stdClass();
+		$current_screen     = new stdClass();
 		$current_screen->id = 'test';
 
 		ob_start();

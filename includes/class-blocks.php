@@ -25,7 +25,7 @@ class GEM_Blocks {
 
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_scripts' ) );
 
-		add_action( 'wp_ajax_get_gem_form', [ $this, 'get_gem_form' ] );
+		add_action( 'wp_ajax_get_gem_form', array( $this, 'get_gem_form' ) );
 
 	}
 
@@ -44,13 +44,13 @@ class GEM_Blocks {
 		wp_localize_script(
 			'gem-blocks',
 			'gem',
-			[
+			array(
 				'forms'        => $this->forms,
 				'settingsURL'  => admin_url( 'options-general.php?page=gem-settings' ),
 				'getFormError' => esc_html__( 'There was an error retreiving the GEM form. Please try again.', 'godaddy-email-marketing-sign-up-forms' ),
 				'isConnected'  => ! empty( $this->forms ),
 				'preloaderUrl' => admin_url( 'images/wpspin_light-2x.gif' ),
-			]
+			)
 		);
 
 	}
@@ -89,18 +89,18 @@ class GEM_Blocks {
 
 		if ( empty( $forms->signups ) ) {
 
-			return [];
+			return array();
 
 		}
 
-		$forms_array = [];
+		$forms_array = array();
 
 		foreach ( $forms->signups as $form ) {
 
-			$forms_array[] = [
+			$forms_array[] = array(
 				'label' => $form->name,
 				'value' => $form->id,
-			];
+			);
 
 		}
 

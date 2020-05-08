@@ -61,7 +61,7 @@ class GEM_Official {
 	 */
 	public static function instance() {
 		if ( ! isset( self::$instance ) ) {
-			self::$instance = new self;
+			self::$instance = new self();
 			self::$instance->setup_constants();
 			self::$instance->requirements();
 			self::$instance->setup_actions();
@@ -159,7 +159,7 @@ class GEM_Official {
 
 		// Initialize settings.
 		if ( is_admin() ) {
-			$this->settings = new GEM_Settings;
+			$this->settings = new GEM_Settings();
 		}
 
 		// Enqueue scripts and styles.
