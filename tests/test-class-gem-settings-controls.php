@@ -1,5 +1,12 @@
 <?php
 /**
+ * Test_GEM_Settings_Controls class.
+ * Tests form controls markup and actions.
+ *
+ * @package GEM
+ */
+
+/**
  * Test Settings Controls.
  *
  * @group controls

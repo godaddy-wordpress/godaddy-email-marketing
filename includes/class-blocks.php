@@ -19,6 +19,9 @@ class GEM_Blocks {
 	 */
 	private $forms;
 
+	/**
+	 * Construct function for GEM_Blocks class.
+	 */
 	public function __construct() {
 
 		$this->forms = $this->get_forms();

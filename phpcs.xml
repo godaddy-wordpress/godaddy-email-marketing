@@ -55,14 +55,14 @@
 
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" value="godaddy_email_marketing"/>
+			<property name="text_domain" value="godaddy-email-marketing-sign-up-forms"/>
 		</properties>
 	</rule>
 
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
 			<property name="prefixes" type="array">
-				<element value="godaddy_email_marketing"/>
+				<element value="GEM"/>
 			</property>
 		</properties>
 	</rule>

@@ -85,7 +85,7 @@ class GEM_Form_Renderer {
 			$output = ob_get_clean();
 
 			if ( $echo ) {
-				echo $output; // xss ok
+				echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			return $output;
@@ -139,8 +139,6 @@ class GEM_Form_Fields {
 	 * @return string The form ID.
 	 */
 	public static function get_form_id( $field_name ) {
-
-		// Since HTML ID's can't exist in the same exact spelling more than once... make it special.
 		return sprintf( 'form_%s_%s', self::$cycle, $field_name );
 	}
 
@@ -336,7 +334,7 @@ class GEM_Form_Fields {
 		</label>
 		</br>
 
-		<?php $current_year = date( 'Y' ); ?>
+		<?php $current_year = gmdate( 'Y' ); ?>
 
 		<span class="third">
 			<select fingerprint="date" data-id="<?php echo esc_attr( self::get_form_id( $args->name ) ); ?>" data-name="<?php echo esc_attr( $args->name ); ?>">
@@ -440,7 +438,8 @@ class GEM_Form_Fields {
 	/**
 	 * Adjust a field type to reuse existing methods.
 	 *
-	 * @return string Field type
+	 * @param Array $field Form field object.
+	 * @return Array $field Modified form field object.
 	 */
 	private static function adjust_field_type( $field ) {
 

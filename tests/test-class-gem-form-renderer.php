@@ -1,6 +1,13 @@
 <?php
 /**
- * Test Renderer.
+ * Test_GEM_Form_Renderer class.
+ * Tests both rendering of form and processing of data.
+ *
+ * @package GEM
+ */
+
+/**
+ * Unit test class.
  *
  * @group renderer
  */

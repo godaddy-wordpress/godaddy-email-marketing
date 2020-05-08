@@ -65,7 +65,7 @@ class GEM_Settings {
 			array( $this, 'display_settings_page' )
 		);
 
-		// Various maintenance processes
+		// Various maintenance processes.
 		add_action( 'load-' . $this->hook, array( $this, 'page_load' ) );
 
 		// Enqueue admin CSS.
@@ -81,7 +81,7 @@ class GEM_Settings {
 	public function admin_enqueue_style() {
 		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-		wp_enqueue_style( 'gem-admin', plugins_url( "css/admin{$suffix}.css", GEM_PLUGIN_BASE ) );
+		wp_enqueue_style( 'gem-admin', plugins_url( "css/admin{$suffix}.css", GEM_PLUGIN_BASE ), array(), GEM_VERSION );
 	}
 
 	/**
@@ -280,7 +280,7 @@ class GEM_Settings {
 	/**
 	 * Register a settings error to be displayed to the user
 	 *
-	 * @param string $setting Slug title of the setting to which this error applies
+	 * @param string $setting Slug title of the setting to which this error applies.
 	 * @param string $code    Slug-name to identify the error. Used as part of 'id' attribute in HTML output.
 	 * @param string $message The formatted message text to display to the user (will be shown inside styled
 	 *                        `<div>` and `<p>` tags).
@@ -542,20 +542,20 @@ class GEM_Settings {
 		$parts     = explode( '_', $language );
 		$subdomain = ! empty( $parts[1] ) ? strtolower( $parts[1] ) : strtolower( $language );
 
-		// Overrides
+		// Overrides.
 		switch ( $subdomain ) {
 
 			case '':
 			case 'us':
-				$subdomain = 'www'; // Default
+				$subdomain = 'www'; // Default.
 				break;
 
 			case 'uk':
-				$subdomain = 'ua'; // Ukrainian (Українська)
+				$subdomain = 'ua'; // Ukrainian (Українська).
 				break;
 
 			case 'el':
-				$subdomain = 'gr'; // Greek (Ελληνικά)
+				$subdomain = 'gr'; // Greek (Ελληνικά).
 				break;
 
 		}

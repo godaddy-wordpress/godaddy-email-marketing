@@ -1,11 +1,17 @@
 <?php
 /**
+ * Test_GEM_Form_Fields class.
+ * Tests form field markup and dispatch of data.
+ *
+ * @package GEM
+ */
+
+/**
  * Test Form Fields.
  *
  * @group fields
  */
 class Test_GEM_Form_Fields extends WP_UnitTestCase {
-
 	/**
 	 * Setup.
 	 *
@@ -19,6 +25,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 	 * Filter the required field classes.
 	 *
 	 * @action gem_required_field_class
+	 * @param Array $field_classes Array of existing field classes with which to append.
 	 */
 	public function gem_required_field_class_callback( $field_classes ) {
 		$field_classes[] = 'a_sample_class';
@@ -79,7 +86,7 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->name       = 'signup';
 		$field->required   = false;
 		$field->display    = 'Terms of Service Link Field';
-		$field->options    = json_encode( array( 'link' => 'https://example.org' ) );
+		$field->options    = wp_json_encode( array( 'link' => 'https://example.org' ) );
 		$field->field_name = 'terms_of_service_link_field';
 		$field->value      = '';
 		ob_start();
@@ -274,8 +281,8 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->required = false;
 		$field->display  = 'text_a';
 		$field->value    = 'the_value';
-		$cur_year        = date( 'Y' ) + 5;
-		$min_year        = date( 'Y' ) - 80;
+		$cur_year        = gmdate( 'Y' ) + 5;
+		$min_year        = gmdate( 'Y' ) - 80;
 		ob_start();
 		GEM_Form_Fields::date( $field );
 		$actual_output = ob_get_clean();

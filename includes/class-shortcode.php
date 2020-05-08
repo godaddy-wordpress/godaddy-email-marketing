@@ -90,6 +90,6 @@ function gem_form( $id, $echo = true ) {
 			return $form;
 		}
 
-		echo $form;// xss ok
+		echo $form; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }

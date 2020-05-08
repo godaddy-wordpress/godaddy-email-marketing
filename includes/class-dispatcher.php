@@ -22,17 +22,17 @@ class GEM_Dispatcher {
 	/**
 	 * HTTP response codes
 	 *
-	 * @var array
+	 * @var Array
 	 */
 	private static $ok_codes = array( 200, 304 );
 
 	/**
 	 * Gets and sets the forms.
 	 *
-	 * @param string $username The username.
-	 * @param string $api_key
+	 * @param String $username The username.
+	 * @param String $api_key The input API key.
 	 *
-	 * @return string $api_key  The API key.
+	 * @return String $api_key  The output API key.
 	 */
 	public static function fetch_forms( $username = '', $api_key = '' ) {
 		if ( ! $username && ! $api_key ) {
@@ -200,7 +200,7 @@ class GEM_Dispatcher {
 	/**
 	 * Return the API base URL.
 	 *
-	 * @param  string $path (optional)
+	 * @param  string $path (optional parameter).
 	 *
 	 * @return string
 	 */

@@ -96,20 +96,16 @@ class GEM_Official {
 	private function setup_constants() {
 
 		// Plugin's main directory.
-		defined( 'GEM_PLUGIN_DIR' )
-			or define( 'GEM_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+		defined( 'GEM_PLUGIN_DIR' ) || define( 'GEM_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 		// Absolute URL to plugin's dir.
-		defined( 'GEM_PLUGIN_URL' )
-			or define( 'GEM_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+		defined( 'GEM_PLUGIN_URL' ) || define( 'GEM_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 		// Absolute URL to plugin's dir.
-		defined( 'GEM_PLUGIN_BASE' )
-			or define( 'GEM_PLUGIN_BASE', plugin_basename( __FILE__ ) );
+		defined( 'GEM_PLUGIN_BASE' ) || define( 'GEM_PLUGIN_BASE', plugin_basename( __FILE__ ) );
 
 		// Plugin's main directory.
-		defined( 'GEM_VERSION' )
-			or define( 'GEM_VERSION', '1.4.2' );
+		defined( 'GEM_VERSION' ) || define( 'GEM_VERSION', '1.4.2' );
 
 		// Set up the base name.
 		self::$basename = isset( self::$basename ) ? self::$basename : plugin_basename( __FILE__ );
@@ -265,8 +261,8 @@ class GEM_Official {
 					<?php
 					printf(
 						/* translators: %1$s: Link to plugin settings page with text 'Learn More'. */
-						__( 'Your website has a superpower: Email marketing. %1$s.', 'godaddy-email-marketing-sign-up-forms' ),
-						'<a href="' . admin_url( 'options-general.php?page=gem-settings' ) . '">' . __( 'Learn More', 'godaddy-email-marketing-sign-up-forms' ) . '</a>'
+						esc_html__( 'Your website has a superpower: Email marketing. %1$s.', 'godaddy-email-marketing-sign-up-forms' ),
+						'<a href="' . esc_url( admin_url( 'options-general.php?page=gem-settings' ) ) . '">' . esc_html__( 'Learn More', 'godaddy-email-marketing-sign-up-forms' ) . '</a>'
 					);
 					?>
 				</p>

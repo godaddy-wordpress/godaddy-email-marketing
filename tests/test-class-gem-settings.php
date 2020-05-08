@@ -1,5 +1,12 @@
 <?php
 /**
+ * Test_GEM_Settings class.
+ * Tests form settings, credentials, and scripts.
+ *
+ * @package GEM
+ */
+
+/**
  * Test Settings.
  *
  * @group settings
@@ -7,14 +14,14 @@
 class Test_GEM_Settings extends WP_UnitTestCase {
 
 	/**
-	 * Mock_Http_Response instance.
+	 * GEM_Mock_Http_Response instance.
 	 *
-	 * @var Mock_Http_Response
+	 * @var GEM_Mock_Http_Response
 	 */
 	private $http_response;
 
 	/**
-	 * Load Mock_Http_Response
+	 * Load GEM_Mock_Http_Response
 	 */
 	public static function setUpBeforeClass() {
 		require_once 'mock-http-response.php';
@@ -28,8 +35,8 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		$this->http_response            = new Mock_Http_Response();
-		Mock_Http_Response::$test_class = $this;
+		$this->http_response                = new GEM_Mock_Http_Response();
+		GEM_Mock_Http_Response::$test_class = $this;
 		add_filter( 'pre_http_request', array( $this->http_response, 'filter_response' ), 10, 3 );
 	}
 
@@ -43,17 +50,17 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		parent::tearDown();
 
 		remove_filter( 'pre_http_request', array( $this->http_response, 'filter_response' ), 10, 3 );
-		Mock_Http_Response::$data          = null;
-		Mock_Http_Response::$test_class    = null;
-		Mock_Http_Response::$expected_args = null;
-		Mock_Http_Response::$expected_url  = null;
-		$wp_settings_errors                = array();
+		GEM_Mock_Http_Response::$data          = null;
+		GEM_Mock_Http_Response::$test_class    = null;
+		GEM_Mock_Http_Response::$expected_args = null;
+		GEM_Mock_Http_Response::$expected_url  = null;
+		$wp_settings_errors                    = array();
 	}
 
 	/**
 	 * Add sample data.
 	 *
-	 * @param string $slug The setting option slug.
+	 * @param String $slug The setting option slug.
 	 */
 	public function set_data( $slug = '' ) {
 		update_option(
@@ -69,6 +76,8 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 
 	/**
 	 * Delete sample data.
+	 *
+	 * @param String $slug The setting option slug.
 	 */
 	public function delete_data( $slug ) {
 		delete_option( $slug );
@@ -166,7 +175,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		wp_set_current_user( $user_id );
 
-		// debug-reset action:
+		// debug-reset action.
 		$_GET['action']       = 'debug-reset';
 		$_REQUEST['_wpnonce'] = wp_create_nonce( 'gem_settings_hard_reset_nonce' );
 		$gem->debug           = false;
@@ -201,7 +210,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		wp_set_current_user( $user_id );
 
-		// debug-reset-transients action:
+		// debug-reset-transients action.
 		$_GET['action']       = 'debug-reset-transients';
 		$_REQUEST['_wpnonce'] = wp_create_nonce( 'gem_settings_reset_transients_nonce' );
 		$gem->debug           = false;
@@ -241,7 +250,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		wp_set_current_user( $user_id );
 
-		// refresh action:
+		// refresh action.
 		$_GET['action']       = 'refresh';
 		$_REQUEST['_wpnonce'] = wp_create_nonce( 'gem_settings_refresh_nonce' );
 		$instance->page_load();
@@ -480,7 +489,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	 * @see GEM_Settings::display_settings_page()
 	 */
 	public function test_display_settings_page_forms() {
-		Mock_Http_Response::$data = array(
+		GEM_Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 200,
 			),
@@ -529,46 +538,46 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 		$this->assertEquals( $expected_output, $actual_output );
 		$this->assertFalse( get_option( 'gem-valid-creds' ) );
 
-		Mock_Http_Response::$data = array(
+		GEM_Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 500,
 			),
 		);
-		$wp_settings_errors       = array();
-		$creds                    = array(
+		$wp_settings_errors           = array();
+		$creds                        = array(
 			'username' => 'user_name',
 			'api-key'  => '1234',
 		);
-		$expected_output          = array(
+		$expected_output              = array(
 			'username'           => 'user_name',
 			'api-key'            => '1234',
 			'display_powered_by' => 0,
 			'debug'              => 0,
 		);
-		$actual_output            = $instance->validate( $creds );
-		$errors                   = get_settings_errors( $instance->slug );
+		$actual_output                = $instance->validate( $creds );
+		$errors                       = get_settings_errors( $instance->slug );
 		$this->assertEquals( $expected_output, $actual_output );
 		$this->assertFalse( get_option( 'gem-valid-creds' ) );
 
-		Mock_Http_Response::$data = array(
+		GEM_Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 200,
 			),
 			'body'     => '{"total":2}',
 		);
-		$wp_settings_errors       = array();
-		$creds                    = array(
+		$wp_settings_errors           = array();
+		$creds                        = array(
 			'username' => 'user_name',
 			'api-key'  => '1234',
 		);
-		$expected_output          = array(
+		$expected_output              = array(
 			'username'           => 'user_name',
 			'api-key'            => '1234',
 			'display_powered_by' => 0,
 			'debug'              => 0,
 		);
-		$actual_output            = $instance->validate( $creds );
-		$errors                   = get_settings_errors( $instance->slug );
+		$actual_output                = $instance->validate( $creds );
+		$errors                       = get_settings_errors( $instance->slug );
 		$this->assertEquals( $expected_output, $actual_output );
 		$this->assertFalse( get_option( 'gem-valid-creds' ) );
 	}
@@ -579,7 +588,7 @@ class Test_GEM_Settings extends WP_UnitTestCase {
 	 * @see GEM_Settings::validate()
 	 */
 	public function test_validate_sets_gem_valid_creds_to_true() {
-		Mock_Http_Response::$data = array(
+		GEM_Mock_Http_Response::$data = array(
 			'response' => array(
 				'code' => 200,
 			),

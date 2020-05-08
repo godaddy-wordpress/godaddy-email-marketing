@@ -1,5 +1,12 @@
 <?php
 /**
+ * Test_GEM_Official class.
+ * Tests form locale, actions and notices.
+ *
+ * @package GEM
+ */
+
+/**
  * Test GEM.
  *
  * @group gem
@@ -7,6 +14,8 @@
 class Test_GEM_Official extends WP_UnitTestCase {
 
 	/**
+	 * Private instance reference.
+	 *
 	 * @var GEM_Official
 	 */
 	private $instance;
@@ -32,7 +41,7 @@ class Test_GEM_Official extends WP_UnitTestCase {
 	/**
 	 * Filter to set the locale manually.
 	 */
-	public function locale( $locale ) {
+	public function locale() {
 		return 'es_ES';
 	}
 
@@ -117,7 +126,7 @@ class Test_GEM_Official extends WP_UnitTestCase {
 		$this->assertNull( $this->instance->settings );
 		$this->assertArrayHasKey( 'wp_enqueue_scripts', $wp_filter );
 
-		// test in admin case:
+		// test in admin case.
 		define( 'WP_ADMIN', true );
 		$second_instance = new GEM_Official();
 		$second_instance->init();
@@ -202,15 +211,6 @@ class Test_GEM_Official extends WP_UnitTestCase {
 		$this->assertEquals( 'the_value', $actual_result['the_key'] );
 		$this->assertArrayHasKey( 'settings', $actual_result );
 		$this->assertEquals( '<a href="http://example.org/wp-admin/settings_slug?page=gem-settings">Settings</a>', $actual_result['settings'] );
-	}
-
-	/**
-	 * Test activate.
-	 *
-	 * @see GEM_Official::activate()
-	 */
-	public function test_activate() {
-		// nothing to test
 	}
 
 	/**

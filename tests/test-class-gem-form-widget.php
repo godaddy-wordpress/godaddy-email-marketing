@@ -1,5 +1,12 @@
 <?php
 /**
+ * Test_GEM_Form_Widget class.
+ * Tests form widget actions and markup.
+ *
+ * @package GEM
+ */
+
+/**
  * Test Widget.
  *
  * @group widget
