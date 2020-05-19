@@ -12,16 +12,6 @@
  * @group controls
  */
 class Test_GEM_Settings_Controls extends WP_UnitTestCase {
-
-	/**
-	 * Setup.
-	 *
-	 * @inheritdoc
-	 */
-	public function setUp() {
-		parent::setUp();
-	}
-
 	/**
 	 * Test that GEM_Settings_Controls exists.
 	 */

@@ -114,7 +114,6 @@ class GEM_Official {
 	/**
 	 * Loads the PHP files.
 	 *
-	 * @todo include only some on is_admin()
 	 * @codeCoverageIgnore
 	 */
 	private function requirements() {

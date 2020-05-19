@@ -13,15 +13,6 @@
  */
 class Test_GEM_Form_Fields extends WP_UnitTestCase {
 	/**
-	 * Setup.
-	 *
-	 * @inheritdoc
-	 */
-	public function setUp() {
-		parent::setUp();
-	}
-
-	/**
 	 * Filter the required field classes.
 	 *
 	 * @action gem_required_field_class

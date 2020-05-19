@@ -5,6 +5,8 @@
  * @package GEM
  */
 
+// phpcs:disable Generic.Files.OneObjectStructurePerFile.MultipleFound
+
 /**
  * GoDaddy Email Marketing form.
  *
@@ -145,8 +147,6 @@ class GEM_Form_Fields {
 	/**
 	 * Displays the string field.
 	 *
-	 * @todo How is this differnt from the GEM_Form_Fields::text_field method?
-	 *
 	 * @param array $args Settings field arguments.
 	 */
 	public static function string( $args ) {
@@ -178,8 +178,6 @@ class GEM_Form_Fields {
 
 	/**
 	 * Displays the checkbox field.
-	 *
-	 * @todo This appears to be deprecated.
 	 *
 	 * @param array $args Settings field arguments.
 	 */
