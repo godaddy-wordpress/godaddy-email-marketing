@@ -1,24 +1,22 @@
 <?php
 /**
+ * Test_GEM_Form_Fields class.
+ * Tests form field markup and dispatch of data.
+ *
+ * @package GEM
+ */
+
+/**
  * Test Form Fields.
  *
  * @group fields
  */
 class Test_GEM_Form_Fields extends WP_UnitTestCase {
-
-	/**
-	 * Setup.
-	 *
-	 * @inheritdoc
-	 */
-	public function setUp() {
-		parent::setUp();
-	}
-
 	/**
 	 * Filter the required field classes.
 	 *
 	 * @action gem_required_field_class
+	 * @param Array $field_classes Array of existing field classes with which to append.
 	 */
 	public function gem_required_field_class_callback( $field_classes ) {
 		$field_classes[] = 'a_sample_class';
@@ -41,60 +39,60 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 	public function test_dispatch_field() {
 		$this->assertEmpty( GEM_Form_Fields::dispatch_field( 'not_an_object' ) );
 
-		$field = new stdClass();
+		$field       = new stdClass();
 		$field->type = 'incorrect_type';
 		$this->assertEmpty( GEM_Form_Fields::dispatch_field( $field ) );
 
-		$field = new stdClass();
-		$field->type = 'string';
+		$field             = new stdClass();
+		$field->type       = 'string';
 		$field->field_type = 'invalid_field_type';
 		$this->assertEmpty( GEM_Form_Fields::dispatch_field( $field ) );
 
-		$field = new stdClass();
-		$field->type = 'string';
+		$field             = new stdClass();
+		$field->type       = 'string';
 		$field->field_type = 'string';
-		$field->name = 'the_name_a';
-		$field->required = false;
-		$field->display = 'text_a';
+		$field->name       = 'the_name_a';
+		$field->required   = false;
+		$field->display    = 'text_a';
 		ob_start();
 		GEM_Form_Fields::dispatch_field( $field );
 		$actual_output = ob_get_clean();
 		$this->assertContains( '<input type="text" name="the_name_a" id="form_1_the_name_a" class="gem-field" data-label="' . $field->display . '" />', $actual_output );
 
-		$field = new stdClass();
-		$field->type = 'checkbox';
+		$field             = new stdClass();
+		$field->type       = 'checkbox';
 		$field->field_type = null;
-		$field->name = 'the_name_a';
-		$field->required = false;
-		$field->display = 'text_a';
-		$field->value = 1;
+		$field->name       = 'the_name_a';
+		$field->required   = false;
+		$field->display    = 'text_a';
+		$field->value      = 1;
 		ob_start();
 		GEM_Form_Fields::dispatch_field( $field );
 		$actual_output = ob_get_clean();
 		$this->assertContains( '<input type="checkbox" value="1" name="the_name_a" id="form_1_the_name_a1" class="gem-checkbox" />', $actual_output );
 
-		$field = new stdClass();
-		$field->type = 'string';
+		$field             = new stdClass();
+		$field->type       = 'string';
 		$field->field_type = 'tos_link';
-		$field->name = 'signup';
-		$field->required = false;
-		$field->display = 'Terms of Service Link Field';
-		$field->options = json_encode( [ 'link' => 'https://example.org' ] );
+		$field->name       = 'signup';
+		$field->required   = false;
+		$field->display    = 'Terms of Service Link Field';
+		$field->options    = wp_json_encode( array( 'link' => 'https://example.org' ) );
 		$field->field_name = 'terms_of_service_link_field';
-		$field->value = '';
+		$field->value      = '';
 		ob_start();
 		GEM_Form_Fields::dispatch_field( $field );
 		$actual_output = ob_get_clean();
 		$this->assertContains( '<a href="https://example.org" target="_blank">Terms of Service Link Field</a>', $actual_output );
 
-		$field = new stdClass();
-		$field->type = 'string';
+		$field             = new stdClass();
+		$field->type       = 'string';
 		$field->field_type = 'tracking_option';
-		$field->name = 'signup[i_confirm_that_i_am_over_18_years_old]';
-		$field->required = true;
-		$field->display = 'I confirm that I am over 18 years old';
+		$field->name       = 'signup[i_confirm_that_i_am_over_18_years_old]';
+		$field->required   = true;
+		$field->display    = 'I confirm that I am over 18 years old';
 		$field->field_name = 'i_confirm_that_i_am_over_18_years_old';
-		$field->value = 'I confirm that I am over 18 years old';
+		$field->value      = 'I confirm that I am over 18 years old';
 		ob_start();
 		GEM_Form_Fields::dispatch_field( $field );
 		$actual_output = ob_get_clean();
@@ -108,10 +106,10 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 	 */
 	public function test_string() {
 		add_action( 'gem_required_field_class', array( $this, 'gem_required_field_class_callback' ) );
-		$field = new stdClass();
-		$field->name = 'the_name_a';
+		$field           = new stdClass();
+		$field->name     = 'the_name_a';
 		$field->required = false;
-		$field->display = 'text_a';
+		$field->display  = 'text_a';
 		ob_start();
 		GEM_Form_Fields::string( $field );
 		$actual_output = ob_get_clean();
@@ -135,11 +133,11 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 	 */
 	public function test_checkbox() {
 		add_action( 'gem_required_field_class', array( $this, 'gem_required_field_class_callback' ) );
-		$field = new stdClass();
-		$field->name = 'the_name_a';
+		$field           = new stdClass();
+		$field->name     = 'the_name_a';
 		$field->required = false;
-		$field->display = 'text_a';
-		$field->value = 'the_value';
+		$field->display  = 'text_a';
+		$field->value    = 'the_value';
 		ob_start();
 		GEM_Form_Fields::checkbox( $field );
 		$actual_output = ob_get_clean();
@@ -165,12 +163,12 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 	 */
 	public function test_checkboxes() {
 		add_action( 'gem_required_field_class', array( $this, 'gem_required_field_class_callback' ) );
-		$field = new stdClass();
-		$field->name = 'the_name_a';
+		$field           = new stdClass();
+		$field->name     = 'the_name_a';
 		$field->required = false;
-		$field->display = 'text_a';
-		$field->value = 'the_value';
-		$field->options = '["Option 1","Option 2"]';
+		$field->display  = 'text_a';
+		$field->value    = 'the_value';
+		$field->options  = '["Option 1","Option 2"]';
 		ob_start();
 		GEM_Form_Fields::checkboxes( $field );
 		$actual_output = ob_get_clean();
@@ -200,12 +198,12 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 	 */
 	public function test_dropdown() {
 		add_action( 'gem_required_field_class', array( $this, 'gem_required_field_class_callback' ) );
-		$field = new stdClass();
-		$field->name = 'the_name_a';
+		$field           = new stdClass();
+		$field->name     = 'the_name_a';
 		$field->required = false;
-		$field->display = 'text_a';
-		$field->value = 'the_value';
-		$field->options = '["Option 1","Option 2"]';
+		$field->display  = 'text_a';
+		$field->value    = 'the_value';
+		$field->options  = '["Option 1","Option 2"]';
 		ob_start();
 		GEM_Form_Fields::dropdown( $field );
 		$actual_output = ob_get_clean();
@@ -235,12 +233,12 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 	 */
 	public function test_radio_buttons() {
 		add_action( 'gem_required_field_class', array( $this, 'gem_required_field_class_callback' ) );
-		$field = new stdClass();
-		$field->name = 'the_name_a';
+		$field           = new stdClass();
+		$field->name     = 'the_name_a';
 		$field->required = false;
-		$field->display = 'text_a';
-		$field->value = 'the_value';
-		$field->options = '["Option 1","Option 2"]';
+		$field->display  = 'text_a';
+		$field->value    = 'the_value';
+		$field->options  = '["Option 1","Option 2"]';
 		ob_start();
 		GEM_Form_Fields::radio_buttons( $field );
 		$actual_output = ob_get_clean();
@@ -274,8 +272,8 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 		$field->required = false;
 		$field->display  = 'text_a';
 		$field->value    = 'the_value';
-		$cur_year        = date( 'Y' ) + 5;
-		$min_year        = date( 'Y' ) - 80;
+		$cur_year        = gmdate( 'Y' ) + 5;
+		$min_year        = gmdate( 'Y' ) - 80;
 		ob_start();
 		GEM_Form_Fields::date( $field );
 		$actual_output = ob_get_clean();
@@ -307,11 +305,11 @@ class Test_GEM_Form_Fields extends WP_UnitTestCase {
 	 */
 	public function test_text_field() {
 		add_action( 'gem_required_field_class', array( $this, 'gem_required_field_class_callback' ) );
-		$field = new stdClass();
-		$field->name = 'the_name_a';
+		$field           = new stdClass();
+		$field->name     = 'the_name_a';
 		$field->required = false;
-		$field->display = 'text_a';
-		$field->value = 'the_value';
+		$field->display  = 'text_a';
+		$field->value    = 'the_value';
 		ob_start();
 		GEM_Form_Fields::text_field( $field );
 		$actual_output = ob_get_clean();

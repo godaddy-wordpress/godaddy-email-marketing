@@ -1,8 +1,15 @@
 <?php
 /**
+ * GEM_Mock_Http_Response class.
+ * Mock HTTP response used for unit tests.
+ *
+ * @package GEM
+ */
+
+/**
  * Mock Http Response class.
  */
-class Mock_Http_Response {
+class GEM_Mock_Http_Response {
 
 	/**
 	 * Response data.
