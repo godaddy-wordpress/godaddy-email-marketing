@@ -3,7 +3,7 @@ Contributors: godaddy, fjarrett, jonathanbardo, eherman24, susanygodaddy, madmim
 Tags: email, forms, godaddy, mailing list, marketing, newsletter, opt-in, signup, subscribe, widget, contacts
 Requires at least: 3.8
 Tested up to: 5.7
-Stable tag: 1.4.2
+Stable tag: 1.4.3
 License: GPL-2.0
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
