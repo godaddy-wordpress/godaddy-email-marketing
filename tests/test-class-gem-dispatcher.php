@@ -1,5 +1,12 @@
 <?php
 /**
+ * Test_GEM_Dispatcher class.
+ * Tests form dispatch actions using mock responses.
+ *
+ * @package GEM
+ */
+
+/**
  * Test Dispatcher.
  *
  * @group dispatcher
@@ -7,17 +14,17 @@
 class Test_GEM_Dispatcher extends WP_UnitTestCase {
 
 	/**
-	 * Mock_Http_Response instance.
+	 * GEM_Mock_Http_Response instance.
 	 *
-	 * @var Mock_Http_Response
+	 * @var GEM_Mock_Http_Response
 	 */
 	private $http_response;
 
 	/**
-	 * Load Mock_Http_Response
+	 * Load GEM_Mock_Http_Response
 	 */
 	public static function setUpBeforeClass() {
-		require_once( 'mock-http-response.php' );
+		require_once 'mock-http-response.php';
 	}
 
 	/**
@@ -28,8 +35,8 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		$this->http_response = new Mock_Http_Response();
-		Mock_Http_Response::$test_class = $this;
+		$this->http_response                = new GEM_Mock_Http_Response();
+		GEM_Mock_Http_Response::$test_class = $this;
 		add_filter( 'pre_http_request', array( $this->http_response, 'filter_response' ), 10, 3 );
 	}
 
@@ -42,10 +49,10 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		parent::tearDown();
 
 		remove_filter( 'pre_http_request', array( $this->http_response, 'filter_response' ), 10, 3 );
-		Mock_Http_Response::$data = null;
-		Mock_Http_Response::$test_class = null;
-		Mock_Http_Response::$expected_args = null;
-		Mock_Http_Response::$expected_url = null;
+		GEM_Mock_Http_Response::$data          = null;
+		GEM_Mock_Http_Response::$test_class    = null;
+		GEM_Mock_Http_Response::$expected_args = null;
+		GEM_Mock_Http_Response::$expected_url  = null;
 	}
 
 	/**
@@ -61,29 +68,29 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 	 * @see GEM_Dispatcher::fetch_forms()
 	 */
 	public function test_fetch_forms() {
-		$test = $this;
-		$user_name = 'the_user';
-		$api_key = 'the_key';
+		$test            = $this;
+		$user_name       = 'the_user';
+		$api_key         = 'the_key';
 		$sample_response = '{ "test": "OK" }';
 
-		Mock_Http_Response::$expected_args = array(
+		GEM_Mock_Http_Response::$expected_args = array(
 			'timeout' => 10,
 		);
-		Mock_Http_Response::$expected_url = 'https://gem.godaddy.com/signups.json';
-		Mock_Http_Response::$data = array(
+		GEM_Mock_Http_Response::$expected_url  = 'https://gem.godaddy.com/signups.json';
+		GEM_Mock_Http_Response::$data          = array(
 			'response' => array(
 				'code' => 401,
 			),
-			'body' => $sample_response,
+			'body'     => $sample_response,
 		);
 		$this->assertFalse( GEM_Dispatcher::fetch_forms( $user_name ) );
 
-		Mock_Http_Response::$expected_url = "https://gem.godaddy.com/signups.json?username=$user_name&api_key=$api_key";
-		Mock_Http_Response::$data = array(
+		GEM_Mock_Http_Response::$expected_url = "https://gem.godaddy.com/signups.json?username=$user_name&api_key=$api_key";
+		GEM_Mock_Http_Response::$data         = array(
 			'response' => array(
 				'code' => 401,
 			),
-			'body' => $sample_response,
+			'body'     => $sample_response,
 		);
 		$this->assertFalse( GEM_Dispatcher::fetch_forms( $user_name, $api_key ) );
 	}
@@ -94,17 +101,17 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 	 * @see GEM_Dispatcher::fetch_forms()
 	 */
 	public function test_fetch_forms_is_set() {
-		$test = $this;
-		$user_name = 'the_user';
-		$api_key = 'the_key';
+		$test            = $this;
+		$user_name       = 'the_user';
+		$api_key         = 'the_key';
 		$sample_response = '{ "test": "OK" }';
 
-		Mock_Http_Response::$expected_url = "https://gem.godaddy.com/signups.json?username=$user_name&api_key=$api_key";
-		Mock_Http_Response::$data = array(
+		GEM_Mock_Http_Response::$expected_url = "https://gem.godaddy.com/signups.json?username=$user_name&api_key=$api_key";
+		GEM_Mock_Http_Response::$data         = array(
 			'response' => array(
 				'code' => 200,
 			),
-			'body' => $sample_response,
+			'body'     => $sample_response,
 		);
 		$this->assertEquals( json_decode( $sample_response ), GEM_Dispatcher::fetch_forms( $user_name, $api_key ) );
 		$this->assertEquals( json_decode( $sample_response ), get_transient( 'gem-' . $user_name . '-lists' ) );
@@ -116,9 +123,9 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 	 * @see GEM_Dispatcher::add_default_form()
 	 */
 	public function test_add_default_form() {
-		$user_name = 'the_user';
-		$api_key = 'the_key';
-		$sample_data = 'the_sample';
+		$user_name       = 'the_user';
+		$api_key         = 'the_key';
+		$sample_data     = 'the_sample';
 		$sample_response = '{ "test": "OK" }';
 
 		$this->assertFalse( GEM_Dispatcher::add_default_form() );
@@ -126,33 +133,33 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		GEM_Settings_Controls::update_option( 'username', $user_name );
 		GEM_Settings_Controls::update_option( 'api-key', $api_key );
 
-		Mock_Http_Response::$expected_args = array(
-			'method' => 'POST',
+		GEM_Mock_Http_Response::$expected_args = array(
+			'method'  => 'POST',
 			'timeout' => 10,
-			'body' => array(
-				'username' => $user_name,
-				'api_key' => $api_key,
-				'name' => 'Signup Form',
-				'integration' => 'WordPress',
-				'hidden' => false,
+			'body'    => array(
+				'username'           => $user_name,
+				'api_key'            => $api_key,
+				'name'               => 'Signup Form',
+				'integration'        => 'WordPress',
+				'hidden'             => false,
 				'subscriberListName' => 'WordPress',
 			),
 		);
-		Mock_Http_Response::$expected_url = 'https://gem.godaddy.com/api/v3/signupForms';
-		Mock_Http_Response::$data = array(
+		GEM_Mock_Http_Response::$expected_url  = 'https://gem.godaddy.com/api/v3/signupForms';
+		GEM_Mock_Http_Response::$data          = array(
 			'response' => array(
 				'code' => 401,
 			),
-			'body' => $sample_response,
+			'body'     => $sample_response,
 		);
 		$this->assertFalse( GEM_Dispatcher::add_default_form() );
 
-		Mock_Http_Response::$expected_url = 'https://gem.godaddy.com/api/v3/signupForms';
-		Mock_Http_Response::$data = array(
+		GEM_Mock_Http_Response::$expected_url = 'https://gem.godaddy.com/api/v3/signupForms';
+		GEM_Mock_Http_Response::$data         = array(
 			'response' => array(
 				'code' => 200,
 			),
-			'body' => $sample_response,
+			'body'     => $sample_response,
 		);
 		$this->assertTrue( GEM_Dispatcher::add_default_form() );
 		delete_option( GEM_Settings::SLUG );
@@ -164,8 +171,8 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 	 * @see GEM_Dispatcher::get_forms()
 	 */
 	public function test_get_forms() {
-		$user_name = 'the_user';
-		$api_key = 'the_key';
+		$user_name   = 'the_user';
+		$api_key     = 'the_key';
 		$sample_data = 'the_sample';
 
 		$this->assertFalse( GEM_Dispatcher::get_forms() );
@@ -186,30 +193,30 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 	 * @see GEM_Dispatcher::get_fields()
 	 */
 	public function test_get_fields() {
-		$test = $this;
-		$form_id = 'the_id';
-		$sample_data = 'the_sample';
+		$test            = $this;
+		$form_id         = 'the_id';
+		$sample_data     = 'the_sample';
 		$sample_response = '{ "test": "OK" }';
 
 		set_transient( 'gem-form-' . $form_id, $sample_data );
 		$this->assertEquals( $sample_data, GEM_Dispatcher::get_fields( $form_id ) );
 		delete_transient( 'gem-form-' . $form_id );
 
-		Mock_Http_Response::$expected_url = "https://gem.godaddy.com/signups/$form_id.json";
-		Mock_Http_Response::$data = array(
+		GEM_Mock_Http_Response::$expected_url = "https://gem.godaddy.com/signups/$form_id.json";
+		GEM_Mock_Http_Response::$data         = array(
 			'response' => array(
 				'code' => 401,
 			),
-			'body' => $sample_response,
+			'body'     => $sample_response,
 		);
 		$this->assertFalse( GEM_Dispatcher::get_fields( $form_id ) );
 
-		Mock_Http_Response::$expected_url = "https://gem.godaddy.com/signups/$form_id.json";
-		Mock_Http_Response::$data = array(
+		GEM_Mock_Http_Response::$expected_url = "https://gem.godaddy.com/signups/$form_id.json";
+		GEM_Mock_Http_Response::$data         = array(
 			'response' => array(
 				'code' => 200,
 			),
-			'body' => $sample_response,
+			'body'     => $sample_response,
 		);
 		$this->assertEquals( json_decode( $sample_response ), GEM_Dispatcher::get_fields( $form_id ) );
 		$this->assertEquals( json_decode( $sample_response ), get_transient( 'gem-form-' . $form_id ) );
@@ -222,8 +229,8 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 	 * @see GEM_Dispatcher::get_user_level()
 	 */
 	public function test_get_user_level() {
-		$sample_data = 'the_sample';
-		$user_name = 'the_user';
+		$sample_data     = 'the_sample';
+		$user_name       = 'the_user';
 		$sample_response = '{ "result": "OK" }';
 
 		$this->assertFalse( GEM_Dispatcher::get_user_level() );
@@ -234,20 +241,20 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 		$this->assertEquals( $sample_data, GEM_Dispatcher::get_user_level() );
 		delete_transient( 'gem-' . $user_name . '-account' );
 
-		Mock_Http_Response::$expected_url = "https://gem.godaddy.com/user/account_status?username=$user_name";
-		Mock_Http_Response::$data = array(
+		GEM_Mock_Http_Response::$expected_url = "https://gem.godaddy.com/user/account_status?username=$user_name";
+		GEM_Mock_Http_Response::$data         = array(
 			'response' => array(
 				'code' => 401,
 			),
 		);
 		$this->assertFalse( GEM_Dispatcher::get_user_level() );
 
-		Mock_Http_Response::$expected_url = "https://gem.godaddy.com/user/account_status?username=$user_name";
-		Mock_Http_Response::$data = array(
+		GEM_Mock_Http_Response::$expected_url = "https://gem.godaddy.com/user/account_status?username=$user_name";
+		GEM_Mock_Http_Response::$data         = array(
 			'response' => array(
 				'code' => 200,
 			),
-			'body' => $sample_response,
+			'body'     => $sample_response,
 		);
 		$this->assertEquals( 'OK', GEM_Dispatcher::get_user_level() );
 		$this->assertEquals( 'OK', get_transient( 'gem-' . $user_name . '-account' ) );
@@ -261,23 +268,23 @@ class Test_GEM_Dispatcher extends WP_UnitTestCase {
 	 * @see GEM_Dispatcher::get_method_url()
 	 */
 	public function test_get_method_url() {
-		$auth = array(
+		$auth   = array(
 			'username' => 'the_user',
-			'api_key' => 'the_key',
+			'api_key'  => 'the_key',
 		);
 		$params = array(
-			'id' => 'the_id',
+			'id'    => 'the_id',
 			'token' => 'the_token',
 		);
-		$this->assertEquals( 'https://gem.godaddy.com/signups.json?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'forms', false,  $auth ) );
-		$this->assertEquals( 'https://gem.godaddy.com/signups/the_id.json?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'fields', $params,  $auth ) );
-		$this->assertEquals( 'https://gem.godaddy.com/user/account_status?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'account', false,  $auth ) );
+		$this->assertEquals( 'https://gem.godaddy.com/signups.json?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'forms', false, $auth ) );
+		$this->assertEquals( 'https://gem.godaddy.com/signups/the_id.json?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'fields', $params, $auth ) );
+		$this->assertEquals( 'https://gem.godaddy.com/user/account_status?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'account', false, $auth ) );
 
 		GEM_Settings_Controls::update_option( 'username', 'the_user' );
 		GEM_Settings_Controls::update_option( 'api-key', 'the_key' );
-		$this->assertEquals( 'https://gem.godaddy.com/signups.json?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'forms', false,  false ) );
-		$this->assertEquals( 'https://gem.godaddy.com/signups/the_id.json?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'fields', $params,  false ) );
-		$this->assertEquals( 'https://gem.godaddy.com/user/account_status?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'account', false,  false ) );
+		$this->assertEquals( 'https://gem.godaddy.com/signups.json?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'forms', false, false ) );
+		$this->assertEquals( 'https://gem.godaddy.com/signups/the_id.json?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'fields', $params, false ) );
+		$this->assertEquals( 'https://gem.godaddy.com/user/account_status?username=the_user&api_key=the_key', GEM_Dispatcher::get_method_url( 'account', false, false ) );
 		delete_option( GEM_Settings::SLUG );
 	}
 

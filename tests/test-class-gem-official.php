@@ -1,5 +1,12 @@
 <?php
 /**
+ * Test_GEM_Official class.
+ * Tests form locale, actions and notices.
+ *
+ * @package GEM
+ */
+
+/**
  * Test GEM.
  *
  * @group gem
@@ -7,6 +14,8 @@
 class Test_GEM_Official extends WP_UnitTestCase {
 
 	/**
+	 * Private instance reference.
+	 *
 	 * @var GEM_Official
 	 */
 	private $instance;
@@ -26,13 +35,13 @@ class Test_GEM_Official extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 		$this->plugin_file_path = $GLOBALS['_plugin_file'];
-		$this->instance = GEM_Official::instance();
+		$this->instance         = GEM_Official::instance();
 	}
 
 	/**
 	 * Filter to set the locale manually.
 	 */
-	public function locale( $locale ) {
+	public function locale() {
 		return 'es_ES';
 	}
 
@@ -117,7 +126,7 @@ class Test_GEM_Official extends WP_UnitTestCase {
 		$this->assertNull( $this->instance->settings );
 		$this->assertArrayHasKey( 'wp_enqueue_scripts', $wp_filter );
 
-		// test in admin case:
+		// test in admin case.
 		define( 'WP_ADMIN', true );
 		$second_instance = new GEM_Official();
 		$second_instance->init();
@@ -181,7 +190,7 @@ class Test_GEM_Official extends WP_UnitTestCase {
 	 */
 	public function test_enqueue() {
 		$this->instance->enqueue();
-		$this->assertTrue( wp_script_is( 'gem-main','queue' ) );
+		$this->assertTrue( wp_script_is( 'gem-main', 'queue' ) );
 		$this->assertTrue( wp_style_is( 'gem-base', 'registered' ) );
 	}
 
@@ -195,22 +204,13 @@ class Test_GEM_Official extends WP_UnitTestCase {
 
 		$_parent_pages[ GEM_Settings::SLUG ] = 'settings_slug';
 
-		$sample_array = array( 'the_key' => 'the_value' );
+		$sample_array  = array( 'the_key' => 'the_value' );
 		$actual_result = $this->instance->action_links( $sample_array );
 
 		$this->assertArrayHasKey( 'the_key', $actual_result );
 		$this->assertEquals( 'the_value', $actual_result['the_key'] );
 		$this->assertArrayHasKey( 'settings', $actual_result );
 		$this->assertEquals( '<a href="http://example.org/wp-admin/settings_slug?page=gem-settings">Settings</a>', $actual_result['settings'] );
-	}
-
-	/**
-	 * Test activate.
-	 *
-	 * @see GEM_Official::activate()
-	 */
-	public function test_activate() {
-		// nothing to test
 	}
 
 	/**
@@ -233,7 +233,7 @@ class Test_GEM_Official extends WP_UnitTestCase {
 	public function test_action_admin_notices() {
 		global $current_screen;
 
-		$current_screen = new stdClass();
+		$current_screen     = new stdClass();
 		$current_screen->id = 'test';
 
 		ob_start();

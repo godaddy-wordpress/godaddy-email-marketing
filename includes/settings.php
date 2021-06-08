@@ -5,6 +5,8 @@
  * @package GEM
  */
 
+// phpcs:disable Generic.Files.OneObjectStructurePerFile.MultipleFound
+
 /**
  * GoDaddy Email Marketing settings.
  *
@@ -65,7 +67,7 @@ class GEM_Settings {
 			array( $this, 'display_settings_page' )
 		);
 
-		// Various maintenance processes
+		// Various maintenance processes.
 		add_action( 'load-' . $this->hook, array( $this, 'page_load' ) );
 
 		// Enqueue admin CSS.
@@ -81,7 +83,7 @@ class GEM_Settings {
 	public function admin_enqueue_style() {
 		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-		wp_enqueue_style( 'gem-admin', plugins_url( "css/admin{$suffix}.css", GEM_PLUGIN_BASE ) );
+		wp_enqueue_style( 'gem-admin', plugins_url( "css/admin{$suffix}.css", GEM_PLUGIN_BASE ), array(), GEM_VERSION );
 	}
 
 	/**
@@ -280,7 +282,7 @@ class GEM_Settings {
 	/**
 	 * Register a settings error to be displayed to the user
 	 *
-	 * @param string $setting Slug title of the setting to which this error applies
+	 * @param string $setting Slug title of the setting to which this error applies.
 	 * @param string $code    Slug-name to identify the error. Used as part of 'id' attribute in HTML output.
 	 * @param string $message The formatted message text to display to the user (will be shown inside styled
 	 *                        `<div>` and `<p>` tags).
@@ -300,7 +302,6 @@ class GEM_Settings {
 	public function setup_help_tabs() {
 		$screen = get_current_screen();
 
-		// @todo Remove HTML from the translation strings.
 		$screen->add_help_tab(
 			array(
 				'title'   => __( 'Overview', 'godaddy-email-marketing-sign-up-forms' ),
@@ -316,7 +317,7 @@ class GEM_Settings {
 					__( '<strong>Widget:</strong> Go to Appearance &rarr; widgets and find the widget called “GoDaddy Email Marketing Form” and drag it into the widget area of your choice. You can then add a title and select a form!', 'godaddy-email-marketing-sign-up-forms' ),
 					__( '<strong>Shortcode:</strong> You can add a form to any post or page by adding the shortcode (ex. <code>[gem id=80326]</code>) in the page/post editor.', 'godaddy-email-marketing-sign-up-forms' ),
 					sprintf(
-						/* translators: %1$s: &lt;?php gem_form( $form_id ); ?&gt;, %2$s: &lt;?php gem_form( 91 ); ?&gt; */
+						/* translators: %1$s, %2$s: code snippet examples. */
 						__( '<strong>Template Tag:</strong> You can add the following template tag into any WordPress file: <code>%1$s</code>. Ex. <code>%2$s</code>', 'godaddy-email-marketing-sign-up-forms' ),
 						'&lt;?php gem_form( $form_id ); ?&gt;',
 						'&lt;?php gem_form( 91 ); ?&gt;'
@@ -542,20 +543,20 @@ class GEM_Settings {
 		$parts     = explode( '_', $language );
 		$subdomain = ! empty( $parts[1] ) ? strtolower( $parts[1] ) : strtolower( $language );
 
-		// Overrides
+		// Overrides.
 		switch ( $subdomain ) {
 
 			case '':
 			case 'us':
-				$subdomain = 'www'; // Default
+				$subdomain = 'www'; // Default.
 				break;
 
 			case 'uk':
-				$subdomain = 'ua'; // Ukrainian (Українська)
+				$subdomain = 'ua'; // Ukrainian (Українська).
 				break;
 
 			case 'el':
-				$subdomain = 'gr'; // Greek (Ελληνικά)
+				$subdomain = 'gr'; // Greek (Ελληνικά).
 				break;
 
 		}
@@ -576,11 +577,9 @@ class GEM_Settings {
 
 	/**
 	 * Displays the settings page.
-	 *
-	 * @todo Move this into a view file and include.
 	 */
 	public function display_settings_page() {
-		$tab         = isset( $_GET['tab'] ) ? sanitize_key( wp_unslash( $_GET['tab'] ) ) : '';
+		$tab         = isset( $_GET['tab'] ) ? sanitize_key( wp_unslash( $_GET['tab'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
 		$forms       = GEM_Dispatcher::get_forms();
 		$valid_creds = (bool) get_option( 'gem-valid-creds' );
 
@@ -642,7 +641,7 @@ class GEM_Settings {
 								'<a href="https://gem.godaddy.com" target="_blank">',
 								'</a>'
 							);
-							?>
+						?>
 						</p>
 						<h3><?php esc_html_e( 'Available Signup Forms', 'godaddy-email-marketing-sign-up-forms' ); ?></h3>
 						<table class="wp-list-table widefat fixed striped">

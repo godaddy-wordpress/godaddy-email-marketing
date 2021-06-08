@@ -54,7 +54,7 @@ class GEM_Form_Widget extends WP_Widget {
 			if ( ! empty( $forms->signups ) ) {
 				$instance['form'] = $forms->signups[0]->id;
 
-				// Update widget instance with new form ID
+				// Update widget instance with new form ID.
 				$settings = $this->get_settings();
 
 				$settings[ $this->number ] = $instance;
@@ -66,10 +66,10 @@ class GEM_Form_Widget extends WP_Widget {
 		$text    = empty( $instance['text'] ) ? '' : $instance['text'];
 		$form_id = empty( $instance['form'] ) ? false : $instance['form'];
 
-		echo $args['before_widget']; // xss ok
+		echo $args['before_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 		if ( $title ) {
-			echo $args['before_title'] . esc_html( $title ) . $args['after_title']; // xss ok
+			echo $args['before_title'] . esc_html( $title ) . $args['after_title']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 
 		if ( $text ) {
@@ -79,7 +79,7 @@ class GEM_Form_Widget extends WP_Widget {
 		$renderer = new GEM_Form_Renderer();
 		$renderer->process( $form_id, true );
 
-		echo $args['after_widget']; // xss ok
+		echo $args['after_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**
@@ -93,7 +93,7 @@ class GEM_Form_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
-		$instance['title'] = strip_tags( $new_instance['title'] );
+		$instance['title'] = wp_strip_all_tags( $new_instance['title'] );
 		$instance['text']  = $new_instance['text'];
 		$instance['form']  = absint( $new_instance['form'] );
 
@@ -157,7 +157,7 @@ class GEM_Form_Widget extends WP_Widget {
 			<?php else : ?>
 
 			<span>
-			<?php
+				<?php
 				printf(
 					/* translators: %s: link to settings page */
 					esc_html__( 'Please set up your GoDaddy Email Marketing account in the %s.', 'godaddy-email-marketing-sign-up-forms' ),
@@ -167,7 +167,7 @@ class GEM_Form_Widget extends WP_Widget {
 						esc_html__( 'settings page', 'godaddy-email-marketing-sign-up-forms' )
 					)
 				);
-			?>
+				?>
 			</span>
 
 			<?php endif; ?>

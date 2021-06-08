@@ -1,5 +1,12 @@
 <?php
 /**
+ * Test_GEM_Shortcode class.
+ * Tests form shortcode render and markup.
+ *
+ * @package GEM
+ */
+
+/**
  * Test Shortcode.
  *
  * @group shortcode
@@ -7,6 +14,8 @@
 class Test_GEM_Shortcode extends WP_UnitTestCase {
 
 	/**
+	 * Private instance reference.
+	 *
 	 * @var GEM_Shortcode
 	 */
 	private $instance;
